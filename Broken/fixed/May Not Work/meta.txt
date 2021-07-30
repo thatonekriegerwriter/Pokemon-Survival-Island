@@ -1,0 +1,4 @@
+Name         = NEOCI
+Version      = 1.0.0
+Website      = https://luka-sj.com/res/nuzx
+Credits      = Luka S.J.

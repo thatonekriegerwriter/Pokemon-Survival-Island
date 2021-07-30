@@ -1,0 +1,4 @@
+Name         = Pokemon Amie/Refresh
+Version      = 1.5
+Website      = https://www.pokecommunity.com/showthread.php?t=439558
+Credits      = Bhagya Jyoti,Pizza Sun
