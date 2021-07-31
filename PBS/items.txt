@@ -824,7 +824,7 @@
 1804,PARALYZDART,Paralysis Dart,Paralysis Darts,7,1000,"A handcrafted dart gun that stuns a Pokémon in battle.",0,4,0,
 1805,ICEDART,Ice Dart,Ice Darts Darts,7,1000,"A handcrafted dart gun that freezes a Pokémon in battle.",0,4,0,
 1806,FIREDART,Fire Dart,Fire Darts,7,1000,"A handcrafted dart gun that burns a Pokémon in battle.",0,4,0,
-1807,PORTABLECAMP,Portable Campsite,Portable Campsites,1,1000,"A handcrafted dart gun that stuns a Pokémon in battle.",2,0,6,
+1807,PORTABLECAMP,Portable Campsite,Portable Campsites,1,1000,"A Camp that can be set up anywhere, it's one use.",2,0,6,
 1808,BAIT,Bait,Baits,7,1000,"A spongy, aromatic fungus that distracts Pokémon. Use it to flee from any battle with a wild Pokémon.",2,5,5,
 1809,SUPPLIES,Supplies,Supplies,8,0,"A bag of supplies that can be used to climb tall mountains.",0,0,6
 1810,LINKSTONE,Link Stone, Link Stones,1,2100,"A peculiar stone that makes certain species of Pokémon evolve. It has a link cable pattern.",1,0,7,
@@ -906,7 +906,7 @@
 1887,SILVERORE,Silver Ore,Silver Ores,1,0,"Silver mined from the Mountain Area.",0,0,0,
 1888,GOLD2,Gold,Gold Bars,1,0,"Refined Gold from the Furnace.",0,0,0,
 1889,SILVER2,Silver,Silver Bars,1,0,"Refined Silver from the Furnace.",0,0,0,
-1890,COPPER2,Copper Car,Copper Bars,1,0,"Refined Copper from the Furnace.",0,0,0,
+1890,COPPER2,Copper Bar,Copper Bars,1,0,"Refined Copper from the Furnace.",0,0,0,
 1891,CLAY2,Hardened Clay,Hardened Clay,1,0,"Refined Clay from the Furnace.",0,0,0,
 1892,DARTCASING,Dart Casing,Dart Casings,1,0,"A Casing for a dart to be created from.",0,0,0,
 1893,FERTILIZERMIX,Fertilizer Mix,Fertilizer Mix,1,0,"A Fertilizer mix made from bones. Can be used to make better fertilizers.",0,0,0,
@@ -961,3 +961,4 @@
 1942,ORANMASH,Oran Mash,Oran Mash,8,2100,"A food item only found in dungeons. It heals 30 HP.",2,0,0,
 1943,NO, , ,1,00,"You shouldn't see this.",0,0,0,
 1944,ITEMCRATE,Item Crate,Item Crates,1,2100,"A Crate that is used to Store Items.",2,0,6,
+1945,CUTTER,Wood Cutter,Wood Cutters,1,2100,"A Powered Item that is used to cut more wood.",2,0,6,

@@ -10,302 +10,6 @@ Width: 50, Height: 50
 Auto-Change BGM: Ship
 
 #------------------------------------------------------------------------------
-Event ID: 001
-Event Name: AncientStone
-(X,Y): (016,030)
-
-Page #1
-Conditions
-None
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>Text: This is a spirit statue. Once activated, the spirit inside 
- :    : will lend you some of its power.
-@>Text: Activate statue?
-@>Show Choices: Yes, No
-(When Cancel: Choice 2)
-: When [Yes]
- @>Text: Every statue that you find works as a teleport 
-  :    : point.
- @>Script: Achievements.incrementProgress("STATUES",1)
- @>Recover All: Entire Party
- @>Call Save Screen
- @>Play ME: 'Pokemon Healing', 100, 100
- @>Control Variables: [0080: StatuesTP] += 1
- @>Control Self Switch: A =ON
- @>
-: When [No]
- @>
-: Branch End
-@>
-
-Page #2
-Conditions
-Variable 0080: StatuesTP is 1 or above
-Self Switch A is ON
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>Conditional Branch: Variable [0080: StatuesTP] == 1
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Text: You have found no other statues.
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 2
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Cancel
- (When Cancel: Choice 3)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Cancel]
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 3
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop 
- (When Cancel: Choice 4)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 4
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, No
-  (When Cancel: Choice 2)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (017,030)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 5
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, No
-  (When Cancel: Choice 3)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 6
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 7
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 8
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, Northern Zone, Cancel
-   (When Cancel: Choice 3)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [Northern Zone]
-    @>Transfer Player:[207: Northern Area ], (017,006)
-    @>
-   : When [Cancel]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
-@>
-
-#------------------------------------------------------------------------------
 Event ID: 002
 Event Name: EV002
 (X,Y): (016,031)
@@ -841,6 +545,65 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 012
+Event Name: AncientStone
+(X,Y): (016,030)
+
+Page #1
+Conditions
+None
+
+Graphic: statue
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: This is a spirit statue. Once activated, the spirit inside 
+ :    : will lend you some of its power.
+@>Text: Activate statue?
+@>Show Choices: Yes, No
+(When Cancel: Choice 2)
+: When [Yes]
+ @>Text: Every statue that you find works as a teleport 
+  :    : point.
+ @>Recover All: Entire Party
+ @>Play ME: 'Pokemon Healing', 100, 100
+ @>Script: Achievements.incrementProgress("STATUES",1)
+ @>Control Variables: [0080: StatuesTP] += 1
+ @>Control Self Switch: A =ON
+ @>Call Save Screen
+ @>
+: When [No]
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Variable 0080: StatuesTP is 4 or above
+Self Switch A is ON
+
+Graphic: statue
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Call Common Event: Teleport Statues
 @>
 
 #------------------------------------------------------------------------------
@@ -1738,6 +1501,11 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
+  @>Conditional Branch: Script: pbStoreItem(:STONE,(rand(75))
+   @>
+  : Branch End
+  @>Text: You use your time to mine out a base.
+  @>Control Variables: [0029: TimeDilation] += 67200
   @>Call Save Screen
   @>Control Switches: [0270: OGTempBse] = ON
   @>Control Switches: [0154: MadeBase] = ON
@@ -2480,6 +2248,8 @@ List of Event Commands:
 @>Play SE: 'itemlevel', 100, 100
 @>Script: Achievements.incrementProgress("BAG",1)
 @>Text: \PN picked up their bag.
+@>Text: Inside was your MP3 Player.
+@>Script: Kernel.pbStoreItem(:PLAYER)
 @>Control Variables: [0212: GrabbedItem] += 1
 @>Control Self Switch: A =ON
 @>Control Switches: [0268: Hasbag] = ON
@@ -2670,6 +2440,8 @@ Page #1
 Conditions
 None
 
+Graphic: statue
+
 Autonomous Movement
 Type: Fixed
 Speed: 3: Slow
@@ -2704,6 +2476,8 @@ Conditions
 Variable 0080: StatuesTP is 1 or above
 Self Switch A is ON
 
+Graphic: statue
+
 Autonomous Movement
 Type: Fixed
 Speed: 3: Slow
@@ -2713,248 +2487,7 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
-@>Conditional Branch: Variable [0080: StatuesTP] == 1
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Text: You have found no other statues.
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 2
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Cancel
- (When Cancel: Choice 3)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Cancel]
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 3
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop 
- (When Cancel: Choice 4)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 4
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, No
-  (When Cancel: Choice 2)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (017,030)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 5
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, No
-  (When Cancel: Choice 3)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 6
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 7
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 8
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, Northern Zone, Cancel
-   (When Cancel: Choice 3)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [Northern Zone]
-    @>Transfer Player:[207: Northern Area ], (017,006)
-    @>
-   : When [Cancel]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
+@>Call Common Event: Teleport Statues
 @>
 
 #------------------------------------------------------------------------------
@@ -3693,7 +3226,7 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
-@>Script: Kernel.pbReceiveItem(:PLAYER)
+@>Script: Kernel.pbReceiveItem(:PHONE)
 @>Control Variables: [0212: GrabbedItem] += 1
 @>Control Self Switch: A =ON
 @>
@@ -5538,302 +5071,6 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
-Event ID: 009
-Event Name: AncientStone
-(X,Y): (037,014)
-
-Page #1
-Conditions
-None
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>Text: This is a spirit statue. Once activated, the spirit inside 
- :    : will lend you some of its power.
-@>Text: Activate statue?
-@>Show Choices: Yes, No
-(When Cancel: Choice 2)
-: When [Yes]
- @>Text: Every statue that you find works as a teleport 
-  :    : point.
- @>Script: Achievements.incrementProgress("STATUES",1)
- @>Call Save Screen
- @>Recover All: Entire Party
- @>Play ME: 'Pokemon Healing', 100, 100
- @>Control Variables: [0080: StatuesTP] += 1
- @>Control Self Switch: A =ON
- @>
-: When [No]
- @>
-: Branch End
-@>
-
-Page #2
-Conditions
-Variable 0080: StatuesTP is 1 or above
-Self Switch A is ON
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>Conditional Branch: Variable [0080: StatuesTP] == 1
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Text: You have found no other statues.
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 2
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Cancel
- (When Cancel: Choice 3)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Cancel]
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 3
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop 
- (When Cancel: Choice 4)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 4
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, No
-  (When Cancel: Choice 2)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (017,030)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 5
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, No
-  (When Cancel: Choice 3)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 6
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 7
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 8
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, Northern Zone, Cancel
-   (When Cancel: Choice 3)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [Northern Zone]
-    @>Transfer Player:[207: Northern Area ], (017,006)
-    @>
-   : When [Cancel]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
-@>
-
-#------------------------------------------------------------------------------
 Event ID: 010
 Event Name: EV010
 (X,Y): (044,038)
@@ -6246,22 +5483,15 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
-
-#==============================================================================
-Map ID: 010
-Map Name: Temperate Base
-Tileset: 001: Outside
-Width: 25, Height: 25
-Auto-Change BGM: 035-Dungeon02
-
-#------------------------------------------------------------------------------
-Event ID: 001
-Event Name: EXIT
-(X,Y): (012,017)
+Event ID: 017
+Event Name: AncientStone
+(X,Y): (037,014)
 
 Page #1
 Conditions
 None
+
+Graphic: statue
 
 Autonomous Movement
 Type: Fixed
@@ -6269,19 +5499,56 @@ Speed: 3: Slow
 Freq: 3: Low
 Options Enabled
 Move Animation
-Trigger: Event Touch
+Trigger: Action Button
 
 List of Event Commands:
-@>Conditional Branch: Player is facing Down
- @>Set Move Route: This event
-  :              : $>Graphic: "0 DOOR ARROW', 0, 2, 0
+@>Text: This is a spirit statue. Once activated, the spirit inside 
+ :    : will lend you some of its power.
+@>Text: Activate statue?
+@>Show Choices: Yes, No
+(When Cancel: Choice 2)
+: When [Yes]
+ @>Text: Every statue that you find works as a teleport 
+  :    : point.
+ @>Recover All: Entire Party
+ @>Play ME: 'Pokemon Healing', 100, 100
+ @>Script: Achievements.incrementProgress("STATUES",1)
+ @>Control Variables: [0080: StatuesTP] += 1
+ @>Control Self Switch: A =ON
+ @>Call Save Screen
  @>
-: Else
- @>Set Move Route: This event
-  :              : $>Graphic: (None)
+: When [No]
  @>
 : Branch End
 @>
+
+Page #2
+Conditions
+Variable 0080: StatuesTP is 2 or above
+Self Switch A is ON
+
+Graphic: statue
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Call Common Event: Teleport Statues
+@>
+
+#------------------------------------------------------------------------------
+
+#==============================================================================
+Map ID: 010
+Map Name: Temperate Base
+Tileset: 001: Outside
+Width: 25, Height: 25
+Auto-Change BGM: 035-Dungeon02
 
 #------------------------------------------------------------------------------
 Event ID: 003
@@ -8477,28 +7744,6 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
-Event ID: 012
-Event Name: EXITSIDE
-(X,Y): (011,017)
-
-Page #1
-Conditions
-None
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Event Touch
-
-List of Event Commands:
-@>Set Move Route: [EXIT]
- :              : $>Graphic: (None)
-@>
-
-#------------------------------------------------------------------------------
 Event ID: 013
 Event Name: EV013
 (X,Y): (016,011)
@@ -8715,28 +7960,6 @@ List of Event Commands:
 : When Cancel
  @>
 : Branch End
-@>
-
-#------------------------------------------------------------------------------
-Event ID: 014
-Event Name: EXITSIDE
-(X,Y): (012,016)
-
-Page #1
-Conditions
-None
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Event Touch
-
-List of Event Commands:
-@>Set Move Route: [EXIT]
- :              : $>Graphic: (None)
 @>
 
 #------------------------------------------------------------------------------
@@ -9500,7 +8723,7 @@ List of Event Commands:
 #------------------------------------------------------------------------------
 Event ID: 038
 Event Name: EV038
-(X,Y): (009,012)
+(X,Y): (000,004)
 
 Page #1
 Conditions
@@ -13260,67 +12483,8 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
-Event ID: 013
-Event Name: EV013
-(X,Y): (011,033)
-
-Page #1
-Conditions
-None
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>Conditional Branch: Script: pbItemBall(:STONE)
- @>Script: pbSetEventTime
- @>Control Self Switch: A =ON
- @>
-: Branch End
-@>
-
-Page #2
-Conditions
-Self Switch A is ON
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>
-
-Page #3
-Conditions
-Switch 0061: s:cooledDown?(18000) is ON
-Self Switch A is ON
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>Set Event Location: This event,(010,012), Down
-@>Control Self Switch: A =OFF
-@>Script: setTempSwitchOn("A")
-@>
-
-#------------------------------------------------------------------------------
 Event ID: 014
-Event Name: EV014
+Event Name: NPC
 (X,Y): (009,033)
 
 Page #1
@@ -13336,16 +12500,40 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
-@>Conditional Branch: Script: pbItemBall(:STONE)
- @>Script: pbSetEventTime
- @>Control Self Switch: A =ON
+@>Text: This rock seems sturdy enough to mine.
+@>Show Choices: Mine, Leave
+(When Cancel: Choice 2)
+: When [Mine]
+ @>Label: Start
+ @>Script: pbMiningGame2
+ @>Text: Continue Mining?
+ @>Show Choices: Yes, No
+ (When Cancel: Choice 2)
+ : When [Yes]
+  @>Jump to Label: Start
+  @>
+ : When [No]
+  @>Set Move Route: Player
+   :              : $>Move Up
+  @>Wait for Move's Completion
+  @>
+ : Branch End
+ @>
+: When [Leave]
+ @>Set Move Route: Player
+  :              : $>Move Up
  @>
 : Branch End
 @>
 
-Page #2
+#------------------------------------------------------------------------------
+Event ID: 015
+Event Name: NPC
+(X,Y): (012,009)
+
+Page #1
 Conditions
-Self Switch A is ON
+None
 
 Autonomous Movement
 Type: Fixed
@@ -13356,25 +12544,30 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
-@>
-
-Page #3
-Conditions
-Switch 0061: s:cooledDown?(18000) is ON
-Self Switch A is ON
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>Set Event Location: This event,(010,012), Down
-@>Control Self Switch: A =OFF
-@>Script: setTempSwitchOn("A")
+@>Text: This rock seems sturdy enough to mine.
+@>Show Choices: Mine, Leave
+(When Cancel: Choice 2)
+: When [Mine]
+ @>Label: Start
+ @>Script: pbMiningGame2
+ @>Text: Continue Mining?
+ @>Show Choices: Yes, No
+ (When Cancel: Choice 2)
+ : When [Yes]
+  @>Jump to Label: Start
+  @>
+ : When [No]
+  @>Set Move Route: Player
+   :              : $>Move Up
+  @>Wait for Move's Completion
+  @>
+ : Branch End
+ @>
+: When [Leave]
+ @>Set Move Route: Player
+  :              : $>Move Up
+ @>
+: Branch End
 @>
 
 #------------------------------------------------------------------------------
@@ -14683,6 +13876,51 @@ Speed: 3: Slow
 Freq: 3: Low
 Options Enabled
 Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: $PokemonBag.pbHasItem?(:PICKAXE)
+ @>Text: Do you want to mine this place out?
+ @>Show Choices: Yes, No
+ (When Cancel: Choice 2)
+ : When [Yes]
+  @>Conditional Branch: Script: pbStoreItem(:STONE,(rand(125))
+   @>
+  : Branch End
+  @>Text: You use your time to mine out a base.
+  @>Control Variables: [0029: TimeDilation] += 67200
+  @>Call Save Screen
+  @>Control Switches: [0154: MadeBase] = ON
+  @>Script: pbSetEscapePoint
+  @>Play SE: 'Exit Door', 80, 100
+  @>Change Screen Color Tone: (255,255,255,255), @6
+  @>Wait: 6 frame(s)
+  @>Transfer Player:[020: Mountain Base], (014,015), No Fade
+  @>Script: pbCaveEntrance
+  @>Change Screen Color Tone: (0,0,0,0), @6
+  @>Control Self Switch: A =ON
+  @>
+ : When [No]
+  @>
+ : Branch End
+ @>
+: Else
+ @>Text: You could hallow out this cave if you had a quality 
+  :    : pickaxe.
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
 Trigger: Player Touch
 
 List of Event Commands:
@@ -14966,7 +14204,7 @@ List of Event Commands:
 #------------------------------------------------------------------------------
 Event ID: 012
 Event Name: SmashRock
-(X,Y): (022,028)
+(X,Y): (022,026)
 
 Page #1
 Conditions
@@ -16328,57 +15566,6 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
-Event ID: 006
-Event Name: EXIT
-(X,Y): (014,015)
-
-Page #1
-Conditions
-None
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Event Touch
-
-List of Event Commands:
-@>Conditional Branch: Player is facing Down
- @>Set Move Route: This event
-  :              : $>Graphic: "0 DOOR ARROW', 0, 2, 0
- @>
-: Else
- @>Set Move Route: This event
-  :              : $>Graphic: (None)
- @>
-: Branch End
-@>
-
-#------------------------------------------------------------------------------
-Event ID: 007
-Event Name: EXITSIDER
-(X,Y): (015,015)
-
-Page #1
-Conditions
-None
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Event Touch
-
-List of Event Commands:
-@>Set Move Route: [Exit]
- :              : $>Graphic: (None)
-@>
-
-#------------------------------------------------------------------------------
 Event ID: 008
 Event Name: Crate
 (X,Y): (023,000)
@@ -16470,28 +15657,6 @@ Trigger: Parallel Process
 List of Event Commands:
 @>Control Self Switch: A =OFF
 @>Script: setTempSwitchOn("A")
-@>
-
-#------------------------------------------------------------------------------
-Event ID: 010
-Event Name: EXITSIDE
-(X,Y): (014,014)
-
-Page #1
-Conditions
-None
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Event Touch
-
-List of Event Commands:
-@>Set Move Route: [Exit]
- :              : $>Graphic: (None)
 @>
 
 #------------------------------------------------------------------------------
@@ -17308,28 +16473,6 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
-@>
-
-#------------------------------------------------------------------------------
-Event ID: 028
-Event Name: EXITSIDEL
-(X,Y): (013,015)
-
-Page #1
-Conditions
-None
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Event Touch
-
-List of Event Commands:
-@>Set Move Route: [Exit]
- :              : $>Graphic: (None)
 @>
 
 #------------------------------------------------------------------------------
@@ -19579,302 +18722,6 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
-Event ID: 008
-Event Name: AncientStone
-(X,Y): (019,032)
-
-Page #1
-Conditions
-None
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>Text: This is a spirit statue. Once activated, the spirit inside 
- :    : will lend you some of its power.
-@>Text: Activate statue?
-@>Show Choices: Yes, No
-(When Cancel: Choice 2)
-: When [Yes]
- @>Text: Every statue that you find works as a teleport 
-  :    : point.
- @>Script: Achievements.incrementProgress("STATUES",1)
- @>Recover All: Entire Party
- @>Call Save Screen
- @>Play ME: 'Pokemon Healing', 100, 100
- @>Control Variables: [0080: StatuesTP] += 1
- @>Control Self Switch: A =ON
- @>
-: When [No]
- @>
-: Branch End
-@>
-
-Page #2
-Conditions
-Variable 0080: StatuesTP is 1 or above
-Self Switch A is ON
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>Conditional Branch: Variable [0080: StatuesTP] == 1
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Text: You have found no other statues.
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 2
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Cancel
- (When Cancel: Choice 3)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Cancel]
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 3
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop 
- (When Cancel: Choice 4)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 4
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, No
-  (When Cancel: Choice 2)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (017,030)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 5
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, No
-  (When Cancel: Choice 3)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 6
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 7
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 8
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, Northern Zone, Cancel
-   (When Cancel: Choice 3)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [Northern Zone]
-    @>Transfer Player:[207: Northern Area ], (017,006)
-    @>
-   : When [Cancel]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
-@>
-
-#------------------------------------------------------------------------------
 Event ID: 009
 Event Name: EV009
 (X,Y): (028,041)
@@ -20124,6 +18971,65 @@ Trigger: Parallel Process
 
 List of Event Commands:
 @>Control Self Switch: A =OFF
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 013
+Event Name: AncientStone
+(X,Y): (019,032)
+
+Page #1
+Conditions
+None
+
+Graphic: statue
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: This is a spirit statue. Once activated, the spirit inside 
+ :    : will lend you some of its power.
+@>Text: Activate statue?
+@>Show Choices: Yes, No
+(When Cancel: Choice 2)
+: When [Yes]
+ @>Text: Every statue that you find works as a teleport 
+  :    : point.
+ @>Recover All: Entire Party
+ @>Play ME: 'Pokemon Healing', 100, 100
+ @>Script: Achievements.incrementProgress("STATUES",1)
+ @>Control Variables: [0080: StatuesTP] += 1
+ @>Control Self Switch: A =ON
+ @>Call Save Screen
+ @>
+: When [No]
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Variable 0080: StatuesTP is 3 or above
+Self Switch A is ON
+
+Graphic: statue
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Call Common Event: Teleport Statues
 @>
 
 #------------------------------------------------------------------------------
@@ -23718,6 +22624,8 @@ Page #1
 Conditions
 None
 
+Graphic: statue
+
 Autonomous Movement
 Type: Fixed
 Speed: 3: Slow
@@ -23735,12 +22643,12 @@ List of Event Commands:
 : When [Yes]
  @>Text: Every statue that you find works as a teleport 
   :    : point.
- @>Script: Achievements.incrementProgress("STATUES",1)
  @>Recover All: Entire Party
- @>Call Save Screen
  @>Play ME: 'Pokemon Healing', 100, 100
+ @>Script: Achievements.incrementProgress("STATUES",1)
  @>Control Variables: [0080: StatuesTP] += 1
  @>Control Self Switch: A =ON
+ @>Call Save Screen
  @>
 : When [No]
  @>
@@ -23749,8 +22657,10 @@ List of Event Commands:
 
 Page #2
 Conditions
-Variable 0080: StatuesTP is 1 or above
+Variable 0080: StatuesTP is 5 or above
 Self Switch A is ON
+
+Graphic: statue
 
 Autonomous Movement
 Type: Fixed
@@ -23761,248 +22671,7 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
-@>Conditional Branch: Variable [0080: StatuesTP] == 1
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Text: You have found no other statues.
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 2
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Cancel
- (When Cancel: Choice 3)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Cancel]
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 3
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop 
- (When Cancel: Choice 4)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 4
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, No
-  (When Cancel: Choice 2)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (017,030)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 5
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, No
-  (When Cancel: Choice 3)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 6
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 7
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 8
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, Northern Zone, Cancel
-   (When Cancel: Choice 3)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [Northern Zone]
-    @>Transfer Player:[207: Northern Area ], (017,006)
-    @>
-   : When [Cancel]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
+@>Call Common Event: Teleport Statues
 @>
 
 #------------------------------------------------------------------------------
@@ -24216,6 +22885,28 @@ Event Name: EV001
 (X,Y): (034,016)
 
 Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Player Touch
+
+List of Event Commands:
+@>Script: pbSetEscapePoint
+@>Play SE: 'Exit Door', 80, 100
+@>Change Screen Color Tone: (-255,-255,-255,0), @6
+@>Wait: 8 frame(s)
+@>Script: pbCaveEntrance
+@>Transfer Player:[282: Passage], (042,002), Down, No Fade
+@>Change Screen Color Tone: (0,0,0,0), @6
+@>
+
+Page #2
 Conditions
 None
 
@@ -24926,6 +23617,8 @@ Page #1
 Conditions
 None
 
+Graphic: statue
+
 Autonomous Movement
 Type: Fixed
 Speed: 3: Slow
@@ -24943,12 +23636,12 @@ List of Event Commands:
 : When [Yes]
  @>Text: Every statue that you find works as a teleport 
   :    : point.
- @>Script: Achievements.incrementProgress("STATUES",1)
  @>Recover All: Entire Party
- @>Call Save Screen
  @>Play ME: 'Pokemon Healing', 100, 100
+ @>Script: Achievements.incrementProgress("STATUES",1)
  @>Control Variables: [0080: StatuesTP] += 1
  @>Control Self Switch: A =ON
+ @>Call Save Screen
  @>
 : When [No]
  @>
@@ -24957,8 +23650,10 @@ List of Event Commands:
 
 Page #2
 Conditions
-Variable 0080: StatuesTP is 1 or above
+Variable 0080: StatuesTP is 6 or above
 Self Switch A is ON
+
+Graphic: statue
 
 Autonomous Movement
 Type: Fixed
@@ -24969,56 +23664,7 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
-@>Conditional Branch: Variable [0080: StatuesTP] == 6
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Conditional Branch: Variable [0080: StatuesTP] == 7
-    @>
-   : Else
-    @>
-   : Branch End
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
+@>Call Common Event: Teleport Statues
 @>
 
 #------------------------------------------------------------------------------
@@ -57339,6 +55985,8 @@ Page #1
 Conditions
 None
 
+Graphic: statue
+
 Autonomous Movement
 Type: Fixed
 Speed: 3: Slow
@@ -57356,12 +56004,12 @@ List of Event Commands:
 : When [Yes]
  @>Text: Every statue that you find works as a teleport 
   :    : point.
- @>Script: Achievements.incrementProgress("STATUES",1)
  @>Recover All: Entire Party
- @>Call Save Screen
  @>Play ME: 'Pokemon Healing', 100, 100
+ @>Script: Achievements.incrementProgress("STATUES",1)
  @>Control Variables: [0080: StatuesTP] += 1
  @>Control Self Switch: A =ON
+ @>Call Save Screen
  @>
 : When [No]
  @>
@@ -57370,8 +56018,10 @@ List of Event Commands:
 
 Page #2
 Conditions
-Variable 0080: StatuesTP is 1 or above
+Variable 0080: StatuesTP is 7 or above
 Self Switch A is ON
+
+Graphic: statue
 
 Autonomous Movement
 Type: Fixed
@@ -57382,248 +56032,7 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
-@>Conditional Branch: Variable [0080: StatuesTP] == 1
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Text: You have found no other statues.
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 2
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Cancel
- (When Cancel: Choice 3)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Cancel]
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 3
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop 
- (When Cancel: Choice 4)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 4
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, No
-  (When Cancel: Choice 2)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (017,030)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 5
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, No
-  (When Cancel: Choice 3)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 6
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 7
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 8
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, Northern Zone, Cancel
-   (When Cancel: Choice 3)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [Northern Zone]
-    @>Transfer Player:[207: Northern Area ], (017,006)
-    @>
-   : When [Cancel]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
+@>Call Common Event: Teleport Statues
 @>
 
 #------------------------------------------------------------------------------
@@ -85617,302 +84026,6 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
-Event ID: 002
-Event Name: AncientStone
-(X,Y): (017,005)
-
-Page #1
-Conditions
-None
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>Text: This is a spirit statue. Once activated, the spirit inside 
- :    : will lend you some of its power.
-@>Text: Activate statue?
-@>Show Choices: Yes, No
-(When Cancel: Choice 2)
-: When [Yes]
- @>Text: Every statue that you find works as a teleport 
-  :    : point.
- @>Script: Achievements.incrementProgress("STATUES",1)
- @>Recover All: Entire Party
- @>Call Save Screen
- @>Play ME: 'Pokemon Healing', 100, 100
- @>Control Variables: [0080: StatuesTP] += 1
- @>Control Self Switch: A =ON
- @>
-: When [No]
- @>
-: Branch End
-@>
-
-Page #2
-Conditions
-Variable 0080: StatuesTP is 8 or above
-Self Switch A is ON
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>Conditional Branch: Variable [0080: StatuesTP] == 1
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Text: You have found no other statues.
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 2
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Cancel
- (When Cancel: Choice 3)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Cancel]
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 3
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop 
- (When Cancel: Choice 4)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 4
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, No
-  (When Cancel: Choice 2)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (017,030)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 5
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, No
-  (When Cancel: Choice 3)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [No]
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 6
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 7
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, No
-   (When Cancel: Choice 2)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
-@>Conditional Branch: Variable [0080: StatuesTP] == 8
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Show Choices: Shore, Stone Temple, Mountaintop , Next
- (When Cancel: Branch)
- : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
-  @>
- : When [Stone Temple]
-  @>Transfer Player:[009: Temperate Zone], (037,015)
-  @>
- : When [Mountaintop ]
-  @>Transfer Player:[024: Mountain Zone], (019,033)
-  @>
- : When [Next]
-  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-  (When Cancel: Branch)
-  : When [Ocean Island]
-   @>Transfer Player:[001: Temperate Ocean], (016,032)
-   @>
-  : When [Water Temple]
-   @>Transfer Player:[034: Swamp Zone], (021,035)
-   @>
-  : When [Deep Swamp]
-   @>Transfer Player:[036: Deep Swamp], (029,018)
-   @>
-  : When [Next]
-   @>Show Choices: Humid Zone, Northern Zone, Cancel
-   (When Cancel: Choice 3)
-   : When [Humid Zone]
-    @>Transfer Player:[111: Humid Zone], (026,012)
-    @>
-   : When [Northern Zone]
-    @>Transfer Player:[207: Northern Area ], (017,006)
-    @>
-   : When [Cancel]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
-@>
-
-#------------------------------------------------------------------------------
 Event ID: 003
 Event Name: BerryPlant
 (X,Y): (041,005)
@@ -86036,6 +84149,65 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 006
+Event Name: AncientStone
+(X,Y): (017,005)
+
+Page #1
+Conditions
+None
+
+Graphic: statue
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: This is a spirit statue. Once activated, the spirit inside 
+ :    : will lend you some of its power.
+@>Text: Activate statue?
+@>Show Choices: Yes, No
+(When Cancel: Choice 2)
+: When [Yes]
+ @>Text: Every statue that you find works as a teleport 
+  :    : point.
+ @>Recover All: Entire Party
+ @>Play ME: 'Pokemon Healing', 100, 100
+ @>Script: Achievements.incrementProgress("STATUES",1)
+ @>Control Variables: [0080: StatuesTP] += 1
+ @>Control Self Switch: A =ON
+ @>Call Save Screen
+ @>
+: When [No]
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Variable 0080: StatuesTP is 8 or above
+Self Switch A is ON
+
+Graphic: statue
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Call Common Event: Teleport Statues
 @>
 
 #------------------------------------------------------------------------------
@@ -157359,6 +155531,41 @@ List of Event Commands:
 #------------------------------------------------------------------------------
 
 #==============================================================================
+Map ID: 349
+Map Name: MAP349
+Tileset: 001: Outside
+Width: 50, Height: 50
+
+#==============================================================================
+Map ID: 350
+Map Name: MAP350
+Tileset: 001: Outside
+Width: 50, Height: 50
+
+#------------------------------------------------------------------------------
+Event ID: 001
+Event Name: EV001
+(X,Y): (025,027)
+
+Page #1
+Conditions
+None
+
+Graphic: fk108-objects
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+#------------------------------------------------------------------------------
+
+#==============================================================================
 Map ID: 400
 Map Name: MAP400
 Tileset: 037: Contest
@@ -159621,7 +157828,6 @@ List of Event Commands:
 @>Show Choices: Craft, Prepare Meat, Pick Up, Cancel
 (When Cancel: Choice 4)
 : When [Craft]
- @>Show Picture: 1, 'craftingPage', Center (0,0), (100%,100%), 255, Normal
  @>Text: What would you like to cook?\ch[203,-1,Basics,Curry,Sweets,Drinks,Mints]
  @>Conditional Branch: Variable [0203: CraftingStorage] == 0
   @>Show Choices: Chocolate, Bread
@@ -159928,6 +158134,7 @@ List of Event Commands:
      @>Script: pbItemCrafter([
      :       : [:GRINDER,[:STONE,5,:IRON2,3]],
      :       : [:MEDICINEPOT,[:CLAY2,6,:CHARCOAL,3]],
+     :       : [:PORTABLECAMP,[:WOOL,30,:WOODENPLANKS,20,:COPPER2,7]],
      :       : [:COALGENERATOR,[:COPPER2,8,:IRON2,30,:FURNACE,4,:STONE,10]]
      :       : ])
      @>Exit Event Processing
@@ -159988,7 +158195,8 @@ List of Event Commands:
    : When [Advanced]
     @>Script: pbItemCrafter([
     :       : [:GRINDER,[:STONE,5,:IRON2,3]],
-    :       : [:MEDICINEPOT,[:CLAY2,6,:CHARCOAL,3]]
+    :       : [:MEDICINEPOT,[:CLAY2,6,:CHARCOAL,3]],
+    :       : [:PORTABLECAMP,[:WOOL,30,:WOODENPLANKS,20,:COPPER2,7]]
     :       : ])
     @>Exit Event Processing
     @>
@@ -161184,7 +159392,7 @@ List of Event Commands:
 
 #==============================================================================
 Common Event ID: 038
-Common Event Name: 
+Common Event Name: Clock
 
 Trigger: None
 
@@ -161265,11 +159473,243 @@ List of Event Commands:
 
 #==============================================================================
 Common Event ID: 047
-Common Event Name: 
+Common Event Name: Teleport Statues
 
 Trigger: None
 
 List of Event Commands:
+@>Conditional Branch: Variable [0080: StatuesTP] == 1
+ @>Text: This is a spirit statue. It can teleport you across the 
+  :    : map.
+ @>Text: You have found no other statues.
+ @>
+: Branch End
+@>Conditional Branch: Variable [0080: StatuesTP] == 2
+ @>Text: This is a spirit statue. It can teleport you across the 
+  :    : map.
+ @>Show Choices: Shore, Stone Temple, Cancel
+ (When Cancel: Choice 3)
+ : When [Shore]
+  @>Transfer Player:[005: Temperate Zone], (016,041), Down
+  @>
+ : When [Stone Temple]
+  @>Transfer Player:[009: Temperate Zone], (037,015), Down
+  @>
+ : When [Cancel]
+  @>
+ : Branch End
+ @>
+: Branch End
+@>Conditional Branch: Variable [0080: StatuesTP] == 3
+ @>Text: This is a spirit statue. It can teleport you across the 
+  :    : map.
+ @>Show Choices: Shore, Stone Temple, Mountaintop 
+ (When Cancel: Choice 4)
+ : When [Shore]
+  @>Transfer Player:[005: Temperate Zone], (013,035)
+  @>
+ : When [Stone Temple]
+  @>Transfer Player:[009: Temperate Zone], (037,015)
+  @>
+ : When [Mountaintop ]
+  @>Transfer Player:[024: Mountain Zone], (019,033)
+  @>
+ : Branch End
+ @>
+: Branch End
+@>Conditional Branch: Variable [0080: StatuesTP] == 4
+ @>Text: This is a spirit statue. It can teleport you across the 
+  :    : map.
+ @>Show Choices: Shore, Stone Temple, Mountaintop , Next
+ (When Cancel: Branch)
+ : When [Shore]
+  @>Transfer Player:[005: Temperate Zone], (013,035)
+  @>
+ : When [Stone Temple]
+  @>Transfer Player:[009: Temperate Zone], (037,015)
+  @>
+ : When [Mountaintop ]
+  @>Transfer Player:[024: Mountain Zone], (019,033)
+  @>
+ : When [Next]
+  @>Show Choices: Ocean Island, No
+  (When Cancel: Choice 2)
+  : When [Ocean Island]
+   @>Transfer Player:[001: Temperate Ocean], (017,030)
+   @>
+  : When [No]
+   @>
+  : Branch End
+  @>
+ : When Cancel
+  @>
+ : Branch End
+ @>
+: Branch End
+@>Conditional Branch: Variable [0080: StatuesTP] == 5
+ @>Text: This is a spirit statue. It can teleport you across the 
+  :    : map.
+ @>Show Choices: Shore, Stone Temple, Mountaintop , Next
+ (When Cancel: Branch)
+ : When [Shore]
+  @>Transfer Player:[005: Temperate Zone], (013,035)
+  @>
+ : When [Stone Temple]
+  @>Transfer Player:[009: Temperate Zone], (037,015)
+  @>
+ : When [Mountaintop ]
+  @>Transfer Player:[024: Mountain Zone], (019,033)
+  @>
+ : When [Next]
+  @>Show Choices: Ocean Island, Water Temple, No
+  (When Cancel: Choice 3)
+  : When [Ocean Island]
+   @>Transfer Player:[001: Temperate Ocean], (016,032)
+   @>
+  : When [Water Temple]
+   @>Transfer Player:[034: Swamp Zone], (021,035)
+   @>
+  : When [No]
+   @>
+  : Branch End
+  @>
+ : When Cancel
+  @>
+ : Branch End
+ @>
+: Branch End
+@>Conditional Branch: Variable [0080: StatuesTP] == 6
+ @>Text: This is a spirit statue. It can teleport you across the 
+  :    : map.
+ @>Show Choices: Shore, Stone Temple, Mountaintop , Next
+ (When Cancel: Branch)
+ : When [Shore]
+  @>Transfer Player:[005: Temperate Zone], (013,035)
+  @>
+ : When [Stone Temple]
+  @>Transfer Player:[009: Temperate Zone], (037,015)
+  @>
+ : When [Mountaintop ]
+  @>Transfer Player:[024: Mountain Zone], (019,033)
+  @>
+ : When [Next]
+  @>Show Choices: Ocean Island, Water Temple, Deep Swamp
+  (When Cancel: Branch)
+  : When [Ocean Island]
+   @>Transfer Player:[001: Temperate Ocean], (016,032)
+   @>
+  : When [Water Temple]
+   @>Transfer Player:[034: Swamp Zone], (021,035)
+   @>
+  : When [Deep Swamp]
+   @>Transfer Player:[036: Deep Swamp], (029,018)
+   @>
+  : When Cancel
+   @>
+  : Branch End
+  @>
+ : When Cancel
+  @>
+ : Branch End
+ @>
+: Branch End
+@>Conditional Branch: Variable [0080: StatuesTP] == 7
+ @>Text: This is a spirit statue. It can teleport you across the 
+  :    : map.
+ @>Show Choices: Shore, Stone Temple, Mountaintop , Next
+ (When Cancel: Branch)
+ : When [Shore]
+  @>Transfer Player:[005: Temperate Zone], (013,035)
+  @>
+ : When [Stone Temple]
+  @>Transfer Player:[009: Temperate Zone], (037,015)
+  @>
+ : When [Mountaintop ]
+  @>Transfer Player:[024: Mountain Zone], (019,033)
+  @>
+ : When [Next]
+  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
+  (When Cancel: Branch)
+  : When [Ocean Island]
+   @>Transfer Player:[001: Temperate Ocean], (016,032)
+   @>
+  : When [Water Temple]
+   @>Transfer Player:[034: Swamp Zone], (021,035)
+   @>
+  : When [Deep Swamp]
+   @>Transfer Player:[036: Deep Swamp], (029,018)
+   @>
+  : When [Next]
+   @>Show Choices: Humid Zone, No
+   (When Cancel: Choice 2)
+   : When [Humid Zone]
+    @>Transfer Player:[111: Humid Zone], (026,012)
+    @>
+   : When [No]
+    @>
+   : Branch End
+   @>
+  : When Cancel
+   @>
+  : Branch End
+  @>
+ : When Cancel
+  @>
+ : Branch End
+ @>
+: Else
+ @>
+: Branch End
+@>Conditional Branch: Variable [0080: StatuesTP] == 8
+ @>Text: This is a spirit statue. It can teleport you across the 
+  :    : map.
+ @>Show Choices: Shore, Stone Temple, Mountaintop , Next
+ (When Cancel: Branch)
+ : When [Shore]
+  @>Transfer Player:[005: Temperate Zone], (013,035)
+  @>
+ : When [Stone Temple]
+  @>Transfer Player:[009: Temperate Zone], (037,015)
+  @>
+ : When [Mountaintop ]
+  @>Transfer Player:[024: Mountain Zone], (019,033)
+  @>
+ : When [Next]
+  @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
+  (When Cancel: Branch)
+  : When [Ocean Island]
+   @>Transfer Player:[001: Temperate Ocean], (016,032)
+   @>
+  : When [Water Temple]
+   @>Transfer Player:[034: Swamp Zone], (021,035)
+   @>
+  : When [Deep Swamp]
+   @>Transfer Player:[036: Deep Swamp], (029,018)
+   @>
+  : When [Next]
+   @>Show Choices: Humid Zone, Northern Zone, Cancel
+   (When Cancel: Choice 3)
+   : When [Humid Zone]
+    @>Transfer Player:[111: Humid Zone], (026,012)
+    @>
+   : When [Northern Zone]
+    @>Transfer Player:[207: Northern Area ], (017,006)
+    @>
+   : When [Cancel]
+    @>
+   : Branch End
+   @>
+  : When Cancel
+   @>
+  : Branch End
+  @>
+ : When Cancel
+  @>
+ : Branch End
+ @>
+: Else
+ @>
+: Branch End
 @>
 
 #==============================================================================
@@ -161730,6 +160170,231 @@ List of Event Commands:
  : Branch End
  @>
 : Branch End
+@>
+
+#==============================================================================
+Common Event ID: 051
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 052
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 053
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 054
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 055
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 056
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 057
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 058
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 059
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 060
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 061
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 062
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 063
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 064
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 065
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 066
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 067
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 068
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 069
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 070
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 071
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 072
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 073
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 074
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
+@>
+
+#==============================================================================
+Common Event ID: 075
+Common Event Name: 
+
+Trigger: None
+
+List of Event Commands:
 @>
 
 #==============================================================================

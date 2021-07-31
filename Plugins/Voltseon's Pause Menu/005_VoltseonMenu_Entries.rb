@@ -277,9 +277,9 @@ class MenuEntryQuit < MenuEntry
 	def selected(menu)
 		menu.pbHideMenu
 		if pbConfirmMessage(_INTL("Are you sure you want to quit the game?"))
-			scene = PokemonSave_Scene.new
-			screen = PokemonSaveScreen.new(scene)
-			screen.pbSaveScreen
+#			scene = PokemonSave_Scene.new
+#			screen = PokemonSaveScreen.new(scene)
+#			screen.pbSaveScreen
 			menu.pbEndScene
 			$scene = nil
 			exit!

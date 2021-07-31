@@ -245,7 +245,7 @@ class Crafts_Scene
                 end
               #end
             else
-              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items!"))
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
             end
           elsif CraftsList.getcrafts[@currentArray][3]==:NO&&CraftsList.getcrafts[@currentArray][2]!=:NO
             if $PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant &&
@@ -261,7 +261,7 @@ class Crafts_Scene
                 @quantB=0
                 @quantC=0
             else
-              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items!"))
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 2"))
             end
           else
             if $PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant &&
@@ -280,7 +280,7 @@ class Crafts_Scene
               @quantB=0
               @quantC=0
             else
-              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items!"))
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 3"))
             end
           end
         elsif @selection==0
@@ -292,6 +292,7 @@ class Crafts_Scene
             if crafts[i][1]==@itemA &&
             crafts[i][2]==@itemB &&
             crafts[i][3]==@itemC
+     		  pbMessage(_INTL("If ABC2 succeeded!"))
               @currentArray=i
               @returnItem=crafts[i][0]
               @required[1]=crafts[i][1]
@@ -301,6 +302,7 @@ class Crafts_Scene
               @quantB=0
             end
             if crafts[i][3]!=@itemC && @itemC==:NO
+              @itemC=:NO
               @quantC=0
             end
 		  end
@@ -308,21 +310,22 @@ class Crafts_Scene
         elsif @selection==1
           @returnItem=:NO
           @itemB=Kernel.pbChooseItem
+		  crafts = CraftsList.getcrafts
           for i in 0..45
-            if CraftsList.getcrafts[i][1]==@itemA &&
-            CraftsList.getcrafts[i][2]==@itemB &&
-            CraftsList.getcrafts[i][3]==@itemC
+            if crafts[i][1]==@itemA &&
+            crafts[i][2]==@itemB &&
+            crafts[i][3]==@itemC
      		  pbMessage(_INTL("If ABC2 succeeded!"))
      		  pbMessage(_INTL("A = {1}, B = {2}, C = {3}",@itemA,@itemB,@itemC))
               @currentArray=i
-              @returnItem=CraftsList.getcrafts[i][0]
-              @required[2]=CraftsList.getcrafts[i][2]
+              @returnItem=crafts[i][0]
+              @required[2]=crafts[i][2]
             end
-            if CraftsList.getcrafts[i][2]!=@itemA && @itemA==:NO
+            if crafts[i][2]!=@itemA && @itemA==:NO
               @itemA=:NO
               @quantA=0
             end
-            if CraftsList.getcrafts[i][2]!=@itemC && @itemC==:NO
+            if crafts[i][2]!=@itemC && @itemC==:NO
               @itemC=:NO
               @quantC=0
             end
@@ -331,21 +334,22 @@ class Crafts_Scene
         elsif @selection==2
           @returnItem=:NO
           @itemC=Kernel.pbChooseItem
+		  crafts = CraftsList.getcrafts
           for i in 0..45
-            if CraftsList.getcrafts[i][1]==@itemA &&
-            CraftsList.getcrafts[i][2]==@itemB &&
-            CraftsList.getcrafts[i][3]==@itemC
+            if crafts[i][1]==@itemA &&
+            crafts[i][2]==@itemB &&
+            Ccrafts[i][3]==@itemC
      		  pbMessage(_INTL("If ABC3 succeeded!"))
      		  pbMessage(_INTL("A = {1}, B = {2}, C = {3}",@itemA,@itemB,@itemC))
               @currentArray=i
-              @returnItem=CraftsList.getcrafts[i][0]
-              @required[3]=CraftsList.getcrafts[i][3]
+              @returnItem=crafts[i][0]
+              @required[3]=crafts[i][3]
             end
-            if CraftsList.getcrafts[i][2]!=@itemA && @itemA==:NO
+            if crafts[i][2]!=@itemA && @itemA==:NO
               @itemA=:NO
               @quantA=0
             end
-            if CraftsList.getcrafts[i][2]!=@itemB && @itemB==:NO
+            if crafts[i][2]!=@itemB && @itemB==:NO
               @itemB=:NO
               @quantB=0
             end
@@ -417,8 +421,7 @@ class PokemoncraftSelect
 end
 
 module CraftsList
-  def self.getcrafts
-    @CraftsList=[
+    @CraftsList = [
 	#[RESULT = Item 1 + Item 2 + Item 3]
     [:NO,:NO,:NO,:NO], #Empty
     #RECIPE 1: 
@@ -663,7 +666,9 @@ module CraftsList
     [:SERIOUSMINT,:SPELONBERRY,:SUGAR,:NO],
 	#RECIPE 36:
     [:STONE,:ACORN,:REDAPRICORN,:ORANBERRY], #Empty
+    [:STONE,:ACORN,:NO,:NO]
     ]
+  def self.getcrafts
     return @CraftsList
   end
 end

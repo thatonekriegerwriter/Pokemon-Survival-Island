@@ -522,3 +522,10 @@
 [23:01:08 Fri 16-Jul-2021] [DEBUG] No EBDX Move Animation found for: ENERGYBALL
 [23:01:55 Fri 16-Jul-2021] [DEBUG] No EBDX Move Animation found for: POISONSTING
 [23:02:10 Fri 16-Jul-2021] [DEBUG] No EBDX Move Animation found for: BUBBLEBEAM
+[00:25:54 Sat 31-Jul-2021] [DEBUG] No EBDX Move Animation found for: QUICKATTACK
+[00:40:07 Sat 31-Jul-2021] [DEBUG] No EBDX Move Animation found for: BRINE
+[00:40:25 Sat 31-Jul-2021] [DEBUG] No EBDX Move Animation found for: BRINE
+[00:41:34 Sat 31-Jul-2021] [DEBUG] No EBDX Move Animation found for: BRINE
+[01:13:03 Sat 31-Jul-2021] [DEBUG] No EBDX Move Animation found for: BRINE
+[02:46:57 Sat 31-Jul-2021] [DEBUG] No EBDX Move Animation found for: BRINE
+[02:47:01 Sat 31-Jul-2021] [DEBUG] No EBDX Move Animation found for: SMACKDOWN

@@ -7,7 +7,7 @@ module BlackJack
 	# Class
 	class Play
 		# Check delay for clicking
-		DelayMouse = 1
+		DelayMouse = 0
 		# Quantity of player (Dont change it)
 		QuantityPlayer = 4
 		# Name of AI, the size of this array must be greater than or equal to 3

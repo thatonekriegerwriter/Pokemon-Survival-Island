@@ -18164,3 +18164,480 @@ Backtrace:
 374:Main:18:in `block in mainFunction'
 014:Errors:71:in `pbCriticalCode'
 374:Main:18:in `mainFunction'
+
+=================
+
+[2021-07-30 19:58:27 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 38 (coords 9,12), map 10 (Temperate Base):
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::Item, String, Integer], but got NilClass.
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+244:PokemonBag:91:in `pbQuantity'
+[SI Crafting] craftingold.rb:356:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:676:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-07-30 20:24:33 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 38 (coords 9,12), map 10 (Temperate Base):
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::Item, String, Integer], but got NilClass.
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+244:PokemonBag:91:in `pbQuantity'
+[SI Crafting] craftingold.rb:356:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:676:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-07-30 21:01:51 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 38 (coords 9,12), map 10 (Temperate Base):
+Exception: NoMethodError
+Message: undefined method `[]' for nil:NilClass
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+[SI Crafting] craftingold.rb:539:in `block in pbSelectcraft'
+[SI Crafting] craftingold.rb:538:in `each'
+[SI Crafting] craftingold.rb:538:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:680:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-07-30 21:53:38 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.3]
+
+Error in Plugin [SI Crafting]:
+SyntaxError occurred.
+Line 481: Syntax error, unexpected ']', expecting `end'
+    ]
+    ^: [SI Crafting] craftingold.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+374:Main:27:in `mainFunctionDebug'
+374:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+374:Main:18:in `mainFunction'
+
+=================
+
+[2021-07-30 21:54:36 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.3]
+
+Error in Plugin [SI Crafting]:
+SyntaxError occurred.
+Line 489: Syntax error, unexpected ']', expecting `end'
+    ]
+    ^: [SI Crafting] craftingold.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+374:Main:27:in `mainFunctionDebug'
+374:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+374:Main:18:in `mainFunction'
+
+=================
+
+[2021-07-30 21:58:00 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.3]
+
+Error in Plugin [SI Crafting]:
+SyntaxError occurred.
+Line 489: Syntax error, unexpected ']', expecting `end'
+    ]
+    ^: [SI Crafting] craftingold.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+374:Main:27:in `mainFunctionDebug'
+374:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+374:Main:18:in `mainFunction'
+
+=================
+
+[2021-07-30 21:59:41 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.3]
+
+Error in Plugin [SI Crafting]:
+SyntaxError occurred.
+Line 509: Syntax error, unexpected ']', expecting `end'
+    ]
+    ^: [SI Crafting] craftingold.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+374:Main:27:in `mainFunctionDebug'
+374:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+374:Main:18:in `mainFunction'
+
+=================
+
+[2021-07-31 00:23:08 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `battler' for #<PokeBattle_Battler>
+
+Backtrace:
+157:Battler_UseMove_SuccessChecks:141:in `pbObedienceCheck?'
+157:Battler_UseMove_SuccessChecks:259:in `pbTryUseMove'
+155:Battler_UseMove:198:in `pbUseMove'
+[Elite Battle: DX] Scripted Battles.rb:65:in `pbUseMove'
+[Battle Stuff] 008_SOS.rb:288:in `block in pbProcessTurn'
+012:PBDebug:6:in `logonerr'
+[Battle Stuff] 008_SOS.rb:287:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+181:Battle_Phase_Attack:124:in `block in pbAttackPhaseMoves'
+
+=================
+
+[2021-07-31 00:23:33 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `battler' for #<PokeBattle_Battler>
+
+Backtrace:
+157:Battler_UseMove_SuccessChecks:141:in `pbObedienceCheck?'
+157:Battler_UseMove_SuccessChecks:259:in `pbTryUseMove'
+155:Battler_UseMove:198:in `pbUseMove'
+[Elite Battle: DX] Scripted Battles.rb:65:in `pbUseMove'
+[Battle Stuff] 008_SOS.rb:288:in `block in pbProcessTurn'
+012:PBDebug:6:in `logonerr'
+[Battle Stuff] 008_SOS.rb:287:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+181:Battle_Phase_Attack:124:in `block in pbAttackPhaseMoves'
+
+=================
+
+[2021-07-31 00:23:35 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `battler' for #<PokeBattle_Battler>
+
+Backtrace:
+157:Battler_UseMove_SuccessChecks:141:in `pbObedienceCheck?'
+157:Battler_UseMove_SuccessChecks:259:in `pbTryUseMove'
+155:Battler_UseMove:198:in `pbUseMove'
+[Elite Battle: DX] Scripted Battles.rb:65:in `pbUseMove'
+[Battle Stuff] 008_SOS.rb:288:in `block in pbProcessTurn'
+012:PBDebug:6:in `logonerr'
+[Battle Stuff] 008_SOS.rb:287:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+181:Battle_Phase_Attack:124:in `block in pbAttackPhaseMoves'
+
+=================
+
+[2021-07-31 00:23:36 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `battler' for #<PokeBattle_Battler>
+
+Backtrace:
+157:Battler_UseMove_SuccessChecks:141:in `pbObedienceCheck?'
+157:Battler_UseMove_SuccessChecks:259:in `pbTryUseMove'
+155:Battler_UseMove:198:in `pbUseMove'
+[Elite Battle: DX] Scripted Battles.rb:65:in `pbUseMove'
+[Battle Stuff] 008_SOS.rb:288:in `block in pbProcessTurn'
+012:PBDebug:6:in `logonerr'
+[Battle Stuff] 008_SOS.rb:287:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+181:Battle_Phase_Attack:124:in `block in pbAttackPhaseMoves'
+
+=================
+
+[2021-07-31 00:25:56 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `badgelevel' for #<PokeBattle_Battler>
+
+Backtrace:
+157:Battler_UseMove_SuccessChecks:168:in `pbDisobey'
+157:Battler_UseMove_SuccessChecks:145:in `pbObedienceCheck?'
+157:Battler_UseMove_SuccessChecks:259:in `pbTryUseMove'
+155:Battler_UseMove:198:in `pbUseMove'
+[Elite Battle: DX] Scripted Battles.rb:65:in `pbUseMove'
+[Battle Stuff] 008_SOS.rb:288:in `block in pbProcessTurn'
+012:PBDebug:6:in `logonerr'
+[Battle Stuff] 008_SOS.rb:287:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+
+=================
+
+[2021-07-31 00:25:57 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `badgelevel' for #<PokeBattle_Battler>
+
+Backtrace:
+157:Battler_UseMove_SuccessChecks:168:in `pbDisobey'
+157:Battler_UseMove_SuccessChecks:145:in `pbObedienceCheck?'
+157:Battler_UseMove_SuccessChecks:259:in `pbTryUseMove'
+155:Battler_UseMove:198:in `pbUseMove'
+[Elite Battle: DX] Scripted Battles.rb:65:in `pbUseMove'
+[Battle Stuff] 008_SOS.rb:288:in `block in pbProcessTurn'
+012:PBDebug:6:in `logonerr'
+[Battle Stuff] 008_SOS.rb:287:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+
+=================
+
+[2021-07-31 00:31:13 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `badgelevel' for #<PokeBattle_Battler>
+
+Backtrace:
+157:Battler_UseMove_SuccessChecks:174:in `pbDisobey'
+157:Battler_UseMove_SuccessChecks:151:in `pbObedienceCheck?'
+157:Battler_UseMove_SuccessChecks:265:in `pbTryUseMove'
+155:Battler_UseMove:198:in `pbUseMove'
+[Elite Battle: DX] Scripted Battles.rb:65:in `pbUseMove'
+[Battle Stuff] 008_SOS.rb:288:in `block in pbProcessTurn'
+012:PBDebug:6:in `logonerr'
+[Battle Stuff] 008_SOS.rb:287:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+
+=================
+
+[2021-07-31 00:31:46 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `badgelevel' for #<PokeBattle_Battler>
+
+Backtrace:
+157:Battler_UseMove_SuccessChecks:174:in `pbDisobey'
+157:Battler_UseMove_SuccessChecks:151:in `pbObedienceCheck?'
+157:Battler_UseMove_SuccessChecks:265:in `pbTryUseMove'
+155:Battler_UseMove:198:in `pbUseMove'
+[Elite Battle: DX] Scripted Battles.rb:65:in `pbUseMove'
+[Battle Stuff] 008_SOS.rb:288:in `block in pbProcessTurn'
+012:PBDebug:6:in `logonerr'
+[Battle Stuff] 008_SOS.rb:287:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+
+=================
+
+[2021-07-31 00:31:49 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `badgelevel' for #<PokeBattle_Battler>
+
+Backtrace:
+157:Battler_UseMove_SuccessChecks:174:in `pbDisobey'
+157:Battler_UseMove_SuccessChecks:151:in `pbObedienceCheck?'
+157:Battler_UseMove_SuccessChecks:265:in `pbTryUseMove'
+155:Battler_UseMove:198:in `pbUseMove'
+[Elite Battle: DX] Scripted Battles.rb:65:in `pbUseMove'
+[Battle Stuff] 008_SOS.rb:288:in `block in pbProcessTurn'
+012:PBDebug:6:in `logonerr'
+[Battle Stuff] 008_SOS.rb:287:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+
+=================
+
+[2021-07-31 00:31:51 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `badgelevel' for #<PokeBattle_Battler>
+
+Backtrace:
+157:Battler_UseMove_SuccessChecks:174:in `pbDisobey'
+157:Battler_UseMove_SuccessChecks:151:in `pbObedienceCheck?'
+157:Battler_UseMove_SuccessChecks:265:in `pbTryUseMove'
+155:Battler_UseMove:198:in `pbUseMove'
+[Elite Battle: DX] Scripted Battles.rb:65:in `pbUseMove'
+[Battle Stuff] 008_SOS.rb:288:in `block in pbProcessTurn'
+012:PBDebug:6:in `logonerr'
+[Battle Stuff] 008_SOS.rb:287:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+
+=================
+
+[2021-07-31 00:31:54 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `badgelevel' for #<PokeBattle_Battler>
+
+Backtrace:
+157:Battler_UseMove_SuccessChecks:174:in `pbDisobey'
+157:Battler_UseMove_SuccessChecks:151:in `pbObedienceCheck?'
+157:Battler_UseMove_SuccessChecks:265:in `pbTryUseMove'
+155:Battler_UseMove:198:in `pbUseMove'
+[Elite Battle: DX] Scripted Battles.rb:65:in `pbUseMove'
+[Battle Stuff] 008_SOS.rb:288:in `block in pbProcessTurn'
+012:PBDebug:6:in `logonerr'
+[Battle Stuff] 008_SOS.rb:287:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
