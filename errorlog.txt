@@ -19058,3 +19058,79 @@ Backtrace:
 [Luka's Scripting Utilities] script.rb:701:in `initialize'
 [Luka's Scripting Utilities] script.rb:701:in `initialize'
 [Luka's Scripting Utilities] script.rb:701:in `initialize'
+
+=================
+
+[2021-07-31 23:25:49 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 5 (coords 5,6), map 306 (Xatu Home):
+Exception: RuntimeError
+Message: Unknown ID 0.
+
+***Full script:
+pbAddPokemonSilent(pbGet(402))
+pbAddPokemonSilent(pbGet(403))
+pbAddPokemonSilent(pbGet(404))
+pbAddPokemonSilent(pbGet(405))
+
+
+Backtrace:
+101:GameData:32:in `get'
+247:Pokemon:1088:in `initialize'
+[Pokemon Amie/ Refresh] 3 - New function.rb:6:in `initialize'
+339:Utilities_Pokemon:82:in `new'
+339:Utilities_Pokemon:82:in `pbAddPokemonSilent'
+[Elite Battle: DX] EBDX Randomizer.rb:312:in `pbAddPokemonSilent'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-08-01 00:24:26 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 7 (coords 6,18), map 4 (Temperate Zone):
+Exception: SyntaxError
+Message: (eval):1: syntax error, unexpected end-of-input, expecting ')'
+
+***Full script:
+pbStoreItem(:STONE,rand(75)
+
+Backtrace:
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
