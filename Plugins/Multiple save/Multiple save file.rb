@@ -186,10 +186,10 @@ class PokemonSaveScreen
 		count = FileSave.count
 		# Start
     msg = _INTL("What do you want to do?")
-		cmds = [_INTL("Delete"),_INTL("Save"),_INTL("Cancel")]
+		cmds = [_INTL("Save"),_INTL("Delete"),_INTL("Cancel")]
 		cmd = pbCustomMessageForSave(msg,cmds,3)
 		# Delete
-		if cmd==0
+		if cmd==1
 			if count <= 0
 				pbMessage(_INTL("No save file was found."))
 			else
@@ -231,7 +231,7 @@ class PokemonSaveScreen
 		else
 			@scene.pbStartScreen
 			# Save
-			if cmd==1
+			if cmd==0
 				cmds = [_INTL("New Save File"),_INTL("Old Save File")]
 				cmds << _INTL("Save current save file") if !$storenamefilesave.nil? && count>0
 				cmds << _INTL("Cancel")
@@ -298,13 +298,11 @@ class PokemonLoadScreen
     commands = []
     cmd_continue     = -1
     cmd_new_game     = -1
-    cmd_options      = -1
     cmd_debug        = -1
     cmd_quit         = -1
     show_continue    = FileSave.count>0
     commands[cmd_continue = commands.length] = _INTL('Load Game') if show_continue
     commands[cmd_new_game = commands.length]  = _INTL('New Game')
-    commands[cmd_options = commands.length]   = _INTL('Options')
     commands[cmd_debug = commands.length]     = _INTL('Debug') if $DEBUG
     commands[cmd_quit = commands.length]      = _INTL('Quit Game')
 		@scene.pbStartScene(commands, false, nil, 0, 0)
@@ -754,13 +752,6 @@ class ScreenChooseFileSave
 				@sprites["player"].x        = 56*2-charwidth/8
 				@sprites["player"].y        = 56*2-charheight/8
 				@sprites["player"].src_rect = Rect.new(0,0,charwidth/4,charheight/4)
-			end
-			for i in 0...trainer.party.length
-				@sprites["party#{i}"] = PokemonIconSprite.new(trainer.party[i],@viewport)
-				@sprites["party#{i}"].setOffset(PictureOrigin::Center)
-				@sprites["party#{i}"].x = (167+33*(i%2))*2
-				@sprites["party#{i}"].y = (56+25*(i/2))*2
-				@sprites["party#{i}"].z = 99999
 			end
       # Fade
       pbFadeInAndShow(@sprites) { update }

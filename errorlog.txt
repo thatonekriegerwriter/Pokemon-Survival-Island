@@ -18641,3 +18641,420 @@ Backtrace:
 [Battle Stuff] 008_SOS.rb:287:in `pbProcessTurn'
 181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
 181:Battle_Phase_Attack:124:in `each'
+
+=================
+
+[2021-07-31 14:54:12 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.3]
+
+Error in Plugin [Power]:
+SyntaxError occurred.
+Line 340: Syntax error, unexpected `end', expecting '}': [Power] Survival Mode.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+375:Main:27:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+375:Main:18:in `mainFunction'
+
+=================
+
+[2021-07-31 14:55:07 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.3]
+
+Error in Plugin [Power]:
+SyntaxError occurred.
+Line 251: Syntax error, unexpected `end', expecting '}': [Power] Survival Mode.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+375:Main:27:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+375:Main:18:in `mainFunction'
+
+=================
+
+[2021-07-31 16:22:11 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `pbStartOver_ebdx_nuzlocke' for main:Object
+
+Backtrace:
+[Elite Battle: DX] EBDX Nuzlocke.rb:298:in `pbStartOver'
+[Power] Survival Mode.rb:338:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+032:Scene_Map:225:in `update'
+[Unreal Time] FL Unreal Time.rb:153:in `update'
+[Following Pokemon EX] 004_Follower_Overrides.rb:702:in `update'
+[Check Seasons like B2W2] Check Seasons like B2W2.rb:62:in `update'
+032:Scene_Map:236:in `block in main'
+
+=================
+
+[2021-07-31 16:24:56 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `pbStartOver_ebdx_nuzlocke' for main:Object
+
+Backtrace:
+[Elite Battle: DX] EBDX Nuzlocke.rb:298:in `pbStartOver'
+[Power] Survival Mode.rb:252:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+215:Overworld:179:in `pbOnStepTaken'
+047:Game_Player:370:in `update_event_triggering'
+047:Game_Player:324:in `update'
+[Following Pokemon EX] 004_Follower_Overrides.rb:390:in `update'
+032:Scene_Map:169:in `block in update'
+
+=================
+
+[2021-07-31 17:38:18 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `<' for nil:NilClass
+
+Backtrace:
+[Pokemon Amie/ Refresh] 2 - Set item.rb:95:in `block (2 levels) in <main>'
+[Pokemon Amie/ Refresh] 2 - Set item.rb:94:in `each'
+[Pokemon Amie/ Refresh] 2 - Set item.rb:94:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+215:Overworld:176:in `pbOnStepTaken'
+047:Game_Player:370:in `update_event_triggering'
+047:Game_Player:324:in `update'
+[Following Pokemon EX] 004_Follower_Overrides.rb:390:in `update'
+
+=================
+
+[2021-07-31 17:43:04 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 1 (coords 0,0), map 51 (INTRO):
+Exception: ArgumentError
+Message: wrong number of arguments (given 1, expected 2..4)
+
+***Full script:
+pbAddPokemon(:VULPIX,5)
+pkmn = pbGenPkmn(:VULPIX)
+pkmn.form = 1
+pbAddPokemon(pkmn)
+
+
+Backtrace:
+252:Pokemon_Deprecated:202:in `pbNewPkmn'
+(eval):2:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-07-31 17:44:43 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 1 (coords 0,0), map 51 (INTRO):
+Exception: ArgumentError
+Message: wrong number of arguments (given 1, expected 2..4)
+
+***Full script:
+pbAddPokemon(:VULPIX,5)
+pkmn = pbGenPkmn(:VULPIX)
+pkmn.form = 1
+pbAddPokemon(pkmn)
+
+
+Backtrace:
+252:Pokemon_Deprecated:202:in `pbNewPkmn'
+(eval):2:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-07-31 18:01:10 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 7 (coords 6,18), map 4 (Temperate Zone):
+Exception: SyntaxError
+Message: (eval):1: syntax error, unexpected end-of-input, expecting ')'
+
+***Full script:
+pbStoreItem(:STONE,(rand(75))
+
+Backtrace:
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-07-31 18:19:23 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `<' for nil:NilClass
+
+Backtrace:
+[Pokemon Amie/ Refresh] 2 - Set item.rb:95:in `block (2 levels) in <main>'
+[Pokemon Amie/ Refresh] 2 - Set item.rb:94:in `each'
+[Pokemon Amie/ Refresh] 2 - Set item.rb:94:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+215:Overworld:176:in `pbOnStepTaken'
+047:Game_Player:370:in `update_event_triggering'
+047:Game_Player:324:in `update'
+[Following Pokemon EX] 004_Follower_Overrides.rb:390:in `update'
+
+=================
+
+[2021-07-31 18:19:55 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `newFrameCount' for nil:NilClass
+
+Backtrace:
+[Unreal Time] FL Unreal Time.rb:83:in `pbGetTimeNow'
+217:Overworld_Time:49:in `isNight?'
+255:FormHandlers:332:in `block in <main>'
+255:FormHandlers:31:in `call'
+247:Pokemon:144:in `form'
+131:Species_Files:119:in `icon_filename_from_pokemon'
+257:Pokemon_Sprites:132:in `pokemon='
+257:Pokemon_Sprites:97:in `initialize'
+[Multiple save (v.19)] Multiple save file.rb:759:in `new'
+[Multiple save (v.19)] Multiple save file.rb:759:in `block in drawInfor'
+
+=================
+
+[2021-07-31 18:29:08 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `items' for [#<NPCTrainer Battling Prodigy   Blue @party=[:LILLIPUP, :EEVEE]>]:Array
+
+Backtrace:
+[bw] 007_Battle-Worn.rb:60:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+230:Overworld_BattleStarting:395:in `block in pbTrainerBattleCore'
+230:Overworld_BattleStarting:384:in `each'
+230:Overworld_BattleStarting:384:in `pbTrainerBattleCore'
+230:Overworld_BattleStarting:507:in `pbTrainerBattle'
+363:Debug_MenuCommands:283:in `block in <main>'
+363:Debug_MenuCommands:36:in `call'
+
+=================
+
+[2021-07-31 18:32:26 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `party' for [#<NPCTrainer Champion   Blue @party=[:VENUSAUR, :CHARIZARD, :BLASTOISE]>]:Array
+
+Backtrace:
+[bw] 007_Battle-Worn.rb:60:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+230:Overworld_BattleStarting:395:in `block in pbTrainerBattleCore'
+230:Overworld_BattleStarting:384:in `each'
+230:Overworld_BattleStarting:384:in `pbTrainerBattleCore'
+230:Overworld_BattleStarting:507:in `pbTrainerBattle'
+363:Debug_MenuCommands:283:in `block in <main>'
+363:Debug_MenuCommands:36:in `call'
+
+=================
+
+[2021-07-31 18:34:23 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `each' for nil:NilClass
+
+Backtrace:
+[bw] 007_Battle-Worn.rb:62:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+230:Overworld_BattleStarting:395:in `block in pbTrainerBattleCore'
+230:Overworld_BattleStarting:384:in `each'
+230:Overworld_BattleStarting:384:in `pbTrainerBattleCore'
+230:Overworld_BattleStarting:507:in `pbTrainerBattle'
+363:Debug_MenuCommands:283:in `block in <main>'
+363:Debug_MenuCommands:36:in `call'
+
+=================
+
+[2021-07-31 19:31:57 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: uninitialized constant Scene_Map::PokemonHUDMenu_Scene
+
+Backtrace:
+032:Scene_Map:111:in `call_HUD'
+032:Scene_Map:215:in `update'
+[Unreal Time] FL Unreal Time.rb:153:in `update'
+[Following Pokemon EX] 004_Follower_Overrides.rb:702:in `update'
+[Check Seasons like B2W2] Check Seasons like B2W2.rb:62:in `update'
+032:Scene_Map:236:in `block in main'
+032:Scene_Map:233:in `loop'
+032:Scene_Map:233:in `main'
+375:Main:34:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+
+=================
+
+[2021-07-31 19:32:57 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `<' for nil:NilClass
+
+Backtrace:
+[Pokemon Amie/ Refresh] 2 - Set item.rb:95:in `block (2 levels) in <main>'
+[Pokemon Amie/ Refresh] 2 - Set item.rb:94:in `each'
+[Pokemon Amie/ Refresh] 2 - Set item.rb:94:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+215:Overworld:176:in `pbOnStepTaken'
+047:Game_Player:370:in `update_event_triggering'
+047:Game_Player:324:in `update'
+[Following Pokemon EX] 004_Follower_Overrides.rb:390:in `update'
+
+=================
+
+[2021-07-31 19:54:50 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.3]
+
+Error in Plugin [Item Crafting UI]:
+SystemStackError occurred.
+Stack level too deep: stack level too deep
+
+Backtrace:
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'

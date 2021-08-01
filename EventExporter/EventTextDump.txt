@@ -1496,12 +1496,12 @@ Move Animation
 Trigger: Player Touch
 
 List of Event Commands:
-@>Conditional Branch: Script: $PokemonBag.pbHasItem?(:RUSTEDPICKAXE)
+@>Conditional Branch: Script: $PokemonBag.pbHasItem?(:PICKAXE)
  @>Text: Do you want to mine this place out?
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
-  @>Conditional Branch: Script: pbStoreItem(:STONE,(rand(75))
+  @>Conditional Branch: Script: pbStoreItem(:STONE,rand(75)
    @>
   : Branch End
   @>Text: You use your time to mine out a base.
@@ -2114,7 +2114,7 @@ Move Animation
 Trigger: Player Touch
 
 List of Event Commands:
-@>Text: The rock up there looks like you could hallow it out for a place to stay.
+@>Text: The rock up there looks like you could hallow it out for a place to stay if you had some kind of PIckaxe.
 @>Control Self Switch: A =ON
 @>
 
@@ -2474,7 +2474,6 @@ List of Event Commands:
 Page #2
 Conditions
 Variable 0080: StatuesTP is 1 or above
-Self Switch A is ON
 
 Graphic: statue
 
@@ -2831,10 +2830,9 @@ Move Animation
 Trigger: Autorun
 
 List of Event Commands:
-@>Script: pbPokemonFollow(11)
 @>Change Screen Color Tone: (-255,-255,-255,0), @20
 @>Change Screen Color Tone: (0,0,0,0), @30
-@>Text: You wake up on a Beach. You can see your items have washed ashore alongside you, and you should pick them up.
+@>Text: You wake up on a Beach. You can see your items and Pokemon have washed ashore alongside you,
 @>Call Save Screen
 @>Control Self Switch: A =ON
 @>
@@ -3335,7 +3333,8 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Play SE: 'itemlevel', 100, 100
-@>Script: Kernel.pbReceiveItem(:RUSTEDPICKAXE)
+@>Text: You picked up your POKeBALLs.
+@>Script: pbPokemonFollow(11)
 @>Control Variables: [0212: GrabbedItem] += 1
 @>Control Self Switch: A =ON
 @>
@@ -5525,7 +5524,6 @@ List of Event Commands:
 Page #2
 Conditions
 Variable 0080: StatuesTP is 2 or above
-Self Switch A is ON
 
 Graphic: statue
 
@@ -13884,7 +13882,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
-  @>Conditional Branch: Script: pbStoreItem(:STONE,(rand(125))
+  @>Conditional Branch: Script: pbStoreItem(:STONE,rand(125)
    @>
   : Branch End
   @>Text: You use your time to mine out a base.
@@ -35983,9 +35981,6 @@ List of Event Commands:
  @>Text: You can now open the menu to check IVs.
  @>Text: If you move, it will continue the game.
  @>Script: pbAddPokemon(:VULPIX,5)
- @>Script: pkmn = pbGenPkmn(:VULPIX)
- :       : pkmn.form = 1
- :       : pbAddPokemon(pkmn)
  @>Transfer Player:[245: Hoenn Region], (009,006)
  @>Exit Event Processing
  @>Control Self Switch: B =ON
@@ -98372,15 +98367,15 @@ Speed: 3: Slow
 Freq: 3: Low
 Options Enabled
 Move Animation
-Trigger: Event Touch
+Trigger: Autorun
 
 List of Event Commands:
 @>Show Picture: 1, 'introbg', Upper Left (0,0), (100%,100%), 255, Normal
-@>Script: pbAddPokemon(:VULPIX,5)
-:       : pkmn = $Trainer.party[1]
-:       : pkmn.shiny = true
 @>Text: You can now open the menu to check IVs.
 @>Text: If you move, it will continue the game.
+@>Script: pbAddPokemon(:VULPIX,5)
+@>Script: pkmn = $Trainer.party[1]
+:       : pkmn.shiny = true
 @>Control Self Switch: A =ON
 @>
 
@@ -110869,7 +110864,7 @@ List of Event Commands:
 : When [Yes]
  @>Conditional Branch: Script: $PokemonBag.pbHasItem?(:STARPIECE)
   @>Conditional Branch: Script: $PokemonBag.pbDeleteItem(:STARPIECE,1)
-   @>Script: pbPokeCenterPC
+   @>Script: pbStoragePC
    @>
   : Branch End
   @>
@@ -110917,6 +110912,92 @@ Trigger: Player Touch
 
 List of Event Commands:
 @>Control Switches: [0492: Wenthere] = ON
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 006
+Event Name: CraftingTable
+(X,Y): (003,006)
+
+Page #1
+Conditions
+Switch 0150: CRAFTING is ON
+
+Graphic: Object ball
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: $PokemonBag.pbHasItem?(:UPGRADEDCRAFTINGBENCH)
+ @>Text: Place Upgraded Crafting Bench?
+ @>Show Choices: Yes, No
+ (When Cancel: Choice 2)
+ : When [Yes]
+  @>Script: $PokemonBag.pbDeleteItem(:UPGRADEDCRAFTINGBENCH)
+  @>Control Self Switch: B =ON
+  @>
+ : When [No]
+  @>
+ : Branch End
+ @>
+: Else
+ @>Conditional Branch: Script: $PokemonBag.pbHasItem?(:CRAFTINGBENCH)
+  @>Text: Place Crate?
+  @>Show Choices: Yes, No
+  (When Cancel: Choice 2)
+  : When [Yes]
+   @>Script: $PokemonBag.pbDeleteItem(:CRAFTINGBENCH)
+   @>Control Self Switch: A =ON
+   @>
+  : When [No]
+   @>
+  : Branch End
+  @>
+ : Branch End
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Graphic: CraftingStation
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Call Common Event: Craft It Bench
+@>
+
+Page #3
+Conditions
+Self Switch B is ON
+
+Graphic: CraftingStation
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Call Common Event: UpgradedCraftingBench
 @>
 
 #------------------------------------------------------------------------------
@@ -112088,123 +112169,123 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Disallow)
  : When [Yes]
-  @>Text: How many POKeMON do you want to take down?
-  @>Show Choices: One, Two
-  (When Cancel: Branch)
-  : When [One]
-   @>Change Screen Color Tone: (-255,-255,-255,0), @6
-   @>Wait: 6 frame(s)
-   @>Script: pbSelectPokeTransform
-   @>Text: It wishes you good luck.
-   @>Wait: 1 frame(s)
-   @>Conditional Branch: Script: pbGet(1) == -1
-    @>Jump to Label: NO
-    @>Exit Event Processing
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 0
-    @>Script: $game_variables[402] = $Trainer.second_party.clone
-    @>Script: $game_variables[403] = $Trainer.third_party.clone
-    @>Script: $game_variables[404] = $Trainer.fourth_party.clone
-    @>Script: $game_variables[405] = $Trainer.fifth_party.clone
-    @>Script: $game_variables[406] = $Trainer.sixth_party.clone
-    @>Script: $Trainer.remove_pokemon_at_index(5)
-    @>Script: $Trainer.remove_pokemon_at_index(4)
-    @>Script: $Trainer.remove_pokemon_at_index(3)
-    @>Script: $Trainer.remove_pokemon_at_index(2)
-    @>Script: $Trainer.remove_pokemon_at_index(1)
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 1
-    @>Script: $game_variables[401] = $Trainer.first_party.clone
-    @>Script: $game_variables[403] = $Trainer.third_party.clone
-    @>Script: $game_variables[404] = $Trainer.fourth_party.clone
-    @>Script: $game_variables[405] = $Trainer.fifth_party.clone
-    @>Script: $game_variables[406] = $Trainer.sixth_party.clone
-    @>Script: $Trainer.remove_pokemon_at_index(5)
-    @>Script: $Trainer.remove_pokemon_at_index(4)
-    @>Script: $Trainer.remove_pokemon_at_index(3)
-    @>Script: $Trainer.remove_pokemon_at_index(2)
-    @>Script: $Trainer.remove_pokemon_at_index(0)
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 2
-    @>Script: $game_variables[401] = $Trainer.first_party.clone
-    @>Script: $game_variables[402] = $Trainer.second_party.clone
-    @>Script: $game_variables[404] = $Trainer.fourth_party.clone
-    @>Script: $game_variables[405] = $Trainer.fifth_party.clone
-    @>Script: $game_variables[406] = $Trainer.sixth_party.clone
-    @>Script: $Trainer.remove_pokemon_at_index(5)
-    @>Script: $Trainer.remove_pokemon_at_index(4)
-    @>Script: $Trainer.remove_pokemon_at_index(3)
-    @>Script: $Trainer.remove_pokemon_at_index(1)
-    @>Script: $Trainer.remove_pokemon_at_index(0)
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 3
-    @>Script: $game_variables[401] = $Trainer.first_party.clone
-    @>Script: $game_variables[402] = $Trainer.second_party.clone
-    @>Script: $game_variables[403] = $Trainer.third_party.clone
-    @>Script: $game_variables[405] = $Trainer.fifth_party.clone
-    @>Script: $game_variables[406] = $Trainer.sixth_party.clone
-    @>Script: $Trainer.remove_pokemon_at_index(5)
-    @>Script: $Trainer.remove_pokemon_at_index(4)
-    @>Script: $Trainer.remove_pokemon_at_index(2)
-    @>Script: $Trainer.remove_pokemon_at_index(1)
-    @>Script: $Trainer.remove_pokemon_at_index(0)
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 4
-    @>Script: $game_variables[401] = $Trainer.first_party.clone
-    @>Script: $game_variables[402] = $Trainer.second_party.clone
-    @>Script: $game_variables[404] = $Trainer.fourth_party.clone
-    @>Script: $game_variables[403] = $Trainer.third_party.clone
-    @>Script: $game_variables[406] = $Trainer.sixth_party.clone
-    @>Script: $Trainer.remove_pokemon_at_index(5)
-    @>Script: $Trainer.remove_pokemon_at_index(3)
-    @>Script: $Trainer.remove_pokemon_at_index(2)
-    @>Script: $Trainer.remove_pokemon_at_index(1)
-    @>Script: $Trainer.remove_pokemon_at_index(0)
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 5
-    @>Script: $game_variables[401] = $Trainer.first_party.clone
-    @>Script: $game_variables[402] = $Trainer.second_party.clone
-    @>Script: $game_variables[403] = $Trainer.third_party.clone
-    @>Script: $game_variables[404] = $Trainer.fourth_party.clone
-    @>Script: $game_variables[405] = $Trainer.fifth_party.clone
-    @>Script: $Trainer.remove_pokemon_at_index(4)
-    @>Script: $Trainer.remove_pokemon_at_index(3)
-    @>Script: $Trainer.remove_pokemon_at_index(2)
-    @>Script: $Trainer.remove_pokemon_at_index(1)
-    @>Script: $Trainer.remove_pokemon_at_index(0)
-    @>
-   : Branch End
-   @>Control Switches: [0487: CatchNo] = ON
-   @>Control Switches: [0485: InDungeon] = ON
-   @>Play SE: 'Exit Door', 80, 100
-   @>Wait: 8 frame(s)
-   @>Script: pbToggleFollowingPokemon
-   @>Transfer Player:[322: Temperate Caves], (042,033), No Fade
-   @>Change Screen Color Tone: (0,0,0,0), @6
-   @>Control Self Switch: A =ON
-   @>
-  : When [Two]
-   @>Call Common Event: Two
-   @>Control Switches: [0487: CatchNo] = ON
-   @>Control Switches: [0485: InDungeon] = ON
-   @>Control Switches: [0480: Two] = ON
-   @>Play SE: 'Exit Door', 80, 100
-   @>Wait: 8 frame(s)
-   @>Script: pbToggleFollowingPokemon
-   @>Transfer Player:[322: Temperate Caves], (042,033), No Fade
-   @>Change Screen Color Tone: (0,0,0,0), @6
-   @>Control Self Switch: A =ON
-   @>
-  : When Cancel
-   @>
-  : Branch End
   @>Conditional Branch: Switch [0482: TwoMonsInDungeon] == ON
+   @>Text: How many POKeMON do you want to take down?
+   @>Show Choices: One, Two
+   (When Cancel: Branch)
+   : When [One]
+    @>Change Screen Color Tone: (-255,-255,-255,0), @6
+    @>Wait: 6 frame(s)
+    @>Script: pbSelectPokeTransform
+    @>Text: It wishes you good luck.
+    @>Wait: 1 frame(s)
+    @>Conditional Branch: Script: pbGet(1) == -1
+     @>Jump to Label: NO
+     @>Exit Event Processing
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 0
+     @>Script: $game_variables[402] = $Trainer.second_party.clone
+     @>Script: $game_variables[403] = $Trainer.third_party.clone
+     @>Script: $game_variables[404] = $Trainer.fourth_party.clone
+     @>Script: $game_variables[405] = $Trainer.fifth_party.clone
+     @>Script: $game_variables[406] = $Trainer.sixth_party.clone
+     @>Script: $Trainer.remove_pokemon_at_index(5)
+     @>Script: $Trainer.remove_pokemon_at_index(4)
+     @>Script: $Trainer.remove_pokemon_at_index(3)
+     @>Script: $Trainer.remove_pokemon_at_index(2)
+     @>Script: $Trainer.remove_pokemon_at_index(1)
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 1
+     @>Script: $game_variables[401] = $Trainer.first_party.clone
+     @>Script: $game_variables[403] = $Trainer.third_party.clone
+     @>Script: $game_variables[404] = $Trainer.fourth_party.clone
+     @>Script: $game_variables[405] = $Trainer.fifth_party.clone
+     @>Script: $game_variables[406] = $Trainer.sixth_party.clone
+     @>Script: $Trainer.remove_pokemon_at_index(5)
+     @>Script: $Trainer.remove_pokemon_at_index(4)
+     @>Script: $Trainer.remove_pokemon_at_index(3)
+     @>Script: $Trainer.remove_pokemon_at_index(2)
+     @>Script: $Trainer.remove_pokemon_at_index(0)
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 2
+     @>Script: $game_variables[401] = $Trainer.first_party.clone
+     @>Script: $game_variables[402] = $Trainer.second_party.clone
+     @>Script: $game_variables[404] = $Trainer.fourth_party.clone
+     @>Script: $game_variables[405] = $Trainer.fifth_party.clone
+     @>Script: $game_variables[406] = $Trainer.sixth_party.clone
+     @>Script: $Trainer.remove_pokemon_at_index(5)
+     @>Script: $Trainer.remove_pokemon_at_index(4)
+     @>Script: $Trainer.remove_pokemon_at_index(3)
+     @>Script: $Trainer.remove_pokemon_at_index(1)
+     @>Script: $Trainer.remove_pokemon_at_index(0)
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 3
+     @>Script: $game_variables[401] = $Trainer.first_party.clone
+     @>Script: $game_variables[402] = $Trainer.second_party.clone
+     @>Script: $game_variables[403] = $Trainer.third_party.clone
+     @>Script: $game_variables[405] = $Trainer.fifth_party.clone
+     @>Script: $game_variables[406] = $Trainer.sixth_party.clone
+     @>Script: $Trainer.remove_pokemon_at_index(5)
+     @>Script: $Trainer.remove_pokemon_at_index(4)
+     @>Script: $Trainer.remove_pokemon_at_index(2)
+     @>Script: $Trainer.remove_pokemon_at_index(1)
+     @>Script: $Trainer.remove_pokemon_at_index(0)
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 4
+     @>Script: $game_variables[401] = $Trainer.first_party.clone
+     @>Script: $game_variables[402] = $Trainer.second_party.clone
+     @>Script: $game_variables[404] = $Trainer.fourth_party.clone
+     @>Script: $game_variables[403] = $Trainer.third_party.clone
+     @>Script: $game_variables[406] = $Trainer.sixth_party.clone
+     @>Script: $Trainer.remove_pokemon_at_index(5)
+     @>Script: $Trainer.remove_pokemon_at_index(3)
+     @>Script: $Trainer.remove_pokemon_at_index(2)
+     @>Script: $Trainer.remove_pokemon_at_index(1)
+     @>Script: $Trainer.remove_pokemon_at_index(0)
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 5
+     @>Script: $game_variables[401] = $Trainer.first_party.clone
+     @>Script: $game_variables[402] = $Trainer.second_party.clone
+     @>Script: $game_variables[403] = $Trainer.third_party.clone
+     @>Script: $game_variables[404] = $Trainer.fourth_party.clone
+     @>Script: $game_variables[405] = $Trainer.fifth_party.clone
+     @>Script: $Trainer.remove_pokemon_at_index(4)
+     @>Script: $Trainer.remove_pokemon_at_index(3)
+     @>Script: $Trainer.remove_pokemon_at_index(2)
+     @>Script: $Trainer.remove_pokemon_at_index(1)
+     @>Script: $Trainer.remove_pokemon_at_index(0)
+     @>
+    : Branch End
+    @>Control Switches: [0487: CatchNo] = ON
+    @>Control Switches: [0485: InDungeon] = ON
+    @>Play SE: 'Exit Door', 80, 100
+    @>Wait: 8 frame(s)
+    @>Script: pbToggleFollowingPokemon
+    @>Transfer Player:[322: Temperate Caves], (042,033), No Fade
+    @>Change Screen Color Tone: (0,0,0,0), @6
+    @>Control Self Switch: A =ON
+    @>
+   : When [Two]
+    @>Call Common Event: Two
+    @>Control Switches: [0487: CatchNo] = ON
+    @>Control Switches: [0485: InDungeon] = ON
+    @>Control Switches: [0480: Two] = ON
+    @>Play SE: 'Exit Door', 80, 100
+    @>Wait: 8 frame(s)
+    @>Script: pbToggleFollowingPokemon
+    @>Transfer Player:[322: Temperate Caves], (042,033), No Fade
+    @>Change Screen Color Tone: (0,0,0,0), @6
+    @>Control Self Switch: A =ON
+    @>
+   : When Cancel
+    @>
+   : Branch End
    @>
   : Else
    @>Change Screen Color Tone: (-255,-255,-255,0), @6
@@ -112725,109 +112806,6 @@ List of Event Commands:
 @>Script: pbAddPokemonSilent(pbGet(403))
 @>Script: pbAddPokemonSilent(pbGet(404))
 @>Script: pbAddPokemonSilent(pbGet(405))
-@>
-
-#------------------------------------------------------------------------------
-Event ID: 006
-Event Name: Trainer(1)
-(X,Y): (006,008)
-
-Page #1
-Conditions
-None
-
-Graphic: CHEWTLE
-
-Autonomous Movement
-Type: Approach
-Speed: 4: Fast
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Event Touch
-
-List of Event Commands:
-@>Script: setBattleRule("setStyle")
-:       : setBattleRule("canLose")
-@>Conditional Branch: Script: pbWildBattle(:CHEWTLE,rand(2)+pbBalancedLevel($Trainer.party))
- @>Conditional Branch: Script: rand(100) <= 12
-  @>Text: The Pokemon seems to like you! It wants to join your party!
-  @>Text: Let it?
-  @>Show Choices: Yes, No
-  (When Cancel: Disallow)
-  : When [Yes]
-   @>Control Switches: [0489: DungeonMons] = ON
-   @>Script: pkmn = pbAddPokemon(:CHEWTLE,rand(2)+pbBalancedLevel($Trainer.party))
-   @>Script: pbSetEventTime
-   @>Control Self Switch: A =ON
-   @>
-  : When [No]
-   @>Text: It seems disheartened but it is fine.
-   @>Script: pbSetEventTime
-   @>Control Self Switch: A =ON
-   @>
-  : Branch End
-  @>
- : Branch End
- @>Script: pbSetEventTime
- @>Control Self Switch: A =ON
- @>
-: Else
- @>Conditional Branch: Switch [0489: DungeonMons] == ON
-  @>Text: Any Pokemon that have joined your party need to be put into the PC. Please do so.
-  @>Script: pbPokeCenterPC
-  @>Wait: 20 frame(s)
-  @>
- : Branch End
- @>Change Screen Color Tone: (-255,-255,-255,0), @6
- @>Wait: 8 frame(s)
- @>Conditional Branch: Switch [0489: DungeonMons] == ON
-  @>Text: Any Pokemon that have joined your party need to be put into the PC. Please do so.
-  @>Script: pbPokeCenterPC
-  @>Wait: 20 frame(s)
-  @>
- : Branch End
- @>Control Switches: [0488: LeavingDungeonLoss] = ON
- @>Script: pbDetransform
- @>Call Common Event: CloneReturn
- @>Transfer Player:[306: Xatu Home], (008,010), Up
- @>Change Screen Color Tone: (0,0,0,0), @6
- @>
-: Branch End
-@>
-
-Page #2
-Conditions
-Self Switch A is ON
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>
-
-Page #3
-Conditions
-Switch 0062: s:cooledDown?(1800) is ON
-Self Switch A is ON
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>Set Event Location: This event,(010,012), Down
-@>Control Self Switch: A =OFF
-@>Script: setTempSwitchOn("A")
 @>
 
 #------------------------------------------------------------------------------
@@ -159506,7 +159484,7 @@ List of Event Commands:
  @>Show Choices: Shore, Stone Temple, Mountaintop 
  (When Cancel: Choice 4)
  : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
+  @>Transfer Player:[005: Temperate Zone], (016,041), Down
   @>
  : When [Stone Temple]
   @>Transfer Player:[009: Temperate Zone], (037,015)
@@ -159523,7 +159501,7 @@ List of Event Commands:
  @>Show Choices: Shore, Stone Temple, Mountaintop , Next
  (When Cancel: Branch)
  : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
+  @>Transfer Player:[005: Temperate Zone], (016,041), Down
   @>
  : When [Stone Temple]
   @>Transfer Player:[009: Temperate Zone], (037,015)
@@ -159552,7 +159530,7 @@ List of Event Commands:
  @>Show Choices: Shore, Stone Temple, Mountaintop , Next
  (When Cancel: Branch)
  : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
+  @>Transfer Player:[005: Temperate Zone], (016,041), Down
   @>
  : When [Stone Temple]
   @>Transfer Player:[009: Temperate Zone], (037,015)
@@ -159584,7 +159562,7 @@ List of Event Commands:
  @>Show Choices: Shore, Stone Temple, Mountaintop , Next
  (When Cancel: Branch)
  : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
+  @>Transfer Player:[005: Temperate Zone], (016,041), Down
   @>
  : When [Stone Temple]
   @>Transfer Player:[009: Temperate Zone], (037,015)
@@ -159619,7 +159597,7 @@ List of Event Commands:
  @>Show Choices: Shore, Stone Temple, Mountaintop , Next
  (When Cancel: Branch)
  : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
+  @>Transfer Player:[005: Temperate Zone], (016,041), Down
   @>
  : When [Stone Temple]
   @>Transfer Player:[009: Temperate Zone], (037,015)
@@ -159666,7 +159644,7 @@ List of Event Commands:
  @>Show Choices: Shore, Stone Temple, Mountaintop , Next
  (When Cancel: Branch)
  : When [Shore]
-  @>Transfer Player:[005: Temperate Zone], (013,035)
+  @>Transfer Player:[005: Temperate Zone], (016,041), Down
   @>
  : When [Stone Temple]
   @>Transfer Player:[009: Temperate Zone], (037,015)

@@ -149,9 +149,6 @@ if $game_variables[208]<0
  $game_switches[249]=true
 end
 
-
-
-
 if $Trainer.money>100
  $Trainer.money=100 
 end
@@ -170,7 +167,7 @@ if $PokemonSystem.survivalmode == 0 && !maps.include?($game_map.map_id) #Surviva
   else
    $game_variables[208] -= 1 if rand(20) == 5 #take from sleep
 end
-
+end
 
 
 if $PokemonSystem.survivalmode == 0 && !maps.include?($game_map.map_id) && $game_switches[147]==true #Survival Mode Switch
@@ -181,7 +178,7 @@ if $PokemonSystem.survivalmode == 0 && !maps.include?($game_map.map_id) && $game
   else
    $game_variables[207] -= 1 if rand(10) == 5 #take from saturation
 end
-
+end
 
 if $PokemonSystem.survivalmode == 0 && $game_variables[256]==(:LCLOAK) && !maps.include?($game_map.map_id) #Survival Mode Switch
  case $game_variables[207]
@@ -235,6 +232,7 @@ if $PokemonSystem.survivalmode == 0 && !maps.include?($game_map.map_id)#Survival
       $Trainer.money -= 5
    end
 end
+end
 
 if $PokemonSystem.survivalmode == 0 #Survival Mode Switch
   case $game_variables[206]
@@ -248,20 +246,15 @@ if $PokemonSystem.survivalmode == 0 #Survival Mode Switch
       $Trainer.money -= 5
    end
 end
+end    
 
-
-if $Trainer.money <= 0 || $PokemonSystem.survivalmode == 0
+if $Trainer.money < 1 && $PokemonSystem.survivalmode == 0
     pbMessage(_INTL("\\w[]\\wm\\c[8]\\l[3]Game Over"))
     pbCancelVehicles
-    pbRemoveDependencies() 
+    pbRemoveDependencies 
     pbEndGame
     return
-end     
-
-end
-end
-end
-end #im honestly unsure why I need this mountain of ends but the script shant run without them.
+ end 
 }
 
 Events.onMapChanging  += proc {
@@ -345,7 +338,6 @@ end
 #------------------------------------------------------------------------------#
 end
 }
-
 
 
 def pbSleepRestore
@@ -627,6 +619,9 @@ def pbEndGame
          $game_temp.player_new_direction=$PokemonGlobal.pokecenterDirection
          $scene.transfer_player
          $game_map.refresh
+		 $scene = nil
+		 exit!
+    	 menu.pbShowMenu
       }
     end
 end

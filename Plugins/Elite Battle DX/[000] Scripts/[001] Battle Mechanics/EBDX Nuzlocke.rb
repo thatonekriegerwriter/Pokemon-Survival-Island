@@ -287,8 +287,7 @@ end
 #===============================================================================
 #  losing the nuzlocke
 #===============================================================================
-alias pbStartOver_ebdx_nuzlocke pbStartOver unless defined?(:pbStartOver_ebdx_nuzlocke)
-def self.pbStartOver(*args)
+def self.pbStartOver_ebdx_nuzlocke(*args)
   if EliteBattle.get(:nuzlocke)
     pbMessage(_INTL("\\w[]\\wm\\c[8]\\l[3]All your Pokémon have fainted. You have lost the Nuzlocke challenge! The challenge will now be turned off."))
     EliteBattle.set(:nuzlocke, false)
