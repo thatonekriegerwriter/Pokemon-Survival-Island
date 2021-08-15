@@ -60,7 +60,11 @@ module PkmnAR
 				return unless clickedMouse?
 				click_sprite_zoom("back")
 				# Fade
-				fade_in if @bg != 0
+				if @bg != 0
+					fade_in
+					# Store pixel again
+					store_size_pkmn
+				end
 				# Set @bg
 				@bg == 0 ? (@exit = true) : (@bg = 0)
 				# Background
@@ -191,8 +195,6 @@ module PkmnAR
 				update_bg
 				# Pokemon
 				update_bitmap_pokemon(content)
-				# Store pixel again
-				store_size_pkmn
 				# Update icon (aff, full, enjoy)
 				update_icon_aff_full_enjoy
 			else

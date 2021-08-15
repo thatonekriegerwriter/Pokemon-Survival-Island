@@ -3,7 +3,7 @@ class Pokemon
 
 	alias amie_init initialize
 	def initialize(species, level, owner = $Trainer, withMoves = true, recheck_form = true)
-		amie_init(species, level, owner = $Trainer, withMoves = true, recheck_form = true)
+		amie_init(species, level, owner, withMoves, recheck_form)
 		@amie_affection = 0
 		@amie_fullness  = 0
 		@amie_enjoyment = 0

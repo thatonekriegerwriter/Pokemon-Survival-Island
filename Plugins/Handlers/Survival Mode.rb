@@ -125,8 +125,8 @@ if $game_variables[256]==(:SSHIRT)
   $game_switches[249]=true
  end
 else
- if $game_variables[208]>100
-  $game_variables[208]=100  #sleep
+ if $game_variables[208]>200
+  $game_variables[208]=200  #sleep
   $game_switches[249]=true
  end
 end
@@ -165,7 +165,7 @@ if $PokemonSystem.survivalmode == 0 && !maps.include?($game_map.map_id) #Surviva
     $Trainer.money -= 5
    end
   else
-   $game_variables[208] -= 1 if rand(20) == 5 #take from sleep
+   $game_variables[208] -= 1 if rand(50) == 1 #take from sleep
 end
 end
 

@@ -29,7 +29,7 @@ class Crafts_Scene
     @icons={}
     @required=[]
     @sprites["background"]=IconSprite.new(0,0,@viewport)
-    @sprites["background"].setBitmap("Graphics/Pictures/craftingPage")
+    @sprites["background"].setBitmap("Graphics/Pictures/craftingMenu/craftingPage")
     @sprites["overlay"]=BitmapSprite.new(Graphics.width,Graphics.height,@viewport)
     coord=0
     @imagepos=[]
@@ -94,7 +94,7 @@ class Crafts_Scene
     @sprites["craftResult"].viewport=@viewport
     @sprites["craftResult"].windowskin=nil
     @sprites["selector"]=IconSprite.new(@selectX,@selectY,@viewport)
-    @sprites["selector"].setBitmap("Graphics/Pictures/craftSelect")
+    @sprites["selector"].setBitmap("Graphics/Pictures/craftingMenu/craftSelect")
     
     filenamA=GameData::Item.icon_filename(@itemA)
     @icons["itemA"]=IconSprite.new(100,168,@viewport)

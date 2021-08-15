@@ -6,7 +6,7 @@
 # https://github.com/Maruno17/pokemon-essentials
 #==============================================================================
 
-Essentials::ERROR_TEXT += "[v19.1 Hotfixes 1.0.3]\r\n"
+Essentials::ERROR_TEXT += "[v19.1 Hotfixes 1.0.4]\r\n"
 
 #==============================================================================
 # Fix for Vs. animation not playing, and a trainer's trainer type possibly
@@ -270,7 +270,76 @@ end
 # Fixed abilities that force wild encounters with a particular type using the
 # wrong value as the preferred type and usually crashing.
 #==============================================================================
-
+=begin
+class PokemonEncounters
+  def choose_wild_pokemon(enc_type, chance_rolls = 1)
+    if !enc_type || !GameData::EncounterType.exists?(enc_type)
+      raise ArgumentError.new(_INTL("Encounter type {1} does not exist", enc_type))
+    end
+    enc_list = @encounter_tables[enc_type]
+    return nil if !enc_list || enc_list.length == 0
+    # Static/Magnet Pull prefer wild encounters of certain types, if possible.
+    # If they activate, they remove all Pokémon from the encounter table that do
+    # not have the type they favor. If none have that type, nothing is changed.
+    first_pkmn = $Trainer.first_pokemon
+    if first_pkmn
+      favored_type = nil
+      case first_pkmn.ability_id
+      when :STATIC
+        favored_type = :ELECTRIC if GameData::Type.exists?(:ELECTRIC) && rand(100) < 50
+      when :MAGNETPULL
+        favored_type = :STEEL if GameData::Type.exists?(:STEEL) && rand(100) < 50
+      end
+      if favored_type
+        new_enc_list = []
+        enc_list.each do |enc|
+          species_data = GameData::Species.get(enc[1])
+          t1 = species_data.type1
+          t2 = species_data.type2
+          new_enc_list.push(enc) if t1 == favored_type || t2 == favored_type
+        end
+        enc_list = new_enc_list if new_enc_list.length > 0
+      end
+    end
+    enc_list.sort! { |a, b| b[0] <=> a[0] }   # Highest probability first
+    # Calculate the total probability value
+    chance_total = 0
+    enc_list.each { |a| chance_total += a[0] }
+    # Choose a random entry in the encounter table based on entry probabilities
+    rnd = 0
+    chance_rolls.times do
+      r = rand(chance_total)
+      rnd = r if r > rnd   # Prefer rarer entries if rolling repeatedly
+    end
+    encounter = nil
+    enc_list.each do |enc|
+      rnd -= enc[0]
+      next if rnd >= 0
+      encounter = enc
+      break
+    end
+    # Get the chosen species and level
+    level = rand(encounter[2]..encounter[3])
+    # Some abilities alter the level of the wild Pokémon
+    if first_pkmn
+      case first_pkmn.ability_id
+      when :HUSTLE, :PRESSURE, :VITALSPIRIT
+        level = encounter[3] if rand(100) < 50   # Highest possible level
+      end
+    end
+    # Black Flute and White Flute alter the level of the wild Pokémon
+    if Settings::FLUTES_CHANGE_WILD_ENCOUNTER_LEVELS
+      if $PokemonMap.blackFluteUsed
+        level = [level + rand(1..4), GameData::GrowthRate.max_level].min
+      elsif $PokemonMap.whiteFluteUsed
+        level = [level - rand(1..4), 1].max
+      end
+    end
+    # Return [species, level]
+    return [encounter[1], level]
+  end
+end
+=end
 #==============================================================================
 # Fixed error when trying to make a roaming Pokémon roam.
 #==============================================================================
@@ -295,6 +364,7 @@ end
 # Fixed Poké Radar rustling grass not always causing a wild encounter when
 # stepping in it.
 #==============================================================================
+=begin
 class PokemonEncounters
   def encounter_triggered?(enc_type, repel_active = false, triggered_by_step = true)
     if !enc_type || !GameData::EncounterType.exists?(enc_type)
@@ -399,3 +469,22 @@ end
 ItemHandlers::UseInField.add(:POKERADAR,proc { |item|
   next (pbUsePokeRadar) ? 1 : 0
 })
+=end
+#==============================================================================
+# Fixed typo in def addBackgroundOrColoredPlane.
+#==============================================================================
+def addBackgroundOrColoredPlane(sprites,planename,background,color,viewport=nil)
+  bitmapName=pbResolveBitmap("Graphics/Pictures/#{background}")
+  if bitmapName==nil
+    # Plane should exist in any case
+    sprites[planename]=ColoredPlane.new(color,viewport)
+  else
+    sprites[planename]=AnimatedPlane.new(viewport)
+    sprites[planename].setBitmap(bitmapName)
+    for spr in sprites.values
+      if spr.is_a?(Window)
+        spr.windowskin=nil
+      end
+    end
+  end
+end

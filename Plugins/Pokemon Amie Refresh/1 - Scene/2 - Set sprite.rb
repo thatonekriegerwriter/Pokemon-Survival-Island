@@ -158,7 +158,8 @@ module PkmnAR
 			return false if mousex > xmax || mousex < xmin || mousey > ymax || mousey < ymin
 			arr = pixel_bitmap_can_see_ww_h(sprite.bitmap)
 			return false if arr.nil?
-			return !arr[mousey-sprite.y+sprite.oy][mousex-sprite.x+sprite.ox].nil?
+			return false if !arr.is_a?(Array)
+			return !arr[mousey-sprite.y+sprite.oy][mousex-sprite.x+sprite.ox].nil? rescue false
 		end
 		#------------------------------------------------------------------------------#
     # Dispose

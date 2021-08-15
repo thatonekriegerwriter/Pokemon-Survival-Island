@@ -19134,3 +19134,168 @@ Backtrace:
 032:Scene_Map:168:in `block in update'
 032:Scene_Map:166:in `loop'
 032:Scene_Map:166:in `update'
+
+=================
+
+[2021-08-01 20:18:46 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: uninitialized constant Scene_Map::PokemonHUDMenu_Scene
+
+Backtrace:
+032:Scene_Map:111:in `call_HUD'
+032:Scene_Map:215:in `update'
+[Unreal Time] FL Unreal Time.rb:153:in `update'
+[Following Pokemon EX] 004_Follower_Overrides.rb:702:in `update'
+[Check Seasons like B2W2] Check Seasons like B2W2.rb:62:in `update'
+032:Scene_Map:236:in `block in main'
+032:Scene_Map:233:in `loop'
+032:Scene_Map:233:in `main'
+375:Main:34:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+
+=================
+
+[2021-08-01 20:54:36 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.3]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 145 (coords 19,13), map 49 (Temperate Zone):
+Exception: NoMatchingPatternError
+Message: 0
+
+***Full script:
+$PokemonBag.pbQuantity(:WOODENPLANKS)=>500
+
+Backtrace:
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-08-04 22:01:16 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.3]
+
+Error in Plugin [Item Crafting UI]:
+SystemStackError occurred.
+Stack level too deep: stack level too deep
+
+Backtrace:
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+
+=================
+
+[2021-08-05 22:21:51 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [SI Crafting]:
+SyntaxError occurred.
+Line 493: Syntax error, unexpected `when', expecting `end'
+  when "sodapop"
+  ^~~~: [SI Crafting] craftingoldmod.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+375:Main:27:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+375:Main:18:in `mainFunction'
+
+=================
+
+[2021-08-05 22:23:33 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [SI Crafting]:
+SyntaxError occurred.
+Line 493: Syntax error, unexpected `when', expecting `end'
+  when "sodapop"
+  ^~~~: [SI Crafting] craftingoldmod.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+375:Main:27:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+375:Main:18:in `mainFunction'
+
+=================
+
+[2021-08-07 19:14:47 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 2 (coords 22,27), map 16 (Mountain Zone):
+Exception: SyntaxError
+Message: (eval):1: syntax error, unexpected end-of-input, expecting ')'
+
+***Full script:
+pbStoreItem(:STONE,rand(125)
+
+Backtrace:
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'

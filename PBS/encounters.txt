@@ -1209,7 +1209,7 @@ Bait
 #-------------------------------
 [053] # Southern Beach
 Land,21
-    20,DODRIO,28,37
+    20,NUZLEAF,28,37
     20,LICKITUNG,24,34
     10,KIRLIA,20,29
     10,LILLIGANT,29,37
@@ -1237,7 +1237,7 @@ GoodRod
 Bait
     20,CORPHISH,5
     20,KRABBY,5
-    10,HYPNO,5
+    10,DODRIO,5
     10,LICKITUNG,5
     10,LUVDISC,5
     10,STARYU,5
@@ -1591,8 +1591,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -1658,8 +1658,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -1725,8 +1725,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -1792,8 +1792,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -1859,8 +1859,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -1926,8 +1926,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -1993,8 +1993,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -2060,8 +2060,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -2127,8 +2127,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -2194,8 +2194,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -2261,8 +2261,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -2328,8 +2328,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3669,8 +3669,8 @@ OldRod
     30,FEEBAS,7
 GoodRod
     60,DRATINI,5,15
-    20,DRATINI,7,13
     20,DRATINI,3,8
+    20,DRATINI,7,13
 Bait
     20,CATERPIE,5
     20,DEINO,5

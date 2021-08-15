@@ -961,4 +961,4 @@
 1942,ORANMASH,Oran Mash,Oran Mash,8,2100,"A food item only found in dungeons. It heals 30 HP.",2,0,0,
 1943,NO, , ,1,00,"You shouldn't see this.",0,0,0,
 1944,ITEMCRATE,Item Crate,Item Crates,1,2100,"A Crate that is used to Store Items.",2,0,6,
-1945,CUTTER,Wood Cutter,Wood Cutters,1,2100,"A Powered Item that is used to cut more wood.",2,0,6,
+1945,CUTTER,Wood Cutter,Wood Cutters,1,2100,"ITEM HAS BEEN CUT.",2,0,6,
