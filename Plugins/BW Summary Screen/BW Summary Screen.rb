@@ -401,7 +401,7 @@ class PokemonSummary_Scene
                 _INTL("TRAINER MEMO"),
                 _INTL("SKILLS"),
                 _INTL("MOVES"),
-                _INTL("RIBBONS")][page-1]
+                _INTL("HAPPINESS")][page-1]
     # Changed various positions of the text
     #============================================================================
     # Changed various positions of the text
@@ -1100,29 +1100,43 @@ class PokemonSummary_Scene
     overlay = @sprites["overlay"].bitmap
     @sprites["uparrow"].visible   = false
     @sprites["downarrow"].visible = false
+    base   = Color.new(90,82,82)
+    shadow = Color.new(165,165,173)
+    textColumn=300
+    evColumn=390
+    ivColumn=455
     # Write various bits of text
+    if @pokemon.happiness==0
+      verdict=_INTL("It simply hates your very essence.")
+    elsif @pokemon.happiness>0&&@pokemon.happiness<=49
+      verdict=_INTL("It's very wary. It has scary viciousness in its eyes.")
+    elsif @pokemon.happiness>=50&&@pokemon.happiness<=74
+      verdict=_INTL("It's not very used to you yet. It may be a little disobedient.")
+    elsif @pokemon.happiness>=75&&@pokemon.happiness<=149
+      verdict=_INTL("It's getting used to you. It will listen to you in battle.")
+    elsif @pokemon.happiness>=150&&@pokemon.happiness<=199
+      verdict=_INTL("It's friendly toward you. It looks sort of happy.")
+    elsif @pokemon.happiness>=200&&@pokemon.happiness<=249
+      verdict=_INTL("It has a trustful look in it's eyes.")
+    elsif @pokemon.happiness>=250
+      verdict=_INTL("It looks really happy! It enjoys being in your care.")
+    end
     textpos = [
-       [_INTL("No. of Ribbons:"),38,296,0,Color.new(255,255,255),Color.new(165,165,173)],
-       [@pokemon.numRibbons.to_s,157,328,1,Color.new(90,82,82),Color.new(165,165,173)],
+#       [@pokemon.name,46,62,0,base,shadow],
+#       [@pokemon.level.to_s,46,92,0,Color.new(64,64,64),Color.new(176,176,176)],
+#       [_INTL("Item"),66,318,0,base,shadow],
+       [_INTL("Happiness:"),46,62,0,base,shadow],
+       [_INTL("{1}/255",@pokemon.happiness{1}),46,92,0,base,shadow],
     ]
     # Draw all text
     pbDrawTextPositions(overlay,textpos)
-    # Show all ribbons
+    # Show all ribbons  
+	drawTextEx(overlay,46,130,282,3,verdict,Color.new(64,64,64),Color.new(176,176,176))
     imagepos = []
     coord = 0
-    for i in @ribbonOffset*4...@ribbonOffset*4+12
-      break if !@pokemon.ribbons[i]
-      ribbon_data = GameData::Ribbon.get(@pokemon.ribbons[i])
-      ribn = ribbon_data.id_number - 1
-      imagepos.push(["Graphics/Pictures/ribbons",
-         2 + 68 * (coord % 4), 74 + 68 * (coord / 4).floor,
-         64 * (ribn % 8), 64 * (ribn / 8).floor, 64, 64])
-      coord += 1
-    end
-    # Draw all images
     pbDrawImagePositions(overlay,imagepos)
   end
-
+  
   def drawSelectedRibbon(ribbonid)
     # Draw all of page five
     drawPage(5)

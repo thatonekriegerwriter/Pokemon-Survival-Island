@@ -395,7 +395,7 @@ def pbRandomStarter(typ)
     tyo=typ
     for i in 0...allstarters.length
       poke=Pokemon.new(getID($species.name,allstarters[i]),20,$Trainer)
-      if tyo==PBTypes.getName(poke.type1)||tyo==PBTypes.getName(poke.type2)
+      if tyo==type.getName(poke.type1)||tyo==type.getName(poke.type2)
         spoke=spoke.push(allstarters[i])
       end 
     end
@@ -820,15 +820,13 @@ def pbIsLowestEvolutionStarter?(variable)
   return false
 end
 
-def pbCheckMoveType(mtype,va,wa)
-  xtype=getID(PBTypes,mtype)
-  for poke in $Trainer.party
-    for i in 0...4
-      if poke.moves[i].type==xtype
-        vID = poke.moves[i].id
-        $game_variables[va] = poke.name
-        $game_variables[wa] = pkmnMove.name(vID)
-        return true 
+def pbCheckMoveType(type,va,wa)
+  $Trainer.pokemon_party.each do |pkmn|
+    pkmn.moves.each do |m|
+      if m.type == type
+        $game_variables[va] = pkmn.name
+        $game_variables[wa] = m.name
+        return true
       end
     end
   end

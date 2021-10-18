@@ -20981,7 +20981,7 @@ List of Event Commands:
 @>Show Choices: Yes, No
 (When Cancel: Choice 2)
 : When [Yes]
- @>Conditional Branch: Script: pbCheckMoveType(PBTypes::FIRE,3,4)
+ @>Conditional Branch: Script: pbCheckMoveType(:FIRE,3,4)
   @>Text: \v[3] used \v[4]!
   @>Control Self Switch: A =ON
   @>Change Screen Color Tone: (187,34,-255,255), @6
@@ -21022,8 +21022,6 @@ Move Animation
 Trigger: Parallel Process
 
 List of Event Commands:
-@>Comment: Particle Engine Type
- :       : fire
 @>
 
 #------------------------------------------------------------------------------
@@ -21048,7 +21046,7 @@ List of Event Commands:
 @>Show Choices: Yes, No
 (When Cancel: Choice 2)
 : When [Yes]
- @>Conditional Branch: Script: pbCheckMoveType(PBTypes::FIRE,3,4)
+ @>Conditional Branch: Script: pbCheckMoveType(:FIRE,3,4)
   @>Text: \v[3] used \v[4]!
   @>Control Self Switch: A =ON
   @>Change Screen Color Tone: (187,34,-255,255), @2
@@ -21065,9 +21063,6 @@ List of Event Commands:
   @>Change Screen Color Tone: (5,-51,-255,102), @4
   @>Text: The torch was lit!
   @>Control Variables: [0054: FirePuzzle] += 1
-  @>
- : Else
-  @>Text: None of your Pokémon have fire-type moves.
   @>
  : Branch End
  @>
@@ -21089,8 +21084,6 @@ Move Animation
 Trigger: Parallel Process
 
 List of Event Commands:
-@>Comment: Particle Engine Type
- :       : fire
 @>
 
 #------------------------------------------------------------------------------
@@ -21115,7 +21108,7 @@ List of Event Commands:
 @>Show Choices: Yes, No
 (When Cancel: Choice 2)
 : When [Yes]
- @>Conditional Branch: Script: pbCheckMoveType(PBTypes::FIRE,3,4)
+ @>Conditional Branch: Script: pbCheckMoveType(:FIRE,3,4)
   @>Text: \v[3] used \v[4]!
   @>Control Self Switch: A =ON
   @>Control Variables: [0054: FirePuzzle] += 1
@@ -21156,8 +21149,6 @@ Move Animation
 Trigger: Parallel Process
 
 List of Event Commands:
-@>Comment: Particle Engine Type
- :       : fire
 @>
 
 #------------------------------------------------------------------------------
@@ -21182,7 +21173,7 @@ List of Event Commands:
 @>Show Choices: Yes, No
 (When Cancel: Choice 2)
 : When [Yes]
- @>Conditional Branch: Script: pbCheckMoveType(PBTypes::FIRE,3,4)
+ @>Conditional Branch: Script: pbCheckMoveType(:FIRE,3,4)
   @>Text: \v[3] used \v[4]!
   @>Control Self Switch: A =ON
   @>Change Screen Color Tone: (187,34,-255,255), @2
@@ -21223,8 +21214,6 @@ Move Animation
 Trigger: Parallel Process
 
 List of Event Commands:
-@>Comment: Particle Engine Type
- :       : fire
 @>
 
 #------------------------------------------------------------------------------
@@ -23988,6 +23977,21 @@ List of Event Commands:
 
 Page #2
 Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
 Switch 0082: s: cooledDown?(800) is ON
 Self Switch A is ON
 
@@ -24331,6 +24335,21 @@ List of Event Commands:
 
 Page #2
 Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
 Switch 0082: s: cooledDown?(800) is ON
 Self Switch A is ON
 
@@ -24433,6 +24452,21 @@ List of Event Commands:
 @>
 
 Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
 Conditions
 Switch 0082: s: cooledDown?(800) is ON
 Self Switch A is ON
@@ -24973,6 +25007,21 @@ Speed: 3: Slow
 Freq: 3: Low
 Options Enabled
 Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
 Trigger: Autorun
 
 List of Event Commands:
@@ -25006,6 +25055,21 @@ List of Event Commands:
 @>
 
 Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
 Conditions
 Switch 0082: s: cooledDown?(800) is ON
 Self Switch A is ON
@@ -25052,6 +25116,21 @@ List of Event Commands:
 
 Page #2
 Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
 Switch 0082: s: cooledDown?(800) is ON
 Self Switch A is ON
 
@@ -25096,6 +25175,21 @@ List of Event Commands:
 @>
 
 Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
 Conditions
 Switch 0082: s: cooledDown?(800) is ON
 Self Switch A is ON
@@ -38910,7 +39004,7 @@ List of Event Commands:
 #------------------------------------------------------------------------------
 Event ID: 015
 Event Name: EV015
-(X,Y): (033,000)
+(X,Y): (039,010)
 
 Page #1
 Conditions
@@ -40420,7 +40514,7 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Text: Gaoo!
-@>Conditional Branch: Script: pbWildBattle(PBSpecies::XATU,rand(5)+pbBalancedLevel($Trainer.party),0060,false)
+@>Conditional Branch: Script: pbWildBattle(:XATU,rand(5)+pbBalancedLevel($Trainer.party),0060,false)
  @>Text: It seems pleased with your progress.
  @>Text: It points it's wing at your bag, specifically the main pocket.
  @>Control Self Switch: A =ON
@@ -65024,17 +65118,17 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Conditional Branch: Variable [0291: PowerMeter] == 0
- @>Control Switches: [0475] = OFF
+ @>Control Switches: [0475: HomeBook] = OFF
  @>Text: The System is out of power.
  @>
 : Else
- @>Conditional Branch: Switch [0475] == ON
+ @>Conditional Branch: Switch [0475: HomeBook] == ON
   @>Text: The Sprinkler is spritzing away. Turn it off?
   @>Show Choices: Yes, No, Pick it up.
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] -= 1
-   @>Control Switches: [0475] = OFF
+   @>Control Switches: [0475: HomeBook] = OFF
    @>
   : When [No]
    @>Exit Event Processing
@@ -65045,7 +65139,7 @@ List of Event Commands:
    (When Cancel: Choice 2)
    : When [Yes]
     @>Control Variables: [0290: Power] -= 1
-    @>Control Switches: [0475] = OFF
+    @>Control Switches: [0475: HomeBook] = OFF
     @>Script: Kernel.pbReceiveItem(:SPRINKLER)
     @>Control Self Switch: A =OFF
     @>
@@ -65061,7 +65155,7 @@ List of Event Commands:
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] += 1
-   @>Control Switches: [0475] = ON
+   @>Control Switches: [0475: HomeBook] = ON
    @>
   : When [No]
    @>Exit Event Processing
@@ -98424,7 +98518,7 @@ Speed: 3: Slow
 Freq: 3: Low
 Options Enabled
 Move Animation
-Trigger: Event Touch
+Trigger: Autorun
 
 List of Event Commands:
 @>Set Move Route: Player
@@ -98783,6 +98877,141 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 011
+Event Name: EV011
+(X,Y): (025,027)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: You shouldn't head downtown this late.
+@>Set Move Route: Player
+ :              : $>Move Up
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 012
+Event Name: EV012
+(X,Y): (027,027)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: You shouldn't head downtown this late.
+@>Set Move Route: Player
+ :              : $>Move Up
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 013
+Event Name: EV013
+(X,Y): (026,027)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: You shouldn't head downtown this late.
+@>Set Move Route: Player
+ :              : $>Move Up
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 014
+Event Name: EV014
+(X,Y): (028,027)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: You shouldn't head downtown this late.
+@>Set Move Route: Player
+ :              : $>Move Up
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 015
+Event Name: EV015
+(X,Y): (030,018)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: You head out of your apartment, and into the square.
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 016
+Event Name: EV016
+(X,Y): (014,003)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: POKeMON Trainers School! Train your POKeMON, 
+ :    : and yourself!
 @>
 
 #------------------------------------------------------------------------------
@@ -153132,10 +153361,11 @@ List of Event Commands:
  (When Cancel: Choice 2)
  : When [Yes]
   @>Label: ChoosePokemon
-  @>Text: \bWhich Pokémon needs tutoring?
-  @>Script: pbChoosePokemon(1,3,proc{|p|
-  :       :  pbHasRelearnableMove?(p)
-  :       : },true)
+  @>Text: Which Pokémon needs tutoring?
+  @>Script: pbChoosePokemon(1, 3, proc{ |pkmn|
+  :       :   pkmn.can_relearn_move?
+  :       :   }, true
+  :       : )
   @>Comment: If variable 1 is less than 0, it means the player has 
    :       : canceled choosing a Pokémon.
   @>Conditional Branch: Variable [0001: Temp Pokemon Choice] < 0
@@ -153151,7 +153381,7 @@ List of Event Commands:
     @>Jump to Label: ChoosePokemon
     @>
    : Branch End
-   @>Conditional Branch: Script: !pbHasRelearnableMove?(pbGetPokemon(1))
+   @>Conditional Branch: Script: !pbGetPokemon(1).can_relearn_move?
     @>Text: It does not have a relearnable move.
     @>Jump to Label: ChoosePokemon
     @>
@@ -153211,7 +153441,7 @@ List of Event Commands:
    @>
   : Branch End
   @>Comment: Check for eggs.
-  @>Conditional Branch: Script: pbGetPokemon(1).Egg?
+  @>Conditional Branch: Script: pbGetPokemon(1).isEgg?
    @>Text: Eggs cannot be named.
    @>Exit Event Processing
    @>
@@ -153318,7 +153548,7 @@ List of Event Commands:
   @>Conditional Branch: Variable [0001: Temp Pokemon Choice] < 0
    @>
   : Else
-   @>Conditional Branch: Script: pbGetPokemon(1).Egg?
+   @>Conditional Branch: Script: pbGetPokemon(1).isEgg?
     @>Text: Eggs do not know moves.
     @>Exit Event Processing
     @>

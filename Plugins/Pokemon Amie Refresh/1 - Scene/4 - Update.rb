@@ -361,7 +361,7 @@ module PkmnAR
 			@storeItem = []
 			return if @item.size <= 0
 			max = max_item_show
-			max = @item.size - 1 > max ? max : @item.size - 1
+			max = @item.size - 1 > max ? max : @item.size
 			(@posItem...(max+@posItem)).each { |i|
 				@itemF << @item[i]
 				# 48: length of bitmap 'item', 15 is distance between two bitmaps

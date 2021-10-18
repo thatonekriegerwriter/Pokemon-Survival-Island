@@ -19299,3 +19299,315 @@ Backtrace:
 032:Scene_Map:168:in `block in update'
 032:Scene_Map:166:in `loop'
 032:Scene_Map:166:in `update'
+
+=================
+
+[2021-08-15 18:01:45 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 17 (coords 9,26), map 352 (Home Interior):
+Exception: NoMethodError
+Message: undefined method `pbHasRelearnableMove?' for #<Interpreter @event_id: 17>
+
+***Full script:
+pbChoosePokemon(1,3,proc{|p|
+ pbHasRelearnableMove?(p)
+},true)
+
+
+Backtrace:
+(eval):2:in `block in execute_script'
+273:UI_Party:1067:in `block in pbChooseAblePokemon'
+273:UI_Party:1066:in `each'
+273:UI_Party:1066:in `pbChooseAblePokemon'
+273:UI_Party:1380:in `block in pbChoosePokemon'
+080:MessageConfig:566:in `pbFadeOutIn'
+273:UI_Party:1376:in `pbChoosePokemon'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-08-15 18:42:11 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 17 (coords 9,26), map 352 (Home Interior):
+Exception: NoMethodError
+Message: undefined method `pbHasRelearnableMove?' for #<Interpreter @event_id: 17>
+
+***Full script:
+!pbHasRelearnableMove?(pbGetPokemon(1))
+
+Backtrace:
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-08-21 13:43:51 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 18 (coords 12,26), map 352 (Home Interior):
+Exception: NoMethodError
+Message: undefined method `Egg?' for #<Pokemon GYARADOS Lv.29>
+
+***Full script:
+pbGetPokemon(1).Egg?
+
+Backtrace:
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-08-21 13:52:28 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 7 (coords 6,28), map 32 (Fire Temple):
+Exception: NameError
+Message: uninitialized constant Interpreter::PBTypes
+
+***Full script:
+pbCheckMoveType(PBTypes::FIRE,3,4)
+
+Backtrace:
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-08-21 13:58:27 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 7 (coords 6,28), map 32 (Fire Temple):
+Exception: NameError
+Message: uninitialized constant Interpreter::FIRE
+
+***Full script:
+pbCheckMoveType(FIRE,3,4)
+
+Backtrace:
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-08-21 14:02:54 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 7 (coords 6,28), map 32 (Fire Temple):
+Exception: NameError
+Message: uninitialized constant PBTypes
+
+***Full script:
+pbCheckMoveType(:FIRE,3,4)
+
+Backtrace:
+[SI Starter] SI Starter.rb:824:in `pbCheckMoveType'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-08-22 11:59:18 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 7 (coords 6,28), map 32 (Fire Temple):
+Exception: NameError
+Message: undefined local variable or method `type' for #<Interpreter @event_id: 7>
+
+***Full script:
+pbCheckMoveType(:FIRE,3,4)
+
+Backtrace:
+[SI Starter] SI Starter.rb:824:in `pbCheckMoveType'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-10-14 22:10:26 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [Item Crafting UI]:
+SystemStackError occurred.
+Stack level too deep: stack level too deep
+
+Backtrace:
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
+[Luka's Scripting Utilities] script.rb:701:in `initialize'
