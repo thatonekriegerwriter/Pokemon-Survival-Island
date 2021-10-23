@@ -106,7 +106,8 @@ def pbMagikarpStarter?(variable)
 end
 
 def pbRandomStarter(typ)
-  allstarters=["ABRA",
+  allstarters=[
+    "ABRA",
     "ABSOL",
     "AERODACTYL",
     "AIPOM",

@@ -19976,3 +19976,51 @@ Backtrace:
 375:Main:18:in `block in mainFunction'
 014:Errors:71:in `pbCriticalCode'
 375:Main:18:in `mainFunction'
+
+=================
+
+[2021-10-23 01:57:58 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [Cable Club]:
+SyntaxError occurred.
+Line 1344: Else without rescue is useless
+        else
+        ^~~~: [Cable Club] cable_club.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+375:Main:27:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+375:Main:18:in `mainFunction'
+
+=================
+
+[2021-10-23 01:58:41 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [Cable Club]:
+SyntaxError occurred.
+Line 1344: Else without rescue is useless
+        else
+        ^~~~: [Cable Club] cable_club.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+375:Main:27:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+375:Main:18:in `mainFunction'
