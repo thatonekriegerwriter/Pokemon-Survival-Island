@@ -39004,7 +39004,7 @@ List of Event Commands:
 #------------------------------------------------------------------------------
 Event ID: 015
 Event Name: EV015
-(X,Y): (039,010)
+(X,Y): (018,000)
 
 Page #1
 Conditions
@@ -39018,7 +39018,7 @@ Speed: 3: Slow
 Freq: 3: Low
 Options Enabled
 Move Animation
-Trigger: Action Button
+Trigger: Player Touch
 
 List of Event Commands:
 @>Script: Crafts.craftWindow
@@ -48930,10 +48930,42 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
-@>Text: You get the feeling that Technology is Amazing for some reason.
+@>Text: It nods at you respectfully, reading a book.
+@>Conditional Branch: Switch [0132: HOUSE] == ON
+ @>Conditional Branch: Switch [0495: HomeUpstairs] == ON
+  @>Text: It offers you a book. It is about potential.
+  @>Text: You take the book.
+  @>Control Switches: [0493: PotentialBook] = ON
+  @>Text: It hopes you have a good day.
+  @>
+ : Else
+  @>
+ : Branch End
+ @>
+: Else
+ @>
+: Branch End
 @>
 
 Page #2
+Conditions
+Switch 0493: PotentialBook is ON
+
+Graphic: 178-xatu
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: It nods at you respectfully, reading a book.
+@>
+
+Page #3
 Conditions
 Switch 0244: DeepCaveSkip is ON
 
@@ -48949,7 +48981,7 @@ List of Event Commands:
 @>Text: It seems the Xatu are gone.
 @>
 
-Page #3
+Page #4
 Conditions
 Switch 0222: Freed Xatu is ON
 
@@ -48973,7 +49005,7 @@ List of Event Commands:
 : Branch End
 @>
 
-Page #4
+Page #5
 Conditions
 Switch 0222: Freed Xatu is ON
 Self Switch A is ON
@@ -48990,20 +49022,6 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Text: It nods at you respectfully, reading a book.
-@>Conditional Branch: Switch [0132: HOUSE] == ON
- @>Conditional Branch: Switch [0495: HomeUpstairs] == ON
-  @>Text: It offers you a book. It is about potential.
-  @>Text: You take the book.
-  @>Control Switches: [0493: PotentialBook] = ON
-  @>Text: It hopes you have a good day.
-  @>
- : Else
-  @>
- : Branch End
- @>
-: Else
- @>
-: Branch End
 @>
 
 #------------------------------------------------------------------------------

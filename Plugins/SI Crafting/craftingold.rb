@@ -164,16 +164,16 @@ class Crafts_Scene
       @icons["itemResult"].setBitmap(filenamD)
       
       selectionNum=@selection
-      if @currentArray!=0
-        @craftA=GameData::Item.get(CraftsList.getcrafts[@currentArray][1]).name
-        @craftB=GameData::Item.get(CraftsList.getcrafts[@currentArray][2]).name
-        @craftC=GameData::Item.get(CraftsList.getcrafts[@currentArray][3]).name
-        @craftResult=GameData::Item.get(CraftsList.getcrafts[@currentArray][0]).name
-      else
+      if @currentArray==0
         @craftA=:NO
         @craftB=:NO
         @craftC=:NO
         @craftResult=:NO
+      else
+        @craftA=GameData::Item.get(CraftsList.getcrafts[@currentArray][1]).name
+        @craftB=GameData::Item.get(CraftsList.getcrafts[@currentArray][2]).name
+        @craftC=GameData::Item.get(CraftsList.getcrafts[@currentArray][3]).name
+        @craftResult=GameData::Item.get(CraftsList.getcrafts[@currentArray][0]).name
       end
       @sprites["quant"].text=_INTL("{1}",@quant)
       @sprites["quantA"].text=_INTL("{1}",@quantA)
@@ -271,9 +271,14 @@ class Crafts_Scene
               $PokemonBag.pbDeleteItem(@itemA,@quant)
               $PokemonBag.pbDeleteItem(@itemB,@quant)
               $PokemonBag.pbDeleteItem(@itemC,@quant)
+		      crafts = CraftsList.getcrafts
               @itemA=:NO
               @itemB=:NO
               @itemC=:NO
+              @CRACO=GameData::Item.get(CraftsList.getcrafts[@currentArray][0]).name
+              @CRAA=GameData::Item.get(CraftsList.getcrafts[@currentArray][1]).name
+              @CRAB=GameData::Item.get(CraftsList.getcrafts[@currentArray][2]).name
+              @CRAC=GameData::Item.get(CraftsList.getcrafts[@currentArray][3]).name
               @returnItem=:NO
               @quant=1
               @quantA=0
@@ -287,16 +292,8 @@ class Crafts_Scene
           @returnItem=:NO
           @itemA=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
-		  pbMessage(_INTL("Starting to fill item"))
-          for i in 0..45
-            if crafts[i][1]==@itemA &&
-            crafts[i][2]==@itemB &&
-            crafts[i][3]==@itemC
-     		  pbMessage(_INTL("If ABC2 succeeded!"))
-              @currentArray=i
-              @returnItem=crafts[i][0]
-              @required[1]=crafts[i][1]
-            end
+		  if @itemA!=-1		   
+          for i in 0..205
             if crafts[i][2]!=@itemB && @itemB==:NO
               @itemB=:NO
               @quantB=0
@@ -305,18 +302,20 @@ class Crafts_Scene
               @itemC=:NO
               @quantC=0
             end
+            if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
+     		  pbMessage(_INTL("If ABC2 succeeded!"))
+              @currentArray=i
+              @returnItem=crafts[i][0]
+              @required[1]=crafts[i][1]
+            end
 		  end
           
         elsif @selection==1
           @returnItem=:NO
           @itemB=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
-          for i in 0..45
-            if crafts[i][1]==@itemA &&
-            crafts[i][2]==@itemB &&
-            crafts[i][3]==@itemC
-     		  pbMessage(_INTL("If ABC2 succeeded!"))
-     		  pbMessage(_INTL("A = {1}, B = {2}, C = {3}",@itemA,@itemB,@itemC))
+          for i in 0..205
+            if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
               @currentArray=i
               @returnItem=crafts[i][0]
               @required[2]=crafts[i][2]
@@ -335,10 +334,8 @@ class Crafts_Scene
           @returnItem=:NO
           @itemC=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
-          for i in 0..45
-            if crafts[i][1]==@itemA &&
-            crafts[i][2]==@itemB &&
-            Ccrafts[i][3]==@itemC
+          for i in 0..205
+            if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
      		  pbMessage(_INTL("If ABC3 succeeded!"))
      		  pbMessage(_INTL("A = {1}, B = {2}, C = {3}",@itemA,@itemB,@itemC))
               @currentArray=i
@@ -357,6 +354,7 @@ class Crafts_Scene
         else
           Kernel.pbMessage(_INTL("You must first select an item!"))
         end
+
          @quantA=$PokemonBag.pbQuantity(@itemA)
          @quantB=$PokemonBag.pbQuantity(@itemB)
          @quantC=$PokemonBag.pbQuantity(@itemC)
@@ -366,13 +364,16 @@ class Crafts_Scene
         return -1
       end     
 	  if Input.trigger?(Input::SPECIAL)
-	    pbMessage(_INTL("A = {1}, B = {2}, C = {3} D = {4}",@itemA,@itemB,@itemC,@returnItem))
+ 		     pbMessage(_INTL("Crafts 0:{1}, Item D: {2}",crafts[i][0],@returnItem))
+ 		     pbMessage(_INTL("Crafts 1:{1}, Item A: {2}",crafts[i][1],@itemA))
+ 		     pbMessage(_INTL("Crafts 2:{1}, Item B: {2}",crafts[i][2],@itemB))
+ 		     pbMessage(_INTL("Crafts 3:{1}, Item C: {2}",crafts[i][3],@itemC))
 	  end
     end
   end
   
   def pbCheckRecipe(recipe)
-    for i in 0..45
+    for i in 0..205
       if recipe[1]==CraftsList.getcrafts[i][1] &&
          recipe[2]==CraftsList.getcrafts[i][2] &&
          recipe[3]==CraftsList.getcrafts[i][3]
@@ -421,10 +422,11 @@ class PokemoncraftSelect
 end
 
 module CraftsList
+  def self.getcrafts
     @CraftsList = [
 	#[RESULT = Item 1 + Item 2 + Item 3]
     [:NO,:NO,:NO,:NO], #Empty
-    #RECIPE 1: 
+    #RECIPE 1: ,
     [:TEA,:NO,:FRESHWATER,:TEALEAF],  
     [:TEA,:NO,:TEALEAF,:FRESHWATER],  
     [:TEA,:TEALEAF,:NO,:FRESHWATER],  
@@ -518,96 +520,96 @@ module CraftsList
     [:ATKCURRY,:SPELONBERRY,:WATERBOTTLE,:BOWL],
     [:ATKCURRY,:SPELONBERRY,:BOWL,:WATERBOTTLE],
     #RECIPE 15: 
-    [:LONELYMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:LONELYMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:LONELYMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:LONELYMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:LONELYMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:LONELYMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:LONELYMINT,:SUGAR,:PAMTREBERRY,:NO],
+    [:LONELYMINT,:SUGAR,:NO,:PAMTREBERRY],
+    [:LONELYMINT,:NO,:PAMTREBERRY,:SUGAR],
+    [:LONELYMINT,:NO,:SUGAR,:PAMTREBERRY],
+    [:LONELYMINT,:PAMTREBERRY,:NO,:SUGAR],
+    [:LONELYMINT,:PAMTREBERRY,:SUGAR,:NO],
     #RECIPE 16: 
-    [:ADAMANTMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:ADAMANTMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:ADAMANTMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:ADAMANTMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:ADAMANTMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:ADAMANTMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:ADAMANTMINT,:SUGAR,:YACHEBERRY,:NO],
+    [:ADAMANTMINT,:SUGAR,:NO,:YACHEBERRY],
+    [:ADAMANTMINT,:NO,:YACHEBERRY,:SUGAR],
+    [:ADAMANTMINT,:NO,:SUGAR,:YACHEBERRY],
+    [:ADAMANTMINT,:YACHEBERRY,:NO,:SUGAR],
+    [:ADAMANTMINT,:YACHEBERRY,:SUGAR,:NO],
     #RECIPE 17: 
-    [:NAUGHTYMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:NAUGHTYMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:NAUGHTYMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:NAUGHTYMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:NAUGHTYMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:NAUGHTYMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:NAUGHTYMINT,:SUGAR,:TANGABERRY,:NO],
+    [:NAUGHTYMINT,:SUGAR,:NO,:TANGABERRY],
+    [:NAUGHTYMINT,:NO,:TANGABERRY,:SUGAR],
+    [:NAUGHTYMINT,:NO,:SUGAR,:TANGABERRY],
+    [:NAUGHTYMINT,:TANGABERRY,:NO,:SUGAR],
+    [:NAUGHTYMINT,:TANGABERRY,:SUGAR,:NO],
     #RECIPE 18: 
-    [:BRAVEMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:BRAVEMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:BRAVEMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:BRAVEMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:BRAVEMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:BRAVEMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:BRAVEMINT,:SUGAR,:KASIBBERRY,:NO],
+    [:BRAVEMINT,:SUGAR,:NO,:KASIBBERRY],
+    [:BRAVEMINT,:NO,:KASIBBERRY,:SUGAR],
+    [:BRAVEMINT,:NO,:SUGAR,:KASIBBERRY],
+    [:BRAVEMINT,:KASIBBERRY,:NO,:SUGAR],
+    [:BRAVEMINT,:KASIBBERRY,:SUGAR,:NO],
     #RECIPE 19: 
-    [:BOLDMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:BOLDMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:BOLDMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:BOLDMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:BOLDMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:BOLDMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:BOLDMINT,:SUGAR,:GANLONBERRY,:NO],
+    [:BOLDMINT,:SUGAR,:NO,:GANLONBERRY],
+    [:BOLDMINT,:NO,:GANLONBERRY,:SUGAR],
+    [:BOLDMINT,:NO,:SUGAR,:GANLONBERRY],
+    [:BOLDMINT,:GANLONBERRY,:NO,:SUGAR],
+    [:BOLDMINT,:GANLONBERRY,:SUGAR,:NO],
     #RECIPE 20: 
-    [:IMPISHMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:IMPISHMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:IMPISHMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:IMPISHMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:IMPISHMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:IMPISHMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:IMPISHMINT,:SUGAR,:COBABERRY,:NO],
+    [:IMPISHMINT,:SUGAR,:NO,:COBABERRY],
+    [:IMPISHMINT,:NO,:COBABERRY,:SUGAR],
+    [:IMPISHMINT,:NO,:SUGAR,:COBABERRY],
+    [:IMPISHMINT,:COBABERRY,:NO,:SUGAR],
+    [:IMPISHMINT,:COBABERRY,:SUGAR,:NO],
     #RECIPE 21: 
-    [:LAXMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:LAXMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:LAXMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:LAXMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:LAXMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:LAXMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:LAXMINT,:SUGAR,:WHEAT,:NO],
+    [:LAXMINT,:SUGAR,:NO,:WHEAT],
+    [:LAXMINT,:NO,:WHEAT,:SUGAR],
+    [:LAXMINT,:NO,:SUGAR,:WHEAT],
+    [:LAXMINT,:WHEAT,:NO,:SUGAR],
+    [:LAXMINT,:WHEAT,:SUGAR,:NO],
     #RECIPE 22: 
-    [:RELAXEDMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:RELAXEDMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:RELAXEDMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:RELAXEDMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:RELAXEDMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:RELAXEDMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:RELAXEDMINT,:SUGAR,:CORNNBERRY,:NO],
+    [:RELAXEDMINT,:SUGAR,:NO,:CORNNBERRY],
+    [:RELAXEDMINT,:NO,:CORNNBERRY,:SUGAR],
+    [:RELAXEDMINT,:NO,:SUGAR,:CORNNBERRY],
+    [:RELAXEDMINT,:CORNNBERRY,:NO,:SUGAR],
+    [:RELAXEDMINT,:CORNNBERRY,:SUGAR,:NO],
     #RECIPE 23: 
-    [:MODESTMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:MODESTMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:MODESTMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:MODESTMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:MODESTMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:MODESTMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:MODESTMINT,:SUGAR,:FIGYBERRY,:NO],
+    [:MODESTMINT,:SUGAR,:NO,:FIGYBERRY],
+    [:MODESTMINT,:NO,:FIGYBERRY,:SUGAR],
+    [:MODESTMINT,:NO,:SUGAR,:FIGYBERRY],
+    [:MODESTMINT,:FIGYBERRY,:NO,:SUGAR],
+    [:MODESTMINT,:FIGYBERRY,:SUGAR,:NO],
     #RECIPE 24: 
-    [:MILDMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:MILDMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:MILDMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:MILDMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:MILDMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:MILDMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:MILDMINT,:SUGAR,:WEPEARBERRY,:NO],
+    [:MILDMINT,:SUGAR,:NO,:WEPEARBERRY],
+    [:MILDMINT,:NO,:WEPEARBERRY,:SUGAR],
+    [:MILDMINT,:NO,:SUGAR,:WEPEARBERRY],
+    [:MILDMINT,:WEPEARBERRY,:NO,:SUGAR],
+    [:MILDMINT,:WEPEARBERRY,:SUGAR,:NO],
     #RECIPE 25: 
-    [:RASHMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:RASHMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:RASHMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:RASHMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:RASHMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:RASHMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:RASHMINT,:SUGAR,:GREPABERRY,:NO],
+    [:RASHMINT,:SUGAR,:NO,:GREPABERRY],
+    [:RASHMINT,:NO,:GREPABERRY,:SUGAR],
+    [:RASHMINT,:NO,:SUGAR,:GREPABERRY],
+    [:RASHMINT,:GREPABERRY,:NO,:SUGAR],
+    [:RASHMINT,:GREPABERRY,:SUGAR,:NO],
     #RECIPE 26: 
-    [:QUIETMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:QUIETMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:QUIETMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:QUIETMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:QUIETMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:QUIETMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:QUIETMINT,:SUGAR,:APPLE,:NO],
+    [:QUIETMINT,:SUGAR,:NO,:APPLE],
+    [:QUIETMINT,:NO,:APPLE,:SUGAR],
+    [:QUIETMINT,:NO,:SUGAR,:APPLE],
+    [:QUIETMINT,:APPLE,:NO,:SUGAR],
+    [:QUIETMINT,:APPLE,:SUGAR,:NO],
     #RECIPE 27: 
-    [:CALMMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:CALMMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:CALMMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:CALMMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:CALMMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:CALMMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:CALMMINT,:SUGAR,:BLUKBERRY,:NO],
+    [:CALMMINT,:SUGAR,:NO,:BLUKBERRY],
+    [:CALMMINT,:NO,:BLUKBERRY,:SUGAR],
+    [:CALMMINT,:NO,:SUGAR,:BLUKBERRY],
+    [:CALMMINT,:BLUKBERRY,:NO,:SUGAR],
+    [:CALMMINT,:BLUKBERRY,:SUGAR,:NO],
     #RECIPE 28: 
     [:GENTLEMINT,:SUGAR,:SPELONBERRY,:NO],
     [:GENTLEMINT,:SUGAR,:NO,:SPELONBERRY],
@@ -616,59 +618,56 @@ module CraftsList
     [:GENTLEMINT,:SPELONBERRY,:NO,:SUGAR],
     [:GENTLEMINT,:SPELONBERRY,:SUGAR,:NO],
     #RECIPE 29: 
-    [:CAREFULMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:CAREFULMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:CAREFULMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:CAREFULMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:CAREFULMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:CAREFULMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:CAREFULMINT,:SUGAR,:TAMATOBERRY,:NO],
+    [:CAREFULMINT,:SUGAR,:NO,:TAMATOBERRY],
+    [:CAREFULMINT,:NO,:TAMATOBERRY,:SUGAR],
+    [:CAREFULMINT,:NO,:SUGAR,:TAMATOBERRY],
+    [:CAREFULMINT,:TAMATOBERRY,:NO,:SUGAR],
+    [:CAREFULMINT,:TAMATOBERRY,:SUGAR,:NO],
     #RECIPE 30: 
-    [:SASSYMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:SASSYMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:SASSYMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:SASSYMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:SASSYMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:SASSYMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:SASSYMINT,:SUGAR,:PINAPBERRY,:NO],
+    [:SASSYMINT,:SUGAR,:NO,:PINAPBERRY],
+    [:SASSYMINT,:NO,:PINAPBERRY,:SUGAR],
+    [:SASSYMINT,:NO,:SUGAR,:PINAPBERRY],
+    [:SASSYMINT,:PINAPBERRY,:NO,:SUGAR],
+    [:SASSYMINT,:PINAPBERRY,:SUGAR,:NO],
     #RECIPE 31: 
-    [:TIMIDMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:TIMIDMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:TIMIDMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:TIMIDMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:TIMIDMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:TIMIDMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:TIMIDMINT,:SUGAR,:POMEGBERRY,:NO],
+    [:TIMIDMINT,:SUGAR,:NO,:POMEGBERRY],
+    [:TIMIDMINT,:NO,:POMEGBERRY,:SUGAR],
+    [:TIMIDMINT,:NO,:SUGAR,:POMEGBERRY],
+    [:TIMIDMINT,:POMEGBERRY,:NO,:SUGAR],
+    [:TIMIDMINT,:POMEGBERRY,:SUGAR,:NO],
     #RECIPE 32: 
-    [:HASTYMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:HASTYMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:HASTYMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:HASTYMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:HASTYMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:HASTYMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:HASTYMINT,:SUGAR,:WIKIBERRY,:NO],
+    [:HASTYMINT,:SUGAR,:NO,:WIKIBERRY],
+    [:HASTYMINT,:NO,:WIKIBERRY,:SUGAR],
+    [:HASTYMINT,:NO,:SUGAR,:WIKIBERRY],
+    [:HASTYMINT,:WIKIBERRY,:NO,:SUGAR],
+    [:HASTYMINT,:WIKIBERRY,:SUGAR,:NO],
     #RECIPE 33: 
-    [:JOLLYMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:JOLLYMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:JOLLYMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:JOLLYMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:JOLLYMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:JOLLYMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:JOLLYMINT,:SUGAR,:CHERIBERRY,:NO],
+    [:JOLLYMINT,:SUGAR,:NO,:CHERIBERRY],
+    [:JOLLYMINT,:NO,:CHERIBERRY,:SUGAR],
+    [:JOLLYMINT,:NO,:SUGAR,:CHERIBERRY],
+    [:JOLLYMINT,:CHERIBERRY,:NO,:SUGAR],
+    [:JOLLYMINT,:CHERIBERRY,:SUGAR,:NO],
     #RECIPE 34: 
-    [:NAIVEMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:NAIVEMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:NAIVEMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:NAIVEMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:NAIVEMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:NAIVEMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:NAIVEMINT,:SUGAR,:STARFBERRY,:NO],
+    [:NAIVEMINT,:SUGAR,:NO,:STARFBERRY],
+    [:NAIVEMINT,:NO,:STARFBERRY,:SUGAR],
+    [:NAIVEMINT,:NO,:SUGAR,:STARFBERRY],
+    [:NAIVEMINT,:STARFBERRY,:NO,:SUGAR],
+    [:NAIVEMINT,:STARFBERRY,:SUGAR,:NO],
     #RECIPE 35: 
-    [:SERIOUSMINT,:SUGAR,:SPELONBERRY,:NO],
-    [:SERIOUSMINT,:SUGAR,:NO,:SPELONBERRY],
-    [:SERIOUSMINT,:NO,:SPELONBERRY,:SUGAR],
-    [:SERIOUSMINT,:NO,:SUGAR,:SPELONBERRY],
-    [:SERIOUSMINT,:SPELONBERRY,:NO,:SUGAR],
-    [:SERIOUSMINT,:SPELONBERRY,:SUGAR,:NO],
+    [:SERIOUSMINT,:SUGAR,:JABOCABERRY,:NO],
+    [:SERIOUSMINT,:SUGAR,:NO,:JABOCABERRY],
+    [:SERIOUSMINT,:NO,:JABOCABERRY,:SUGAR],
+    [:SERIOUSMINT,:NO,:SUGAR,:JABOCABERRY],
+    [:SERIOUSMINT,:JABOCABERRY,:NO,:SUGAR],
+    [:SERIOUSMINT,:JABOCABERRY,:SUGAR,:NO]
 	#RECIPE 36:
-    [:STONE,:ACORN,:REDAPRICORN,:ORANBERRY], #Empty
-    [:STONE,:ACORN,:NO,:NO]
     ]
-  def self.getcrafts
     return @CraftsList
   end
 end

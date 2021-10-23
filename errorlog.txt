@@ -19611,3 +19611,322 @@ Backtrace:
 [Luka's Scripting Utilities] script.rb:701:in `initialize'
 [Luka's Scripting Utilities] script.rb:701:in `initialize'
 [Luka's Scripting Utilities] script.rb:701:in `initialize'
+
+=================
+
+[2021-10-22 22:45:16 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 15 (coords 18,0), map 56 (Home Interior):
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::Item, String, Integer], but got NilClass.
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+244:PokemonBag:91:in `pbQuantity'
+[SI Crafting] craftingold.rb:360:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:682:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-10-22 23:09:16 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [SI Crafting]:
+SyntaxError occurred.
+Line 373: Syntax error, unexpected end-of-input, expecting `end': [SI Crafting] craftingold.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+375:Main:27:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+375:Main:18:in `mainFunction'
+
+=================
+
+[2021-10-22 23:10:28 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 15 (coords 18,0), map 56 (Home Interior):
+Exception: NameError
+Message: undefined local variable or method `recipe' for #<Crafts_Scene>
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+[SI Crafting] craftingold.rb:373:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:685:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-10-23 00:44:27 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 15 (coords 18,0), map 56 (Home Interior):
+Exception: NoMethodError
+Message: undefined method `[]' for nil:NilClass
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+[SI Crafting] craftingold.rb:368:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:683:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-10-23 00:48:38 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 15 (coords 18,0), map 56 (Home Interior):
+Exception: NameError
+Message: undefined local variable or method `i' for #<Crafts_Scene>
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+[SI Crafting] craftingold.rb:278:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:683:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-10-23 00:59:49 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 15 (coords 18,0), map 56 (Home Interior):
+Exception: NameError
+Message: undefined local variable or method `i' for #<Crafts_Scene>
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+[SI Crafting] craftingold.rb:278:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:683:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-10-23 01:03:05 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 15 (coords 18,0), map 56 (Home Interior):
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::Item, String, Integer], but got NilClass.
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+244:PokemonBag:91:in `pbQuantity'
+[SI Crafting] craftingold.rb:358:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:682:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-10-23 01:10:53 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 15 (coords 18,0), map 56 (Home Interior):
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::Item, String, Integer], but got NilClass.
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+244:PokemonBag:91:in `pbQuantity'
+[SI Crafting] craftingold.rb:370:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:694:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
