@@ -1,0 +1,4 @@
+Name         = Cable Club
+Version      = 3.0
+Website      = https://reliccastle.com/resources/371/
+Credits      = Boonzeet

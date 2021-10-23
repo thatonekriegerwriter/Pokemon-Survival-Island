@@ -291,8 +291,7 @@ class Crafts_Scene
         elsif @selection==0
           @returnItem=:NO
           @itemA=Kernel.pbChooseItem
-		  crafts = CraftsList.getcrafts
-		  if @itemA!=-1		   
+		  crafts = CraftsList.getcrafts	   
           for i in 0..205
             if crafts[i][2]!=@itemB && @itemB==:NO
               @itemB=:NO

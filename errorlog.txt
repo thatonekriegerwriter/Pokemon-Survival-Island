@@ -19930,3 +19930,25 @@ Backtrace:
 032:Scene_Map:168:in `block in update'
 032:Scene_Map:166:in `loop'
 032:Scene_Map:166:in `update'
+
+=================
+
+[2021-10-23 01:51:31 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [SI Crafting]:
+SyntaxError occurred.
+Line 683: Syntax error, unexpected end-of-input, expecting `end': [SI Crafting] craftingold.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+375:Main:27:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+375:Main:18:in `mainFunction'
