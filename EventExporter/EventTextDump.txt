@@ -36056,7 +36056,7 @@ List of Event Commands:
 @>Text: What is your starter Pokemon?
 @>Wait: 20 frame(s)
 @>Label: pkmnselect
-@>Script: pbTextEntry("Enter a Pokemon name or Type.",0,10,3)
+@>Script: pbTextEntry("Enter a Pokemon name.",0,10,3)
 @>Script: pbSetUpcase(3)
 @>Script: pbFixCommonStarterSpellingErrors(3)
 @>Conditional Branch: Script: !GameData::Species.exists?(pbGet(3))
@@ -39004,7 +39004,7 @@ List of Event Commands:
 #------------------------------------------------------------------------------
 Event ID: 015
 Event Name: EV015
-(X,Y): (018,000)
+(X,Y): (039,007)
 
 Page #1
 Conditions
@@ -158434,158 +158434,7 @@ List of Event Commands:
 @>Show Choices: Craft, Prepare Meat, Pick Up, Cancel
 (When Cancel: Choice 4)
 : When [Craft]
- @>Text: What would you like to cook?\ch[203,-1,Basics,Curry,Sweets,Drinks,Mints]
- @>Conditional Branch: Variable [0203: CraftingStorage] == 0
-  @>Show Choices: Chocolate, Bread
-  (When Cancel: Branch)
-  : When [Chocolate]
-   @>
-  : When [Bread]
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : Branch End
- @>Conditional Branch: Variable [0203: CraftingStorage] == 1
-  @>Text: What would you like to cook?\ch[203,-1,Kelpsy Curry,Watmel Curry,Durin Curry,Micle Curry,Belue Curry,Lansat Curry,Starf Curry,Spelon Curry]
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 0
-   @>Script: pbItemcraft(:SATKCURRY)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 1
-   @>Script: pbItemcraft(:SPEEDCURRY)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 2
-   @>Script: pbItemcraft(:SPDEFCURRY)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 3
-   @>Script: pbItemcraft(:ACCCURRY)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 4
-   @>Script: pbItemcraft(:DEFCURRY)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 5
-   @>Script: pbItemcraft(:CRITCURRY)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 6
-   @>Script: pbItemcraft(:GSCURRY)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 6
-   @>Script: pbItemcraft(:ATKCURRY)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>
- : Branch End
- @>Conditional Branch: Variable [0203: CraftingStorage] == 2
-  @>Text: What would you like to cook?\ch[203,-1,Sweetheart,Rage Candy Bar]
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 0
-   @>Script: pbItemcraft(:SWEETHEART)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 1
-   @>Script: pbItemcraft(:RAGECANDYBAR)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>
- : Branch End
- @>Conditional Branch: Variable [0203: CraftingStorage] == 3
-  @>Text: What would you like to cook?\ch[203,-1,Lemonade,Soda Pop,Tea]
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 0
-   @>Script: pbItemcraft(:LEMONADE)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 1
-   @>Script: pbItemcraft(:SODAPOP)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 2
-   @>Script: pbItemcraft(:TEA)
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>
- : Branch End
- @>Conditional Branch: Variable [0203: CraftingStorage] == 4
-  @>Text: What would you like to cook?\ch[203,-1,Lonely Mint,Adamant Mint,Naughty Mint,Brave Mint,Bold Mint,Impish Mint,Lax Mint,Next]
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 0
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 1
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 2
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 3
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 4
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 5
-   @>Jump to Label: Start
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0203: CraftingStorage] == 6
-   @>Text: What would you like to cook?\ch[203,-1,Relaxed Mint,Modest Mint,Mild Mint,Rash Mint,Quest Mint,Calm Mint,Next]
-   @>Conditional Branch: Variable [0203: CraftingStorage] == 0
-    @>Jump to Label: Start
-    @>
-   : Branch End
-   @>Conditional Branch: Variable [0203: CraftingStorage] == 1
-    @>Jump to Label: Start
-    @>
-   : Branch End
-   @>Conditional Branch: Variable [0203: CraftingStorage] == 2
-    @>Jump to Label: Start
-    @>
-   : Branch End
-   @>Conditional Branch: Variable [0203: CraftingStorage] == 3
-    @>Jump to Label: Start
-    @>
-   : Branch End
-   @>Conditional Branch: Variable [0203: CraftingStorage] == 4
-    @>Jump to Label: Start
-    @>
-   : Branch End
-   @>Comment: Calm Mint
-   @>Conditional Branch: Variable [0203: CraftingStorage] == 5
-    @>Script: pbItemcraft(:CALMMINT)
-    @>Jump to Label: Start
-    @>
-   : Branch End
-   @>Conditional Branch: Variable [0203: CraftingStorage] == 6
-    @>Text: What would you like to cook?\ch[203,-1,Relaxed Mint,Modest Mint,Mild Mint,Rash Mint,Quest Mint,Calm Mint,Next]
-    @>
-   : Branch End
-   @>
-  : Branch End
-  @>
- : Branch End
+ @>Script: Crafts.craftWindow
  @>Jump to Label: Start
  @>
 : When [Prepare Meat]
