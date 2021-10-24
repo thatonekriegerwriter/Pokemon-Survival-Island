@@ -75,7 +75,7 @@ scene = PokemonBag_Scene.new
 screen = PokemonBagScreen.new(scene,$PokemonBag)
 coal = screen.pbChooseItemScreen
 }
-if coal>0
+if coal
 $PokemonBag.pbDeleteItem(coal,1)
 Kernel.pbMessage(_INTL("\\GYou toss a {1} in the Power Station.. ",PBItems.getName(coal)))
 #205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
