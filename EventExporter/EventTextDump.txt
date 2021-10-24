@@ -12629,11 +12629,14 @@ List of Event Commands:
  @>Control Variables: [0029: TimeDilation] += 76800
  @>Text: You slept 8 hours.
  @>Text: Your Pokémon were restored to full health.
+ @>Script: $game_map.refresh
+ @>Change Screen Color Tone: (0,0,0,0), @6
  @>
 : Else
  @>Control Variables: [0029: TimeDilation] += 76800
  @>Text: You slept 8 hours.
  @>Text: Your Pokémon were restored to full health.
+ @>Script: $game_map.refresh
  @>Change Screen Color Tone: (0,0,0,0), @6
  @>
 : Branch End
@@ -28026,7 +28029,7 @@ Event Name: Power Station (Coal)
 
 Page #1
 Conditions
-Switch 0409:  is ON
+Switch 0409: PowerGen is ON
 
 Graphic: Object ball
 
@@ -28040,7 +28043,7 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Conditional Branch: Script: $PokemonBag.pbHasItem?(:COALGENERATOR)
- @>Text: Place Furnace?
+ @>Text: Place Power Station?
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
@@ -28070,14 +28073,14 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
-@>Conditional Branch: Switch [0466] == OFF
+@>Conditional Branch: Switch [0465] == OFF
  @>Text: There is a Crude Power Station here, it uses Charcoal to run.
  @>Text: \GWhat do you do?
  @>Show Choices: Power It., Pick it up., Exit
  (When Cancel: Choice 3)
  : When [Power It.]
   @>Script: pbChargeUp
-  @>Control Switches: [0466] = ON
+  @>Control Switches: [0465] = ON
   @>
  : When [Pick it up.]
   @>Text: Are you sure you want to pick up your Coal Generator?
@@ -28104,7 +28107,7 @@ List of Event Commands:
   (When Cancel: Choice 3)
   : When [Power It.]
    @>Script: pbChargeUp
-   @>Control Switches: [0466] = ON
+   @>Control Switches: [0465] = ON
    @>
   : When [Pick it up.]
    @>Text: Are you sure you want to pick up your Coal Generator?
@@ -28131,7 +28134,7 @@ List of Event Commands:
    (When Cancel: Choice 3)
    : When [Power It.]
     @>Script: pbChargeUp
-    @>Control Switches: [0466] = ON
+    @>Control Switches: [0465] = ON
     @>
    : When [Pick it up.]
     @>Text: Are you sure you want to pick up your Coal Generator?
@@ -28158,7 +28161,7 @@ List of Event Commands:
     (When Cancel: Choice 3)
     : When [Power It.]
      @>Script: pbChargeUp
-     @>Control Switches: [0466] = ON
+     @>Control Switches: [0465] = ON
      @>
     : When [Pick it up.]
      @>Text: Are you sure you want to pick up your Coal Generator?
@@ -28185,7 +28188,7 @@ List of Event Commands:
      (When Cancel: Choice 3)
      : When [Power It.]
       @>Script: pbChargeUp
-      @>Control Switches: [0466] = ON
+      @>Control Switches: [0465] = ON
       @>
      : When [Pick it up.]
       @>Text: Are you sure you want to pick up your Coal Generator?
@@ -28212,7 +28215,7 @@ List of Event Commands:
       (When Cancel: Choice 3)
       : When [Power It.]
        @>Script: pbChargeUp
-       @>Control Switches: [0466] = ON
+       @>Control Switches: [0465] = ON
        @>
       : When [Pick it up.]
        @>Text: Are you sure you want to pick up your Coal Generator?
@@ -28233,13 +28236,13 @@ List of Event Commands:
       @>
      : Else
       @>Conditional Branch: Variable [0291: PowerMeter] == 0
-       @>Text: The Coal Generator is out of power.
-       @>Text: \GWhat do you do?
+       @>Text: \GThe Coal Generator is out of power.
+       @>Text: What do you do?
        @>Show Choices: Power It., Pick it up., Exit
        (When Cancel: Choice 3)
        : When [Power It.]
         @>Script: pbChargeUp
-        @>Control Switches: [0466] = ON
+        @>Control Switches: [0465] = ON
         @>
        : When [Pick it up.]
         @>Text: Are you sure you want to pick up your Coal Generator?
@@ -28298,7 +28301,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
-  @>Control Variables: [0290: Power] -= 1
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:ELECTRICGRINDER)
   @>Control Self Switch: B =ON
   @>
@@ -28400,7 +28403,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
-  @>Control Variables: [0290: Power] -= 1
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:ELECTRICFURNACE)
   @>Control Self Switch: B =ON
   @>
@@ -28477,6 +28480,34 @@ List of Event Commands:
 : Branch End
 @>
 
+Page #4
+Conditions
+Self Switch C is ON
+
+Graphic: FurnaceUp
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: You have turned off the furnace.
+@>Text: Turn it back on?
+@>Show Choices: Yes, No
+(When Cancel: Choice 2)
+: When [Yes]
+ @>Control Variables: [0290: Power] += 1
+ @>Control Self Switch: C =OFF
+ @>
+: When [No]
+ @>
+: Branch End
+@>
+
 #------------------------------------------------------------------------------
 Event ID: 046
 Event Name: Pokeball
@@ -28502,6 +28533,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:APRICORNMACHINE)
   @>Control Self Switch: B =ON
   @>
@@ -28861,7 +28893,7 @@ List of Event Commands:
  @>
 : Branch End
 @>Conditional Branch: Script: $PokemonBag.pbHasItem?(:COALGENERATOR)
- @>Control Switches: [0409] = ON
+ @>Control Switches: [0409: PowerGen] = ON
  @>
 : Branch End
 @>Conditional Branch: Script: $PokemonBag.pbHasItem?(:SPRINKLER)
@@ -28876,6 +28908,28 @@ List of Event Commands:
  @>Control Switches: [0412: Press] = ON
  @>
 : Branch End
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 051
+Event Name: EV051
+(X,Y): (043,009)
+
+Page #1
+Conditions
+Switch 0409: PowerGen is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: Your Generator is currently at \v[291]% power.
+@>Text: You have \v[290] machines on your power network.
 @>
 
 #------------------------------------------------------------------------------
@@ -39119,7 +39173,7 @@ List of Event Commands:
  @>
 : Branch End
 @>Conditional Branch: Script: $PokemonBag.pbHasItem?(:COALGENERATOR)
- @>Control Switches: [0409] = ON
+ @>Control Switches: [0409: PowerGen] = ON
  @>
 : Branch End
 @>Conditional Branch: Script: $PokemonBag.pbHasItem?(:SPRINKLER)
@@ -58354,6 +58408,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:SPRINKLER)
   @>Control Self Switch: A =ON
   @>
@@ -58371,7 +58426,7 @@ Page #2
 Conditions
 Self Switch A is ON
 
-Graphic: berrytreeBLUKBERRY
+Graphic: sprink
 
 Autonomous Movement
 Type: Fixed
@@ -59283,7 +59338,7 @@ Event Name: EV038
 
 Page #1
 Conditions
-Switch 0468: Off is ON
+Switch 0469: off is ON
 
 Autonomous Movement
 Type: Fixed
@@ -59322,6 +59377,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:SPRINKLER)
   @>Control Self Switch: A =ON
   @>
@@ -59339,7 +59395,7 @@ Page #2
 Conditions
 Self Switch A is ON
 
-Graphic: berrytreeBLUKBERRY
+Graphic: sprink
 
 Autonomous Movement
 Type: Fixed
@@ -59351,17 +59407,17 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Conditional Branch: Variable [0291: PowerMeter] == 0
- @>Control Switches: [0469] = OFF
+ @>Control Switches: [0469: off] = OFF
  @>Text: The System is out of power.
  @>
 : Else
- @>Conditional Branch: Switch [0469] == ON
+ @>Conditional Branch: Switch [0469: off] == ON
   @>Text: The Sprinkler is spritzing away. Turn it off?
   @>Show Choices: Yes, No, Pick it up.
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] -= 1
-   @>Control Switches: [0469] = OFF
+   @>Control Switches: [0469: off] = OFF
    @>
   : When [No]
    @>Exit Event Processing
@@ -59372,7 +59428,7 @@ List of Event Commands:
    (When Cancel: Choice 2)
    : When [Yes]
     @>Control Variables: [0290: Power] -= 1
-    @>Control Switches: [0469] = OFF
+    @>Control Switches: [0469: off] = OFF
     @>Script: Kernel.pbReceiveItem(:SPRINKLER)
     @>Control Self Switch: A =OFF
     @>
@@ -59388,7 +59444,7 @@ List of Event Commands:
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] += 1
-   @>Control Switches: [0469] = ON
+   @>Control Switches: [0469: off] = ON
    @>
   : When [No]
    @>Exit Event Processing
@@ -60247,7 +60303,7 @@ Event Name: EV038
 
 Page #1
 Conditions
-Switch 0468: Off is ON
+Switch 0470: off is ON
 
 Autonomous Movement
 Type: Fixed
@@ -60286,6 +60342,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:SPRINKLER)
   @>Control Self Switch: A =ON
   @>
@@ -60303,7 +60360,7 @@ Page #2
 Conditions
 Self Switch A is ON
 
-Graphic: berrytreeBLUKBERRY
+Graphic: sprink
 
 Autonomous Movement
 Type: Fixed
@@ -60315,17 +60372,17 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Conditional Branch: Variable [0291: PowerMeter] == 0
- @>Control Switches: [0470] = OFF
+ @>Control Switches: [0470: off] = OFF
  @>Text: The System is out of power.
  @>
 : Else
- @>Conditional Branch: Switch [0470] == ON
+ @>Conditional Branch: Switch [0470: off] == ON
   @>Text: The Sprinkler is spritzing away. Turn it off?
   @>Show Choices: Yes, No, Pick it up.
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] -= 1
-   @>Control Switches: [0470] = OFF
+   @>Control Switches: [0470: off] = OFF
    @>
   : When [No]
    @>Exit Event Processing
@@ -60336,7 +60393,7 @@ List of Event Commands:
    (When Cancel: Choice 2)
    : When [Yes]
     @>Control Variables: [0290: Power] -= 1
-    @>Control Switches: [0470] = OFF
+    @>Control Switches: [0470: off] = OFF
     @>Script: Kernel.pbReceiveItem(:SPRINKLER)
     @>Control Self Switch: A =OFF
     @>
@@ -60352,7 +60409,7 @@ List of Event Commands:
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] += 1
-   @>Control Switches: [0470] = ON
+   @>Control Switches: [0470: off] = ON
    @>
   : When [No]
    @>Exit Event Processing
@@ -61211,7 +61268,7 @@ Event Name: EV038
 
 Page #1
 Conditions
-Switch 0468: Off is ON
+Switch 0471: off is ON
 
 Autonomous Movement
 Type: Fixed
@@ -61268,7 +61325,7 @@ Page #2
 Conditions
 Self Switch A is ON
 
-Graphic: berrytreeBLUKBERRY
+Graphic: sprink
 
 Autonomous Movement
 Type: Fixed
@@ -61280,17 +61337,17 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Conditional Branch: Variable [0291: PowerMeter] == 0
- @>Control Switches: [0471] = OFF
+ @>Control Switches: [0471: off] = OFF
  @>Text: The System is out of power.
  @>
 : Else
- @>Conditional Branch: Switch [0471] == ON
+ @>Conditional Branch: Switch [0471: off] == ON
   @>Text: The Sprinkler is spritzing away. Turn it off?
   @>Show Choices: Yes, No, Pick it up.
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] -= 1
-   @>Control Switches: [0471] = OFF
+   @>Control Switches: [0471: off] = OFF
    @>
   : When [No]
    @>Exit Event Processing
@@ -61301,7 +61358,7 @@ List of Event Commands:
    (When Cancel: Choice 2)
    : When [Yes]
     @>Control Variables: [0290: Power] -= 1
-    @>Control Switches: [0471] = OFF
+    @>Control Switches: [0471: off] = OFF
     @>Script: Kernel.pbReceiveItem(:SPRINKLER)
     @>Control Self Switch: A =OFF
     @>
@@ -61317,7 +61374,7 @@ List of Event Commands:
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] += 1
-   @>Control Switches: [0471] = ON
+   @>Control Switches: [0471: off] = ON
    @>
   : When [No]
    @>Exit Event Processing
@@ -62176,7 +62233,7 @@ Event Name: EV038
 
 Page #1
 Conditions
-Switch 0468: Off is ON
+Switch 0472: off is ON
 
 Autonomous Movement
 Type: Fixed
@@ -62215,6 +62272,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:SPRINKLER)
   @>Control Self Switch: A =ON
   @>
@@ -62232,7 +62290,7 @@ Page #2
 Conditions
 Self Switch A is ON
 
-Graphic: berrytreeBLUKBERRY
+Graphic: sprink
 
 Autonomous Movement
 Type: Fixed
@@ -62244,17 +62302,17 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Conditional Branch: Variable [0291: PowerMeter] == 0
- @>Control Switches: [0472] = OFF
+ @>Control Switches: [0472: off] = OFF
  @>Text: The System is out of power.
  @>
 : Else
- @>Conditional Branch: Switch [0472] == ON
+ @>Conditional Branch: Switch [0472: off] == ON
   @>Text: The Sprinkler is spritzing away. Turn it off?
   @>Show Choices: Yes, No, Pick it up.
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] -= 1
-   @>Control Switches: [0472] = OFF
+   @>Control Switches: [0472: off] = OFF
    @>
   : When [No]
    @>Exit Event Processing
@@ -62265,7 +62323,7 @@ List of Event Commands:
    (When Cancel: Choice 2)
    : When [Yes]
     @>Control Variables: [0290: Power] -= 1
-    @>Control Switches: [0472] = OFF
+    @>Control Switches: [0472: off] = OFF
     @>Script: Kernel.pbReceiveItem(:SPRINKLER)
     @>Control Self Switch: A =OFF
     @>
@@ -62281,7 +62339,7 @@ List of Event Commands:
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] += 1
-   @>Control Switches: [0472] = ON
+   @>Control Switches: [0472: off] = ON
    @>
   : When [No]
    @>Exit Event Processing
@@ -63140,7 +63198,7 @@ Event Name: EV038
 
 Page #1
 Conditions
-Switch 0468: Off is ON
+Switch 0473: off is ON
 
 Autonomous Movement
 Type: Fixed
@@ -63179,6 +63237,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:SPRINKLER)
   @>Control Self Switch: A =ON
   @>
@@ -63196,7 +63255,7 @@ Page #2
 Conditions
 Self Switch A is ON
 
-Graphic: berrytreeBLUKBERRY
+Graphic: sprink
 
 Autonomous Movement
 Type: Fixed
@@ -63208,17 +63267,17 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Conditional Branch: Variable [0291: PowerMeter] == 0
- @>Control Switches: [0473] = OFF
+ @>Control Switches: [0473: off] = OFF
  @>Text: The System is out of power.
  @>
 : Else
- @>Conditional Branch: Switch [0473] == ON
+ @>Conditional Branch: Switch [0473: off] == ON
   @>Text: The Sprinkler is spritzing away. Turn it off?
   @>Show Choices: Yes, No, Pick it up.
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] -= 1
-   @>Control Switches: [0473] = OFF
+   @>Control Switches: [0473: off] = OFF
    @>
   : When [No]
    @>Exit Event Processing
@@ -63229,7 +63288,7 @@ List of Event Commands:
    (When Cancel: Choice 2)
    : When [Yes]
     @>Control Variables: [0290: Power] -= 1
-    @>Control Switches: [0473] = OFF
+    @>Control Switches: [0473: off] = OFF
     @>Script: Kernel.pbReceiveItem(:SPRINKLER)
     @>Control Self Switch: A =OFF
     @>
@@ -63245,7 +63304,7 @@ List of Event Commands:
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] += 1
-   @>Control Switches: [0473] = ON
+   @>Control Switches: [0473: off] = ON
    @>
   : When [No]
    @>Exit Event Processing
@@ -64122,6 +64181,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:SPRINKLER)
   @>Control Self Switch: A =ON
   @>
@@ -64139,7 +64199,7 @@ Page #2
 Conditions
 Self Switch A is ON
 
-Graphic: berrytreeBLUKBERRY
+Graphic: sprink
 
 Autonomous Movement
 Type: Fixed
@@ -64151,17 +64211,17 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Conditional Branch: Variable [0291: PowerMeter] == 0
- @>Control Switches: [0474] = OFF
+ @>Control Switches: [0474: off] = OFF
  @>Text: The System is out of power.
  @>
 : Else
- @>Conditional Branch: Switch [0474] == ON
+ @>Conditional Branch: Switch [0474: off] == ON
   @>Text: The Sprinkler is spritzing away. Turn it off?
   @>Show Choices: Yes, No, Pick it up.
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] -= 1
-   @>Control Switches: [0474] = OFF
+   @>Control Switches: [0474: off] = OFF
    @>
   : When [No]
    @>Exit Event Processing
@@ -64172,7 +64232,7 @@ List of Event Commands:
    (When Cancel: Choice 2)
    : When [Yes]
     @>Control Variables: [0290: Power] -= 1
-    @>Control Switches: [0474] = OFF
+    @>Control Switches: [0474: off] = OFF
     @>Script: Kernel.pbReceiveItem(:SPRINKLER)
     @>Control Self Switch: A =OFF
     @>
@@ -64188,7 +64248,7 @@ List of Event Commands:
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] += 1
-   @>Control Switches: [0474] = ON
+   @>Control Switches: [0474: off] = ON
    @>
   : When [No]
    @>Exit Event Processing
@@ -65068,7 +65128,7 @@ Event Name: EV038
 
 Page #1
 Conditions
-Switch 0468: Off is ON
+Switch 0466: off is ON
 
 Autonomous Movement
 Type: Fixed
@@ -65107,6 +65167,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:SPRINKLER)
   @>Control Self Switch: A =ON
   @>
@@ -65124,7 +65185,7 @@ Page #2
 Conditions
 Self Switch A is ON
 
-Graphic: berrytreeBLUKBERRY
+Graphic: sprink
 
 Autonomous Movement
 Type: Fixed
@@ -65136,7 +65197,7 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Conditional Branch: Variable [0291: PowerMeter] == 0
- @>Control Switches: [0475: HomeBook] = OFF
+ @>Control Switches: [0466: off] = OFF
  @>Text: The System is out of power.
  @>
 : Else
@@ -65146,7 +65207,7 @@ List of Event Commands:
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] -= 1
-   @>Control Switches: [0475: HomeBook] = OFF
+   @>Control Switches: [0466: off] = OFF
    @>
   : When [No]
    @>Exit Event Processing
@@ -65157,7 +65218,7 @@ List of Event Commands:
    (When Cancel: Choice 2)
    : When [Yes]
     @>Control Variables: [0290: Power] -= 1
-    @>Control Switches: [0475: HomeBook] = OFF
+    @>Control Switches: [0466: off] = OFF
     @>Script: Kernel.pbReceiveItem(:SPRINKLER)
     @>Control Self Switch: A =OFF
     @>
@@ -65173,7 +65234,7 @@ List of Event Commands:
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] += 1
-   @>Control Switches: [0475: HomeBook] = ON
+   @>Control Switches: [0466: off] = ON
    @>
   : When [No]
    @>Exit Event Processing
@@ -66049,6 +66110,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:SPRINKLER)
   @>Control Self Switch: A =ON
   @>
@@ -66066,7 +66128,7 @@ Page #2
 Conditions
 Self Switch A is ON
 
-Graphic: berrytreeBLUKBERRY
+Graphic: sprink
 
 Autonomous Movement
 Type: Fixed
@@ -66078,17 +66140,17 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Conditional Branch: Variable [0291: PowerMeter] == 0
- @>Control Switches: [0467] = OFF
+ @>Control Switches: [0467: On] = OFF
  @>Text: The System is out of power.
  @>
 : Else
- @>Conditional Branch: Switch [0467] == ON
+ @>Conditional Branch: Switch [0467: On] == ON
   @>Text: The Sprinkler is spritzing away. Turn it off?
   @>Show Choices: Yes, No, Pick it up.
   (When Cancel: Choice 2)
   : When [Yes]
    @>Control Variables: [0290: Power] -= 1
-   @>Control Switches: [0467] = OFF
+   @>Control Switches: [0467: On] = OFF
    @>
   : When [No]
    @>Exit Event Processing
@@ -66100,7 +66162,7 @@ List of Event Commands:
    : When [Yes]
     @>Text: You turn it off.
     @>Control Variables: [0290: Power] -= 1
-    @>Control Switches: [0467] = OFF
+    @>Control Switches: [0467: On] = OFF
     @>Script: Kernel.pbReceiveItem(:SPRINKLER)
     @>Control Self Switch: A =OFF
     @>
@@ -66117,7 +66179,7 @@ List of Event Commands:
   : When [Yes]
    @>Text: You turn it on.
    @>Control Variables: [0290: Power] += 1
-   @>Control Switches: [0467] = ON
+   @>Control Switches: [0467: On] = ON
    @>
   : When [No]
    @>Exit Event Processing
@@ -66148,7 +66210,7 @@ Event Name: EV039
 
 Page #1
 Conditions
-Switch 0468: Off is ON
+Switch 0467: On is ON
 
 Autonomous Movement
 Type: Fixed
@@ -158572,14 +158634,17 @@ List of Event Commands:
  @>Text: What do you intend to Craft?\ch[203,-1,Stations,Healing,Wooden,Iron,Mulch,Growth Items,Darts,Other]
  @>Conditional Branch: Variable [0203: CraftingStorage] == 0
   @>Conditional Branch: Switch [0498: HouseDownstairs] == ON
-   @>Conditional Branch: Switch [0409] == ON
+   @>Conditional Branch: Switch [0409: PowerGen] == ON
     @>Show Choices: Basic, Advanced, Powered
     (When Cancel: Branch)
     : When [Basic]
      @>Script: pbItemCrafter([
+     :       : [:BEDROLL,[:WOODENPLANKS,3,:WOOL,3]],
      :       : [:CRAFTINGBENCH,[:WOODENPLANKS,5]],
      :       : [:APRICORNCRAFTING,[:WOODENPLANKS,6,:STONE,2]],
      :       : [:FURNACE,[:STONE,6]],
+     :       : [:PORTABLEPC,[:WOODENPLANKS,5,:IRON2,3,:POKEBALL,5]],
+     :       : [:ITEMCRATE,[:WOODENPLANKS,5,:IRON2,3,:LIGHTCLAY,7]],
      :       : [:CAULDRON,[:IRON2,6]],
      :       : [:UPGRADEDCRAFTINGBENCH,[:CRAFTINGBENCH,1,:SILVER2,4]],
      :       : ])
@@ -158614,9 +158679,12 @@ List of Event Commands:
    (When Cancel: Branch)
    : When [Basic]
     @>Script: pbItemCrafter([
+    :       : [:BEDROLL,[:WOODENPLANKS,3,:WOOL,3]],
     :       : [:CRAFTINGBENCH,[:WOODENPLANKS,5]],
     :       : [:APRICORNCRAFTING,[:WOODENPLANKS,6,:STONE,2]],
     :       : [:FURNACE,[:STONE,6]],
+    :       : [:PORTABLEPC,[:WOODENPLANKS,5,:IRON2,3,:POKEBALL,5]],
+    :       : [:ITEMCRATE,[:WOODENPLANKS,5,:IRON2,3,:LIGHTCLAY,7]],
     :       : [:CAULDRON,[:IRON2,6]],
     :       : [:UPGRADEDCRAFTINGBENCH,[:CRAFTINGBENCH,1,:SILVER2,4]],
     :       : ])
@@ -158639,9 +158707,12 @@ List of Event Commands:
    (When Cancel: Branch)
    : When [Basic]
     @>Script: pbItemCrafter([
+    :       : [:BEDROLL,[:WOODENPLANKS,3,:WOOL,3]],
     :       : [:CRAFTINGBENCH,[:WOODENPLANKS,5]],
     :       : [:APRICORNCRAFTING,[:WOODENPLANKS,6,:STONE,2]],
     :       : [:FURNACE,[:STONE,6]],
+    :       : [:PORTABLEPC,[:WOODENPLANKS,5,:IRON2,3,:POKEBALL,5]],
+    :       : [:ITEMCRATE,[:WOODENPLANKS,5,:IRON2,3,:LIGHTCLAY,7]],
     :       : [:CAULDRON,[:IRON2,6]],
     :       : [:UPGRADEDCRAFTINGBENCH,[:CRAFTINGBENCH,1,:SILVER2,4]],
     :       : ])
@@ -158874,15 +158945,11 @@ List of Event Commands:
 @>Show Choices: Craft, Pick Up, Cancel
 (When Cancel: Choice 3)
 : When [Craft]
- @>Show Choices: Basic, Ore
+ @>Show Choices: Basic, Ore, Food
  (When Cancel: Branch)
  : When [Basic]
   @>Script: pbItemCrafter([
   :       : [:BLACKFLUTE,[:SOFTSAND,4,:CHARCOAL,4]],
-  :       : [:COOKEDORAN,[:ORANBERRY,1,:CHARCOAL,0.35]],
-  :       : [:BAKEDPOTATO,[:POTATO,1,:CHARCOAL,0.75]],
-  :       : [:CSLOWPOKETAIL,[:SLOWPOKETAIL,1,:CHARCOAL,0.75]],
-  :       : [:FRESHWATER,[:WATER,1,:CHARCOAL,0.75]],
   :       : [:CHARCOAL,[:WOODENPLANKS,1,:CHARCOAL,0.75]]
   :       : ])
   @>
@@ -158898,6 +158965,15 @@ List of Event Commands:
   :       : [:SILVER2,[:SILVERDUST,0.5,:CHARCOAL,0.90]],
   :       : [:CLAY2,[:LIGHTCLAY,1,:CHARCOAL,0.90]],
   :       : [:CLAY2,[:CLAYDUST,0.5,:CHARCOAL,0.90]]
+  :       : ])
+  @>
+ : When [Food]
+  @>Script: pbItemCrafter([
+  :       : [:COOKEDORAN,[:ORANBERRY,1,:CHARCOAL,0.35]],
+  :       : [:BAKEDPOTATO,[:POTATO,1,:CHARCOAL,0.75]],
+  :       : [:CSLOWPOKETAIL,[:SLOWPOKETAIL,1,:CHARCOAL,0.75]],
+  :       : [:COOKEDMEAT,[:MEAT,1,:CHARCOAL,0.75]],
+  :       : [:FRESHWATER,[:WATER,1,:CHARCOAL,0.75]]
   :       : ])
   @>
  : When Cancel
@@ -159330,38 +159406,56 @@ Trigger: None
 
 List of Event Commands:
 @>Text: What are you going to do?
-@>Show Choices: Craft, Pick Up, Cancel
-(When Cancel: Choice 3)
+@>Show Choices: Craft, Turn Off, Pick Up, Cancel
+(When Cancel: Choice 4)
 : When [Craft]
- @>Show Choices: Basic, Ore
+ @>Show Choices: Basic, Ore, Food
  (When Cancel: Branch)
  : When [Basic]
   @>Script: pbItemCrafter([
-  :       : [:BLACKFLUTE,[:SOFTSAND,2,:CHARCOAL,2]],
-  :       : [:COOKEDORAN,[:ORANBERRY,1,:CHARCOAL,0.25]],
-  :       : [:BAKEDPOTATO,[:POTATO,1,:CHARCOAL,0.50]],
-  :       : [:CSLOWPOKETAIL,[:SLOWPOKETAIL,1,:CHARCOAL,0.50]],
-  :       : [:FRESHWATER,[:WATER,1,:CHARCOAL,0.50]],
-  :       : [:CHARCOAL,[:WOODENPLANKS,1,:CHARCOAL,0.70]]
+  :       : [:BLACKFLUTE,[:SOFTSAND,2]],
+  :       : [:CHARCOAL,[:WOODENPLANKS,1]]
   :       : ])
   @>Control Variables: [0291: PowerMeter] -= Random No. (1...15)
   @>
  : When [Ore]
   @>Script: pbItemCrafter([
-  :       : [:IRON2,[:IRONORE,1,:CHARCOAL,0.70]],
-  :       : [:IRON2,[:IRONDUST,0.5,:CHARCOAL,0.70]],
-  :       : [:GOLD2,[:GOLDORE,1,:CHARCOAL,0.70]],
-  :       : [:GOLD2,[:GOLDDUST,0.5,:CHARCOAL,0.70]],
-  :       : [:COPPER2,[:COPPERORE,1,:CHARCOAL,0.70]],
-  :       : [:COPPER2,[:COPPERDUST,0.5,:CHARCOAL,0.70]],
-  :       : [:SILVER2,[:SILVERORE,1,:CHARCOAL,0.70]],
-  :       : [:SILVER2,[:SILVERDUST,0.5,:CHARCOAL,0.70]],
-  :       : [:CLAY2,[:LIGHTCLAY,1,:CHARCOAL,0.70]],
-  :       : [:CLAY2,[:CLAYDUST,0.5,:CHARCOAL,0.70]]
+  :       : [:IRON2,[:IRONORE,1]],
+  :       : [:IRON2,[:IRONDUST,0.5]],
+  :       : [:GOLD2,[:GOLDORE,1]],
+  :       : [:GOLD2,[:GOLDDUST,0.5]],
+  :       : [:COPPER2,[:COPPERORE,1]],
+  :       : [:COPPER2,[:COPPERDUST,0.5]],
+  :       : [:SILVER2,[:SILVERORE,1]],
+  :       : [:SILVER2,[:SILVERDUST,0.5]],
+  :       : [:CLAY2,[:LIGHTCLAY,1]],
+  :       : [:CLAY2,[:CLAYDUST,0.5]]
+  :       : ])
+  @>Control Variables: [0291: PowerMeter] -= Random No. (1...15)
+  @>
+ : When [Food]
+  @>Script: pbItemCrafter([
+  :       : [:COOKEDORAN,[:ORANBERRY,1]],
+  :       : [:BAKEDPOTATO,[:POTATO,1]],
+  :       : [:CSLOWPOKETAIL,[:SLOWPOKETAIL,1]],
+  :       : [:COOKEDMEAT,[:MEAT,1]],
+  :       : [:FRESHWATER,[:WATER,1]]
   :       : ])
   @>Control Variables: [0291: PowerMeter] -= Random No. (1...15)
   @>
  : When Cancel
+  @>
+ : Branch End
+ @>
+: When [Turn Off]
+ @>Text: Are you sure you want to turn your Furnace?
+ @>Show Choices: Yes, No
+ (When Cancel: Choice 2)
+ : When [Yes]
+  @>Control Variables: [0290: Power] -= 1
+  @>Control Self Switch: C =ON
+  @>
+ : When [No]
   @>
  : Branch End
  @>

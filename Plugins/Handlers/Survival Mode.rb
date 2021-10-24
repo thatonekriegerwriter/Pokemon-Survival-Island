@@ -352,234 +352,491 @@ berry=0
 pbFadeOutIn(99999){
 scene = PokemonBag_Scene.new
 screen = PokemonBagScreen.new(scene,$PokemonBag)
-berry = screen.pbChooseItemScreen(Proc.new { |item| GameData::Item.get(item).is_foodwater? || GameData::Item.get(item).is_berry?(item) })
+berry = screen.pbChooseItemScreen(Proc.new { |item| GameData::Item.get(item).is_foodwater? || GameData::Item.get(item).is_berry?})
 }
 if berry
 $PokemonBag.pbDeleteItem(berry,1)
-Kernel.pbMessage(_INTL("You consume the {1}. ",GameData::Item.get(berry).name))
+Kernel.pbMessage(_INTL("You use the {1}. ",GameData::Item.get(berry).name))
 #205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
-if hasConst?(berry,(:ORANBERRY))
+if berry == :ORANBERRY
 $game_variables[205]+=4
 $game_variables[207]+=3
 $game_variables[206]+=1
 $Trainer.money += 1
-elsif hasConst?(berry,(:LEPPABERRY))
+elsif berry == :LEPPABERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:CHERIBERRY))
+elsif berry == :CHERIBERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:CHESTOBERRY))
+elsif berry == :CHESTOBERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:PECHABERRY))
+elsif berry == :PECHABERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:RAWSTBERRY))
+elsif berry == :RAWSTBERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:ASPEARBERRY))
+elsif berry == :ASPEARBERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:PERSIMBERRY))
+elsif berry == :PERSIMBERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:LUMBERRY))
+elsif berry == :LUMBERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:FIGYBERRY))
+elsif berry == :FIGYBERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:WIKIBERRY))
+elsif berry == :WIKIBERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:MAGOBERRY))
+elsif berry == :MAGOBERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:AGUAVBERRY))
+elsif berry == :AGUAVBERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:IAPAPABERRY))
+elsif berry == :IAPAPABERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:IAPAPABERRY))
+elsif berry == :IAPAPABERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
 $game_variables[206]+=2
-elsif hasConst?(berry,(:SITRUSBERRY))
+elsif berry == :SITRUSBERRY
 $game_variables[205]+=5
 $game_variables[207]+=7
 $game_variables[206]+=1
 $Trainer.money += (0.25*$Trainer.money)
-elsif hasConst?(berry,(:BERRYJUICE))
+elsif berry == :BERRYJUICE
 $game_variables[205]+=6
 $game_variables[207]+=4
 $game_variables[206]+=4
 $Trainer.money += 2
-elsif hasConst?(berry,(:FRESHWATER))
+elsif berry == :FRESHWATER
 $game_variables[206]+=20
 $game_variables[207]+=10#207 is Saturation
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 #You can add more if you want
-elsif hasConst?(berry,(:ATKCURRY))
+elsif berry == :ATKCURRY
 $game_variables[205]+=8
 $game_variables[207]+=15
 $game_variables[206]-=7
-elsif hasConst?(berry,(:SATKCURRY))
+elsif berry == :SATKCURRY
 $game_variables[205]+=8
 $game_variables[207]+=15
 $game_variables[206]-=7
-elsif hasConst?(berry,(:SPEEDCURRY))
+elsif berry == :SPEEDCURRY
 $game_variables[205]+=8
 $game_variables[207]+=15
 $game_variables[206]-=7
-elsif hasConst?(berry,(:SPDEFCURRY))
+elsif berry == :SPDEFCURRY
 $game_variables[205]+=8
 $game_variables[207]+=15
 $game_variables[206]-=7
-elsif hasConst?(berry,(:ACCCURRY))
+elsif berry == :ACCCURRY
 $game_variables[205]+=8
 $game_variables[207]+=12
 $game_variables[206]-=7
-elsif hasConst?(berry,(:DEFCURRY))
+elsif berry == :DEFCURRY
 $game_variables[205]+=8
 $game_variables[207]+=15
 $game_variables[206]-=7
-elsif hasConst?(berry,(:CRITCURRY))
+elsif berry == :CRITCURRY
 $game_variables[205]+=8
 $game_variables[207]+=15
 $game_variables[206]-=7
-elsif hasConst?(berry,(:GSCURRY))
+elsif berry == :GSCURRY
 $game_variables[205]+=8#205 is Hunger
 $game_variables[207]+=5#207 is Saturation
 $game_variables[206]-=7#206 is Thirst
-elsif hasConst?(berry,(:RAGECANDYBAR)) #chocolate
+elsif berry == :RAGECANDYBAR #chocolate
 $game_variables[205]+=10
 $game_variables[207]+=3
 $game_variables[208]+=7
-elsif hasConst?(berry,(:SWEETHEART)) #chocolate
+elsif berry == :SWEETHEART #chocolate
 $game_variables[205]+=10#205 is Hunger
 $game_variables[207]+=5#207 is Saturation
 $game_variables[208]+=6#208 is Sleep
-elsif hasConst?(berry,(:SODAPOP))
+elsif berry == :SODAPOP
 $game_variables[206]-=11#206 is Thirst
 $game_variables[207]+=11#207 is Saturation
 $game_variables[208]+=10#208 is Sleep
-elsif hasConst?(berry,(:LEMONADE))
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+elsif berry == :LEMONADE
 $game_variables[207]+=11#207 is Saturation
 $game_variables[206]+=7#206 is Thirst
 $game_variables[208]+=7#208 is Sleep
-elsif hasConst?(berry,(:HONEY))
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+elsif berry == :HONEY
 $game_variables[207]+=20#207 is Saturation
 $game_variables[206]+=2#206 is Thirst
 $game_variables[205]+=6#205 is Hunger
-elsif hasConst?(berry,(:MOOMOOMILK))
+elsif berry == :MOOMOOMILK
 $game_variables[207]+=10
 $game_variables[206]+=7
-elsif hasConst?(berry,(:CSLOWPOKETAIL))
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+elsif berry == :CSLOWPOKETAIL
 $game_variables[207]+=10#207 is Saturation
 $game_variables[205]+=10#205 is Hunger
-elsif hasConst?(berry,(:BAKEDPOTATO))
+elsif berry == :BAKEDPOTATO
 $game_variables[207]+=10#207 is Saturation
 $game_variables[206]+=4#206 is Thirst
 $game_variables[205]+=7#205 is Hunger
-elsif hasConst?(berry,(:APPLE))
+elsif berry == :APPLE
 $game_variables[207]+=10#207 is Saturation
 $game_variables[206]+=3#206 is Thirst
 $game_variables[205]+=3#205 is Hunger
-elsif hasConst?(berry,(:CHOCOLATE))
+elsif berry == :CHOCOLATE
 $game_variables[207]+=5#207 is Saturation
 $game_variables[205]+=7#205 is Hunger
-elsif hasConst?(berry,(:LEMON))
+elsif berry == :LEMON
 $game_variables[207]+=3#207 is Saturation
 $game_variables[206]+=3#206 is Thirst
 $game_variables[205]+=4#205 is Hunger
-elsif hasConst?(berry,(:OLDGATEAU))
+elsif berry == :OLDGATEAU
 $game_variables[207]+=6#207 is Saturation
 $game_variables[206]+=2#206 is Thirst
 $game_variables[205]+=6#205 is Hunger
-elsif hasConst?(berry,(:LAVACOOKIE))
+elsif berry == :LAVACOOKIE
 $game_variables[207]+=5#207 is Saturation
 $game_variables[206]-=3#206 is Thirst
 $game_variables[205]+=6#205 is Hunger
-elsif hasConst?(berry,(:CASTELIACONE))
+elsif berry == :CASTELIACONE
 $game_variables[206]+=7#206 is Thirst
 $game_variables[205]+=7#205 is Hunger
-elsif hasConst?(berry,(:LUMIOSEGALETTE))
+elsif berry == :LUMIOSEGALETTE
 $game_variables[207]+=5#207 is Saturation
 $game_variables[205]+=6#205 is Hunger
-elsif hasConst?(berry,(:SHALOURSABLE))
+elsif berry == :SHALOURSABLE
 $game_variables[207]+=8#207 is Saturation
 $game_variables[205]+=8#205 is Hunger
-elsif hasConst?(berry,(:BIGMALASADA))
+elsif berry == :BIGMALASADA
 $game_variables[207]+=8#207 is Saturation
 $game_variables[205]+=8#205 is Hunger
-elsif hasConst?(berry,(:ONION))
+elsif berry == :ONION
 $game_variables[207]+=5#207 is Saturation
 $game_variables[206]+=3#206 is Thirst
 $game_variables[205]+=3#205 is Hunger
-elsif hasConst?(berry,(:COOKEDORAN))
+elsif berry == :COOKEDORAN
 $game_variables[207]+=6#207 is Saturation
 $game_variables[206]+=6#206 is Thirst
 $game_variables[205]+=6#205 is Hunger
-elsif hasConst?(berry,(:CARROT))
+elsif berry == :CARROT
 $game_variables[207]+=6#207 is Saturation
 $game_variables[206]+=3#206 is Thirst
 $game_variables[205]+=3#205 is Hunger
-elsif hasConst?(berry,(:BREAD))
+elsif berry == :BREAD
 $game_variables[207]+=10#207 is Saturation
 $game_variables[206]+=7#206 is Thirst
 $game_variables[205]+=11#205 is Hunger
-elsif hasConst?(berry,(:TEA))
+elsif berry == :TEA
 $game_variables[207]+=8#207 is Saturation
 $game_variables[206]+=8#206 is Thirst
 $game_variables[205]+=2#205 is Hunger
-elsif hasConst?(berry,(:CARROTCAKE))
+elsif berry == :CARROTCAKE
 $game_variables[207]+=15#207 is Saturation
 $game_variables[206]+=15#206 is Thirst
 $game_variables[205]+=10#205 is Hunger
+elsif berry == :COOKEDMEAT
+$game_variables[207]+=40#207 is Saturation
+$game_variables[206]+=0#206 is Thirst
+$game_variables[205]+=20#205 is Hunger
 
 
 #inedible
-elsif hasConst?(berry,(:TEALEAF))
+elsif berry == :TEALEAF
 $PokemonBag.pbStoreItem(:TEALEAF,1)
-elsif hasConst?(berry,(:COCOABEAN))
+elsif berry == :COCOABEAN
 $PokemonBag.pbStoreItem(:COCOABEAN,1)
-elsif hasConst?(berry,(:SUGARCANE))
+elsif berry == :SUGARCANE
 $PokemonBag.pbStoreItem(:SUGARCANE,1)
-elsif hasConst?(berry,(:BAIT))
+elsif berry == :BAIT
 $PokemonBag.pbStoreItem(:BAIT,1)
-elsif hasConst?(berry,(:TREE))
+elsif berry == :TREE
 $PokemonBag.pbStoreItem(:TREE,1)
-elsif hasConst?(berry,(:REDAPRICORN))
+elsif berry == :REDAPRICORN
 $PokemonBag.pbStoreItem(:REDAPRICORN,1)
-elsif hasConst?(berry,(:PINKAPRICORN))
+elsif berry == :PINKAPRICORN
 $PokemonBag.pbStoreItem(:PINKAPRICORN,1)
-elsif hasConst?(berry,(:BLUEAPRICORN))
+elsif berry == :BLUEAPRICORN
 $PokemonBag.pbStoreItem(:BLACKAPRICORN,1)
-elsif hasConst?(berry,(:WHITEAPRICORN))
+elsif berry == :WHITEAPRICORN
 $PokemonBag.pbStoreItem(:WHITEAPRICORN,1)
-elsif hasConst?(berry,(:YELLOWAPRICORN))
+elsif berry == :YELLOWAPRICORN
 $PokemonBag.pbStoreItem(:YELLOWAPRICORN,1)
-elsif hasConst?(berry,(:BLACKAPRICORN))
+elsif berry == :BLACKAPRICORN
 $PokemonBag.pbStoreItem(:BLACKAPRICORN,1)
-elsif hasConst?(berry,(:PURPLEAPRICORN))
+elsif berry == :PURPLEAPRICORN
 $PokemonBag.pbStoreItem(:PURPLEAPRICORN,1)
-elsif hasConst?(berry,(:POWERHERB))
+elsif berry == :POWERHERB
 $PokemonBag.pbStoreItem(:POWERHERB,1)
 #full belly
+end
+
+message=_INTL("Do you want to use {1} again?",GameData::Item.get(berry).name)
+loop do
+ Kernel.pbMessage(_INTL("Sleep: {1}, Food: {2}, Water: {3}. ",$game_variables[208],$game_variables[205],$game_variables[206]))
+ if pbConfirmMessage(message)
+   $PokemonBag.pbDeleteItem(berry,1)
+   if berry == :ORANBERRY
+$game_variables[205]+=4
+$game_variables[207]+=3
+$game_variables[206]+=1
+$Trainer.money += 1
+elsif berry == :LEPPABERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :CHERIBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :CHESTOBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :PECHABERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :RAWSTBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :ASPEARBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :PERSIMBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :LUMBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :FIGYBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :WIKIBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :MAGOBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :AGUAVBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :IAPAPABERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :IAPAPABERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+elsif berry == :SITRUSBERRY
+$game_variables[205]+=5
+$game_variables[207]+=7
+$game_variables[206]+=1
+$Trainer.money += (0.25*$Trainer.money)
+elsif berry == :BERRYJUICE
+$game_variables[205]+=6
+$game_variables[207]+=4
+$game_variables[206]+=4
+$Trainer.money += 2
+elsif berry == :FRESHWATER
+$game_variables[206]+=20
+$game_variables[207]+=10#207 is Saturation
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+#You can add more if you want
+elsif berry == :ATKCURRY
+$game_variables[205]+=8
+$game_variables[207]+=15
+$game_variables[206]-=7
+elsif berry == :SATKCURRY
+$game_variables[205]+=8
+$game_variables[207]+=15
+$game_variables[206]-=7
+elsif berry == :SPEEDCURRY
+$game_variables[205]+=8
+$game_variables[207]+=15
+$game_variables[206]-=7
+elsif berry == :SPDEFCURRY
+$game_variables[205]+=8
+$game_variables[207]+=15
+$game_variables[206]-=7
+elsif berry == :ACCCURRY
+$game_variables[205]+=8
+$game_variables[207]+=12
+$game_variables[206]-=7
+elsif berry == :DEFCURRY
+$game_variables[205]+=8
+$game_variables[207]+=15
+$game_variables[206]-=7
+elsif berry == :CRITCURRY
+$game_variables[205]+=8
+$game_variables[207]+=15
+$game_variables[206]-=7
+elsif berry == :GSCURRY
+$game_variables[205]+=8#205 is Hunger
+$game_variables[207]+=5#207 is Saturation
+$game_variables[206]-=7#206 is Thirst
+elsif berry == :RAGECANDYBAR #chocolate
+$game_variables[205]+=10
+$game_variables[207]+=3
+$game_variables[208]+=7
+elsif berry == :SWEETHEART #chocolate
+$game_variables[205]+=10#205 is Hunger
+$game_variables[207]+=5#207 is Saturation
+$game_variables[208]+=6#208 is Sleep
+elsif berry == :SODAPOP
+$game_variables[206]-=11#206 is Thirst
+$game_variables[207]+=11#207 is Saturation
+$game_variables[208]+=10#208 is Sleep
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+elsif berry == :LEMONADE
+$game_variables[207]+=11#207 is Saturation
+$game_variables[206]+=7#206 is Thirst
+$game_variables[208]+=7#208 is Sleep
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+elsif berry == :HONEY
+$game_variables[207]+=20#207 is Saturation
+$game_variables[206]+=2#206 is Thirst
+$game_variables[205]+=6#205 is Hunger
+elsif berry == :MOOMOOMILK
+$game_variables[207]+=10
+$game_variables[206]+=7
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+elsif berry == :CSLOWPOKETAIL
+$game_variables[207]+=10#207 is Saturation
+$game_variables[205]+=10#205 is Hunger
+elsif berry == :BAKEDPOTATO
+$game_variables[207]+=10#207 is Saturation
+$game_variables[206]+=4#206 is Thirst
+$game_variables[205]+=7#205 is Hunger
+elsif berry == :APPLE
+$game_variables[207]+=10#207 is Saturation
+$game_variables[206]+=3#206 is Thirst
+$game_variables[205]+=3#205 is Hunger
+elsif berry == :CHOCOLATE
+$game_variables[207]+=5#207 is Saturation
+$game_variables[205]+=7#205 is Hunger
+elsif berry == :LEMON
+$game_variables[207]+=3#207 is Saturation
+$game_variables[206]+=3#206 is Thirst
+$game_variables[205]+=4#205 is Hunger
+elsif berry == :OLDGATEAU
+$game_variables[207]+=6#207 is Saturation
+$game_variables[206]+=2#206 is Thirst
+$game_variables[205]+=6#205 is Hunger
+elsif berry == :LAVACOOKIE
+$game_variables[207]+=5#207 is Saturation
+$game_variables[206]-=3#206 is Thirst
+$game_variables[205]+=6#205 is Hunger
+elsif berry == :CASTELIACONE
+$game_variables[206]+=7#206 is Thirst
+$game_variables[205]+=7#205 is Hunger
+elsif berry == :LUMIOSEGALETTE
+$game_variables[207]+=5#207 is Saturation
+$game_variables[205]+=6#205 is Hunger
+elsif berry == :SHALOURSABLE
+$game_variables[207]+=8#207 is Saturation
+$game_variables[205]+=8#205 is Hunger
+elsif berry == :BIGMALASADA
+$game_variables[207]+=8#207 is Saturation
+$game_variables[205]+=8#205 is Hunger
+elsif berry == :ONION
+$game_variables[207]+=5#207 is Saturation
+$game_variables[206]+=3#206 is Thirst
+$game_variables[205]+=3#205 is Hunger
+elsif berry == :COOKEDORAN
+$game_variables[207]+=6#207 is Saturation
+$game_variables[206]+=6#206 is Thirst
+$game_variables[205]+=6#205 is Hunger
+elsif berry == :CARROT
+$game_variables[207]+=6#207 is Saturation
+$game_variables[206]+=3#206 is Thirst
+$game_variables[205]+=3#205 is Hunger
+elsif berry == :BREAD
+$game_variables[207]+=10#207 is Saturation
+$game_variables[206]+=7#206 is Thirst
+$game_variables[205]+=11#205 is Hunger
+elsif berry == :TEA
+$game_variables[207]+=8#207 is Saturation
+$game_variables[206]+=8#206 is Thirst
+$game_variables[205]+=2#205 is Hunger
+elsif berry == :CARROTCAKE
+$game_variables[207]+=15#207 is Saturation
+$game_variables[206]+=15#206 is Thirst
+$game_variables[205]+=10#205 is Hunger
+elsif berry == :COOKEDMEAT
+$game_variables[207]+=40#207 is Saturation
+$game_variables[206]+=0#206 is Thirst
+$game_variables[205]+=20#205 is Hunger
+
+
+#inedible
+elsif berry == :TEALEAF
+$PokemonBag.pbStoreItem(:TEALEAF,1)
+elsif berry == :COCOABEAN
+$PokemonBag.pbStoreItem(:COCOABEAN,1)
+elsif berry == :SUGARCANE
+$PokemonBag.pbStoreItem(:SUGARCANE,1)
+elsif berry == :BAIT
+$PokemonBag.pbStoreItem(:BAIT,1)
+elsif berry == :TREE
+$PokemonBag.pbStoreItem(:TREE,1)
+elsif berry == :REDAPRICORN
+$PokemonBag.pbStoreItem(:REDAPRICORN,1)
+elsif berry == :PINKAPRICORN
+$PokemonBag.pbStoreItem(:PINKAPRICORN,1)
+elsif berry == :BLUEAPRICORN
+$PokemonBag.pbStoreItem(:BLACKAPRICORN,1)
+elsif berry == :WHITEAPRICORN
+$PokemonBag.pbStoreItem(:WHITEAPRICORN,1)
+elsif berry == :YELLOWAPRICORN
+$PokemonBag.pbStoreItem(:YELLOWAPRICORN,1)
+elsif berry == :BLACKAPRICORN
+$PokemonBag.pbStoreItem(:BLACKAPRICORN,1)
+elsif berry == :PURPLEAPRICORN
+$PokemonBag.pbStoreItem(:PURPLEAPRICORN,1)
+elsif berry == :POWERHERB
+$PokemonBag.pbStoreItem(:POWERHERB,1)
+#full belly
+end
+ else 
+   break
+end
 end
 end
 end 
@@ -596,13 +853,13 @@ if medicine
 $PokemonBag.pbDeleteItem(medicine,1)
 Kernel.pbMessage(_INTL("You consume the {1}. ",GameData::Item.get(medicine).name))
 #205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
-if hasConst?(medicine,(:POTION))
+if medicine == :POTION
 $Trainer.money += 20
-elsif hasConst?(medicine,(:SUPERPOTION))
+elsif medicine == :SUPERPOTION
 $Trainer.money += 40
-elsif hasConst?(medicine,(:HYPERPOTION))
+elsif medicine == :HYPERPOTION
 $Trainer.money += 60
-elsif hasConst?(medicine,(:FULLRESTORE))
+elsif medicine == :FULLRESTORE
 $Trainer.money += 100
 #full belly
 end

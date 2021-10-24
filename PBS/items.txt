@@ -941,7 +941,7 @@
 1922,POKEBLOCK,Pokeblock,Pokeblock,8,0,"A case for holding Pokeblocks made with a Berry Blender.",2,0,6,
 1923,POKENAV,PokeNav,PokeNav,8,0,"A item for checking Condition's stat.",2,0,6,
 1924,BERRYBLENDER,Berry Blender,Berry Blenders,8,0,"A item for mixing berries.",2,0,6,
-1925,MEAT,Meat,Meat,2,200,"Meat.",1,1,13,
+1925,MEAT,Meat,Meat,2,200,"Uncooked Meat. Not that good to eat.",1,1,13,
 1926,COALGENERATOR,Coal Generator,Coal Generators,8,2100,"A Station that uses Coal to to create energy.",2,0,6,
 1927,SPRINKLER,Sprinkler,Sprinklers,8,2100,"A Sprinkler System for your Greenhouse.",2,0,6,
 1928,ELECTRICGRINDER,Electric Grinder,Electric Grinder,8,2100,"A Grinder powered by Electricity.",2,0,6,
@@ -962,3 +962,4 @@
 1943,NO, , ,1,00,"You shouldn't see this.",0,0,0,
 1944,ITEMCRATE,Item Crate,Item Crates,1,2100,"A Crate that is used to Store Items.",2,0,6,
 1945,CUTTER,Wood Cutter,Wood Cutters,1,2100,"ITEM HAS BEEN CUT.",2,0,6,
+1946,COOKEDMEAT,Meat (Cooked),Meat (Cooked),1,2100,"Cooked Meat from a Pokemon. Good for you.",1,1,13,

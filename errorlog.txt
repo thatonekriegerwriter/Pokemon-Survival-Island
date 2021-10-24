@@ -20066,3 +20066,362 @@ Backtrace:
 032:Scene_Map:168:in `block in update'
 032:Scene_Map:166:in `loop'
 032:Scene_Map:166:in `update'
+
+=================
+
+[2021-10-23 19:43:49 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [Power]:
+SyntaxError occurred.
+Line 80: Item.get(coal).name)))
+...                              ^: [Power] Electricity.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+375:Main:27:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+375:Main:18:in `mainFunction'
+
+=================
+
+[2021-10-23 20:09:32 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [Power]:
+SyntaxError occurred.
+Line 89: Heatrock))
+                       ^: [Power] Electricity.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+375:Main:27:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+375:Main:18:in `mainFunction'
+
+=================
+
+[2021-10-23 21:17:44 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::BerryPlant, String, Integer], but got NilClass.
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+129:BerryPlant:35:in `pbGetBerryPlantData'
+[Berry Scripts] berries.rb:18:in `block in pbMassBerryWater'
+[Berry Scripts] berries.rb:13:in `each'
+[Berry Scripts] berries.rb:13:in `pbMassBerryWater'
+[Power] Electricity.rb:13:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+
+=================
+
+[2021-10-23 21:23:39 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::BerryPlant, String, Integer], but got NilClass.
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+129:BerryPlant:35:in `pbGetBerryPlantData'
+[Berry Scripts] berries.rb:18:in `block in pbMassBerryWater'
+[Berry Scripts] berries.rb:13:in `each'
+[Berry Scripts] berries.rb:13:in `pbMassBerryWater'
+[Power] Electricity.rb:13:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+
+=================
+
+[2021-10-23 21:28:48 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::BerryPlant, String, Integer], but got NilClass.
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+129:BerryPlant:35:in `pbGetBerryPlantData'
+[Berry Scripts] berries.rb:18:in `block in pbMassBerryWater'
+[Berry Scripts] berries.rb:13:in `each'
+[Berry Scripts] berries.rb:13:in `pbMassBerryWater'
+[Power] Electricity.rb:13:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+
+=================
+
+[2021-10-23 21:35:22 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::BerryPlant, String, Integer], but got NilClass.
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+129:BerryPlant:35:in `pbGetBerryPlantData'
+[Berry Scripts] berries.rb:18:in `block in pbMassBerryWater'
+[Berry Scripts] berries.rb:13:in `each'
+[Berry Scripts] berries.rb:13:in `pbMassBerryWater'
+[Power] Electricity.rb:13:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+
+=================
+
+[2021-10-23 21:38:40 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::BerryPlant, String, Integer], but got NilClass.
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+129:BerryPlant:35:in `pbGetBerryPlantData'
+[Berry Scripts] berries.rb:19:in `block in pbMassBerryWater'
+[Berry Scripts] berries.rb:13:in `each'
+[Berry Scripts] berries.rb:13:in `pbMassBerryWater'
+[Power] Electricity.rb:13:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+
+=================
+
+[2021-10-23 23:15:03 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in map 56 (Home Interior):
+Exception: ArgumentError
+Message: wrong number of arguments (given 1, expected 0)
+
+***Full script:
+pbFillUp
+
+
+Backtrace:
+128:Item:99:in `is_berry?'
+[Power] Survival Mode.rb:355:in `block (2 levels) in pbFillUp'
+275:UI_Bag:373:in `block (2 levels) in pbRefreshFilter'
+275:UI_Bag:372:in `each'
+275:UI_Bag:372:in `block in pbRefreshFilter'
+275:UI_Bag:370:in `each'
+275:UI_Bag:370:in `pbRefreshFilter'
+275:UI_Bag:159:in `pbStartScene'
+275:UI_Bag:634:in `pbChooseItemScreen'
+[Power] Survival Mode.rb:355:in `block in pbFillUp'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+338:Utilities:515:in `pbCommonEvent'
+238:Item_Effects:234:in `block in <main>'
+035:Event_Handlers:199:in `trigger'
+
+=================
+
+[2021-10-23 23:16:52 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in map 56 (Home Interior):
+Exception: ArgumentError
+Message: wrong number of arguments (given 1, expected 0)
+
+***Full script:
+pbFillUp
+
+
+Backtrace:
+128:Item:99:in `is_berry?'
+[Power] Survival Mode.rb:354:in `block (2 levels) in pbFillUp'
+275:UI_Bag:373:in `block (2 levels) in pbRefreshFilter'
+275:UI_Bag:372:in `each'
+275:UI_Bag:372:in `block in pbRefreshFilter'
+275:UI_Bag:370:in `each'
+275:UI_Bag:370:in `pbRefreshFilter'
+275:UI_Bag:159:in `pbStartScene'
+275:UI_Bag:634:in `pbChooseItemScreen'
+[Power] Survival Mode.rb:354:in `block in pbFillUp'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+338:Utilities:515:in `pbCommonEvent'
+238:Item_Effects:234:in `block in <main>'
+035:Event_Handlers:199:in `trigger'
+
+=================
+
+[2021-10-23 23:20:17 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in map 56 (Home Interior):
+Exception: NameError
+Message: undefined local variable or method `berry' for #<Interpreter @event_id: 0>
+
+***Full script:
+pbFillUp
+
+
+Backtrace:
+[Power] Survival Mode.rb:356:in `pbFillUp'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+338:Utilities:515:in `pbCommonEvent'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+338:Utilities:515:in `pbCommonEvent'
+238:Item_Effects:234:in `block in <main>'
+035:Event_Handlers:199:in `trigger'
+
+=================
+
+[2021-10-24 00:19:33 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [Power]:
+SyntaxError occurred.
+Line 584: Syntax error, unexpected ')', expecting '='
+...05],$game_variables[206],berry)
+...                              ^: [Power] Survival Mode.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+375:Main:27:in `mainFunctionDebug'
+375:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+375:Main:18:in `mainFunction'
+
+=================
+
+[2021-10-24 02:38:14 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 4 (coords 9,4), map 56 (Home Interior):
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::Item, String, Integer], but got NilClass.
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+244:PokemonBag:91:in `pbQuantity'
+[SI Crafting] craftingold.rb:362:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:683:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+033:Interpreter:100:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'

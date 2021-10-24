@@ -14,8 +14,7 @@ def pbMassBerryWater(num1,num2,map=nil)
     berryData = $PokemonGlobal.eventvars[[map,i]]
     if berryData
       berryToReceive=berryData[1]
-      if berryData[4]<100
-        berryvalues=pbGetBerryPlantData(berryData[1])
+      if berryData[1] && berryData[4]<100
         berryData[4]=100
       end
     end

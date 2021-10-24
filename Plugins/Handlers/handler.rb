@@ -79,3 +79,4 @@ if $PokemonSystem.autosave == 1
   $game_switches[52]==false 
 end
 }
+

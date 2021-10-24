@@ -77,14 +77,47 @@ coal = screen.pbChooseItemScreen
 }
 if coal
 $PokemonBag.pbDeleteItem(coal,1)
-Kernel.pbMessage(_INTL("\\GYou toss a {1} in the Power Station.. ",PBItems.getName(coal)))
+Kernel.pbMessage(_INTL("\\PWYou toss a {1} in the Power Station.. ",GameData::Item.get(coal).name))
 #205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
-if hasConst?(coal,(:CHARCOAL))
+if coal == :CHARCOAL
  $game_variables[291]+=8
 #full belly
+elsif coal == :WOODENPLANKS
+ $game_variables[291]+=3
+elsif coal == :ACORN
+ $game_variables[291]+=1
+elsif coal == :HEATROCK
+ $game_variables[291]+=25
+elsif coal == :FIRESTONE
+ $game_variables[291]+=15
 else
 pbMessage(_INTL("\\GIt got burnt up."))
 end
+message=_INTL("\\GDo you want to toss {1} in again?",coal)
+loop do
+if pbConfirmMessage(message)
+$PokemonBag.pbDeleteItem(coal,1)
+Kernel.pbMessage(_INTL("\\PWYou toss a {1} in the Power Station.. ",GameData::Item.get(coal).name))
+#205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
+if coal == :CHARCOAL
+ $game_variables[291]+=8
+#full belly
+elsif coal == :WOODENPLANKS
+ $game_variables[291]+=3
+elsif coal == :ACORN
+ $game_variables[291]+=1
+elsif coal == :HEATROCK
+ $game_variables[291]+=25
+elsif coal == :FIRESTONE
+ $game_variables[291]+=15
+else
+pbMessage(_INTL("\\GIt got burnt up."))
+end
+else
+ break
+end
+end
+
 message=_INTL("\\GDo you want to toss something else in?")
 if pbConfirmMessage(message)
  pbChargeUp
