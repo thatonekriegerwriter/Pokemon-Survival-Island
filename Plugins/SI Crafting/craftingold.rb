@@ -293,7 +293,7 @@ class Crafts_Scene
           @itemA=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts	  
 		  if @itemA
-          for i in 0..205
+          for i in 0..216
             if crafts[i][2]!=@itemB && @itemB==:NO
               @itemB=:NO
               @quantB=0
@@ -303,7 +303,6 @@ class Crafts_Scene
               @quantC=0
             end
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
-     		  pbMessage(_INTL("If ABC2 succeeded!"))
               @currentArray=i
               @returnItem=crafts[i][0]
               @required[1]=crafts[i][1]
@@ -315,7 +314,7 @@ class Crafts_Scene
           @itemB=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
 		  if @itemB
-          for i in 0..205
+          for i in 0..216
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
               @currentArray=i
               @returnItem=crafts[i][0]
@@ -336,10 +335,8 @@ class Crafts_Scene
           @itemC=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
 		  if @itemC
-          for i in 0..205
+          for i in 0..216
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
-     		  pbMessage(_INTL("If ABC3 succeeded!"))
-     		  pbMessage(_INTL("A = {1}, B = {2}, C = {3}",@itemA,@itemB,@itemC))
               @currentArray=i
               @returnItem=crafts[i][0]
               @required[3]=crafts[i][3]
@@ -376,7 +373,7 @@ class Crafts_Scene
   end
   
   def pbCheckRecipe(recipe)
-    for i in 0..205
+    for i in 0..216
       if recipe[1]==CraftsList.getcrafts[i][1] &&
          recipe[2]==CraftsList.getcrafts[i][2] &&
          recipe[3]==CraftsList.getcrafts[i][3]
@@ -668,8 +665,20 @@ module CraftsList
     [:SERIOUSMINT,:NO,:JABOCABERRY,:SUGAR],
     [:SERIOUSMINT,:NO,:SUGAR,:JABOCABERRY],
     [:SERIOUSMINT,:JABOCABERRY,:NO,:SUGAR],
-    [:SERIOUSMINT,:JABOCABERRY,:SUGAR,:NO]
+    [:SERIOUSMINT,:JABOCABERRY,:SUGAR,:NO],
 	#RECIPE 36:
+    [:BERRYMASH,:ORANBERRY,:SITRUSBERRY,:SITRUSBERRY],
+    [:BERRYMASH,:SITRUSBERRY,:ORANBERRY,:SITRUSBERRY],
+    [:BERRYMASH,:SITRUSBERRY,:SITRUSBERRY,:ORANBERRY],
+    [:BERRYMASH,:SITRUSBERRY,:ORANBERRY,:SITRUSBERRY],
+    [:BERRYMASH,:ORANBERRY,:SITRUSBERRY,:SITRUSBERRY],
+	#RECIPE 36:
+    [:SITRUSJUICE,:SUGAR,:BERRYMASH,:WATERBOTTLE],
+    [:SITRUSJUICE,:SUGAR,:WATERBOTTLE,:BERRYMASH],
+    [:SITRUSJUICE,:WATERBOTTLE,:BERRYMASH,:SUGAR],
+    [:SITRUSJUICE,:WATERBOTTLE,:SUGAR,:BERRYMASH],
+    [:SITRUSJUICE,:BERRYMASH,:WATERBOTTLE,:SUGAR],
+    [:SITRUSJUICE,:BERRYMASH,:SUGAR,:WATERBOTTLE]
     ]
     return @CraftsList
   end

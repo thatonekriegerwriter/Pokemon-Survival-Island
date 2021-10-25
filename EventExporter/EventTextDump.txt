@@ -40990,6 +40990,21 @@ List of Event Commands:
 
 Page #3
 Conditions
+Self Switch B is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #4
+Conditions
 Switch 0226: IceCaveReturn is ON
 
 Autonomous Movement
@@ -41002,13 +41017,13 @@ Trigger: Player Touch
 
 List of Event Commands:
 @>Text: There is a crash. It seems as though there was a rock fall in the cave behind you.
-@>Control Self Switch: B =ON
+@>Control Self Switch: C =ON
 @>
 
-Page #4
+Page #5
 Conditions
 Switch 0226: IceCaveReturn is ON
-Self Switch B is ON
+Self Switch C is ON
 
 Autonomous Movement
 Type: Fixed
@@ -41690,7 +41705,7 @@ List of Event Commands:
 @>Show Choices: Yes, No
 (When Cancel: Choice 2)
 : When [Yes]
- @>Script: pbMiningGame
+ @>Script: pbMiningGame3
  @>Set Move Route: Player
   :              : $>Move Down
  @>Wait for Move's Completion
@@ -42462,7 +42477,7 @@ List of Event Commands:
 @>Show Choices: Yes, No
 (When Cancel: Choice 2)
 : When [Yes]
- @>Script: pbMiningGame
+ @>Script: pbMiningGame3
  @>Set Move Route: Player
   :              : $>Move Down
  @>Wait for Move's Completion
@@ -46024,6 +46039,7 @@ List of Event Commands:
 @>Control Switches: [0231: Ohlordhecomin] = ON
 @>Play BGM: 'Gary', 100, 100
 @>Set Move Route: [Gary]
+                  (Ignore If Can't Move)
  :              : $>Move Down
  :              : $>Move Down
  :              : $>Move Down
@@ -46172,25 +46188,40 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
-@>Comment: Makes this event follow the player. The first 
- :       : parameter means "this event", the second is a name 
- :       : for that dependency, and the third is the Common 
- :       : Event number run when this following event is 
- :       : interacted with.
-@>Comment: Creates a partner trainer to battle alongside the 
- :       : player. The parameters are the trainer type and 
- :       : name of the partner. The partner trainer is defined 
- :       : in trainers.txt just like any other trainer.
-@>Script: pbRegisterPartner(
-:       :   :POKEMONTRAINER_Blue,
-:       :   "Blue")
-@>Comment: Note that the above two features are entirely 
- :       : unrelated. You can have a dependent event which 
- :       : isn't also a partner trainer (e.g. escort mission), or a 
- :       : partner trainer who doesn't visibly follow you around.
-@>Text: \PN teamed up with Blue!\me[Item get]\wtnp[40]
-@>Text: \xn[Blue] We got this.
-@>Control Switches: [0238: DisableGary] = ON
+@>Text: Ready to go?
+@>Show Choices: Yes, No
+(When Cancel: Branch)
+: When [Yes]
+ @>Comment: Makes this event follow the player. The first 
+  :       : parameter means "this event", the second is a name 
+  :       : for that dependency, and the third is the Common 
+  :       : Event number run when this following event is 
+  :       : interacted with.
+ @>Comment: Creates a partner trainer to battle alongside the 
+  :       : player. The parameters are the trainer type and 
+  :       : name of the partner. The partner trainer is defined 
+  :       : in trainers.txt just like any other trainer.
+ @>Script: Kernel.pbAddDependency2(003,"Blue",2)
+ @>Script: pbRegisterPartner(
+ :       :   :POKEMONTRAINER_Blue,
+ :       :   "Blue")
+ @>Comment: Note that the above two features are entirely 
+  :       : unrelated. You can have a dependent event which 
+  :       : isn't also a partner trainer (e.g. escort mission), or a 
+  :       : partner trainer who doesn't visibly follow you around.
+ @>Text: \PN teamed up with Blue!\me[Item get]\wtnp[40]
+ @>Text: \xn[Blue] We got this.
+ @>Control Switches: [0238: DisableGary] = ON
+ @>
+: When [No]
+ @>Text: I'm in your way then.
+ @>Set Move Route: This event
+  :              : $>Jump: -2,+0
+  :              : $>Turn Down
+ @>
+: When Cancel
+ @>
+: Branch End
 @>
 
 Page #2
@@ -46367,6 +46398,7 @@ List of Event Commands:
 @>Control Switches: [0231: Ohlordhecomin] = ON
 @>Play BGM: 'Gary', 100, 100
 @>Set Move Route: [Gary]
+                  (Ignore If Can't Move)
  :              : $>Move Down
  :              : $>Move Down
  :              : $>Move Down
@@ -46517,6 +46549,7 @@ List of Event Commands:
 @>Control Switches: [0231: Ohlordhecomin] = ON
 @>Play BGM: 'Gary', 100, 100
 @>Set Move Route: [Gary]
+                  (Ignore If Can't Move)
  :              : $>Move Down
  :              : $>Move Down
  :              : $>Move Down
@@ -46643,6 +46676,190 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 007
+Event Name: BerryPlant
+(X,Y): (021,030)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 008
+Event Name: BerryPlant
+(X,Y): (020,030)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 009
+Event Name: BerryPlant
+(X,Y): (019,030)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 010
+Event Name: BerryPlant
+(X,Y): (018,030)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 011
+Event Name: BerryPlant
+(X,Y): (034,021)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 012
+Event Name: BerryPlant
+(X,Y): (033,021)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 013
+Event Name: BerryPlant
+(X,Y): (032,021)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 014
+Event Name: BerryPlant
+(X,Y): (031,021)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
 @>
 
 #------------------------------------------------------------------------------
@@ -113961,6 +114178,8 @@ List of Event Commands:
    @>Control Self Switch: A =ON
    @>
   : Branch End
+  @>Script: pbSetEventTime
+  @>Control Self Switch: A =ON
   @>
  : Branch End
  @>
@@ -157130,13 +157349,22 @@ Trigger: None
 List of Event Commands:
 @>Label: Start
 @>Text: \xn[Blue] Whatcha need?
-@>Show Choices: Can you heal my Pokemon?, Escape Boat Crash., What Pokemon do you have, Leave me be.
+@>Show Choices: Can you heal my Pokemon?, Escape Boat Crash., What Pokemon do you have, Can you leave?
 (When Cancel: Branch)
 : When [Can you heal my Pokemon?]
  @>Text: \xn[Blue] Yeah, lemme jus-
  @>Text: \xn[Blue] Crap.
  @>Text: \xn[Blue] I forgot my bag inside the cave I've been staying in.
  @>Text: \xn[Blue] Frakin entrance cave in.
+ @>Conditional Branch: Script: $PokemonBag.pbHasItem?(:BLUEBAG)
+  @>Text: Oh thanks, I nearly forgot that again.
+  @>Script: $PokemonBag.pbDeleteItem(:BLUEBAG)
+  @>Text: Have this.
+  @>Script: Kernel.pbReceiveItem(:GSCURRY,3)
+  @>
+ : Else
+  @>
+ : Branch End
  @>Jump to Label: Start
  @>
 : When [Escape Boat Crash.]
@@ -157144,7 +157372,7 @@ List of Event Commands:
  @>Text: \xn[Blue] Both Red and I have been around the Gym Circuit enough that we had Pokemon in the PC that knew Surf, so we used them to get out of there.
  @>Text: \xn[Blue] Current picked both of us up and split us up. Tossed me off my Blastoise, and I washed up Arceus knows where.
  @>Text: \xn[Blue] I'm surprised YOU managed to survive it though.
- @>Conditional Branch: Switch [0235: Told Him] == OFF
+ @>Conditional Branch: Switch [0235: Told Him] == ON
   @>
  : Else
   @>Show Choices: Tell him., Don't.
@@ -157153,6 +157381,7 @@ List of Event Commands:
    @>Text: \xn[Blue] Just washed up? Wow.
    @>Text: \xn[Blue] That is really surprising, we barely had enough time to get our Mons before it sunk, much more anyone else get off, but you washing up like that gives me 
     :    : hope more people survived.
+   @>Control Switches: [0234: Didn't tell him.] = OFF
    @>Control Switches: [0235: Told Him] = ON
    @>Jump to Label: Start
    @>
@@ -157185,10 +157414,11 @@ List of Event Commands:
   @>
  : Branch End
  @>
-: When [Leave me be.]
+: When [Can you leave?]
+ @>Text: \xn[Blue] Your loss if I beat it before you.
  @>Script: pbRemoveDependency2("Blue")
- @>Script: pbRemoveDependency2("GaryEncounter")
  @>Script: pbDeregisterPartner
+ @>Control Switches: [0238: DisableGary] = OFF
  @>
 : When Cancel
  @>
@@ -157214,7 +157444,6 @@ List of Event Commands:
  @>Text: \bLet's keep going!
  @>
 : Branch End
-@>Text: \xn[Blue] Your loss if I beat it before you.
 @>
 
 #==============================================================================

@@ -20425,3 +20425,182 @@ Backtrace:
 033:Interpreter:100:in `block in update'
 033:Interpreter:87:in `loop'
 033:Interpreter:87:in `update'
+
+=================
+
+[2021-10-25 00:15:47 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [SI Crafting]:
+SyntaxError occurred.
+Line 673: Syntax error, unexpected ']', expecting `end'
+    ]
+    ^: [SI Crafting] craftingold.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+376:Main:27:in `mainFunctionDebug'
+376:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+376:Main:18:in `mainFunction'
+
+=================
+
+[2021-10-25 00:18:15 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+
+Exception: RuntimeError
+Message: Item ID number '1947' is used twice.
+File PBS/items.txt, line 967
+1947,BERRYMASH,Berry Mash,Berry Mash,1,2100,"A Mash made of a mixture of berries.",1,1,13,
+
+
+
+Backtrace:
+371:Compiler_CompilePBS:311:in `block in compile_items'
+370:Compiler:197:in `block (2 levels) in pbCompilerEachCommentedLine'
+370:Compiler:191:in `each_line'
+370:Compiler:191:in `block in pbCompilerEachCommentedLine'
+370:Compiler:188:in `open'
+370:Compiler:188:in `pbCompilerEachCommentedLine'
+371:Compiler_CompilePBS:306:in `compile_items'
+370:Compiler:699:in `compile_all'
+[v19.1 Hotfixes] Debug bug fixes.rb:68:in `compile_all'
+[Elite Battle: DX] EBDX Compiler.rb:188:in `compile_all'
+
+=================
+
+[2021-10-25 00:28:57 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 5 (coords 5,2), map 97 (Blue's Cave):
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::Item, String, Integer], but got NilClass.
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+244:PokemonBag:91:in `pbQuantity'
+[SI Crafting] craftingold.rb:362:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:695:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+033:Interpreter:100:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+
+=================
+
+[2021-10-25 00:32:57 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 5 (coords 5,2), map 97 (Blue's Cave):
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::Item, String, Integer], but got NilClass.
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+244:PokemonBag:91:in `pbQuantity'
+[SI Crafting] craftingold.rb:370:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:704:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+033:Interpreter:100:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+
+=================
+
+[2021-10-25 01:03:17 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 5 (coords 5,2), map 97 (Blue's Cave):
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::Item, String, Integer], but got NilClass.
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+244:PokemonBag:91:in `pbQuantity'
+[SI Crafting] craftingold.rb:361:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:695:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+033:Interpreter:100:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'

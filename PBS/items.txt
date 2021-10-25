@@ -963,3 +963,5 @@
 1944,ITEMCRATE,Item Crate,Item Crates,1,2100,"A Crate that is used to Store Items.",2,0,6,
 1945,CUTTER,Wood Cutter,Wood Cutters,1,2100,"ITEM HAS BEEN CUT.",2,0,6,
 1946,COOKEDMEAT,Meat (Cooked),Meat (Cooked),1,2100,"Cooked Meat from a Pokemon. Good for you.",1,1,13,
+1947,SITRUSJUICE,Sitrus Juice,Sitrus Juice,1,2100,"Juice made of a mix of Sitrus Berries, Oran Berries, and pinch of Sugar. Very Refreshing",1,1,13,
+1948,BERRYMASH,Berry Mash,Berry Mash,1,2100,"A Mash made of a mixture of berries.",1,1,13,

@@ -483,7 +483,7 @@ $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :LEMONADE
 $game_variables[207]+=11#207 is Saturation
-$game_variables[206]+=7#206 is Thirst
+$game_variables[206]+=10#206 is Thirst
 $game_variables[208]+=7#208 is Sleep
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
@@ -493,7 +493,7 @@ $game_variables[206]+=2#206 is Thirst
 $game_variables[205]+=6#205 is Hunger
 elsif berry == :MOOMOOMILK
 $game_variables[207]+=10
-$game_variables[206]+=7
+$game_variables[206]+=15
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :CSLOWPOKETAIL
@@ -562,6 +562,16 @@ elsif berry == :COOKEDMEAT
 $game_variables[207]+=40#207 is Saturation
 $game_variables[206]+=0#206 is Thirst
 $game_variables[205]+=20#205 is Hunger
+elsif berry == :SITRUSJUICE
+$game_variables[207]+=20#207 is Saturation
+$game_variables[206]+=25#206 is Thirst
+$game_variables[205]+=0#205 is Hunger
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+elsif berry == :BERRYMASH
+$game_variables[207]+=5#207 is Saturation
+$game_variables[206]+=5#206 is Thirst
+$game_variables[205]+=5#205 is Hunger
 
 
 #inedible
@@ -671,7 +681,7 @@ $game_variables[207]+=4
 $game_variables[206]+=4
 $Trainer.money += 2
 elsif berry == :FRESHWATER
-$game_variables[206]+=20
+$game_variables[206]+=25
 $game_variables[207]+=10#207 is Saturation
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
@@ -724,7 +734,7 @@ $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :LEMONADE
 $game_variables[207]+=11#207 is Saturation
-$game_variables[206]+=7#206 is Thirst
+$game_variables[206]+=15#206 is Thirst
 $game_variables[208]+=7#208 is Sleep
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
@@ -733,7 +743,7 @@ $game_variables[207]+=20#207 is Saturation
 $game_variables[206]+=2#206 is Thirst
 $game_variables[205]+=6#205 is Hunger
 elsif berry == :MOOMOOMILK
-$game_variables[207]+=10
+$game_variables[207]+=20
 $game_variables[206]+=7
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
@@ -803,6 +813,16 @@ elsif berry == :COOKEDMEAT
 $game_variables[207]+=40#207 is Saturation
 $game_variables[206]+=0#206 is Thirst
 $game_variables[205]+=20#205 is Hunger
+elsif berry == :SITRUSJUICE
+$game_variables[207]+=20#207 is Saturation
+$game_variables[206]+=25#206 is Thirst
+$game_variables[205]+=0#205 is Hunger
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+elsif berry == :BERRYMASH
+$game_variables[207]+=5#207 is Saturation
+$game_variables[206]+=5#206 is Thirst
+$game_variables[205]+=5#205 is Hunger
 
 
 #inedible
