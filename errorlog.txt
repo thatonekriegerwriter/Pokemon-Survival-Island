@@ -20604,3 +20604,69 @@ Backtrace:
 033:Interpreter:100:in `block in update'
 033:Interpreter:87:in `loop'
 033:Interpreter:87:in `update'
+
+=================
+
+[2021-10-25 01:41:22 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `pbRefresh' for nil:NilClass
+
+Backtrace:
+032:Scene_Map:204:in `block in update'
+080:MessageConfig:566:in `pbFadeOutIn'
+032:Scene_Map:200:in `update'
+[Unreal Time] FL Unreal Time.rb:153:in `update'
+[Following Pokemon EX] 004_Follower_Overrides.rb:702:in `update'
+[Check Seasons like B2W2] Check Seasons like B2W2.rb:62:in `update'
+032:Scene_Map:240:in `block in main'
+032:Scene_Map:237:in `loop'
+032:Scene_Map:237:in `main'
+376:Main:34:in `mainFunctionDebug'
+
+=================
+
+[2021-10-25 02:08:28 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 5 (coords 5,2), map 97 (Blue's Cave):
+Exception: ArgumentError
+Message: Invalid argument passed to method.
+Expected nil to be one of [Symbol, GameData::Item, String, Integer], but got NilClass.
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+015:Validation:29:in `validate'
+101:GameData:26:in `get'
+244:PokemonBag:91:in `pbQuantity'
+[SI Crafting] craftingold.rb:358:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:692:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+033:Interpreter:100:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
