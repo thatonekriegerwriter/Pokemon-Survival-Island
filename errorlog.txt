@@ -20670,3 +20670,388 @@ Backtrace:
 033:Interpreter:100:in `block in update'
 033:Interpreter:87:in `loop'
 033:Interpreter:87:in `update'
+
+=================
+
+[2021-10-25 21:45:00 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Unknown ID 97.
+
+Backtrace:
+101:GameData:157:in `get'
+[Power] Survival Mode.rb:266:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+044:Game_MapFactory:148:in `setMapChanging'
+044:Game_MapFactory:22:in `setup'
+031:StartGame:80:in `load_map'
+[Following Pokemon EX] 004_Follower_Overrides.rb:319:in `load_map'
+031:StartGame:64:in `load'
+
+=================
+
+[2021-10-25 21:47:54 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Unknown ID 97.
+
+Backtrace:
+101:GameData:157:in `get'
+[Power] Survival Mode.rb:266:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+044:Game_MapFactory:148:in `setMapChanging'
+044:Game_MapFactory:22:in `setup'
+031:StartGame:80:in `load_map'
+[Following Pokemon EX] 004_Follower_Overrides.rb:319:in `load_map'
+031:StartGame:64:in `load'
+
+=================
+
+[2021-10-25 21:49:20 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Unknown ID 97.
+
+Backtrace:
+101:GameData:157:in `get'
+[Power] Survival Mode.rb:266:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+044:Game_MapFactory:148:in `setMapChanging'
+044:Game_MapFactory:22:in `setup'
+031:StartGame:80:in `load_map'
+[Following Pokemon EX] 004_Follower_Overrides.rb:319:in `load_map'
+031:StartGame:64:in `load'
+
+=================
+
+[2021-10-25 21:51:24 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Unknown ID 97.
+
+Backtrace:
+101:GameData:157:in `get'
+[Power] Survival Mode.rb:266:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+044:Game_MapFactory:148:in `setMapChanging'
+044:Game_MapFactory:22:in `setup'
+031:StartGame:80:in `load_map'
+[Following Pokemon EX] 004_Follower_Overrides.rb:319:in `load_map'
+031:StartGame:64:in `load'
+
+=================
+
+[2021-10-25 21:55:17 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Unknown ID 97.
+
+Backtrace:
+101:GameData:157:in `get'
+[Power] Survival Mode.rb:266:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+044:Game_MapFactory:148:in `setMapChanging'
+044:Game_MapFactory:22:in `setup'
+031:StartGame:80:in `load_map'
+[Following Pokemon EX] 004_Follower_Overrides.rb:319:in `load_map'
+031:StartGame:64:in `load'
+
+=================
+
+[2021-10-25 21:56:25 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Unknown ID 97.
+
+Backtrace:
+101:GameData:157:in `get'
+[Power] Survival Mode.rb:266:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+044:Game_MapFactory:148:in `setMapChanging'
+044:Game_MapFactory:22:in `setup'
+031:StartGame:80:in `load_map'
+[Following Pokemon EX] 004_Follower_Overrides.rb:319:in `load_map'
+031:StartGame:64:in `load'
+
+=================
+
+[2021-10-25 21:57:39 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [Power]:
+SyntaxError occurred.
+Line 339: Syntax error, unexpected end-of-input, expecting '}': [Power] Survival Mode.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+376:Main:27:in `mainFunctionDebug'
+376:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+376:Main:18:in `mainFunction'
+
+=================
+
+[2021-10-25 21:58:53 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Unknown ID 97.
+
+Backtrace:
+101:GameData:157:in `get'
+[Power] Survival Mode.rb:267:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+044:Game_MapFactory:148:in `setMapChanging'
+044:Game_MapFactory:22:in `setup'
+031:StartGame:80:in `load_map'
+[Following Pokemon EX] 004_Follower_Overrides.rb:319:in `load_map'
+031:StartGame:64:in `load'
+
+=================
+
+[2021-10-25 22:00:03 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `autosave' for #<PokemonSystem>
+
+Backtrace:
+[Power] handler.rb:74:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+215:Overworld:179:in `pbOnStepTaken'
+047:Game_Player:370:in `update_event_triggering'
+047:Game_Player:324:in `update'
+[Following Pokemon EX] 004_Follower_Overrides.rb:390:in `update'
+032:Scene_Map:169:in `block in update'
+032:Scene_Map:166:in `loop'
+
+=================
+
+[2021-10-25 22:01:12 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `autosave' for #<PokemonSystem>
+
+Backtrace:
+[Power] handler.rb:74:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+215:Overworld:179:in `pbOnStepTaken'
+047:Game_Player:370:in `update_event_triggering'
+047:Game_Player:324:in `update'
+[Following Pokemon EX] 004_Follower_Overrides.rb:390:in `update'
+032:Scene_Map:169:in `block in update'
+032:Scene_Map:166:in `loop'
+
+=================
+
+[2021-10-25 22:22:37 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Unknown ID 98.
+
+Backtrace:
+101:GameData:157:in `get'
+[Power] Survival Mode.rb:267:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+044:Game_MapFactory:148:in `setMapChanging'
+044:Game_MapFactory:22:in `setup'
+032:Scene_Map:72:in `transfer_player'
+[Following Pokemon EX] 004_Follower_Overrides.rb:719:in `transfer_player'
+032:Scene_Map:173:in `block in update'
+
+=================
+
+[2021-10-25 22:23:18 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `cmd_options' for #<PokemonLoadScreen>
+
+Backtrace:
+[Multiple save (v.19)] Multiple save file.rb:326:in `block in pbStartLoadScreen'
+[Multiple save (v.19)] Multiple save file.rb:310:in `loop'
+[Multiple save (v.19)] Multiple save file.rb:310:in `pbStartLoadScreen'
+[Elite Battle: DX] EBDX Nuzlocke.rb:330:in `pbStartLoadScreen'
+[Elite Battle: DX] EBDX Randomizer.rb:345:in `pbStartLoadScreen'
+376:Main:6:in `main'
+376:Main:34:in `mainFunctionDebug'
+376:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+376:Main:18:in `mainFunction'
+
+=================
+
+[2021-10-25 23:00:42 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `pbDisplay' for nil:NilClass
+
+Backtrace:
+239:Item_BattleEffects:38:in `block in <main>'
+035:Event_Handlers:199:in `trigger'
+237:Item_Utilities:85:in `triggerCanUseInBattle'
+180:Battle_Phase_Command:131:in `block in pbItemMenu'
+[Elite Battle: DX] UI Bag.rb:750:in `block in pbItemMenu'
+[Elite Battle: DX] UI Bag.rb:682:in `loop'
+[Elite Battle: DX] UI Bag.rb:682:in `pbItemMenu'
+180:Battle_Phase_Command:106:in `pbItemMenu'
+180:Battle_Phase_Command:217:in `block (2 levels) in pbCommandPhaseLoop'
+180:Battle_Phase_Command:206:in `loop'
+
+=================
+
+[2021-10-25 23:01:07 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `pbDisplay' for nil:NilClass
+
+Backtrace:
+239:Item_BattleEffects:38:in `block in <main>'
+035:Event_Handlers:199:in `trigger'
+237:Item_Utilities:85:in `triggerCanUseInBattle'
+180:Battle_Phase_Command:131:in `block in pbItemMenu'
+[Elite Battle: DX] UI Bag.rb:750:in `block in pbItemMenu'
+[Elite Battle: DX] UI Bag.rb:682:in `loop'
+[Elite Battle: DX] UI Bag.rb:682:in `pbItemMenu'
+180:Battle_Phase_Command:106:in `pbItemMenu'
+180:Battle_Phase_Command:217:in `block (2 levels) in pbCommandPhaseLoop'
+180:Battle_Phase_Command:206:in `loop'
+
+=================
+
+[2021-10-25 23:11:50 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Unknown ID 93.
+
+Backtrace:
+101:GameData:157:in `get'
+[Power] Survival Mode.rb:267:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+044:Game_MapFactory:148:in `setMapChanging'
+044:Game_MapFactory:22:in `setup'
+032:Scene_Map:72:in `transfer_player'
+[Following Pokemon EX] 004_Follower_Overrides.rb:719:in `transfer_player'
+032:Scene_Map:173:in `block in update'
+
+=================
+
+[2021-10-26 01:59:37 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 1 (coords 45,4), map 72 (Winter Zone):
+Exception: NameError
+Message: uninitialized constant Interpreter::PBItems
+
+***Full script:
+Kernel.pbItemBall(PBItems::CLEVERWING)
+
+Backtrace:
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'

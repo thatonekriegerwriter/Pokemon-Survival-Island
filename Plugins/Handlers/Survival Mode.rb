@@ -263,25 +263,26 @@ Events.onMapChanging  += proc {
 #--------------------------Temperature                 ------------------------#
 #------------------------------------------------------------------------------#
 
-if $PokemonSystem.survivalmode == 0 && $PokemonSystem.temperature == 0 && GameData::MapMetadata.get($game_map.map_id).outdoor_map
 
-  if pbIsSpring == true
+if $PokemonSystem.survivalmode == 0 && GameData::MapMetadata.get($game_map.map_id).outdoor_map
+
+  if pbIsSpring == true && GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:Rain, 9, 20)  if rand(200) <= 25
    $game_variables[387] += 0 if rand(10) == 5 #ambienttemperature
   end
 
-  if pbIsSummer == true
+  if pbIsSummer == true && GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:Sun, 9, 20)  if rand(200) <= 50 && !($game_screen.weather_type==:Rain)
    $game_variables[387] += 3 if rand(10) == 5 #ambienttemperature
   end
 
-  if pbIsAutumn  == true
+  if pbIsAutumn  == true && GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:Rain, 9, 20)  if rand(200) <= 25
    $game_screen.weather(:HeavyRain, 9, 20) if rand(200) <= 15
    $game_variables[387] -= 2 if rand(40) == 5 #ambienttemperature
   end
 
-  if pbIsWinter  == true
+  if pbIsWinter  == true && GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:Snow, 9, 20) if rand(200) <= 40 && !($game_screen.weather_type==:Blizzard)
    $game_screen.weather(:Blizzard, 9, 20) if rand(200) <= 15 && !($game_screen.weather_type==:Snow)
    $game_variables[387] -= 4 if rand(20) == 5 #ambienttemperature
@@ -291,20 +292,23 @@ if $PokemonSystem.survivalmode == 0 && $PokemonSystem.temperature == 0 && GameDa
   end
 
 end
-=begin
  case $game_variables[384] #Month
    when 0 #Jan
+    $game_variables[387] -= 3 if rand(10) == 5 #ambienttemperature
    when 1 #Feb
+    $game_variables[387] -= 5 if rand(10) == 5 #ambienttemperature
    when 2 #Mar
+    $game_variables[387] += 1 if rand(10) == 5 #ambienttemperature
    when 3 #April
+    $game_variables[387] += 2 if rand(10) == 5 #ambienttemperature
    when 4 #may
-    $game_variables[387] += 0 if rand(10) == 5 #ambienttemperature
+    $game_variables[387] += 2 if rand(10) == 5 #ambienttemperature
    when 5 #june
     $game_variables[387] += 3 if rand(10) == 5 #ambienttemperature
    when 6 #july
-    $game_variables[387] -= 2 if rand(40) == 5 #ambienttemperature
+    $game_variables[387] += 2 if rand(40) == 5 #ambienttemperature
    when 7 #august
-    $game_variables[387] -= 4 if rand(20) == 5 #ambienttemperature
+    $game_variables[387] += 6 if rand(20) == 5 #ambienttemperature
    when 8 #september
     $game_variables[387] += 0 if rand(10) == 5 #ambienttemperature
    when 9 #october
@@ -312,7 +316,7 @@ end
    when 10 #november
     $game_variables[387] -= 2 if rand(40) == 5 #ambienttemperature
    when 11 #december
-    $game_variables[387] -= 4 if rand(20) == 5 #ambienttemperature
+    $game_variables[387] -= 3 if rand(20) == 5 #ambienttemperature
  end
 
 
@@ -333,10 +337,11 @@ end
    when 6
 
  end
-=end
+
 #------------------------------------------------------------------------------#
 #------------------------------------------------------------------------------#
 end
+
 }
 
 

@@ -43719,7 +43719,7 @@ Speed: 3: Slow
 Freq: 3: Low
 Options Enabled
 Move Animation
-Trigger: Action Button
+Trigger: Player Touch
 
 List of Event Commands:
 @>
@@ -46297,6 +46297,21 @@ Trigger: Action Button
 List of Event Commands:
 @>
 
+Page #6
+Conditions
+Switch 0226: IceCaveReturn is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
 #------------------------------------------------------------------------------
 Event ID: 004
 Event Name: EV004
@@ -48347,7 +48362,24 @@ Event Name: EV003
 Page #1
 Conditions
 Switch 0222: Freed Xatu is ON
-Self Switch A is ON
+
+Graphic: 178-xatu
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: This Xatu nods at you respectfully. You saved it from the Nihilego, so it is going to make something to teleport you here anytime you would like.
+@>
+
+Page #2
+Conditions
+Switch 0252: Island1PG is ON
 
 Graphic: 178-xatu
 
@@ -51508,6 +51540,7 @@ List of Event Commands:
  @>Control Variables: [0234: BeatenBosses] += 1
  @>Control Switches: [0079: Poli'ahu (Snow)] = ON
  @>Control Switches: [0226: IceCaveReturn] = ON
+ @>Script: pbRemoveDependency2("Blue")
  @>Script: pbDeregisterPartner
  @>Control Switches: [0238: DisableGary] = ON
  @>Control Self Switch: B =ON

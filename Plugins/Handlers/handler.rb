@@ -71,12 +71,5 @@ if $PokemonSystem.nuzlockemode == 0
  end
 end
 
-if $PokemonSystem.autosave == 0
-  $game_switches[52]==true 
-end
-
-if $PokemonSystem.autosave == 1
-  $game_switches[52]==false 
-end
 }
 
