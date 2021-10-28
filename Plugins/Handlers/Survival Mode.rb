@@ -173,50 +173,50 @@ end
 if $PokemonSystem.survivalmode == 0 && !maps.include?($game_map.map_id) && $game_switches[147]==true #Survival Mode Switch
  case $game_variables[207]
   when 0
-    $game_variables[205] -= 1 if rand(10) == 5 #take from hunger
-    $game_variables[206] -= 1 if rand(10) == 5 #take from drinking
+    $game_variables[205] -= 1 if rand(50) == 1 #take from hunger
+    $game_variables[206] -= 1 if rand(50) == 1 #take from drinking
   else
-   $game_variables[207] -= 1 if rand(10) == 5 #take from saturation
+   $game_variables[207] -= 1 if rand(50) == 1 #take from saturation
 end
 end
 
 if $PokemonSystem.survivalmode == 0 && $game_variables[256]==(:LCLOAK) && !maps.include?($game_map.map_id) #Survival Mode Switch
  case $game_variables[207]
   when 0
-    $game_variables[205] += 1 if rand(10) == 5 #take from hunger
-    $game_variables[206] += 1 if rand(10) == 5 #take from drinking
+    $game_variables[205] += 1 if rand(50) == 1 #take from hunger
+    $game_variables[206] += 1 if rand(50) == 1 #take from drinking
   else
-   $game_variables[207] -= 1 if rand(10) == 5 #take from saturation
+   $game_variables[207] -= 1 if rand(50) == 1 #take from saturation
   end
 end
 
 if $PokemonSystem.survivalmode == 0 && $game_variables[256]==(:SEASHOES) && !maps.include?($game_map.map_id) #Survival Mode Switch
  case $game_variables[207]
   when 0
-    $game_variables[205] -= 1 if rand(10) == 5 #take from hunger
-    $game_variables[206] += 1 if rand(10) == 5 #take from drinking
+    $game_variables[205] -= 1 if rand(50) == 1 #take from hunger
+    $game_variables[206] += 1 if rand(50) == 1 #take from drinking
   else
-   $game_variables[207] -= 1 if rand(10) == 5 #take from saturation
+   $game_variables[207] -= 1 if rand(50) == 1 #take from saturation
   end
 end
 
 if $PokemonSystem.survivalmode == 0 && $game_variables[256]==(:LJACKET) && !maps.include?($game_map.map_id) #Survival Mode Switch
  case $game_variables[207]
   when 0
-    $game_variables[205] += 1 if rand(10) == 5 #take from hunger
-    $game_variables[206] -= 1 if rand(10) == 5 #take from drinking
+    $game_variables[205] += 1 if rand(50) == 1 #take from hunger
+    $game_variables[206] -= 1 if rand(50) == 1 #take from drinking
   else
-   $game_variables[207] -= 1 if rand(10) == 5 #take from saturation
+   $game_variables[207] -= 1 if rand(50) == 1 #take from saturation
   end
 end
 
 if $PokemonSystem.survivalmode == 0 && $game_variables[256]==(:IRONARMOR) && !maps.include?($game_map.map_id) #Survival Mode Switch
  case $game_variables[207]
   when 0
-    $game_variables[205] -= 1 if rand(10) == 5 #take from hunger
-    $game_variables[206] -= 1 if rand(10) == 5 #take from drinking
+    $game_variables[205] -= 1 if rand(50) == 1 #take from hunger
+    $game_variables[206] -= 1 if rand(50) == 1 #take from drinking
   else
-   $game_variables[207] -= 1 if rand(10) == 5 #take from saturation
+   $game_variables[207] -= 1 if rand(50) == 1 #take from saturation
   end
 end
 
@@ -248,6 +248,10 @@ if $PokemonSystem.survivalmode == 0 #Survival Mode Switch
 end
 end    
 
+  if !GameData::MapMetadata.get($game_map.map_id).outdoor_map
+   $game_screen.weather(:None, 0, 0)
+  end
+
 if $Trainer.money < 1 && $PokemonSystem.survivalmode == 0
     pbMessage(_INTL("\\w[]\\wm\\c[8]\\l[3]Game Over"))
     pbCancelVehicles
@@ -268,12 +272,12 @@ if $PokemonSystem.survivalmode == 0 && GameData::MapMetadata.get($game_map.map_i
 
   if pbIsSpring == true && GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:Rain, 9, 20)  if rand(200) <= 25
-   $game_variables[387] += 0 if rand(10) == 5 #ambienttemperature
+   $game_variables[387] += 0 if rand(50) == 1 #ambienttemperature
   end
 
   if pbIsSummer == true && GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:Sun, 9, 20)  if rand(200) <= 50 && !($game_screen.weather_type==:Rain)
-   $game_variables[387] += 3 if rand(10) == 5 #ambienttemperature
+   $game_variables[387] += 3 if rand(50) == 1 #ambienttemperature
   end
 
   if pbIsAutumn  == true && GameData::MapMetadata.get($game_map.map_id).outdoor_map
@@ -294,25 +298,25 @@ if $PokemonSystem.survivalmode == 0 && GameData::MapMetadata.get($game_map.map_i
 end
  case $game_variables[384] #Month
    when 0 #Jan
-    $game_variables[387] -= 3 if rand(10) == 5 #ambienttemperature
+    $game_variables[387] -= 3 if rand(50) == 1 #ambienttemperature
    when 1 #Feb
-    $game_variables[387] -= 5 if rand(10) == 5 #ambienttemperature
+    $game_variables[387] -= 5 if rand(50) == 1 #ambienttemperature
    when 2 #Mar
-    $game_variables[387] += 1 if rand(10) == 5 #ambienttemperature
+    $game_variables[387] += 1 if rand(50) == 1 #ambienttemperature
    when 3 #April
-    $game_variables[387] += 2 if rand(10) == 5 #ambienttemperature
+    $game_variables[387] += 2 if rand(50) == 1 #ambienttemperature
    when 4 #may
-    $game_variables[387] += 2 if rand(10) == 5 #ambienttemperature
+    $game_variables[387] += 2 if rand(50) == 1 #ambienttemperature
    when 5 #june
-    $game_variables[387] += 3 if rand(10) == 5 #ambienttemperature
+    $game_variables[387] += 3 if rand(50) == 1 #ambienttemperature
    when 6 #july
     $game_variables[387] += 2 if rand(40) == 5 #ambienttemperature
    when 7 #august
     $game_variables[387] += 6 if rand(20) == 5 #ambienttemperature
    when 8 #september
-    $game_variables[387] += 0 if rand(10) == 5 #ambienttemperature
+    $game_variables[387] += 0 if rand(50) == 1 #ambienttemperature
    when 9 #october
-    $game_variables[387] += 3 if rand(10) == 5 #ambienttemperature
+    $game_variables[387] += 3 if rand(50) == 1 #ambienttemperature
    when 10 #november
     $game_variables[387] -= 2 if rand(40) == 5 #ambienttemperature
    when 11 #december
@@ -914,3 +918,20 @@ end
 #------------------------------------------------------------------------------#
 
 
+def pbRandomEvent
+   if rand(1000) == 1
+     Kernel.pbMessage(_INTL("There was a sound outside."))   #Comet
+     $game_switches[450]==true 
+=begin
+   elsif rand(1000) == 2
+     
+   elsif rand(1000) == 3
+     
+   elsif rand(1000) == 4
+     
+   elsif rand(1000) == 5
+     
+   elsif rand(1000) == 6
+=end
+end
+end

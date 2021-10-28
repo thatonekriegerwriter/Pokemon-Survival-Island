@@ -143,6 +143,7 @@ BattleBack = Mountain
 Outdoor = false
 ShowArea = false
 BicycleAlways = false
+BattleBack = Cave
 #-------------------------------
 [021]
 # Office 2012
@@ -216,10 +217,12 @@ BattleBack = Swamp
 [034]
 # Swamp Zone
 Outdoor = true
+BattleBack = Swamp
 #-------------------------------
 [035]
 # Swamp Zone
 Outdoor = true
+BattleBack = Swamp
 #-------------------------------
 [036]
 # Deep Swamp
@@ -241,6 +244,10 @@ Outdoor = true
 # Swamp Base
 Outdoor = false
 #-------------------------------
+[041]
+# Base Path
+Outdoor = true
+#-------------------------------
 [042]
 # Southern Ocean
 Outdoor = true
@@ -251,6 +258,7 @@ DiveMap = 114
 Outdoor = false
 DarkMap = false
 SnapEdges = true
+BattleBack = Forest
 #-------------------------------
 [044]
 # Temperate-Snowy Zone
@@ -264,9 +272,16 @@ Outdoor = true
 ShowArea = true
 BattleBack = Forest
 #-------------------------------
+[046]
+# TEMP INTERIOR
+Outdoor = true
+ShowArea = true
+BattleBack = Forest
+#-------------------------------
 [047]
 # Temperate Zone
 Outdoor = true
+BattleBack = Forest
 #-------------------------------
 [048]
 # Kanto Region
@@ -302,7 +317,8 @@ Outdoor = true
 #-------------------------------
 [056]
 # Home Interior
-Outdoor = true
+Outdoor = false
+HealingSpot = 55,24,11
 #-------------------------------
 [057]
 # Temperate Ocean
@@ -332,6 +348,7 @@ Outdoor = true
 [063]
 # Xatu's Cave
 Outdoor = true
+BattleBack = Cave
 #-------------------------------
 [064]
 # MAP064
@@ -349,10 +366,12 @@ BattleBack = Forest
 [066]
 # UnderwaterCave
 Outdoor = true
+BattleBack = Cave
 #-------------------------------
 [067]
 # Xatu's Cave
 Outdoor = true
+BattleBack = Cave
 #-------------------------------
 [068]
 # Temperate-Snowy Zone
@@ -365,6 +384,7 @@ Outdoor = true
 [071]
 # Ice Cave
 Outdoor = true
+BattleBack = Cave
 #-------------------------------
 [072]
 # Winter Zone
@@ -389,6 +409,7 @@ Outdoor = true
 [076]
 # Cave
 Outdoor = true
+BattleBack = Cave
 #-------------------------------
 [077]
 # Winter Zone
@@ -431,35 +452,35 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [087]
-# Reviver Xatu Home
+# Xatu Home
 Outdoor = false
 #-------------------------------
 [088]
-# Reviver Xatu Home
+# Xatu Home
 Outdoor = false
 #-------------------------------
 [089]
-# Reviver Xatu Home
+# Xatu Home
 Outdoor = false
 #-------------------------------
 [090]
-# Reviver Xatu Home
+# Xatu Mart
 Outdoor = false
 #-------------------------------
 [091]
-# Reviver Xatu Home
+# Xatu Home
 Outdoor = false
 #-------------------------------
 [092]
-# Reviver Xatu Home
+# Xatu Inn
 Outdoor = false
 #-------------------------------
 [093]
-# Reviver Xatu Home
+# Xatu Home
 Outdoor = false
 #-------------------------------
 [094]
-# Reviver Xatu Home
+# Xatu Home
 Outdoor = false
 #-------------------------------
 [095]
@@ -473,6 +494,7 @@ Outdoor = false
 [097]
 # Blue's Cave
 Outdoor = false
+BattleBack = Cave
 #-------------------------------
 [098]
 # Ice Temple
@@ -533,6 +555,7 @@ Outdoor = true
 [112]
 # Deep Caves
 Outdoor = true
+BattleBack = Cave
 #-------------------------------
 [113]
 # Humid Area
@@ -737,6 +760,7 @@ Outdoor = true
 [163]
 # Deep Caves
 Outdoor = false
+BattleBack = Cave
 #-------------------------------
 [164]
 # Island 1
@@ -873,6 +897,7 @@ Outdoor = true
 [197]
 # Deep Caves
 Outdoor = false
+BattleBack = Cave
 #-------------------------------
 [198]
 # Forest Area
@@ -929,6 +954,7 @@ Outdoor = true
 [211]
 # Deep Caves
 Outdoor = false
+BattleBack = Cave
 #-------------------------------
 [212]
 # MAP212
@@ -937,6 +963,7 @@ Outdoor = true
 [213]
 # Ice Cave
 Outdoor = true
+BattleBack = Cave
 #-------------------------------
 [214]
 # Temple Prime
@@ -953,6 +980,7 @@ Outdoor = true
 [217]
 # Cave
 Outdoor = true
+BattleBack = Cave
 #-------------------------------
 [218]
 # Temperate-Snowy Zone
@@ -1208,7 +1236,7 @@ Outdoor = true
 #-------------------------------
 [282]
 # Passage
-Outdoor = true
+Outdoor = false
 #-------------------------------
 [283]
 # Mountain Skies
@@ -1216,11 +1244,13 @@ Outdoor = true
 #-------------------------------
 [284]
 # Monkey Cave
-Outdoor = true
+Outdoor = false
+BattleBack = Cave
 #-------------------------------
 [285]
 # The Monkey Kings Lair
-Outdoor = true
+Outdoor = false
+BattleBack = Cave
 #-------------------------------
 [286]
 # Xatu Home
@@ -1398,3 +1428,11 @@ Outdoor = true
 [350]
 # MAP350
 Outdoor = true
+#-------------------------------
+[351]
+# Home Interior
+Outdoor = false
+#-------------------------------
+[352]
+# Home Interior
+Outdoor = false

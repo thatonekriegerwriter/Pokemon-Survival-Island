@@ -14820,6 +14820,26 @@ List of Event Commands:
 @>Change Screen Color Tone: (0,0,0,0), @6
 @>
 
+Page #3
+Conditions
+Switch 0478: HomeFarm is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Player Touch
+
+List of Event Commands:
+@>Play SE: 'Exit Door', 80, 100
+@>Change Screen Color Tone: (-255,-255,-255,0), @6
+@>Wait: 8 frame(s)
+@>Transfer Player:[353:  Home], (033,016), Down, No Fade
+@>Change Screen Color Tone: (0,0,0,0), @6
+@>
+
 #------------------------------------------------------------------------------
 
 #==============================================================================
@@ -28378,6 +28398,34 @@ List of Event Commands:
 : Branch End
 @>
 
+Page #4
+Conditions
+Self Switch C is ON
+
+Graphic: Furnace
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: You have turned off the furnace.
+@>Text: Turn it back on?
+@>Show Choices: Yes, No
+(When Cancel: Choice 2)
+: When [Yes]
+ @>Control Variables: [0290: Power] += 1
+ @>Control Self Switch: C =OFF
+ @>
+: When [No]
+ @>
+: Branch End
+@>
+
 #------------------------------------------------------------------------------
 Event ID: 045
 Event Name: Furnace
@@ -28610,6 +28658,34 @@ List of Event Commands:
 : Branch End
 @>
 
+Page #4
+Conditions
+Self Switch C is ON
+
+Graphic: PokeballStationUp
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: You have turned off the furnace.
+@>Text: Turn it back on?
+@>Show Choices: Yes, No
+(When Cancel: Choice 2)
+: When [Yes]
+ @>Control Variables: [0290: Power] += 1
+ @>Control Self Switch: C =OFF
+ @>
+: When [No]
+ @>
+: Branch End
+@>
+
 #------------------------------------------------------------------------------
 Event ID: 047
 Event Name: CraftingTable
@@ -28721,7 +28797,7 @@ List of Event Commands:
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
-  @>Control Variables: [0290: Power] -= 1
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:ELECTRICPRESS)
   @>Control Self Switch: A =ON
   @>
@@ -28767,6 +28843,34 @@ List of Event Commands:
 : Branch End
 @>
 
+Page #3
+Conditions
+Self Switch C is ON
+
+Graphic: sandOrnament
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: You have turned off the furnace.
+@>Text: Turn it back on?
+@>Show Choices: Yes, No
+(When Cancel: Choice 2)
+: When [Yes]
+ @>Control Variables: [0290: Power] += 1
+ @>Control Self Switch: C =OFF
+ @>
+: When [No]
+ @>
+: Branch End
+@>
+
 #------------------------------------------------------------------------------
 Event ID: 049
 Event Name: Sewing Machine
@@ -28788,11 +28892,11 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Conditional Branch: Script: $PokemonBag.pbHasItem?(:SEWINGMACHINE)
- @>Text: Place Cauldron?
+ @>Text: Place Sewing Machine?
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
-  @>Control Variables: [0290: Power] -= 1
+  @>Control Variables: [0290: Power] += 1
   @>Script: $PokemonBag.pbDeleteItem(:SEWINGMACHINE)
   @>Control Self Switch: A =ON
   @>
@@ -28834,6 +28938,34 @@ List of Event Commands:
  @>
 : Else
  @>Call Common Event: Sewing Machine
+ @>
+: Branch End
+@>
+
+Page #3
+Conditions
+Self Switch C is ON
+
+Graphic: CraftingStation
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: You have turned off the furnace.
+@>Text: Turn it back on?
+@>Show Choices: Yes, No
+(When Cancel: Choice 2)
+: When [Yes]
+ @>Control Variables: [0290: Power] += 1
+ @>Control Self Switch: C =OFF
+ @>
+: When [No]
  @>
 : Branch End
 @>
@@ -35868,6 +36000,26 @@ List of Event Commands:
 @>Change Screen Color Tone: (0,0,0,0), @6
 @>
 
+Page #3
+Conditions
+Switch 0478: HomeFarm is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Player Touch
+
+List of Event Commands:
+@>Play SE: 'Exit Door', 80, 100
+@>Change Screen Color Tone: (-255,-255,-255,0), @6
+@>Wait: 8 frame(s)
+@>Transfer Player:[353:  Home], (020,037), Up, No Fade
+@>Change Screen Color Tone: (0,0,0,0), @6
+@>
+
 #------------------------------------------------------------------------------
 
 #==============================================================================
@@ -38473,6 +38625,27 @@ List of Event Commands:
 @>Change Screen Color Tone: (0,0,0,0), @6
 @>
 
+Page #2
+Conditions
+Switch 0478: HomeFarm is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Player Touch
+
+List of Event Commands:
+@>Control Switches: [0073: FormsOff] = OFF
+@>Play SE: 'Exit Door', 80, 100
+@>Change Screen Color Tone: (-255,-255,-255,0), @6
+@>Wait: 8 frame(s)
+@>Transfer Player:[055:  Home], (024,010), No Fade
+@>Change Screen Color Tone: (0,0,0,0), @6
+@>
+
 #------------------------------------------------------------------------------
 Event ID: 007
 Event Name: Grinder
@@ -38603,6 +38776,22 @@ List of Event Commands:
 
 Page #2
 Conditions
+Switch 0450: Comet is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Call Common Event: BedCore
+@>
+
+Page #3
+Conditions
 Switch 0001: Starting over is ON
 
 Autonomous Movement
@@ -38679,6 +38868,22 @@ List of Event Commands:
 @>
 
 Page #2
+Conditions
+Switch 0450: Comet is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Call Common Event: BedCore
+@>
+
+Page #3
 Conditions
 Switch 0001: Starting over is ON
 
@@ -38851,6 +39056,26 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
+@>Conditional Branch: Switch [0495: HomeUpstairs] == ON
+ @>Conditional Branch: Switch [0494: HomeWell] == ON
+  @>Conditional Branch: Switch [0496: HomeBreeding] == ON
+   @>Conditional Branch: Switch [0497: Houserocks] == ON
+    @>Conditional Branch: Switch [0498: HouseDownstairs] == ON
+     @>Conditional Branch: Switch [0479: HouseStatue] == ON
+      @>Control Self Switch: A =ON
+      @>Exit Event Processing
+      @>
+     : Branch End
+     @>
+    : Branch End
+    @>
+   : Branch End
+   @>
+  : Branch End
+  @>
+ : Branch End
+ @>
+: Branch End
 @>Text: You've written down a few upgrades for the house you have thought of.
 @>Text: Upgrades:\ch[249,-1,Breeding Area - 200 Wood,Upstairs - 500 Wood & 50 Stone,Cave - 5 Pickaxes & 50 Wood,Well - 50 Stone,Statue - 50 Hardstone & 5 
  :    : Mindplate,No Thanks]
@@ -38969,6 +39194,43 @@ List of Event Commands:
   @>
  : Else
   @>Text: You do not have enough Hardstone.
+  @>
+ : Branch End
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: You've written down a few more upgrades for the 
+ :    : house you have thought of.
+@>Text: Upgrades:\ch[249,-1,Yard Farm - 50 Bone Meal,,No Thanks]
+@>Conditional Branch: Variable [0249: BedStorage] == -1
+ @>
+: Branch End
+@>Conditional Branch: Variable [0249: BedStorage] == 0
+ @>Comment: Yard Farm
+ @>Conditional Branch: Script: $PokemonBag.pbQuantity(:BONEDUST)>=50
+  @>Conditional Branch: Script: $PokemonBag.pbDeleteItem(:BONEDUST,50)
+   @>Change Screen Color Tone: (-255,-255,-255,0), @20
+   @>Control Switches: [0478: HomeFarm] = ON
+   @>Change Screen Color Tone: (0,0,0,0), @20
+   @>
+  : Else
+   @>Text: You do not have enough wood.
+   @>
+  : Branch End
   @>
  : Branch End
  @>
@@ -41668,9 +41930,19 @@ List of Event Commands:
 @>Show Choices: Yes, No
 (When Cancel: Choice 2)
 : When [Yes]
+ @>Label: Start
  @>Script: pbMiningGame3
- @>Set Move Route: Player
-  :              : $>Move Down
+ @>Show Choices: Yes, No
+ (When Cancel: Choice 2)
+ : When [Yes]
+  @>Jump to Label: Start
+  @>
+ : When [No]
+  @>Set Move Route: Player
+   :              : $>Move Down
+  @>Wait for Move's Completion
+  @>
+ : Branch End
  @>Wait for Move's Completion
  @>
 : When [No]
@@ -42440,9 +42712,19 @@ List of Event Commands:
 @>Show Choices: Yes, No
 (When Cancel: Choice 2)
 : When [Yes]
+ @>Label: Start
  @>Script: pbMiningGame3
- @>Set Move Route: Player
-  :              : $>Move Down
+ @>Show Choices: Yes, No
+ (When Cancel: Choice 2)
+ : When [Yes]
+  @>Jump to Label: Start
+  @>
+ : When [No]
+  @>Set Move Route: Player
+   :              : $>Move Down
+  @>Wait for Move's Completion
+  @>
+ : Branch End
  @>Wait for Move's Completion
  @>
 : When [No]
@@ -42790,7 +43072,7 @@ Move Animation
 Trigger: Action Button
 
 List of Event Commands:
-@>Conditional Branch: Script: Kernel.pbItemBall(PBItems::CLEVERWING)
+@>Conditional Branch: Script: Kernel.pbItemBall(:SNOWBALL)
  @>Control Self Switch: A =ON
  @>
 : Branch End
@@ -43004,6 +43286,655 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
+Event ID: 008
+Event Name: hiddenitem
+(X,Y): (016,028)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:STONE)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 009
+Event Name: hiddenitem
+(X,Y): (020,033)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 010
+Event Name: hiddenitem
+(X,Y): (015,024)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 011
+Event Name: hiddenitem
+(X,Y): (045,019)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 012
+Event Name: hiddenitem
+(X,Y): (018,012)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 013
+Event Name: hiddenitem
+(X,Y): (007,011)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 014
+Event Name: hiddenitem
+(X,Y): (028,011)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 015
+Event Name: hiddenitem
+(X,Y): (047,035)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:STONE)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 016
+Event Name: hiddenitem
+(X,Y): (025,034)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 017
+Event Name: hiddenitem
+(X,Y): (024,034)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 018
+Event Name: hiddenitem
+(X,Y): (030,011)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
 
 #==============================================================================
 Map ID: 073
@@ -43060,6 +43991,360 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
+Event ID: 002
+Event Name: hiddenitem
+(X,Y): (001,021)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 003
+Event Name: hiddenitem
+(X,Y): (008,028)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 004
+Event Name: hiddenitem
+(X,Y): (003,034)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 005
+Event Name: hiddenitem
+(X,Y): (033,022)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:STONE)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 006
+Event Name: hiddenitem
+(X,Y): (042,019)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:STONE)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 007
+Event Name: hiddenitem
+(X,Y): (022,044)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
 
 #==============================================================================
 Map ID: 074
@@ -43067,11 +44352,723 @@ Map Name: Winter Zone
 Tileset: 029: Outside(Snow is coming)
 Width: 50, Height: 50
 
+#------------------------------------------------------------------------------
+Event ID: 001
+Event Name: hiddenitem
+(X,Y): (016,031)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 002
+Event Name: hiddenitem
+(X,Y): (003,036)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 003
+Event Name: hiddenitem
+(X,Y): (024,009)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 004
+Event Name: hiddenitem
+(X,Y): (024,008)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 005
+Event Name: hiddenitem
+(X,Y): (025,008)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 006
+Event Name: hiddenitem
+(X,Y): (004,024)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+
 #==============================================================================
 Map ID: 075
 Map Name: Winter Zone
 Tileset: 001: Outside
 Width: 50, Height: 50
+
+#------------------------------------------------------------------------------
+Event ID: 001
+Event Name: hiddenitem
+(X,Y): (003,027)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 002
+Event Name: hiddenitem
+(X,Y): (004,027)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 003
+Event Name: hiddenitem
+(X,Y): (023,018)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 004
+Event Name: hiddenitem
+(X,Y): (022,018)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 005
+Event Name: hiddenitem
+(X,Y): (026,037)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 006
+Event Name: hiddenitem
+(X,Y): (038,032)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
 
 #==============================================================================
 Map ID: 076
@@ -43661,12 +45658,486 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
+Event ID: 002
+Event Name: hiddenitem
+(X,Y): (043,020)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 003
+Event Name: hiddenitem
+(X,Y): (042,020)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 004
+Event Name: hiddenitem
+(X,Y): (039,010)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
 
 #==============================================================================
 Map ID: 078
 Map Name: Winter Zone
 Tileset: 029: Outside(Snow is coming)
 Width: 50, Height: 50
+
+#------------------------------------------------------------------------------
+Event ID: 001
+Event Name: hiddenitem
+(X,Y): (004,022)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:STONE)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 002
+Event Name: hiddenitem
+(X,Y): (026,028)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 003
+Event Name: hiddenitem
+(X,Y): (003,021)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 004
+Event Name: hiddenitem
+(X,Y): (045,029)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 005
+Event Name: hiddenitem
+(X,Y): (047,034)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
 
 #==============================================================================
 Map ID: 079
@@ -44741,6 +47212,242 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
+Event ID: 035
+Event Name: hiddenitem
+(X,Y): (011,024)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:STONE)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 036
+Event Name: hiddenitem
+(X,Y): (018,030)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:STONE)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 037
+Event Name: hiddenitem
+(X,Y): (016,037)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 038
+Event Name: hiddenitem
+(X,Y): (036,025)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
 
 #==============================================================================
 Map ID: 081
@@ -45402,6 +48109,124 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
+Event ID: 024
+Event Name: hiddenitem
+(X,Y): (017,029)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:STONE)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 025
+Event Name: hiddenitem
+(X,Y): (040,030)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:STONE)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
 
 #==============================================================================
 Map ID: 082
@@ -45883,6 +48708,242 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
+Event ID: 013
+Event Name: hiddenitem
+(X,Y): (007,027)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 014
+Event Name: hiddenitem
+(X,Y): (031,023)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 015
+Event Name: hiddenitem
+(X,Y): (025,011)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 016
+Event Name: hiddenitem
+(X,Y): (039,006)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
 
 #==============================================================================
 Map ID: 083
@@ -45939,12 +49000,840 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
+Event ID: 002
+Event Name: hiddenitem
+(X,Y): (018,024)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 003
+Event Name: hiddenitem
+(X,Y): (017,024)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 004
+Event Name: hiddenitem
+(X,Y): (018,039)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 005
+Event Name: hiddenitem
+(X,Y): (019,039)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 006
+Event Name: hiddenitem
+(X,Y): (040,020)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 007
+Event Name: hiddenitem
+(X,Y): (039,020)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 008
+Event Name: hiddenitem
+(X,Y): (044,031)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 009
+Event Name: hiddenitem
+(X,Y): (023,028)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 010
+Event Name: hiddenitem
+(X,Y): (005,019)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
 
 #==============================================================================
 Map ID: 084
 Map Name: Winter Zone
 Tileset: 029: Outside(Snow is coming)
 Width: 50, Height: 50
+
+#------------------------------------------------------------------------------
+Event ID: 001
+Event Name: hiddenitem
+(X,Y): (042,045)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 002
+Event Name: hiddenitem
+(X,Y): (041,045)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 003
+Event Name: hiddenitem
+(X,Y): (045,030)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 004
+Event Name: hiddenitem
+(X,Y): (035,042)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 005
+Event Name: hiddenitem
+(X,Y): (043,049)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
 
 #==============================================================================
 Map ID: 085
@@ -46838,6 +50727,419 @@ Trigger: Action Button
 
 List of Event Commands:
 @>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 015
+Event Name: hiddenitem
+(X,Y): (024,026)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 016
+Event Name: hiddenitem
+(X,Y): (025,006)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 017
+Event Name: hiddenitem
+(X,Y): (020,007)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 018
+Event Name: hiddenitem
+(X,Y): (016,030)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 019
+Event Name: hiddenitem
+(X,Y): (019,035)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 020
+Event Name: hiddenitem
+(X,Y): (003,038)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 021
+Event Name: hiddenitem
+(X,Y): (041,018)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: pbItemBall(:SNOWBALL)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Set Event Location: This event,(010,012), Down
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
 @>
 
 #------------------------------------------------------------------------------
@@ -156274,6 +160576,595 @@ List of Event Commands:
 #------------------------------------------------------------------------------
 
 #==============================================================================
+Map ID: 353
+Map Name:  Home
+Tileset: 001: Outside
+Width: 50, Height: 50
+Auto-Change BGM: c_Follow Me
+
+#------------------------------------------------------------------------------
+Event ID: 001
+Event Name: EV001
+(X,Y): (020,038)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Player Touch
+
+List of Event Commands:
+@>Play SE: 'Exit Door', 80, 100
+@>Change Screen Color Tone: (-255,-255,-255,0), @6
+@>Wait: 8 frame(s)
+@>Transfer Player:[050: North], (009,003), No Fade
+@>Change Screen Color Tone: (0,0,0,0), @6
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 002
+Event Name: AncientStone
+(X,Y): (020,013)
+
+Page #1
+Conditions
+Switch 0479: HouseStatue is ON
+
+Graphic: statue
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Call Common Event: Teleport Statues
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 003
+Event Name: WaterCollection
+(X,Y): (029,012)
+
+Page #1
+Conditions
+Switch 0494: HomeWell is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Stop Animation
+Direction Fix
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: $PokemonBag.pbHasItem?(:WATERBOTTLE)
+ @>Text: You collect some water from the pond.
+ @>Script: $PokemonBag.pbStoreItem(:FRESHWATER,3)
+ @>Script: $PokemonBag.pbDeleteItem(:WATERBOTTLE)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>Wait: 5 frame(s)
+ @>
+: Else
+ @>Text: You don't have a water bottle.
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Switch 0494: HomeWell is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Stop Animation
+Direction Fix
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: $PokemonBag.pbHasItem?(:WATERBOTTLE)
+ @>Text: It wouldn't be good to collect too much water.
+ @>
+: Else
+ @>Text: You don't have a water bottle.
+ @>
+: Branch End
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Stop Animation
+Direction Fix
+Trigger: Action Button
+
+List of Event Commands:
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 004
+Event Name: EV004
+(X,Y): (033,015)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Player Touch
+
+List of Event Commands:
+@>Play SE: 'Exit Door', 80, 100
+@>Change Screen Color Tone: (-255,-255,-255,0), @6
+@>Wait: 8 frame(s)
+@>Transfer Player:[017: Mountain Zone], (014,016), Down, No Fade
+@>Change Screen Color Tone: (0,0,0,0), @6
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 005
+Event Name: EV005
+(X,Y): (024,010)
+
+Page #1
+Conditions
+None
+
+Graphic: doors2
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Player Touch
+
+List of Event Commands:
+@>Set Move Route: This event
+                  (Ignore If Can't Move)
+ :              : $>SE: 'Door enter', 100, 100
+ :              : $>Wait: 2 frame(s)
+ :              : $>Turn Left
+ :              : $>Wait: 2 frame(s)
+ :              : $>Turn Right
+ :              : $>Wait: 2 frame(s)
+ :              : $>Turn Up
+ :              : $>Wait: 2 frame(s)
+@>Wait for Move's Completion
+@>Set Move Route: Player
+                  (Ignore If Can't Move)
+ :              : $>Through ON
+ :              : $>Move Up
+ :              : $>Through OFF
+@>Wait for Move's Completion
+@>Change Transparent Flag: Transparency
+@>Set Move Route: This event
+                  (Ignore If Can't Move)
+ :              : $>Wait: 2 frame(s)
+ :              : $>Turn Right
+ :              : $>Wait: 2 frame(s)
+ :              : $>Turn Left
+ :              : $>Wait: 2 frame(s)
+ :              : $>Turn Down
+ :              : $>Wait: 2 frame(s)
+@>Wait for Move's Completion
+@>Play SE: 'Exit Door', 80, 100
+@>Change Screen Color Tone: (-255,-255,-255,0), @6
+@>Wait: 8 frame(s)
+@>Change Transparent Flag: Normal
+@>Transfer Player:[056: Home Interior], (008,013), No Fade
+@>Change Screen Color Tone: (0,0,0,0), @6
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 006
+Event Name: WaterCollection
+(X,Y): (021,012)
+
+Page #1
+Conditions
+Switch 0494: HomeWell is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Stop Animation
+Direction Fix
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: $PokemonBag.pbHasItem?(:WATERBOTTLE)
+ @>Text: You collect some water from the pond.
+ @>Script: $PokemonBag.pbStoreItem(:FRESHWATER,3)
+ @>Script: $PokemonBag.pbDeleteItem(:WATERBOTTLE)
+ @>Script: pbSetEventTime
+ @>Control Self Switch: A =ON
+ @>Wait: 5 frame(s)
+ @>
+: Else
+ @>Text: You don't have a water bottle.
+ @>
+: Branch End
+@>
+
+Page #2
+Conditions
+Switch 0494: HomeWell is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Stop Animation
+Direction Fix
+Trigger: Action Button
+
+List of Event Commands:
+@>Conditional Branch: Script: $PokemonBag.pbHasItem?(:WATERBOTTLE)
+ @>Text: It wouldn't be good to collect too much water.
+ @>
+: Else
+ @>Text: You don't have a water bottle.
+ @>
+: Branch End
+@>
+
+Page #3
+Conditions
+Switch 0061: s:cooledDown?(18000) is ON
+Self Switch A is ON
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Stop Animation
+Direction Fix
+Trigger: Action Button
+
+List of Event Commands:
+@>Control Self Switch: A =OFF
+@>Script: setTempSwitchOn("A")
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 007
+Event Name: EV007
+(X,Y): (036,023)
+
+Page #1
+Conditions
+None
+
+Graphic: Object ball
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Action Button
+
+List of Event Commands:
+@>Text: You could plant a tree here if you had a shovel.
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 008
+Event Name: BerryPlant
+(X,Y): (014,024)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 009
+Event Name: BerryPlant
+(X,Y): (014,025)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 010
+Event Name: BerryPlant
+(X,Y): (014,026)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 011
+Event Name: BerryPlant
+(X,Y): (021,015)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 012
+Event Name: BerryPlant
+(X,Y): (020,015)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 013
+Event Name: BerryPlant
+(X,Y): (019,015)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 014
+Event Name: BerryPlant
+(X,Y): (022,015)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 015
+Event Name: BerryPlant
+(X,Y): (027,015)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 016
+Event Name: BerryPlant
+(X,Y): (014,023)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 017
+Event Name: BerryPlant
+(X,Y): (028,015)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 018
+Event Name: BerryPlant
+(X,Y): (029,015)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+Event ID: 019
+Event Name: BerryPlant
+(X,Y): (030,015)
+
+Page #1
+Conditions
+None
+
+Graphic: invisible
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 2: Lower
+Options Enabled
+Through
+Trigger: Action Button
+
+List of Event Commands:
+@>Script: pbBerryPlant
+@>
+
+#------------------------------------------------------------------------------
+
+#==============================================================================
 Map ID: 400
 Map Name: MAP400
 Tileset: 037: Contest
@@ -159376,9 +164267,7 @@ Trigger: None
 List of Event Commands:
 @>Label: Start
 @>Script: pbFillUp
-@>Text: Again?\n\n Sleep: \v[208]%
- :    : \n Food: \v[205]%
- :    : \n Water: \v[206]%
+@>Text: Use something else? \n\n Sleep: \v[208]% \n Food: \v[205]% \n Water: \v[206]%
 @>Show Choices: Yes, No
 (When Cancel: Choice 2)
 : When [Yes]
@@ -159483,8 +164372,8 @@ Trigger: None
 
 List of Event Commands:
 @>Text: What are you going to do?
-@>Show Choices: Craft, Pick Up, Cancel
-(When Cancel: Choice 3)
+@>Show Choices: Craft, Pick Up, Turn Off, Cancel
+(When Cancel: Choice 4)
 : When [Craft]
  @>Text: What do you intend to Craft?\ch[203,-1,Basic Pokeball,Type Based,Special Catch Rate Gen 2, Special Catch Rate Gen 3, Special Catch Rate Gen 4,Status 
   :    : Balls, Custom Balls, Other]
@@ -159590,6 +164479,18 @@ List of Event Commands:
   @>
  : Branch End
  @>
+: When [Turn Off]
+ @>Text: Are you sure you want to turn off your Furnace?
+ @>Show Choices: Yes, No
+ (When Cancel: Choice 2)
+ : When [Yes]
+  @>Control Variables: [0290: Power] -= 1
+  @>Control Self Switch: C =ON
+  @>
+ : When [No]
+  @>
+ : Branch End
+ @>
 : When [Cancel]
  @>
 : Branch End
@@ -159603,8 +164504,8 @@ Trigger: None
 
 List of Event Commands:
 @>Text: What are you going to do?
-@>Show Choices: Craft, Pick Up, Cancel
-(When Cancel: Choice 3)
+@>Show Choices: Craft, Pick Up, Turn Off, Cancel
+(When Cancel: Choice 4)
 : When [Craft]
  @>Show Choices: Ore, Item, Plate
  (When Cancel: Branch)
@@ -159698,6 +164599,18 @@ List of Event Commands:
   @>
  : Branch End
  @>
+: When [Turn Off]
+ @>Text: Are you sure you want to turn off your Furnace?
+ @>Show Choices: Yes, No
+ (When Cancel: Choice 2)
+ : When [Yes]
+  @>Control Variables: [0290: Power] -= 1
+  @>Control Self Switch: C =ON
+  @>
+ : When [No]
+  @>
+ : Branch End
+ @>
 : When [Cancel]
  @>
 : Branch End
@@ -159753,7 +164666,7 @@ List of Event Commands:
  : Branch End
  @>
 : When [Turn Off]
- @>Text: Are you sure you want to turn your Furnace?
+ @>Text: Are you sure you want to turn off your Furnace?
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
@@ -159790,8 +164703,8 @@ Trigger: None
 
 List of Event Commands:
 @>Text: What are you going to do?
-@>Show Choices: Craft, Pick Up, Cancel
-(When Cancel: Choice 3)
+@>Show Choices: Craft, Pick Up, Turn Off, Cancel
+(When Cancel: Choice 4)
 : When [Craft]
  @>Show Choices: Page 1, Page 2
  (When Cancel: Branch)
@@ -159816,7 +164729,8 @@ List of Event Commands:
   :       : [:SPOOKYPLATE,[:REDSHARD,2,:YELLOWSHARD,2]],
   :       : [:DRACOPLATE,[:REDSHARD,3,:BLUESHARD,1]],
   :       : [:DREADPLATE,[:BLUESHARD,3,:GREENSHARD,1]],
-  :       : [:IRONPLATE,[:GREENSHARD,3,:BLUESHARD,1]]
+  :       : [:IRONPLATE,[:GREENSHARD,3,:BLUESHARD,1]],
+  :       : [:HARDSTONE,[:STONE,2]]
   :       : ])
   @>Control Variables: [0291: PowerMeter] -= Random No. (1...15)
   @>
@@ -159837,6 +164751,18 @@ List of Event Commands:
   @>
  : Branch End
  @>
+: When [Turn Off]
+ @>Text: Are you sure you want to turn off your Furnace?
+ @>Show Choices: Yes, No
+ (When Cancel: Choice 2)
+ : When [Yes]
+  @>Control Variables: [0290: Power] -= 1
+  @>Control Self Switch: C =ON
+  @>
+ : When [No]
+  @>
+ : Branch End
+ @>
 : When [Cancel]
  @>
 : Branch End
@@ -159850,8 +164776,8 @@ Trigger: None
 
 List of Event Commands:
 @>Text: What are you going to do?
-@>Show Choices: Craft, Pick Up, Cancel
-(When Cancel: Choice 3)
+@>Show Choices: Craft, Pick Up, Turn Off, Cancel
+(When Cancel: Choice 4)
 : When [Craft]
  @>Show Choices: Pokemon, Player
  (When Cancel: Choice 2)
@@ -159910,13 +164836,25 @@ List of Event Commands:
  : Branch End
  @>
 : When [Pick Up]
- @>Text: Are you sure you want to pick up your Press?
+ @>Text: Are you sure you want to pick up your Sewing Machine?
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
   @>Control Variables: [0290: Power] -= 1
-  @>Script: Kernel.pbReceiveItem(:ELECTRICPRESS)
+  @>Script: Kernel.pbReceiveItem(:SEWINGMACHINE)
   @>Control Self Switch: A =OFF
+  @>
+ : When [No]
+  @>
+ : Branch End
+ @>
+: When [Turn Off]
+ @>Text: Are you sure you want to turn off your Furnace?
+ @>Show Choices: Yes, No
+ (When Cancel: Choice 2)
+ : When [Yes]
+  @>Control Variables: [0290: Power] -= 1
+  @>Control Self Switch: C =ON
   @>
  : When [No]
   @>
@@ -160260,114 +165198,331 @@ Common Event Name: Cutter
 Trigger: None
 
 List of Event Commands:
+@>Text: How many trees do you want to cut down?
+@>Input Number: [0289: Cutter], 3 digit(s)
+@>
+
+#==============================================================================
+Common Event ID: 040
+Common Event Name: BedCore
+
+Trigger: None
+
+List of Event Commands:
+@>Control Switches: [0059: Phenomina] = ON
+@>Script: Kernel.pbSetPokemonCenter
+@>Label: Start
 @>Text: What are you going to do?
-@>Show Choices: Craft, Pick Up, Cancel
-(When Cancel: Choice 3)
-: When [Craft]
- @>Show Choices: Ore, Item, Plate
- (When Cancel: Branch)
- : When [Ore]
-  @>Script: pbItemCrafter([
-  :       : [:IRONDUST,[:IRONORE,0.25]],
-  :       : [:GOLDDUST,[:GOLDORE,0.25]],
-  :       : [:COPPERDUST,[:COPPERORE,0.25]],
-  :       : [:SILVERDUST,[:SILVERORE,0.25]],
-  :       : [:SUGAR,[:SUGARCANE,0.25]]
-  :       : ])
-  @>Control Variables: [0291: PowerMeter] -= Random No. (1...15)
-  @>
- : When [Item]
-  @>Show Choices: Page 1, Page 2
-  (When Cancel: Branch)
-  : When [Page 1]
-   @>Script: pbItemCrafter([
-   :       : [:IRONDUST,[:IRONBALL,0.30]],
-   :       : [:IRONDUST,[:IRONPLATE,0.20]],
-   :       : [:STARDUST,[:STARPIECE,0.50]],
-   :       : [:GOLDDUST,[:NUGGET,0.40]],
-   :       : [:GOLDDUST,[:BIGNUGGET,0.20]],
-   :       : [:GOLDDUST,[:RELICGOLD,0.20]],
-   :       : [:CLAYDUST,[:LIGHTCLAY,0.25]],
-   :       : [:COPPERDUST,[:RELICCOPPER,0.40]],
-   :       : [:SILVERDUST,[:RELICSILVER,0.40]]
-   :       : ])
-   @>Control Variables: [0291: PowerMeter] -= Random No. (1...15)
-   @>
-  : When [Page 2]
-   @>Script: pbItemCrafter([
-   :       : [:BONEDUST,[:THICKCLUB,0.30]],
-   :       : [:BONEDUST,[:RAREBONE,0.20]],
-   :       : [:STONE,[:HARDSTONE,0.25]],
-   :       : [:STONE,[:EVERSTONE,0.50]]
-   :       : ])
-   @>Control Variables: [0291: PowerMeter] -= Random No. (1...15)
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When [Plate]
-  @>Show Choices: Page 1, Page 2
-  (When Cancel: Branch)
-  : When [Page 1]
-   @>Script: pbItemCrafter([
-   :       : [:IRONDUST,[:FLAMEPLATE,0.25]],
-   :       : [:IRONDUST,[:SPLASHPLATE,0.25]],
-   :       : [:IRONDUST,[:ZAPPLATE,0.25]],
-   :       : [:IRONDUST,[:MEADOWPLATE,0.25]],
-   :       : [:IRONDUST,[:ICICLEPLATE,0.25]],
-   :       : [:IRONDUST,[:FISTPLATE,0.25]],
-   :       : [:IRONDUST,[:TOXICPLATE,0.25]],
-   :       : [:IRONDUST,[:EARTHPLATE,0.25]],
-   :       : [:IRONDUST,[:SKYPLATE,0.25]],
-   :       : [:IRONDUST,[:MINDPLATE,0.25]]
-   :       : ])
-   @>Control Variables: [0291: PowerMeter] -= Random No. (1...15)
-   @>
-  : When [Page 2]
-   @>Script: pbItemCrafter([
-   :       : [:IRONDUST,[:INSECTPLATE,0.25]],
-   :       : [:IRONDUST,[:STONEPLATE,0.25]],
-   :       : [:IRONDUST,[:SPOOKYPLATE,0.25]],
-   :       : [:IRONDUST,[:DRACOPLATE,0.25]],
-   :       : [:IRONDUST,[:DREADPLATE,0.25]],
-   :       : [:IRONDUST,[:IRONPLATE,0.25]]
-   :       : ])
-   @>Control Variables: [0291: PowerMeter] -= Random No. (1...15)
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : When Cancel
-  @>
- : Branch End
+@>Label: Select
+@>Text: \ch[249,-1,Sleep,Rest Pokemon,Play with Pokemon, Dream Connect, Pick Up Bedroll]
+@>Conditional Branch: Variable [0249: BedStorage] == -1
  @>
-: When [Pick Up]
- @>Text: Are you sure you want to pick up your Grinder?
+: Branch End
+@>Conditional Branch: Variable [0249: BedStorage] == 0
+ @>Text: Would you like to rest and heal your Pokémon?
  @>Show Choices: Yes, No
  (When Cancel: Choice 2)
  : When [Yes]
-  @>Control Variables: [0290: Power] -= 1
-  @>Script: Kernel.pbReceiveItem(:ELECTRICGRINDER)
-  @>Control Self Switch: B =OFF
+  @>Text: How long would you like to sleep?
+  @>Input Number: [0247: SLeepCounter], 1 digit(s)
+  @>Conditional Branch: Variable [0247: SLeepCounter] == -1
+   @>Text: You decide not to sleep.
+   @>
+  : Branch End
+  @>Conditional Branch: Variable [0247: SLeepCounter] == 0
+   @>Text: You decide not to sleep.
+   @>
+  : Branch End
+  @>Conditional Branch: Variable [0247: SLeepCounter] == 1
+   @>Text: You lay down to rest with your Pokemon for an hour.
+   @>Change Screen Color Tone: (-255,-255,-255,0), @6
+   @>Recover All: Entire Party
+   @>Play ME: 'Pokemon Healing', 100, 100
+   @>Script: pbRandomEvent
+   @>Wait: 40 frame(s)
+   @>Control Variables: [0043: Reserved - Pokemon Count] = 0
+   @>Conditional Branch: Script: Kernel.pbPokerus?
+    @>Control Switches: [0003: Choosing starter] = ON
+    @>Text: Your Pokémon may be infected by PokeRus.
+    @>Text: Little is known about the PokeRus except that they 
+     :    : are microscopic life-forms that attach to Pokémon.
+    @>Text: While infected, Pokémon are said to grow 
+     :    : exceptionally well.
+    @>Control Variables: [0029: TimeDilation] += 3840
+    @>
+   : Else
+    @>Control Variables: [0029: TimeDilation] += 3840
+    @>Text: Your Pokémon were restored to full health.
+    @>Change Screen Color Tone: (0,0,0,0), @6
+    @>
+   : Branch End
+   @>Script: pbSleepRestore
+   @>
+  : Branch End
+  @>Conditional Branch: Variable [0247: SLeepCounter] == 2
+   @>Text: You lay down to rest with your Pokemon for 2 hours.
+   @>Change Screen Color Tone: (-255,-255,-255,0), @6
+   @>Recover All: Entire Party
+   @>Play ME: 'Pokemon Healing', 100, 100
+   @>Script: pbRandomEvent
+   @>Wait: 40 frame(s)
+   @>Control Variables: [0043: Reserved - Pokemon Count] = 0
+   @>Conditional Branch: Script: Kernel.pbPokerus?
+    @>Control Switches: [0003: Choosing starter] = ON
+    @>Text: Your Pokémon may be infected by PokeRus.
+    @>Text: Little is known about the PokeRus except that they 
+     :    : are microscopic life-forms that attach to Pokémon.
+    @>Text: While infected, Pokémon are said to grow 
+     :    : exceptionally well.
+    @>Control Variables: [0029: TimeDilation] += 7680
+    @>
+   : Else
+    @>Control Variables: [0029: TimeDilation] += 7680
+    @>Text: Your Pokémon were restored to full health.
+    @>Change Screen Color Tone: (0,0,0,0), @6
+    @>
+   : Branch End
+   @>Control Variables: [0029: TimeDilation] = 0
+   @>Script: pbSleepRestore
+   @>
+  : Branch End
+  @>Conditional Branch: Variable [0247: SLeepCounter] == 3
+   @>Text: You lay down to rest with your Pokemon for 3 hours.
+   @>Change Screen Color Tone: (-255,-255,-255,0), @6
+   @>Recover All: Entire Party
+   @>Play ME: 'Pokemon Healing', 100, 100
+   @>Script: pbRandomEvent
+   @>Wait: 40 frame(s)
+   @>Control Variables: [0043: Reserved - Pokemon Count] = 0
+   @>Conditional Branch: Script: Kernel.pbPokerus?
+    @>Control Switches: [0003: Choosing starter] = ON
+    @>Text: Your Pokémon may be infected by PokeRus.
+    @>Text: Little is known about the PokeRus except that they 
+     :    : are microscopic life-forms that attach to Pokémon.
+    @>Text: While infected, Pokémon are said to grow 
+     :    : exceptionally well.
+    @>Control Variables: [0029: TimeDilation] += 11520
+    @>
+   : Else
+    @>Control Variables: [0029: TimeDilation] += 11520
+    @>Text: Your Pokémon were restored to full health.
+    @>Change Screen Color Tone: (0,0,0,0), @6
+    @>
+   : Branch End
+   @>Control Variables: [0029: TimeDilation] = 0
+   @>Script: pbSleepRestore
+   @>
+  : Branch End
+  @>Conditional Branch: Variable [0247: SLeepCounter] == 4
+   @>Text: You lay down to rest with your Pokemon for 4 hours.
+   @>Change Screen Color Tone: (-255,-255,-255,0), @6
+   @>Recover All: Entire Party
+   @>Play ME: 'Pokemon Healing', 100, 100
+   @>Script: pbRandomEvent
+   @>Wait: 40 frame(s)
+   @>Control Variables: [0043: Reserved - Pokemon Count] = 0
+   @>Conditional Branch: Script: Kernel.pbPokerus?
+    @>Control Switches: [0003: Choosing starter] = ON
+    @>Text: Your Pokémon may be infected by PokeRus.
+    @>Text: Little is known about the PokeRus except that they 
+     :    : are microscopic life-forms that attach to Pokémon.
+    @>Text: While infected, Pokémon are said to grow 
+     :    : exceptionally well.
+    @>Control Variables: [0029: TimeDilation] += 15360
+    @>
+   : Else
+    @>Control Variables: [0029: TimeDilation] += 15360
+    @>Text: Your Pokémon were restored to full health.
+    @>Change Screen Color Tone: (0,0,0,0), @6
+    @>
+   : Branch End
+   @>Control Variables: [0029: TimeDilation] = 0
+   @>Script: pbSleepRestore
+   @>
+  : Branch End
+  @>Conditional Branch: Variable [0247: SLeepCounter] == 5
+   @>Text: You lay down to rest with your Pokemon for 5 hours.
+   @>Change Screen Color Tone: (-255,-255,-255,0), @6
+   @>Recover All: Entire Party
+   @>Play ME: 'Pokemon Healing', 100, 100
+   @>Script: pbRandomEvent
+   @>Wait: 40 frame(s)
+   @>Control Variables: [0043: Reserved - Pokemon Count] = 0
+   @>Conditional Branch: Script: Kernel.pbPokerus?
+    @>Control Switches: [0003: Choosing starter] = ON
+    @>Text: Your Pokémon may be infected by PokeRus.
+    @>Text: Little is known about the PokeRus except that they 
+     :    : are microscopic life-forms that attach to Pokémon.
+    @>Text: While infected, Pokémon are said to grow 
+     :    : exceptionally well.
+    @>Control Variables: [0029: TimeDilation] += 19200
+    @>
+   : Else
+    @>Control Variables: [0029: TimeDilation] += 19200
+    @>Text: Your Pokémon were restored to full health.
+    @>Change Screen Color Tone: (0,0,0,0), @6
+    @>
+   : Branch End
+   @>Control Variables: [0029: TimeDilation] = 0
+   @>Script: pbSleepRestore
+   @>
+  : Branch End
+  @>Conditional Branch: Variable [0247: SLeepCounter] == 6
+   @>Text: You lay down to rest with your Pokemon for 6 hours.
+   @>Change Screen Color Tone: (-255,-255,-255,0), @6
+   @>Recover All: Entire Party
+   @>Play ME: 'Pokemon Healing', 100, 100
+   @>Script: pbRandomEvent
+   @>Wait: 40 frame(s)
+   @>Control Variables: [0043: Reserved - Pokemon Count] = 0
+   @>Conditional Branch: Script: Kernel.pbPokerus?
+    @>Control Switches: [0003: Choosing starter] = ON
+    @>Text: Your Pokémon may be infected by PokeRus.
+    @>Text: Little is known about the PokeRus except that they 
+     :    : are microscopic life-forms that attach to Pokémon.
+    @>Text: While infected, Pokémon are said to grow 
+     :    : exceptionally well.
+    @>Control Variables: [0029: TimeDilation] += 23040
+    @>
+   : Else
+    @>Control Variables: [0029: TimeDilation] += 23040
+    @>Text: Your Pokémon were restored to full health.
+    @>Change Screen Color Tone: (0,0,0,0), @6
+    @>
+   : Branch End
+   @>Control Variables: [0029: TimeDilation] = 0
+   @>Script: pbSleepRestore
+   @>
+  : Branch End
+  @>Conditional Branch: Variable [0247: SLeepCounter] == 7
+   @>Text: You lay down to rest with your Pokemon for 7 hours.
+   @>Change Screen Color Tone: (-255,-255,-255,0), @6
+   @>Recover All: Entire Party
+   @>Play ME: 'Pokemon Healing', 100, 100
+   @>Script: pbRandomEvent
+   @>Wait: 40 frame(s)
+   @>Control Variables: [0043: Reserved - Pokemon Count] = 0
+   @>Conditional Branch: Script: Kernel.pbPokerus?
+    @>Control Switches: [0003: Choosing starter] = ON
+    @>Text: Your Pokémon may be infected by PokeRus.
+    @>Text: Little is known about the PokeRus except that they 
+     :    : are microscopic life-forms that attach to Pokémon.
+    @>Text: While infected, Pokémon are said to grow 
+     :    : exceptionally well.
+    @>Control Variables: [0029: TimeDilation] += 26880
+    @>
+   : Else
+    @>Control Variables: [0029: TimeDilation] += 26880
+    @>Text: Your Pokémon were restored to full health.
+    @>Change Screen Color Tone: (0,0,0,0), @6
+    @>
+   : Branch End
+   @>Control Variables: [0029: TimeDilation] = 0
+   @>Script: pbSleepRestore
+   @>
+  : Branch End
+  @>Conditional Branch: Variable [0247: SLeepCounter] == 8
+   @>Text: You lay down to rest with your Pokemon for 8 hours.
+   @>Change Screen Color Tone: (-255,-255,-255,0), @6
+   @>Recover All: Entire Party
+   @>Play ME: 'Pokemon Healing', 100, 100
+   @>Script: pbRandomEvent
+   @>Wait: 40 frame(s)
+   @>Control Variables: [0043: Reserved - Pokemon Count] = 0
+   @>Conditional Branch: Script: Kernel.pbPokerus?
+    @>Control Switches: [0003: Choosing starter] = ON
+    @>Text: Your Pokémon may be infected by PokeRus.
+    @>Text: Little is known about the PokeRus except that they 
+     :    : are microscopic life-forms that attach to Pokémon.
+    @>Text: While infected, Pokémon are said to grow 
+     :    : exceptionally well.
+    @>Control Variables: [0029: TimeDilation] += 30720
+    @>
+   : Else
+    @>Control Variables: [0029: TimeDilation] += 30720
+    @>Text: Your Pokémon were restored to full health.
+    @>Change Screen Color Tone: (0,0,0,0), @6
+    @>
+   : Branch End
+   @>Control Variables: [0029: TimeDilation] = 0
+   @>Script: pbSleepRestore
+   @>
+  : Branch End
+  @>Conditional Branch: Variable [0247: SLeepCounter] == 9
+   @>Text: You lay down to rest with your Pokemon for 9 hours.
+   @>Change Screen Color Tone: (-255,-255,-255,0), @6
+   @>Recover All: Entire Party
+   @>Play ME: 'Pokemon Healing', 100, 100
+   @>Script: pbRandomEvent
+   @>Wait: 40 frame(s)
+   @>Control Variables: [0043: Reserved - Pokemon Count] = 0
+   @>Conditional Branch: Script: Kernel.pbPokerus?
+    @>Control Switches: [0003: Choosing starter] = ON
+    @>Text: Your Pokémon may be infected by PokeRus.
+    @>Text: Little is known about the PokeRus except that they 
+     :    : are microscopic life-forms that attach to Pokémon.
+    @>Text: While infected, Pokémon are said to grow 
+     :    : exceptionally well.
+    @>Control Variables: [0029: TimeDilation] += 34560
+    @>
+   : Else
+    @>Control Variables: [0029: TimeDilation] += 34560
+    @>Text: Your Pokémon were restored to full health.
+    @>Change Screen Color Tone: (0,0,0,0), @6
+    @>
+   : Branch End
+   @>Control Variables: [0029: TimeDilation] = 0
+   @>Script: pbSleepRestore
+   @>
+  : Branch End
+  @>
+ : When [No]
+  @>Jump to Label: Select
+  @>
+ : Branch End
+ @>
+: Branch End
+@>Conditional Branch: Variable [0249: BedStorage] == 1
+ @>Text: Are you sure you want to take a nap?
+ @>Show Choices: Yes, No
+ (When Cancel: Branch)
+ : When [Yes]
+  @>Change Screen Color Tone: (-255,-255,-255,0), @6
+  @>Recover All: Entire Party
+  @>Play ME: 'Pokemon Healing', 100, 100
+  @>Wait: 40 frame(s)
+  @>Change Screen Color Tone: (0,0,0,0), @6
+  @>
+ : When [No]
+  @>
+ : When Cancel
+  @>Jump to Label: Select
+  @>
+ : Branch End
+ @>
+: Branch End
+@>Conditional Branch: Variable [0249: BedStorage] == 2
+ @>Script: PkmnAR.show
+ @>
+: Branch End
+@>Conditional Branch: Variable [0249: BedStorage] == 3
+ @>Script: Achievements.incrementProgress("ONLINE",1)
+ @>Script: #pbCableClub
+ @>
+: Branch End
+@>Conditional Branch: Variable [0249: BedStorage] == 4
+ @>Text: Are you sure you want to pick up your bedroll?
+ @>Show Choices: Yes, No
+ (When Cancel: Choice 2)
+ : When [Yes]
+  @>Script: Kernel.pbReceiveItem(:BEDROLL)
+  @>Control Self Switch: A =OFF
   @>
  : When [No]
   @>
  : Branch End
  @>
-: When [Cancel]
- @>
 : Branch End
-@>
-
-#==============================================================================
-Common Event ID: 040
-Common Event Name: 
-
-Trigger: None
-
-List of Event Commands:
 @>
 
 #==============================================================================
@@ -160431,21 +165586,264 @@ Common Event Name: Teleport Statues
 Trigger: None
 
 List of Event Commands:
-@>Call Save Screen
-@>Conditional Branch: Variable [0080: StatuesTP] == 1
- @>Text: This is a spirit statue. It can teleport you across the 
-  :    : map.
- @>Text: You have found no other statues.
+@>Show Choices: Save, Teleport, Cancel
+(When Cancel: Choice 3)
+: When [Save]
+ @>Call Save Screen
  @>
-: Branch End
-@>Conditional Branch: Switch [0479: HouseStatue] == ON
- @>Text: Teleport Home, or to the Normal Statues?
- @>Show Choices: Home, Statues, Nevermind
- (When Cancel: Choice 3)
- : When [Home]
-  @>Transfer Player:[055:  Home], (020,014), Down
+: When [Teleport]
+ @>Conditional Branch: Variable [0080: StatuesTP] == 1
+  @>Text: This is a spirit statue. It can teleport you across the 
+   :    : map.
+  @>Text: You have found no other statues.
   @>
- : When [Statues]
+ : Branch End
+ @>Conditional Branch: Switch [0479: HouseStatue] == ON
+  @>Text: Teleport Home, or to the Normal Statues?
+  @>Show Choices: Home, Statues, Nevermind
+  (When Cancel: Choice 3)
+  : When [Home]
+   @>Conditional Branch: Switch [0478: HomeFarm] == ON
+    @>Transfer Player:[353:  Home], (020,014), Down
+    @>
+   : Else
+    @>Transfer Player:[055:  Home], (020,014), Down
+    @>
+   : Branch End
+   @>
+  : When [Statues]
+   @>Conditional Branch: Variable [0080: StatuesTP] == 2
+    @>Text: This is a spirit statue. It can teleport you across the 
+     :    : map.
+    @>Show Choices: Shore, Stone Temple, Cancel
+    (When Cancel: Choice 3)
+    : When [Shore]
+     @>Transfer Player:[005: Temperate Zone], (016,041), Down
+     @>
+    : When [Stone Temple]
+     @>Transfer Player:[009: Temperate Zone], (037,015), Down
+     @>
+    : When [Cancel]
+     @>
+    : Branch End
+    @>
+   : Branch End
+   @>Conditional Branch: Variable [0080: StatuesTP] == 3
+    @>Text: This is a spirit statue. It can teleport you across the 
+     :    : map.
+    @>Show Choices: Shore, Stone Temple, Mountaintop 
+    (When Cancel: Choice 4)
+    : When [Shore]
+     @>Transfer Player:[005: Temperate Zone], (016,041), Down
+     @>
+    : When [Stone Temple]
+     @>Transfer Player:[009: Temperate Zone], (037,015)
+     @>
+    : When [Mountaintop ]
+     @>Transfer Player:[024: Mountain Zone], (019,033)
+     @>
+    : Branch End
+    @>
+   : Branch End
+   @>Conditional Branch: Variable [0080: StatuesTP] == 4
+    @>Text: This is a spirit statue. It can teleport you across the 
+     :    : map.
+    @>Show Choices: Shore, Stone Temple, Mountaintop , Next
+    (When Cancel: Branch)
+    : When [Shore]
+     @>Transfer Player:[005: Temperate Zone], (016,041), Down
+     @>
+    : When [Stone Temple]
+     @>Transfer Player:[009: Temperate Zone], (037,015)
+     @>
+    : When [Mountaintop ]
+     @>Transfer Player:[024: Mountain Zone], (019,033)
+     @>
+    : When [Next]
+     @>Show Choices: Ocean Island, No
+     (When Cancel: Choice 2)
+     : When [Ocean Island]
+      @>Transfer Player:[001: Temperate Ocean], (017,030)
+      @>
+     : When [No]
+      @>
+     : Branch End
+     @>
+    : When Cancel
+     @>
+    : Branch End
+    @>
+   : Branch End
+   @>Conditional Branch: Variable [0080: StatuesTP] == 5
+    @>Text: This is a spirit statue. It can teleport you across the 
+     :    : map.
+    @>Show Choices: Shore, Stone Temple, Mountaintop , Next
+    (When Cancel: Branch)
+    : When [Shore]
+     @>Transfer Player:[005: Temperate Zone], (016,041), Down
+     @>
+    : When [Stone Temple]
+     @>Transfer Player:[009: Temperate Zone], (037,015)
+     @>
+    : When [Mountaintop ]
+     @>Transfer Player:[024: Mountain Zone], (019,033)
+     @>
+    : When [Next]
+     @>Show Choices: Ocean Island, Water Temple, No
+     (When Cancel: Choice 3)
+     : When [Ocean Island]
+      @>Transfer Player:[001: Temperate Ocean], (016,032)
+      @>
+     : When [Water Temple]
+      @>Transfer Player:[034: Swamp Zone], (021,035)
+      @>
+     : When [No]
+      @>
+     : Branch End
+     @>
+    : When Cancel
+     @>
+    : Branch End
+    @>
+   : Branch End
+   @>Conditional Branch: Variable [0080: StatuesTP] == 6
+    @>Text: This is a spirit statue. It can teleport you across the 
+     :    : map.
+    @>Show Choices: Shore, Stone Temple, Mountaintop , Next
+    (When Cancel: Branch)
+    : When [Shore]
+     @>Transfer Player:[005: Temperate Zone], (016,041), Down
+     @>
+    : When [Stone Temple]
+     @>Transfer Player:[009: Temperate Zone], (037,015)
+     @>
+    : When [Mountaintop ]
+     @>Transfer Player:[024: Mountain Zone], (019,033)
+     @>
+    : When [Next]
+     @>Show Choices: Ocean Island, Water Temple, Deep Swamp
+     (When Cancel: Branch)
+     : When [Ocean Island]
+      @>Transfer Player:[001: Temperate Ocean], (016,032)
+      @>
+     : When [Water Temple]
+      @>Transfer Player:[034: Swamp Zone], (021,035)
+      @>
+     : When [Deep Swamp]
+      @>Transfer Player:[036: Deep Swamp], (029,018)
+      @>
+     : When Cancel
+      @>
+     : Branch End
+     @>
+    : When Cancel
+     @>
+    : Branch End
+    @>
+   : Branch End
+   @>Conditional Branch: Variable [0080: StatuesTP] == 7
+    @>Text: This is a spirit statue. It can teleport you across the 
+     :    : map.
+    @>Show Choices: Shore, Stone Temple, Mountaintop , Next
+    (When Cancel: Branch)
+    : When [Shore]
+     @>Transfer Player:[005: Temperate Zone], (016,041), Down
+     @>
+    : When [Stone Temple]
+     @>Transfer Player:[009: Temperate Zone], (037,015)
+     @>
+    : When [Mountaintop ]
+     @>Transfer Player:[024: Mountain Zone], (019,033)
+     @>
+    : When [Next]
+     @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
+     (When Cancel: Branch)
+     : When [Ocean Island]
+      @>Transfer Player:[001: Temperate Ocean], (016,032)
+      @>
+     : When [Water Temple]
+      @>Transfer Player:[034: Swamp Zone], (021,035)
+      @>
+     : When [Deep Swamp]
+      @>Transfer Player:[036: Deep Swamp], (029,018)
+      @>
+     : When [Next]
+      @>Show Choices: Humid Zone, No
+      (When Cancel: Choice 2)
+      : When [Humid Zone]
+       @>Transfer Player:[111: Humid Zone], (026,012)
+       @>
+      : When [No]
+       @>
+      : Branch End
+      @>
+     : When Cancel
+      @>
+     : Branch End
+     @>
+    : When Cancel
+     @>
+    : Branch End
+    @>
+   : Else
+    @>
+   : Branch End
+   @>Conditional Branch: Variable [0080: StatuesTP] == 8
+    @>Text: This is a spirit statue. It can teleport you across the 
+     :    : map.
+    @>Show Choices: Shore, Stone Temple, Mountaintop , Next
+    (When Cancel: Branch)
+    : When [Shore]
+     @>Transfer Player:[005: Temperate Zone], (016,041), Down
+     @>
+    : When [Stone Temple]
+     @>Transfer Player:[009: Temperate Zone], (037,015)
+     @>
+    : When [Mountaintop ]
+     @>Transfer Player:[024: Mountain Zone], (019,033)
+     @>
+    : When [Next]
+     @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
+     (When Cancel: Branch)
+     : When [Ocean Island]
+      @>Transfer Player:[001: Temperate Ocean], (016,032)
+      @>
+     : When [Water Temple]
+      @>Transfer Player:[034: Swamp Zone], (021,035)
+      @>
+     : When [Deep Swamp]
+      @>Transfer Player:[036: Deep Swamp], (029,018)
+      @>
+     : When [Next]
+      @>Show Choices: Humid Zone, Northern Zone, Cancel
+      (When Cancel: Choice 3)
+      : When [Humid Zone]
+       @>Transfer Player:[111: Humid Zone], (026,012)
+       @>
+      : When [Northern Zone]
+       @>Transfer Player:[207: Northern Area ], (017,006)
+       @>
+      : When [Cancel]
+       @>
+      : Branch End
+      @>
+     : When Cancel
+      @>
+     : Branch End
+     @>
+    : When Cancel
+     @>
+    : Branch End
+    @>
+   : Else
+    @>
+   : Branch End
+   @>
+  : When [Nevermind]
+   @>
+  : Branch End
+  @>
+ : Else
   @>Conditional Branch: Variable [0080: StatuesTP] == 2
    @>Text: This is a spirit statue. It can teleport you across the 
     :    : map.
@@ -160673,237 +166071,9 @@ List of Event Commands:
    @>
   : Branch End
   @>
- : When [Nevermind]
-  @>
  : Branch End
  @>
-: Else
- @>Conditional Branch: Variable [0080: StatuesTP] == 2
-  @>Text: This is a spirit statue. It can teleport you across the 
-   :    : map.
-  @>Show Choices: Shore, Stone Temple, Cancel
-  (When Cancel: Choice 3)
-  : When [Shore]
-   @>Transfer Player:[005: Temperate Zone], (016,041), Down
-   @>
-  : When [Stone Temple]
-   @>Transfer Player:[009: Temperate Zone], (037,015), Down
-   @>
-  : When [Cancel]
-   @>
-  : Branch End
-  @>
- : Branch End
- @>Conditional Branch: Variable [0080: StatuesTP] == 3
-  @>Text: This is a spirit statue. It can teleport you across the 
-   :    : map.
-  @>Show Choices: Shore, Stone Temple, Mountaintop 
-  (When Cancel: Choice 4)
-  : When [Shore]
-   @>Transfer Player:[005: Temperate Zone], (016,041), Down
-   @>
-  : When [Stone Temple]
-   @>Transfer Player:[009: Temperate Zone], (037,015)
-   @>
-  : When [Mountaintop ]
-   @>Transfer Player:[024: Mountain Zone], (019,033)
-   @>
-  : Branch End
-  @>
- : Branch End
- @>Conditional Branch: Variable [0080: StatuesTP] == 4
-  @>Text: This is a spirit statue. It can teleport you across the 
-   :    : map.
-  @>Show Choices: Shore, Stone Temple, Mountaintop , Next
-  (When Cancel: Branch)
-  : When [Shore]
-   @>Transfer Player:[005: Temperate Zone], (016,041), Down
-   @>
-  : When [Stone Temple]
-   @>Transfer Player:[009: Temperate Zone], (037,015)
-   @>
-  : When [Mountaintop ]
-   @>Transfer Player:[024: Mountain Zone], (019,033)
-   @>
-  : When [Next]
-   @>Show Choices: Ocean Island, No
-   (When Cancel: Choice 2)
-   : When [Ocean Island]
-    @>Transfer Player:[001: Temperate Ocean], (017,030)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : Branch End
- @>Conditional Branch: Variable [0080: StatuesTP] == 5
-  @>Text: This is a spirit statue. It can teleport you across the 
-   :    : map.
-  @>Show Choices: Shore, Stone Temple, Mountaintop , Next
-  (When Cancel: Branch)
-  : When [Shore]
-   @>Transfer Player:[005: Temperate Zone], (016,041), Down
-   @>
-  : When [Stone Temple]
-   @>Transfer Player:[009: Temperate Zone], (037,015)
-   @>
-  : When [Mountaintop ]
-   @>Transfer Player:[024: Mountain Zone], (019,033)
-   @>
-  : When [Next]
-   @>Show Choices: Ocean Island, Water Temple, No
-   (When Cancel: Choice 3)
-   : When [Ocean Island]
-    @>Transfer Player:[001: Temperate Ocean], (016,032)
-    @>
-   : When [Water Temple]
-    @>Transfer Player:[034: Swamp Zone], (021,035)
-    @>
-   : When [No]
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : Branch End
- @>Conditional Branch: Variable [0080: StatuesTP] == 6
-  @>Text: This is a spirit statue. It can teleport you across the 
-   :    : map.
-  @>Show Choices: Shore, Stone Temple, Mountaintop , Next
-  (When Cancel: Branch)
-  : When [Shore]
-   @>Transfer Player:[005: Temperate Zone], (016,041), Down
-   @>
-  : When [Stone Temple]
-   @>Transfer Player:[009: Temperate Zone], (037,015)
-   @>
-  : When [Mountaintop ]
-   @>Transfer Player:[024: Mountain Zone], (019,033)
-   @>
-  : When [Next]
-   @>Show Choices: Ocean Island, Water Temple, Deep Swamp
-   (When Cancel: Branch)
-   : When [Ocean Island]
-    @>Transfer Player:[001: Temperate Ocean], (016,032)
-    @>
-   : When [Water Temple]
-    @>Transfer Player:[034: Swamp Zone], (021,035)
-    @>
-   : When [Deep Swamp]
-    @>Transfer Player:[036: Deep Swamp], (029,018)
-    @>
-   : When Cancel
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : Branch End
- @>Conditional Branch: Variable [0080: StatuesTP] == 7
-  @>Text: This is a spirit statue. It can teleport you across the 
-   :    : map.
-  @>Show Choices: Shore, Stone Temple, Mountaintop , Next
-  (When Cancel: Branch)
-  : When [Shore]
-   @>Transfer Player:[005: Temperate Zone], (016,041), Down
-   @>
-  : When [Stone Temple]
-   @>Transfer Player:[009: Temperate Zone], (037,015)
-   @>
-  : When [Mountaintop ]
-   @>Transfer Player:[024: Mountain Zone], (019,033)
-   @>
-  : When [Next]
-   @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-   (When Cancel: Branch)
-   : When [Ocean Island]
-    @>Transfer Player:[001: Temperate Ocean], (016,032)
-    @>
-   : When [Water Temple]
-    @>Transfer Player:[034: Swamp Zone], (021,035)
-    @>
-   : When [Deep Swamp]
-    @>Transfer Player:[036: Deep Swamp], (029,018)
-    @>
-   : When [Next]
-    @>Show Choices: Humid Zone, No
-    (When Cancel: Choice 2)
-    : When [Humid Zone]
-     @>Transfer Player:[111: Humid Zone], (026,012)
-     @>
-    : When [No]
-     @>
-    : Branch End
-    @>
-   : When Cancel
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : Else
-  @>
- : Branch End
- @>Conditional Branch: Variable [0080: StatuesTP] == 8
-  @>Text: This is a spirit statue. It can teleport you across the 
-   :    : map.
-  @>Show Choices: Shore, Stone Temple, Mountaintop , Next
-  (When Cancel: Branch)
-  : When [Shore]
-   @>Transfer Player:[005: Temperate Zone], (016,041), Down
-   @>
-  : When [Stone Temple]
-   @>Transfer Player:[009: Temperate Zone], (037,015)
-   @>
-  : When [Mountaintop ]
-   @>Transfer Player:[024: Mountain Zone], (019,033)
-   @>
-  : When [Next]
-   @>Show Choices: Ocean Island, Water Temple, Deep Swamp, Next
-   (When Cancel: Branch)
-   : When [Ocean Island]
-    @>Transfer Player:[001: Temperate Ocean], (016,032)
-    @>
-   : When [Water Temple]
-    @>Transfer Player:[034: Swamp Zone], (021,035)
-    @>
-   : When [Deep Swamp]
-    @>Transfer Player:[036: Deep Swamp], (029,018)
-    @>
-   : When [Next]
-    @>Show Choices: Humid Zone, Northern Zone, Cancel
-    (When Cancel: Choice 3)
-    : When [Humid Zone]
-     @>Transfer Player:[111: Humid Zone], (026,012)
-     @>
-    : When [Northern Zone]
-     @>Transfer Player:[207: Northern Area ], (017,006)
-     @>
-    : When [Cancel]
-     @>
-    : Branch End
-    @>
-   : When Cancel
-    @>
-   : Branch End
-   @>
-  : When Cancel
-   @>
-  : Branch End
-  @>
- : Else
-  @>
- : Branch End
+: When [Cancel]
  @>
 : Branch End
 @>

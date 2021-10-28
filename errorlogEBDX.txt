@@ -1736,3 +1736,5 @@
 [23:33:00 Mon 25-Oct-2021] [DEBUG] No EBDX Move Animation found for: REVENGE
 [23:33:09 Mon 25-Oct-2021] [DEBUG] No EBDX Move Animation found for: REVENGE
 [23:33:19 Mon 25-Oct-2021] [DEBUG] No EBDX Move Animation found for: HORNATTACK
+[21:52:32 Tue 26-Oct-2021] [DEBUG] No EBDX Common Animation found for: LEVELUP
+[21:53:35 Tue 26-Oct-2021] [DEBUG] No EBDX Move Animation found for: SCARYFACE

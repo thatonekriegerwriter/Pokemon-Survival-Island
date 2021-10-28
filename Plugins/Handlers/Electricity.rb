@@ -38,25 +38,25 @@ if $game_switches[475]==true
 end
 
 if $game_variables[291]<=100 && $game_variables[290]>0
-  $game_variables[291] -= 1 if rand(10) == 5
+  $game_variables[291] -= 1 if rand(100) == 5
 elsif $game_variables[291]<=100 && $game_variables[290]>2
-  $game_variables[291] -= 3 if rand(10) == 5
+  $game_variables[291] -= 3 if rand(100) == 5
 elsif $game_variables[291]<=100 && $game_variables[290]>4
-  $game_variables[291] -= 5 if rand(10) == 5
+  $game_variables[291] -= 5 if rand(100) == 5
 elsif $game_variables[291]<=100 && $game_variables[290]>6
-  $game_variables[291] -= 7 if rand(10) == 5
+  $game_variables[291] -= 7 if rand(100) == 5
 elsif $game_variables[291]<=100 && $game_variables[290]>8
-  $game_variables[291] -= 9 if rand(10) == 5 
+  $game_variables[291] -= 9 if rand(100) == 5 
 elsif $game_variables[291]<=100 && $game_variables[290]>10
-  $game_variables[291] -= 11 if rand(10) == 5
+  $game_variables[291] -= 11 if rand(100) == 5
 elsif $game_variables[291]<=100 && $game_variables[290]>12
-  $game_variables[291] -= 13 if rand(10) == 5
+  $game_variables[291] -= 13 if rand(100) == 5
 elsif $game_variables[291]<=100 && $game_variables[290]>14
-  $game_variables[291] -= 15 if rand(10) == 5
+  $game_variables[291] -= 15 if rand(100) == 5
 elsif $game_variables[291]<=100 && $game_variables[290]>16
-  $game_variables[291] -= 17 if rand(10) == 5
+  $game_variables[291] -= 17 if rand(100) == 5
 elsif $game_variables[291]<=100 && $game_variables[290]>17
-  $game_variables[291] -= 19 if rand(10) == 5
+  $game_variables[291] -= 19 if rand(100) == 5
 end
 
 if $game_variables[291]<=-1

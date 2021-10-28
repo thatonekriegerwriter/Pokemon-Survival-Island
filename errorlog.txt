@@ -21055,3 +21055,94 @@ Backtrace:
 032:Scene_Map:168:in `block in update'
 032:Scene_Map:166:in `loop'
 032:Scene_Map:166:in `update'
+
+=================
+
+[2021-10-26 23:37:05 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Unknown ID 46.
+
+Backtrace:
+101:GameData:157:in `get'
+[Power] Survival Mode.rb:267:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+044:Game_MapFactory:148:in `setMapChanging'
+044:Game_MapFactory:22:in `setup'
+032:Scene_Map:72:in `transfer_player'
+[Following Pokemon EX] 004_Follower_Overrides.rb:719:in `transfer_player'
+032:Scene_Map:173:in `block in update'
+
+=================
+
+[2021-10-26 23:47:49 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Unknown ID 41.
+
+Backtrace:
+101:GameData:157:in `get'
+[Power] Survival Mode.rb:267:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+044:Game_MapFactory:148:in `setMapChanging'
+044:Game_MapFactory:22:in `setup'
+032:Scene_Map:72:in `transfer_player'
+[Following Pokemon EX] 004_Follower_Overrides.rb:719:in `transfer_player'
+032:Scene_Map:173:in `block in update'
+
+=================
+
+[2021-10-27 00:08:38 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Unknown ID 41.
+
+Backtrace:
+101:GameData:157:in `get'
+[Power] Survival Mode.rb:267:in `block in <main>'
+035:Event_Handlers:53:in `block in trigger'
+035:Event_Handlers:48:in `each'
+035:Event_Handlers:48:in `trigger'
+044:Game_MapFactory:148:in `setMapChanging'
+044:Game_MapFactory:22:in `setup'
+032:Scene_Map:72:in `transfer_player'
+[Following Pokemon EX] 004_Follower_Overrides.rb:719:in `transfer_player'
+032:Scene_Map:173:in `block in update'
+
+=================
+
+[2021-10-27 23:07:14 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [Power]:
+SyntaxError occurred.
+Line 936: Syntax error, unexpected end-of-input, expecting `end': [Power] Survival Mode.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+376:Main:27:in `mainFunctionDebug'
+376:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+376:Main:18:in `mainFunction'
