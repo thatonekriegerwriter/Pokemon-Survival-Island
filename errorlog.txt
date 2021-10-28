@@ -21191,3 +21191,896 @@ Backtrace:
 376:Main:18:in `block in mainFunction'
 014:Errors:71:in `pbCriticalCode'
 376:Main:18:in `mainFunction'
+
+=================
+
+[2021-10-28 00:25:09 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `dispose' for nil:NilClass
+
+Backtrace:
+[Battle Stuff] 008_SOS.rb:308:in `pbSOSJoin'
+[Battle Stuff] 008_SOS.rb:120:in `pbCallForHelp'
+[Battle Stuff] 008_SOS.rb:265:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+181:Battle_Phase_Attack:124:in `block in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:110:in `loop'
+181:Battle_Phase_Attack:110:in `pbAttackPhaseMoves'
+181:Battle_Phase_Attack:190:in `pbAttackPhase'
+[Elite Battle: DX] Battle Core.rb:174:in `pbAttackPhase'
+
+=================
+
+[2021-10-28 00:25:11 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:287:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:286:in `times'
+[Elite Battle: DX] UI Command.rb:286:in `showPlay'
+
+=================
+
+[2021-10-28 00:25:12 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 00:25:13 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:287:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:286:in `times'
+[Elite Battle: DX] UI Command.rb:286:in `showPlay'
+
+=================
+
+[2021-10-28 00:25:15 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 00:25:16 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:287:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:286:in `times'
+[Elite Battle: DX] UI Command.rb:286:in `showPlay'
+
+=================
+
+[2021-10-28 00:25:18 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 00:25:19 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:287:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:286:in `times'
+[Elite Battle: DX] UI Command.rb:286:in `showPlay'
+
+=================
+
+[2021-10-28 00:25:27 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 00:25:28 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:287:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:286:in `times'
+[Elite Battle: DX] UI Command.rb:286:in `showPlay'
+
+=================
+
+[2021-10-28 00:25:30 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 00:25:32 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:287:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:286:in `times'
+[Elite Battle: DX] UI Command.rb:286:in `showPlay'
+
+=================
+
+[2021-10-28 00:25:33 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 00:25:34 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:287:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:286:in `times'
+[Elite Battle: DX] UI Command.rb:286:in `showPlay'
+
+=================
+
+[2021-10-28 00:25:36 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 00:25:38 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:287:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:286:in `times'
+[Elite Battle: DX] UI Command.rb:286:in `showPlay'
+
+=================
+
+[2021-10-28 00:25:41 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 00:25:43 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:287:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:286:in `times'
+[Elite Battle: DX] UI Command.rb:286:in `showPlay'
+
+=================
+
+[2021-10-28 00:25:44 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 00:25:45 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:287:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:286:in `times'
+[Elite Battle: DX] UI Command.rb:286:in `showPlay'
+
+=================
+
+[2021-10-28 00:25:46 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 00:25:47 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:287:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:286:in `times'
+[Elite Battle: DX] UI Command.rb:286:in `showPlay'
+
+=================
+
+[2021-10-28 00:36:25 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: RuntimeError
+Message: Script error in event 4 (coords 9,4), map 56 (Home Interior):
+Exception: NoMethodError
+Message: undefined method `nil' for nil:NilClass
+
+***Full script:
+Crafts.craftWindow
+
+
+Backtrace:
+[SI Crafting] craftingold.rb:295:in `pbSelectcraft'
+[SI Crafting] craftingold.rb:695:in `craftWindow'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+033:Interpreter:100:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+
+=================
+
+[2021-10-28 00:57:06 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `fainted?' for nil:NilClass
+
+Backtrace:
+200:Scene_Commands:370:in `block in pbFirstTarget'
+200:Scene_Commands:370:in `each'
+200:Scene_Commands:370:in `pbFirstTarget'
+[Elite Battle: DX] UI Choose Target.rb:168:in `pbChooseTarget'
+180:Battle_Phase_Command:94:in `pbChooseTarget'
+180:Battle_Phase_Command:82:in `block in pbFightMenu'
+[Elite Battle: DX] UI Fight.rb:58:in `block in pbFightMenu'
+[Elite Battle: DX] UI Fight.rb:26:in `loop'
+[Elite Battle: DX] UI Fight.rb:26:in `pbFightMenu'
+180:Battle_Phase_Command:67:in `pbFightMenu'
+
+=================
+
+[2021-10-28 00:58:47 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `fainted?' for nil:NilClass
+
+Backtrace:
+200:Scene_Commands:370:in `block in pbFirstTarget'
+200:Scene_Commands:370:in `each'
+200:Scene_Commands:370:in `pbFirstTarget'
+[Elite Battle: DX] UI Choose Target.rb:168:in `pbChooseTarget'
+180:Battle_Phase_Command:94:in `pbChooseTarget'
+180:Battle_Phase_Command:82:in `block in pbFightMenu'
+[Elite Battle: DX] UI Fight.rb:58:in `block in pbFightMenu'
+[Elite Battle: DX] UI Fight.rb:26:in `loop'
+[Elite Battle: DX] UI Fight.rb:26:in `pbFightMenu'
+180:Battle_Phase_Command:67:in `pbFightMenu'
+
+=================
+
+[2021-10-28 00:59:57 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `dispose' for nil:NilClass
+
+Backtrace:
+[Battle Stuff] 008_SOS.rb:308:in `pbSOSJoin'
+[Battle Stuff] 008_SOS.rb:120:in `pbCallForHelp'
+[Battle Stuff] 008_SOS.rb:265:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+181:Battle_Phase_Attack:124:in `block in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:110:in `loop'
+181:Battle_Phase_Attack:110:in `pbAttackPhaseMoves'
+181:Battle_Phase_Attack:190:in `pbAttackPhase'
+[Elite Battle: DX] Battle Core.rb:174:in `pbAttackPhase'
+
+=================
+
+[2021-10-28 01:00:32 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:243:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:242:in `times'
+[Elite Battle: DX] UI Command.rb:242:in `showPlay'
+
+=================
+
+[2021-10-28 01:00:48 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 01:00:49 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:243:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:242:in `times'
+[Elite Battle: DX] UI Command.rb:242:in `showPlay'
+
+=================
+
+[2021-10-28 01:00:52 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 01:00:55 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:243:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:242:in `times'
+[Elite Battle: DX] UI Command.rb:242:in `showPlay'
+
+=================
+
+[2021-10-28 01:00:56 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 01:02:51 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `fainted?' for nil:NilClass
+
+Backtrace:
+200:Scene_Commands:370:in `block in pbFirstTarget'
+200:Scene_Commands:370:in `each'
+200:Scene_Commands:370:in `pbFirstTarget'
+[Elite Battle: DX] UI Choose Target.rb:168:in `pbChooseTarget'
+180:Battle_Phase_Command:94:in `pbChooseTarget'
+180:Battle_Phase_Command:82:in `block in pbFightMenu'
+[Elite Battle: DX] UI Fight.rb:58:in `block in pbFightMenu'
+[Elite Battle: DX] UI Fight.rb:26:in `loop'
+[Elite Battle: DX] UI Fight.rb:26:in `pbFightMenu'
+180:Battle_Phase_Command:67:in `pbFightMenu'
+
+=================
+
+[2021-10-28 01:03:16 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `fainted?' for nil:NilClass
+
+Backtrace:
+200:Scene_Commands:370:in `block in pbFirstTarget'
+200:Scene_Commands:370:in `each'
+200:Scene_Commands:370:in `pbFirstTarget'
+[Elite Battle: DX] UI Choose Target.rb:168:in `pbChooseTarget'
+180:Battle_Phase_Command:94:in `pbChooseTarget'
+180:Battle_Phase_Command:82:in `block in pbFightMenu'
+[Elite Battle: DX] UI Fight.rb:58:in `block in pbFightMenu'
+[Elite Battle: DX] UI Fight.rb:26:in `loop'
+[Elite Battle: DX] UI Fight.rb:26:in `pbFightMenu'
+180:Battle_Phase_Command:67:in `pbFightMenu'
+
+=================
+
+[2021-10-28 01:04:57 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `dispose' for nil:NilClass
+
+Backtrace:
+[Battle Stuff] 008_SOS.rb:308:in `pbSOSJoin'
+[Battle Stuff] 008_SOS.rb:120:in `pbCallForHelp'
+[Battle Stuff] 008_SOS.rb:265:in `pbProcessTurn'
+181:Battle_Phase_Attack:128:in `block (2 levels) in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:124:in `each'
+181:Battle_Phase_Attack:124:in `block in pbAttackPhaseMoves'
+181:Battle_Phase_Attack:110:in `loop'
+181:Battle_Phase_Attack:110:in `pbAttackPhaseMoves'
+181:Battle_Phase_Attack:190:in `pbAttackPhase'
+[Elite Battle: DX] Battle Core.rb:174:in `pbAttackPhase'
+
+=================
+
+[2021-10-28 01:05:01 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:243:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:242:in `times'
+[Elite Battle: DX] UI Command.rb:242:in `showPlay'
+
+=================
+
+[2021-10-28 01:05:03 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] Battle Core.rb:177:in `pbAttackPhase'
+173:Battle_StartAndEnd:326:in `block (2 levels) in pbBattleLoop'
+012:PBDebug:6:in `logonerr'
+
+=================
+
+[2021-10-28 01:05:04 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NoMethodError
+Message: undefined method `loaded' for nil:NilClass
+
+Backtrace:
+[Elite Battle: DX] Scene Camera.rb:45:in `block in animateScene'
+[Elite Battle: DX] Scene Camera.rb:42:in `each'
+[Elite Battle: DX] Scene Camera.rb:42:in `each_with_index'
+[Elite Battle: DX] Scene Camera.rb:42:in `animateScene'
+[Elite Battle: DX] Scene Camera.rb:125:in `block in wait'
+[Elite Battle: DX] Scene Camera.rb:124:in `times'
+[Elite Battle: DX] Scene Camera.rb:124:in `wait'
+[Elite Battle: DX] UI Command.rb:243:in `block in showPlay'
+[Elite Battle: DX] UI Command.rb:242:in `times'
+[Elite Battle: DX] UI Command.rb:242:in `showPlay'

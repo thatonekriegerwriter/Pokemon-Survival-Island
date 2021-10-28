@@ -10,7 +10,7 @@ module EliteBattle
   BATTLE_MOTION_TIMER = 90
 
   # used to scale the trainer bitmaps (front sprites) to 200%
-  TRAINER_SPRITE_SCALE = 1
+  TRAINER_SPRITE_SCALE = 2
 
   # used to scale the Pokemon bitmaps (front sprites and UI) to 200%
   FRONT_SPRITE_SCALE = 2
@@ -25,18 +25,24 @@ module EliteBattle
   USE_LOW_HP_BGM = true
 
   # set this to true if you want to use your own common animations from the editor
-  COMMON_ANIMATIONS = false
+  CUSTOM_COMMON_ANIM = false
 
   # set this to true to use animations from the Animation editor for missing move animations
-  REPLACE_MISSING_ANIM = false
+  CUSTOM_MOVE_ANIM = false
 
   # disables "camera" zooming and movement throughout the entire scene
-  DISABLE_SCENE_MOTION = false
+  DISABLE_SCENE_MOTION = true
 
   # Chance (%) (from 0 to 100, allows up to 2 decimal places) that Shiny Pokemon
   # will have a unique hue applied to them, altering their color further
   # this percentage is calculated AFTER the shiny generation chance
   SUPER_SHINY_RATE = 1
+
+  # the minimum amount of (random) IV attributes to be set to 31 for shiny Pokemon
+  PERFECT_IV_SHINY = 1
+
+  # the minimum amount of (random) IV attributes to be set to 31 for super shiny Pokemon
+  PERFECT_IV_SUPER = 3
 
   # Show player line up during wild battles
   SHOW_LINEUP_WILD = true

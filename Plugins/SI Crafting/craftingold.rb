@@ -292,7 +292,9 @@ class Crafts_Scene
           @returnItem=:NO
           @itemA=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts	  
-		  if @itemA
+		  if @itemA.nil
+		    @itemA=:NO
+		  end
           for i in 0..216
             if crafts[i][2]!=@itemB && @itemB==:NO
               @itemB=:NO
@@ -307,13 +309,14 @@ class Crafts_Scene
               @returnItem=crafts[i][0]
               @required[1]=crafts[i][1]
             end
-		  end
           end
         elsif @selection==1
           @returnItem=:NO
           @itemB=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
-		  if @itemB
+		  if @itemB.nil
+		    @itemB=:NO
+		  end
           for i in 0..216
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
               @currentArray=i
@@ -328,13 +331,14 @@ class Crafts_Scene
               @itemC=:NO
               @quantC=0
             end
-          end
           end 
         elsif @selection==2
           @returnItem=:NO
           @itemC=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
-		  if @itemC
+		  if @itemC.nil
+		    @itemC=:NO
+		  end
           for i in 0..216
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
               @currentArray=i
@@ -349,7 +353,6 @@ class Crafts_Scene
               @itemB=:NO
               @quantB=0
             end
-          end
           end
         else
           Kernel.pbMessage(_INTL("You must first select an item!"))

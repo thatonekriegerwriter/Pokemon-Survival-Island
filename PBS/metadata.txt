@@ -274,7 +274,7 @@ BattleBack = Forest
 #-------------------------------
 [046]
 # TEMP INTERIOR
-Outdoor = true
+Outdoor = false
 ShowArea = true
 BattleBack = Forest
 #-------------------------------
