@@ -29065,6 +29065,31 @@ List of Event Commands:
 @>
 
 #------------------------------------------------------------------------------
+Event ID: 052
+Event Name: EV052
+(X,Y): (038,009)
+
+Page #1
+Conditions
+None
+
+Autonomous Movement
+Type: Fixed
+Speed: 3: Slow
+Freq: 3: Low
+Options Enabled
+Move Animation
+Trigger: Player Touch
+
+List of Event Commands:
+@>Play SE: 'Exit Door', 80, 100
+@>Change Screen Color Tone: (-255,-255,-255,0), @6
+@>Wait: 8 frame(s)
+@>Transfer Player:[282: Passage], (023,007), Down, No Fade
+@>Change Screen Color Tone: (0,0,0,0), @6
+@>
+
+#------------------------------------------------------------------------------
 
 #==============================================================================
 Map ID: 042
@@ -39215,7 +39240,7 @@ Trigger: Action Button
 List of Event Commands:
 @>Text: You've written down a few more upgrades for the 
  :    : house you have thought of.
-@>Text: Upgrades:\ch[249,-1,Yard Farm - 50 Bone Meal,,No Thanks]
+@>Text: Upgrades:\ch[249,-1,Yard Farm - 50 Bone Meal,Mine Passage - 5 Pickaxes,No Thanks]
 @>Conditional Branch: Variable [0249: BedStorage] == -1
  @>
 : Branch End
@@ -39225,6 +39250,22 @@ List of Event Commands:
   @>Conditional Branch: Script: $PokemonBag.pbDeleteItem(:BONEDUST,50)
    @>Change Screen Color Tone: (-255,-255,-255,0), @20
    @>Control Switches: [0478: HomeFarm] = ON
+   @>Change Screen Color Tone: (0,0,0,0), @20
+   @>
+  : Else
+   @>Text: You do not have enough wood.
+   @>
+  : Branch End
+  @>
+ : Branch End
+ @>
+: Branch End
+@>Conditional Branch: Variable [0249: BedStorage] == 1
+ @>Comment: Yard Farm
+ @>Conditional Branch: Script: $PokemonBag.pbQuantity(:PICKAXE)>=5
+  @>Conditional Branch: Script: $PokemonBag.pbDeleteItem(:PICKAXE,5)
+   @>Change Screen Color Tone: (-255,-255,-255,0), @20
+   @>Control Switches: [0477: HomeCave] = ON
    @>Change Screen Color Tone: (0,0,0,0), @20
    @>
   : Else
@@ -104221,32 +104262,6 @@ List of Event Commands:
 @>Change Screen Color Tone: (0,0,0,0), @6
 @>
 
-Page #2
-Conditions
-Switch 0022: s:tsOff?("A") is ON
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Autorun
-
-List of Event Commands:
-@>Conditional Branch: Script: get_character(0).onEvent?
- @>Change Transparent Flag: Transparency
- @>Wait: 6 frame(s)
- @>Change Transparent Flag: Normal
- @>Set Move Route: Player
-                   (Ignore If Can't Move)
-  :              : $>Move Down
- @>Wait for Move's Completion
- @>
-: Branch End
-@>Script: setTempSwitchOn("A")
-@>
-
 #------------------------------------------------------------------------------
 Event ID: 003
 Event Name: EV003
@@ -104272,9 +104287,14 @@ List of Event Commands:
 @>Change Screen Color Tone: (0,0,0,0), @6
 @>
 
-Page #2
+#------------------------------------------------------------------------------
+Event ID: 004
+Event Name: EV004
+(X,Y): (023,006)
+
+Page #1
 Conditions
-Switch 0022: s:tsOff?("A") is ON
+Switch 0477: HomeCave is ON
 
 Autonomous Movement
 Type: Fixed
@@ -104282,20 +104302,14 @@ Speed: 3: Slow
 Freq: 3: Low
 Options Enabled
 Move Animation
-Trigger: Autorun
+Trigger: Player Touch
 
 List of Event Commands:
-@>Conditional Branch: Script: get_character(0).onEvent?
- @>Change Transparent Flag: Transparency
- @>Wait: 6 frame(s)
- @>Change Transparent Flag: Normal
- @>Set Move Route: Player
-                   (Ignore If Can't Move)
-  :              : $>Move Down
- @>Wait for Move's Completion
- @>
-: Branch End
-@>Script: setTempSwitchOn("A")
+@>Play SE: 'Exit Door', 80, 100
+@>Change Screen Color Tone: (-255,-255,-255,0), @6
+@>Wait: 8 frame(s)
+@>Transfer Player:[041: Base Path], (038,010), Down, No Fade
+@>Change Screen Color Tone: (0,0,0,0), @6
 @>
 
 #------------------------------------------------------------------------------

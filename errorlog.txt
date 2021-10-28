@@ -21146,3 +21146,48 @@ Backtrace:
 376:Main:18:in `block in mainFunction'
 014:Errors:71:in `pbCriticalCode'
 376:Main:18:in `mainFunction'
+
+=================
+
+[2021-10-27 23:27:07 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [Power]:
+SyntaxError occurred.
+Line 936: Syntax error, unexpected end-of-input, expecting `end': [Power] Survival Mode.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+376:Main:27:in `mainFunctionDebug'
+376:Main:20:in `mainFunction'
+376:Main:44:in `block in <main>'
+376:Main:43:in `loop'
+
+=================
+
+[2021-10-27 23:32:49 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.1.6]
+
+Exception: NameError
+Message: undefined local variable or method `cmd_options' for #<PokemonLoadScreen>
+
+Backtrace:
+[Multiple save (v.19)] Multiple save file.rb:326:in `block in pbStartLoadScreen'
+[Multiple save (v.19)] Multiple save file.rb:310:in `loop'
+[Multiple save (v.19)] Multiple save file.rb:310:in `pbStartLoadScreen'
+[Elite Battle: DX] EBDX Nuzlocke.rb:330:in `pbStartLoadScreen'
+[Elite Battle: DX] EBDX Randomizer.rb:345:in `pbStartLoadScreen'
+376:Main:6:in `main'
+376:Main:34:in `mainFunctionDebug'
+376:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+376:Main:18:in `mainFunction'

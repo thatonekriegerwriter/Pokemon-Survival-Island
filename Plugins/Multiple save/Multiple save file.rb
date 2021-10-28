@@ -323,12 +323,6 @@ class PokemonLoadScreen
         @scene.pbEndScene
         Game.start_new
         return
-			when cmd_options
-        pbFadeOutIn do
-          scene = PokemonOption_Scene.new
-          screen = PokemonOptionScreen.new(scene)
-          screen.pbStartScreen(true)
-        end
       when cmd_debug
         pbFadeOutIn { pbDebugMenu(false) }
       when cmd_quit
