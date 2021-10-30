@@ -22084,3 +22084,70 @@ Backtrace:
 [Elite Battle: DX] UI Command.rb:243:in `block in showPlay'
 [Elite Battle: DX] UI Command.rb:242:in `times'
 [Elite Battle: DX] UI Command.rb:242:in `showPlay'
+
+=================
+
+[2021-10-28 11:13:37 -0600]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [Battle Stuff]:
+SyntaxError occurred.
+Line 008: Syntax error, unexpected `end', expecting end-of-input
+  end
+  ^~~: [Battle Stuff] 008_SOS.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+376:Main:27:in `mainFunctionDebug'
+376:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+376:Main:18:in `mainFunction'
+
+=================
+
+[2021-10-30 01:05:09 -0600]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: RuntimeError
+Message: Script error in event 22 (coords 14,33), map 352 (Home Interior):
+Exception: ArgumentError
+Message: wrong number of arguments (given 1, expected 0)
+
+***Full script:
+pkmn=pbGetPokemon(1)
+pkmn.record_first_moves(:HEADBUTT)
+
+
+Backtrace:
+247:Pokemon:653:in `record_first_moves'
+(eval):2:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'

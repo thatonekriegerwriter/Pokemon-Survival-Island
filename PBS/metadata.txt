@@ -246,7 +246,7 @@ Outdoor = false
 #-------------------------------
 [041]
 # Base Path
-Outdoor = true
+Outdoor = false
 #-------------------------------
 [042]
 # Southern Ocean
@@ -273,7 +273,7 @@ ShowArea = true
 BattleBack = Forest
 #-------------------------------
 [046]
-# TEMP INTERIOR
+# Ancient Passage
 Outdoor = false
 ShowArea = true
 BattleBack = Forest
@@ -281,6 +281,7 @@ BattleBack = Forest
 [047]
 # Temperate Zone
 Outdoor = true
+SnapEdges = true
 BattleBack = Forest
 #-------------------------------
 [048]
@@ -293,7 +294,8 @@ Outdoor = true
 #-------------------------------
 [050]
 # North
-Outdoor = true
+Outdoor = false
+SnapEdges = true
 #-------------------------------
 [051]
 # INTRO
@@ -319,6 +321,7 @@ Outdoor = true
 # Home Interior
 Outdoor = false
 HealingSpot = 55,24,11
+SnapEdges = true
 #-------------------------------
 [057]
 # Temperate Ocean
@@ -692,6 +695,7 @@ Outdoor = true
 [146]
 # Temperate Zone
 Outdoor = true
+SnapEdges = true
 #-------------------------------
 [147]
 # Greenhouse
