@@ -1425,6 +1425,42 @@ BattleBack = Cave
 Outdoor = false
 BattleBack = Cave
 #-------------------------------
+[342]
+# Deep Swamp Dungeon
+Outdoor = false
+MapPosition = 0,16,11
+Dungeon = true
+BattleBack = 
+Environment = Cave
+#-------------------------------
+[343]
+# Deep Swamp Dungeon
+Outdoor = false
+Dungeon = true
+#-------------------------------
+[344]
+# Deep Swamp Dungeon
+Outdoor = false
+Dungeon = false
+#-------------------------------
+[345]
+# Deep Swamp Dungeon
+Outdoor = false
+Dungeon = true
+#-------------------------------
+[346]
+# Deep Swamp Dungeon
+Outdoor = false
+#-------------------------------
+[347]
+# Deep Swamp Dungeon
+Outdoor = false
+Dungeon = true
+#-------------------------------
+[348]
+# Deep Swamp Dungeon
+Outdoor = false
+#-------------------------------
 [349]
 # MAP349
 Outdoor = true

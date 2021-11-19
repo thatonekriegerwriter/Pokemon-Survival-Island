@@ -23867,7 +23867,7 @@ Speed: 3: Slow
 Freq: 3: Low
 Options Enabled
 Move Animation
-Trigger: Action Button
+Trigger: Player Touch
 
 List of Event Commands:
 @>
@@ -23886,6 +23886,7 @@ Trigger: Autorun
 
 List of Event Commands:
 @>Text: Your Pokemon comes back, limping.
+@>Control Switches: [0488: LeavingDungeonLoss] = OFF
 @>
 
 #------------------------------------------------------------------------------
@@ -57688,46 +57689,19 @@ List of Event Commands:
  @>Text: He ribbits.
  @>Text: He croaks.
  @>Text: He gestures at the dock.
- @>Text: If you can get him 50 Wooden Planks, he can get you 
-  :    : down this river.
+ @>Text: He can take you down river.
  @>Show Choices: Okay., Nokay.
  (When Cancel: Choice 2)
  : When [Okay.]
-  @>Show Choices: I am ready., Not ready.
-  (When Cancel: Choice 2)
-  : When [I am ready.]
-   @>Conditional Branch: Script: $PokemonBag.pbHasItem?(:WOODENPLANKS)
-    @>Conditional Branch: Script: $PokemonBag.pbDeleteItem(:WOODENPLANKS,50)
-     @>Text: You can set forth.
-     @>Show Choices: Go Now., Wait.
-     (When Cancel: Choice 2)
-     : When [Go Now.]
-      @>Change Screen Color Tone: (-255,-255,-255,0), @6
-      @>Text: He takes you down the river for hours.
-      @>Text: He is telling stories on the way.
-      @>Text: Not that... you can TELL, you don't SPEAK Croagunk.
-      @>Control Variables: [0029: TimeDilation] += 57600
-      @>Transfer Player:[036: Deep Swamp], (025,016)
-      @>Change Screen Color Tone: (-17,0,-34,136), @20
-      @>Control Self Switch: A =ON
-      @>
-     : When [Wait.]
-      @>
-     : Branch End
-     @>
-    : Else
-     @>Text: You do not have enough Wooden Planks.
-     @>
-    : Branch End
-    @>
-   : Else
-    @>Text: You do not have enough Wooden Planks.
-    @>
-   : Branch End
-   @>
-  : When [Not ready.]
-   @>
-  : Branch End
+  @>Text: You can set forth.
+  @>Change Screen Color Tone: (-255,-255,-255,0), @6
+  @>Text: He takes you down the river for hours.
+  @>Text: He is telling stories on the way.
+  @>Text: Not that... you can TELL, you don't SPEAK Croagunk.
+  @>Control Variables: [0029: TimeDilation] += 57600
+  @>Transfer Player:[036: Deep Swamp], (025,016)
+  @>Change Screen Color Tone: (-17,0,-34,136), @20
+  @>Control Self Switch: A =ON
   @>
  : When [Nokay.]
   @>
@@ -139250,7 +139224,7 @@ Map ID: 342
 Map Name: Deep Swamp Dungeon
 Tileset: 039: Dunegeon2
 Width: 100, Height: 100
-Auto-Change BGM: XatuDungeon
+Auto-Change BGM: PWAA_-_Examination_-Remix-
 
 #------------------------------------------------------------------------------
 Event ID: 001
@@ -139345,7 +139319,7 @@ List of Event Commands:
 @>Script: pbDetransform
 @>Script: $Trainer.party=pbGet(398)
 @>Control Variables: [0396: Floor] = 0
-@>Transfer Player:[306: Xatu Home], (008,010), Up
+@>Transfer Player:[036: Deep Swamp], (037,061), Up
 @>Change Screen Color Tone: (0,0,0,0), @6
 @>
 
@@ -139372,7 +139346,7 @@ List of Event Commands:
 @>Change Screen Color Tone: (-255,-255,-255,0), @6
 @>Wait: 8 frame(s)
 @>Control Variables: [0396: Floor] += 1
-@>Transfer Player:[336: Temperate Caves], (013,013), Up
+@>Transfer Player:[346: Deep Swamp Dungeon], (049,036), Up
 @>Change Screen Color Tone: (0,0,0,0), @6
 @>
 
@@ -143317,7 +143291,7 @@ List of Event Commands:
 @>Change Screen Color Tone: (-255,-255,-255,0), @6
 @>Wait: 8 frame(s)
 @>Control Variables: [0396: Floor] += 1
-@>Transfer Player:[333: Temperate Caves], (045,033), Up
+@>Transfer Player:[343: Deep Swamp Dungeon], (039,042), Up
 @>Change Screen Color Tone: (0,0,0,0), @6
 @>
 
@@ -143425,7 +143399,7 @@ Map ID: 343
 Map Name: Deep Swamp Dungeon
 Tileset: 039: Dunegeon2
 Width: 100, Height: 100
-Auto-Change BGM: XatuDungeon
+Auto-Change BGM: PWAA_-_Examination_-Remix-
 
 #------------------------------------------------------------------------------
 Event ID: 001
@@ -145884,7 +145858,7 @@ Map ID: 344
 Map Name: Deep Swamp Dungeon
 Tileset: 039: Dunegeon2
 Width: 100, Height: 100
-Auto-Change BGM: XatuDungeon
+Auto-Change BGM: PWAA_-_Examination_-Remix-
 
 #------------------------------------------------------------------------------
 Event ID: 001
@@ -149319,7 +149293,7 @@ Map ID: 345
 Map Name: Deep Swamp Dungeon
 Tileset: 039: Dunegeon2
 Width: 100, Height: 100
-Auto-Change BGM: XatuDungeon
+Auto-Change BGM: PWAA_-_Examination_-Remix-
 
 #------------------------------------------------------------------------------
 Event ID: 001
@@ -153391,7 +153365,7 @@ Map ID: 346
 Map Name: Deep Swamp Dungeon
 Tileset: 039: Dunegeon2
 Width: 100, Height: 100
-Auto-Change BGM: XatuDungeon
+Auto-Change BGM: PWAA_-_Examination_-Remix-
 
 #------------------------------------------------------------------------------
 Event ID: 001
@@ -155813,7 +155787,7 @@ Map ID: 347
 Map Name: Deep Swamp Dungeon
 Tileset: 039: Dunegeon2
 Width: 100, Height: 100
-Auto-Change BGM: XatuDungeon
+Auto-Change BGM: PWAA_-_Examination_-Remix-
 
 #------------------------------------------------------------------------------
 Event ID: 001
@@ -158439,7 +158413,7 @@ Map ID: 348
 Map Name: Deep Swamp Dungeon
 Tileset: 039: Dunegeon2
 Width: 30, Height: 15
-Auto-Change BGM: XatuDungeon
+Auto-Change BGM: PWAA_-_Examination_-Remix-
 
 #------------------------------------------------------------------------------
 Event ID: 001
@@ -164837,6 +164811,7 @@ List of Event Commands:
 :       : [:WATERBOTTLE,[:IRON2,1]],
 :       : [:FOODBAG,[:WOODENPLANKS,1]],
 :       : [:MEDICINE,[:WOOL,1]],
+:       : [:TMCASE,[:WOODENPLANKS,3]],
 :       : [:STONE,[:HARDSTONE,1]]
 :       : ])
 @>

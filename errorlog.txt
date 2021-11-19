@@ -22151,3 +22151,110 @@ Backtrace:
 032:Scene_Map:168:in `block in update'
 032:Scene_Map:166:in `loop'
 032:Scene_Map:166:in `update'
+
+=================
+
+[2021-11-08 18:04:05 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: NameError
+Message: undefined local variable or method `itm' for ItemStorageHelper:Module
+
+Backtrace:
+244:PokemonBag:306:in `pbStoreItem'
+244:PokemonBag:240:in `pbStoreItem'
+275:UI_Bag:698:in `block in pbDepositItemScreen'
+275:UI_Bag:683:in `loop'
+275:UI_Bag:683:in `pbDepositItemScreen'
+287:UI_PC:145:in `block (2 levels) in pbPCItemStorage'
+080:MessageConfig:566:in `pbFadeOutIn'
+287:UI_PC:142:in `block in pbPCItemStorage'
+287:UI_PC:116:in `loop'
+287:UI_PC:116:in `pbPCItemStorage'
+
+=================
+
+[2021-11-12 12:40:51 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: RuntimeError
+Message: Script error in event 1 (coords 30,9), map 282 (Passage):
+Exception: NameError
+Message: undefined local variable or method `itm' for ItemStorageHelper:Module
+
+***Full script:
+pbMiningGame
+
+
+Backtrace:
+244:PokemonBag:306:in `pbStoreItem'
+244:PokemonBag:114:in `pbStoreItem'
+[Elite Battle: DX] EBDX Nuzlocke.rb:324:in `pbStoreItem'
+309:Minigame_Mining:598:in `block in pbGiveItems'
+309:Minigame_Mining:597:in `each'
+309:Minigame_Mining:597:in `pbGiveItems'
+309:Minigame_Mining:592:in `pbMain'
+309:Minigame_Mining:625:in `pbStartScreen'
+309:Minigame_Mining:636:in `block in pbMiningGame'
+080:MessageConfig:566:in `pbFadeOutIn'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-11-12 12:43:18 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: RuntimeError
+Message: Script error in event 1 (coords 30,9), map 282 (Passage):
+Exception: NoMethodError
+Message: undefined method `pocket' for :LEAFSTONE:Symbol
+
+***Full script:
+pbMiningGame
+
+
+Backtrace:
+244:PokemonBag:306:in `pbStoreItem'
+244:PokemonBag:114:in `pbStoreItem'
+[Elite Battle: DX] EBDX Nuzlocke.rb:324:in `pbStoreItem'
+309:Minigame_Mining:598:in `block in pbGiveItems'
+309:Minigame_Mining:597:in `each'
+309:Minigame_Mining:597:in `pbGiveItems'
+309:Minigame_Mining:592:in `pbMain'
+309:Minigame_Mining:625:in `pbStartScreen'
+309:Minigame_Mining:636:in `block in pbMiningGame'
+080:MessageConfig:566:in `pbFadeOutIn'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
