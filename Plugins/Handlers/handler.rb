@@ -73,29 +73,10 @@ end
 
 }
 
-def GrassEvolutionStone
+def pbGrassEvolutionStone
+pbChooseNonEggPokemon(1,3)
   case $game_variables[3]
-     when :GLOOM
-	     $game_variables[4] = 1
-     when :WEEPINGBELL
-	     $game_variables[4] = 2
-     when :EXEGGCUTE 
-	     $game_variables[4] = 3
-     when :EEVEE
-	     $game_variables[4] = 4
-     when :NUZLEAF
-	     $game_variables[4] = 5
-     when :PANSAGE
-	     $game_variables[4] = 6
-     when :CHERUBI
-	     $game_variables[4] = 7
-	 else
-	     $game_variables[4] = 0
-  end
-if $game_variables[4]== 0
-    Kernel.pbMessage(_INTL("That does not seem to be able to evolve with this stone."))
-end
-if $game_variables[4]== 1
+     when "Gloom"
     Kernel.pbMessage(_INTL("Gloom evolves into Vileplume."))
 	pkmn=$trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
@@ -104,9 +85,8 @@ if $game_variables[4]== 1
     evo.pbEvolution(false)
     evo.pbEndScreen
 }
-end
-if $game_variables[4]== 2
-    Kernel.pbMessage(_INTL("Weepingbell evolves into Victorybell."))
+     when "Weepingbell"
+    Kernel.pbMessage(_INTL("Weepingbell evolves into Victreebell."))
 	pkmn=$trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
@@ -114,8 +94,7 @@ if $game_variables[4]== 2
     evo.pbEvolution(false)
     evo.pbEndScreen
 }
-end
-if $game_variables[4]== 3
+     when "Exeggcute" 
     Kernel.pbMessage(_INTL("Exeggcute evolves into Exeggcutor."))
 	pkmn=$trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
@@ -124,8 +103,7 @@ if $game_variables[4]== 3
     evo.pbEvolution(false)
     evo.pbEndScreen
 }
-end
-if $game_variables[4]== 4
+     when "Eevee"
     Kernel.pbMessage(_INTL("Eevee evolves into Leafeon."))
 	pkmn=$trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
@@ -134,8 +112,7 @@ if $game_variables[4]== 4
     evo.pbEvolution(false)
     evo.pbEndScreen
 }
-end
-if $game_variables[4]== 5
+     when "Nuzleaf"
     Kernel.pbMessage(_INTL("Nuzleaf evolves into Shiftry."))
 	pkmn=$trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
@@ -144,8 +121,7 @@ if $game_variables[4]== 5
     evo.pbEvolution(false)
     evo.pbEndScreen
 }
-end
-if $game_variables[4]== 6
+     when "Pansage"
     Kernel.pbMessage(_INTL("Pansage evolves into Semisage."))
 	pkmn=$trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
@@ -154,9 +130,8 @@ if $game_variables[4]== 6
     evo.pbEvolution(false)
     evo.pbEndScreen
 }
-end
-if $game_variables[4]== 7
-    Kernel.pbMessage(_INTL("Cherubi normally evolves into Cherrim."))
+     when "Cherubi"
+    Kernel.pbMessage(_INTL("Cherubi evolves into Cherrim."))
 	pkmn=$trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
@@ -165,5 +140,7 @@ if $game_variables[4]== 7
     evo.pbEndScreen
 }
     Kernel.pbMessage(_INTL("OH! How abnormal!"))
-end
+	 else
+    Kernel.pbMessage(_INTL("That does not seem to be able to evolve with this stone."))
+  end
 end

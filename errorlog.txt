@@ -22258,3 +22258,304 @@ Backtrace:
 032:Scene_Map:168:in `block in update'
 032:Scene_Map:166:in `loop'
 032:Scene_Map:166:in `update'
+
+=================
+
+[2021-11-18 22:00:34 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: RuntimeError
+Message: Script error in event 27 (coords 47,20), map 342 (Deep Swamp Dungeon):
+Exception: Errno::ENOENT
+Message: File Graphics/Pictures/Object not found.
+
+***Full script:
+pbItemBall(:GRASSGEM)
+
+Backtrace:
+[HCS2] BOTW.rb:134:in `initialize'
+[HCS2] BOTW.rb:134:in `new'
+[HCS2] BOTW.rb:134:in `itemAnim'
+[HCS2] BOTW.rb:156:in `pbItemBall'
+[Elite Battle: DX] EBDX Randomizer.rb:322:in `pbItemBall'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:352:in `command_111'
+034:Interpreter_Commands:29:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-11-18 22:58:22 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: RuntimeError
+Message: Script error in event 12 (coords 26,12), map 36 (Deep Swamp):
+Exception: RuntimeError
+Message: Unknown ID 0.
+
+***Full script:
+pbAddPokemonSilent(pbGet(402))
+pbAddPokemonSilent(pbGet(403))
+pbAddPokemonSilent(pbGet(404))
+pbAddPokemonSilent(pbGet(405))
+pbAddPokemonSilent(pbGet(406))
+
+
+Backtrace:
+101:GameData:32:in `get'
+247:Pokemon:1088:in `initialize'
+[Pokemon Amie/ Refresh] 3 - New function.rb:6:in `initialize'
+[Elite Battle: DX] Battler Additions.rb:15:in `initialize'
+340:Utilities_Pokemon:82:in `new'
+340:Utilities_Pokemon:82:in `pbAddPokemonSilent'
+[Elite Battle: DX] EBDX Randomizer.rb:312:in `pbAddPokemonSilent'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+033:Interpreter:100:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+
+=================
+
+[2021-11-19 00:03:19 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: RuntimeError
+Message: Script error in event 1 (coords 25,27), map 350 (MAP350):
+Exception: NameError
+Message: uninitialized constant Interpreter::GrassEvolutionStone
+
+***Full script:
+GrassEvolutionStone
+
+
+Backtrace:
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-11-19 00:10:54 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: RuntimeError
+Message: Script error in event 1 (coords 25,27), map 350 (MAP350):
+Exception: NameError
+Message: uninitialized constant Interpreter::GrassEvolutionStone
+
+***Full script:
+GrassEvolutionStone
+
+
+Backtrace:
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-11-19 00:18:41 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: RuntimeError
+Message: Script error in event 1 (coords 25,27), map 350 (MAP350):
+Exception: NameError
+Message: uninitialized constant Eevee
+
+***Full script:
+pbGrassEvolutionStone
+
+
+Backtrace:
+[Power] handler.rb:85:in `pbGrassEvolutionStone'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'
+
+=================
+
+[2021-11-19 00:33:45 -0700]
+[Pokémon Essentials version 19.1]
+[v19.1 Hotfixes 1.0.4]
+
+Error in Plugin [Power]:
+SyntaxError occurred.
+Line 114: Nuzleaf
+     ^~~~: [Power] handler.rb
+
+Backtrace:
+008:PluginManager:699:in `eval'
+008:PluginManager:699:in `block (2 levels) in runPlugins'
+008:PluginManager:689:in `each'
+008:PluginManager:689:in `block in runPlugins'
+008:PluginManager:683:in `each'
+008:PluginManager:683:in `runPlugins'
+376:Main:27:in `mainFunctionDebug'
+376:Main:18:in `block in mainFunction'
+014:Errors:71:in `pbCriticalCode'
+376:Main:18:in `mainFunction'
+
+=================
+
+[2021-11-19 11:56:09 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: Errno::ENOENT
+Message: File Graphics/Pictures/TM Case/bg not found.
+
+Backtrace:
+[TM Case] TM Case.rb:125:in `initialize'
+[TM Case] TM Case.rb:125:in `new'
+[TM Case] TM Case.rb:125:in `initialize'
+[TM Case] TM Case.rb:2:in `new'
+[TM Case] TM Case.rb:2:in `block in <main>'
+035:Event_Handlers:199:in `trigger'
+237:Item_Utilities:57:in `triggerUseFromBag'
+237:Item_Utilities:577:in `pbUseItem'
+275:UI_Bag:544:in `block in pbStartScreen'
+275:UI_Bag:507:in `loop'
+
+=================
+
+[2021-11-19 12:42:16 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+[EBDX v1.2.5]
+
+Exception: RuntimeError
+Message: Script error in event 1 (coords 25,27), map 350 (MAP350):
+Exception: NoMethodError
+Message: undefined method `party' for nil:NilClass
+
+***Full script:
+pbGrassEvolutionStone
+
+
+Backtrace:
+[Power] handler.rb:81:in `pbGrassEvolutionStone'
+(eval):1:in `execute_script'
+033:Interpreter:137:in `eval'
+033:Interpreter:137:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+
+
+Backtrace:
+033:Interpreter:189:in `rescue in execute_script'
+033:Interpreter:135:in `execute_script'
+034:Interpreter_Commands:1024:in `command_355'
+034:Interpreter_Commands:116:in `execute_command'
+033:Interpreter:127:in `block in update'
+033:Interpreter:87:in `loop'
+033:Interpreter:87:in `update'
+032:Scene_Map:168:in `block in update'
+032:Scene_Map:166:in `loop'
+032:Scene_Map:166:in `update'

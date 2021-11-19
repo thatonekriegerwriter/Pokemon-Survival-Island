@@ -58250,30 +58250,12 @@ List of Event Commands:
 @>Text: In addition, there is a slight chance that a move won't 
  :    : use any PP.
 @>Conditional Branch: Script: Kernel.pbReceiveItem(:HM05)
- @>Control Self Switch: C =ON
  @>
 : Branch End
-@>
-
-Page #3
-Conditions
-Self Switch C is ON
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Event Touch
-
-List of Event Commands:
-@>Text: You get the feeling this area may be dangerous, and 
- :    : battles could take place anytime, without warning.
 @>Control Self Switch: D =ON
 @>
 
-Page #4
+Page #3
 Conditions
 Self Switch D is ON
 
@@ -158437,7 +158419,7 @@ Trigger: Action Button
 List of Event Commands:
 @>Script: setBattleRule("setStyle")
 :       : setBattleRule("canLose")
-@>Conditional Branch: Script: EliteBattle.bossBattle(:VIRIZION, rand(6)+pbBalancedLevel($Trainer.party), 6, false)
+@>Conditional Branch: Script: EliteBattle.bossBattle(:VIRIZION, rand(2)+pbBalancedLevel($Trainer.party), 6, false)
  @>Conditional Branch: Script: rand(200) <= 1
   @>Text: The Pokemon seems to like you! It wants to join your party!
   @>Text: Let it?
@@ -158576,6 +158558,7 @@ List of Event Commands:
  @>Wait: 20 frame(s)
  @>
 : Branch End
+@>Control Switches: [0481: DeepSwampDungeon] = ON
 @>Control Switches: [0491: LeavingDungeon] = ON
 @>Script: pbDetransform
 @>Call Common Event: CloneReturn
@@ -158587,7 +158570,7 @@ List of Event Commands:
 #------------------------------------------------------------------------------
 Event ID: 004
 Event Name: EV004
-(X,Y): (029,011)
+(X,Y): (013,011)
 
 Page #1
 Conditions
@@ -158602,29 +158585,14 @@ Move Animation
 Trigger: Autorun
 
 List of Event Commands:
-@>Text: You are informed that your POKeMON has reached the Boss of the Dungeon, and due to that, you are allowed to bring a second one down.
-@>Control Switches: [0482: TwoMonsInDungeon] = ON
+@>Text: You do not have to fight right now, you may just 
+ :    : leave.
 @>Control Self Switch: A =ON
 @>
 
 Page #2
 Conditions
 Self Switch A is ON
-
-Autonomous Movement
-Type: Fixed
-Speed: 3: Slow
-Freq: 3: Low
-Options Enabled
-Move Animation
-Trigger: Action Button
-
-List of Event Commands:
-@>
-
-Page #3
-Conditions
-Switch 0482: TwoMonsInDungeon is ON
 
 Autonomous Movement
 Type: Fixed
@@ -158675,7 +158643,7 @@ List of Event Commands:
 @>Show Choices: Yes, No
 (When Cancel: Choice 2)
 : When [Yes]
- @>Script: GrassEvolutionStone
+ @>Script: pbGrassEvolutionStone
  @>
 : When [No]
  @>
@@ -165872,308 +165840,661 @@ Trigger: None
 List of Event Commands:
 @>Conditional Branch: Variable [0398: PartyL] == 1
  @>
-: Branch End
-@>Conditional Branch: Switch [0480: Two] == OFF
- @>Conditional Branch: Variable [0398: PartyL] == 2
-  @>Conditional Branch: Script: pbGet(1) == 0
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 1
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>
-  : Branch End
-  @>
- : Else
-  @>
- : Branch End
- @>Conditional Branch: Variable [0398: PartyL] == 3
-  @>Conditional Branch: Script: pbGet(1) == 0
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 1
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 2
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>
-  : Branch End
-  @>
- : Branch End
- @>Conditional Branch: Variable [0398: PartyL] == 4
-  @>Conditional Branch: Script: pbGet(1) == 0
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 1
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 2
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 3
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>
-  : Branch End
-  @>
- : Else
-  @>
- : Branch End
- @>Conditional Branch: Variable [0398: PartyL] == 5
-  @>Conditional Branch: Script: pbGet(1) == 0
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>Script: pbAddPokemonSilent(pbGet(405))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 1
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>Script: pbAddPokemonSilent(pbGet(405))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 2
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>Script: pbAddPokemonSilent(pbGet(405))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 3
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>Script: pbAddPokemonSilent(pbGet(405))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 4
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0398: PartyL] == 6
-   @>Conditional Branch: Script: pbGet(1) == 0
-    @>Script: pbAddPokemonSilent(pbGet(402))
-    @>Script: pbAddPokemonSilent(pbGet(403))
-    @>Script: pbAddPokemonSilent(pbGet(404))
-    @>Script: pbAddPokemonSilent(pbGet(405))
-    @>Script: pbAddPokemonSilent(pbGet(406))
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 1
-    @>Script: pbAddPokemonSilent(pbGet(401))
-    @>Script: pbAddPokemonSilent(pbGet(403))
-    @>Script: pbAddPokemonSilent(pbGet(404))
-    @>Script: pbAddPokemonSilent(pbGet(405))
-    @>Script: pbAddPokemonSilent(pbGet(406))
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 2
-    @>Script: pbAddPokemonSilent(pbGet(401))
-    @>Script: pbAddPokemonSilent(pbGet(402))
-    @>Script: pbAddPokemonSilent(pbGet(404))
-    @>Script: pbAddPokemonSilent(pbGet(405))
-    @>Script: pbAddPokemonSilent(pbGet(406))
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 3
-    @>Script: pbAddPokemonSilent(pbGet(401))
-    @>Script: pbAddPokemonSilent(pbGet(402))
-    @>Script: pbAddPokemonSilent(pbGet(403))
-    @>Script: pbAddPokemonSilent(pbGet(405))
-    @>Script: pbAddPokemonSilent(pbGet(406))
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 4
-    @>Script: pbAddPokemonSilent(pbGet(401))
-    @>Script: pbAddPokemonSilent(pbGet(402))
-    @>Script: pbAddPokemonSilent(pbGet(403))
-    @>Script: pbAddPokemonSilent(pbGet(404))
-    @>Script: pbAddPokemonSilent(pbGet(406))
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 5
-    @>Script: pbAddPokemonSilent(pbGet(401))
-    @>Script: pbAddPokemonSilent(pbGet(402))
-    @>Script: pbAddPokemonSilent(pbGet(403))
-    @>Script: pbAddPokemonSilent(pbGet(404))
-    @>Script: pbAddPokemonSilent(pbGet(405))
-    @>
-   : Branch End
-   @>
-  : Branch End
-  @>
- : Else
-  @>
- : Branch End
- @>
 : Else
- @>Conditional Branch: Variable [0398: PartyL] == 2
-  @>Conditional Branch: Script: pbGet(1) == 0
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 1
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>
-  : Branch End
-  @>
- : Else
-  @>
- : Branch End
- @>Conditional Branch: Variable [0398: PartyL] == 3
-  @>Conditional Branch: Script: pbGet(1) == 0
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 1
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 2
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>
-  : Branch End
-  @>
- : Branch End
- @>Conditional Branch: Variable [0398: PartyL] == 4
-  @>Conditional Branch: Script: pbGet(1) == 0
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 1
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 2
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 3
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>
-  : Branch End
-  @>
- : Else
-  @>
- : Branch End
- @>Conditional Branch: Variable [0398: PartyL] == 5
-  @>Conditional Branch: Script: pbGet(1) == 0
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>Script: pbAddPokemonSilent(pbGet(405))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 1
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>Script: pbAddPokemonSilent(pbGet(405))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 2
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>Script: pbAddPokemonSilent(pbGet(405))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 3
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>Script: pbAddPokemonSilent(pbGet(405))
-   @>
-  : Branch End
-  @>Conditional Branch: Script: pbGet(1) == 4
-   @>Script: pbAddPokemonSilent(pbGet(401))
-   @>Script: pbAddPokemonSilent(pbGet(402))
-   @>Script: pbAddPokemonSilent(pbGet(403))
-   @>Script: pbAddPokemonSilent(pbGet(404))
-   @>
-  : Branch End
-  @>Conditional Branch: Variable [0398: PartyL] == 6
+ @>Conditional Branch: Switch [0480: Two] == OFF
+  @>Conditional Branch: Variable [0398: PartyL] == 2
    @>Conditional Branch: Script: pbGet(1) == 0
-    @>Script: pbAddPokemonSilent(pbGet(402))
-    @>Script: pbAddPokemonSilent(pbGet(403))
-    @>Script: pbAddPokemonSilent(pbGet(404))
-    @>Script: pbAddPokemonSilent(pbGet(405))
-    @>Script: pbAddPokemonSilent(pbGet(406))
     @>
    : Branch End
    @>Conditional Branch: Script: pbGet(1) == 1
     @>Script: pbAddPokemonSilent(pbGet(401))
-    @>Script: pbAddPokemonSilent(pbGet(403))
-    @>Script: pbAddPokemonSilent(pbGet(404))
-    @>Script: pbAddPokemonSilent(pbGet(405))
-    @>Script: pbAddPokemonSilent(pbGet(406))
     @>
    : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 2
-    @>Script: pbAddPokemonSilent(pbGet(401))
-    @>Script: pbAddPokemonSilent(pbGet(402))
-    @>Script: pbAddPokemonSilent(pbGet(404))
-    @>Script: pbAddPokemonSilent(pbGet(405))
-    @>Script: pbAddPokemonSilent(pbGet(406))
+   @>
+  : Else
+   @>Conditional Branch: Variable [0398: PartyL] == 3
+    @>Conditional Branch: Script: pbGet(1) == 0
+     @>Script: pbAddPokemonSilent(pbGet(402))
+     @>Script: pbAddPokemonSilent(pbGet(403))
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 1
+     @>Script: pbAddPokemonSilent(pbGet(401))
+     @>Script: pbAddPokemonSilent(pbGet(403))
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 2
+     @>Script: pbAddPokemonSilent(pbGet(401))
+     @>Script: pbAddPokemonSilent(pbGet(402))
+     @>
+    : Branch End
     @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 3
-    @>Script: pbAddPokemonSilent(pbGet(401))
-    @>Script: pbAddPokemonSilent(pbGet(402))
-    @>Script: pbAddPokemonSilent(pbGet(403))
-    @>Script: pbAddPokemonSilent(pbGet(405))
-    @>Script: pbAddPokemonSilent(pbGet(406))
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 4
-    @>Script: pbAddPokemonSilent(pbGet(401))
-    @>Script: pbAddPokemonSilent(pbGet(402))
-    @>Script: pbAddPokemonSilent(pbGet(403))
-    @>Script: pbAddPokemonSilent(pbGet(404))
-    @>Script: pbAddPokemonSilent(pbGet(406))
-    @>
-   : Branch End
-   @>Conditional Branch: Script: pbGet(1) == 5
-    @>Script: pbAddPokemonSilent(pbGet(401))
-    @>Script: pbAddPokemonSilent(pbGet(402))
-    @>Script: pbAddPokemonSilent(pbGet(403))
-    @>Script: pbAddPokemonSilent(pbGet(404))
-    @>Script: pbAddPokemonSilent(pbGet(405))
+   : Else
+    @>Conditional Branch: Variable [0398: PartyL] == 4
+     @>Conditional Branch: Script: pbGet(1) == 0
+      @>Script: pbAddPokemonSilent(pbGet(402))
+      @>Script: pbAddPokemonSilent(pbGet(403))
+      @>Script: pbAddPokemonSilent(pbGet(404))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 1
+      @>Script: pbAddPokemonSilent(pbGet(401))
+      @>Script: pbAddPokemonSilent(pbGet(403))
+      @>Script: pbAddPokemonSilent(pbGet(404))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 2
+      @>Script: pbAddPokemonSilent(pbGet(401))
+      @>Script: pbAddPokemonSilent(pbGet(402))
+      @>Script: pbAddPokemonSilent(pbGet(404))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 3
+      @>Script: pbAddPokemonSilent(pbGet(401))
+      @>Script: pbAddPokemonSilent(pbGet(402))
+      @>Script: pbAddPokemonSilent(pbGet(403))
+      @>
+     : Branch End
+     @>
+    : Else
+     @>Conditional Branch: Variable [0398: PartyL] == 5
+      @>Conditional Branch: Script: pbGet(1) == 0
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 1
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 2
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 3
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 4
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>
+      : Branch End
+      @>
+     : Else
+      @>Conditional Branch: Variable [0398: PartyL] == 6
+       @>Conditional Branch: Script: pbGet(1) == 0
+        @>Script: pbAddPokemonSilent(pbGet(402))
+        @>Script: pbAddPokemonSilent(pbGet(403))
+        @>Script: pbAddPokemonSilent(pbGet(404))
+        @>Script: pbAddPokemonSilent(pbGet(405))
+        @>Script: pbAddPokemonSilent(pbGet(406))
+        @>
+       : Branch End
+       @>Conditional Branch: Script: pbGet(1) == 1
+        @>Script: pbAddPokemonSilent(pbGet(401))
+        @>Script: pbAddPokemonSilent(pbGet(403))
+        @>Script: pbAddPokemonSilent(pbGet(404))
+        @>Script: pbAddPokemonSilent(pbGet(405))
+        @>Script: pbAddPokemonSilent(pbGet(406))
+        @>
+       : Branch End
+       @>Conditional Branch: Script: pbGet(1) == 2
+        @>Script: pbAddPokemonSilent(pbGet(401))
+        @>Script: pbAddPokemonSilent(pbGet(402))
+        @>Script: pbAddPokemonSilent(pbGet(404))
+        @>Script: pbAddPokemonSilent(pbGet(405))
+        @>Script: pbAddPokemonSilent(pbGet(406))
+        @>
+       : Branch End
+       @>Conditional Branch: Script: pbGet(1) == 3
+        @>Script: pbAddPokemonSilent(pbGet(401))
+        @>Script: pbAddPokemonSilent(pbGet(402))
+        @>Script: pbAddPokemonSilent(pbGet(403))
+        @>Script: pbAddPokemonSilent(pbGet(405))
+        @>Script: pbAddPokemonSilent(pbGet(406))
+        @>
+       : Branch End
+       @>Conditional Branch: Script: pbGet(1) == 4
+        @>Script: pbAddPokemonSilent(pbGet(401))
+        @>Script: pbAddPokemonSilent(pbGet(402))
+        @>Script: pbAddPokemonSilent(pbGet(403))
+        @>Script: pbAddPokemonSilent(pbGet(404))
+        @>Script: pbAddPokemonSilent(pbGet(406))
+        @>
+       : Branch End
+       @>Conditional Branch: Script: pbGet(1) == 5
+        @>Script: pbAddPokemonSilent(pbGet(401))
+        @>Script: pbAddPokemonSilent(pbGet(402))
+        @>Script: pbAddPokemonSilent(pbGet(403))
+        @>Script: pbAddPokemonSilent(pbGet(404))
+        @>Script: pbAddPokemonSilent(pbGet(405))
+        @>
+       : Branch End
+       @>
+      : Branch End
+      @>
+     : Branch End
+     @>
+    : Branch End
     @>
    : Branch End
    @>
   : Branch End
   @>
  : Else
+  @>Conditional Branch: Variable [0398: PartyL] == 2
+   @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 1
+    @>
+   : Branch End
+   @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 0
+    @>
+   : Branch End
+   @>
+  : Else
+   @>Conditional Branch: Variable [0398: PartyL] == 3
+    @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 1
+     @>Script: pbAddPokemonSilent(pbGet(403))
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 2
+     @>Script: pbAddPokemonSilent(pbGet(402))
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 0
+     @>Script: pbAddPokemonSilent(pbGet(403))
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 2
+     @>Script: pbAddPokemonSilent(pbGet(401))
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 0
+     @>Script: pbAddPokemonSilent(pbGet(402))
+     @>
+    : Branch End
+    @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 1
+     @>Script: pbAddPokemonSilent(pbGet(401))
+     @>
+    : Branch End
+    @>
+   : Else
+    @>Conditional Branch: Variable [0398: PartyL] == 4
+     @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 1
+      @>Script: pbAddPokemonSilent(pbGet(403))
+      @>Script: pbAddPokemonSilent(pbGet(404))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 2
+      @>Script: pbAddPokemonSilent(pbGet(402))
+      @>Script: pbAddPokemonSilent(pbGet(404))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 3
+      @>Script: pbAddPokemonSilent(pbGet(402))
+      @>Script: pbAddPokemonSilent(pbGet(403))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 0
+      @>Script: pbAddPokemonSilent(pbGet(403))
+      @>Script: pbAddPokemonSilent(pbGet(404))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 2
+      @>Script: pbAddPokemonSilent(pbGet(401))
+      @>Script: pbAddPokemonSilent(pbGet(404))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 3
+      @>Script: pbAddPokemonSilent(pbGet(401))
+      @>Script: pbAddPokemonSilent(pbGet(403))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 0
+      @>Script: pbAddPokemonSilent(pbGet(402))
+      @>Script: pbAddPokemonSilent(pbGet(404))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 1
+      @>Script: pbAddPokemonSilent(pbGet(401))
+      @>Script: pbAddPokemonSilent(pbGet(404))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 3
+      @>Script: pbAddPokemonSilent(pbGet(401))
+      @>Script: pbAddPokemonSilent(pbGet(402))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 3 && pbGet(7) == 1
+      @>Script: pbAddPokemonSilent(pbGet(401))
+      @>Script: pbAddPokemonSilent(pbGet(403))
+      @>
+     : Branch End
+     @>Conditional Branch: Script: pbGet(1) == 3 && pbGet(7) == 2
+      @>Script: pbAddPokemonSilent(pbGet(401))
+      @>Script: pbAddPokemonSilent(pbGet(402))
+      @>
+     : Branch End
+     @>
+    : Else
+     @>Conditional Branch: Variable [0398: PartyL] == 5
+      @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 1
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 2
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 3
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 4
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 0
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 2
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 3
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 4
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 0
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 1
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 3
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 4
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 3 && pbGet(7) == 0
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 3 && pbGet(7) == 1
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 3 && pbGet(7) == 2
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(405))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 3 && pbGet(7) == 4
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 4 && pbGet(7) == 0
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 4 && pbGet(7) == 1
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 4 && pbGet(7) == 2
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(404))
+       @>
+      : Branch End
+      @>Conditional Branch: Script: pbGet(1) == 4 && pbGet(7) == 3
+       @>Script: pbAddPokemonSilent(pbGet(401))
+       @>Script: pbAddPokemonSilent(pbGet(402))
+       @>Script: pbAddPokemonSilent(pbGet(403))
+       @>
+      : Branch End
+      @>
+     : Else
+      @>Conditional Branch: Variable [0398: PartyL] == 6
+       @>Text: six
+       @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 1
+        @>Script: pbAddPokemonSilent(pbGet(403))
+        @>Script: pbAddPokemonSilent(pbGet(404))
+        @>Script: pbAddPokemonSilent(pbGet(405))
+        @>Script: pbAddPokemonSilent(pbGet(406))
+        @>
+       : Else
+        @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 2
+         @>Script: pbAddPokemonSilent(pbGet(402))
+         @>Script: pbAddPokemonSilent(pbGet(404))
+         @>Script: pbAddPokemonSilent(pbGet(405))
+         @>Script: pbAddPokemonSilent(pbGet(406))
+         @>
+        : Else
+         @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 3
+          @>Script: pbAddPokemonSilent(pbGet(402))
+          @>Script: pbAddPokemonSilent(pbGet(403))
+          @>Script: pbAddPokemonSilent(pbGet(405))
+          @>Script: pbAddPokemonSilent(pbGet(406))
+          @>
+         : Else
+          @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 4
+           @>Script: pbAddPokemonSilent(pbGet(402))
+           @>Script: pbAddPokemonSilent(pbGet(403))
+           @>Script: pbAddPokemonSilent(pbGet(404))
+           @>Script: pbAddPokemonSilent(pbGet(406))
+           @>
+          : Else
+           @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 5
+            @>Script: pbAddPokemonSilent(pbGet(402))
+            @>Script: pbAddPokemonSilent(pbGet(403))
+            @>Script: pbAddPokemonSilent(pbGet(404))
+            @>Script: pbAddPokemonSilent(pbGet(405))
+            @>
+           : Else
+            @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 0
+             @>Script: pbAddPokemonSilent(pbGet(403))
+             @>Script: pbAddPokemonSilent(pbGet(404))
+             @>Script: pbAddPokemonSilent(pbGet(405))
+             @>Script: pbAddPokemonSilent(pbGet(406))
+             @>
+            : Else
+             @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 2
+              @>Script: pbAddPokemonSilent(pbGet(401))
+              @>Script: pbAddPokemonSilent(pbGet(404))
+              @>Script: pbAddPokemonSilent(pbGet(405))
+              @>Script: pbAddPokemonSilent(pbGet(406))
+              @>
+             : Else
+              @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 3
+               @>Script: pbAddPokemonSilent(pbGet(401))
+               @>Script: pbAddPokemonSilent(pbGet(403))
+               @>Script: pbAddPokemonSilent(pbGet(405))
+               @>Script: pbAddPokemonSilent(pbGet(406))
+               @>
+              : Else
+               @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 4
+                @>Script: pbAddPokemonSilent(pbGet(401))
+                @>Script: pbAddPokemonSilent(pbGet(403))
+                @>Script: pbAddPokemonSilent(pbGet(404))
+                @>Script: pbAddPokemonSilent(pbGet(406))
+                @>
+               : Else
+                @>Conditional Branch: Script: pbGet(1) == 1 && pbGet(7) == 5
+                 @>Script: pbAddPokemonSilent(pbGet(401))
+                 @>Script: pbAddPokemonSilent(pbGet(403))
+                 @>Script: pbAddPokemonSilent(pbGet(404))
+                 @>Script: pbAddPokemonSilent(pbGet(405))
+                 @>
+                : Else
+                 @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 0
+                  @>Script: pbAddPokemonSilent(pbGet(402))
+                  @>Script: pbAddPokemonSilent(pbGet(404))
+                  @>Script: pbAddPokemonSilent(pbGet(405))
+                  @>Script: pbAddPokemonSilent(pbGet(406))
+                  @>
+                 : Else
+                  @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 1
+                   @>Script: pbAddPokemonSilent(pbGet(401))
+                   @>Script: pbAddPokemonSilent(pbGet(404))
+                   @>Script: pbAddPokemonSilent(pbGet(405))
+                   @>Script: pbAddPokemonSilent(pbGet(406))
+                   @>
+                  : Else
+                   @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 3
+                    @>Script: pbAddPokemonSilent(pbGet(401))
+                    @>Script: pbAddPokemonSilent(pbGet(402))
+                    @>Script: pbAddPokemonSilent(pbGet(405))
+                    @>Script: pbAddPokemonSilent(pbGet(406))
+                    @>
+                   : Else
+                    @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 4
+                     @>Script: pbAddPokemonSilent(pbGet(401))
+                     @>Script: pbAddPokemonSilent(pbGet(402))
+                     @>Script: pbAddPokemonSilent(pbGet(404))
+                     @>Script: pbAddPokemonSilent(pbGet(406))
+                     @>
+                    : Else
+                     @>Conditional Branch: Script: pbGet(1) == 2 && pbGet(7) == 5
+                      @>Script: pbAddPokemonSilent(pbGet(401))
+                      @>Script: pbAddPokemonSilent(pbGet(402))
+                      @>Script: pbAddPokemonSilent(pbGet(404))
+                      @>Script: pbAddPokemonSilent(pbGet(405))
+                      @>
+                     : Else
+                      @>Conditional Branch: Script: pbGet(1) == 3 && pbGet(7) == 0
+                       @>Script: pbAddPokemonSilent(pbGet(402))
+                       @>Script: pbAddPokemonSilent(pbGet(403))
+                       @>Script: pbAddPokemonSilent(pbGet(405))
+                       @>Script: pbAddPokemonSilent(pbGet(406))
+                       @>
+                      : Else
+                       @>Conditional Branch: Script: pbGet(1) == 3 && pbGet(7) == 1
+                        @>Script: pbAddPokemonSilent(pbGet(401))
+                        @>Script: pbAddPokemonSilent(pbGet(403))
+                        @>Script: pbAddPokemonSilent(pbGet(405))
+                        @>Script: pbAddPokemonSilent(pbGet(406))
+                        @>
+                       : Else
+                        @>Conditional Branch: Script: pbGet(1) == 3 && pbGet(7) == 2
+                         @>Script: pbAddPokemonSilent(pbGet(401))
+                         @>Script: pbAddPokemonSilent(pbGet(402))
+                         @>Script: pbAddPokemonSilent(pbGet(405))
+                         @>Script: pbAddPokemonSilent(pbGet(406))
+                         @>
+                        : Else
+                         @>Conditional Branch: Script: pbGet(1) == 3 && pbGet(7) == 4
+                          @>Script: pbAddPokemonSilent(pbGet(401))
+                          @>Script: pbAddPokemonSilent(pbGet(402))
+                          @>Script: pbAddPokemonSilent(pbGet(403))
+                          @>Script: pbAddPokemonSilent(pbGet(406))
+                          @>
+                         : Else
+                          @>Conditional Branch: Script: pbGet(1) == 3 && pbGet(7) == 5
+                           @>Script: pbAddPokemonSilent(pbGet(401))
+                           @>Script: pbAddPokemonSilent(pbGet(402))
+                           @>Script: pbAddPokemonSilent(pbGet(403))
+                           @>Script: pbAddPokemonSilent(pbGet(405))
+                           @>
+                          : Else
+                           @>Conditional Branch: Script: pbGet(1) == 4 && pbGet(7) == 0
+                            @>Script: pbAddPokemonSilent(pbGet(402))
+                            @>Script: pbAddPokemonSilent(pbGet(403))
+                            @>Script: pbAddPokemonSilent(pbGet(404))
+                            @>Script: pbAddPokemonSilent(pbGet(406))
+                            @>
+                           : Else
+                            @>Conditional Branch: Script: pbGet(1) == 4 && pbGet(7) == 1
+                             @>Script: pbAddPokemonSilent(pbGet(401))
+                             @>Script: pbAddPokemonSilent(pbGet(403))
+                             @>Script: pbAddPokemonSilent(pbGet(404))
+                             @>Script: pbAddPokemonSilent(pbGet(406))
+                             @>
+                            : Else
+                             @>Conditional Branch: Script: pbGet(1) == 4 && pbGet(7) == 2
+                              @>Script: pbAddPokemonSilent(pbGet(401))
+                              @>Script: pbAddPokemonSilent(pbGet(402))
+                              @>Script: pbAddPokemonSilent(pbGet(404))
+                              @>Script: pbAddPokemonSilent(pbGet(406))
+                              @>
+                             : Else
+                              @>Conditional Branch: Script: pbGet(1) == 4 && pbGet(7) == 3
+                               @>Script: pbAddPokemonSilent(pbGet(401))
+                               @>Script: pbAddPokemonSilent(pbGet(402))
+                               @>Script: pbAddPokemonSilent(pbGet(403))
+                               @>Script: pbAddPokemonSilent(pbGet(406))
+                               @>
+                              : Else
+                               @>Conditional Branch: Script: pbGet(1) == 4 && pbGet(7) == 5
+                                @>Script: pbAddPokemonSilent(pbGet(401))
+                                @>Script: pbAddPokemonSilent(pbGet(402))
+                                @>Script: pbAddPokemonSilent(pbGet(403))
+                                @>Script: pbAddPokemonSilent(pbGet(404))
+                                @>
+                               : Else
+                                @>Conditional Branch: Script: pbGet(1) == 5 && pbGet(7) == 0
+                                 @>Script: pbAddPokemonSilent(pbGet(402))
+                                 @>Script: pbAddPokemonSilent(pbGet(403))
+                                 @>Script: pbAddPokemonSilent(pbGet(404))
+                                 @>Script: pbAddPokemonSilent(pbGet(405))
+                                 @>
+                                : Else
+                                 @>Conditional Branch: Script: pbGet(1) == 5 && pbGet(7) == 1
+                                  @>Script: pbAddPokemonSilent(pbGet(401))
+                                  @>Script: pbAddPokemonSilent(pbGet(403))
+                                  @>Script: pbAddPokemonSilent(pbGet(404))
+                                  @>Script: pbAddPokemonSilent(pbGet(405))
+                                  @>
+                                 : Else
+                                  @>Conditional Branch: Script: pbGet(1) == 5 && pbGet(7) == 2
+                                   @>Script: pbAddPokemonSilent(pbGet(401))
+                                   @>Script: pbAddPokemonSilent(pbGet(402))
+                                   @>Script: pbAddPokemonSilent(pbGet(404))
+                                   @>Script: pbAddPokemonSilent(pbGet(405))
+                                   @>
+                                  : Else
+                                   @>Conditional Branch: Script: pbGet(1) == 5 && pbGet(7) == 3
+                                    @>Script: pbAddPokemonSilent(pbGet(401))
+                                    @>Script: pbAddPokemonSilent(pbGet(402))
+                                    @>Script: pbAddPokemonSilent(pbGet(403))
+                                    @>Script: pbAddPokemonSilent(pbGet(405))
+                                    @>
+                                   : Else
+                                    @>Conditional Branch: Script: pbGet(1) == 5 && pbGet(7) == 4
+                                     @>Script: pbAddPokemonSilent(pbGet(401))
+                                     @>Script: pbAddPokemonSilent(pbGet(402))
+                                     @>Script: pbAddPokemonSilent(pbGet(403))
+                                     @>Script: pbAddPokemonSilent(pbGet(404))
+                                     @>
+                                    : Else
+                                     @>
+                                    : Branch End
+                                    @>
+                                   : Branch End
+                                   @>
+                                  : Branch End
+                                  @>
+                                 : Branch End
+                                 @>
+                                : Branch End
+                                @>
+                               : Branch End
+                               @>
+                              : Branch End
+                              @>
+                             : Branch End
+                             @>
+                            : Branch End
+                            @>
+                           : Branch End
+                           @>
+                          : Branch End
+                          @>
+                         : Branch End
+                         @>
+                        : Branch End
+                        @>
+                       : Branch End
+                       @>
+                      : Branch End
+                      @>
+                     : Branch End
+                     @>
+                    : Branch End
+                    @>
+                   : Branch End
+                   @>
+                  : Branch End
+                  @>
+                 : Branch End
+                 @>
+                : Branch End
+                @>
+               : Branch End
+               @>
+              : Branch End
+              @>
+             : Branch End
+             @>
+            : Branch End
+            @>
+           : Branch End
+           @>
+          : Branch End
+          @>
+         : Branch End
+         @>
+        : Branch End
+        @>
+       : Branch End
+       @>
+      : Branch End
+      @>
+     : Branch End
+     @>
+    : Branch End
+    @>
+   : Branch End
+   @>
+  : Branch End
   @>
  : Branch End
  @>
@@ -167203,7 +167524,6 @@ List of Event Commands:
 @>Script: pbSelectPokeTransform
 @>Text: Choose support.
 @>Script: pbChoosePokemon(7,12)
-@>Text: It wishes you good luck.
 @>Wait: 1 frame(s)
 @>Control Switches: [0480: Two] = ON
 @>Conditional Branch: Script: pbGet(1) == 0 && pbGet(7) == 1
@@ -167536,7 +167856,6 @@ List of Event Commands:
  @>Script: $Trainer.remove_pokemon_at_index(0)
  @>
 : Branch End
-@>Text: It wishes you good luck.
 @>
 
 #==============================================================================

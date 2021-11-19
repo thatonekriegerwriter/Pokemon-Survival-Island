@@ -1441,7 +1441,7 @@ Dungeon = true
 [344]
 # Deep Swamp Dungeon
 Outdoor = false
-Dungeon = false
+Dungeon = true
 #-------------------------------
 [345]
 # Deep Swamp Dungeon
