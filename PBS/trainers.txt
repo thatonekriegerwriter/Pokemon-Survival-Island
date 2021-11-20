@@ -305,7 +305,7 @@ Pokemon = ESPEON,34
 #-------------------------------
 [MEWTWOBOSS,Mewtwo]
 LoseText = "..."
-Pokemon = MEWTWO,30
+Pokemon = MEWTWO,50
     Gender = male
     Moves = FIREBLAST,ICEBEAM,TAUNT,PSYSTRIKE
     Ability = 1
