@@ -136056,7 +136056,7 @@ List of Event Commands:
  @>Text: \xn[Sun]What should I give you as a reward for helping me?
  @>Text: He tapped his chin curiously.
  @>Text: \xn[Sun]I'll give you this!
- @>Conditional Branch: Script: pbItemBall(:COMETSHARD)
+ @>Conditional Branch: Script: pbReceiveItem(:COMETSHARD)
   @>
  : Branch End
  @>Text: \xn[Sun]I hear Humans find this really valuable!
