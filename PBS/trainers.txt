@@ -478,6 +478,9 @@ Pokemon = PANGORO,40
     Item = LEFTOVERS
 Pokemon = KABUTOPS,40
     Item = LEFTOVERS
+Pokemon = GIGALITH,40
+    Shadow = yes
+    IV = 31,31,31,31,31,31
 #-------------------------------
 [PIRATEGRUNTB,Grunt]
 LoseText = "..."
@@ -486,6 +489,8 @@ Pokemon = CACTURNE,40
 Pokemon = ZANGOOSE,40
     Item = LEFTOVERS
 Pokemon = ARMALDO,40
+    Item = LEFTOVERS
+Pokemon = VIGOROTH,40
     Item = LEFTOVERS
 #-------------------------------
 [PIRATEBOSS,???]
