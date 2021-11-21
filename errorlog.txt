@@ -22559,3 +22559,134 @@ Backtrace:
 032:Scene_Map:168:in `block in update'
 032:Scene_Map:166:in `loop'
 032:Scene_Map:166:in `update'
+
+=================
+
+[2021-11-21 00:31:53 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+
+Exception: RuntimeError
+Message: Undefined value PIRATEBOSS2 in GameData::TrainerType
+File PBS/trainers.txt, line 559
+[PIRATEBOSS2,???]
+
+
+
+Backtrace:
+371:Compiler:331:in `checkEnumField'
+371:Compiler:307:in `csvEnumField!'
+371:Compiler:506:in `block in pbGetCsvRecord'
+371:Compiler:398:in `each'
+371:Compiler:398:in `pbGetCsvRecord'
+372:Compiler_CompilePBS:1138:in `block in compile_trainers'
+371:Compiler:229:in `block (2 levels) in pbCompilerEachPreppedLine'
+371:Compiler:222:in `each_line'
+371:Compiler:222:in `block in pbCompilerEachPreppedLine'
+371:Compiler:219:in `open'
+
+=================
+
+[2021-11-21 00:34:53 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+
+Exception: RuntimeError
+Message: Undefined value PIRATEBOSS3 in GameData::TrainerType
+File PBS/trainers.txt, line 559
+[PIRATEBOSS3,???]
+
+
+
+Backtrace:
+371:Compiler:331:in `checkEnumField'
+371:Compiler:307:in `csvEnumField!'
+371:Compiler:506:in `block in pbGetCsvRecord'
+371:Compiler:398:in `each'
+371:Compiler:398:in `pbGetCsvRecord'
+372:Compiler_CompilePBS:1138:in `block in compile_trainers'
+371:Compiler:229:in `block (2 levels) in pbCompilerEachPreppedLine'
+371:Compiler:222:in `each_line'
+371:Compiler:222:in `block in pbCompilerEachPreppedLine'
+371:Compiler:219:in `open'
+
+=================
+
+[2021-11-21 00:36:55 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+
+Exception: RuntimeError
+Message: Undefined value TEAMROCKET_JessieJames in GameData::TrainerType
+File PBS/trainers.txt, line 577
+[TEAMROCKET_JessieJames,Jessie]
+
+
+
+Backtrace:
+371:Compiler:331:in `checkEnumField'
+371:Compiler:307:in `csvEnumField!'
+371:Compiler:506:in `block in pbGetCsvRecord'
+371:Compiler:398:in `each'
+371:Compiler:398:in `pbGetCsvRecord'
+372:Compiler_CompilePBS:1138:in `block in compile_trainers'
+371:Compiler:229:in `block (2 levels) in pbCompilerEachPreppedLine'
+371:Compiler:222:in `each_line'
+371:Compiler:222:in `block in pbCompilerEachPreppedLine'
+371:Compiler:219:in `open'
+
+=================
+
+[2021-11-21 00:41:28 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+
+Exception: RuntimeError
+Message: Trainer type ID number '96' is used twice.
+File PBS/trainertypes.txt, line 98
+96,TEAMROCKET_JessieJames,Rocket Grunt,100,BattleGary,,,Male,50,
+
+
+
+
+Backtrace:
+372:Compiler_CompilePBS:1082:in `block in compile_trainer_types'
+371:Compiler:197:in `block (2 levels) in pbCompilerEachCommentedLine'
+371:Compiler:191:in `each_line'
+371:Compiler:191:in `block in pbCompilerEachCommentedLine'
+371:Compiler:188:in `open'
+371:Compiler:188:in `pbCompilerEachCommentedLine'
+372:Compiler_CompilePBS:1071:in `compile_trainer_types'
+371:Compiler:717:in `compile_all'
+[v19.1 Hotfixes] Debug bug fixes.rb:68:in `compile_all'
+[Elite Battle: DX] EBDX Compiler.rb:98:in `compile_all'
+
+=================
+
+[2021-11-21 00:43:04 -0700]
+[Pokémon Essentials version 19.1]
+[Generation 8 Project v1.0.3]
+[v19.1 Hotfixes 1.0.4]
+
+Exception: RuntimeError
+Message: Undefined value HOUNDDOOM in GameData::Species
+File PBS/trainers.txt, line 692
+Pokemon = HOUNDDOOM,52
+
+
+
+Backtrace:
+371:Compiler:331:in `checkEnumField'
+371:Compiler:307:in `csvEnumField!'
+371:Compiler:506:in `block in pbGetCsvRecord'
+371:Compiler:398:in `each'
+371:Compiler:398:in `pbGetCsvRecord'
+372:Compiler_CompilePBS:1157:in `block in compile_trainers'
+371:Compiler:229:in `block (2 levels) in pbCompilerEachPreppedLine'
+371:Compiler:222:in `each_line'
+371:Compiler:222:in `block in pbCompilerEachPreppedLine'
+371:Compiler:219:in `open'
