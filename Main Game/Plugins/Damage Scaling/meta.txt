@@ -1,0 +1,3 @@
+Name         = Damage Scaling
+Version      = 1
+Credits      = Vendily
