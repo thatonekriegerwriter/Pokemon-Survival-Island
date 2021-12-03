@@ -1,0 +1,180 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+# Route 2 (6) - Pewter City (33)
+6,North,0,33,South,10
+# Edge northeast (150) - Route 2 (6)
+150,West,0,6,East,0
+# Edge northwest (151) - Route 2 (6)
+151,East,0,6,West,0
+# Route 7 (47) - Celadon City (7)
+47,West,0,7,East,0
+# Route 16 (39) - Celadon City (7)
+39,East,0,7,West,0
+# Edge west (164) - Route 20 (8)
+164,South,0,8,North,56
+# Route 4 (10) - Edge northeast (154)
+10,North,73,154,South,0
+# Route 4 (10) - Edge southeast (155)
+10,North,122,155,South,0
+# Route 4 (10) - Edge northeast (156)
+10,South,127,156,North,0
+# Route 4 (10) - Edge northwest (157)
+10,South,73,157,North,0
+# Route 4 (10) - Edge west (158)
+10,South,186,158,North,0
+# Route 10 (12) - Route 9 (79)
+12,West,0,79,East,0
+# Route 10 (13) - Route 8 (69)
+13,West,26,69,East,0
+# Edge west (159) - Route 10 (13)
+159,East,0,13,West,1
+# Lavender Town (82) - Route 10 (13)
+82,North,0,13,South,0
+# Edge west (160) - Route 10 (13)
+160,East,0,13,West,55
+# Route 12 (14) - Route 8 (69)
+14,West,0,69,East,24
+# Route 12 (14) - Edge west (159)
+14,West,0,159,East,49
+# Lavender Town (82) - Route 12 (14)
+82,South,0,14,North,0
+# Edge west (160) - Route 12 (14)
+160,East,0,14,West,5
+# Route 12 (15) - Route 11 (16)
+15,West,50,16,East,0
+# Route 12 (15) - Route 13 (84)
+15,South,0,84,North,48
+# Route 12 (15) - Edge north (162)
+15,West,92,162,East,0
+# Route 11 (17) - Vermilion City (78)
+17,West,0,78,East,5
+# Route 14 (85) - Route 15 (18)
+85,West,40,18,East,0
+# Edge west (163) - Route 15 (18)
+163,South,0,18,North,40
+# Route 15 (19) - Fuchsia City (87)
+19,West,0,87,East,0
+# Route 18 (20) - Route 17 (41)
+20,North,0,41,South,0
+# Route 18 (22) - Fuchsia City (87)
+22,East,0,87,West,0
+# Cerulean City (23) - Route 4 (43)
+23,West,9,43,East,0
+# Route 5 (48) - Cerulean City (23)
+48,North,1,23,South,0
+# Route 24 (94) - Cerulean City (23)
+94,South,0,23,North,22
+# Route 9 (79) - Cerulean City (23)
+79,West,0,23,East,10
+# Route 16 (25) - Route 17 (41)
+25,South,0,41,North,0
+# Edge west (152) - Route 3 (31)
+152,South,0,31,North,40
+# Route 4 (43) - Route 3 (31)
+43,South,0,31,North,60
+# Edge north (153) - Route 3 (31)
+153,South,0,31,North,0
+# Pewter City (33) - Route 3 (31)
+33,East,15,31,West,0
+# Pewter City (33) - Edge north (153)
+33,East,0,153,West,0
+# Edge northeast (150) - Pewter City (33)
+150,North,0,33,South,46
+# Edge northwest (151) - Pewter City (33)
+151,North,10,33,South,0
+# Indigo Plateau (35) - Route 23 (93)
+35,South,0,93,North,5
+# Route 4 (43) - Edge west (152)
+43,West,4,152,East,0
+# Edge west (159) - Route 8 (69)
+159,South,0,69,North,52
+# Lavender Town (82) - Route 8 (69)
+82,West,0,69,East,4
+# Edge west (160) - Route 8 (69)
+160,North,0,69,South,52
+# Vermilion North (77) - Vermilion City (78)
+77,South,0,78,North,11
+# Vermilion North (293) - Vermilion North (77)
+293,East,0,77,West,0
+# Vermilion North (293) - Vermilion City (78)
+293,South,25,78,North,0
+# Lavender Town (82) - Edge west (159)
+82,West,0,159,East,29
+# Edge west (160) - Lavender Town (82)
+160,East,0,82,West,25
+# Route 13 (84) - Edge east (161)
+84,South,0,161,North,0
+# Edge north (162) - Route 13 (84)
+162,South,0,84,North,0
+# Route 14 (85) - Route 13 (84)
+85,East,1,84,West,0
+# Route 14 (85) - Edge east (161)
+85,East,27,161,West,0
+# Route 14 (85) - Edge north (162)
+85,East,0,162,West,14
+# Edge west (163) - Route 14 (85)
+163,East,0,85,West,0
+# Route 25 (95) - Route 24 (94)
+95,West,1,94,East,0
+# Edge north (153) - Edge west (152)
+153,East,0,152,West,7
+# Virdian Shore (288) - VV Bridge (289)
+288,East,0,289,West,23
+# VV Bridge (289) - VV Bridge (290)
+289,East,0,290,West,0
+# VV Bridge (290) - VV Bridge (291)
+290,East,0,291,West,0
+# Vermilion North (293) - VV Bridge (291)
+293,West,0,291,East,5
+# Viridian City (32) - Route 22 (92)
+32,West,6,92,East,0
+# Edge southeast (148) - Route 22 (92)
+148,North,0,92,South,33
+# Route 26 (298) - Route 22 (92)
+298,East,0,92,West,5
+# Route 2 (4) - Viridian City (32)
+4,South,0,32,North,6
+# Edge southwest (146) - Viridian City (32)
+146,South,14,32,North,0
+# Route 1 (5) - Viridian City (32)
+5,North,0,32,South,6
+# Edge northeast (165) - Viridian City (32)
+165,North,0,32,South,76
+# Edge southeast (149) - Viridian City (32)
+149,South,0,32,North,76
+# Edge southeast (148) - Viridian City (32)
+148,East,0,32,West,35
+# Edge southwest (146) - Route 2 (4)
+146,East,0,4,West,25
+# Pallet Town (2) - Edge southwest (146)
+2,West,0,146,East,95
+# Route 1 (5) - Edge southwest (146)
+5,West,0,146,East,55
+# Route 21 (91) - Edge southwest (146)
+91,West,0,146,East,115
+# Route 1 (5) - Pallet Town (2)
+5,South,0,2,North,0
+# Edge northeast (165) - Pallet Town (2)
+165,West,40,2,East,0
+# Edge southeast (149) - Pallet Town (2)
+149,West,95,2,East,0
+# Route 21 (91) - Pallet Town (2)
+91,North,0,2,South,0
+# Route 27 (337) - Pallet Town (2)
+337,North,184,2,South,0
+# New Cinnabar (89) - Route 21 (91)
+89,North,0,91,South,30
+# Cinnabar Island (90) - Route 21 (91)
+90,North,10,91,South,0
+# Route 19 (88) - New Cinnabar (89)
+88,West,42,89,East,0
+# Edge north (147) - New Cinnabar (89)
+147,South,0,89,North,38
+# Cinnabar Island (90) - New Cinnabar (89)
+90,East,0,89,West,0
+# Edge north (147) - Route 19 (88)
+147,East,0,88,West,27
+# Cinnabar Island (90) - Edge north (147)
+90,North,78,147,South,0
+# Route 27 (337) - Route 26 (298)
+337,East,0,298,West,89
