@@ -104,3 +104,10 @@
 103,CYNTHIA,Legend,100,BattleGary,,,Male,50,
 104,DARKPLAYER,Creator,100,BattleGary,,,Female,50
 105,POKEMONBREEDER_M,Pokémon Breeder,48,,,,Male,,
+106,LEADER_Jarl,Gym Leader,100,Battle Gym Leader,Battle victory leader,,Male,,
+107,LEADERROCKET,Gym Leader,100,Battle Gym Leader,Battle victory leader,,Male,,
+108,HEXMANIAC,Hex Maniac,48,,,,Female,,
+109,LEADER_Janine,Gym Leader,48,,,,Female,,
+110,ROCKET_VETERAN_F,Rocket Veteran,48,,,,Female,,
+111,POKEMONTRAINER_Green,Pokémon Trainer,60,,,,Female,,
+112,PI,Private Eye,48,,,,Male,,
