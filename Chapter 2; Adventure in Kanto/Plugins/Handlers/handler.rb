@@ -169,3 +169,23 @@ pbChooseNonEggPokemon(1,3)
     Kernel.pbMessage(_INTL("That does not seem to be able to evolve with this stone."))
   end
 end
+
+def pbDayChecker(month,day,vari)
+  m = Time.new.month
+  d = Time.new.day
+  if m == month && d == day #Checks if it is October 31th
+    $game_switches[vari] = true
+  else
+    $game_switches[vari] = false
+  end
+  end
+
+def pbIndigoPlateauDays(month1,day1,month2,day2,month3,day3,vari)
+  m = Time.new.month
+  d = Time.new.day
+  if m == month1 && d == day1 || m == month2 && d == day2 || m == month3 && d == day3,  #Checks if it is October 31th
+    $game_switches[vari] = true
+  else
+    $game_switches[vari] = false
+  end
+  end
