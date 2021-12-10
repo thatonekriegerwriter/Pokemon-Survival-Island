@@ -173,19 +173,78 @@ end
 def pbDayChecker(month,day,vari)
   m = Time.new.month
   d = Time.new.day
-  if m == month && d == day #Checks if it is October 31th
+ if m == month && d == day #Checks if it is October 31th
     $game_switches[vari] = true
   else
     $game_switches[vari] = false
   end
-  end
+ end
 
-def pbIndigoPlateauDays(month1,day1,month2,day2,month3,day3,vari)
+def pbIndigoPlateauDays(month1,day1,day2,day3,day4,day5,vari)
   m = Time.new.month
   d = Time.new.day
-  if m == month1 && d == day1 || m == month2 && d == day2 || m == month3 && d == day3,  #Checks if it is October 31th
+ if m == month1 && d == day1 || m == month1 && d == day2 || m == month1 && d == day3 || m == month1 && d == day4 || m == month1 && d == day5  #Checks if it is October 31th
     $game_switches[vari] = true
   else
     $game_switches[vari] = false
   end
+end
+
+def pbIndigoPlateauDays2(month1,day1,month2,day2,month3,day3,vari)
+  m = Time.new.month
+  d = Time.new.day
+ if m == month1 && d == day1 || m == month2 && d == day2 || m == month3 && d == day3  #Checks if it is October 31th
+    $game_switches[vari] = true
+  else
+    $game_switches[vari] = false
   end
+end
+
+
+
+  trainers=[
+    [1],   
+    [2],
+    [3],
+    [4],
+    [5],
+    [6],
+    [7],
+    [8],
+    [9],
+    [10],
+    [11],
+    [12],
+    [13],
+    [14],
+    [15],
+    [16],
+    [17],
+    [18],
+    [19],
+    [20],
+    [21],
+    [22],
+    [23],
+    [24],
+    [25],
+    [26],
+    [27],
+    [28],
+    [29],
+    [30],
+    [31],
+    [32],
+    [33],
+    [34],
+    [35],
+    [36],
+    [37],
+    [38],
+    [39],
+    [40],
+	]
+	
+def pbNextChampionShip
+    $game_variables[421]=rand(trainers.length)
+end

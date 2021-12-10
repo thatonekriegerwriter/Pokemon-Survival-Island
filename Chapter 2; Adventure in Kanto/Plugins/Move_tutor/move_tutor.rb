@@ -1,4 +1,5 @@
 class MoveRelearnerScreen
+MOVETUTOR=35
   def eggMoves(pkmn)
     babyspecies=pkmn.species
     babyspecies = GameData::Species.get(babyspecies).get_baby_species(false, nil, nil)
@@ -14,6 +15,13 @@ class MoveRelearnerScreen
     return pkmn.species_data.tutor_moves
   end
   
+  def hackmoves
+    moves=[]
+	GameData::Move.each { |i| moves.push(i.id) }
+	return moves
+  end
+
+	
   def pbGetRelearnableMoves(pkmn)
     return [] if !pkmn || pkmn.egg? || pkmn.shadowPokemon?
     moves = []
@@ -27,24 +35,34 @@ class MoveRelearnerScreen
         tmoves.push(i) if !pkmn.hasMove?(i) && !moves.include?(i)
       end
     end
-	#if $game_variables[34]>=0				#modify here
+	if $game_variables[MOVETUTOR]==0				#modify to == if you want to make distinct NPCs
     moves = tmoves + moves  
-	#end
+	end
     # add tutor moves and eggmoves
-    if $game_variables[34]>=1				#modify here
+    if $game_variables[MOVETUTOR]==1				#modify to == if you want to make distinct NPCs
       eggmoves=eggMoves(pkmn)
-      moves = moves + eggmoves
+	  for i in eggmoves
+        moves.push(i) if !pkmn.hasMove?(i) && !moves.include?(i)
+      end
     end
-    if $game_variables[34]>=2				#modify here
+    if $game_variables[MOVETUTOR]==2				#modify to == if you want to make distinct NPCs
       tutormoves= tutorMoves(pkmn)
-      moves = moves + tutormoves
+	  for i in tutormoves
+        moves.push(i) if !pkmn.hasMove?(i) && !moves.include?(i)
+      end
     end
+	if $game_variables[MOVETUTOR]==3
+	  hmoves = hackmoves
+	  for i in hmoves
+        moves.push(i) if !pkmn.hasMove?(i) && !moves.include?(i)
+      end
+	end
     moves.sort! { |a, b| a.downcase <=> b.downcase } #sort moves alphabetically
     return moves | []   # remove duplicates
   end
+  
 end
 
-  
 
-  
+ 
 

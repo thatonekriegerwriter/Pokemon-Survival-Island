@@ -58,7 +58,7 @@
 55,YOUNGCOUPLE,Young Couple,60,,,,Mixed,32,
 56,TEAMROCKET_M,Team Rocket,32,,,,Male,,
 57,TEAMROCKET_F,Team Rocket,32,,,,Female,,
-58,ROCKETBOSS,Rocket Boss,100,,,,Male,,
+58,ROCKETBOSS,Lone Wanderer,100,,,,Male,,
 59,LEADER_Brock,Gym Leader,100,Battle Gym Leader,Battle victory leader,,Male,,
 60,LEADER_Misty,Gym Leader,100,Battle Gym Leader,Battle victory leader,,Female,,
 61,LEADER_Surge,Gym Leader,100,Battle Gym Leader,Battle victory leader,,Male,,

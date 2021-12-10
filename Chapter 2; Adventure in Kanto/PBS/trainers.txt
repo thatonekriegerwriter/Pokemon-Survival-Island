@@ -875,7 +875,6 @@ Pokemon = BLITZLE, 20
 [LEADER_Surge,Surge]
 LoseText = "Damn!"
 Items = SUPERPOTION,REVIVE
-LoseText = "Well I'll be."
 Pokemon = MANECTRIC,30
     Item = MANECTITE
     Moves = ELECTROBALL,FLAMETHROWER,HIDDENPOWER,VOLTSWITCH

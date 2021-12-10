@@ -17,7 +17,7 @@ PlayerG = POKEMONTRAINER_Lucas,1M.png,0bike.png,xxx,1M.png,xxx,1MFishing.png,1M.
 PlayerH = POKEMONTRAINER_Dawn,2F,png,0bike.png,xxx,2F,png,xxx
 #-------------------------------
 [001]
-# Temperate Ocean
+# Intro
 Outdoor = true
 ShowArea = true
 HealingSpot = 11,9,8
@@ -25,17 +25,17 @@ SafariMap = false
 BattleBack = 
 #-------------------------------
 [002]
-# Cave
-Outdoor = false
+# Pallet Town
+Outdoor = true
 ShowArea = true
 Bicycle = true
 #-------------------------------
 [003]
-# S.S. Glittering
+# Route 2 East Gate
 Outdoor = false
 #-------------------------------
 [004]
-# Temperate Zone
+# Route 2
 Outdoor = true
 ShowArea = true
 Bicycle = true
@@ -45,187 +45,191 @@ BattleBack = Forest
 MapSize = 0,
 #-------------------------------
 [005]
-# Temperate Zone
+# Route 1
 Outdoor = true
 ShowArea = true
 Bicycle = true
 Weather = Rain,80
 #-------------------------------
 [006]
-# Temperate Zone
+# Route 2
 Outdoor = true
 ShowArea = true
 Weather = Rain,80
-SnapEdges = true
+SnapEdges = false
 BattleBack = Forest
 #-------------------------------
 [007]
-# Temperate Zone
+# Celadon City
 Outdoor = true
 ShowArea = true
 Weather = Rain,60
 BattleBack = Forest
 #-------------------------------
 [008]
-# Temperate Zone
+# Route 20
 Outdoor = true
 ShowArea = true
 DiveMap = 9
 BattleBack = Forest
 #-------------------------------
 [009]
-# Temperate Zone
+# Route 20
 Outdoor = true
 ShowArea = true
 Weather = Rain,0
 BattleBack = Forest
 #-------------------------------
 [010]
-# Temperate Base
+# Route 4
 Outdoor = false
 BattleBack = Forest
 #-------------------------------
 [011]
-# Test Map
+# Route 4
 Outdoor = true
 ShowArea = true
 BicycleAlways = false
 Weather = Rain,0
 #-------------------------------
 [012]
-# Stone Temple
+# Route 10
 Outdoor = false
 ShowArea = true
 BattleBack = Ruins
 #-------------------------------
 [013]
-# Temperate Zone
+# Route 10
 Outdoor = true
 ShowArea = true
 #-------------------------------
 [014]
-# Stone Temple Cave
+# Route 12
 Outdoor = false
 ShowArea = true
 BattleBack = Cave
 #-------------------------------
 [015]
-# Temperate Zone
+# Route 12
 Outdoor = true
 BattleBack = Cave
 #-------------------------------
 [016]
-# Mountain Zone
+# Route 11
 Outdoor = true
 ShowArea = true
 HealingSpot = 16,22,28
 BattleBack = Mountain
 #-------------------------------
 [017]
-# Mountain Zone
+# Route 11
 Outdoor = true
 ShowArea = true
 BattleBack = Mountain
 #-------------------------------
 [018]
-# Red and Blue's Cabin
+# Route 15
 Outdoor = false
 #-------------------------------
 [019]
-# Mountain Zone
+# Route 15
 Outdoor = true
 ShowArea = true
 SafariMap = true
 BattleBack = Mountain
 #-------------------------------
 [020]
-# Mountain Base
+# Route 18
 Outdoor = false
 ShowArea = false
 BicycleAlways = false
 BattleBack = Cave
 #-------------------------------
 [021]
-# Office 2012
-Outdoor = false
+# Route 2
+Outdoor = true
 ShowArea = false
 #-------------------------------
 [022]
-# Cave
+# Route 18
 Outdoor = false
 ShowArea = true
 Bicycle = true
-DarkMap = true
+DarkMap = false
 SnapEdges = false
 BattleBack = Cave
 #-------------------------------
 [023]
-# Office 1997
+# Cerulean City
 Outdoor = false
 ShowArea = false
 #-------------------------------
 [024]
-# Mountain Zone
+# Route 16
 Outdoor = true
 ShowArea = true
 Bicycle = false
 BattleBack = mountain
 #-------------------------------
 [025]
-# Transition Room
+# Route 16
 Outdoor = false
 #-------------------------------
 [026]
-# Test Map
+# Route 11 Gate 1F
 Outdoor = false
 #-------------------------------
 [027]
-# Temperate Zone
+# Route 12 Gate 1F
 Outdoor = true
 BattleBack = Forest
 #-------------------------------
 [028]
-# Mountain Zone
+# Route 15 Gate 1F
 Outdoor = true
 ShowArea = true
 BattleBack = Mountain
 #-------------------------------
 [029]
-# Mountain Zone
+# Route 16 Gate 1F
 Outdoor = true
 ShowArea = true
 BattleBack = Mountain
 #-------------------------------
 [030]
-# Mountain Zone
+# Route 18 Gate 1F
 Outdoor = true
 ShowArea = true
 BattleBack = Mountain
 #-------------------------------
 [031]
-# Mountain Interior
+# Route 3
 Outdoor = false
 BattleBack = Cave
 #-------------------------------
+[032]
+# Viridian City
+Outdoor = true
+#-------------------------------
 [033]
-# Swamp Zone
+# Pewter City
 Outdoor = true
 ShowArea = true
 Bicycle = true
 BattleBack = Swamp
 #-------------------------------
 [034]
-# Swamp Zone
+# Route 5 Gate
 Outdoor = true
 BattleBack = Swamp
 #-------------------------------
 [035]
-# Swamp Zone
+# Indigo Plateau
 Outdoor = true
 BattleBack = Swamp
 #-------------------------------
 [036]
-# Deep Swamp
+# North Vermillion Gate
 Outdoor = true
 ShowArea = true
 Weather = Rain,100
@@ -233,1051 +237,1055 @@ DarkMap = false
 BattleBack = Swamp
 #-------------------------------
 [038]
-# Temperate Ocean
+# Route 8 Gate
 Outdoor = true
 #-------------------------------
 [039]
-# Temperate Ocean
+# Route 16
 Outdoor = true
 #-------------------------------
 [040]
-# Swamp Base
+# Pokémon League HQ Front Gate
 Outdoor = false
 #-------------------------------
 [041]
-# Base Path
+# Route 17
 Outdoor = false
 #-------------------------------
 [042]
-# Southern Ocean
-Outdoor = true
+# Red Household
+Outdoor = false
 DiveMap = 114
 #-------------------------------
 [043]
-# Route 1
+# Route 4
 Outdoor = false
 DarkMap = false
-SnapEdges = true
+SnapEdges = false
 BattleBack = Forest
 #-------------------------------
 [044]
-# Temperate-Snowy Zone
+# Route 18
 Outdoor = true
 ShowArea = true
 BattleBack = Snow
 #-------------------------------
 [045]
-# Temperate Zone
-Outdoor = true
+# Oak Household
+Outdoor = false
 ShowArea = true
 BattleBack = Forest
 #-------------------------------
 [046]
-# Ancient Passage
+# Oak's Lab
 Outdoor = false
 ShowArea = true
 BattleBack = Forest
 #-------------------------------
 [047]
-# Temperate Zone
+# Route 7
 Outdoor = true
-SnapEdges = true
+SnapEdges = false
 BattleBack = Forest
 #-------------------------------
 [048]
-# Kanto Region
+# Route 5
 Outdoor = true
 #-------------------------------
 [049]
-# Temperate Zone
-Outdoor = true
+# PokéCenter
+Outdoor = false
 #-------------------------------
 [050]
-# North
+# Viridian Gate 1F
 Outdoor = false
 SnapEdges = true
 #-------------------------------
 [051]
-# INTRO
+# Cynthia's House
 Outdoor = false
 #-------------------------------
 [052]
-# South
+# House 2
 Outdoor = true
 #-------------------------------
 [053]
-# Southern Beach
+# PokéCenter
 Outdoor = true
 #-------------------------------
 [054]
-# Empty Home
+# PokéCenter
 Outdoor = true
 #-------------------------------
 [055]
-#  Home
+# PokéCenter
 Outdoor = true
 #-------------------------------
 [056]
-# Home Interior
+# PokéCenter
 Outdoor = false
 HealingSpot = 55,24,11
 SnapEdges = true
 #-------------------------------
 [057]
-# Temperate Ocean
+# PokéCenter
 Outdoor = true
 #-------------------------------
 [058]
-# Temperate Ocean
+# PokéCenter
 Outdoor = true
 #-------------------------------
 [059]
-# Temperate Ocean
+# PokéCenter
 Outdoor = true
 DiveMap = 66
 #-------------------------------
 [060]
-# Temperate Ocean
+# PokéMart
 Outdoor = true
 #-------------------------------
 [061]
-# Temperate Ocean
+# PokéMart
 Outdoor = true
 #-------------------------------
 [062]
-# Temperate Ocean
+# PokéMart
 Outdoor = true
 #-------------------------------
 [063]
-# Xatu's Cave
+# PokéMart
 Outdoor = true
 BattleBack = Cave
 #-------------------------------
 [064]
-# MAP064
+# PokéMart
 Outdoor = true
 ShowArea = false
 Weather = Rain,20
 BattleBack = Forest
 #-------------------------------
 [065]
-# Temperate Zone Bottom
+# PokéMart
 Outdoor = true
 Weather = Rain,20
 BattleBack = Forest
 #-------------------------------
 [066]
-# UnderwaterCave
+# PokéMart
 Outdoor = true
 BattleBack = Cave
 #-------------------------------
 [067]
-# Xatu's Cave
-Outdoor = true
+# House 1
+Outdoor = false
 BattleBack = Cave
 #-------------------------------
 [068]
-# Temperate-Snowy Zone
-Outdoor = true
+# School
+Outdoor = false
 #-------------------------------
 [070]
-# MAP070
-Outdoor = true
+# Gym
+Outdoor = false
 #-------------------------------
 [071]
-# Ice Cave
+# House 1
 Outdoor = true
 BattleBack = Cave
 #-------------------------------
 [072]
-# Winter Zone
+# House 2
 Outdoor = true
 ShowArea = true
 Weather = Blizzard,20
 #-------------------------------
 [073]
-# Winter Zone
+# Museum
 Outdoor = true
 Weather = Snow,20
 #-------------------------------
 [074]
-# Winter Zone
+# Gym
 Outdoor = true
 Weather = Blizzard,20
 #-------------------------------
 [075]
-# Winter Zone
+# Gym
 Outdoor = true
 #-------------------------------
 [076]
-# Cave
+# Saffron City
 Outdoor = true
 BattleBack = Cave
 #-------------------------------
 [077]
-# Winter Zone
+# Vermilion North
 Outdoor = true
 #-------------------------------
 [078]
-# Winter Zone
+# Vermilion City
 Outdoor = true
 #-------------------------------
 [079]
-# Winter Zone
+# Route 9
 Outdoor = true
 #-------------------------------
 [080]
-# Winter Zone
+# Route 10
 Outdoor = true
 #-------------------------------
 [081]
-# Winter Zone
+# Route 11
 Outdoor = true
 #-------------------------------
 [082]
-# Winter Zone
+# Lavender Town
 Outdoor = true
 #-------------------------------
 [083]
-# Winter Zone
+# Route 12
 Outdoor = true
 #-------------------------------
 [084]
-# Winter Zone
+# Route 13
 Outdoor = true
 #-------------------------------
 [085]
-# Winter Zone
+# Route 14
 Outdoor = true
 #-------------------------------
 [086]
-# Winter Zone
+# Route 15
 Outdoor = true
 #-------------------------------
 [087]
-# Xatu Home
+# Fuchsia City
 Outdoor = false
 #-------------------------------
 [088]
-# Xatu Home
+# Route 19
 Outdoor = false
 #-------------------------------
 [089]
-# Xatu Home
+# New Cinnabar
 Outdoor = false
 #-------------------------------
 [090]
-# Xatu Mart
+# Cinnabar Island
 Outdoor = false
 #-------------------------------
 [091]
-# Xatu Home
-Outdoor = false
+# Route 21
+Outdoor = true
 #-------------------------------
 [092]
-# Xatu Inn
+# Route 22
 Outdoor = false
 #-------------------------------
 [093]
-# Xatu Home
+# Route 23
 Outdoor = false
 #-------------------------------
 [094]
-# Xatu Home
+# Route 24
 Outdoor = false
 #-------------------------------
 [095]
-# Reviver Xatu Home
+# Route 25
 Outdoor = false
 #-------------------------------
 [096]
-# Xatu Home
+# Bike Shop
 Outdoor = false
 #-------------------------------
 [097]
-# Blue's Cave
+# Burgled House
 Outdoor = false
 BattleBack = Cave
 #-------------------------------
 [098]
-# Ice Temple
+# Berry Powder Man's House
 Outdoor = false
 #-------------------------------
 [099]
-# Ice Temple
+# Gym Badge Man's House
 Outdoor = false
 #-------------------------------
 [100]
-# Ice Temple
+# House 4
 Outdoor = false
 #-------------------------------
 [101]
-# S.S Glittering Wreck
+# House 5
 Outdoor = true
 #-------------------------------
 [102]
-# S.S Glittering Wreck
+# Gym
 Outdoor = true
 #-------------------------------
 [103]
-# Red and Blue's Cabin
+# Dojo
 Outdoor = true
 #-------------------------------
 [104]
-# Southern Ocean
+# Copycat's House
 Outdoor = true
 #-------------------------------
 [105]
-# Swamp Zone
+# Pokémon Trainer Fan Club House
 Outdoor = true
 #-------------------------------
 [106]
-# Temperate Area
+# House 3
 Outdoor = true
 #-------------------------------
 [107]
-# Mountain Area
+# Mr. Psychic's House
 Outdoor = true
 #-------------------------------
 [108]
-# Temperate Ocean
+# Gym
 Outdoor = true
 #-------------------------------
 [109]
-# Swamp Zone
+# Pokémon Fan Club House
 Outdoor = true
 #-------------------------------
 [110]
-# Deep Swamp
+# Fishing Guru's House
 Outdoor = false
 #-------------------------------
 [111]
-# Humid Zone
+# House 2
 Outdoor = true
 #-------------------------------
 [112]
-# Deep Caves
+# House 4
 Outdoor = true
 BattleBack = Cave
 #-------------------------------
 [113]
-# Humid Area
+# Volunteer Pokémon House
 Outdoor = true
 #-------------------------------
 [114]
-# Southern Ocean U
+# Name Rater's House
 Outdoor = true
 #-------------------------------
 [115]
-# Your Cabin
+# House 3
 Outdoor = true
 #-------------------------------
 [116]
-# William's Cabin
+# Gym
 Outdoor = true
 #-------------------------------
 [117]
-# Abandoned Cabin
+# Game Corner
 Outdoor = true
 #-------------------------------
 [118]
-# Abandoned Cabin
+# Hotel
 Outdoor = true
 #-------------------------------
 [119]
-# Abandoned Cabin
+# House 1
 Outdoor = true
 #-------------------------------
 [120]
-# Abandoned Cabin
+# Restaurant
 Outdoor = true
 #-------------------------------
 [121]
-# Abandoned Cabin
+# Condominiums 1F
 Outdoor = true
 #-------------------------------
 [122]
-# Abandoned Cabin
+# Condominiums 2F
 Outdoor = true
 #-------------------------------
 [123]
-# Abandoned Cabin
+# Condominiums 3F
 Outdoor = true
 #-------------------------------
 [124]
-# S.S. Glittering
+# Condominiums Rooftop
 Outdoor = true
 #-------------------------------
 [125]
-# S.S Glittering Wreck
+# Route 2 North Gate
 Outdoor = true
 #-------------------------------
 [126]
-# S.S Glittering Wreck
+# Department Store 1F
 Outdoor = true
 #-------------------------------
 [127]
-# S.S Glittering Wreck
+# Department Store 2F
 Outdoor = true
 #-------------------------------
 [128]
-# Kitchen
+# Department Store 3F
 Outdoor = true
 #-------------------------------
 [129]
-# Captain's Quarters
+# Department Store 4F
 Outdoor = true
 #-------------------------------
 [130]
-# Humid Zone
+# Department Store 5F
 Outdoor = true
 #-------------------------------
 [131]
-# Humid Zone
+# Department Store Rooftop
 Outdoor = true
 #-------------------------------
 [132]
-# Humid Zone
+# Department Store Elevator
 Outdoor = true
 #-------------------------------
 [133]
-# Humid Zone
+# Gym
 Outdoor = true
 #-------------------------------
 [134]
-# Humid Zone
+# Safari Zone Gate
 Outdoor = true
 #-------------------------------
 [135]
-# Humid Zone
+# Pokémon Paradise House
 Outdoor = true
 #-------------------------------
 [136]
-# Humid Zone
+# Fishing Guru's House
 Outdoor = true
 #-------------------------------
 [137]
-# Humid Zone
+# Safari Zone Warden's House
 Outdoor = true
 #-------------------------------
 [138]
-# Humid Zone
+# House 3
 Outdoor = true
 #-------------------------------
 [139]
-# Humid Zone
+# House 4
 Outdoor = true
 #-------------------------------
 [140]
-# Humid Zone
+# Gym
 Outdoor = true
 #-------------------------------
 [141]
-# Humid Zone
+# Pokémon Lab
 Outdoor = true
 #-------------------------------
 [142]
-# Humid Zone
+# Meeting Room
 Outdoor = true
 #-------------------------------
 [143]
-# Humid Zone
+# R-and-D Room
 Outdoor = true
 #-------------------------------
 [144]
-# Humid Zone
+# Testing Room
 Outdoor = true
 #-------------------------------
 [145]
-# Humid Zone
+# PokéCenter-Mart
 Outdoor = true
 #-------------------------------
 [146]
-# Temperate Zone
+# Edge southwest
 Outdoor = true
-SnapEdges = true
+SnapEdges = false
 #-------------------------------
 [147]
-# Greenhouse
+# Edge north
 Outdoor = false
 #-------------------------------
 [148]
-# Greenhouse
+# Edge southeast
 Outdoor = true
 #-------------------------------
 [149]
-# Greenhouse
+# Edge southeast
 Outdoor = true
 #-------------------------------
 [150]
-# Greenhouse
+# Edge northeast
 Outdoor = true
 #-------------------------------
 [151]
-# Greenhouse
+# Edge northwest
 Outdoor = true
 #-------------------------------
 [152]
-# Greenhouse
+# Edge west
 Outdoor = true
 #-------------------------------
 [153]
-# Greenhouse
+# Edge north
 Outdoor = true
 #-------------------------------
 [154]
-# Greenhouse
+# Edge northeast
 Outdoor = true
 #-------------------------------
 [155]
-# Greenhouse
+# Edge southeast
 Outdoor = false
 #-------------------------------
 [156]
-# Humid Zone
+# Edge northeast
 Outdoor = true
 #-------------------------------
 [157]
-# Humid Area R
+# Edge northwest
 Outdoor = true
 #-------------------------------
 [158]
-# Humid Area B
+# Edge west
 Outdoor = true
 #-------------------------------
 [159]
-# Humid Area BR
+# Edge west
 Outdoor = true
 #-------------------------------
 [160]
-# Humid Area RR
+# Edge west
 Outdoor = true
 #-------------------------------
 [161]
-# Humid Area BRR
+# Edge east
 Outdoor = true
 #-------------------------------
 [162]
-# Red's Cabin
+# Edge north
 Outdoor = true
 #-------------------------------
 [163]
-# Deep Caves
+# Edge west
 Outdoor = false
 BattleBack = Cave
 #-------------------------------
 [164]
-# Island 1
+# Edge west
 Outdoor = true
 #-------------------------------
 [165]
-# Pre-Island
+# Edge northeast
 Outdoor = true
 #-------------------------------
 [166]
-# Island 2
+# Route 16
 Outdoor = true
 #-------------------------------
 [167]
-# In the Middle
+# Know-It-All Room
 Outdoor = true
 #-------------------------------
 [168]
-# Tiny Island
+# Route 2 South Gate
 Outdoor = true
 #-------------------------------
 [169]
-# Wooded Area
+# House 1
 Outdoor = true
 #-------------------------------
 [170]
-# Shore Area
+# House 1
 Outdoor = true
 #-------------------------------
 [171]
-# Rocky Area
+# Day Care
 Outdoor = true
 #-------------------------------
 [172]
-# Town
+# Fishing Guru's House
 Outdoor = true
 #-------------------------------
 [173]
-# Forest
+# House 1
 Outdoor = true
 #-------------------------------
 [174]
-# Forest
+# Sea Cottage
 Outdoor = true
 #-------------------------------
 [175]
-# Forest
+# Kanto
 Outdoor = true
 #-------------------------------
 [176]
-# Forest
+# Route V entrance
 Outdoor = true
 #-------------------------------
 [177]
-# Forest
+# Route P entrance
 Outdoor = true
 #-------------------------------
 [178]
-# Forest
+# Underground Path V-P
 Outdoor = true
 #-------------------------------
 [179]
-# Forest
+# Settlements
 Outdoor = true
 #-------------------------------
 [180]
-# Forest
+# Route 8 entrance
 Outdoor = true
 #-------------------------------
 [181]
-# Mountain Base
+# Underground Path 7-8
 Outdoor = true
 #-------------------------------
 [182]
-# Shore Area
+# Route 7 entrance
 Outdoor = true
 #-------------------------------
 [183]
-# Rocky Area
+# Viridian Forest
 Outdoor = true
 #-------------------------------
 [184]
-# Forest
+# Mt. Moon 1F
 Outdoor = true
 #-------------------------------
 [185]
-# Shore Area
+# Mt. Moon B1F
 Outdoor = true
 #-------------------------------
 [186]
-# Shore Area
+# Mt. Moon B2F
 Outdoor = true
 #-------------------------------
 [187]
-# Shore Area
+# S.S. Anne
 Outdoor = true
 #-------------------------------
 [188]
-# Shore Area
+# S.S. Anne 1F
 Outdoor = true
 #-------------------------------
 [189]
-# Shore Area
+# Kitchen
 Outdoor = true
 #-------------------------------
 [190]
-# Shore Area
+# Room 1
 Outdoor = true
 #-------------------------------
 [191]
-# Rocky Area
+# Room 2
 Outdoor = true
 #-------------------------------
 [192]
-# Rocky Area
+# Room 3
 Outdoor = true
 #-------------------------------
 [193]
-# Town
+# Room 4
 Outdoor = true
 #-------------------------------
 [194]
-# Town
+# Room 5
 Outdoor = true
 #-------------------------------
 [195]
-# Town
+# Room 6
 Outdoor = true
 #-------------------------------
 [196]
-# Other.
+# Room 7
 Outdoor = true
 #-------------------------------
 [197]
-# Deep Caves
+# S.S. Anne B1F
 Outdoor = false
 BattleBack = Cave
 #-------------------------------
 [198]
-# Forest Area
+# Room 1
 Outdoor = true
 #-------------------------------
 [199]
-# Northern Area
+# Room 2
 Outdoor = true
 #-------------------------------
 [200]
-# Forest Zone
+# Room 3
 Outdoor = true
 #-------------------------------
 [201]
-# Forest Zone
+# Room 4
 Outdoor = true
 #-------------------------------
 [202]
-# Forest Zone
+# Room 5
 Outdoor = true
 #-------------------------------
 [203]
-# Forest Zone
+# S.S. Anne 2F
 Outdoor = true
 #-------------------------------
 [204]
-# Forest Zone
+# Room 1
 Outdoor = true
 #-------------------------------
 [205]
-# West Shore
+# Room 2
 Outdoor = true
 #-------------------------------
 [206]
-# Forest Zone
+# Room 3
 Outdoor = true
 #-------------------------------
 [207]
-# Northern Area 
+# Room 4
 Outdoor = true
 #-------------------------------
 [208]
-# Northern Area
+# Room 5
 Outdoor = true
 #-------------------------------
 [209]
-# Northern Area
+# Room 6
 Outdoor = true
 #-------------------------------
 [210]
-# Northern Area
+# S.S. Anne 3F
 Outdoor = true
 #-------------------------------
 [211]
-# Deep Caves
+# Captain's Cabin
 Outdoor = false
 BattleBack = Cave
 #-------------------------------
 [212]
-# MAP212
+# Outside
 Outdoor = true
 #-------------------------------
 [213]
-# Ice Cave
+# Diglett's Cave
 Outdoor = true
 BattleBack = Cave
 #-------------------------------
 [214]
-# Temple Prime
+# North entrance
 Outdoor = true
 #-------------------------------
 [215]
-# MAP215
+# South entrance
 Outdoor = true
 #-------------------------------
 [216]
-# MAP216
+# Rock Tunnel 1F
 Outdoor = true
 #-------------------------------
 [217]
-# Cave
+# Rock Tunnel B1F
 Outdoor = true
 BattleBack = Cave
 #-------------------------------
 [218]
-# Temperate-Snowy Zone
+# Rocket Hideout B1F
 Outdoor = true
 #-------------------------------
 [219]
-# Towns
+# Rocket Hideout B2F
 Outdoor = true
 #-------------------------------
 [220]
-# Town A
+# Rocket Hideout B3F
 Outdoor = true
 #-------------------------------
 [221]
-# Town B
+# Rocket Hideout B4F
 Outdoor = true
 #-------------------------------
 [222]
-# Shady Town
+# Rocket Hideout Elevator
 Outdoor = true
 #-------------------------------
 [223]
-# MAP223
+# Silph Co. 1F
 Outdoor = true
 #-------------------------------
 [224]
-# MAP224
+# Silph Co. 2F
 Outdoor = true
 #-------------------------------
 [225]
-# Johto Region
+# Silph Co. 3F
 Outdoor = true
 #-------------------------------
 [226]
-# Hoenn Region
+# Silph Co. 4F
 Outdoor = true
 #-------------------------------
 [227]
-# Sinnoh Region
+# Silph Co. 5F
 Outdoor = true
 #-------------------------------
 [228]
-# Unova Region
+# Silph Co. 6F
 Outdoor = true
 #-------------------------------
 [229]
-# Kalos Region
+# Silph Co. 7F
 Outdoor = true
 #-------------------------------
 [230]
-# Alolan Islands
+# Silph Co. 8F
 Outdoor = true
 #-------------------------------
 [231]
-# Galar Region
+# Silph Co. 9F
 Outdoor = true
 #-------------------------------
 [232]
-# Sevii Islands
+# Silph Co. 10F
 Outdoor = true
 #-------------------------------
 [233]
-# Orre Region
+# Silph Co. 11F
 Outdoor = true
 #-------------------------------
 [234]
-# Lental Region
+# Silph Co. Elevator
 Outdoor = true
 #-------------------------------
 [235]
-# Ransei Region
+# Pokémon Tower 1F
 Outdoor = true
 #-------------------------------
 [236]
-# Fiore Region
+# Pokémon Tower 2F
 Outdoor = true
 #-------------------------------
 [237]
-# Almia Region
+# Pokémon Tower 3F
 Outdoor = true
 #-------------------------------
 [238]
-# Oblivia Region
+# Pokémon Tower 4F
 Outdoor = true
 #-------------------------------
 [239]
-# Ferrum Region
+# Pokémon Tower 5F
 Outdoor = true
 #-------------------------------
 [240]
-# Office 2012
+# Pokémon Tower 6F
 Outdoor = true
 #-------------------------------
 [241]
-# MAP241
+# Pokémon Tower 7F
 Outdoor = true
 #-------------------------------
 [242]
-# MAP242
+# Safari Zone Center Area
 Outdoor = true
 #-------------------------------
 [243]
-# Temperate Zone
+# Safari Zone Area 1
 Outdoor = true
 #-------------------------------
 [244]
-# Forest Zone
+# Safari Zone Area 2
 Outdoor = true
 #-------------------------------
 [245]
-# Hoenn Region
+# Safari Zone Area 3
 Outdoor = true
 #-------------------------------
 [246]
-# Post-Game
+# Center Area Rest House
 Outdoor = true
 #-------------------------------
 [247]
-# Sky
+# Area 1 Rest House
 Outdoor = true
 #-------------------------------
 [248]
-# Temperate Skies
+# Area 2 Rest House
 Outdoor = true
 #-------------------------------
 [249]
-# Temperate Skies
+# Area 3 Secret House
 Outdoor = true
 #-------------------------------
 [250]
-# Shore Skies
+# Area 3 Rest House
 Outdoor = true
 #-------------------------------
 [251]
-# Shore Skies
+# Seafoam Island 1F
 Outdoor = true
 #-------------------------------
 [252]
-# Temperate Skies
+# Seafoam Island B1F
 Outdoor = true
 #-------------------------------
 [253]
-# Ocean Skies
+# Seafoam Island B2F
 Outdoor = true
 #-------------------------------
 [254]
-# Ocean Skies
+# Seafoam Island B3F
 Outdoor = true
 #-------------------------------
 [255]
-# Temperate Skies
+# Seafoam Island B4F
 Outdoor = true
 #-------------------------------
 [256]
-# Mountain Skies
+# Pokémon Mansion 1F
 Outdoor = true
 #-------------------------------
 [257]
-# Mountain Skies
+# Pokémon Mansion 2F
 Outdoor = true
 #-------------------------------
 [258]
-# Mountain Skies
+# Pokémon Mansion 3F
 Outdoor = true
 #-------------------------------
 [259]
-# Mountain Skies
+# Pokémon Mansion B1F
 Outdoor = true
 #-------------------------------
 [260]
-# Temperate Skies
+# Power Plant
 Outdoor = true
 #-------------------------------
 [261]
-# Shore Skies
+# Victory Road 1F
 Outdoor = true
 #-------------------------------
 [262]
-# Shore Skies
+# Victory Road 2F
 Outdoor = true
 #-------------------------------
 [263]
-# Shore Skies
+# Victory Road 3F
 Outdoor = true
 #-------------------------------
 [264]
-# Shore Skies
+# Cerulean Cave 1F
 Outdoor = true
 #-------------------------------
 [265]
-# Shore Skies
+# Cerulean Cave 2F
 Outdoor = true
 #-------------------------------
 [266]
-# Mountain Skies
+# Cerulean Cave B1F
 Outdoor = true
 #-------------------------------
 [267]
-# Swamp Base
+# Elite Four Room 1
 Outdoor = true
 #-------------------------------
 [268]
-# MAP268
+# Elite Four Room 2
 Outdoor = true
 #-------------------------------
 [269]
-# MAP269
+# Elite Four Room 3
 Outdoor = true
 #-------------------------------
 [270]
-# Your Cabin
+# Elite Four Room 4
 Outdoor = true
 #-------------------------------
 [271]
-# Shore Skies
+# Champion Room
 Outdoor = true
 #-------------------------------
 [272]
-# Shore Skies
+# Hall Of Fame Room
 Outdoor = true
 #-------------------------------
 [273]
-# Shore Skies
+# Routes
 Outdoor = true
 #-------------------------------
 [274]
-# Shore Skies
+# Landmarks
 Outdoor = true
 #-------------------------------
 [275]
-# Shore Skies
+# Pokémon League
 Outdoor = true
 #-------------------------------
 [276]
-# Shore Skies
+# Route 11 Gate 2F
 Outdoor = true
 #-------------------------------
 [278]
-# Mountain Skies
+# Route 15 Gate 2F
 Outdoor = true
 #-------------------------------
 [279]
-# Mountain Skies
+# Route 16 Gate 2F
 Outdoor = true
 #-------------------------------
 [280]
-# Mountain Skies
+# Route 18 Gate 2F
 Outdoor = true
 #-------------------------------
 [281]
-# Mountain Skies
-Outdoor = true
+# PokéMart
+Outdoor = false
 #-------------------------------
 [282]
-# Passage
+# Gym
 Outdoor = false
 #-------------------------------
 [283]
-# Mountain Skies
-Outdoor = true
+# House
+Outdoor = false
 #-------------------------------
 [284]
-# Monkey Cave
+# House
 Outdoor = false
 BattleBack = Cave
 #-------------------------------
 [285]
-# The Monkey Kings Lair
+# Viridian Gate 2F
 Outdoor = false
 BattleBack = Cave
 #-------------------------------
 [286]
-# Xatu Home
-Outdoor = true
+# Cave
+Outdoor = false
 #-------------------------------
 [287]
-# Xatu Home
-Outdoor = true
+# Police Station
+Outdoor = false
 #-------------------------------
 [288]
-# Xatu Home
+# Virdian Shore
 Outdoor = true
+ShowArea = true
+Bicycle = true
 #-------------------------------
 [289]
-# Xatu Home
+# VV Bridge
 Outdoor = true
+ShowArea = true
+Bicycle = true
 #-------------------------------
 [290]
-# Shore Skies
+# VV Bridge
 Outdoor = true
 #-------------------------------
 [291]
-# Shore Skies
+# VV Bridge
 Outdoor = true
 #-------------------------------
 [292]
@@ -1285,148 +1293,150 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [293]
-# Shore Skies
+# Vermilion North
 Outdoor = true
 #-------------------------------
 [294]
-# Shore Skies
+# Edge North
 Outdoor = true
 #-------------------------------
 [295]
-# Temperate Ocean
+# Sea Cottage
 Outdoor = true
 #-------------------------------
 [296]
-# Temperate Ocean
+# Pewter City
 Outdoor = true
 #-------------------------------
 [297]
-# MAP297
+# Gym
 Outdoor = true
 #-------------------------------
 [298]
-# Bee Forest
+# PokéCenter
 Outdoor = true
 #-------------------------------
 [299]
-# Temperate Zone Top
+# Day Care
 Outdoor = true
 #-------------------------------
 [300]
-# Temperate Ocean
+# House 1
 Outdoor = true
+#-------------------------------
+[301]
+# Contest Hall
+Outdoor = false
 #-------------------------------
 [302]
-# Temperate Ocean
-Outdoor = true
+# MAP302
+Outdoor = false
 #-------------------------------
 [303]
-# Xatu Home
-Outdoor = true
+# MAP303
+Outdoor = false
 #-------------------------------
 [304]
-# Xatu Home
-Outdoor = true
+# MAP304
+Outdoor = false
 #-------------------------------
 [305]
-# Xatu Home
-Outdoor = true
+# MAP305
+Outdoor = false
 #-------------------------------
 [306]
-# Xatu Home
+# PokéCenter
 Outdoor = true
 #-------------------------------
 [307]
-# Temperate Ocean
+# PokéCenter
 Outdoor = true
 #-------------------------------
 [308]
-# Temperate Ocean
 Outdoor = true
 #-------------------------------
 [309]
-# Temperate Ocean
+# Contest Hall
 Outdoor = true
 #-------------------------------
 [310]
-# Temperate Ocean
+# Contest Hall
 Outdoor = true
 #-------------------------------
 [311]
-# Northern Area
+# Cinnabar Path
 Outdoor = true
 #-------------------------------
 [312]
-# Northern Area
+# Lavender Town
 Outdoor = true
 #-------------------------------
 [313]
-# Northern Area
+# Building
 Outdoor = true
 #-------------------------------
 [314]
-# Northern Area
+# Mining House
 Outdoor = true
 #-------------------------------
 [315]
-# Northern Area
+# House
 Outdoor = true
 #-------------------------------
 [316]
-# Northern Area
+# House 4
 Outdoor = true
 #-------------------------------
 [317]
-# Northern Area
+# House 4
 Outdoor = true
 #-------------------------------
 [318]
-# Western Temperate
+# Cerise Labs
 Outdoor = true
 #-------------------------------
 [319]
-# Western Temperate
+# Gym
 Outdoor = true
 #-------------------------------
 [320]
-# Western Temperate
+# Hotel
 Outdoor = true
 #-------------------------------
 [321]
-# Mountain Base
+# Hotel
 Outdoor = false
 #-------------------------------
 [322]
-# Temperate Caves
+# House 2
 Outdoor = false
 Dungeon = true
 BattleBack = Cave
 #-------------------------------
 [333]
-# Temperate Caves
+# PokéCenter
 Outdoor = false
 Dungeon = true
 BattleBack = Cave
 #-------------------------------
 [334]
-# Temperate Caves
+# PokéCenter
 Outdoor = false
 Dungeon = true
 BattleBack = Cave
 #-------------------------------
 [335]
-# Temperate Caves
+# House 6
 Outdoor = false
 Dungeon = true
 BattleBack = Cave
 #-------------------------------
 [336]
-# Temperate Caves
+# House 5
 Outdoor = false
 BattleBack = Cave
 #-------------------------------
 [342]
-# Deep Swamp Dungeon
 Outdoor = false
 MapPosition = 0,16,11
 Dungeon = true
@@ -1434,45 +1444,35 @@ BattleBack =
 Environment = Cave
 #-------------------------------
 [343]
-# Deep Swamp Dungeon
 Outdoor = false
 Dungeon = true
 #-------------------------------
 [344]
-# Deep Swamp Dungeon
 Outdoor = false
 Dungeon = true
 #-------------------------------
 [345]
-# Deep Swamp Dungeon
 Outdoor = false
 Dungeon = true
 #-------------------------------
 [346]
-# Deep Swamp Dungeon
 Outdoor = false
 #-------------------------------
 [347]
-# Deep Swamp Dungeon
 Outdoor = false
 Dungeon = true
 #-------------------------------
 [348]
-# Deep Swamp Dungeon
 Outdoor = false
 #-------------------------------
 [349]
-# MAP349
 Outdoor = true
 #-------------------------------
 [350]
-# MAP350
 Outdoor = true
 #-------------------------------
 [351]
-# Home Interior
 Outdoor = false
 #-------------------------------
 [352]
-# Home Interior
 Outdoor = false

@@ -117,7 +117,13 @@ class PokemonDataBox < SpriteWrapper
         textPos.push([_INTL("♀"),@spriteBaseX+126,0,false,FEMALE_BASE_COLOR,FEMALE_SHADOW_COLOR])
       end
       imagePos.push(["Graphics/Pictures/Battle/overlay_lv",@spriteBaseX+140,16])
-      pbDrawNumber(@battler.level,self.bitmap,@spriteBaseX+162,16)
+      if @battler.opposes?(0) && $game_switches[240]==false
+      str = "Lv. ???"
+      pbDrawOutlineText(@sprites["textName"].bitmap,18+o,3,@sprites["textName"].bitmap.width-40,@sprites["textName"].bitmap.height,str,Color.white,Color.new(0,0,0,125),2)
+	  else
+      str = "Lv.#{@battler.level}"
+      pbDrawOutlineText(@sprites["textName"].bitmap,18+o,3,@sprites["textName"].bitmap.width-40,@sprites["textName"].bitmap.height,str,Color.white,Color.new(0,0,0,125),2)
+    end
     end
     pbDrawTextPositions(self.bitmap,textPos)
     if @battler.shiny?

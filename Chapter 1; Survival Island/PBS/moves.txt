@@ -675,9 +675,9 @@
 #-------------------------------
 659,HEADSMASH,Head Smash,0FC,150,ROCK,Physical,80,5,0,NearOther,0,abef,"The user attacks the foe with a hazardous, full-power headbutt. The user also takes terrible damage."
 660,ROCKWRECKER,Rock Wrecker,0C2,150,ROCK,Physical,90,5,0,NearOther,0,befn,"The user launches a huge boulder at the target to attack. It must rest on the next turn, however."
-661,DIAMONDSTORM,Diamond Storm,136,100,ROCK,Physical,95,5,50,AllNearFoes,0,bef,"The user whips up a storm of diamonds to damage foes. This may also sharply raise the user's Defense stat."
+661,DIAMONDSTORM,Diamond Storm,136,100,CRYSTAL,Physical,95,5,50,AllNearFoes,0,bef,"The user whips up a storm of diamonds to damage foes. This may also sharply raise the user's Defense stat."
 662,STONEEDGE,Stone Edge,000,100,ROCK,Physical,80,5,0,NearOther,0,befh,"The user stabs the foe with sharpened stones from below. It has a high critical-hit ratio."
-663,POWERGEM,Power Gem,000,80,ROCK,Special,100,20,0,NearOther,0,bef,"The user attacks with a ray of light that sparkles as if it were made of gemstones."
+663,POWERGEM,Power Gem,000,80,CRYSTAL,Special,100,20,0,NearOther,0,bef,"The user attacks with a ray of light that sparkles as if it were made of gemstones."
 664,ROCKSLIDE,Rock Slide,00F,75,ROCK,Physical,90,10,30,AllNearFoes,0,be,"Large boulders are hurled at the foes to inflict damage. It may also make the targets flinch."
 665,ANCIENTPOWER,Ancient Power,02D,60,ROCK,Special,100,5,10,NearOther,0,bef,"The user attacks with a prehistoric power. It may also raise all the user's stats at once."
 666,ROCKTOMB,Rock Tomb,044,60,ROCK,Physical,95,15,100,NearOther,0,bef,"Boulders are hurled at the target. It also lowers the target's Speed by preventing its movement."
@@ -872,3 +872,23 @@
 1084,GMAXMELTDOWN,G-Max Meltdown,D023,1,STEEL,Physical,0,1,0,NearFoe,0,fx,"A G-Max Move used by G-Max Melmetal. Prevents opponents from using the same move twice in a row."
 1085,GMAXONEBLOW,G-Max One Blow,D000,1,DARK,Physical,0,1,0,NearFoe,0,fx,"A G-Max Move used by G-Max Urshifu. This single-strike move can ignore Max Guard."
 1086,GMAXRAPIDFLOW,G-Max Rapid Flow,D000,1,WATER,Physical,0,1,0,NearFoe,0,fx,"A G-Max Move used by G-Max Urshifu. This rapid-strike move can ignore Max Guard."
+#--------------------------------
+# Custom Moves: WIND
+#--------------------------------
+1087,CROSSWIND,Crosswind,055,45,WIND,Special,70,20,0,Foe,0,be,"The User creates a wind that copies the enemies status changes, and does damage."
+1088,BREEZE,Breeze,000,60,WIND,Special,50,20,0,Foe,0,beh,"A cool breeze is whipped up."
+1089,COLDFRONT,Cold Front,00C,30,WIND,Special,0,10,45,AllNearFoes,1,ceg,"A Freezing Cold Front is launched towards the enemy. It may freeze the enemy."
+1090,WARMFRONT,Warm Front,00A,30,WIND,Special,0,10,45,AllNearFoes,1,ceg,"A Burning Hot Front is launched towards the enemy. It may burn the enemy."
+1091,UPLIFTINGWIND,Uplifting Wind,05B,0,WIND,Status,0,15,0,UserSide,0,d,"A Calming Wind that raises stats on the user's side."
+1092,GUSTGUN,Gust Gun,0C0,45,WIND,Physical,75,7,0,Foe,0,abfn,"A Torrent of Wind that can repeatedly hit the enemy."
+1093,JETSTREAM,Jet Stream,000,70,WIND,Physical,75,5,0,Foe,6,af,"The User uses a gust of wind to move faster than the naked eye."
+1094,ANCIENTWIND,Ancient Wind,068,0,WIND,Status,90,15,0,AllNearFoes,0,,"The user summons an ancient wind that negates abilities."
+1095,GROUNDINGWIND,Grounding Wind,11C,0,WIND,Status,90,15,0,AllNearFoes,0,,"The user grounds any airborne enemies."
+1096,MYSTERIOUSWIND,Mysterious Wind,161,0,WIND,Status,80,15,0,Foe,0,,"The user uses a mysterious wind to trade Speed Stat with the enemy."
+1097,CLEARSKIES,Clear Skies,110,0,WIND,Status,80,15,0,Foe,0,,"The user summons a gust of wind to remove hazards."
+#--------------------------------
+# Custom Moves: CRYSTAL
+#--------------------------------
+1297,CRYSTALBASH,Crystal Bash,180,70,CRYSTAL,Physical,80,20,0,Foe,0,abfn,"The user crashes into the enemy with Crystal coating. Prevents them from being damaged."
+1298,PIERCINGCRYSTALS,Piercing Crystals,10A,45,CRYSTAL,Special,80,20,0,Foe,0,bce,"The user pierces any defenses with launched sharp crystals."
+1299,CRYSTALDUST,Crystal Dust,014,40,CRYSTAL,Special,50,20,0,Foe,0,bce,"The user calls up a flurry of crystal dust to confuse the foe."

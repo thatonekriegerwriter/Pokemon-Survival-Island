@@ -52,7 +52,7 @@ Resistances = POISON,BUG
 Immunities = NORMAL,FIGHTING
 #-------------------------------
 [8]
-Name = Steel
+Name = Metal
 InternalName = STEEL
 Weaknesses = FIGHTING,GROUND,FIRE,SHADOW
 Resistances = NORMAL,FLYING,ROCK,BUG,STEEL,GRASS,PSYCHIC,ICE,DRAGON,FAIRY
