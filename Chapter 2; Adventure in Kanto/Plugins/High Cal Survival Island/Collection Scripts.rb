@@ -76,3 +76,17 @@ def pbCollectionMain
 end
 #==============================================================================#
 #==============================================================================#
+                                                                                
+def pbMiningMain
+  vbItems=[:SOFTSAND,:SOFTSAND,:STONE,:STONE,:STONE,:HARDSTONE,:HARDSTONE,:HARDSTONE,:STONE,:STONE,:STONE,:STONE,:CHARCOAL,:CHARCOAL,:CHARCOAL,:CHARCOAL,:CHARCOAL,:LIGHTCLAY,:DAMPROCK,:IRONORE,:IRONORE,:IRONORE,:COPPERORE,:COPPERORE,:SILVERORE,:GOLDORE]
+  chanceCollect=rand(6)  #Encounters 2/10 of the time
+  if  chanceCollect==0 ||  chanceCollect==2 ||  chanceCollect==3 || chanceCollect==5
+    vbItem = vbItems[rand(21)]
+    pbItemBall(vbItem)
+  elsif  chanceCollect==1 ||  chanceCollect==4
+    pbMessage("You didn't find anything.")
+  end
+end
+#==============================================================================#
+#==============================================================================#
+

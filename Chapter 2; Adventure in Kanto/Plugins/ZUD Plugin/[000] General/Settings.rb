@@ -41,7 +41,7 @@ module Settings
 # Variable Numbers
 #-------------------------------------------------------------------------------
   REWARD_BONUSES = 15    # The variable number used to store Raid Reward Bonuses.
-  MAXRAID_PKMN   = 500   # The base variable number used to store a Raid Pokemon. There must not be any variables that use a number above this.
+  MAXRAID_PKMN   = 5000   # The base variable number used to store a Raid Pokemon. There must not be any variables that use a number above this.
   
   
 ################################################################################  
@@ -58,7 +58,7 @@ module Settings
 #-------------------------------------------------------------------------------
 # Map ID's where Dynamax (POWERSPOTS) and Eternamax (ETERNASPOT) are allowed.
 #-------------------------------------------------------------------------------
-  POWERSPOTS     = [10,37,56,59,61,64]  # Pokemon Gyms, Pokemon League, Battle Facilities
+  POWERSPOTS     = [378]  # Pokemon Gyms, Pokemon League, Battle Facilities
   ETERNASPOT     = []                   # None by default
   
   
