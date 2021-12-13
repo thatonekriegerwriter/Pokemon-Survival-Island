@@ -13,7 +13,7 @@ SHOW_IV_RATINGS = true
 # If TRUE, it makes Lucidious89's IV star script by Tommaniacal visible in Page 3 
 # of the Summary Screen.
 
-SHOW_EV_IV = false
+SHOW_EV_IV = true
 
 # If TRUE, it shows EVs and IVs in Summary visible in Page 3 of the Summary Screen.
 
