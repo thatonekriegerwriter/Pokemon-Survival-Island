@@ -100,6 +100,7 @@ class Server:
             writer.str("found")
             writer.int(number)
             writer.str(st_.state.name)
+            writer.str(st_.state.trainertype)
             writer.raw(st_.state.party)
             writer.send(st)
 
@@ -137,11 +138,12 @@ class Server:
         peer_id = record.int()
         name = record.str()
         id = record.int()
+        ttype = record.str()
         party = record.raw_all()
         if not self.valid_party(record):
             self.disconnect(s, "invalid party")
         else:
-            st.state = Finding(peer_id, name, id, party)
+            st.state = Finding(peer_id, name, id, ttype, party)
             # Is the peer already waiting?
             for s_, st_ in self.clients.items():
                 if (st is not st_ and
@@ -174,7 +176,7 @@ class State:
         return f"{self.address[0]}:{self.address[1]}/{type(self.state).__name__.lower()}"
 
 Connecting = collections.namedtuple('Connecting', '')
-Finding = collections.namedtuple('Finding', 'peer_id name id party')
+Finding = collections.namedtuple('Finding', 'peer_id name id trainertype party')
 Connected = collections.namedtuple('Connected', 'peer')
 
 class RecordParser:

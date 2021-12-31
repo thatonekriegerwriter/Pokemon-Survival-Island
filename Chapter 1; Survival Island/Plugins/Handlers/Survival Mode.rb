@@ -16,7 +16,7 @@
 #and around line 634 you will find "def pbStartOver"                           #
 #You can add                                                                   #
 #                                                                              #
-#  if $Trainer.money < 5 || $PokemonSystem.survivalmode == 0                         #
+#  if $game_variables[225] < 5 || $PokemonSystem.survivalmode == 0                         #
 #      pbMessage(_INTL("\\w[]\\wm\\c[8]\\l[3]Game Over"))                      #
 #      pbCancelVehicles                                                        #
 #      pbRemoveDependencies()                                                  #
@@ -24,7 +24,7 @@
 #      return                                                                  #
 #  end                                                                         #
 #To make this script activate upon loss.                                       #
-#Player Health in this script is regarded as the Trainer.money, as that is     #
+#Player Health in this script is regarded as the $game_variables[225], as that is     #
 #what it was in Pokemon Survival Island, I am absolutely positive variables    #
 #can be used instead. I used:                                                  #
 #------------------------------------------------------------------------------#
@@ -52,7 +52,7 @@
 #then turn itself off to take away health.                                     #
 # This has to be placed at the start of your game.                             #
 #------------------------------------------------------------------------------#
-# Again, $Trainer.money is used as health by default.                          #
+# Again, $game_variables[225] is used as health by default.                          #
 #------------------------------------------------------------------------------#
 # I used the Trainer Card to display all this information.                     #
 #------------------------------------------------------------------------------#
@@ -149,8 +149,8 @@ if $game_variables[208]<0
  $game_switches[249]=true
 end
 
-if $Trainer.money>100
- $Trainer.money=100 
+if $game_variables[225]>100
+ $game_variables[225]=100 
 end
 
 if $PokemonSystem.survivalmode == 0 && !maps.include?($game_map.map_id) #Survival Mode Switch
@@ -159,10 +159,10 @@ if $PokemonSystem.survivalmode == 0 && !maps.include?($game_map.map_id) #Surviva
    if $game_switches[249]==true
     pbMessage(_INTL("You are passing out from lack of sleep!"))
 	Achievements.incrementProgress("INSOMNIA",1)
-    $Trainer.money -= 5
+    $game_variables[225] -= 5
     $game_switches[249]=false
    else
-    $Trainer.money -= 5
+    $game_variables[225] -= 5
    end
   else
    $game_variables[208] -= 1 if rand(50) == 1 #take from sleep
@@ -226,10 +226,10 @@ if $PokemonSystem.survivalmode == 0 && !maps.include?($game_map.map_id)#Survival
     if $game_switches[250]==true
       pbMessage(_INTL("You are passing out from lack of food!"))
 	  Achievements.incrementProgress("STARVING",1)
-      $Trainer.money -= 5
+      $game_variables[225] -= 5
       $game_switches[250]=false
     else
-      $Trainer.money -= 5
+      $game_variables[225] -= 5
    end
 end
 end
@@ -240,19 +240,19 @@ if $PokemonSystem.survivalmode == 0 #Survival Mode Switch
     if $game_switches[273]==true
       pbMessage(_INTL("You are passing out from lack of water!"))
 	  Achievements.incrementProgress("THIRSTY",1)
-      $Trainer.money -= 5
+      $game_variables[225] -= 5
       $game_switches[273]=false
     else
-      $Trainer.money -= 5
+      $game_variables[225] -= 5
    end
 end
 end    
-
+=begin
   if !GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:None, 0, 0)
   end
-
-if $Trainer.money < 1 && $PokemonSystem.survivalmode == 0
+=end
+if $game_variables[225] < 1 && $PokemonSystem.survivalmode == 0
     pbMessage(_INTL("\\w[]\\wm\\c[8]\\l[3]Game Over"))
     pbCancelVehicles
     pbRemoveDependencies 
@@ -267,7 +267,7 @@ Events.onMapChanging  += proc {
 #--------------------------Temperature                 ------------------------#
 #------------------------------------------------------------------------------#
 
-
+=begin
 if $PokemonSystem.survivalmode == 0 && GameData::MapMetadata.get($game_map.map_id).outdoor_map
 
   if pbIsSpring == true && GameData::MapMetadata.get($game_map.map_id).outdoor_map
@@ -345,7 +345,7 @@ end
 #------------------------------------------------------------------------------#
 #------------------------------------------------------------------------------#
 end
-
+=end
 }
 
 
@@ -371,7 +371,7 @@ if berry == :ORANBERRY
 $game_variables[205]+=4
 $game_variables[207]+=3
 $game_variables[206]+=1
-$Trainer.money += 1
+$game_variables[225] += 1
 elsif berry == :LEPPABERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
@@ -432,12 +432,12 @@ elsif berry == :SITRUSBERRY
 $game_variables[205]+=5
 $game_variables[207]+=7
 $game_variables[206]+=1
-$Trainer.money += (0.25*$Trainer.money)
+$game_variables[225] += (0.25*$game_variables[225])
 elsif berry == :BERRYJUICE
 $game_variables[205]+=6
 $game_variables[207]+=4
 $game_variables[206]+=4
-$Trainer.money += 2
+$game_variables[225] += 2
 elsif berry == :FRESHWATER
 $game_variables[206]+=20
 $game_variables[207]+=10#207 is Saturation
@@ -622,7 +622,7 @@ loop do
 $game_variables[205]+=4
 $game_variables[207]+=3
 $game_variables[206]+=1
-$Trainer.money += 1
+$game_variables[225] += 1
 elsif berry == :LEPPABERRY
 $game_variables[205]+=5
 $game_variables[207]+=2
@@ -683,12 +683,12 @@ elsif berry == :SITRUSBERRY
 $game_variables[205]+=5
 $game_variables[207]+=7
 $game_variables[206]+=1
-$Trainer.money += (0.25*$Trainer.money)
+$game_variables[225] += (0.25*$game_variables[225])
 elsif berry == :BERRYJUICE
 $game_variables[205]+=6
 $game_variables[207]+=4
 $game_variables[206]+=4
-$Trainer.money += 2
+$game_variables[225] += 2
 elsif berry == :FRESHWATER
 $game_variables[206]+=25
 $game_variables[207]+=10#207 is Saturation
@@ -883,13 +883,13 @@ $PokemonBag.pbDeleteItem(medicine,1)
 Kernel.pbMessage(_INTL("You consume the {1}. ",GameData::Item.get(medicine).name))
 #205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
 if medicine == :POTION
-$Trainer.money += 20
+$game_variables[225] += 20
 elsif medicine == :SUPERPOTION
-$Trainer.money += 40
+$game_variables[225] += 40
 elsif medicine == :HYPERPOTION
-$Trainer.money += 60
+$game_variables[225] += 60
 elsif medicine == :FULLRESTORE
-$Trainer.money += 100
+$game_variables[225] += 100
 #full belly
 end
 end

@@ -1029,10 +1029,7 @@ def pbRandomStarter(typ)
       "REGIDRAGO",
       "GLASTRIER",
       "SPECTRIER",
-      "CALYREX",
-      "VULPIII",
-      "KOLTA",
-      "KITSUVEN"]
+      "CALYREX"]
   if typ=="NONE"
     rPoke=allstarters[rand(allstarters.length)]
     return rPoke
@@ -1341,7 +1338,7 @@ def pbIsLowestEvolutionStarter?(variable)
     starter=="PIPLUP" ||
     starter=="PLUSLE" ||
     starter=="POLIWAG" ||
-    starter=="KOLTA" ||
+    starter=="PONYTA" ||
     starter=="POOCHYENA" ||
     starter=="PORYGON" ||
     starter=="PSYDUCK" ||
@@ -1446,7 +1443,7 @@ def pbIsLowestEvolutionStarter?(variable)
     starter=="VOLBEAT" ||
     starter=="VOLTORB" ||
     starter=="VULLABY" ||
-    starter=="VULPIII" ||
+    starter=="VULPIX" ||
     starter=="WAILMER" ||
     starter=="WEEDLE" ||
     starter=="WHISMUR" ||

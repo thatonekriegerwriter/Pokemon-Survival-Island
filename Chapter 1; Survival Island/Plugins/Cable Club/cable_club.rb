@@ -4,6 +4,71 @@ require 'io/wait'
 module CableClub
   HOST = "127.0.0.1"
   PORT = 9999
+  
+  ONLINE_TRAINER_TYPE_LIST = [
+    [:POKEMONTRAINER_Red,:POKEMONTRAINER_Leaf],
+    [:PSYCHIC_M,:PSYCHIC_F],
+    [:BLACKBELT,:CRUSHGIRL],
+    [:COOLTRAINER_M,:COOLTRAINER_F]
+  ]
+end
+
+class Player
+  attr_writer :online_trainer_type
+  def online_trainer_type
+    return @online_trainer_type || self.trainer_type
+  end
+end
+
+def pbChangeOnlineTrainerType
+  if $Trainer.online_trainer_type==$Trainer.trainer_type
+    Kernel.pbMessage(_INTL("Hmmm...!\\1"))
+    Kernel.pbMessage(_INTL("What is your favorite kind of Trainer?\\nCan you tell me?\\1"))
+  else
+    trainername=GameData::TrainerType.get($Trainer.online_trainer_type).name
+    if ['a','e','i','o','u'].include?(trainername[0,1].downcase)
+      msg=_INTL("Hello! You've been mistaken for an {1}, haven't you?\\1",trainername)
+    else
+      msg=_INTL("Hello! You've been mistaken for a {1}, haven't you?\\1",trainername)
+    end
+    pbMessage(msg)
+    pbMessage(_INTL("But I think you can also pass for a different kind of Trainer.\\1"))
+    pbMessage(_INTL("So, how about telling me what kind of Trainer that you like?\\1"))
+  end
+  commands=[]
+  trainer_types=[]
+  CableClub::ONLINE_TRAINER_TYPE_LIST.each do |type|
+    t=type
+    t=type[$Trainer.gender] if type.is_a?(Array)
+    commands.push(GameData::TrainerType.get(t).name)
+    trainer_types.push(t)
+  end
+  commands.push(_INTL("Cancel"))
+  loop do
+    cmd=pbMessage(_INTL("Which kind of Trainer would you like to be?"),commands,-1)
+    if cmd>=0 && cmd<commands.length-1
+      trainername=commands[cmd]
+      if ['a','e','i','o','u'].include?(trainername[0,1].downcase)
+        msg=_INTL("An {1} is the kind of Trainer you want to be?",trainername)
+      else
+        msg=_INTL("A {1} is the kind of Trainer you want to be?",trainername)
+      end
+      if pbConfirmMessage(msg)
+        if ['a','e','i','o','u'].include?(trainername[0,1].downcase)
+          msg=_INTL("I see! So an {1} is the kind of Trainer you like.\\1",trainername)
+        else
+          msg=_INTL("I see! So a {1} is the kind of Trainer you like.\\1",trainername)
+        end
+        pbMessage(msg)
+        pbMessage(_INTL("If that's the case, others may come to see you in the same way.\\1"))
+        $Trainer.online_trainer_type=trainer_types[cmd]
+        break
+      end
+    else
+      break
+    end
+  end
+  pbMessage(_INTL("OK, then I'll just talk to you later!"))
 end
 
 # TODO: Automatically timeout.
@@ -71,11 +136,13 @@ module CableClub
 
   def self.connect_to(msgwindow, partner_trainer_id)
     pbMessageDisplayDots(msgwindow, _INTL("Connecting"), 0)
-    Connection.open(HOST, PORT) do |connection|
+    host,port = get_server_info
+    Connection.open(host,port) do |connection|
       state = :await_server
       last_state = nil
       client_id = 0
       partner_name = nil
+      partner_trainer_type = nil
       partner_party = nil
       frame = 0
       activity = nil
@@ -117,6 +184,7 @@ module CableClub
               writer.int(partner_trainer_id)
               writer.str($Trainer.name)
               writer.int($Trainer.id)
+              writer.sym($Trainer.online_trainer_type)
               write_party(writer)
             end
             state = :await_partner
@@ -132,8 +200,9 @@ module CableClub
             when :found
               client_id = record.int
               partner_name = record.str
+              partner_trainer_type = record.sym
               partner_party = parse_party(record)
-              pbMessageDisplay(msgwindow, _INTL("{1} connected!", partner_name))
+              pbMessageDisplay(msgwindow, _INTL("{1} {2} connected!",GameData::TrainerType.get(partner_trainer_type).name, partner_name))
               if client_id == 0
                 state = :choose_activity
               else
@@ -166,7 +235,6 @@ module CableClub
                   else; raise "Unknown battle type"
                   end
                 writer.sym(battle_type)
-                writer.sym($Trainer.trainer_type)
               end
               activity = :battle
               state = :await_accept_activity
@@ -192,8 +260,7 @@ module CableClub
             when :ok
               case activity
               when :battle
-                trainertype = record.sym
-                partner = NPCTrainer.new(partner_name, trainertype)
+                partner = NPCTrainer.new(partner_name, partner_trainer_type)
                 (partner.partyID=0) rescue nil # EBDX compat
                 do_battle(connection, client_id, seed, battle_type, partner, partner_party)
                 state = :choose_activity
@@ -235,8 +302,7 @@ module CableClub
             when :battle
               seed = record.int
               battle_type = record.sym
-              trainertype = record.sym
-              partner = NPCTrainer.new(partner_name, trainertype)
+              partner = NPCTrainer.new(partner_name, partner_trainer_type)
               (partner.partyID=0) rescue nil # EBDX compat
               # Auto-reject double battles that we cannot participate in.
               if battle_type == :double && $Trainer.party_count < 2
@@ -249,7 +315,6 @@ module CableClub
                 if pbShowCommands(msgwindow, [_INTL("Yes"), _INTL("No")], 2) == 0
                   connection.send do |writer|
                     writer.sym(:ok)
-                    writer.int($Trainer.trainer_type)
                   end
                   do_battle(connection, client_id, seed, battle_type, partner, partner_party)
                 else
@@ -468,6 +533,8 @@ module CableClub
 
   def self.do_trade(index, you, your_pkmn)
     my_pkmn = $Trainer.party[index]
+    $Trainer.pokedex.register(your_pkmn)
+    $Trainer.pokedex.set_owned(your_pkmn.species)
     pbFadeOutInWithMusic(99999) {
       scene = PokemonTrade_Scene.new
       scene.pbStartScreen(my_pkmn, your_pkmn, $Trainer.name, you.name)
@@ -724,6 +791,24 @@ module CableClub
     end
     pkmn.calc_stats
     return pkmn
+  end
+  
+  def self.get_server_info
+    ret = [HOST,PORT]
+    if safeExists?("serverinfo.ini")
+      File.foreach("serverinfo.ini") do |line|
+        case line
+        when /^\s*[Hh][Oo][Ss][Tt]\s*=\s*(.+)$/
+          ret[0]=$1 if !nil_or_empty?($1)
+        when /^\s*[Pp][Oo][Rr][Tt]\s*=\s*(\d{1,5})$/
+          if !nil_or_empty?($1)
+            port = $1.to_i
+            ret[1]= port if port>0 && port<=65535
+          end
+        end
+      end
+    end
+    return ret
   end
 end
 

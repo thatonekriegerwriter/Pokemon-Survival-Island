@@ -1,28 +1,21 @@
-class MoveRelearnerScreen
 MOVETUTOR=35
-  def eggMoves(pkmn)
+#Everything below is just here to check if your pokémons can learn moves 
+def eggMoves(pkmn)
     babyspecies=pkmn.species
     babyspecies = GameData::Species.get(babyspecies).get_baby_species(false, nil, nil)
     eggmoves=GameData::Species.get_species_form(babyspecies, pkmn.form).egg_moves
     return eggmoves
-  end
+end
   
-  def getMoveList
+def getMoveList
     return species_data.moves
-  end
+end
   
-  def tutorMoves(pkmn)
+def tutorMoves(pkmn)
     return pkmn.species_data.tutor_moves
-  end
-  
-  def hackmoves
-    moves=[]
-	GameData::Move.each { |i| moves.push(i.id) }
-	return moves
-  end
-
-	
-  def pbGetRelearnableMoves(pkmn)
+end
+   
+def pbGetRelearnableMoves(pkmn)
     return [] if !pkmn || pkmn.egg? || pkmn.shadowPokemon?
     moves = []
     pkmn.getMoveList.each do |m|
@@ -59,10 +52,15 @@ MOVETUTOR=35
 	end
     moves.sort! { |a, b| a.downcase <=> b.downcase } #sort moves alphabetically
     return moves | []   # remove duplicates
-  end
-  
 end
-
-
- 
-
+  
+def can_learn_move(pkmn)
+	return false if pkmn.egg? || pkmn.shadowPokemon?
+	return true if $game_variables[MOVETUTOR]==3
+	moves = pbGetRelearnableMoves(pkmn)
+    if moves!=[]
+	 return true
+	else
+	 return false
+	end
+end 

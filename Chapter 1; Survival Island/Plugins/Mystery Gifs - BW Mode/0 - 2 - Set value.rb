@@ -4,9 +4,9 @@ module MGBW
 	# Maximum of length code is 5
 	LIMIT_LENGTH = 5
 	# If you set true, use method of PE (set gift)
-	USE_PE = true
+	USE_PE = false
 	# If you set true, you use custom method + PE (set gift). Read examples below to use this method.
-	USE_CUSTOM = false
+	USE_CUSTOM = true
 	# If ONLINE is true, this custom just creates file, you just update this file and player need to download it to update.
 	# If not, this custom creates file to upload to the Internet
 	ONLINE = true
@@ -49,49 +49,22 @@ Use @@list[name] = hash
 	
 =end
 # Add new gift below this line
-	@@list[314] = {
+	@@list["0001"] = {
 		get: true,
-		name: "A dragon",
+		name: "Surprise!",
 		type: :pkmn,
 		define: {
-			name: :CHARIZARD,
-			level: 50,
-			owner: Pokemon::Owner.new(2234 | 2234 << 16, "Mask", 0, 2),
-			other: Proc.new { |pkmn|
-				pkmn.shiny = true
-				pkmn.item = :EVERSTONE
-				pkmn.learn_move(:EMBER)
-				pkmn.calc_stats
-				next pkmn
-			}
-		},
-		description: "This is Charizard! Dra... Not Dragon!!!"
-	}
-
-	@@list[12561] = {
-		get: true,
-		name: "A little gift",
-		type: :item,
-		define: [:MAXPOTION, 5],
-		description: "Do you like this gift? HAHA!!!"
-	}
-
-	@@list["ky781"] = {
-		get: true,
-		name: "Legend gift",
-		type: :pkmn,
-		define: {
-			name: :KYUREM,
-			level: 70,
+			name: :ZORUA,
+			level: 5,
 			owner: :trainer,
 			other: Proc.new { |pkmn|
-				pkmn.form = 3
-				pkmn.item = :MASTERBALL
+				pkmn.form = 1
+				pkmn.item = :GHOSTIUMZ
 				pkmn.calc_stats
 				next pkmn
 			}
 		},
-		description: "Do you like this gift? A LEGEND!!!"
+		description: "A New Friend!"
 	}
 
 	@@list["masT7"] = {
@@ -101,24 +74,6 @@ Use @@list[name] = hash
 		define: [:MASTERBALL],
 		description: "NORMAL BALL!!!"
 	}
-
-	@@list["VEFE"] = {
-		get: true,
-		name: "Big gift",
-		type: :pkmn,
-		define: {
-			name: :VENUSAUR,
-			level: 60,
-			owner: :foreign,
-			other: Proc.new { |pkmn|
-				pkmn.gender = 1
-				pkmn.calc_stats
-				next pkmn
-			}
-		},
-		description: "It's big, right?"
-	}
-
 # Add new gift above this line
 
 	#-------------------------#
