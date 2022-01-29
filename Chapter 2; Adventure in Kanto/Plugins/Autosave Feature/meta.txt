@@ -1,0 +1,4 @@
+Name = Autosave Feature PE v19
+Version = 1.0
+Website = https://reliccastle.com/resources/848
+Credits = Caruban
