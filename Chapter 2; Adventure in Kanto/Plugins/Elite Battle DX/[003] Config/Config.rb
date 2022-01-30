@@ -22,7 +22,7 @@ module EliteBattle
   ROOM_SCALE = 2.25
 
   # set this to true to use the low HP bgm when player's Pokemon HP reaches 25%
-  USE_LOW_HP_BGM = true
+  USE_LOW_HP_BGM = false
 
   # set this to true if you want to use your own common animations from the editor
   CUSTOM_COMMON_ANIM = false
@@ -31,7 +31,7 @@ module EliteBattle
   CUSTOM_MOVE_ANIM = false
 
   # disables "camera" zooming and movement throughout the entire scene
-  DISABLE_SCENE_MOTION = true
+  DISABLE_SCENE_MOTION = false
 
   # Chance (%) (from 0 to 100, allows up to 2 decimal places) that Shiny Pokemon
   # will have a unique hue applied to them, altering their color further
@@ -45,7 +45,7 @@ module EliteBattle
   PERFECT_IV_SUPER = 3
 
   # Show player line up during wild battles
-  SHOW_LINEUP_WILD = true
+  SHOW_LINEUP_WILD = false
 
   # Adjust the player sendout animations based on whether or not the
   # Following Pokemon EX system is present
