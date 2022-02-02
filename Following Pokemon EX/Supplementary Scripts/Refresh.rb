@@ -142,6 +142,8 @@ module Game
   def self.load_map(*args)
     __followingpkmn__load_map(*args)
     FollowingPkmn.refresh(false)
+    $PokemonTemp.dependentEvents.updateDependentEvents
+	$game_map.refresh
   end
 end
 
@@ -269,6 +271,8 @@ Events.onStepTaken += proc { |_sender, _e|
   if $PokemonGlobal.call_refresh[0]
     FollowingPkmn.refresh($PokemonGlobal.call_refresh[1])
     $PokemonGlobal.call_refresh = false
+    $PokemonTemp.dependentEvents.updateDependentEvents
+	$game_map.refresh
   end
 }
 
