@@ -816,7 +816,7 @@
 #-------------------------------
 1700,RUSTEDPICKAXE,Rusted Pickaxe,Rusted Pickaxes,1,0,"A rusted pickaxe you got off the boat. It could mine lightly, but nothing big.",0,4,6,
 1701,PICKAXE,Pickaxe,Pickaxes,1,0,"A Pickaxe you made with your own two hands. Feel proud.",0,9,6,
-1711,WATERBOTTLE,Bottle,Bottles,1,0,"A Bottle, you can fill it with water at Fresh Water Sources.",2,0,0,
+1711,WATERBOTTLE,Bottle,Bottles,9,0,"A Bottle, you can fill it with water at Fresh Water Sources.",2,0,0,
 1702,IRON2,Fine Iron,Bars of Fine Iron,1,0,"Refined Iron from the Furnace.",0,0,0,
 1801,LVLDETECTOR,Level Detector,Level Detectors,8,0,"A device that can detect the level of a wild Pokémon. It is made by Silph Co.",2,0,6,
 1802,POISONDART,Poison Dart,Poison Darts,7,1000,"A handcrafted dart gun that poisons a Pokémon in battle.",0,4,0,
