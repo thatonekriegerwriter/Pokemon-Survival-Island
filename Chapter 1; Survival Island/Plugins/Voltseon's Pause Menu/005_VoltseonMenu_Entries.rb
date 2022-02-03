@@ -98,6 +98,24 @@ class MenuEntryCraft < MenuEntry
 	def selectable?; return true; end
 end
 #-------------------------------------------------------------------------------
+# Entry for Craft Screen
+#-------------------------------------------------------------------------------
+class MenuEntryVentures < MenuEntry
+	def initialize
+		@icon = "menuAdventures"
+		@name = "Adventures"
+	end
+
+	def selected(menu)
+	  item = nil
+	  pbFadeOutIn(99999) {
+    pbStartAdventureMenu
+	  }
+	end
+
+	def selectable?; return true; end
+end
+#-------------------------------------------------------------------------------
 # Entry for CAchievements Screen
 #-------------------------------------------------------------------------------
 class MenuEntryAchievements < MenuEntry
