@@ -253,11 +253,7 @@ end
   end
 =end
 if $game_variables[225] < 1 && $PokemonSystem.survivalmode == 0
-    pbMessage(_INTL("\\w[]\\wm\\c[8]\\l[3]Game Over"))
-    pbCancelVehicles
-    pbRemoveDependencies 
-    pbEndGame
-    return
+  pbStartOver
  end 
 }
 

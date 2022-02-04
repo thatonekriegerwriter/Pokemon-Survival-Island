@@ -1,4 +1,4 @@
-Name         = Battle Stuff
+Name         = SOS
 Version      = 1.0.1
 Website      = https://luka-sj.com/res/nuzx
 Credits      = Luka S.J.

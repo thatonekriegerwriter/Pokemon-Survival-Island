@@ -10,27 +10,28 @@ class PokeBattle_Battler
     disobedient = false
     # Pokémon may be disobedient; calculate if it is
     badgeLevel = 10 * (@battle.pbPlayer.badge_count + 1)
+    r = @battle.pbRandom(256)
     badgeLevel = GameData::GrowthRate.max_level if @battle.pbPlayer.badge_count >= 8
     if @pokemon.foreign?(@battle.pbPlayer) && @level>badgeLevel
       a = ((@level+badgeLevel)*@battle.pbRandom(256)/256).floor
       disobedient |= (a>=badgeLevel)
     end
 #EDIT
-    return pbDisobey(choice, badgeLevel) if @pokemon.loyalty == 0 && rand(100)<= 75
-    return pbDisobey(choice, badgeLevel) if @pokemon.loyalty <= 49 && rand(100)<= 50
-    return pbDisobey(choice, badgeLevel) if @pokemon.loyalty <= 74 && rand(100)<= 25
-    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 149 && @pokemon.loyalty == 0 && rand(100)<= 50
-    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 149 && @pokemon.loyalty == 49 && rand(100)<= 25
-    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 149 && @pokemon.loyalty == 74 && rand(100)<= 20
-    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 199 && @pokemon.loyalty == 0 && rand(100)<= 45
-    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 199 && @pokemon.loyalty == 49 && rand(100)<= 25
-    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 199 && @pokemon.loyalty == 74 && rand(100)<= 15
-    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 249 && @pokemon.loyalty == 0 && rand(100)<= 40
-    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 249 && @pokemon.loyalty == 49 && rand(100)<= 25
-    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 249 && @pokemon.loyalty == 74 && rand(100)<= 10
-    return pbDisobey(choice, badgeLevel) if @pokemon.happiness == 250 && @pokemon.loyalty == 0 && rand(100)<= 35
-    return pbDisobey(choice, badgeLevel) if @pokemon.happiness == 250 && @pokemon.loyalty == 49 && rand(100)<= 25
-    return pbDisobey(choice, badgeLevel) if @pokemon.happiness == 250 && @pokemon.loyalty == 74 && rand(100)<= 5
+    return pbDisobey(choice, badgeLevel) if @pokemon.loyalty == 0 && rand(255)<= 75
+    return pbDisobey(choice, badgeLevel) if @pokemon.loyalty <= 49 && rand(255)<= 50
+    return pbDisobey(choice, badgeLevel) if @pokemon.loyalty <= 74 && rand(255)<= 25
+    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 149 && @pokemon.loyalty == 0 && r <= 50
+    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 149 && @pokemon.loyalty == 49 && r <= 25
+    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 149 && @pokemon.loyalty == 74 && r <= 20
+    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 199 && @pokemon.loyalty == 0 && r <= 45
+    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 199 && @pokemon.loyalty == 49 && r <= 25
+    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 199 && @pokemon.loyalty == 74 && r <= 15
+    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 249 && @pokemon.loyalty == 0 && r <= 40
+    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 249 && @pokemon.loyalty == 49 && r <= 25
+    return pbDisobey(choice, badgeLevel) if @pokemon.happiness >= 249 && @pokemon.loyalty == 74 && r <= 10
+    return pbDisobey(choice, badgeLevel) if @pokemon.happiness == 250 && @pokemon.loyalty == 0 && r <= 35
+    return pbDisobey(choice, badgeLevel) if @pokemon.happiness == 250 && @pokemon.loyalty == 49 && r <= 25
+    return pbDisobey(choice, badgeLevel) if @pokemon.happiness == 250 && @pokemon.loyalty == 74 && r <= 5
 #END EDIT
     disobedient |= !pbHyperModeObedience(choice[2])
     return true if !disobedient
@@ -104,7 +105,7 @@ Events.onStepTaken += proc {
   $PokemonGlobal.loyaltySteps += 1
   if $PokemonGlobal.loyaltySteps>=128
     for pkmn in $Trainer.able_party
-      pkmn.changeHappiness("walking") if rand(2)==0
+      pkmn.changeLoyalty("walking") if rand(2)==0
     end
     $PokemonGlobal.loyaltySteps = 0
   end

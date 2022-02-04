@@ -36,29 +36,29 @@ if nature ==   :HARDY
       when "walking"
         gain = [1, 1, 1][happiness_range]
       when "levelup"
-        gain = [5, 4, 3][happiness_range]
+        gain = [10, 10, 5][happiness_range]
       when "groom"
-        gain = [10, 10, 4][happiness_range]
+        gain = [3, 3, 4][happiness_range]
       when "evberry"
-        gain = [10, 5, 2][happiness_range]
+        gain = [10, 15, 15][happiness_range]
       when "vitamin"
-        gain = [5, 3, 2][happiness_range]
+        gain = [6, 6, 7][happiness_range]
       when "wing"
-        gain = [3, 2, 1][happiness_range]
+        gain = [9, 9, 7][happiness_range]
       when "machine", "battleitem"
-        gain = [1, 1, 0][happiness_range]
+        gain = [3, 1, 3][happiness_range]
       when "faint"
         gain = [-20, -20, -30][happiness_range]
       when "faintbad"   # Fainted against an opponent that is 30+ levels higher
         gain = [-30, -40, -60][happiness_range]
       when "powder"
-        gain = [-15, -15, -10][happiness_range]
+        gain = [-5, -10, -7][happiness_range]
       when "energyroot"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-2, -6, -8][happiness_range]
       when "revivalherb"
-        gain = [-15, -15, -20][happiness_range]
+        gain = [-5, -5, -7][happiness_range]
       when "damaged"
-        gain = [-5, -3, -2][happiness_range]
+        gain = [-2, -3, -2][happiness_range]
       when "neglected"
         gain = [-10, -10, -15][happiness_range]
       when "hungry"
@@ -69,48 +69,60 @@ if nature ==   :HARDY
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [15, 25, 25][happiness_range]
+      when "TrainerPassedOut"
+        gain = [15, 25, 25][happiness_range]
+      when "FollowerPkmn"
+        gain = [2, 1, 2][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :LONELY
       case method
       when "walking"
-        gain = [1, 1, 1][happiness_range]
+        gain = [2, 2, 2][happiness_range]
       when "levelup"
-        gain = [5, 4, 3][happiness_range]
+        gain = [2, 2, 3][happiness_range]
       when "groom"
-        gain = [10, 10, 4][happiness_range]
+        gain = [20, 20, 4][happiness_range]
       when "evberry"
-        gain = [10, 5, 2][happiness_range]
+        gain = [7, 5, 2][happiness_range]
       when "vitamin"
         gain = [5, 3, 2][happiness_range]
       when "wing"
-        gain = [3, 2, 1][happiness_range]
+        gain = [1, 1, 1][happiness_range]
       when "machine", "battleitem"
         gain = [1, 1, 0][happiness_range]
       when "faint"
-        gain = [-20, -20, -30][happiness_range]
+        gain = [-10, -5, -10][happiness_range]
       when "faintbad"   # Fainted against an opponent that is 30+ levels higher
         gain = [-30, -40, -60][happiness_range]
       when "powder"
-        gain = [-15, -15, -10][happiness_range]
+        gain = [-10, -10, -10][happiness_range]
       when "energyroot"
         gain = [-10, -10, -15][happiness_range]
       when "revivalherb"
-        gain = [-15, -15, -20][happiness_range]
+        gain = [-10, -10, -15][happiness_range]
       when "damaged"
         gain = [-5, -3, -2][happiness_range]
       when "neglected"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-50, -50, -50[happiness_range]
       when "hungry"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-20, -20, -25][happiness_range]
       when "thirsty"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-20, -20, -25][happiness_range]
       when "tired"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-1, -1, -5][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [1, 1, 5][happiness_range]
+      when "TrainerPassedOut"
+        gain = [-1, 1, 0][happiness_range]
+      when "FollowerPkmn"
+        gain = [20, 15, 5][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :BRAVE
@@ -122,27 +134,27 @@ elsif nature ==   :BRAVE
       when "groom"
         gain = [10, 10, 4][happiness_range]
       when "evberry"
-        gain = [10, 5, 2][happiness_range]
+        gain = [10, 5, 5][happiness_range]
       when "vitamin"
-        gain = [5, 3, 2][happiness_range]
+        gain = [5, 3, 5][happiness_range]
       when "wing"
-        gain = [3, 2, 1][happiness_range]
+        gain = [3, 2, 3][happiness_range]
       when "machine", "battleitem"
-        gain = [1, 1, 0][happiness_range]
+        gain = [7, 5, 5][happiness_range]
       when "faint"
-        gain = [-20, -20, -30][happiness_range]
+        gain = [0, 1, -5][happiness_range]
       when "faintbad"   # Fainted against an opponent that is 30+ levels higher
-        gain = [-30, -40, -60][happiness_range]
+        gain = [-20, -40, -60][happiness_range]
       when "powder"
-        gain = [-15, -15, -10][happiness_range]
+        gain = [-10, -10, -10][happiness_range]
       when "energyroot"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-10, -10, -10][happiness_range]
       when "revivalherb"
-        gain = [-15, -15, -20][happiness_range]
+        gain = [-15, -15, -10][happiness_range]
       when "damaged"
-        gain = [-5, -3, -2][happiness_range]
+        gain = [-1, -1, -2][happiness_range]
       when "neglected"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-20, -20, -25][happiness_range]
       when "hungry"
         gain = [-10, -10, -15][happiness_range]
       when "thirsty"
@@ -151,7 +163,13 @@ elsif nature ==   :BRAVE
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [25, 25, 30][happiness_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 20][happiness_range]
+      when "FollowerPkmn"
+        gain = [20, 10, 20][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :ADAMANT
@@ -192,7 +210,13 @@ elsif nature ==   :ADAMANT
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :NAUGHTY
@@ -233,7 +257,13 @@ elsif nature ==   :NAUGHTY
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :BOLD
@@ -274,7 +304,13 @@ elsif nature ==   :BOLD
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :DOCILE
@@ -315,7 +351,13 @@ elsif nature ==   :DOCILE
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :RELAXED
@@ -356,7 +398,13 @@ elsif nature ==   :RELAXED
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :IMPISH
@@ -397,7 +445,13 @@ elsif nature ==   :IMPISH
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :LAX
@@ -438,7 +492,13 @@ elsif nature ==   :LAX
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :TIMID
@@ -479,7 +539,13 @@ elsif nature ==   :TIMID
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :HASTY
@@ -520,7 +586,13 @@ elsif nature ==   :HASTY
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :SERIOUS
@@ -561,7 +633,13 @@ elsif nature ==   :SERIOUS
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :JOLLY
@@ -602,7 +680,13 @@ elsif nature ==   :JOLLY
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :NAIVE
@@ -643,7 +727,13 @@ elsif nature ==   :NAIVE
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :MODEST
@@ -684,9 +774,16 @@ elsif nature ==   :MODEST
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
+when "didDamage"
 elselsif nature ==   :MILD
       case method
       when "walking"
@@ -725,7 +822,13 @@ elselsif nature ==   :MILD
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :QUIET
@@ -766,7 +869,13 @@ elsif nature ==   :QUIET
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :BASHFUL
@@ -807,7 +916,13 @@ elsif nature ==   :BASHFUL
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :RASH
@@ -848,7 +963,13 @@ elsif nature ==   :RASH
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :CALM
@@ -889,7 +1010,13 @@ elsif nature ==   :CALM
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :GENTLE
@@ -930,7 +1057,13 @@ elsif nature ==   :GENTLE
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :SASSY
@@ -971,7 +1104,13 @@ elsif nature ==   :SASSY
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :CAREFUL
@@ -1012,7 +1151,13 @@ elsif nature ==   :CAREFUL
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :QUIRKY
@@ -1053,27 +1198,33 @@ elsif nature ==   :QUIRKY
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [1, 3, 3][happiness_range]
+      when "FollowerPkmn"
+        gain = [1, 4, 3][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :HATEFUL
       case method
       when "walking"
-        gain = [1, 1, 1][happiness_range]
+        gain = [0, 0, 0][happiness_range]
       when "levelup"
-        gain = [5, 4, 3][happiness_range]
+        gain = [0, 0, 0][happiness_range]
       when "groom"
-        gain = [10, 10, 4][happiness_range]
-      when "evberry"
-        gain = [10, 5, 2][happiness_range]
-      when "vitamin"
-        gain = [5, 3, 2][happiness_range]
-      when "wing"
-        gain = [3, 2, 1][happiness_range]
-      when "machine", "battleitem"
         gain = [1, 1, 0][happiness_range]
+      when "evberry"
+        gain = [0, 0, 0][happiness_range]
+      when "vitamin"
+        gain = [0, 0, 0][happiness_range]
+      when "wing"
+        gain = [0, 0, 0][happiness_range]
+      when "machine", "battleitem"
+        gain = [0, 0, 0][happiness_range]
       when "faint"
-        gain = [-20, -20, -30][happiness_range]
+        gain = [-50, -50, -50][happiness_range]
       when "faintbad"   # Fainted against an opponent that is 30+ levels higher
         gain = [-30, -40, -60][happiness_range]
       when "powder"
@@ -1094,15 +1245,21 @@ elsif nature ==   :HATEFUL
         gain = [-10, -10, -15][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [0, 0, 0][happiness_range]
+      when "TrainerPassedOut"
+        gain = [-10, -10, -15][happiness_range]
+      when "FollowerPkmn"
+        gain = [-10, -10, -15][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :LOVING
       case method
       when "walking"
-        gain = [1, 1, 1][happiness_range]
+        gain = [3, 3, 3][happiness_range]
       when "levelup"
-        gain = [5, 4, 3][happiness_range]
+        gain = [7, 4, 3][happiness_range]
       when "groom"
         gain = [10, 10, 4][happiness_range]
       when "evberry"
@@ -1114,28 +1271,34 @@ elsif nature ==   :LOVING
       when "machine", "battleitem"
         gain = [1, 1, 0][happiness_range]
       when "faint"
-        gain = [-20, -20, -30][happiness_range]
+        gain = [-5, -5, -7][happiness_range]
       when "faintbad"   # Fainted against an opponent that is 30+ levels higher
-        gain = [-30, -40, -60][happiness_range]
+        gain = [-5, -10, -20][happiness_range]
       when "powder"
-        gain = [-15, -15, -10][happiness_range]
+        gain = [-5, -5, -1][happiness_range]
       when "energyroot"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-1, -1, -5][happiness_range]
       when "revivalherb"
-        gain = [-15, -15, -20][happiness_range]
+        gain = [-5, -5, -2][happiness_range]
       when "damaged"
-        gain = [-5, -3, -2][happiness_range]
+        gain = [-1, -3, -2][happiness_range]
       when "neglected"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-1, -1, -5][happiness_range]
       when "hungry"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-1, -1, -5][happiness_range]
       when "thirsty"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-1, -1, -1][happiness_range]
       when "tired"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-1, -1, -5][happiness_range]
       when "youareeatingme"
         gain = [-255, -255, -255][happiness_range]
-      else
+      when "didDamage"
+        gain = [5, 3, 2][happiness_range]
+      when "TrainerPassedOut"
+        gain = [5, 3, 2][happiness_range]
+      when "FollowerPkmn"
+        gain = [5, 3, 2][happiness_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 	end
@@ -1151,6 +1314,9 @@ elsif nature ==   :LOVING
   # Changes the happiness of this Pokémon depending on what happened to change it.
   # @param method [String] the happiness changing method (e.g. 'walking')
   def changeLoyalty(method)
+if shadowPokemon?
+return
+else
     gain = 0
      base = 0 if nature ==   :LOVING
      base = 0 if nature ==   :HATEFUL
@@ -1218,7 +1384,13 @@ if nature ==   :HARDY
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range]
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :LONELY
@@ -1259,7 +1431,13 @@ elsif nature ==   :LONELY
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :BRAVE
@@ -1300,7 +1478,13 @@ elsif nature ==   :BRAVE
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :ADAMANT
@@ -1341,7 +1525,13 @@ elsif nature ==   :ADAMANT
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :NAUGHTY
@@ -1382,7 +1572,13 @@ elsif nature ==   :NAUGHTY
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :BOLD
@@ -1423,7 +1619,13 @@ elsif nature ==   :BOLD
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :DOCILE
@@ -1464,7 +1666,13 @@ elsif nature ==   :DOCILE
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :RELAXED
@@ -1505,7 +1713,13 @@ elsif nature ==   :RELAXED
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :IMPISH
@@ -1546,7 +1760,13 @@ elsif nature ==   :IMPISH
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :LAX
@@ -1587,7 +1807,13 @@ elsif nature ==   :LAX
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :TIMID
@@ -1628,7 +1854,13 @@ elsif nature ==   :TIMID
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :HASTY
@@ -1669,7 +1901,13 @@ elsif nature ==   :HASTY
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :SERIOUS
@@ -1710,7 +1948,13 @@ elsif nature ==   :SERIOUS
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :JOLLY
@@ -1751,7 +1995,13 @@ elsif nature ==   :JOLLY
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :NAIVE
@@ -1792,7 +2042,13 @@ elsif nature ==   :NAIVE
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :MODEST
@@ -1833,7 +2089,13 @@ elsif nature ==   :MODEST
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :MILD
@@ -1874,7 +2136,13 @@ elsif nature ==   :MILD
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :QUIET
@@ -1915,7 +2183,13 @@ elsif nature ==   :QUIET
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :BASHFUL
@@ -1956,7 +2230,13 @@ elsif nature ==   :BASHFUL
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :RASH
@@ -1997,7 +2277,13 @@ elsif nature ==   :RASH
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :CALM
@@ -2038,7 +2324,13 @@ elsif nature ==   :CALM
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :GENTLE
@@ -2079,7 +2371,13 @@ elsif nature ==   :GENTLE
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :SASSY
@@ -2120,7 +2418,13 @@ elsif nature ==   :SASSY
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :CAREFUL
@@ -2161,7 +2465,13 @@ elsif nature ==   :CAREFUL
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :QUIRKY
@@ -2202,7 +2512,13 @@ elsif nature ==   :QUIRKY
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :HATEFUL
@@ -2243,7 +2559,13 @@ elsif nature ==   :HATEFUL
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 elsif nature ==   :LOVING
@@ -2284,7 +2606,13 @@ elsif nature ==   :LOVING
         gain = [-10, -10, -15][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
-      else
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range
+else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
     @loyalty = (@loyalty + gain + base).clamp(0, 255)
@@ -2354,6 +2682,7 @@ end
       @battle.pbCommonAnimation("UseItem",target)
       @battle.pbDisplay(_INTL("{1} endured the hit for its trainer!",target.pbThis))
     end
+  end
   end
   end
   end

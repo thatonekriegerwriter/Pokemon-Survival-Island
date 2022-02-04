@@ -1,6 +1,6 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
-[001] # Temperate Ocean
+[001] # INTRO
 Land,21
     20,RATTATA,5,15
     20,SPEAROW,5,10
@@ -704,6 +704,13 @@ Bait
     4,KADABRA,5
     1,POLIWHIRL,5
     1,SLOWPOKE,5
+#-------------------------------
+[026] # Test Map
+Land,21
+    20,BULBASAUR,5
+    20,BULBASAUR,5
+    20,BULBASAUR,5
+    20,BULBASAUR,5
 #-------------------------------
 [028] # Mountain Zone
 LandMorning,21
@@ -1647,8 +1654,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -1714,8 +1721,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -1781,8 +1788,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -1848,8 +1855,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -1915,8 +1922,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -1982,8 +1989,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -2049,8 +2056,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -2116,8 +2123,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -2183,8 +2190,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -2250,8 +2257,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -2317,8 +2324,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -2384,8 +2391,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3725,8 +3732,8 @@ OldRod
     30,FEEBAS,7
 GoodRod
     60,DRATINI,5,15
-    20,DRATINI,7,13
     20,DRATINI,3,8
+    20,DRATINI,7,13
 Bait
     20,CATERPIE,5
     20,DEINO,5
@@ -4242,167 +4249,90 @@ Cave,5
 #-------------------------------
 [318] # Western Temperate
 Cave,5
-    20,WEEDLE,5
-    20,KAKUNA,5
-    10,COMBEE,5
-    10,WEEDLE,5
-    10,WEEDLE,5
-    10,COMBEE,5
-    5,COMBEE,5
-    5,KAKUNA,5
-    4,WEEDLE,5
-    4,BEEDRILL,5
-    1,BEEDRILL,5
+    44,WEEDLE,5
+    25,COMBEE,5
+    25,KAKUNA,5
+    5,BEEDRILL,5
     1,VESPIQUEN,5
 #-------------------------------
 [319] # Western Temperate
 Cave,5
-    20,WEEDLE,5
-    20,KAKUNA,5
-    10,COMBEE,5
-    10,WEEDLE,5
-    10,WEEDLE,5
-    10,COMBEE,5
-    5,COMBEE,5
-    5,KAKUNA,5
-    4,WEEDLE,5
-    4,BEEDRILL,5
-    1,BEEDRILL,5
+    44,WEEDLE,5
+    25,COMBEE,5
+    25,KAKUNA,5
+    5,BEEDRILL,5
     1,VESPIQUEN,5
 #-------------------------------
 [320] # Western Temperate
 Cave,5
-    20,WEEDLE,5
-    20,KAKUNA,5
-    10,COMBEE,5
-    10,WEEDLE,5
-    10,WEEDLE,5
-    10,COMBEE,5
-    5,COMBEE,5
-    5,KAKUNA,5
-    4,WEEDLE,5
-    4,BEEDRILL,5
-    1,BEEDRILL,5
+    44,WEEDLE,5
+    25,COMBEE,5
+    25,KAKUNA,5
+    5,BEEDRILL,5
     1,VESPIQUEN,5
 #-------------------------------
 [323] # Western Temperate
 Cave,5
-    20,WEEDLE,5
-    20,KAKUNA,5
-    10,COMBEE,5
-    10,WEEDLE,5
-    10,WEEDLE,5
-    10,COMBEE,5
-    5,COMBEE,5
-    5,KAKUNA,5
-    4,WEEDLE,5
-    4,BEEDRILL,5
-    1,BEEDRILL,5
+    44,WEEDLE,5
+    25,COMBEE,5
+    25,KAKUNA,5
+    5,BEEDRILL,5
     1,VESPIQUEN,5
 #-------------------------------
 [325] # Western Temperate
 Cave,5
-    20,WEEDLE,5
-    20,KAKUNA,5
-    10,COMBEE,5
-    10,WEEDLE,5
-    10,WEEDLE,5
-    10,COMBEE,5
-    5,COMBEE,5
-    5,KAKUNA,5
-    4,WEEDLE,5
-    4,BEEDRILL,5
-    1,BEEDRILL,5
+    44,WEEDLE,5
+    25,COMBEE,5
+    25,KAKUNA,5
+    5,BEEDRILL,5
     1,VESPIQUEN,5
 #-------------------------------
 [326] # Western Temperate
 Cave,5
-    20,WEEDLE,5
-    20,KAKUNA,5
-    10,COMBEE,5
-    10,WEEDLE,5
-    10,WEEDLE,5
-    10,COMBEE,5
-    5,COMBEE,5
-    5,KAKUNA,5
-    4,WEEDLE,5
-    4,BEEDRILL,5
-    1,BEEDRILL,5
+    44,WEEDLE,5
+    25,COMBEE,5
+    25,KAKUNA,5
+    5,BEEDRILL,5
     1,VESPIQUEN,5
 #-------------------------------
 [327] # Western Temperate
 Cave,5
-    20,WEEDLE,5
-    20,KAKUNA,5
-    10,COMBEE,5
-    10,WEEDLE,5
-    10,WEEDLE,5
-    10,COMBEE,5
-    5,COMBEE,5
-    5,KAKUNA,5
-    4,WEEDLE,5
-    4,BEEDRILL,5
-    1,BEEDRILL,5
+    44,WEEDLE,5
+    25,COMBEE,5
+    25,KAKUNA,5
+    5,BEEDRILL,5
     1,VESPIQUEN,5
 #-------------------------------
 [328] # Western Temperate
 Cave,5
-    20,WEEDLE,5
-    20,KAKUNA,5
-    10,COMBEE,5
-    10,WEEDLE,5
-    10,WEEDLE,5
-    10,COMBEE,5
-    5,COMBEE,5
-    5,KAKUNA,5
-    4,WEEDLE,5
-    4,BEEDRILL,5
-    1,BEEDRILL,5
+    44,WEEDLE,5
+    25,COMBEE,5
+    25,KAKUNA,5
+    5,BEEDRILL,5
     1,VESPIQUEN,5
 #-------------------------------
 [329] # Western Temperate
 Cave,5
-    20,WEEDLE,5
-    20,KAKUNA,5
-    10,COMBEE,5
-    10,WEEDLE,5
-    10,WEEDLE,5
-    10,COMBEE,5
-    5,COMBEE,5
-    5,KAKUNA,5
-    4,WEEDLE,5
-    4,BEEDRILL,5
-    1,BEEDRILL,5
+    44,WEEDLE,5
+    25,COMBEE,5
+    25,KAKUNA,5
+    5,BEEDRILL,5
     1,VESPIQUEN,5
 #-------------------------------
 [330] # Western Temperate
 Cave,5
-    20,WEEDLE,5
-    20,KAKUNA,5
-    10,COMBEE,5
-    10,WEEDLE,5
-    10,WEEDLE,5
-    10,COMBEE,5
-    5,COMBEE,5
-    5,KAKUNA,5
-    4,WEEDLE,5
-    4,BEEDRILL,5
-    1,BEEDRILL,5
+    44,WEEDLE,5
+    25,COMBEE,5
+    25,KAKUNA,5
+    5,BEEDRILL,5
     1,VESPIQUEN,5
 #-------------------------------
 [331] # Western Temperate
 Cave,5
-    20,WEEDLE,5
-    20,KAKUNA,5
-    10,COMBEE,5
-    10,WEEDLE,5
-    10,WEEDLE,5
-    10,COMBEE,5
-    5,COMBEE,5
-    5,KAKUNA,5
-    4,WEEDLE,5
-    4,BEEDRILL,5
-    1,BEEDRILL,5
+    44,WEEDLE,5
+    25,COMBEE,5
+    25,KAKUNA,5
+    5,BEEDRILL,5
     1,VESPIQUEN,5
 #-------------------------------
 [332] # Cave
@@ -4439,12 +4369,12 @@ CaveDeep,5
 #-------------------------------
 [349] # MAP349
 LandDay,21
-    20,ODDISH,5
     20,BELLOSSOM,5
     20,BELLSPROUT,5
+    20,ODDISH,5
     10,CACNEA,5
-    10,PANSAGE,5
     10,NUZLEAF,5
+    10,PANSAGE,5
     10,WEAVILE,5
     5,BRELOOM,5
     5,ROSERADE,5
@@ -4452,12 +4382,12 @@ LandDay,21
     1,CARNIVINE,5
     1,SNIVY,5
 LandEvening,21
-    20,ODDISH,5
     20,BELLOSSOM,5
     20,BELLSPROUT,5
+    20,ODDISH,5
     10,CACNEA,5
-    10,PANSAGE,5
     10,NUZLEAF,5
+    10,PANSAGE,5
     10,WEAVILE,5
     5,BRELOOM,5
     5,ROSERADE,5
@@ -4465,12 +4395,12 @@ LandEvening,21
     1,CARNIVINE,5
     1,SNIVY,5
 LandAfternoon,21
-    20,ODDISH,5
     20,BELLOSSOM,5
     20,BELLSPROUT,5
+    20,ODDISH,5
     10,CACNEA,5
-    10,PANSAGE,5
     10,NUZLEAF,5
+    10,PANSAGE,5
     10,WEAVILE,5
     5,BRELOOM,5
     5,ROSERADE,5
@@ -4478,12 +4408,12 @@ LandAfternoon,21
     1,CARNIVINE,5
     1,SNIVY,5
 LandNight,21
-    20,ODDISH,5
     20,BELLOSSOM,5
     20,BELLSPROUT,5
+    20,ODDISH,5
     10,CACNEA,5
-    10,PANSAGE,5
     10,NUZLEAF,5
+    10,PANSAGE,5
     10,WEAVILE,5
     5,BRELOOM,5
     5,ROSERADE,5
@@ -4506,12 +4436,12 @@ Bait
 #-------------------------------
 [350] # MAP350
 LandDay,21
-    20,ODDISH,5
     20,BELLOSSOM,5
     20,BELLSPROUT,5
+    20,ODDISH,5
     10,CACNEA,5
-    10,PANSAGE,5
     10,NUZLEAF,5
+    10,PANSAGE,5
     10,WEAVILE,5
     5,BRELOOM,5
     5,ROSERADE,5
@@ -4519,12 +4449,12 @@ LandDay,21
     1,CARNIVINE,5
     1,SNIVY,5
 LandEvening,21
-    20,ODDISH,5
     20,BELLOSSOM,5
     20,BELLSPROUT,5
+    20,ODDISH,5
     10,CACNEA,5
-    10,PANSAGE,5
     10,NUZLEAF,5
+    10,PANSAGE,5
     10,WEAVILE,5
     5,BRELOOM,5
     5,ROSERADE,5
@@ -4532,12 +4462,12 @@ LandEvening,21
     1,CARNIVINE,5
     1,SNIVY,5
 LandAfternoon,21
-    20,ODDISH,5
     20,BELLOSSOM,5
     20,BELLSPROUT,5
+    20,ODDISH,5
     10,CACNEA,5
-    10,PANSAGE,5
     10,NUZLEAF,5
+    10,PANSAGE,5
     10,WEAVILE,5
     5,BRELOOM,5
     5,ROSERADE,5
@@ -4545,12 +4475,12 @@ LandAfternoon,21
     1,CARNIVINE,5
     1,SNIVY,5
 LandNight,21
-    20,ODDISH,5
     20,BELLOSSOM,5
     20,BELLSPROUT,5
+    20,ODDISH,5
     10,CACNEA,5
-    10,PANSAGE,5
     10,NUZLEAF,5
+    10,PANSAGE,5
     10,WEAVILE,5
     5,BRELOOM,5
     5,ROSERADE,5
