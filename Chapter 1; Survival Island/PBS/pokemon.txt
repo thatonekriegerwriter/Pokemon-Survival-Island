@@ -5018,6 +5018,7 @@ BattlerEnemyX = 0
 BattlerEnemyY = 38
 BattlerShadowX = 0
 BattlerShadowSize = 2
+Evolutions = MIMMEO,Level,21
 #-------------------------------
 [133]
 Name = Eevee

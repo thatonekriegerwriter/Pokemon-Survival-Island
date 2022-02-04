@@ -1,37 +1,38 @@
     # Changing
 class Pokemon
 
-  def changeHappiness(method)
+  def changeHappiness(method,wari)
+    pkmn = wari
     gain = 0
-     base = 100 if nature ==   :LOVING
-     base = -100 if nature ==   :HATEFUL
-     base = -10 if nature ==   :QUIRKY
-     base = 0 if nature ==   :CAREFUL
-     base = 5 if nature ==   :SASSY
-     base = 40 if nature ==   :GENTLE
-     base = 10 if nature ==   :CALM
-     base = 5 if nature ==   :RASH
-     base = 5 if nature ==   :BASHFUL
-     base = 5 if nature ==   :QUIET
-     base = 10 if nature ==   :MILD
-     base = 10 if nature ==   :MODEST
-     base = 10 if nature ==   :NAIVE
-     base = 50 if nature ==   :JOLLY
-     base = -10 if nature ==   :SERIOUS
-     base = 15 if nature ==   :HASTY
-     base = -5 if nature ==   :TIMID
-     base = 25 if nature ==   :LAX
-     base = 9 if nature ==   :IMPISH
-     base = 30 if nature ==   :RELAXED
-     base = 20 if nature ==   :DOCILE
-     base = 5 if nature ==   :BOLD
-     base = -20 if nature ==   :NAUGHTY
-     base = -10 if nature ==   :ADAMANT
-     base = 10 if nature ==   :BRAVE
-     base = 50 if nature ==   :LONELY
-     base = 10 if nature ==   :HARDY
+     base = 100 if pkmn.nature ==   :LOVING
+     base = -100 if pkmn.nature ==   :HATEFUL
+     base = -2 if pkmn.nature ==   :QUIRKY
+     base = 0 if pkmn.nature ==   :CAREFUL
+     base = 5 if pkmn.nature ==   :SASSY
+     base = 15 if pkmn.nature ==   :GENTLE
+     base = 10 if pkmn.nature ==   :CALM
+     base = 5 if pkmn.nature ==   :RASH
+     base = 5 if pkmn.nature ==   :BASHFUL
+     base = 5 if pkmn.nature ==   :QUIET
+     base = 10 if pkmn.nature ==   :MILD
+     base = 10 if pkmn.nature ==   :MODEST
+     base = 10 if pkmn.nature ==   :NAIVE
+     base = 15 if pkmn.nature ==   :JOLLY
+     base = -2 if pkmn.nature ==   :SERIOUS
+     base = 15 if pkmn.nature ==   :HASTY
+     base = -1 if pkmn.nature ==   :TIMID
+     base = 25 if pkmn.nature ==   :LAX
+     base = 9 if pkmn.nature ==   :IMPISH
+     base = 30 if pkmn.nature ==   :RELAXED
+     base = 20 if pkmn.nature ==   :DOCILE
+     base = 5 if pkmn.nature ==   :BOLD
+     base = -1 if pkmn.nature ==   :NAUGHTY
+     base = -2 if pkmn.nature ==   :ADAMANT
+     base = 5 if pkmn.nature ==   :BRAVE
+     base = 5 if pkmn.nature ==   :LONELY
+     base = 6 if pkmn.nature ==   :HARDY
     happiness_range = @happiness / 100
-if nature ==   :HARDY
+if pkmn.nature ==   :HARDY
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -78,7 +79,7 @@ if nature ==   :HARDY
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :LONELY
+elsif pkmn.nature ==   :LONELY
       case method
       when "walking"
         gain = [2, 2, 2][happiness_range]
@@ -107,7 +108,7 @@ elsif nature ==   :LONELY
       when "damaged"
         gain = [-5, -3, -2][happiness_range]
       when "neglected"
-        gain = [-50, -50, -50[happiness_range]
+        gain = [-50, -50, -50][happiness_range]
       when "hungry"
         gain = [-20, -20, -25][happiness_range]
       when "thirsty"
@@ -125,7 +126,7 @@ elsif nature ==   :LONELY
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :BRAVE
+elsif pkmn.nature ==   :BRAVE
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -172,7 +173,7 @@ elsif nature ==   :BRAVE
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :ADAMANT
+elsif pkmn.nature ==   :ADAMANT
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -219,7 +220,7 @@ elsif nature ==   :ADAMANT
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :NAUGHTY
+elsif pkmn.nature ==   :NAUGHTY
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -266,7 +267,7 @@ elsif nature ==   :NAUGHTY
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :BOLD
+elsif pkmn.nature ==   :BOLD
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -313,7 +314,7 @@ elsif nature ==   :BOLD
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :DOCILE
+elsif pkmn.nature ==   :DOCILE
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -360,7 +361,7 @@ elsif nature ==   :DOCILE
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :RELAXED
+elsif pkmn.nature ==   :RELAXED
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -407,7 +408,7 @@ elsif nature ==   :RELAXED
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :IMPISH
+elsif pkmn.nature ==   :IMPISH
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -454,7 +455,7 @@ elsif nature ==   :IMPISH
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :LAX
+elsif pkmn.nature ==   :LAX
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -501,7 +502,7 @@ elsif nature ==   :LAX
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :TIMID
+elsif pkmn.nature ==   :TIMID
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -548,7 +549,7 @@ elsif nature ==   :TIMID
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :HASTY
+elsif pkmn.nature ==   :HASTY
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -595,7 +596,7 @@ elsif nature ==   :HASTY
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :SERIOUS
+elsif pkmn.nature ==   :SERIOUS
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -642,7 +643,7 @@ elsif nature ==   :SERIOUS
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :JOLLY
+elsif pkmn.nature ==   :JOLLY
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -689,7 +690,7 @@ elsif nature ==   :JOLLY
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :NAIVE
+elsif pkmn.nature ==   :NAIVE
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -736,7 +737,7 @@ elsif nature ==   :NAIVE
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :MODEST
+elsif pkmn.nature ==   :MODEST
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -783,8 +784,7 @@ elsif nature ==   :MODEST
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-when "didDamage"
-elselsif nature ==   :MILD
+elsif pkmn.nature ==   :MILD
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -831,7 +831,7 @@ elselsif nature ==   :MILD
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :QUIET
+elsif pkmn.nature ==   :QUIET
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -878,7 +878,7 @@ elsif nature ==   :QUIET
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :BASHFUL
+elsif pkmn.nature ==   :BASHFUL
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -925,7 +925,7 @@ elsif nature ==   :BASHFUL
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :RASH
+elsif pkmn.nature ==   :RASH
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -972,7 +972,7 @@ elsif nature ==   :RASH
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :CALM
+elsif pkmn.nature ==   :CALM
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -1019,7 +1019,7 @@ elsif nature ==   :CALM
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :GENTLE
+elsif pkmn.nature ==   :GENTLE
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -1066,7 +1066,7 @@ elsif nature ==   :GENTLE
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :SASSY
+elsif pkmn.nature ==   :SASSY
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -1113,7 +1113,7 @@ elsif nature ==   :SASSY
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :CAREFUL
+elsif pkmn.nature ==   :CAREFUL
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -1160,7 +1160,7 @@ elsif nature ==   :CAREFUL
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :QUIRKY
+elsif pkmn.nature ==   :QUIRKY
       case method
       when "walking"
         gain = [1, 1, 1][happiness_range]
@@ -1207,7 +1207,7 @@ elsif nature ==   :QUIRKY
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :HATEFUL
+elsif pkmn.nature ==   :HATEFUL
       case method
       when "walking"
         gain = [0, 0, 0][happiness_range]
@@ -1254,7 +1254,7 @@ elsif nature ==   :HATEFUL
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :LOVING
+elsif pkmn.nature ==   :LOVING
       case method
       when "walking"
         gain = [3, 3, 3][happiness_range]
@@ -1313,40 +1313,38 @@ else
   
   # Changes the happiness of this Pokémon depending on what happened to change it.
   # @param method [String] the happiness changing method (e.g. 'walking')
-  def changeLoyalty(method)
-if shadowPokemon?
-return
-else
+  def changeLoyalty(method,wari)
     gain = 0
-     base = 0 if nature ==   :LOVING
-     base = 0 if nature ==   :HATEFUL
-     base = 30 if nature ==   :QUIRKY
-     base = 0 if nature ==   :CAREFUL
-     base = -5 if nature ==   :SASSY
-     base = 0 if nature ==   :GENTLE
-     base = 0 if nature ==   :CALM
-     base = 50 if nature ==   :RASH
-     base = 0 if nature ==   :BASHFUL
-     base = 0 if nature ==   :QUIET
-     base += 0 if nature ==   :MILD
-     base += 0 if nature ==   :MODEST
-     base += 0 if nature ==   :NAIVE
-     base += 0 if nature ==   :JOLLY
-     base += -10 if nature ==   :SERIOUS
-     base += 75 if nature ==   :HASTY
-     base += 0 if nature ==   :TIMID
-     base += 0 if nature ==   :LAX
-     base += 0 if nature ==   :IMPISH
-     base += 0 if nature ==   :RELAXED
-     base += 0 if nature ==   :DOCILE
-     base += 75 if nature ==   :BOLD
-     base += 5 if nature ==   :NAUGHTY
-     base += 10 if nature ==   :ADAMANT
-     base += 100 if nature ==   :BRAVE
-     base += 0 if nature ==   :LONELY
-     base += 70 if nature ==   :HARDY
+    pkmn = wari
+     base = 0 if pkmn.nature ==   :LOVING
+     base = 0 if pkmn.nature ==   :HATEFUL
+     base = 30 if pkmn.nature ==   :QUIRKY
+     base = 0 if pkmn.nature ==   :CAREFUL
+     base = -5 if pkmn.nature ==   :SASSY
+     base = 0 if pkmn.nature ==   :GENTLE
+     base = 0 if pkmn.nature ==   :CALM
+     base = 50 if pkmn.nature ==   :RASH
+     base = 0 if pkmn.nature ==   :BASHFUL
+     base = 0 if pkmn.nature ==   :QUIET
+     base = 0 if pkmn.nature ==   :MILD
+     base = 0 if pkmn.nature ==   :MODEST
+     base = 0 if pkmn.nature ==   :NAIVE
+     base = 0 if pkmn.nature ==   :JOLLY
+     base = -10 if pkmn.nature ==   :SERIOUS
+     base = 75 if pkmn.nature ==   :HASTY
+     base = 0 if pkmn.nature ==   :TIMID
+     base = 0 if pkmn.nature ==   :LAX
+     base = 0 if pkmn.nature ==   :IMPISH
+     base = 0 if pkmn.nature ==   :RELAXED
+     base = 0 if pkmn.nature ==   :DOCILE
+     base = 75 if pkmn.nature ==   :BOLD
+     base = 5 if pkmn.nature ==   :NAUGHTY
+     base = 10 if pkmn.nature ==   :ADAMANT
+     base = 100 if pkmn.nature ==   :BRAVE
+     base = 0 if pkmn.nature ==   :LONELY
+     base = 70 if pkmn.nature ==   :HARDY
     loyalty_range = @loyalty / 100
-if nature ==   :HARDY
+if pkmn.nature ==   :HARDY
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1393,7 +1391,7 @@ if nature ==   :HARDY
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :LONELY
+elsif pkmn.nature ==   :LONELY
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1436,11 +1434,11 @@ elsif nature ==   :LONELY
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :BRAVE
+elsif pkmn.nature ==   :BRAVE
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1483,11 +1481,11 @@ elsif nature ==   :BRAVE
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :ADAMANT
+elsif pkmn.nature ==   :ADAMANT
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1530,11 +1528,11 @@ elsif nature ==   :ADAMANT
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :NAUGHTY
+elsif pkmn.nature ==   :NAUGHTY
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1577,11 +1575,11 @@ elsif nature ==   :NAUGHTY
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :BOLD
+elsif pkmn.nature ==   :BOLD
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1624,11 +1622,11 @@ elsif nature ==   :BOLD
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :DOCILE
+elsif pkmn.nature ==   :DOCILE
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1671,11 +1669,11 @@ elsif nature ==   :DOCILE
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :RELAXED
+elsif pkmn.nature ==   :RELAXED
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1718,11 +1716,11 @@ elsif nature ==   :RELAXED
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :IMPISH
+elsif pkmn.nature ==   :IMPISH
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1765,11 +1763,11 @@ elsif nature ==   :IMPISH
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :LAX
+elsif pkmn.nature ==   :LAX
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1812,11 +1810,11 @@ elsif nature ==   :LAX
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :TIMID
+elsif pkmn.nature ==   :TIMID
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1859,11 +1857,11 @@ elsif nature ==   :TIMID
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :HASTY
+elsif pkmn.nature ==   :HASTY
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1906,11 +1904,11 @@ elsif nature ==   :HASTY
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :SERIOUS
+elsif pkmn.nature ==   :SERIOUS
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -1953,11 +1951,11 @@ elsif nature ==   :SERIOUS
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :JOLLY
+elsif pkmn.nature ==   :JOLLY
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2000,11 +1998,11 @@ elsif nature ==   :JOLLY
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :NAIVE
+elsif pkmn.nature ==   :NAIVE
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2047,11 +2045,11 @@ elsif nature ==   :NAIVE
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :MODEST
+elsif pkmn.nature ==   :MODEST
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2094,11 +2092,11 @@ elsif nature ==   :MODEST
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :MILD
+elsif pkmn.nature ==   :MILD
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2141,11 +2139,11 @@ elsif nature ==   :MILD
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :QUIET
+elsif pkmn.nature ==   :QUIET
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2188,11 +2186,11 @@ elsif nature ==   :QUIET
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :BASHFUL
+elsif pkmn.nature ==   :BASHFUL
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2235,11 +2233,11 @@ elsif nature ==   :BASHFUL
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :RASH
+elsif pkmn.nature ==   :RASH
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2282,11 +2280,11 @@ elsif nature ==   :RASH
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :CALM
+elsif pkmn.nature ==   :CALM
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2329,11 +2327,11 @@ elsif nature ==   :CALM
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :GENTLE
+elsif pkmn.nature ==   :GENTLE
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2376,11 +2374,11 @@ elsif nature ==   :GENTLE
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :SASSY
+elsif pkmn.nature ==   :SASSY
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2423,11 +2421,11 @@ elsif nature ==   :SASSY
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :CAREFUL
+elsif pkmn.nature ==   :CAREFUL
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2470,11 +2468,58 @@ elsif nature ==   :CAREFUL
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :QUIRKY
+elsif pkmn.nature ==   :QUIRKY
+      case method
+      when "walking"
+        gain = [1, 1, 1][loyalty_range]
+      when "levelup"
+        gain = [5, 4, 3][loyalty_range]
+      when "groom"
+        gain = [10, 10, 4][loyalty_range]
+      when "evberry"
+        gain = [10, 5, 2][loyalty_range]
+      when "vitamin"
+        gain = [5, 3, 2][loyalty_range]
+      when "wing"
+        gain = [3, 2, 1][loyalty_range]
+      when "machine", "battleitem"
+        gain = [1, 1, 0][loyalty_range]
+      when "faint"
+        gain = [-20, -20, -30][loyalty_range]
+      when "faintbad"   # Fainted against an opponent that is 30+ levels higher
+        gain = [-30, -40, -60][loyalty_range]
+      when "powder"
+        gain = [-15, -15, -10][loyalty_range]
+      when "energyroot"
+        gain = [-10, -10, -15][loyalty_range]
+      when "revivalherb"
+        gain = [-15, -15, -20][loyalty_range]
+      when "damaged"
+        gain = [5, 3, 2][loyalty_range]
+      when "neglected"
+        gain = [-10, -10, -15][loyalty_range]
+      when "hungry"
+        gain = [-10, -10, -15][loyalty_range]
+      when "thirsty"
+        gain = [-10, -10, -15][loyalty_range]
+      when "tired"
+        gain = [-10, -10, -15][loyalty_range]
+      when "youareeatingme"
+        gain = [-255, -255, -255][loyalty_range]
+      when "didDamage"
+        gain = [10, 10, 10][loyalty_range]
+      when "TrainerPassedOut"
+        gain = [10, 10, 10][loyalty_range]
+      when "FollowerPkmn"
+        gain = [10, 10, 10][loyalty_range]
+else
+        raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
+    end
+elsif pkmn.nature ==   :HATEFUL
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2517,11 +2562,11 @@ elsif nature ==   :QUIRKY
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :HATEFUL
+elsif pkmn.nature ==   :LOVING
       case method
       when "walking"
         gain = [1, 1, 1][loyalty_range]
@@ -2564,126 +2609,14 @@ elsif nature ==   :HATEFUL
       when "TrainerPassedOut"
         gain = [10, 10, 10][loyalty_range]
       when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
+        gain = [10, 10, 10][loyalty_range]
 else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
-elsif nature ==   :LOVING
-      case method
-      when "walking"
-        gain = [1, 1, 1][loyalty_range]
-      when "levelup"
-        gain = [5, 4, 3][loyalty_range]
-      when "groom"
-        gain = [10, 10, 4][loyalty_range]
-      when "evberry"
-        gain = [10, 5, 2][loyalty_range]
-      when "vitamin"
-        gain = [5, 3, 2][loyalty_range]
-      when "wing"
-        gain = [3, 2, 1][loyalty_range]
-      when "machine", "battleitem"
-        gain = [1, 1, 0][loyalty_range]
-      when "faint"
-        gain = [-20, -20, -30][loyalty_range]
-      when "faintbad"   # Fainted against an opponent that is 30+ levels higher
-        gain = [-30, -40, -60][loyalty_range]
-      when "powder"
-        gain = [-15, -15, -10][loyalty_range]
-      when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
-      when "revivalherb"
-        gain = [-15, -15, -20][loyalty_range]
-      when "damaged"
-        gain = [-5, -3, -2][loyalty_range]
-      when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
-      when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
-      when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
-      when "tired"
-        gain = [-10, -10, -15][loyalty_range]
-      when "youareeatingme"
-        gain = [-255, -255, -255][loyalty_range]
-      when "didDamage"
-        gain = [10, 10, 10][loyalty_range]
-      when "TrainerPassedOut"
-        gain = [10, 10, 10][loyalty_range]
-      when "FollowerPkmn"
-        gain = [10, 10, 10][loyalty_range
-else
-        raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
-    end
+end
     @loyalty = (@loyalty + gain + base).clamp(0, 255)
   end
   
   
 end
-
-class HappinessHandlerHash < HandlerHash2
-end
-
-module BattleHandlers
-  PriorityBracketHappy           = HappinessHandlerHash.new   # None!
-  
-  def self.triggerPriorityBracketHappy(battler,battle)
-    PriorityBracketHappy.trigger(battler,battle)
-  end
-end  
-
-  # Quick Claw, Custap Berry's "X let it move first!" message.
-  def pbAttackPhasePriorityChangeMessages
-    pbPriority.each do |b|
-      if b.effects[PBEffects::PriorityAbility] && b.abilityActive?
-        BattleHandlers.triggerPriorityBracketUseAbility(b.ability,b,self)
-      elsif b.effects[PBEffects::PriorityItem] && b.itemActive?
-        BattleHandlers.triggerPriorityBracketUseItem(b.item,b,self)
-      elsif battler.happiness >=0
-        BattleHandlers.triggerPriorityBracketHappy(b,self)
-      end
-    end
-  end
-
-  class PokeBattle_Move
-    def pbEndureKOMessage(target)
-    if target.damageState.disguise
-      @battle.pbShowAbilitySplash(target)
-      if PokeBattle_SceneConstants::USE_ABILITY_SPLASH
-        @battle.pbDisplay(_INTL("Its disguise served it as a decoy!"))
-      else
-        @battle.pbDisplay(_INTL("{1}'s disguise served it as a decoy!",target.pbThis))
-      end
-      @battle.pbHideAbilitySplash(target)
-      target.pbChangeForm(1,_INTL("{1}'s disguise was busted!",target.pbThis))
-      target.pbReduceHP(target.totalhp/8)
-    elsif target.damageState.iceface
-      @battle.pbShowAbilitySplash(target)
-      target.pbChangeForm(1,_INTL("{1} transformed!",target.pbThis))
-      @battle.pbHideAbilitySplash(target)
-    elsif target.damageState.endured
-      @battle.pbDisplay(_INTL("{1} endured the hit!",target.pbThis))
-    elsif target.damageState.sturdy
-      @battle.pbShowAbilitySplash(target)
-      if PokeBattle_SceneConstants::USE_ABILITY_SPLASH
-        @battle.pbDisplay(_INTL("{1} endured the hit!",target.pbThis))
-      else
-        @battle.pbDisplay(_INTL("{1} hung on with Sturdy!",target.pbThis))
-      end
-      @battle.pbHideAbilitySplash(target)
-    elsif target.damageState.focusSash
-      @battle.pbCommonAnimation("UseItem",target)
-      @battle.pbDisplay(_INTL("{1} hung on using its Focus Sash!",target.pbThis))
-      target.pbConsumeItem
-    elsif target.damageState.focusBand
-      @battle.pbCommonAnimation("UseItem",target)
-      @battle.pbDisplay(_INTL("{1} hung on using its Focus Band!",target.pbThis))
-    elsif target.damageState.happiness && target.happiness>=149 
-      @battle.pbCommonAnimation("UseItem",target)
-      @battle.pbDisplay(_INTL("{1} endured the hit for its trainer!",target.pbThis))
-    end
-  end
-  end
-  end
-  end
  

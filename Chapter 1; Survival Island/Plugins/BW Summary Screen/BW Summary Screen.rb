@@ -1176,6 +1176,16 @@ class PokemonSummary_Scene
       verdict=_INTL("It's already a good friend, now its becoming a good partner.")
     elsif @pokemon.loyalty>=200&&@pokemon.loyalty<=249 && @pokemon.happiness>=250
       verdict=_INTL("You feel like your auras match sometimes.")
+    elsif @pokemon.loyalty>=250 && @pokemon.happiness>=0&&@pokemon.happiness<=49
+      verdict=_INTL("It follows your commands promptly.")
+    elsif @pokemon.loyalty>=250 && @pokemon.happiness>=50&&@pokemon.happiness<=74
+      verdict=_INTL("It seems to want a little more than combat.")
+    elsif @pokemon.loyalty>=250 && @pokemon.happiness>=75&&@pokemon.happiness<=149
+      verdict=_INTL("It seems to enjoy being around you.")
+    elsif @pokemon.loyalty>=250 && @pokemon.happiness>=150&&@pokemon.happiness<=199
+      verdict=_INTL("It wants to be together all the time.")
+    elsif @pokemon.loyalty>=250 && @pokemon.happiness>=200&&@pokemon.happiness<=249
+      verdict=_INTL("It thinks about you a lot!")
     elsif @pokemon.loyalty>=250 && @pokemon.happiness>=250
       verdict=_INTL("You two are in sync!!!!!")
     end
@@ -1183,10 +1193,10 @@ class PokemonSummary_Scene
 #       [@pokemon.name,46,62,0,base,shadow],
 #       [@pokemon.level.to_s,46,92,0,Color.new(64,64,64),Color.new(176,176,176)],
 #       [_INTL("Item"),66,318,0,base,shadow],
-       [_INTL("  "),46,62,0,base,shadow],
-       [_INTL(" ",@pokemon.happiness{1}),126,62,0,base,shadow],
-       [_INTL("  "),46,92,0,base,shadow],
-       [_INTL(" ",@pokemon.loyalty{1}),126,92,0,base,shadow],
+       [_INTL("Happiness:"),46,62,0,base,shadow],
+       [_INTL("{1}/255",@pokemon.happiness{1}),126,62,0,base,shadow],
+       [_INTL("Loyalty"),46,92,0,base,shadow],
+       [_INTL("{1}/255",@pokemon.loyalty{1}),126,92,0,base,shadow],
     ]
     # Draw all text
     pbDrawTextPositions(overlay,textpos)

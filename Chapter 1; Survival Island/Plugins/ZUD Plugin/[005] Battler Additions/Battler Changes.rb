@@ -83,7 +83,7 @@ class PokeBattle_Battler
         @battle.eachOtherSideBattler(@index) do |b|
           badLoss = true if b.level>=self.level+30
         end
-        @pokemon.changeHappiness((badLoss) ? "faintbad" : "faint")
+        @pokemon.changeHappiness((badLoss) ? "faintbad" : "faint",@pokemon)
       end
       @battle.peer.pbOnLeavingBattle(@battle,@pokemon,@battle.usedInBattle[idxOwnSide][@index/2])
       @pokemon.makeUnmega   if mega?
