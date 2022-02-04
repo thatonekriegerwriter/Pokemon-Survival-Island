@@ -68,6 +68,19 @@ CaveDeep,5
     4,SHELGON,5
     1,GABITE,5
     1,TORKOAL,5
+Adventure,1
+    20,LOUDRED,5
+    20,WOBBUFFET,5
+    10,CROBAT,5
+    10,MAGCARGO,5
+    10,MAROWAK,5
+    10,ONIX,5
+    5,DUGTRIO,5
+    5,VIBRAVA,5
+    4,PUPITAR,5
+    4,SHELGON,5
+    1,GABITE,5
+    1,TORKOAL,5
 #-------------------------------
 [004] # Temperate Zone
 Water,2
@@ -168,6 +181,19 @@ OverworldLandNight,21
     1,FARFETCHD,5,15
     1,HYPNO,7,20
 Bait
+    20,BLITZLE,5
+    20,ODDISH,5
+    10,EEVEE,5
+    10,ELECTRIKE,5
+    10,HYPNO,5
+    10,PIKACHU,5
+    5,RALTS,5
+    5,TORCHIC,5
+    4,FALINKS,5
+    4,YAMPER,5
+    1,OBSTAGOON,5
+    1,RAICHU,5
+Adventure,1
     20,BLITZLE,5
     20,ODDISH,5
     10,EEVEE,5
@@ -292,6 +318,19 @@ Bait
     4,YAMPER,5
     1,OBSTAGOON,5
     1,RAICHU,5
+Adventure,1
+    20,DEDENNE,3,5
+    20,EMOLGA,3,5
+    10,EKANS,2,5
+    10,JIGGLYPUFF,2
+    10,SANDSHREW,2
+    10,WOOLOO,2
+    5,HOUNDOUR,5
+    5,ODDISH,3
+    4,DROWZEE,6
+    4,PHANPY,3
+    1,FARFETCHD,3,5
+    1,SQUIRTLE,2
 #-------------------------------
 [006] # Temperate Zone
 LandMorning,21
@@ -373,6 +412,19 @@ OverworldLandNight,21
     1,FARFETCHD,3,5
     1,HYPNO,10
 Bait
+    20,BLITZLE,5
+    20,ODDISH,5
+    10,EEVEE,5
+    10,ELECTRIKE,5
+    10,HYPNO,5
+    10,PIKACHU,5
+    5,RALTS,5
+    5,TORCHIC,5
+    4,FALINKS,5
+    4,YAMPER,5
+    1,OBSTAGOON,5
+    1,RAICHU,5
+Adventure,1
     20,BLITZLE,5
     20,ODDISH,5
     10,EEVEE,5
@@ -478,6 +530,19 @@ Bait
     4,YAMPER,5
     1,DITTO,5
     1,RAICHU,5
+Adventure,1
+    20,BLITZLE,5
+    20,ODDISH,5
+    10,EEVEE,5
+    10,ELECTRIKE,5
+    10,HYPNO,5
+    10,PIKACHU,5
+    5,RALTS,5
+    5,TORCHIC,5
+    4,FALINKS,5
+    4,YAMPER,5
+    1,OBSTAGOON,5
+    1,RAICHU,5
 #-------------------------------
 [008] # Temperate Zone
 LandMorning,21
@@ -568,6 +633,19 @@ Bait
     4,FALINKS,5
     4,YAMPER,5
     1,DITTO,5
+    1,RAICHU,5
+Adventure,1
+    20,BLITZLE,5
+    20,ODDISH,5
+    10,EEVEE,5
+    10,ELECTRIKE,5
+    10,HYPNO,5
+    10,PIKACHU,5
+    5,RALTS,5
+    5,TORCHIC,5
+    4,FALINKS,5
+    4,YAMPER,5
+    1,OBSTAGOON,5
     1,RAICHU,5
 #-------------------------------
 [009] # Temperate Zone
@@ -662,6 +740,19 @@ Bait
     4,YAMPER,5
     1,KABUTO,5
     1,RAICHU,5
+Adventure,1
+    20,BLITZLE,5
+    20,ODDISH,5
+    10,EEVEE,5
+    10,ELECTRIKE,5
+    10,HYPNO,5
+    10,PIKACHU,5
+    5,RALTS,5
+    5,TORCHIC,5
+    4,FALINKS,5
+    4,YAMPER,5
+    1,OBSTAGOON,5
+    1,RAICHU,5
 #-------------------------------
 [013] # Temperate Zone
 LandMorning,21
@@ -755,6 +846,19 @@ Bait
     4,YAMPER,5
     1,RAICHU,5
     1,UNOWN,5
+Adventure,1
+    20,BLITZLE,5
+    20,ODDISH,5
+    10,EEVEE,5
+    10,ELECTRIKE,5
+    10,HYPNO,5
+    10,PIKACHU,5
+    5,RALTS,5
+    5,TORCHIC,5
+    4,FALINKS,5
+    4,YAMPER,5
+    1,OBSTAGOON,5
+    1,RAICHU,5
 #-------------------------------
 [016] # Mountain Zone
 RockSmash,50
@@ -840,6 +944,19 @@ OverworldLandNight,21
     1,CHARMANDER,10
     1,SNORLAX,3,5
 Bait
+    20,LARVITAR,5
+    20,MAGBY,5
+    10,AERODACTYL,5
+    10,HYPNO,5
+    10,PIKACHU,5
+    10,SUDOWOODO,5
+    5,GLOOM,5
+    5,ROCKRUFF,5
+    4,PARASECT,5
+    4,YAMPER,5
+    1,DITTO,5
+    1,RAICHU,5
+Adventure,1
     20,LARVITAR,5
     20,MAGBY,5
     10,AERODACTYL,5
@@ -943,6 +1060,19 @@ Bait
     4,KADABRA,5
     1,POLIWHIRL,5
     1,SLOWPOKE,5
+Adventure,1
+    20,LARVITAR,5
+    20,MAGBY,5
+    10,AERODACTYL,5
+    10,HYPNO,5
+    10,PIKACHU,5
+    10,SUDOWOODO,5
+    5,GLOOM,5
+    5,ROCKRUFF,5
+    4,PARASECT,5
+    4,YAMPER,5
+    1,DITTO,5
+    1,RAICHU,5
 #-------------------------------
 [019] # Mountain Zone
 LandMorning,21
@@ -1034,6 +1164,19 @@ Bait
     4,KADABRA,5
     1,POLIWHIRL,5
     1,SLOWPOKE,5
+Adventure,1
+    20,LARVITAR,5
+    20,MAGBY,5
+    10,AERODACTYL,5
+    10,HYPNO,5
+    10,PIKACHU,5
+    10,SUDOWOODO,5
+    5,GLOOM,5
+    5,ROCKRUFF,5
+    4,PARASECT,5
+    4,YAMPER,5
+    1,DITTO,5
+    1,RAICHU,5
 #-------------------------------
 [022] # Cave
 Cave,5
@@ -1063,6 +1206,19 @@ OverworldCave,5
     1,STEELIX,5
     1,TORTERRA,5
 CaveDeep,5
+    20,LOUDRED,5
+    20,WOBBUFFET,5
+    10,CROBAT,5
+    10,MAGCARGO,5
+    10,MAROWAK,5
+    10,ONIX,5
+    5,DUGTRIO,5
+    5,VIBRAVA,5
+    4,PUPITAR,5
+    4,SHELGON,5
+    1,GABITE,5
+    1,TORKOAL,5
+Adventure,1
     20,LOUDRED,5
     20,WOBBUFFET,5
     10,CROBAT,5
@@ -1166,6 +1322,19 @@ Bait
     4,KADABRA,5
     1,POLIWHIRL,5
     1,SLOWPOKE,5
+Adventure,1
+    20,LOUDRED,5
+    20,WOBBUFFET,5
+    10,CROBAT,5
+    10,MAGCARGO,5
+    10,MAROWAK,5
+    10,ONIX,5
+    5,DUGTRIO,5
+    5,VIBRAVA,5
+    4,PUPITAR,5
+    4,SHELGON,5
+    1,GABITE,5
+    1,TORKOAL,5
 #-------------------------------
 [026] # Test Map
 Land,21
@@ -1264,6 +1433,19 @@ Bait
     4,KADABRA,5
     1,POLIWHIRL,5
     1,SLOWPOKE,5
+Adventure,1
+    20,LOUDRED,5
+    20,WOBBUFFET,5
+    10,CROBAT,5
+    10,MAGCARGO,5
+    10,MAROWAK,5
+    10,ONIX,5
+    5,DUGTRIO,5
+    5,VIBRAVA,5
+    4,PUPITAR,5
+    4,SHELGON,5
+    1,GABITE,5
+    1,TORKOAL,5
 #-------------------------------
 [029] # Mountain Zone
 OverworldLandMorning,21
@@ -1355,6 +1537,19 @@ Bait
     4,KADABRA,5
     1,POLIWHIRL,5
     1,SLOWPOKE,5
+Adventure,1
+    20,LOUDRED,5
+    20,WOBBUFFET,5
+    10,CROBAT,5
+    10,MAGCARGO,5
+    10,MAROWAK,5
+    10,ONIX,5
+    5,DUGTRIO,5
+    5,VIBRAVA,5
+    4,PUPITAR,5
+    4,SHELGON,5
+    1,GABITE,5
+    1,TORKOAL,5
 #-------------------------------
 [030] # Mountain Zone
 OverworldLandMorning,21
@@ -1446,6 +1641,19 @@ Bait
     4,KADABRA,5
     1,POLIWHIRL,5
     1,SLOWPOKE,5
+Adventure,1
+    20,LOUDRED,5
+    20,WOBBUFFET,5
+    10,CROBAT,5
+    10,MAGCARGO,5
+    10,MAROWAK,5
+    10,ONIX,5
+    5,DUGTRIO,5
+    5,VIBRAVA,5
+    4,PUPITAR,5
+    4,SHELGON,5
+    1,GABITE,5
+    1,TORKOAL,5
 #-------------------------------
 [031] # Mountain Interior
 Cave,5
@@ -1475,6 +1683,18 @@ OverworldCave,5
     1,DUNSPARCE,10
     1,WHISMUR,3,5
 CaveDeep,5
+    20,EKANS,5
+    20,SANDSHREW,5
+    15,MAGNEMITE,5
+    10,ABSOL,5
+    10,BRONZOR,5
+    10,GRAVELER,5
+    5,KOFFING,5
+    4,GOLBAT,5
+    4,TORKOAL,5
+    1,CHANSEY,5
+    1,GENGAR,5
+Adventure,1
     20,EKANS,5
     20,SANDSHREW,5
     15,MAGNEMITE,5
@@ -1567,6 +1787,19 @@ LandNight,21
     1,SWAMPERT,10
     1,TANGROWTH,3,5
 Bait
+    20,HERACROSS,5
+    20,SWALOT,5
+    10,ARBOK,5
+    10,ESPEON,5
+    10,MUDKIP,5
+    10,MUK,5
+    5,QUILLADIN,5
+    5,UMBREON,5
+    4,ELECTRODE,5
+    4,SWADLOON,5
+    1,POLIWHIRL,5
+    1,SLOWPOKE,5
+Adventure,1
     20,HERACROSS,5
     20,SWALOT,5
     10,ARBOK,5
@@ -1672,6 +1905,19 @@ Bait
     4,SWADLOON,5
     1,POLIWHIRL,5
     1,SLOWPOKE,5
+Adventure,1
+    20,HERACROSS,5
+    20,SWALOT,5
+    10,ARBOK,5
+    10,ESPEON,5
+    10,MUDKIP,5
+    10,MUK,5
+    5,QUILLADIN,5
+    5,UMBREON,5
+    4,ELECTRODE,5
+    4,SWADLOON,5
+    1,POLIWHIRL,5
+    1,SLOWPOKE,5
 #-------------------------------
 [035] # Swamp Zone
 OverworldLandMorning,21
@@ -1765,6 +2011,19 @@ Bait
     4,SWADLOON,5
     1,POLIWHIRL,5
     1,SLOWPOKE,5
+Adventure,1
+    20,HERACROSS,5
+    20,SWALOT,5
+    10,ARBOK,5
+    10,ESPEON,5
+    10,MUDKIP,5
+    10,MUK,5
+    5,QUILLADIN,5
+    5,UMBREON,5
+    4,ELECTRODE,5
+    4,SWADLOON,5
+    1,POLIWHIRL,5
+    1,SLOWPOKE,5
 #-------------------------------
 [036] # Deep Swamp
 Land,21
@@ -1793,6 +2052,19 @@ OverworldLand,21
     4,SWALOT,34
     1,GABITE,29
     1,QUILLADIN,30
+Adventure,1
+    20,HERACROSS,5
+    20,SWALOT,5
+    10,ARBOK,5
+    10,ESPEON,5
+    10,MUDKIP,5
+    10,MUK,5
+    5,QUILLADIN,5
+    5,UMBREON,5
+    4,ELECTRODE,5
+    4,SWADLOON,5
+    1,POLIWHIRL,5
+    1,SLOWPOKE,5
 #-------------------------------
 [037] # Water Temple
 Water,2
@@ -1917,6 +2189,19 @@ Bait
     4,LUDICOLO,5
     1,GOGOAT,5
     1,POPPLIO,5
+Adventure,1
+    20,CHERUBI,5
+    20,WHIMSICOTT,5
+    10,DARUMAKA,5
+    10,FLOATZEL,5
+    10,MILTANK,5
+    10,MUK,5
+    5,COMBEE,5
+    5,ROSERADE,5
+    4,LINOONE,5
+    4,LUDICOLO,5
+    1,GOGOAT,5
+    1,POPPLIO,5
 #-------------------------------
 [045] # Temperate Zone
 OverworldLandMorning,21
@@ -1996,6 +2281,19 @@ LandNight,21
     1,FARFETCHD,3,5
     1,HYPNO,10
 Bait
+    20,BLITZLE,5
+    20,WOOBAT,5
+    10,HYPNO,5
+    10,LICKITUNG,5
+    10,PIKACHU,5
+    10,PINECO,5
+    5,RALTS,5
+    5,TORCHIC,5
+    4,FALINKS,5
+    4,YAMPER,5
+    1,KABUTO,5
+    1,RAICHU,5
+Adventure,1
     20,BLITZLE,5
     20,WOOBAT,5
     10,HYPNO,5
@@ -2108,6 +2406,19 @@ LandNight,21
     1,FARFETCHD,3,5
     1,SQUIRTLE,2
 Bait
+    20,BLITZLE,5
+    20,WOOBAT,5
+    10,HYPNO,5
+    10,LICKITUNG,5
+    10,PIKACHU,5
+    10,PINECO,5
+    5,RALTS,5
+    5,TORCHIC,5
+    4,FALINKS,5
+    4,YAMPER,5
+    1,KABUTO,5
+    1,RAICHU,5
+Adventure,1
     20,BLITZLE,5
     20,WOOBAT,5
     10,HYPNO,5

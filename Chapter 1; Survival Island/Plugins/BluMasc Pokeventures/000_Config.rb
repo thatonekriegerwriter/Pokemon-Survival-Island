@@ -9,7 +9,7 @@ module PokeventureConfig
   CollectItemsFromBattles = true # Collect Items from defeated Pokemon
   Items = {
     :common => [:ACORN, :STONE, :ORANBERRY],
-    :uncommon => [:IRONORE, :POTATO, :COPPERORE, :GOLDORE, :CSLOWPOKETAIL, :TEALEAF, :SITRUSBERRY],
+    :uncommon => [:IRONORE, :POTATO, :COPPERORE, :GOLDORE, :SLOWPOKETAIL, :TEALEAF, :SITRUSBERRY],
 	:rare => [:SILVERORE, :BAIT, :COCOABEANS, :CSLOWPOKETAIL, :WATER, :MEAT, :MOOMOOMILK],  
     :ultrarare => [:WATERBOTTLE, :POISONDART, :SLEEPDART, :PARALYZDART, :ICEDART, :FIREDART, :EXPCANDYS, :REVIVALHERB, :FIRESTONE, :LEAFSTONE],
   }
@@ -21,7 +21,7 @@ module PokeventureConfig
   # Exp
   GainExp = true # should the pokemon gain exp through adventuring
   # Wild Pokemon
-  GlobalPkmn = false # should this script use the global encounter list everywhere instead of the specific map encounters.
+  GlobalPkmn = true # should this script use the global encounter list everywhere instead of the specific map encounters.
   PkmnList = [:PIKACHU,:CHARMANDER,:SQUIRTLE,:BULBASAUR,:EEVEE]
   GlobalLeveling = false # makes the level of the encounters balanced around the number of badges instead of the location (always on if globalPkmn is on)
   #level per badge [min,max] can add more if you have more badges in your game

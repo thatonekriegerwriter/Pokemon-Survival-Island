@@ -202,6 +202,8 @@ end
   end
   
   class PokeBattle_Battler
+  attr_accessor :loyalty
+  attr_accessor :happiness
   
     def pbEndOfBattle
     oldDecision = @decision

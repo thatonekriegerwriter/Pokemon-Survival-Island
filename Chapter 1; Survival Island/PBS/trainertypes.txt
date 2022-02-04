@@ -102,7 +102,7 @@
 101,LEADER_RED,Gym Leader,100,BattleGary,,,Male,50,
 102,LEADER_BLUE,Gym Leader,100,BattleGary,,,Male,50,
 103,CYNTHIA,Legend,100,BattleGary,,,Male,50,
-104,DARKPLAYER,Creator,100,BattleGary,,,Female,50
+104,DARKPLAYER,Creator,100,BattleGary,,,Female,50,
 105,POKEMONBREEDER_M,Pokémon Breeder,48,,,,Male,,
 106,LEADER_Jarl,Gym Leader,100,Battle Gym Leader,Battle victory leader,,Male,,
 107,LEADERROCKET,Gym Leader,100,Battle Gym Leader,Battle victory leader,,Male,,
