@@ -7,7 +7,7 @@ def pbIsMedicine?(item)
 end
 
 def pbIsBattleItem?(item)
-  return [3, 5, 8, 9, 10].include?(GameData::Item.get(item).battle_use)
+  return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].include?(GameData::Item.get(item).battle_use)
 end
 #===============================================================================
 #  Main UI class

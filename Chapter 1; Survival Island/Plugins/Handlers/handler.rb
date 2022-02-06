@@ -71,6 +71,7 @@ if $PokemonSystem.nuzlockemode == 0
  end
 end
 
+  
 }
 
 

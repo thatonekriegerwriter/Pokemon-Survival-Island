@@ -931,9 +931,9 @@
 1912,PHONE,Phone,Phone,8,20,"Your Phone.",2,0,6,
 1913,PLAYER,MP3 Player,MP3 Player,8,20,"Your Phone.",2,0,6,
 1914,COOKEDORAN,Oran Berry (Cooked),Oran Berry (Cooked),9,20,"Cooked Oran Berry; very tasty.",1,1,13,
-1915,CARROT,Carrot,Carrots,9,0,"It's a Carrot.",1,1,5,
-1916,WHEAT,Wheat,Wheat,9,0,"It's Wheat.",1,1,5,
-1917,TEALEAF,Tea Leaf,Tea Leaves,9,0,"Tea Leaves can be used to make tea.",1,1,5,
+1915,CARROT,Carrot,Carrots,9,200,"It's a Carrot.",1,1,5,
+1916,WHEAT,Wheat,Wheat,9,200,"It's Wheat.",1,1,5,
+1917,TEALEAF,Tea Leaf,Tea Leaves,9,200,"Tea Leaves can be used to make tea.",1,1,5,
 1918,BREAD,Bread,Bread,9,0,"Bread.",1,1,13,
 1919,TEA,Tea,Tea,9,200,"Tea.",1,1,13,
 1920,WATER,Water,Water,9,200,"Water.",1,1,13,
@@ -1042,3 +1042,9 @@
 2008,PRETZELS, Pretzel, Pretzels,9,100,"One of the Indigo Plateau's Pretzels.",1,1,13,
 2009,ICECREAM, Ice Cream, Ice Cream,9,100,"One of the Indigo Plateau's Ice Cream.",1,1,13,
 2010,SNOWCONE, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
+#
+# More Items
+#
+2011,CREMINIKEY,House Key (Cremini),House Key (Cremini),8,2100,"A Key to your house in Cremini Town.",2,0,6,
+2012,PEWTERKEY,House Key (Pewter),House Key (Pewter),8,2100,"A Key to your house in Pewter City.",2,0,6,
+2013,SHOVEL,Shovel,Shovels,8,2100,"A Shovel to dig up berries.",2,0,6,

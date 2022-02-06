@@ -11,6 +11,7 @@ module FollowingPkmn
   # Forcefully refresh Following Pokemon sprite with animation (if specified)
   #-----------------------------------------------------------------------------
   def self.refresh(anim = false)
+    $PokemonTemp.dependentEvents.pbMoveDependentEvents
     return if !FollowingPkmn.can_check?
     $PokemonTemp.dependentEvents.remove_sprite
     first_pkmn = $Trainer.first_able_pokemon

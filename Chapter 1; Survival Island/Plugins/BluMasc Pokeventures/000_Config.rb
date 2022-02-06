@@ -10,14 +10,14 @@ module PokeventureConfig
   Items = {
     :common => [:ACORN, :STONE, :ORANBERRY],
     :uncommon => [:IRONORE, :POTATO, :COPPERORE, :GOLDORE, :SLOWPOKETAIL, :TEALEAF, :SITRUSBERRY],
-	:rare => [:SILVERORE, :BAIT, :COCOABEANS, :CSLOWPOKETAIL, :WATER, :MEAT, :MOOMOOMILK],  
+	:rare => [:SILVERORE, :BAIT, :COCOABEANS, :CSLOWPOKETAIL, :WATER, :MEAT, :MOOMOOMILK, :CHARCOAL, :CHARCOAL, :CHARCOAL],  
     :ultrarare => [:WATERBOTTLE, :POISONDART, :SLEEPDART, :PARALYZDART, :ICEDART, :FIREDART, :EXPCANDYS, :REVIVALHERB, :FIRESTONE, :LEAFSTONE],
   }
   ChanceToGetEnemyItem = 5 # as a 1 in x chance
   # Friends
   FindFriends = true # If there is Space should there be a chance for wild pokèmon to join you.
   ChanceToFindFriend = 1 # as a 1 in x chance
-  AreFoundFriendsBrilliant = true #have higher ivs and a higher shiny chance
+  AreFoundFriendsBrilliant = false #have higher ivs and a higher shiny chance
   # Exp
   GainExp = true # should the pokemon gain exp through adventuring
   # Wild Pokemon

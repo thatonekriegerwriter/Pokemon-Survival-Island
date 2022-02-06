@@ -492,6 +492,7 @@ end
 #==============================================================================
 # Fixed crash when choosing Pokémon for NPC Bug Catching Contest participants.
 #==============================================================================
+=begin
 class PokemonEncounters
   def choose_wild_pokemon_for_map(map_ID, enc_type)
     if !enc_type || !GameData::EncounterType.exists?(enc_type)
@@ -519,7 +520,7 @@ class PokemonEncounters
     return [encounter[1], level]
   end
 end
-
+=end
 #==============================================================================
 # Fixed the event command "Return to Title Screen"/resting in a Battle Facility
 # run causing issues when trying to continue the game again immediately.

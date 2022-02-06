@@ -11,7 +11,7 @@ class SafariHud < Component
     @shadowColor = MENU_TEXTOUTLINE[$PokemonSystem.current_menu_theme].is_a?(Color) ? MENU_TEXTOUTLINE[$PokemonSystem.current_menu_theme] : Color.new(48,48,48)
 	end
 
-  def shouldDraw?; return pbInSafari?; end
+  def shouldDraw?; return false end
 
 	def refresh
 		text = _INTL("Balls: {1}",pbSafariState.ballcount)

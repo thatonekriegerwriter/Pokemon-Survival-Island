@@ -82,6 +82,8 @@
 #------------------------------------------------------------------------------#
 #------------------------------------------------------------------------------#
 
+
+
 maps = [322,333,334,335,336]
 Events.onStepTakenTransferPossible+=proc {
 
@@ -247,11 +249,11 @@ if $PokemonSystem.survivalmode == 0 #Survival Mode Switch
    end
 end
 end    
-=begin
+
   if !GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:None, 0, 0)
   end
-=end
+
 if $game_variables[225] < 1 && $PokemonSystem.survivalmode == 0
   pbStartOver
  end 
@@ -263,7 +265,7 @@ Events.onMapChanging  += proc {
 #--------------------------Temperature                 ------------------------#
 #------------------------------------------------------------------------------#
 
-=begin
+
 if $PokemonSystem.survivalmode == 0 && GameData::MapMetadata.get($game_map.map_id).outdoor_map
 
   if pbIsSpring == true && GameData::MapMetadata.get($game_map.map_id).outdoor_map
@@ -341,7 +343,7 @@ end
 #------------------------------------------------------------------------------#
 #------------------------------------------------------------------------------#
 end
-=end
+
 }
 
 
@@ -355,8 +357,384 @@ def pbSleepRestore
    
   else
    $game_variables[207]=$game_variables[207]-($game_variables[247]*3)
+ end
+  deposited = pbDayCareDeposited
+  if deposited==2 && $PokemonGlobal.daycareEgg==0
+    $PokemonGlobal.daycareEggSteps = 0 if !$PokemonGlobal.daycareEggSteps
+    $PokemonGlobal.daycareEggSteps += (1*$game_variables[247]*10)
   end
  end
+
+ 
+ def pbEating(bag,item)
+ 
+$PokemonBag.pbDeleteItem(item)
+if item == :ORANBERRY
+$game_variables[205]+=4
+$game_variables[207]+=3
+$game_variables[206]+=1
+$game_variables[225] += 1
+return 1
+elsif item == :LEPPABERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :CHERIBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :CHESTOBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :PECHABERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :RAWSTBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :ASPEARBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :PERSIMBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :LUMBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :FIGYBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :WIKIBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :MAGOBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :AGUAVBERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :IAPAPABERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :IAPAPABERRY
+$game_variables[205]+=5
+$game_variables[207]+=2
+$game_variables[206]+=2
+return 1
+elsif item == :SITRUSBERRY
+$game_variables[205]+=5
+$game_variables[207]+=7
+$game_variables[206]+=1
+$game_variables[225] += (0.25*$game_variables[225])
+return 1
+elsif item == :BERRYJUICE
+$game_variables[205]+=6
+$game_variables[207]+=4
+$game_variables[206]+=4
+$game_variables[225] += 2
+return 1
+elsif item == :FRESHWATER
+$game_variables[206]+=20
+$game_variables[207]+=10#207 is Saturation
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+return 1
+#You can add more if you want
+elsif item == :ATKCURRY
+$game_variables[205]+=8
+$game_variables[207]+=15
+$game_variables[206]-=7
+return 1
+elsif item == :SATKCURRY
+$game_variables[205]+=8
+$game_variables[207]+=15
+$game_variables[206]-=7
+return 1
+elsif item == :SPEEDCURRY
+$game_variables[205]+=8
+$game_variables[207]+=15
+$game_variables[206]-=7
+return 1
+elsif item == :SPDEFCURRY
+$game_variables[205]+=8
+$game_variables[207]+=15
+$game_variables[206]-=7
+return 1
+elsif item == :ACCCURRY
+$game_variables[205]+=8
+$game_variables[207]+=12
+$game_variables[206]-=7
+return 1
+elsif item == :DEFCURRY
+$game_variables[205]+=8
+$game_variables[207]+=15
+$game_variables[206]-=7
+return 1
+elsif item == :CRITCURRY
+$game_variables[205]+=8
+$game_variables[207]+=15
+$game_variables[206]-=7
+return 1
+elsif item == :GSCURRY
+$game_variables[205]+=8#205 is Hunger
+$game_variables[207]+=5#207 is Saturation
+$game_variables[206]-=7#206 is Thirst
+return 1
+elsif item == :RAGECANDYBAR #chocolate
+$game_variables[205]+=10
+$game_variables[207]+=3
+$game_variables[208]+=7
+return 1
+elsif item == :SWEETHEART #chocolate
+$game_variables[205]+=10#205 is Hunger
+$game_variables[207]+=5#207 is Saturation
+$game_variables[208]+=6#208 is Sleep
+return 1
+elsif item == :SODAPOP
+$game_variables[206]-=11#206 is Thirst
+$game_variables[207]+=11#207 is Saturation
+$game_variables[208]+=10#208 is Sleep
+return 1
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+return 1
+elsif item == :LEMONADE
+$game_variables[207]+=11#207 is Saturation
+$game_variables[206]+=10#206 is Thirst
+$game_variables[208]+=7#208 is Sleep
+return 1
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+return 1
+elsif item == :HONEY
+$game_variables[207]+=20#207 is Saturation
+$game_variables[206]+=2#206 is Thirst
+$game_variables[205]+=6#205 is Hunger
+return 1
+elsif item == :MOOMOOMILK
+$game_variables[207]+=10
+$game_variables[206]+=15
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+return 1
+elsif item == :CSLOWPOKETAIL
+$game_variables[207]+=10#207 is Saturation
+$game_variables[205]+=10#205 is Hunger
+return 1
+elsif item == :BAKEDPOTATO
+$game_variables[207]+=10#207 is Saturation
+$game_variables[206]+=4#206 is Thirst
+$game_variables[205]+=7#205 is Hunger
+return 1
+elsif item == :APPLE
+$game_variables[207]+=10#207 is Saturation
+$game_variables[206]+=3#206 is Thirst
+$game_variables[205]+=3#205 is Hunger
+return 1
+elsif item == :CHOCOLATE
+$game_variables[207]+=5#207 is Saturation
+$game_variables[205]+=7#205 is Hunger
+return 1
+elsif item == :LEMON
+$game_variables[207]+=3#207 is Saturation
+$game_variables[206]+=3#206 is Thirst
+$game_variables[205]+=4#205 is Hunger
+return 1
+elsif item == :OLDGATEAU
+$game_variables[207]+=6#207 is Saturation
+$game_variables[206]+=2#206 is Thirst
+$game_variables[205]+=6#205 is Hunger
+return 1
+elsif item == :LAVACOOKIE
+$game_variables[207]+=5#207 is Saturation
+$game_variables[206]-=3#206 is Thirst
+$game_variables[205]+=6#205 is Hunger
+return 1
+elsif item == :CASTELIACONE
+$game_variables[206]+=7#206 is Thirst
+$game_variables[205]+=7#205 is Hunger
+return 1
+elsif item == :LUMIOSEGALETTE
+$game_variables[207]+=5#207 is Saturation
+$game_variables[205]+=6#205 is Hunger
+return 1
+elsif item == :SHALOURSABLE
+$game_variables[207]+=8#207 is Saturation
+$game_variables[205]+=8#205 is Hunger
+return 1
+elsif item == :BIGMALASADA
+$game_variables[207]+=8#207 is Saturation
+$game_variables[205]+=8#205 is Hunger
+return 1
+elsif item == :ONION
+$game_variables[207]+=5#207 is Saturation
+$game_variables[206]+=3#206 is Thirst
+$game_variables[205]+=3#205 is Hunger
+return 1
+elsif item == :COOKEDORAN
+$game_variables[207]+=6#207 is Saturation
+$game_variables[206]+=6#206 is Thirst
+$game_variables[205]+=6#205 is Hunger
+return 1
+elsif item == :CARROT
+$game_variables[207]+=6#207 is Saturation
+$game_variables[206]+=3#206 is Thirst
+$game_variables[205]+=3#205 is Hunger
+return 1
+elsif item == :BREAD
+$game_variables[207]+=10#207 is Saturation
+$game_variables[206]+=7#206 is Thirst
+$game_variables[205]+=11#205 is Hunger
+return 1
+elsif item == :TEA
+$game_variables[207]+=15#207 is Saturation
+$game_variables[206]+=8#206 is Thirst
+$game_variables[205]+=2#205 is Hunger
+return 1
+elsif item == :CARROTCAKE
+$game_variables[207]+=15#207 is Saturation
+$game_variables[206]+=15#206 is Thirst
+$game_variables[205]+=10#205 is Hunger
+return 1
+elsif item == :COOKEDMEAT
+$game_variables[207]+=40#207 is Saturation
+$game_variables[206]+=0#206 is Thirst
+$game_variables[205]+=20#205 is Hunger
+return 1
+elsif item == :SITRUSJUICE
+$game_variables[207]+=20#207 is Saturation
+$game_variables[206]+=25#206 is Thirst
+$game_variables[205]+=0#205 is Hunger
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+return 1
+elsif item == :BERRYMASH
+$game_variables[207]+=5#207 is Saturation
+$game_variables[206]+=5#206 is Thirst
+$game_variables[205]+=5#205 is Hunger
+return 1
+else
+$PokemonBag.pbStoreItem(item,1)
+return 0
+end
+end
+
+
+
+ def pbMedicine(bag,item)
+ 
+$PokemonBag.pbDeleteItem(item)
+#205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
+if item == :POTION
+$game_variables[225] += 20
+return 1
+elsif item == :SUPERPOTION
+$game_variables[225] += 40
+return 1
+elsif item == :HYPERPOTION
+$game_variables[225] += 60
+return 1
+elsif item == :FULLRESTORE
+$game_variables[225] += 100
+return 1
+else
+$PokemonBag.pbStoreItem(item,1)
+return 0
+#full belly
+end
+end
+
+def pbEndGame
+ if $PokemonSystem.survivalmode = 0
+  if $scene.is_a?(Scene_Map)
+      pbFadeOutIn(99999){
+         $game_temp.player_transferring = true
+         $game_temp.player_new_map_id=292  
+         $game_temp.player_new_x=002
+         $game_temp.player_new_y=007
+         $game_temp.player_new_direction=$PokemonGlobal.pokecenterDirection
+         $scene.transfer_player
+         $game_map.refresh
+		 $scene = nil
+		 exit!
+    	 menu.pbShowMenu
+      }
+    end
+  end
+end
+#------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------#
+
+
+def pbRandomEvent
+   if rand(1000) == 1
+     Kernel.pbMessage(_INTL("There was a sound outside."))   #Comet
+     $game_switches[450]==true 
+=begin
+   elsif rand(1000) == 2
+     
+   elsif rand(1000) == 3
+     
+   elsif rand(1000) == 4
+     
+   elsif rand(1000) == 5
+     
+   elsif rand(1000) == 6
+=end
+end
+end
+
+
+ItemHandlers::UseFromBag.add(:WATERBOTTLE,proc { |item|
+if $game_player.pbFacingTerrainTag.can_surf
+     message=(_INTL("Want to pick up water?"))
+    if pbConfirmMessage(message)
+       $PokemonBag.pbStoreItem(:WATER,1)
+       $PokemonBag.pbDeleteItem(:WATERBOTTLE,1)
+	end
+	next 4
+   else
+    Kernel.pbMessage(_INTL("That is not water."))
+	next 0
+end
+})
+
+
+
+
+
+
+
+
+
+
 
 
 #Eating Food
@@ -443,7 +821,7 @@ $game_variables[207]+=4
 $game_variables[206]+=4
 $game_variables[225] += 2
 elsif berry == :FRESHWATER
-$game_variables[206]+=20
+$game_variables[206]+=10
 $game_variables[207]+=10#207 is Saturation
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
@@ -877,86 +1255,3 @@ end
 end
 end
 end 
-
-
-def pbMedicine
-medicine=0
-pbFadeOutIn(99999){
-scene = PokemonBag_Scene.new
-screen = PokemonBagScreen.new(scene,$PokemonBag)
-medicine = screen.pbChooseItemScreen(Proc.new { |item| GameData::Item.get(item).is_medicine? })
-}
-if medicine
-$PokemonBag.pbDeleteItem(medicine,1)
-Kernel.pbMessage(_INTL("You consume the {1}. ",GameData::Item.get(medicine).name))
-#205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
-if medicine == :POTION
-$game_variables[225] += 20
-elsif medicine == :SUPERPOTION
-$game_variables[225] += 40
-elsif medicine == :HYPERPOTION
-$game_variables[225] += 60
-elsif medicine == :FULLRESTORE
-$game_variables[225] += 100
-#full belly
-end
-end
-end 
-
-def pbEndGame
- if $PokemonSystem.survivalmode = 0
-  if $scene.is_a?(Scene_Map)
-      pbFadeOutIn(99999){
-         $game_temp.player_transferring = true
-         $game_temp.player_new_map_id=292  
-         $game_temp.player_new_x=002
-         $game_temp.player_new_y=007
-         $game_temp.player_new_direction=$PokemonGlobal.pokecenterDirection
-         $scene.transfer_player
-         $game_map.refresh
-		 $scene = nil
-		 exit!
-    	 menu.pbShowMenu
-      }
-    end
-  end
-end
-#------------------------------------------------------------------------------#
-#------------------------------------------------------------------------------#
-#------------------------------------------------------------------------------#
-#------------------------------------------------------------------------------#
-#------------------------------------------------------------------------------#
-
-
-def pbRandomEvent
-   if rand(1000) == 1
-     Kernel.pbMessage(_INTL("There was a sound outside."))   #Comet
-     $game_switches[450]==true 
-=begin
-   elsif rand(1000) == 2
-     
-   elsif rand(1000) == 3
-     
-   elsif rand(1000) == 4
-     
-   elsif rand(1000) == 5
-     
-   elsif rand(1000) == 6
-=end
-end
-end
-
-
-ItemHandlers::UseFromBag.add(:WATERBOTTLE,proc { |item|
-if $game_player.pbFacingTerrainTag.can_surf
-     message=(_INTL("Want to pick up water?"))
-    if pbConfirmMessage(message)
-       $PokemonBag.pbStoreItem(:WATER,1)
-       $PokemonBag.pbDeleteItem(:WATERBOTTLE,1)
-	end
-	next 4
-   else
-    Kernel.pbMessage(_INTL("That is not water."))
-	next 0
-end
-})

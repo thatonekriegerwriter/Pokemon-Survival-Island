@@ -292,9 +292,6 @@ class Crafts_Scene
           @returnItem=:NO
           @itemA=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts	  
-		  if @itemA.nil
-		    @itemA=:NO
-		  end
           for i in 0..216
             if crafts[i][2]!=@itemB && @itemB==:NO
               @itemB=:NO
@@ -314,9 +311,6 @@ class Crafts_Scene
           @returnItem=:NO
           @itemB=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
-		  if @itemB.nil
-		    @itemB=:NO
-		  end
           for i in 0..216
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
               @currentArray=i
@@ -336,9 +330,6 @@ class Crafts_Scene
           @returnItem=:NO
           @itemC=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
-		  if @itemC.nil
-		    @itemC=:NO
-		  end
           for i in 0..216
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
               @currentArray=i

@@ -22,6 +22,9 @@ class EliteBattle_BasicWildAnimations
       end
     end
     # animation selection processing for regular battles
+	if pbInSafari?
+	  return self.outdoor
+	else
     if (!@level.nil? && @level > $Trainer.party[0].level)
       return self.overlevel
     elsif ($PokemonGlobal && ($PokemonGlobal.surfing || $PokemonGlobal.diving || $PokemonGlobal.fishing))
@@ -35,6 +38,7 @@ class EliteBattle_BasicWildAnimations
     end
     # returns false if no animation plays
     return false
+  end
   end
   #-----------------------------------------------------------------------------
   #  checks if queued Pokemon species is any of the Regis

@@ -253,11 +253,7 @@ end
   end
 =end
 if $game_variables[225] < 1 && $PokemonSystem.survivalmode == 0
-    pbMessage(_INTL("\\w[]\\wm\\c[8]\\l[3]Game Over"))
-    pbCancelVehicles
-    pbRemoveDependencies 
-    pbEndGame
-    return
+  pbStartOver
  end 
 }
 
@@ -350,10 +346,18 @@ end
 
 
 def pbSleepRestore
- if $game_variables[208]<100
+ if $game_variables[208]<200
   $game_variables[208]=$game_variables[208]+($game_variables[247]*6)
  end
-end
+ if $game_variables[207]<1
+   $game_variables[205]=$game_variables[205]-($game_variables[247]*3)
+   $game_variables[206]=$game_variables[206]-($game_variables[247]*3)
+   
+  else
+   $game_variables[207]=$game_variables[207]-($game_variables[247]*3)
+  end
+ end
+
 
 #Eating Food
 def pbFillUp
@@ -694,6 +698,10 @@ $game_variables[206]+=25
 $game_variables[207]+=10#207 is Saturation
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
+elsif berry == :WATER
+$game_variables[206]+=10
+$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
+Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 #You can add more if you want
 elsif berry == :ATKCURRY
 $game_variables[205]+=8
@@ -937,3 +945,18 @@ def pbRandomEvent
 =end
 end
 end
+
+
+ItemHandlers::UseFromBag.add(:WATERBOTTLE,proc { |item|
+if $game_player.pbFacingTerrainTag.can_surf
+     message=(_INTL("Want to pick up water?"))
+    if pbConfirmMessage(message)
+       $PokemonBag.pbStoreItem(:WATER,1)
+       $PokemonBag.pbDeleteItem(:WATERBOTTLE,1)
+	end
+	next 4
+   else
+    Kernel.pbMessage(_INTL("That is not water."))
+	next 0
+end
+})

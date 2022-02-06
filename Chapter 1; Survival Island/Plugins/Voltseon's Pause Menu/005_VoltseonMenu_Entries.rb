@@ -263,7 +263,7 @@ class MenuEntryExitSafari < MenuEntry
 		end
 	end
 
-	def selectable?; return pbInSafari?; end
+	def selectable?; return false end
 end
 #-------------------------------------------------------------------------------
 # Entry for quitting Bug Contest

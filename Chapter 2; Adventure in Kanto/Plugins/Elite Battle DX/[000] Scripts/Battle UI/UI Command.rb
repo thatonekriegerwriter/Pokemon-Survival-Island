@@ -193,7 +193,7 @@ class CommandWindowEBDX
     # returns indexes and commands for Safari Battles
     if @safaribattle
       @indexes = [0,1,2,3]
-      return [_INTL("BALL"), _INTL("BAIT"), _INTL("ROCK"), _INTL("RUN")]
+      return [_INTL("BALL"), _INTL("BAIT"), _INTL("STONE"), _INTL("RUN")]
     end
     # looks up cached metrics
     d1 = EliteBattle.get(:nextUI)

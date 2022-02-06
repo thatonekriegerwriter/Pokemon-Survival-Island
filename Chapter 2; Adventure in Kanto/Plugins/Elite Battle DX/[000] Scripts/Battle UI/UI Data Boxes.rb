@@ -581,8 +581,14 @@ class SafariDataBoxEBDX < SpriteWrapper
     self.bitmap.clear
     bmp = pbBitmap("Graphics/EBDX/Pictures/UI/safariBar")
     self.bitmap.blt((self.bitmap.width-bmp.width)/2,self.bitmap.height-bmp.height,bmp,Rect.new(0,0,bmp.width,bmp.height))
-    str = _INTL("Safari Balls: {1}", @battle.ballCount)
+    str = _INTL("PokeBalls: {1}", @battle.ballCount)
+    str2 = _INTL("Stones: {1}", $PokemonBag.pbQuantity(:STONE))
+    str3 = _INTL("Bait: {1}", $PokemonBag.pbQuantity(:BAIT))
+    str4 = _INTL("HP: {1}/100", $game_variables[225])
+    pbDrawOutlineText(self.bitmap,0,8,self.bitmap.width,self.bitmap.height,str4,Color.white,Color.new(0,0,0,125),1)
     pbDrawOutlineText(self.bitmap,0,38,self.bitmap.width,self.bitmap.height,str,Color.white,Color.new(0,0,0,125),1)
+    pbDrawOutlineText(self.bitmap,50,58,self.bitmap.width,self.bitmap.height,str2,Color.white,Color.new(0,0,0,125),1)
+    pbDrawOutlineText(self.bitmap,-60,58,self.bitmap.width,self.bitmap.height,str3,Color.white,Color.new(0,0,0,125),1)
   end
   #-----------------------------------------------------------------------------
   #  update (temp)

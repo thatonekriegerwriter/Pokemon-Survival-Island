@@ -71,6 +71,7 @@ if $PokemonSystem.nuzlockemode == 0
  end
 end
 
+  
 }
 
 
@@ -85,7 +86,7 @@ Events.onTrainerPartyLoad += proc { |_sender, trainer|
         for i in party
           # Increases level by the party level difference. Allowing the pokemon in the team to keep their level differences from each other.
           #I add to the level instead of overriding it so that the internal team level differences don't change and are not random.
-          newlevel = i.level + levelAdjust + rand(5*$game_variables[30]) # Change this if you want to adjust the levels. The -3 keeps the team 3 levels lower on average.
+          newlevel = i.level + levelAdjust + rand(2*$game_variables[30]) # Change this if you want to adjust the levels. The -3 keeps the team 3 levels lower on average.
           if newlevel > 255
             newlevel = 255
           end

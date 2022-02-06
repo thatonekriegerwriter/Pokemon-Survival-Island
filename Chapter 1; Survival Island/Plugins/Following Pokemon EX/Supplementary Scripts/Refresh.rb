@@ -204,6 +204,7 @@ class Scene_Map
       FollowingPkmn.refresh(false)
       if event.is_a?(Game_FollowerEvent)
         event.map = $game_map
+		$PokemonTemp.dependentEvents.pbMoveDependentEvents
         event.moveto($game_player.x, $game_player.y)
         event.direction = $game_player.direction
       end

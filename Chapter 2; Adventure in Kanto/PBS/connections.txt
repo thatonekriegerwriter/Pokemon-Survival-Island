@@ -20,6 +20,14 @@
 5,North,0,32,South,6
 # Route 1 (5) - Edge southwest (146)
 5,West,0,146,East,55
+# Route 2 (6) - Pewter City (33)
+6,North,0,33,South,10
+# Edge northeast (150) - Route 2 (6)
+150,West,0,6,East,0
+# Edge northwest (151) - Route 2 (6)
+151,East,0,6,West,0
+# Pewter City (296) - Route 2 (6)
+296,South,30,6,North,0
 # Route 7 (47) - Celadon City (7)
 47,West,0,7,East,0
 # Celadon (39) - Celadon City (7)
@@ -36,30 +44,16 @@
 10,South,73,157,North,0
 # Route 4 (10) - Edge west (158)
 10,South,186,158,North,0
-# Route 10 (13) - Route 8 (69)
-13,West,26,69,East,0
-# Edge west (159) - Route 10 (13)
-159,East,0,13,West,1
-# Lavender Town (82) - Route 10 (13)
-82,North,0,13,South,0
-# Edge west (160) - Route 10 (13)
-160,East,0,13,West,55
-# Route 12 (14) - Route 8 (69)
-14,West,0,69,East,24
-# Route 12 (14) - Edge west (159)
-14,West,0,159,East,49
-# Lavender Town (82) - Route 12 (14)
-82,South,0,14,North,0
-# Edge west (160) - Route 12 (14)
-160,East,0,14,West,5
+# Route 10 (12) - Route 9 (79)
+12,West,0,79,East,0
+# Route 25 (95) - Route 10 (12)
+95,South,55,12,North,0
 # Route 12 (15) - Route 13 (84)
 15,South,0,84,North,48
 # Route 11 (16) - Route 12 (15)
 16,East,0,15,West,50
 # Edge north (162) - Route 12 (15)
 162,East,0,15,West,92
-# Route 11 (17) - Vermilion City (78)
-17,West,0,78,East,5
 # Route 15 (18) - Route 14 (85)
 18,East,0,85,West,16
 # Edge west (163) - Route 15 (18)
@@ -70,8 +64,24 @@
 20,North,0,41,South,0
 # Route 18 (22) - Fuchsia City (87)
 22,East,0,87,West,0
+# Cerulean City (23) - Route 4 (43)
+23,West,9,43,East,0
+# Route 9 (79) - Cerulean City (23)
+79,West,0,23,East,10
+# Route 24 (94) - Cerulean City (23)
+94,South,0,23,North,22
+# Route 5 (48) - Cerulean City (23)
+48,North,1,23,South,0
 # House 1 (25) - Route 17 (41)
 25,South,0,41,North,0
+# Route 3 (31) - Pewter City (33)
+31,West,0,33,East,15
+# Route 4 (43) - Route 3 (31)
+43,South,0,31,North,60
+# Edge west (152) - Route 3 (31)
+152,South,0,31,North,40
+# Edge north (153) - Route 3 (31)
+153,South,0,31,North,0
 # Viridian City (32) - Route 22 (92)
 32,West,6,92,East,0
 # Edge southwest (146) - Viridian City (32)
@@ -82,32 +92,34 @@
 149,South,0,32,North,76
 # Edge southeast (148) - Viridian City (32)
 148,East,0,32,West,35
+# Edge northeast (150) - Pewter City (33)
+150,North,0,33,South,46
+# Edge northwest (151) - Pewter City (33)
+151,North,10,33,South,0
+# Edge north (153) - Pewter City (33)
+153,West,0,33,East,0
+# Pewter City (296) - Pewter City (33)
+296,East,0,33,West,0
 # Indigo Plateau (35) - Route 23 (93)
 35,South,0,93,North,5
-# Edge west (159) - Route 8 (69)
-159,South,0,69,North,52
-# Lavender Town (82) - Route 8 (69)
-82,West,0,69,East,4
-# Edge west (160) - Route 8 (69)
-160,North,0,69,South,52
+# Edge west (152) - Route 4 (43)
+152,East,0,43,West,4
 # Vermilion North (77) - Vermilion City (78)
 77,South,0,78,North,11
 # Vermilion North (293) - Vermilion North (77)
 293,East,0,77,West,0
-# Grullo Gorge (330) - Vermilion North (77)
-330,West,9,77,East,0
-# Vermilion City (78) - Grullo Gorge (307)
-78,North,147,307,South,0
 # Vermilion North (293) - Vermilion City (78)
 293,South,25,78,North,0
-# Grullo Gorge (330) - Vermilion City (78)
-330,South,0,78,North,47
-# Grullo Gorge (308) - Vermilion City (78)
-308,South,0,78,North,97
-# Lavender Town (82) - Edge west (159)
-82,West,0,159,East,29
-# Edge west (160) - Lavender Town (82)
-160,East,0,82,West,25
+# Route 11 (81) - Vermilion City (78)
+81,West,0,78,East,1
+# Route 25 (95) - Route 9 (79)
+95,South,0,79,North,17
+# Route 11 (81) - Grullo Gorge (308)
+81,North,48,308,South,0
+# Route 11 (81) - Grullo Gorge (330)
+81,North,0,330,South,2
+# Route 11 (81) - Grullo Gorge (307)
+81,North,98,307,South,0
 # Route 13 (84) - Route 14 (85)
 84,West,0,85,East,1
 # Edge north (162) - Route 13 (84)
@@ -140,6 +152,16 @@
 148,North,0,92,South,33
 # Cremini Town (298) - Route 22 (92)
 298,East,0,92,West,5
+# Route 24 (94) - Route 24 (379)
+94,East,0,379,West,0
+# Route 24 (379) - Route 25 (95)
+379,East,0,95,West,1
+# Pewter City (296) - Edge northeast (150)
+296,South,66,150,North,0
+# Pewter City (296) - Edge northwest (151)
+296,South,10,151,North,0
+# Edge north (153) - Edge west (152)
+153,East,0,152,West,7
 # Virdian Shore (288) - VV Bridge (289)
 288,East,0,289,West,23
 # VV Bridge (289) - VV Bridge (290)
@@ -150,55 +172,51 @@
 291,East,5,293,West,0
 # Route 27 (337) - Cremini Town (298)
 337,East,0,298,West,89
-# Grullo Gorge (307) - Grullo Gorge (310)
-307,0,49,310,14,0
-# Grullo Gorge (308) - Grullo Gorge (307)
-308,East,0,307,West,0
+# Grullo Gorge (307) - Grullo Gorge (308)
+307,West,0,308,East,0
 # Grullo Gorge (329) - Grullo Gorge (307)
 329,South,32,307,North,0
-# Grullo Gorge (308) - Grullo Gorge (330)
-308,West,0,330,East,0
+# Grullo Gorge (310) - Grullo Gorge (307)
+310,North,14,307,South,0
+# Grullo Gorge (330) - Grullo Gorge (308)
+330,East,0,308,West,0
 # Grullo Gorge (329) - Grullo Gorge (308)
 329,South,0,308,North,18
+# Grullo Gorge (310) - Grullo Gorge (308)
+310,North,0,308,South,36
+# Grullo Gorge (310) - Grullo Gorge (330)
+310,North,0,330,South,86
 # Grullo Gorge (329) - Grullo Gorge (330)
 329,South,0,330,North,68
-# Route 9 (79) - Cerulean City (23)
-79,West,0,23,East,10
-# Route 4 (43) - Cerulean City (23)
-43,East,0,23,West,9
-# Route 5 (48) - Cerulean City (23)
-48,North,1,23,South,0
-# Route 10 (12) - Route 9 (79)
-12,West,0,79,East,0
-# Route 25 (95) - Route 9 (79)
-95,South,0,79,North,17
-# Route 25 (95) - Route 10 (12)
-95,South,55,12,North,0
-# Route 24 (379) - Route 25 (95)
-379,East,0,95,West,1
-# Route 3 (31) - Route 4 (43)
-31,North,60,43,South,0
-# Edge west (152) - Route 4 (43)
-152,East,0,43,West,4
-# Edge west (152) - Route 3 (31)
-152,South,0,31,North,40
-# Edge north (153) - Route 3 (31)
-153,South,0,31,North,0
-# Pewter City (33) - Route 3 (31)
-33,East,15,31,West,0
-# Edge north (153) - Edge west (152)
-153,East,0,152,West,7
-# Pewter City (33) - Edge north (153)
-33,East,0,153,West,0
-# Route 2 (6) - Pewter City (33)
-6,North,0,33,South,10
-# Edge northeast (150) - Pewter City (33)
-150,North,0,33,South,46
-# Edge northwest (151) - Pewter City (33)
-151,North,10,33,South,0
-# Edge northeast (150) - Route 2 (6)
-150,West,0,6,East,0
-# Edge northwest (151) - Route 2 (6)
-151,East,0,6,West,0
-# Route 24 (379) - Route 24 (94)
-379,West,0,94,East,0
+# Route 10 (13) - Lavender Town (82)
+13,South,0,82,North,0
+# Route 8 (69) - Lavender Town (82)
+69,East,4,82,West,0
+# Route 12 (14) - Lavender Town (82)
+14,North,0,82,South,0
+# Edge west (159) - Lavender Town (82)
+159,East,29,82,West,0
+# Edge west (160) - Lavender Town (82)
+160,East,0,82,West,25
+# Lavender Town (312) - Lavender Town (82)
+312,West,0,82,East,0
+# Route 8 (69) - Route 10 (13)
+69,East,0,13,West,26
+# Edge west (159) - Route 10 (13)
+159,East,0,13,West,1
+# Edge west (160) - Route 10 (13)
+160,East,0,13,West,55
+# Lavender Town (312) - Route 10 (13)
+312,West,0,13,East,30
+# Route 12 (14) - Route 8 (69)
+14,West,0,69,East,24
+# Edge west (159) - Route 8 (69)
+159,South,0,69,North,52
+# Edge west (160) - Route 8 (69)
+160,North,0,69,South,52
+# Edge west (159) - Route 12 (14)
+159,East,49,14,West,0
+# Edge west (160) - Route 12 (14)
+160,East,0,14,West,5
+# Lavender Town (312) - Route 12 (14)
+312,West,20,14,East,0

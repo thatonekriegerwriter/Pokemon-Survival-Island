@@ -959,3 +959,8 @@ Pokemon = GARDEVOIR,24
 LoseText = "..."
 Pokemon = PORYGON,25
 Pokemon = MAGNETON,20
+#-------------------------------
+[TEAMROCKET_M,Grunt]
+LoseText = "..."
+Pokemon = FALINKS,40
+Pokemon = RIOLU,30

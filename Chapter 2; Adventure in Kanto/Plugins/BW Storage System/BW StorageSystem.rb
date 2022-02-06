@@ -1718,10 +1718,7 @@ class PokemonStorageScreen
     if box!=-1
       raise _INTL("Can't deposit from box...")
     end
-    if pbAbleCount<=1 && pbAble?(@storage[box,index]) && !heldpoke
-      pbPlayBuzzerSE
-      pbDisplay(_INTL("That's your last Pokémon!"))
-    elsif heldpoke && heldpoke.mail
+    if heldpoke && heldpoke.mail
       pbDisplay(_INTL("Please remove the Mail."))
     elsif !heldpoke && @storage[box,index].mail
       pbDisplay(_INTL("Please remove the Mail."))
@@ -1757,11 +1754,6 @@ class PokemonStorageScreen
   def pbHold(selected)
     box = selected[0]
     index = selected[1]
-    if box==-1 && pbAble?(@storage[box,index]) && pbAbleCount<=1
-      pbPlayBuzzerSE
-      pbDisplay(_INTL("That's your last Pokémon!"))
-      return
-    end
     @scene.pbHold(selected)
     @heldpkmn = @storage[box,index]
     @storage.pbDelete(box,index)
@@ -1802,11 +1794,6 @@ class PokemonStorageScreen
     if !@storage[box,index]
       raise _INTL("Position {1},{2} is empty...",box,index)
     end
-    if box==-1 && pbAble?(@storage[box,index]) && pbAbleCount<=1 && !pbAble?(@heldpkmn)
-      pbPlayBuzzerSE
-      pbDisplay(_INTL("That's your last Pokémon!"))
-      return false
-    end
     if box!=-1 && @heldpkmn.mail
       pbDisplay("Please remove the mail.")
       return false
@@ -1835,11 +1822,6 @@ class PokemonStorageScreen
     elsif pokemon.mail
       pbDisplay(_INTL("Please remove the mail."))
       return false
-    end
-    if box==-1 && pbAbleCount<=1 && pbAble?(pokemon) && !heldpoke
-      pbPlayBuzzerSE
-      pbDisplay(_INTL("That's your last Pokémon!"))
-      return
     end
     command = pbShowCommands(_INTL("Release this Pokémon?"),[_INTL("No"),_INTL("Yes")])
     if command==1

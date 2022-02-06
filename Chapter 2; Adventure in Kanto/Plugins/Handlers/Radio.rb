@@ -153,7 +153,7 @@ class Scene_Radio
           $PokemonMap.blackFluteUsed=false if $PokemonMap
           @sprites["header"]=Window_UnformattedTextPokemon.newWithSize(_INTL("Oak's Talkshow"),20,104,228,64,@viewport)
         when 4
-          pbBGMPlay("pkc_buena", 100, 100)
+          pbBGMPlay("VForestBroken", 100, 100)
           $PokemonMap.whiteFluteUsed=false if $PokemonMap
           $PokemonMap.blackFluteUsed=false if $PokemonMap
           @sprites["header"]=Window_UnformattedTextPokemon.newWithSize(_INTL("Buena's Password"),20,104,228,64,@viewport)

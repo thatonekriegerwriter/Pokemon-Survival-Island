@@ -1338,10 +1338,7 @@ Adventure,1
 #-------------------------------
 [026] # Test Map
 Land,21
-    20,BULBASAUR,5
-    20,BULBASAUR,5
-    20,BULBASAUR,5
-    20,BULBASAUR,5
+    80,BULBASAUR,5
 #-------------------------------
 [028] # Mountain Zone
 LandMorning,21
@@ -1408,18 +1405,6 @@ OverworldLandDay,21
     4,PHANPY,3
     1,ABSOL,3,5
     1,CHARMANDER,2,5
-OverworldLandNight,21
-    20,GEODUDE,3,5
-    20,SPOINK,4
-    15,CLEFAIRY,5
-    10,ABSOL,2
-    10,GLIGAR,2,5
-    10,MEDITITE,2
-    5,MACHOP,3
-    4,AERODACTYL,3
-    4,LARVITAR,6
-    1,CHARMANDER,10
-    1,SNORLAX,3,5
 Bait
     20,CHINGLING,5
     20,LARVITAR,5
@@ -3075,8 +3060,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3114,8 +3099,8 @@ LandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 OverworldLandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3166,7 +3151,7 @@ Bait
     1,CARNIVINE,5
     1,SNIVY,5
 #-------------------------------
-[073] # Winter 
+[073] # Winter Zone
 Water,2
     60,SPHEAL,30,33
     30,SEALEO,27,35
@@ -3187,8 +3172,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3226,8 +3211,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3299,8 +3284,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3338,8 +3323,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3411,8 +3396,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3450,8 +3435,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3523,8 +3508,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3562,8 +3547,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3635,8 +3620,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3674,8 +3659,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3747,8 +3732,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3786,8 +3771,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3859,8 +3844,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3898,8 +3883,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3971,8 +3956,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -4010,8 +3995,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -4083,8 +4068,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -4122,8 +4107,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,10
     20,SNOM,5,15
+    20,SNOM,5,10
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -5130,13 +5115,6 @@ OverworldWater,2
     5,DEWPIDER,5
     4,SKRELP,5
     1,FROAKIE,5
-OldRod
-    70,MAGIKARP,6
-    30,FEEBAS,7
-GoodRod
-    60,SHELLOS,5,15
-    20,TYMPOLE,3,8
-    20,WISHIWASHI,7,13
 #-------------------------------
 [131] # Humid Zone
 OverworldCave,5
@@ -5935,19 +5913,6 @@ CaveDeep,5
     1,TORKOAL,5
 #-------------------------------
 [200] # Forest Zone
-OverworldCave,5
-    20,SEWADDLE,5
-    20,WURMPLE,5
-    10,DURANT,5
-    10,JOLTIK,5
-    10,SCATTERBUG,5
-    10,YANMA,5
-    5,CUTIEFLY,5
-    5,GRUBBIN,5
-    4,LARVESTA,5
-    4,TROPIUS,5
-    1,CHIKORITA,5
-    1,TREECKO,5
 Bait
     20,CATERPIE,5
     20,DEINO,5
@@ -5961,9 +5926,7 @@ Bait
     4,SWADLOON,5
     1,HYDREIGON,5
     1,LARVESTA,5
-#-------------------------------
-[201] # Forest Zone
-OverworldCave,5
+Land,5
     20,SEWADDLE,5
     20,WURMPLE,5
     10,DURANT,5
@@ -5976,6 +5939,8 @@ OverworldCave,5
     4,TROPIUS,5
     1,CHIKORITA,5
     1,TREECKO,5
+#-------------------------------
+[201] # Forest Zone
 Bait
     20,CATERPIE,5
     20,SPINARAK,5
@@ -5989,9 +5954,7 @@ Bait
     4,SWADLOON,5
     1,HYDREIGON,5
     1,LARVESTA,5
-#-------------------------------
-[202] # Forest Zone
-OverworldCave,5
+Land,5
     20,SEWADDLE,5
     20,WURMPLE,5
     10,DURANT,5
@@ -6004,6 +5967,8 @@ OverworldCave,5
     4,TROPIUS,5
     1,CHIKORITA,5
     1,TREECKO,5
+#-------------------------------
+[202] # Forest Zone
 Bait
     20,CATERPIE,5
     20,DEINO,5
@@ -6017,9 +5982,7 @@ Bait
     4,SWADLOON,5
     1,HYDREIGON,5
     1,LARVESTA,5
-#-------------------------------
-[203] # Forest Zone
-OverworldCave,5
+Land,5
     20,SEWADDLE,5
     20,WURMPLE,5
     10,DURANT,5
@@ -6032,6 +5995,8 @@ OverworldCave,5
     4,TROPIUS,5
     1,CHIKORITA,5
     1,TREECKO,5
+#-------------------------------
+[203] # Forest Zone
 Water,2
     60,DRATINI,5
     30,BAGON,5
@@ -6043,8 +6008,8 @@ OldRod
     30,FEEBAS,7
 GoodRod
     60,DRATINI,5,15
-    20,DRATINI,3,8
     20,DRATINI,7,13
+    20,DRATINI,3,8
 Bait
     20,CATERPIE,5
     20,DEINO,5
@@ -6058,9 +6023,7 @@ Bait
     4,SWADLOON,5
     1,HYDREIGON,5
     1,LARVESTA,5
-#-------------------------------
-[204] # Forest Zone
-OverworldCave,5
+Land,5
     20,SEWADDLE,5
     20,WURMPLE,5
     10,DURANT,5
@@ -6073,6 +6036,8 @@ OverworldCave,5
     4,TROPIUS,5
     1,CHIKORITA,5
     1,TREECKO,5
+#-------------------------------
+[204] # Forest Zone
 Bait
     20,CATERPIE,5
     20,DEINO,5
@@ -6086,6 +6051,19 @@ Bait
     4,SWADLOON,5
     1,HYDREIGON,5
     1,LARVESTA,5
+Land,5
+    20,SEWADDLE,5
+    20,WURMPLE,5
+    10,DURANT,5
+    10,JOLTIK,5
+    10,SCATTERBUG,5
+    10,YANMA,5
+    5,CUTIEFLY,5
+    5,GRUBBIN,5
+    4,LARVESTA,5
+    4,TROPIUS,5
+    1,CHIKORITA,5
+    1,TREECKO,5
 #-------------------------------
 [205] # West Shore
 Water,2
@@ -6128,19 +6106,6 @@ LandDay,21
     1,TREECKO,5
 #-------------------------------
 [206] # Forest Zone
-OverworldCave,5
-    20,SEWADDLE,5
-    20,WURMPLE,5
-    10,DURANT,5
-    10,JOLTIK,5
-    10,SCATTERBUG,5
-    10,YANMA,5
-    5,CUTIEFLY,5
-    5,GRUBBIN,5
-    4,LARVESTA,5
-    4,TROPIUS,5
-    1,CHIKORITA,5
-    1,TREECKO,5
 Bait
     20,CATERPIE,5
     20,DEINO,5
@@ -6154,6 +6119,19 @@ Bait
     4,SWADLOON,5
     1,HYDREIGON,5
     1,LARVESTA,5
+Land,5
+    20,SEWADDLE,5
+    20,WURMPLE,5
+    10,DURANT,5
+    10,JOLTIK,5
+    10,SCATTERBUG,5
+    10,YANMA,5
+    5,CUTIEFLY,5
+    5,GRUBBIN,5
+    4,LARVESTA,5
+    4,TROPIUS,5
+    1,CHIKORITA,5
+    1,TREECKO,5
 #-------------------------------
 [207] # Northern Area 
 OverworldLandMorning,21
@@ -6487,7 +6465,7 @@ LandNight,21
     1,DRAGONAIR,5
     1,TORTERRA,5
 #-------------------------------
-[211] # Deep 
+[211] # Deep Caves
 Cave,5
     20,ONIX,5
     20,PARAS,5

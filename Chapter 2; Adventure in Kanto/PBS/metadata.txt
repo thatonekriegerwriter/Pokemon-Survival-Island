@@ -165,14 +165,14 @@ Outdoor = false
 ShowArea = false
 #-------------------------------
 [024]
-# Route 16
+# Fuchia Gate
 Outdoor = true
 ShowArea = true
 Bicycle = false
 BattleBack = mountain
 #-------------------------------
 [025]
-# Route 16
+# House 1
 Outdoor = false
 #-------------------------------
 [026]
@@ -241,7 +241,7 @@ BattleBack = Swamp
 Outdoor = true
 #-------------------------------
 [039]
-# Route 16
+# Celadon
 Outdoor = true
 #-------------------------------
 [040]
@@ -310,29 +310,29 @@ Outdoor = false
 Outdoor = true
 #-------------------------------
 [053]
-# PokéCenter
+# Cremini Town Pokemon Center
 Outdoor = true
 #-------------------------------
 [054]
-# PokéCenter
+# Bar
 Outdoor = true
 #-------------------------------
 [055]
-# PokéCenter
+# House 2
 Outdoor = true
 #-------------------------------
 [056]
-# PokéCenter
+# House 1
 Outdoor = false
 HealingSpot = 55,24,11
 SnapEdges = true
 #-------------------------------
 [057]
-# PokéCenter
+# Bullet Train Terminal
 Outdoor = true
 #-------------------------------
 [058]
-# PokéCenter
+# House 1
 Outdoor = true
 #-------------------------------
 [059]
@@ -341,37 +341,37 @@ Outdoor = true
 DiveMap = 66
 #-------------------------------
 [060]
-# PokéMart
+# Saffron City Poke Center
 Outdoor = true
 #-------------------------------
 [061]
-# PokéMart
+# Card Shop
 Outdoor = true
 #-------------------------------
 [062]
-# PokéMart
+# House 1
 Outdoor = true
 #-------------------------------
 [063]
-# PokéMart
+# House 2
 Outdoor = true
 BattleBack = Cave
 #-------------------------------
 [064]
-# PokéMart
+# Gym
 Outdoor = true
 ShowArea = false
 Weather = Rain,20
 BattleBack = Forest
 #-------------------------------
 [065]
-# PokéMart
+# Day Care
 Outdoor = true
 Weather = Rain,20
 BattleBack = Forest
 #-------------------------------
 [066]
-# PokéMart
+# \PN's House
 Outdoor = true
 BattleBack = Cave
 #-------------------------------
@@ -779,7 +779,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [166]
-# Route 16
+# House 1
 Outdoor = true
 #-------------------------------
 [167]
@@ -995,19 +995,19 @@ BattleBack = Cave
 Outdoor = true
 #-------------------------------
 [219]
-# Rocket Hideout B2F
+# House 4
 Outdoor = true
 #-------------------------------
 [220]
-# Rocket Hideout B3F
+# House 4
 Outdoor = true
 #-------------------------------
 [221]
-# Rocket Hideout B4F
+# House 4
 Outdoor = true
 #-------------------------------
 [222]
-# Rocket Hideout Elevator
+# Oak's Lab
 Outdoor = true
 #-------------------------------
 [223]
@@ -1313,7 +1313,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [298]
-# PokéCenter
+# Cremini Town
 Outdoor = true
 #-------------------------------
 [299]
@@ -1345,14 +1345,15 @@ Outdoor = false
 Outdoor = false
 #-------------------------------
 [306]
-# PokéCenter
+# Grullo Gate
 Outdoor = true
 #-------------------------------
 [307]
-# PokéCenter
+# Grullo Gorge
 Outdoor = true
 #-------------------------------
 [308]
+# Grullo Gorge
 Outdoor = true
 #-------------------------------
 [309]
@@ -1360,7 +1361,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [310]
-# Contest Hall
+# Grullo Gorge
 Outdoor = true
 #-------------------------------
 [311]
@@ -1413,14 +1414,17 @@ Outdoor = false
 Dungeon = true
 BattleBack = Cave
 #-------------------------------
+[329]
+# Grullo Gorge
+#-------------------------------
 [333]
-# PokéCenter
+# R Building F2
 Outdoor = false
 Dungeon = true
 BattleBack = Cave
 #-------------------------------
 [334]
-# PokéCenter
+# R Building F3
 Outdoor = false
 Dungeon = true
 BattleBack = Cave
@@ -1437,6 +1441,7 @@ Outdoor = false
 BattleBack = Cave
 #-------------------------------
 [342]
+# Cherrygrove City
 Outdoor = false
 MapPosition = 0,16,11
 Dungeon = true
@@ -1444,35 +1449,45 @@ BattleBack =
 Environment = Cave
 #-------------------------------
 [343]
+# CHERRYGROVE CITY House 1
 Outdoor = false
 Dungeon = true
 #-------------------------------
 [344]
+# CHERRYGROVE CITY House 2
 Outdoor = false
 Dungeon = true
 #-------------------------------
 [345]
+# CHERRYGROVE CITY Guide Gent House
 Outdoor = false
 Dungeon = true
 #-------------------------------
 [346]
+# MAHOGANY TOWN
 Outdoor = false
 #-------------------------------
 [347]
+# CIANWOOD CITY
 Outdoor = false
 Dungeon = true
 #-------------------------------
 [348]
+# AZALEA TOWN
 Outdoor = false
 #-------------------------------
 [349]
+# BLACKTHORN CITY
 Outdoor = true
 #-------------------------------
 [350]
+# Routes
 Outdoor = true
 #-------------------------------
 [351]
+# Landmarks'
 Outdoor = false
 #-------------------------------
 [352]
+# Towns
 Outdoor = false

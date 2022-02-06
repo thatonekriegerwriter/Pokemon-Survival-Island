@@ -232,7 +232,12 @@ if UnrealTime::ENABLED
     
     def addNewFrameCount
       return if (UnrealTime::SWITCH_STOPS>0 && 
-        $game_switches[UnrealTime::SWITCH_STOPS])
+        $game_switches[UnrealTime::SWITCH_STOPS])		
+        deposited = pbDayCareDeposited
+       if deposited==2 && $PokemonGlobal.daycareEgg==0
+        $PokemonGlobal.daycareEggSteps = 0 if !$PokemonGlobal.daycareEggSteps
+        $PokemonGlobal.daycareEggSteps += 1
+	   end
       self.newFrameCount+=1
     end
     
