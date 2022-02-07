@@ -584,7 +584,7 @@ class SafariDataBoxEBDX < SpriteWrapper
     str = _INTL("PokeBalls: {1}", @battle.ballCount)
     str2 = _INTL("Stones: {1}", $PokemonBag.pbQuantity(:STONE))
     str3 = _INTL("Bait: {1}", $PokemonBag.pbQuantity(:BAIT))
-    str4 = _INTL("HP: {1}/100", $PokemonSystem.playerhealth)
+    str4 = _INTL("HP: {1}/100", $game_variables[225])
     pbDrawOutlineText(self.bitmap,0,8,self.bitmap.width,self.bitmap.height,str4,Color.white,Color.new(0,0,0,125),1)
     pbDrawOutlineText(self.bitmap,0,38,self.bitmap.width,self.bitmap.height,str,Color.white,Color.new(0,0,0,125),1)
     pbDrawOutlineText(self.bitmap,50,58,self.bitmap.width,self.bitmap.height,str2,Color.white,Color.new(0,0,0,125),1)
@@ -597,5 +597,3 @@ class SafariDataBoxEBDX < SpriteWrapper
   def width; return self.bitmap.width; end
   #-----------------------------------------------------------------------------
 end
-
-

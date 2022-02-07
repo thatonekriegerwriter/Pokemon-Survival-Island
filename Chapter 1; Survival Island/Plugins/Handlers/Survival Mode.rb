@@ -87,6 +87,8 @@
 maps = [322,333,334,335,336]
 Events.onStepTakenTransferPossible+=proc {
 
+$game_switches[70]=true
+
 if $game_variables[256]==(:SSHIRT) 
  if $game_variables[205]>150
   $game_variables[205]=150  #food

@@ -1,8 +1,8 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
-1,REPEL,Stealth Spray,Stealth Sprays,1,400,"When used in the field, this spray muffles the sound of your footsteps and makes wild Pokémon less likely to notice you for a short time.",2,0,0,
-2,SUPERREPEL,Super Stealth Spray,Super Stealth Spray,1,700,"When used in the field, this spray muffles the sound of your footsteps and makes wild Pokémon less likely to notice you for a short time.",2,0,0,
-3,MAXREPEL,Max Stealth Spray,Max Stealth Spray,1,900,"When used in the field, this spray muffles the sound of your footsteps and makes wild Pokémon less likely to notice you for a short time.",2,0,0,
+1,REPEL,Repel,Repels,1,400,"An item that prevents weak wild Pokémon from appearing for 100 steps after its use.",2,0,0,
+2,SUPERREPEL,Super Repel,Super Repels,1,700,"An item that prevents weak wild Pokémon from appearing for 200 steps after its use.",2,0,0,
+3,MAXREPEL,Max Repel,Max Repels,1,900,"An item that prevents weak wild Pokémon from appearing for 250 steps after its use.",2,0,0,
 4,BLACKFLUTE,Black Flute,Black Flutes,1,400,"A black flute made from blown glass. Its melody makes wild Pokémon less likely to appear.",2,0,0,
 5,WHITEFLUTE,White Flute,White Flutes,1,500,"A white flute made from blown glass. Its melody makes wild Pokémon more likely to appear.",2,0,0,
 6,HONEY,Honey,Honey,1,300,"A sweet honey with an aroma that attracts wild Pokémon when used in grass, caves or on special trees.",2,0,0,
@@ -816,7 +816,7 @@
 #-------------------------------
 1700,RUSTEDPICKAXE,Rusted Pickaxe,Rusted Pickaxes,1,0,"A rusted pickaxe you got off the boat. It could mine lightly, but nothing big.",0,4,6,
 1701,PICKAXE,Pickaxe,Pickaxes,1,0,"A Pickaxe you made with your own two hands. Feel proud.",0,9,6,
-1711,WATERBOTTLE,Bottle,Bottles,9,0,"A Bottle, you can fill it with water at Fresh Water Sources.",2,0,0,
+1711,WATERBOTTLE,Bottle,Bottles,1,0,"A Bottle, you can fill it with water at Fresh Water Sources.",1,0,0,
 1702,IRON2,Fine Iron,Bars of Fine Iron,1,0,"Refined Iron from the Furnace.",0,0,0,
 1801,LVLDETECTOR,Level Detector,Level Detectors,8,0,"A device that can detect the level of a wild Pokémon. It is made by Silph Co.",2,0,6,
 1802,POISONDART,Poison Dart,Poison Darts,7,1000,"A handcrafted dart gun that poisons a Pokémon in battle.",0,4,0,
@@ -931,9 +931,9 @@
 1912,PHONE,Phone,Phone,8,20,"Your Phone.",2,0,6,
 1913,PLAYER,MP3 Player,MP3 Player,8,20,"Your Phone.",2,0,6,
 1914,COOKEDORAN,Oran Berry (Cooked),Oran Berry (Cooked),9,20,"Cooked Oran Berry; very tasty.",1,1,13,
-1915,CARROT,Carrot,Carrots,9,0,"It's a Carrot.",1,1,5,
-1916,WHEAT,Wheat,Wheat,9,0,"It's Wheat.",1,1,5,
-1917,TEALEAF,Tea Leaf,Tea Leaves,9,0,"Tea Leaves can be used to make tea.",1,1,5,
+1915,CARROT,Carrot,Carrots,9,200,"It's a Carrot.",1,1,5,
+1916,WHEAT,Wheat,Wheat,9,200,"It's Wheat.",1,1,5,
+1917,TEALEAF,Tea Leaf,Tea Leaves,9,200,"Tea Leaves can be used to make tea.",1,1,5,
 1918,BREAD,Bread,Bread,9,0,"Bread.",1,1,13,
 1919,TEA,Tea,Tea,9,200,"Tea.",1,1,13,
 1920,WATER,Water,Water,9,200,"Water.",1,1,13,
@@ -1042,3 +1042,9 @@
 2008,PRETZELS, Pretzel, Pretzels,9,100,"One of the Indigo Plateau's Pretzels.",1,1,13,
 2009,ICECREAM, Ice Cream, Ice Cream,9,100,"One of the Indigo Plateau's Ice Cream.",1,1,13,
 2010,SNOWCONE, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
+#
+# More Items
+#
+2011,CREMINIKEY,House Key (Cremini),House Key (Cremini),8,2100,"A Key to your house in Cremini Town.",2,0,6,
+2012,PEWTERKEY,House Key (Pewter),House Key (Pewter),8,2100,"A Key to your house in Pewter City.",2,0,6,
+2013,SHOVEL,Shovel,Shovels,8,2100,"A Shovel to dig up berries.",2,0,6,
