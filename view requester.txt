@@ -1,0 +1,60 @@
+# Scientist who request pokémon to view
+module ViewRequester
+  LIMIT = 10
+
+  def self.variableFirstIndex
+    return $gv.code_per_key["VIEW_REQUESTER_1"]
+  end
+
+  def self.randomize(debugForceMax=false) 
+    pkporvez=[debugForceMax ? 100_000 : $Trainer.pokedexOwned/50, 10].min
+    ct=1
+    while(ct<=pkporvez)
+      $game_variables[self.variableFirstIndex-1+ct]=0
+      while(1>pbGet(self.variableFirstIndex-1+ct))
+        pokerand=rand(PBSpecies.maxValue)+1
+        $game_variables[self.variableFirstIndex-1+ct]=pokerand if $Trainer.owned[pokerand] && !repeatSpecies?(pokerand,ct-1)         
+      end
+      $gs["VIEW_REQUESTER"]=true
+      ct+=1
+    end
+  end
+  
+  def self.repeatSpecies?(species,ct)
+    while (ct>0)
+      ct=0 if pbGet(self.variableFirstIndex-1+ct)==species
+      ct-=1
+    end
+    return ct!=0
+  end
+  
+  def self.loadList
+    s=""
+    nnomes=0
+    ct=1
+    while (ct<11)
+      if pbGet(self.variableFirstIndex-1+ct)>0
+        if nnomes==0
+          s=PBSpecies.getName(pbGet(self.variableFirstIndex-1+ct))
+        elsif nnomes==1
+          s=_INTL("{1} ou {2}",PBSpecies.getName(pbGet(self.variableFirstIndex-1+ct)),s)
+        else
+          s=PBSpecies.getName(pbGet(self.variableFirstIndex-1+ct))+", "+s
+        end
+        nnomes+=1  
+      end  
+      ct+=1
+    end
+    $gv.rand[1]=s
+    return nnomes!=0
+  end
+    
+  def self.requested?(species)
+    for i in 0...LIMIT
+      next if pbGet(self.variableFirstIndex+i)!=species
+      $game_variables[self.variableFirstIndex+i]=0
+      return true
+    end
+    return false
+  end
+end

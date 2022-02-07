@@ -224,6 +224,7 @@ class Spriteset_Map
            end
          end
        end 
+	  powerColor=Color.new(255,55,55)
       shadowColor=Color.new(160,160,160)
 
       if @sprites.include?("overlay")
@@ -236,24 +237,45 @@ class Spriteset_Map
 
       xposition = Graphics.width-64
       textPositions=[
-        [@currentTexts[0],50,0,2,healthColor,shadowColor],
+        [@currentTexts[0],250,350,2,healthColor,shadowColor],
         [@currentTexts[1],20,300,2,hungerColor,shadowColor],
         [@currentTexts[2],20,325,2,thirstColor,shadowColor],
-        [@currentTexts[3],20,350,2,sleepColor,shadowColor]
+        [@currentTexts[3],20,350,2,sleepColor,shadowColor],
+        [@currentTexts[4],450,60,2,healthColor,shadowColor],
+        [@currentTexts[5],450,30,2,healthColor,shadowColor],
+        [@currentTexts[6],500,350,2,powerColor,shadowColor]
       ]
 
       pbSetSystemFont(@sprites["overlay"].bitmap)
       pbDrawTextPositions(@sprites["overlay"].bitmap,textPositions)
     end
-
+	
+	
     # Note that this method is called on each refresh, but the texts
     # only will be redrawed if any character change.
     def textsDefined
       ret=[]
-      ret[0] = _INTL("HP: {1}/100",$game_variables[225])
+      ret[0] = _INTL("HP: [||||||||||]",$game_variables[225]) if $game_variables[225] >= 91 && $game_variables[225] <= 100
+      ret[0] = _INTL("HP: [|||||||||-]",$game_variables[225]) if $game_variables[225] >= 81 && $game_variables[225] <= 90
+      ret[0] = _INTL("HP: [||||||||--]",$game_variables[225]) if $game_variables[225] >= 71 && $game_variables[225] <= 80
+      ret[0] = _INTL("HP: [|||||||---]",$game_variables[225]) if $game_variables[225] >= 61 && $game_variables[225] <= 70
+      ret[0] = _INTL("HP: [||||||----]",$game_variables[225]) if $game_variables[225] >= 51 && $game_variables[225] <= 60
+      ret[0] = _INTL("HP: [|||||-----]",$game_variables[225]) if $game_variables[225] >= 41 && $game_variables[225] <= 50
+      ret[0] = _INTL("HP: [||||------]",$game_variables[225]) if $game_variables[225] >= 31 && $game_variables[225] <= 40
+      ret[0] = _INTL("HP: [|||-------]",$game_variables[225]) if $game_variables[225] >= 21 && $game_variables[225] <= 30
+      ret[0] = _INTL("HP: [||--------]",$game_variables[225]) if $game_variables[225] >= 11 && $game_variables[225] <= 20
+      ret[0] = _INTL("HP: [|---------]",$game_variables[225]) if $game_variables[225] >= 01 && $game_variables[225] <= 10
+      ret[0] = _INTL("HP: [----------]",$game_variables[225]) if $game_variables[225] == 0
       ret[1] = _INTL("FOD",$game_variables[205])
       ret[2] = _INTL("H20",$game_variables[206])
       ret[3] = _INTL("SLP",$game_variables[208])
+      ret[4] = _INTL("{1}",pbGetTimeNow.strftime("%I:%M %p")) 	if $PokemonBag.pbHasItem?(:CLOCK)
+      ret[4] = _INTL("",pbGetTimeNow.strftime("%I:%M %p")) 	if !$PokemonBag.pbHasItem?(:CLOCK)
+      ret[5] = _INTL("{1}/{2}/{3}",pbGetTimeNow.mon,pbGetTimeNow.day,pbGetTimeNow.year) 	if $PokemonBag.pbHasItem?(:CALENDAR)
+      ret[5] = _INTL("",pbGetTimeNow.strftime("%I:%M %p")) 	if !$PokemonBag.pbHasItem?(:CALENDAR)
+      ret[6] = _INTL("",pbGetTimeNow.strftime("%I:%M %p")) 	if !$PokemonBag.pbHasItem?(:APOWERMONITOR)
+      ret[6] = _INTL("",pbGetTimeNow.strftime("%I:%M %p")) 	if $PokemonBag.pbHasItem?(:APOWERMONITOR)
+      ret[6] = _INTL("!!!") if $PokemonBag.pbHasItem?(:APOWERMONITOR) && $game_variables[291]<=25
       return ret
     end
 
@@ -288,6 +310,7 @@ class Spriteset_Map
         end
       end
     end
+    
 
     def refreshHPBars
       for i in 0...6

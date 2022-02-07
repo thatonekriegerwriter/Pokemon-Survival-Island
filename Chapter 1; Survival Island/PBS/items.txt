@@ -1048,3 +1048,6 @@
 2011,CREMINIKEY,House Key (Cremini),House Key (Cremini),8,2100,"A Key to your house in Cremini Town.",2,0,6,
 2012,PEWTERKEY,House Key (Pewter),House Key (Pewter),8,2100,"A Key to your house in Pewter City.",2,0,6,
 2013,SHOVEL,Shovel,Shovels,8,2100,"A Shovel to dig up berries.",2,0,6,
+2014,SUSPO,Suspicious Drink,Suspicious Drink,2,0,"A Weird Drink. It's purpose is unknown.",0,0,0,
+2015,CALENDAR,Calendar,Calendar,2,0,"What day is it?",0,0,0,
+2016,APOWERMONITOR,Power Monitor,Power Monitor,2,0,"Hows my power?",0,0,0,

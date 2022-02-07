@@ -1193,10 +1193,16 @@ class PokemonSummary_Scene
 #       [@pokemon.name,46,62,0,base,shadow],
 #       [@pokemon.level.to_s,46,92,0,Color.new(64,64,64),Color.new(176,176,176)],
 #       [_INTL("Item"),66,318,0,base,shadow],
-       [_INTL("Happiness:"),46,62,0,base,shadow],
+       [_INTL("Happiness:"),10,62,0,base,shadow],
        [_INTL("{1}/255",@pokemon.happiness{1}),126,62,0,base,shadow],
-       [_INTL("Loyalty"),46,92,0,base,shadow],
+       [_INTL("Loyalty"),10,92,0,base,shadow],
        [_INTL("{1}/255",@pokemon.loyalty{1}),126,92,0,base,shadow],
+       [_INTL("Food:"),10,222,0,base,shadow],
+       [_INTL("{1}/100",@pokemon.food{1}),126,222,0,base,shadow],
+       [_INTL("Water"),10,242,0,base,shadow],
+       [_INTL("{1}/100",@pokemon.water{1}),126,242,0,base,shadow],
+       [_INTL("Age"),10,262,0,base,shadow],
+       [_INTL("{1}",@pokemon.sleep{1}),126,262,0,base,shadow],
     ]
     # Draw all text
     pbDrawTextPositions(overlay,textpos)
@@ -1205,6 +1211,7 @@ class PokemonSummary_Scene
     imagepos = []
     coord = 0
     pbDrawImagePositions(overlay,imagepos)
+	
   end
   
   def drawSelectedRibbon(ribbonid)
