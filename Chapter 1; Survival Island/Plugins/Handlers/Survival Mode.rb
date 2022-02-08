@@ -31,7 +31,11 @@ pbchangeSaturation
 pbchangeSleep
 pbchangeStamina
 
-
+if $game_switches[75]==true
+   $game_variables[30]=3
+   $PokemonSystem.survivalmode = 0
+   $PokemonSystem.nuzlockemode = 0
+end
 
   if !GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:None, 0, 0)

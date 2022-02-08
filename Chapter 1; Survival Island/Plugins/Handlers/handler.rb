@@ -1,52 +1,70 @@
 Events.onStepTakenTransferPossible+=proc {
 
 if $PokemonBag.pbHasItem?(:SPRINKLER)
-  $game_switches[410]==true 
+  $game_switches[410]=true 
 end
 
 if $PokemonBag.pbHasItem?(:COALGENERATOR)
-  $game_switches[409]==true 
+  $game_switches[409]=true 
 end
 
+if $PokemonBag.pbHasItem?(:SMOOCHUMDOLL)
+  $game_switches[294]=true 
+end
+if $PokemonBag.pbHasItem?(:TORCHICDOLL)
+  $game_switches[295]=true 
+end
+if $PokemonBag.pbHasItem?(:MEOWTHDOLL)
+  $game_switches[296]=true 
+end
+if $PokemonBag.pbHasItem?(:TREECKODOLL)
+  $game_switches[297]=true 
+end
+if $PokemonBag.pbHasItem?(:CHIKORITADOLL)
+  $game_switches[298]=true 
+end
+if $PokemonBag.pbHasItem?(:SHINYSTONE)
+  $game_switches[299]=true 
+end
 
 if $PokemonBag.pbHasItem?(:UPGRADEDCRAFTINGBENCH)
-  $game_switches[402]==true 
+  $game_switches[402]=true 
 end
 
 if $PokemonBag.pbHasItem?(:MEDICINEPOT)
-  $game_switches[405]==true 
+  $game_switches[405]=true 
 end
 
 if $PokemonBag.pbHasItem?(:FURNACE)
-  $game_switches[403]==true 
+  $game_switches[403]=true 
 end
 
 if $PokemonBag.pbHasItem?(:CAULDRON)
-  $game_switches[147]==true 
+  $game_switches[147]=true 
 end
 
 if $PokemonBag.pbHasItem?(:CRAFTINGBENCH)
-  $game_switches[150]==true 
+  $game_switches[150]=true 
 end
 
 if $PokemonBag.pbHasItem?(:APRICORNCRAFTING)
-  $game_switches[144]==true 
+  $game_switches[144]=true 
 end
 
 if $PokemonBag.pbHasItem?(:PORTABLEPC)
-  $game_switches[406]==true 
+  $game_switches[406]=true 
 end
 
 if $PokemonBag.pbHasItem?(:BEDROLL)
-  $game_switches[407]==true 
+  $game_switches[407]=true 
 end
 
 if $PokemonBag.pbHasItem?(:SEWINGMACHINE)
-  $game_switches[411]==true 
+  $game_switches[411]=true 
 end
 
 if $PokemonBag.pbHasItem?(:ELECTRICPRESS)
-  $game_switches[412]==true 
+  $game_switches[412]=true 
 end
 
 if $game_variables[256]==(:GHOSTMAIL) && rand(100) == 5
@@ -56,7 +74,7 @@ end
 if !$game_switches[54]==true 
  if $PokemonSystem.survivalmode == 0
    Achievements.incrementProgress("SURVIVOR",1)
-   $game_switches[54]==true 
+   $game_switches[54]=true 
  end
 end
 

@@ -96,7 +96,7 @@ PLAYERSTARTINGSTAMINA = 50
 PLAYERSTARTSLEEP = 100
 
 
-class SurvivalMode
+module SurvivalMode
   attr_accessor :survivalmode
   attr_accessor :playerwater  #206
   attr_accessor :playerfood   #205

@@ -14,7 +14,7 @@ class Spriteset_Map
   class HUD
     # If you wish to use a background picture, put the image path below, like
     # BGPATH="Graphics/Pictures/battleMessage". I recommend a 512x64 picture
-    BGPATH=""
+    BGPATH="Graphics/Pictures/newborder"
 
     # Make as 'false' to don't show the blue bar
     USEBAR=false
