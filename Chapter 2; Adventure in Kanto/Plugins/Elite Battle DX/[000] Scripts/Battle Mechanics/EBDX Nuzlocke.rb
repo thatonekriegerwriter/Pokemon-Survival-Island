@@ -168,8 +168,16 @@ class Pokemon
   alias hpset_ebdx_nuzlocke hp= unless self.method_defined?(:hpset_ebdx_nuzlocke)
   def hp=(val)
     data = EliteBattle.get_data(:NUZLOCKE, :Metrics, :RULES); data = [] if data.nil?
-    self.permaFaint = true if EliteBattle.get(:nuzlocke) && (data.include?(:NOREVIVE) || data.include?(:PEMADEATH)) && val <= 0
+    self.permaFaint = true if (EliteBattle.get(:nuzlocke) && (data.include?(:NOREVIVE) || data.include?(:PEMADEATH)) && val <= 0) &&  !self.hasItem?(:SUSPO)
     hpset_ebdx_nuzlocke((self.permaFaint && EliteBattle.get(:nuzlocke)) ? 0 : val)
+	if self.pbHasItem?(:SUSPO)
+          self.level          = Settings::EGG_LEVEL
+          self.calc_stats
+          self.name           = _INTL("Egg")
+          self.steps_to_hatch = pkmn.species_data.hatch_steps
+          self.hatched_map    = 0
+          self.obtain_method  = 1
+    end
   end
   #-----------------------------------------------------------------------------
 end
@@ -188,7 +196,16 @@ class PokeBattle_Battler
   alias hpset_ebdx_nuzlocke hp= unless self.method_defined?(:hpset_ebdx_nuzlocke)
   def hp=(val)
     data = EliteBattle.get_data(:NUZLOCKE, :Metrics, :RULES); data = [] if data.nil?
-    @pokemon.permaFaint = true if EliteBattle.get(:nuzlocke) && (data.include?(:NOREVIVE) || data.include?(:PEMADEATH)) && val <= 0
+    @pokemon.permaFaint = true if (EliteBattle.get(:nuzlocke) && (data.include?(:NOREVIVE) || data.include?(:PEMADEATH)) && val <= 0) && !@pokemon.hasItem?(:SUSPO)
+	if @pokemon.pbHasItem?(:SUSPO)
+          @pokemon.level          = Settings::EGG_LEVEL
+          @pokemon.calc_stats
+          @pokemon.name           = _INTL("Egg")
+          @pokemon.steps_to_hatch = pkmn.species_data.hatch_steps
+          @pokemon.hatched_map    = 0
+          @pokemon.obtain_method  = 1
+    end
+	
     hpset_ebdx_nuzlocke((@pokemon.permaFaint && EliteBattle.get(:nuzlocke)) ? 0 : val)
   end
   #-----------------------------------------------------------------------------
@@ -234,7 +251,7 @@ class PokeBattle_Battle
     ret = pbEndOfBattle_ebdx_nuzlocke
     # applies permadeath
     data = EliteBattle.get_data(:NUZLOCKE, :Metrics, :RULES); data = [] if data.nil?
-    if EliteBattle.get(:nuzlocke) && data.include?(:PERMADEATH)
+    if EliteBattle.get(:nuzlocke) && data.include?(:PERMADEATH) 
       for i in 0...$Trainer.party.length
         k = $Trainer.party.length - 1 - i
         if $Trainer.party[k].hp <= 0

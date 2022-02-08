@@ -130,5 +130,23 @@ end
     boxname = $PokemonStorage[storedbox].name
     creator = nil
     creator = pbGetStorageCreator if $Trainer.seen_storage_creator
+      if storedbox!=oldcurbox
+        if creator
+          pbDisplayPaused(_INTL("Box \"{1}\" in the Crate was full.",curboxname,creator))
+        else
+          pbDisplayPaused(_INTL("Box \"{1}\" in the Crate was full.",curboxname))
+        end
+        pbDisplayPaused(_INTL("{1} was transferred to box \"{2}\".",pkmn.name,boxname))
+      else
+        if creator
+          pbDisplayPaused(_INTL("{1} was transferred to the Crate.",pkmn.name,creator))
+        else
+          pbDisplayPaused(_INTL("{1} was transferred to the Crate.",pkmn.name))
+        end
+        pbDisplayPaused(_INTL("It was stored in box \"{1}\".",boxname))
+      end
+      if new_poke != -1
+        pbDisplayPaused(_INTL("{2} has been added to {1}'s party!",$Trainer.name,new_poke.name))
+      end
   end
 end

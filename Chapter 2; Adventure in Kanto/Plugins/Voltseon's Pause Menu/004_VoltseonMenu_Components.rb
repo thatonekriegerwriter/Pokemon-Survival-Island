@@ -174,7 +174,7 @@ class DateAndTimeHud < Component
     @shadowColor = MENU_TEXTOUTLINE[$PokemonSystem.current_menu_theme].is_a?(Color) ? MENU_TEXTOUTLINE[$PokemonSystem.current_menu_theme] : Color.new(48,48,48)
 	end
 
-  def shouldDraw?; return !(pbInBugContest? || pbInSafari?); end
+  def shouldDraw?; return !(pbInBugContest?); end
 
 	def update
 		super
@@ -182,7 +182,7 @@ class DateAndTimeHud < Component
 	end
 
 	def refresh
-    text = _INTL("{1} {2} {3}",Time.now.day.to_i,pbGetAbbrevMonthName(Time.now.month.to_i),Time.now.year.to_i)
+    text = _INTL("{1} {2} {3}",pbGetTimeNow.day.to_i,pbGetAbbrevMonthName(pbGetTimeNow.mon.to_i),pbGetTimeNow.year.to_i)
     text2 = _INTL("{1}",pbGetTimeNow.strftime("%I:%M %p"))
 		@sprites["overlay"].bitmap.clear
 		pbSetSystemFont(@sprites["overlay"].bitmap)

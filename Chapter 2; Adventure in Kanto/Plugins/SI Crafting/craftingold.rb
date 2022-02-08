@@ -292,7 +292,7 @@ class Crafts_Scene
           @returnItem=:NO
           @itemA=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts	  
-          for i in 0..216
+          for i in 0..222
             if crafts[i][2]!=@itemB && @itemB==:NO
               @itemB=:NO
               @quantB=0
@@ -311,7 +311,7 @@ class Crafts_Scene
           @returnItem=:NO
           @itemB=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
-          for i in 0..216
+          for i in 0..222
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
               @currentArray=i
               @returnItem=crafts[i][0]
@@ -330,7 +330,7 @@ class Crafts_Scene
           @returnItem=:NO
           @itemC=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
-          for i in 0..216
+          for i in 0..222
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
               @currentArray=i
               @returnItem=crafts[i][0]
@@ -367,7 +367,7 @@ class Crafts_Scene
   end
   
   def pbCheckRecipe(recipe)
-    for i in 0..216
+    for i in 0..222
       if recipe[1]==CraftsList.getcrafts[i][1] &&
          recipe[2]==CraftsList.getcrafts[i][2] &&
          recipe[3]==CraftsList.getcrafts[i][3]
@@ -672,7 +672,14 @@ module CraftsList
     [:SITRUSJUICE,:WATERBOTTLE,:BERRYMASH,:SUGAR],
     [:SITRUSJUICE,:WATERBOTTLE,:SUGAR,:BERRYMASH],
     [:SITRUSJUICE,:BERRYMASH,:WATERBOTTLE,:SUGAR],
-    [:SITRUSJUICE,:BERRYMASH,:SUGAR,:WATERBOTTLE]
+    [:SITRUSJUICE,:BERRYMASH,:SUGAR,:WATERBOTTLE],
+	#RECIPE 37:
+    [:FRESHWATER,:WATER,:CHARCOAL,:NO],
+    [:FRESHWATER,:WATER,:NO,:CHARCOAL],
+    [:FRESHWATER,:NO,:WATER,:CHARCOAL],
+    [:FRESHWATER,:WATER,:NO,:CHARCOAL],
+    [:FRESHWATER,:CHARCOAL,:WATER,:NO],
+    [:FRESHWATER,:CHARCOAL,:NO,:WATER,]
     ]
     return @CraftsList
   end

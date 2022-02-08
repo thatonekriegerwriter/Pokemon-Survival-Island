@@ -61,7 +61,7 @@ module UnrealTime
   # Time proportion here. 
   # So if it is 100, one second in real time will be 100 seconds in game.
   # If it is 60, one second in real time will be one minute in game.
-  PROPORTION=30
+  PROPORTION=20
 
   # Starting on Essentials v17, the map tone only try to refresh tone each 30 
   # real time seconds. 
@@ -96,7 +96,7 @@ module UnrealTime
   # Initial date. In sequence: Year, month, day, hour and minutes.
   # Method UnrealTime.reset resets time back to this time.
   def self.initial_date
-    return Time.local(1996,2,4, 12,0)
+    return Time.local(2011,3,4, 12,0)
   end
 
   # Advance to next time. If time already passed, advance 
@@ -232,7 +232,12 @@ if UnrealTime::ENABLED
     
     def addNewFrameCount
       return if (UnrealTime::SWITCH_STOPS>0 && 
-        $game_switches[UnrealTime::SWITCH_STOPS])
+        $game_switches[UnrealTime::SWITCH_STOPS])		
+        deposited = pbDayCareDeposited
+       if deposited==2 && $PokemonGlobal.daycareEgg==0
+        $PokemonGlobal.daycareEggSteps = 0 if !$PokemonGlobal.daycareEggSteps
+        $PokemonGlobal.daycareEggSteps += 1
+	   end
       self.newFrameCount+=1
     end
     
