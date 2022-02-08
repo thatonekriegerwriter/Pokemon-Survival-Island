@@ -14,8 +14,7 @@ class Spriteset_Map
   class HUD
     # If you wish to use a background picture, put the image path below, like
     # BGPATH="Graphics/Pictures/battleMessage". I recommend a 512x64 picture
-    BGPATH="Graphics/Pictures/newborder"
-
+    BGPATH=""
     # Make as 'false' to don't show the blue bar
     USEBAR=false
 
@@ -237,7 +236,7 @@ class Spriteset_Map
 
       xposition = Graphics.width-64
       textPositions=[
-        [@currentTexts[0],250,350,2,healthColor,shadowColor],
+        [@currentTexts[0],250,0,2,healthColor,shadowColor],
         [@currentTexts[1],20,300,2,hungerColor,shadowColor],
         [@currentTexts[2],20,325,2,thirstColor,shadowColor],
         [@currentTexts[3],20,350,2,sleepColor,shadowColor],
