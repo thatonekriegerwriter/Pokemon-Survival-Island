@@ -7,6 +7,8 @@
 # This is the name of a graphic in your Graphics/Pictures folder that changes the look of the UI
 # If the graphic does not exist, you will get an error
 WINDOWSKIN = "base.png"
+WINDOWSKIN2= "textbookbg.png"
+
 
 # This hash allows you to define the names of your encounter types if you want them to be more logical
 # E.g. "Surfing" instead of "Water"
@@ -36,7 +38,14 @@ USER_DEFINED_NAMES = {
 :RockSmash => "Rock Smash",
 :HeadbuttLow => "Headbutt (rare)",
 :HeadbuttHigh => "Headbutt (common)",
-:BugContest => "Bug Contest"
+:BugContest => "Bug Contest",
+:OverworldWater => "Overworld",
+:OverworldLandMorning => "Overworld",
+:OverworldLandDay => "Overworld",
+:OverworldLandNight => "Overworld",
+:Adventure => "Adventures",
+:Bait => "Bait",
+:CaveDeep => "Cave"
 }
 
 # Remove the '#' from this line to use default encounter type names
@@ -93,6 +102,7 @@ class EncounterList_Scene
     @selectX=0
     @selectY=0
     @selection=0
+	@species=0
     if !File.file?("Graphics/Pictures/EncounterUI/"+WINDOWSKIN)
       raise _INTL("You are missing the graphic for this UI. Make sure the image is in your Graphics/Pictures folder and that it is named appropriately.")
     end
@@ -210,12 +220,11 @@ class EncounterList_Scene
         @sprites["selector"].y -= 70
 		end
 	  elsif Input.trigger?(Input::USE)
-	  pbArceusTasks
+	  pbArceusTasksStart
       elsif Input.trigger?(Input::BACK)
 	    @sprites["selector"].visible = false
         @sprites["selector"].x -= (64*@selection)
         @selection=0
-        pbEncounter
         break
       end
     end
@@ -223,23 +232,199 @@ class EncounterList_Scene
  
  
  
-  def pbArceusTasks
-      if @selection==0
-           i = 0
+  def pbArceusTasksStart
           enc_array, currKey = getEncData
-         enc_array.each do |s|
-          species_data = GameData::Species.get(s)
-         if !$Trainer.pokedex.owned?(s) && !seen_form_any_gender?(s,species_data.form)
- 		     pbMessage(_INTL("{1}",(s)))
-         elsif !$Trainer.pokedex.owned?(s)
- 		     pbMessage(_INTL("{1}",(s)))
-         else
- 		     pbMessage(_INTL("{1}",(s)))
-         end
-	   i += 1
+          if @selection==0
+		  @species = enc_array[0]
+		    if !@species.empty?
+          species_data = GameData::Species.get(@species)
+              if !$Trainer.pokedex.owned?(@species) && !seen_form_any_gender?(@species,species_data.form)
+ 		         pbMessage(_INTL("You haven't discovered this species, so you dont have any research tasks for it."))
+               else
+				 pbArceusTasksMain
+			   end
+            else
+			pbMessage(_INTL("There is no encounter data in this slot."))
+			end
+          elsif @selection==1
+		  @species = enc_array[1]
+		    if !@species.empty?
+          species_data = GameData::Species.get(@species)
+              if !$Trainer.pokedex.owned?(@species) && !seen_form_any_gender?(@species,species_data.form)
+ 		         pbMessage(_INTL("You haven't discovered this species, so you cannot look up data on it."))
+               else
+				 pbArceusTasksMain
+               end
+            else
+			pbMessage(_INTL("There is no encounter data in this slot."))
+			end
+          elsif @selection==2
+		  @species = enc_array[2]
+		    if !@species.empty?
+          species_data = GameData::Species.get(@species)
+              if !$Trainer.pokedex.owned?(@species) && !seen_form_any_gender?(@species,species_data.form)
+ 		         pbMessage(_INTL("You haven't discovered this species, so you cannot look up data on it."))
+               else
+				 pbArceusTasksMain
+			     end
+			else
+ 		     pbMessage(_INTL("There is no Encounter Data in this slot.",(@species)))
+			end
+          elsif @selection==3
+		  @species = enc_array[3]
+		    if !@species.empty?
+          species_data = GameData::Species.get(@species)
+              if !$Trainer.pokedex.owned?(@species) && !seen_form_any_gender?(@species,species_data.form)
+ 		         pbMessage(_INTL("You haven't discovered this species, so you cannot look up data on it."))
+               else
+				 pbArceusTasksMain
+			     end
+            else
+			pbMessage(_INTL("There is no encounter data in this slot."))
+			end
+          elsif @selection==4
+		  @species = enc_array[4]
+		    if !@species.empty?
+          species_data = GameData::Species.get(@species)
+              if !$Trainer.pokedex.owned?(@species) && !seen_form_any_gender?(@species,species_data.form)
+ 		         pbMessage(_INTL("You haven't discovered this species, so you cannot look up data on it."))
+              else
+				 pbArceusTasksMain
+			  end
+            else
+			pbMessage(_INTL("There is no encounter data in this slot."))
+			end
+          elsif @selection==5
+		  @species = enc_array[5]
+		    if !@species.empty?
+          species_data = GameData::Species.get(@species)
+              if !$Trainer.pokedex.owned?(@species) && !seen_form_any_gender?(@species,species_data.form)
+ 		         pbMessage(_INTL("You haven't discovered this species, so you cannot look up data on it."))
+               else
+				 pbArceusTasksMain
+			     end
+            else
+			pbMessage(_INTL("There is no encounter data in this slot."))
+			end
+          elsif @selection==6
+		  @species = enc_array[6]
+		    if !@species.empty?
+          species_data = GameData::Species.get(@species)
+              if !$Trainer.pokedex.owned?(@species) && !seen_form_any_gender?(@species,species_data.form)
+ 		         pbMessage(_INTL("You haven't discovered this species, so you cannot look up data on it."))
+               else
+				 pbArceusTasksMain
+			     end
+            else
+			pbMessage(_INTL("There is no encounter data in this slot."))
+			end
+          elsif @selection==7
+		  @species = enc_array[7]
+		    if !@species.empty?
+          species_data = GameData::Species.get(@species)
+              if !$Trainer.pokedex.owned?(@species) && !seen_form_any_gender?(@species,species_data.form)
+ 		         pbMessage(_INTL("You haven't discovered this species, so you cannot look up data on it."))
+               else
+				 pbArceusTasksMain
+			     end
+            else
+			pbMessage(_INTL("There is no encounter data in this slot."))
+			end
+          elsif @selection==8
+		  @species = enc_array[8]
+		    if !@species.empty?
+          species_data = GameData::Species.get(@species)
+              if !$Trainer.pokedex.owned?(@species) && !seen_form_any_gender?(@species,species_data.form)
+ 		         pbMessage(_INTL("You haven't discovered this species, so you cannot look up data on it."))
+               else
+				 pbArceusTasksMain
+			     end
+            else
+			pbMessage(_INTL("There is no encounter data in this slot."))
+				 
+			end
+          elsif @selection==9
+		  @species = enc_array[9]
+		    if !@species.empty?
+          species_data = GameData::Species.get(@species)
+              if !$Trainer.pokedex.owned?(@species) && !seen_form_any_gender?(@species,species_data.form)
+ 		         pbMessage(_INTL("You haven't discovered this species, so you cannot look up data on it."))
+               else
+				 pbArceusTasksMain
+			     end
+            else
+			pbMessage(_INTL("There is no encounter data in this slot."))
+			end
+          elsif @selection==10
+		  @species = enc_array[10]
+		    if !@species.empty?
+          species_data = GameData::Species.get(@species)
+              if !$Trainer.pokedex.owned?(@species) && !seen_form_any_gender?(@species,species_data.form)
+ 		         pbMessage(_INTL("You haven't discovered this species, so you cannot look up data on it."))
+               else
+				 pbArceusTasksMain
+			     end
+            else
+			pbMessage(_INTL("There is no encounter data in this slot."))
+			end
+          else @selection==11
+		  @species = enc_array[11]
+		    if !@species.empty?
+          species_data = GameData::Species.get(@species)
+              if !$Trainer.pokedex.owned?(@species) && !seen_form_any_gender?(@species,species_data.form)
+ 		         pbMessage(_INTL("You haven't discovered this species, so you cannot look up data on it."))
+               else
+				 pbArceusTasksMain
+			     end
+            else
+			pbMessage(_INTL("There is no encounter data in this slot."))
+               end
+			end
+	      end
+     
+
+
+
+     def drawText
+	  powerColor=Color.new(0,0,0)
+      shadowColor=Color.new(160,160,160)
+
+      textPositions=[
+        [@currentTexts[0],250,0,2,powerColor,shadowColor],
+        [@currentTexts[1],140,40,2,powerColor,shadowColor],
+        [@currentTexts[2],140,60,2,powerColor,shadowColor],
+        [@currentTexts[3],140,80,2,powerColor,shadowColor]
+      ]
+
+      pbSetSystemFont(@sprites["background"].bitmap)
+      pbDrawTextPositions(@sprites["background"].bitmap,textPositions)
     end
-   end
-   end
+	
+	
+    # Note that this method is called on each refresh, but the texts
+    # only will be redrawed if any character change.
+    def textsDefined
+      ret=[]
+      ret[0] = _INTL("{1}",@species)
+      ret[1] = _INTL("[{1}] Number Defeated",$Trainer.pokedex.number_battled(@species))
+	  ret[2] = _INTL("[{1}] Number Caught",$Trainer.pokedex.number_caught(@species))
+	  ret[3] = _INTL("[{1}] Forms Registered",$Trainer.pokedex.seen_forms_count(@species))
+	  ret[3] = _INTL("[{1}] Forms Registered - Complete",$Trainer.pokedex.seen_forms_count(@species)) if (!@species == :VENUSAUR || !@species == :CHARIZARD || !@species == :BLASTOISE || !@species == :BEEDRILL || !@species == :PIDGEOT || !@species == :RATTATA || !@species == :RATICATE || !@species == :PIKACHU || !@species == :RAICHU || !@species == :SANDSHREW || !@species == :SANDSLASH || !@species == :VULPIII || !@species == :VULPIX || !@species == :KITSUVEN || !@species == :NINETALES || !@species == :DIGLETT || !@species == :DUGTRIO || !@species == :MEOWTH || !@species == :PERSIAN || !@species == :ALAKAZAM || !@species == :GEODUDE || !@species == :GRAVELER || !@species == :GOLEM || !@species == :PONYTA || !@species == :RAPIDASH || !@species == :SLOWPOKE || !@species == :SLOWBRO || !@species == :FARFETCHD || !@species == :GRIMER || !@species == :MUK || !@species == :GENGAR || !@species == :EXEGGUTOR || !@species == :CUBONE || !@species == :MAROWAK || !@species == :WEEZING || !@species == :KANGASKHAN || !@species == :MRMIME || !@species == :PINSIR || !@species == :GYARADOS || !@species == :AERODACTYL || !@species == :ARTICUNO || !@species == :ZAPDOS || !@species == :MOLTRES || !@species == :MEWTWO || !@species == :PICHU || !@species == :AMPHAROS || !@species == :SLOWKING || !@species == :UNOWN || !@species == :STEELIX || !@species == :SCIZOR || !@species == :HERACROSS || !@species == :CORSOLA || !@species == :HOUNDOOM || !@species == :TYRANITAR || !@species == :SCEPTILE || !@species == :BLAZIKEN || !@species == :SWAMPERT || !@species == :ZIGZAGOON || !@species == :LINOONE || !@species == :GARDEVOIR || !@species == :SABLEYE || !@species == :MAWILE || !@species == :AGGRON || !@species == :MEDICHAM || !@species == :MANECTRIC || !@species == :SHARPEDO || !@species == :CAMERUPT || !@species == :ALTARIA || !@species == :CASTFORM || !@species == :BANETTE || !@species == :ABSOL || !@species == :GLALIE || !@species == :SALAMENCE || !@species == :METAGROSS || !@species == :LATIAS || !@species == :LATIOS || !@species == :KYOGRE || !@species == :GROUDON || !@species == :RAYQUAZA || !@species == :DEOXYS || !@species == :BURMY || !@species == :WORMADAM || !@species == :CHERRIM || !@species == :SHELLOS || !@species == :GASTRODON || !@species == :LOPUNNY || !@species == :GARCHOMP || !@species == :LUCARIO || !@species == :ABOMASNOW || !@species == :GALLADE || !@species == :ROTOM || !@species == :GIRATINA || !@species == :SHAYMIN || !@species == :ARCEUS || !@species == :AUDINO || !@species == :BASCULIN || !@species == :DARUMAKA || !@species == :DARMANITAN || !@species == :YAMASK || !@species == :DEERLING || !@species == :SAWSBUCK || !@species == :STUNFISK || !@species == :TORNADUS || !@species == :THUNDURUS || !@species == :LANDORUS || !@species == :KYUREM || !@species == :KELDEO || !@species == :MELOETTA || !@species == :GENESECT || !@species == :GRENINJA || !@species == :VIVILLON || !@species == :FLABEBE || !@species == :FLOETTE || !@species == :FLORGES || !@species == :FURFROU || !@species == :MEOWSTIC || !@species == :AEGISLASH || !@species == :PUMPKABOO || !@species == :GOURGEIST || !@species == :XERNEAS || !@species == :ZYGARDE || !@species == :DIANCIE || !@species == :HOOPA || !@species == :ORICORIO || !@species == :LYCANROC || !@species == :WISHIWASHI || !@species == :SILVALLY || !@species == :MINIOR || !@species == :NECROZMA || !@species == :MAGEARNA || !@species == :CRAMORANT || !@species == :TOXTRICITY || !@species == :ALCREMIE || !@species == :SINISTEA || !@species == :POLTEAGEIST || !@species == :EISCUE || !@species == :INDEEDEE || !@species == :MORPEKO || !@species == :ZACIAN || !@species == :ZAMAZENTA || !@species == :URSHIFU || !@species == :CALYREX || !@species == :MAGMORTAR || !@species == :MAGIKARP || !@species == :MILOTIC || !@species == :MAMOSWINE || !@species == :SPIRITOMB || !@species == :ELECTIVIRE || !@species == :ZORUA || !@species == :ZOROARK || !@species == :ZUBAT || !@species == :GOLBAT || !@species == :CROBAT || !@species == :HOPPIP || !@species == :SKIPLOOM || !@species == :JUMPLUFF || !@species == :REMORAID || !@species == :OCTILLERY || !@species == :TYROGUE || !@species == :HITMONTOP || !@species == :KINGDRA || !@species == :LEDIAN || !@species == :GIRAFARIG || !@species == :POLITOED || !@species == :MEW) && $Trainer.pokedex.seen_forms_count(@species)== 1
+      return ret
+    end
+
+ 
+ 
+ def pbArceusTasksMain
+    loctext = _INTL("")
+    loctext += sprintf("")
+    loctext += sprintf("")
+    @sprites["locwindow"].setText(loctext)
+  @sprites["background"]=IconSprite.new(0,0,@viewport)
+  @sprites["background"].setBitmap("Graphics/Pictures/EncounterUI/"+WINDOWSKIN2)
+  @currentTexts = textsDefined
+  drawText
+ end
   # Draw text and icons if map has encounters defined
   def drawPresent
     @sprites["rightarrow"].visible = (@index < @eLength-1) ? true : false
@@ -323,3 +508,5 @@ class EncounterList_Screen
     @scene.pbEndScene
   end
 end
+
+
