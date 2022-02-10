@@ -3060,8 +3060,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3099,8 +3099,8 @@ LandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3172,8 +3172,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3211,8 +3211,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3284,8 +3284,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3323,8 +3323,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3396,8 +3396,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3435,8 +3435,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3508,8 +3508,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3547,8 +3547,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3620,8 +3620,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3659,8 +3659,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3732,8 +3732,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3771,8 +3771,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3844,8 +3844,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3883,8 +3883,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3956,8 +3956,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3995,8 +3995,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -4068,8 +4068,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -4107,8 +4107,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -6008,12 +6008,12 @@ OldRod
     30,FEEBAS,7
 GoodRod
     60,DRATINI,5,15
-    20,DRATINI,7,13
     20,DRATINI,3,8
+    20,DRATINI,7,13
 Bait
     20,CATERPIE,5
     20,DEINO,5
-    10,BURMY,5
+    10,DRATINI,5
     10,DUSTOX,5
     10,PINECO,5
     10,PINSIR,5

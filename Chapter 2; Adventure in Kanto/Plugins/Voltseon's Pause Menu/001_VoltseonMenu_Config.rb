@@ -25,7 +25,7 @@ MENU_ENTRIES = [
 	"MenuEntryPokemon", "MenuEntryPokedex", "MenuEntryBag",
 	"MenuEntryTrainer", "MenuEntryCraft", "MenuEntryVentures", "MenuEntryExitBugContest",
 	"MenuEntryExitSafari", "MenuEntryDebug", "MenuEntryOptions",
-	"MenuEntryEncounterList", "MenuEntryQuests", "MenuEntryAchievements", "MenuEntryQuit"
+	"MenuEntryQuests", "MenuEntryAchievements", "MenuEntryQuit"
 ]
 
 # An array of aLL the Menu Component Classes from 004_VoltseonMenu_Components

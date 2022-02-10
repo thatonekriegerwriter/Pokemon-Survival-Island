@@ -2,63 +2,63 @@ def pbCookMeat
 
 
      Kernel.pbMessage(_INTL("You decide to use this POKeMON for food."))
-	   if $game_variables[1]== :MAGIKARP
+	   if pbGetPokemon(1)== :MAGIKARP
         $Trainer.remove_pokemon_at_index(pbGet(1))
 	    Kernel.pbMessage(_INTL("Wow, there is no meat on the Magikarp."))
-	   elsif $game_variables[1] == :SNORLAX
+	   elsif pbGetPokemon(1) == :SNORLAX
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:MEAT,(rand(3)+4))
-	   elsif $game_variables[1].type == FLYING
+	   elsif pbGetPokemon(1).type1 == :FLYING
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:BIRDMEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == NORMAL
+	   elsif pbGetPokemon(1).type1 == :NORMAL
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:MEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == FIGHTING
+	   elsif pbGetPokemon(1).type1 == :FIGHTING
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:MEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == POISON
+	   elsif pbGetPokemon(1).type1 == :POISON
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:POISONOUSMEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == GROUND
+	   elsif pbGetPokemon(1).type1 == :GROUND
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:ROCKYMEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == ROCK
+	   elsif pbGetPokemon(1).type1 == :ROCK
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:ROCKYMEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == BUG
+	   elsif pbGetPokemon(1).type1 == :BUG
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:BUGMEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == GHOST
+	   elsif pbGetPokemon(1).type1 == :GHOST
         Kernel.pbMessage(_INTL("You can't kill a ghost."))
-	   elsif $game_variables[1].type == STEEL
+	   elsif pbGetPokemon(1).type1 == :STEEL
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:STEELYMEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == WATER
+	   elsif pbGetPokemon(1).type1 == :WATER
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:SUSHI,(rand(3)+1))
-	   elsif $game_variables[1].type == GRASS
+	   elsif pbGetPokemon(1).type1 == :GRASS
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:LEAFYMEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == ELECTRIC
+	   elsif pbGetPokemon(1).type1 == :ELECTRIC
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:MEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == PSYCHIC
+	   elsif pbGetPokemon(1).type1 == :PSYCHIC
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:MEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == ICE
+	   elsif pbGetPokemon(1).type1 == :ICE
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:ICEYROCKS,(rand(3)+1))
-	   elsif $game_variables[1].type == DRAGON
+	   elsif pbGetPokemon(1).type1 == :DRAGON
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:DRAGONMEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == DARK
+	   elsif pbGetPokemon(1).type1 == :DARK
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:MEAT,(rand(3)+1))
-	   elsif $game_variables[1].type == CRYSTAL
+	   elsif pbGetPokemon(1).type1 == :CRYSTAL
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:EDIABLESCRYSTAL,(rand(3)+1))
-	   elsif $game_variables[1].type == WIND
+	   elsif pbGetPokemon(1).type1 == :WIND
         $Trainer.remove_pokemon_at_index(pbGet(1))
 		Kernel.pbReceiveItem(:MEAT,(rand(3)+1))
 	   else

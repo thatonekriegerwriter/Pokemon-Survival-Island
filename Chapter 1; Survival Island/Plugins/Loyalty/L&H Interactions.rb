@@ -3892,7 +3892,7 @@ elsif pkmn.nature ==   :LOVING
       when "wing"
         gain = [3, 2, 1][happiness_range]
       when "machine", "battleitem"
-        gain = [1, 1, 0][happiness_range]
+        gain = [1, 1, 1][happiness_range]
       when "faint"
         gain = [-5, -5, -7][happiness_range]
       when "faintbad"   # Fainted against an opponent that is 30+ levels higher
