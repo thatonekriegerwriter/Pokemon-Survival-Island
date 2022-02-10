@@ -367,7 +367,7 @@ class EncounterList_Scene
             else
 			pbMessage(_INTL("There is no encounter data in this slot."))
 			end
-          else @selection==11
+          elsif @selection==11
 		  @species = enc_array[11]
 		    if !@species.empty?
           species_data = GameData::Species.get(@species)
@@ -380,6 +380,8 @@ class EncounterList_Scene
 			pbMessage(_INTL("There is no encounter data in this slot."))
                end
 			end
+
+
 	      end
      
 
@@ -424,6 +426,9 @@ class EncounterList_Scene
   @sprites["background"].setBitmap("Graphics/Pictures/EncounterUI/"+WINDOWSKIN2)
   @currentTexts = textsDefined
   drawText
+   if Input.trigger?(Input::BACK)
+     pbEncounterInteract
+   end
  end
   # Draw text and icons if map has encounters defined
   def drawPresent

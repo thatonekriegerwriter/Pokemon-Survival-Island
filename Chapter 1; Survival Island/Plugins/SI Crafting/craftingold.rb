@@ -291,7 +291,8 @@ class Crafts_Scene
         elsif @selection==0
           @returnItem=:NO
           @itemA=Kernel.pbChooseItem
-		  crafts = CraftsList.getcrafts	  
+		  crafts = CraftsList.getcrafts	 
+        if !@itemA.empty?		  
           for i in 0..222
             if crafts[i][2]!=@itemB && @itemB==:NO
               @itemB=:NO
@@ -307,10 +308,14 @@ class Crafts_Scene
               @required[1]=crafts[i][1]
             end
           end
+		else
+		@itemA=:NO
+        end
         elsif @selection==1
           @returnItem=:NO
           @itemB=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
+		  if !@itemB.empty?
           for i in 0..222
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
               @currentArray=i
@@ -326,10 +331,14 @@ class Crafts_Scene
               @quantC=0
             end
           end 
+		  else
+		  @itemB=:NO
+		  end
         elsif @selection==2
           @returnItem=:NO
           @itemC=Kernel.pbChooseItem
 		  crafts = CraftsList.getcrafts
+		  if !@itemC.empty?
           for i in 0..222
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
               @currentArray=i
@@ -345,13 +354,17 @@ class Crafts_Scene
               @quantB=0
             end
           end
+		  else
+		  @itemC=:NO
+		  end
         else
           Kernel.pbMessage(_INTL("You must first select an item!"))
         end
-
+        if !@itemA.empty? && !@itemB.empty? && !@itemC.empty?
          @quantA=$PokemonBag.pbQuantity(@itemA)
          @quantB=$PokemonBag.pbQuantity(@itemB)
          @quantC=$PokemonBag.pbQuantity(@itemC)
+        end
       end
        #Cancel
       if Input.trigger?(Input::BACK)

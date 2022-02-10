@@ -36,7 +36,6 @@ class SurvivalMode
   attr_accessor :playerstamina
 
 def initialize
-    $SurvivalMode=SurvivalMode.new
     @survivalmode = 1     # Default Survival Mode (0=on, 1=off)
     @playerwater   = PLAYERSTARTWATER     # Text speed (0=slow, 1=normal, 2=fast)
     @playerfood = PLAYERSTARTFOOD     # Battle effects (animations) (0=on, 1=off)
@@ -45,7 +44,7 @@ def initialize
     @playerhealth  = PLAYERSTARTHEALTH     # Default window frame (see also Settings::MENU_WINDOWSKINS)
     @playerstamina  = PLAYERSTARTINGSTAMINA     # Speech frame
 end
-  
+
 
 end	
 	

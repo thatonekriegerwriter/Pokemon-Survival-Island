@@ -908,7 +908,6 @@
 #-------------------------------
 # Crafting Stations
 #-------------------------------
-1926,COALGENERATOR,Coal Generator,Coal Generators,8,2100,"A Station that uses Coal to to create energy.",2,0,6,
 1927,SPRINKLER,Sprinkler,Sprinklers,8,2100,"A Sprinkler System for your Greenhouse.",2,0,6,
 1928,ELECTRICGRINDER,Electric Grinder,Electric Grinder,8,2100,"A Grinder powered by Electricity.",2,0,6,
 1929,ELECTRICFURNACE,Electric Furnace,Electric Furnace,8,2100,"A Furnace powered by Electricity.",2,0,6,
@@ -931,6 +930,14 @@
 1819,BEDROLL,Bed,Bed,1,2100,"A Bedroll, used for Sleeping.",2,0,6
 1820,PORTABLEPC,Pokemon Crate,Pokemon Crates,1,2100,"A Crate that is used to Store Pokemon.",2,0,6,
 1807,PORTABLECAMP,Portable Campsite,Portable Campsites,1,1000,"A Camp that can be set up anywhere, it's one use.",2,0,6,
+#-------------------------------
+# Generators
+#-------------------------------
+1926,COALGENERATOR,Power Generator (Coal),Power Generators (Coal),8,2100,"A Station that uses Coal to to create energy.",2,0,6,
+2032,SOLARGENERATOR,Power Generator (Solar), Power Generator (Solar),9,100,"A Station that uses the Sun to to create energy.",2,0,6,
+2033,HYDROGENERATOR,Power Generator (Water), Power Generator (Water),9,100,"A Station that uses the Water to to create energy.",2,0,6,
+2034,WINDGENERATOR,Power Generator (Wind), Power Generator (Wind),9,100,"A Station that uses the Wind to to create energy.",2,0,6,
+2035,POKEGENERATOR,Power Generator (Pokemon), Power Generator (Pokemon),9,100,"A Station that uses electric type Pokemon to to create energy.",2,0,6,
 #-------------------------------
 # Crafting Ingredients
 #-------------------------------
