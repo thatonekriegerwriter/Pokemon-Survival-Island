@@ -82,7 +82,7 @@ BattleBack = Forest
 #-------------------------------
 [010]
 # Route 4
-Outdoor = false
+Outdoor = true
 BattleBack = Forest
 #-------------------------------
 [011]
@@ -94,7 +94,7 @@ Weather = Rain,0
 #-------------------------------
 [012]
 # Route 10
-Outdoor = false
+Outdoor = true
 ShowArea = true
 BattleBack = Ruins
 #-------------------------------
@@ -105,7 +105,7 @@ ShowArea = true
 #-------------------------------
 [014]
 # Route 12
-Outdoor = false
+Outdoor = true
 ShowArea = true
 BattleBack = Cave
 #-------------------------------
@@ -129,7 +129,7 @@ BattleBack = Mountain
 #-------------------------------
 [018]
 # Route 15
-Outdoor = false
+Outdoor = true
 #-------------------------------
 [019]
 # Route 15
@@ -140,7 +140,7 @@ BattleBack = Mountain
 #-------------------------------
 [020]
 # Route 18
-Outdoor = false
+Outdoor = true
 ShowArea = false
 BicycleAlways = false
 BattleBack = Cave
@@ -152,7 +152,7 @@ ShowArea = false
 #-------------------------------
 [022]
 # Route 18
-Outdoor = false
+Outdoor = true
 ShowArea = true
 Bicycle = true
 DarkMap = false
@@ -161,19 +161,19 @@ BattleBack = Cave
 #-------------------------------
 [023]
 # Cerulean City
-Outdoor = false
+Outdoor = true
 ShowArea = false
 #-------------------------------
 [024]
-# Route 16
+# Fuchia Gate
 Outdoor = true
 ShowArea = true
 Bicycle = false
 BattleBack = mountain
 #-------------------------------
 [025]
-# Route 16
-Outdoor = false
+# House 1
+Outdoor = true
 #-------------------------------
 [026]
 # Route 11 Gate 1F
@@ -181,30 +181,30 @@ Outdoor = false
 #-------------------------------
 [027]
 # Route 12 Gate 1F
-Outdoor = true
+Outdoor = false
 BattleBack = Forest
 #-------------------------------
 [028]
 # Route 15 Gate 1F
-Outdoor = true
+Outdoor = false
 ShowArea = true
 BattleBack = Mountain
 #-------------------------------
 [029]
 # Route 16 Gate 1F
-Outdoor = true
+Outdoor = false
 ShowArea = true
 BattleBack = Mountain
 #-------------------------------
 [030]
 # Route 18 Gate 1F
-Outdoor = true
+Outdoor = false
 ShowArea = true
 BattleBack = Mountain
 #-------------------------------
 [031]
 # Route 3
-Outdoor = false
+Outdoor = true
 BattleBack = Cave
 #-------------------------------
 [032]
@@ -220,7 +220,7 @@ BattleBack = Swamp
 #-------------------------------
 [034]
 # Route 5 Gate
-Outdoor = true
+Outdoor = false
 BattleBack = Swamp
 #-------------------------------
 [035]
@@ -230,18 +230,22 @@ BattleBack = Swamp
 #-------------------------------
 [036]
 # North Vermillion Gate
-Outdoor = true
+Outdoor = false
 ShowArea = true
 Weather = Rain,100
 DarkMap = false
 BattleBack = Swamp
 #-------------------------------
+[037]
+# Route 7 Gate
+Outdoor = false
+#-------------------------------
 [038]
 # Route 8 Gate
-Outdoor = true
+Outdoor = false
 #-------------------------------
 [039]
-# Route 16
+# Celadon
 Outdoor = true
 #-------------------------------
 [040]
@@ -250,16 +254,15 @@ Outdoor = false
 #-------------------------------
 [041]
 # Route 17
-Outdoor = false
+Outdoor = true
 #-------------------------------
 [042]
 # Red Household
 Outdoor = false
-DiveMap = 114
 #-------------------------------
 [043]
 # Route 4
-Outdoor = false
+Outdoor = true
 DarkMap = false
 SnapEdges = false
 BattleBack = Forest
@@ -310,29 +313,29 @@ Outdoor = false
 Outdoor = true
 #-------------------------------
 [053]
-# PokéCenter
+# Cremini Town Pokemon Center
 Outdoor = true
 #-------------------------------
 [054]
-# PokéCenter
+# Bar
 Outdoor = true
 #-------------------------------
 [055]
-# PokéCenter
+# House 2
 Outdoor = true
 #-------------------------------
 [056]
-# PokéCenter
+# House 1
 Outdoor = false
 HealingSpot = 55,24,11
 SnapEdges = true
 #-------------------------------
 [057]
-# PokéCenter
+# Bullet Train Terminal
 Outdoor = true
 #-------------------------------
 [058]
-# PokéCenter
+# House 1
 Outdoor = true
 #-------------------------------
 [059]
@@ -341,37 +344,37 @@ Outdoor = true
 DiveMap = 66
 #-------------------------------
 [060]
-# PokéMart
+# Saffron City Poke Center
 Outdoor = true
 #-------------------------------
 [061]
-# PokéMart
+# Card Shop
 Outdoor = true
 #-------------------------------
 [062]
-# PokéMart
+# House 1
 Outdoor = true
 #-------------------------------
 [063]
-# PokéMart
+# House 2
 Outdoor = true
 BattleBack = Cave
 #-------------------------------
 [064]
-# PokéMart
+# Gym
 Outdoor = true
 ShowArea = false
 Weather = Rain,20
 BattleBack = Forest
 #-------------------------------
 [065]
-# PokéMart
+# Day Care
 Outdoor = true
 Weather = Rain,20
 BattleBack = Forest
 #-------------------------------
 [066]
-# PokéMart
+# \PN's House
 Outdoor = true
 BattleBack = Cave
 #-------------------------------
@@ -383,6 +386,10 @@ BattleBack = Cave
 [068]
 # School
 Outdoor = false
+#-------------------------------
+[069]
+# Route 8
+Outdoor = true
 #-------------------------------
 [070]
 # Gym
@@ -779,7 +786,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [166]
-# Route 16
+# House 1
 Outdoor = true
 #-------------------------------
 [167]
@@ -995,19 +1002,19 @@ BattleBack = Cave
 Outdoor = true
 #-------------------------------
 [219]
-# Rocket Hideout B2F
+# House 4
 Outdoor = true
 #-------------------------------
 [220]
-# Rocket Hideout B3F
+# House 4
 Outdoor = true
 #-------------------------------
 [221]
-# Rocket Hideout B4F
+# House 4
 Outdoor = true
 #-------------------------------
 [222]
-# Rocket Hideout Elevator
+# Oak's Lab
 Outdoor = true
 #-------------------------------
 [223]
@@ -1313,7 +1320,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [298]
-# PokéCenter
+# Cremini Town
 Outdoor = true
 #-------------------------------
 [299]
@@ -1345,14 +1352,15 @@ Outdoor = false
 Outdoor = false
 #-------------------------------
 [306]
-# PokéCenter
+# Grullo Gate
 Outdoor = true
 #-------------------------------
 [307]
-# PokéCenter
+# Grullo Gorge
 Outdoor = true
 #-------------------------------
 [308]
+# Grullo Gorge
 Outdoor = true
 #-------------------------------
 [309]
@@ -1360,7 +1368,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [310]
-# Contest Hall
+# Grullo Gorge
 Outdoor = true
 #-------------------------------
 [311]
@@ -1414,13 +1422,13 @@ Dungeon = true
 BattleBack = Cave
 #-------------------------------
 [333]
-# PokéCenter
+# R Building F2
 Outdoor = false
 Dungeon = true
 BattleBack = Cave
 #-------------------------------
 [334]
-# PokéCenter
+# R Building F3
 Outdoor = false
 Dungeon = true
 BattleBack = Cave
@@ -1436,7 +1444,20 @@ BattleBack = Cave
 Outdoor = false
 BattleBack = Cave
 #-------------------------------
+[337]
+# Route 27
+Outdoor = true
+#-------------------------------
+[339]
+# Olivine City
+Outdoor = true
+#-------------------------------
+[341]
+# New Bark Town
+Outdoor = true
+#-------------------------------
 [342]
+# Cherrygrove City
 Outdoor = false
 MapPosition = 0,16,11
 Dungeon = true
@@ -1444,35 +1465,65 @@ BattleBack =
 Environment = Cave
 #-------------------------------
 [343]
+# CHERRYGROVE CITY House 1
 Outdoor = false
 Dungeon = true
 #-------------------------------
 [344]
+# CHERRYGROVE CITY House 2
 Outdoor = false
 Dungeon = true
 #-------------------------------
 [345]
+# CHERRYGROVE CITY Guide Gent House
 Outdoor = false
 Dungeon = true
 #-------------------------------
 [346]
+# MAHOGANY TOWN
 Outdoor = false
 #-------------------------------
 [347]
+# CIANWOOD CITY
 Outdoor = false
 Dungeon = true
 #-------------------------------
 [348]
+# AZALEA TOWN
 Outdoor = false
 #-------------------------------
 [349]
+# BLACKTHORN CITY
 Outdoor = true
 #-------------------------------
 [350]
+# Routes
 Outdoor = true
 #-------------------------------
 [351]
+# Landmarks'
 Outdoor = false
 #-------------------------------
 [352]
+# Towns
 Outdoor = false
+#-------------------------------
+[353]
+# ROUTE 29
+Outdoor = true
+#-------------------------------
+[354]
+# ROUTE 30
+Outdoor = true
+#-------------------------------
+[355]
+# ROUTE 31
+Outdoor = true
+#-------------------------------
+[356]
+# ROUTE 44
+Outdoor = true
+#-------------------------------
+[357]
+# Route 35
+Outdoor = true

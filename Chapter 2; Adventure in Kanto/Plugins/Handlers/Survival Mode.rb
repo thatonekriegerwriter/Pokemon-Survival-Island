@@ -13,14 +13,6 @@
 #==============================================================================#
 #Thanks Maurili and Vendily for the Original Hunger Script                     #
 
-FODVARI=205
-H20VARI=206
-HPVARI=225
-STAVARI=4977
-SATVARI=207
-SLPVARI=208
-
-
 Events.onStepTakenTransferPossible+=proc {
 
 $game_switches[70]=true
@@ -31,17 +23,126 @@ pbchangeSaturation
 pbchangeSleep
 pbchangeStamina
 
+
+ if $Trainer.pokemonCount==6
+  if rand(255)==1
+  $Trainer.party[0].changeFood
+  end
+  if rand(255)==3
+  $Trainer.party[1].changeFood
+  end
+  if rand(255)==5
+  $Trainer.party[2].changeFood
+  end
+  if rand(255)==7
+  $Trainer.party[3].changeFood
+  end
+  if rand(255)==8
+  $Trainer.party[4].changeFood
+  end
+  if rand(255)==17
+  $Trainer.party[5].changeFood
+  end
+ elsif $Trainer.pokemonCount==5
+  if rand(255)==1
+  $Trainer.party[0].changeFood
+  end
+  if rand(255)==3
+  $Trainer.party[1].changeFood
+  end
+  if rand(255)==5
+  $Trainer.party[2].changeFood
+  end
+  if rand(255)==7
+  $Trainer.party[3].changeFood
+  end
+  if rand(255)==8
+  $Trainer.party[4].changeFood
+  end
+ elsif $Trainer.pokemonCount==4
+  if rand(255)==1
+  $Trainer.party[0].changeFood
+  end
+  if rand(255)==3
+  $Trainer.party[1].changeFood
+  end
+  if rand(255)==5
+  $Trainer.party[2].changeFood
+  end
+  if rand(255)==7
+  $Trainer.party[3].changeFood
+  end
+ elsif $Trainer.pokemonCount==3
+  if rand(255)==1
+  $Trainer.party[0].changeFood
+  end
+  if rand(255)==3
+  $Trainer.party[1].changeFood
+  end
+  if rand(255)==5
+  $Trainer.party[2].changeFood
+  end
+ elsif $Trainer.pokemonCount==2
+  if rand(255)==1
+  $Trainer.party[0].changeFood
+  end
+  if rand(255)==3
+  $Trainer.party[1].changeFood
+  end
+ elsif $Trainer.pokemonCount==1
+  if rand(255)==1
+  $Trainer.party[0].changeFood
+  end
+ end
+
+if rand(255)==1
+ if $Trainer.pokemonCount==6
+  $Trainer.party[0].changeWater
+  $Trainer.party[1].changeWater
+  $Trainer.party[2].changeWater
+  $Trainer.party[3].changeWater
+  $Trainer.party[4].changeWater
+  $Trainer.party[5].changeWater
+ elsif $Trainer.pokemonCount==5
+  $Trainer.party[0].changeWater
+  $Trainer.party[1].changeWater
+  $Trainer.party[2].changeWater
+  $Trainer.party[3].changeWater
+  $Trainer.party[4].changeWater
+ elsif $Trainer.pokemonCount==4
+  $Trainer.party[0].changeWater
+  $Trainer.party[1].changeWater
+  $Trainer.party[2].changeWater
+  $Trainer.party[3].changeWater
+ elsif $Trainer.pokemonCount==3
+  $Trainer.party[0].changeWater
+  $Trainer.party[1].changeWater
+  $Trainer.party[2].changeWater
+ elsif $Trainer.pokemonCount==2
+  $Trainer.party[0].changeWater
+  $Trainer.party[1].changeWater
+ elsif $Trainer.pokemonCount==1
+  $Trainer.party[0].changeWater
+ end
+end
+
 if $game_switches[75]==true
    $game_variables[30]=3
    $PokemonSystem.survivalmode = 0
    $PokemonSystem.nuzlockemode = 0
+   
+end
+
+data = EliteBattle.get_data(:NUZLOCKE, :Metrics, :RULES); data = [] if data.nil?
+if $PokemonSystem.survivalmode == 0 && $game_switches[75]==false && $game_variables[204]==2 && (EliteBattle.get(:nuzlocke) && (data.include?(:NOREVIVE) || data.include?(:PERMADEATH)))
+pbLifeCheck
 end
 
   if !GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:None, 0, 0)
   end
 
-if $game_variables[HPVARI] < 1 && $PokemonSystem.survivalmode == 0
+if $Trainer.playerhealth < 1 && $PokemonSystem.survivalmode == 0
   pbStartOver
  end 
 }
@@ -139,15 +240,15 @@ end
 
 
 def pbSleepRestore
- if $game_variables[SLPVARI]<200
-  $game_variables[SLPVARI]=$game_variables[SLPVARI]+($game_variables[247]*6)
+ if $Trainer.playersleep<200
+  $Trainer.playersleep=$Trainer.playersleep+($game_variables[247]*6)
  end
- if $game_variables[SATVARI]<1
-   $game_variables[FODVARI]=$game_variables[FODVARI]-($game_variables[247]*3)
-   $game_variables[H20VARI]=$game_variables[H20VARI]-($game_variables[247]*3)
+ if $Trainer.playersaturation<1
+   $Trainer.playerfood=$Trainer.playerfood-($game_variables[247]*3)
+   $Trainer.playerwater=$Trainer.playerwater-($game_variables[247]*3)
    
   else
-   $game_variables[SATVARI]=$game_variables[SATVARI]-($game_variables[247]*3)
+   $Trainer.playersaturation=$Trainer.playersaturation-($game_variables[247]*3)
  end
   deposited = pbDayCareDeposited
   if deposited==2 && $PokemonGlobal.daycareEgg==0
@@ -161,272 +262,272 @@ def pbSleepRestore
  
 $PokemonBag.pbDeleteItem(item)
 if item == :ORANBERRY
-$game_variables[FODVARI]+=4
-$game_variables[SATVARI]+=3
-$game_variables[H20VARI]+=1
-$game_variables[HPVARI] += 1
+$Trainer.playerfood+=4
+$Trainer.playersaturation+=3
+$Trainer.playerwater+=1
+$Trainer.playerhealth += 1
 return 1
 elsif item == :LEPPABERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :CHERIBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :CHESTOBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :PECHABERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :RAWSTBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :ASPEARBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :PERSIMBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :LUMBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :FIGYBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :WIKIBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :MAGOBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :AGUAVBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :IAPAPABERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :IAPAPABERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 return 1
 elsif item == :SITRUSBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=7
-$game_variables[H20VARI]+=1
-$game_variables[HPVARI] += (0.25*$game_variables[HPVARI])
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=7
+$Trainer.playerwater+=1
+$Trainer.playerhealth += (0.25*$Trainer.playerhealth)
 return 1
 elsif item == :BERRYJUICE
-$game_variables[FODVARI]+=6
-$game_variables[SATVARI]+=4
-$game_variables[H20VARI]+=4
-$game_variables[HPVARI] += 2
+$Trainer.playerfood+=6
+$Trainer.playersaturation+=4
+$Trainer.playerwater+=4
+$Trainer.playerhealth += 2
 return 1
 elsif item == :FRESHWATER
-$game_variables[H20VARI]+=20
-$game_variables[SATVARI]+=10#207 is Saturation
+$Trainer.playerwater+=20
+$Trainer.playersaturation+=10#207 is Saturation
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 return 1
 #You can add more if you want
 elsif item == :ATKCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 return 1
 elsif item == :SATKCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 return 1
 elsif item == :SPEEDCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 return 1
 elsif item == :SPDEFCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 return 1
 elsif item == :ACCCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=12
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=12
+$Trainer.playerwater-=7
 return 1
 elsif item == :DEFCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 return 1
 elsif item == :CRITCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 return 1
 elsif item == :GSCURRY
-$game_variables[FODVARI]+=8#205 is Hunger
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[H20VARI]-=7#206 is Thirst
+$Trainer.playerfood+=8#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerwater-=7#206 is Thirst
 return 1
 elsif item == :RAGECANDYBAR #chocolate
-$game_variables[FODVARI]+=10
-$game_variables[SATVARI]+=3
-$game_variables[SLPVARI]+=7
+$Trainer.playerfood+=10
+$Trainer.playersaturation+=3
+$Trainer.playersleep+=7
 return 1
 elsif item == :SWEETHEART #chocolate
-$game_variables[FODVARI]+=10#205 is Hunger
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[SLPVARI]+=6#208 is Sleep
+$Trainer.playerfood+=10#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playersleep+=6#208 is Sleep
 return 1
 elsif item == :SODAPOP
-$game_variables[H20VARI]-=11#206 is Thirst
-$game_variables[SATVARI]+=11#207 is Saturation
-$game_variables[SLPVARI]+=10#208 is Sleep
+$Trainer.playerwater-=11#206 is Thirst
+$Trainer.playersaturation+=11#207 is Saturation
+$Trainer.playersleep+=10#208 is Sleep
 return 1
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 return 1
 elsif item == :LEMONADE
-$game_variables[SATVARI]+=11#207 is Saturation
-$game_variables[H20VARI]+=10#206 is Thirst
-$game_variables[SLPVARI]+=7#208 is Sleep
+$Trainer.playersaturation+=11#207 is Saturation
+$Trainer.playerwater+=10#206 is Thirst
+$Trainer.playersleep+=7#208 is Sleep
 return 1
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 return 1
 elsif item == :HONEY
-$game_variables[SATVARI]+=20#207 is Saturation
-$game_variables[H20VARI]+=2#206 is Thirst
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=20#207 is Saturation
+$Trainer.playerwater+=2#206 is Thirst
+$Trainer.playerfood+=6#205 is Hunger
 return 1
 elsif item == :MOOMOOMILK
-$game_variables[SATVARI]+=10
-$game_variables[H20VARI]+=15
+$Trainer.playersaturation+=10
+$Trainer.playerwater+=15
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 return 1
 elsif item == :CSLOWPOKETAIL
-$game_variables[SATVARI]+=10#207 is Saturation
-$game_variables[FODVARI]+=10#205 is Hunger
+$Trainer.playersaturation+=10#207 is Saturation
+$Trainer.playerfood+=10#205 is Hunger
 return 1
 elsif item == :BAKEDPOTATO
-$game_variables[SATVARI]+=10#207 is Saturation
-$game_variables[H20VARI]+=4#206 is Thirst
-$game_variables[FODVARI]+=7#205 is Hunger
+$Trainer.playersaturation+=10#207 is Saturation
+$Trainer.playerwater+=4#206 is Thirst
+$Trainer.playerfood+=7#205 is Hunger
 return 1
 elsif item == :APPLE
-$game_variables[SATVARI]+=10#207 is Saturation
-$game_variables[H20VARI]+=3#206 is Thirst
-$game_variables[FODVARI]+=3#205 is Hunger
+$Trainer.playersaturation+=10#207 is Saturation
+$Trainer.playerwater+=3#206 is Thirst
+$Trainer.playerfood+=3#205 is Hunger
 return 1
 elsif item == :CHOCOLATE
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[FODVARI]+=7#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerfood+=7#205 is Hunger
 return 1
 elsif item == :LEMON
-$game_variables[SATVARI]+=3#207 is Saturation
-$game_variables[H20VARI]+=3#206 is Thirst
-$game_variables[FODVARI]+=4#205 is Hunger
+$Trainer.playersaturation+=3#207 is Saturation
+$Trainer.playerwater+=3#206 is Thirst
+$Trainer.playerfood+=4#205 is Hunger
 return 1
 elsif item == :OLDGATEAU
-$game_variables[SATVARI]+=6#207 is Saturation
-$game_variables[H20VARI]+=2#206 is Thirst
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=6#207 is Saturation
+$Trainer.playerwater+=2#206 is Thirst
+$Trainer.playerfood+=6#205 is Hunger
 return 1
 elsif item == :LAVACOOKIE
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[H20VARI]-=3#206 is Thirst
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerwater-=3#206 is Thirst
+$Trainer.playerfood+=6#205 is Hunger
 return 1
 elsif item == :CASTELIACONE
-$game_variables[H20VARI]+=7#206 is Thirst
-$game_variables[FODVARI]+=7#205 is Hunger
+$Trainer.playerwater+=7#206 is Thirst
+$Trainer.playerfood+=7#205 is Hunger
 return 1
 elsif item == :LUMIOSEGALETTE
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerfood+=6#205 is Hunger
 return 1
 elsif item == :SHALOURSABLE
-$game_variables[SATVARI]+=8#207 is Saturation
-$game_variables[FODVARI]+=8#205 is Hunger
+$Trainer.playersaturation+=8#207 is Saturation
+$Trainer.playerfood+=8#205 is Hunger
 return 1
 elsif item == :BIGMALASADA
-$game_variables[SATVARI]+=8#207 is Saturation
-$game_variables[FODVARI]+=8#205 is Hunger
+$Trainer.playersaturation+=8#207 is Saturation
+$Trainer.playerfood+=8#205 is Hunger
 return 1
 elsif item == :ONION
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[H20VARI]+=3#206 is Thirst
-$game_variables[FODVARI]+=3#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerwater+=3#206 is Thirst
+$Trainer.playerfood+=3#205 is Hunger
 return 1
 elsif item == :COOKEDORAN
-$game_variables[SATVARI]+=6#207 is Saturation
-$game_variables[H20VARI]+=6#206 is Thirst
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=6#207 is Saturation
+$Trainer.playerwater+=6#206 is Thirst
+$Trainer.playerfood+=6#205 is Hunger
 return 1
 elsif item == :CARROT
-$game_variables[SATVARI]+=6#207 is Saturation
-$game_variables[H20VARI]+=3#206 is Thirst
-$game_variables[FODVARI]+=3#205 is Hunger
+$Trainer.playersaturation+=6#207 is Saturation
+$Trainer.playerwater+=3#206 is Thirst
+$Trainer.playerfood+=3#205 is Hunger
 return 1
 elsif item == :BREAD
-$game_variables[SATVARI]+=10#207 is Saturation
-$game_variables[H20VARI]+=7#206 is Thirst
-$game_variables[FODVARI]+=11#205 is Hunger
+$Trainer.playersaturation+=10#207 is Saturation
+$Trainer.playerwater+=7#206 is Thirst
+$Trainer.playerfood+=11#205 is Hunger
 return 1
 elsif item == :TEA
-$game_variables[SATVARI]+=15#207 is Saturation
-$game_variables[H20VARI]+=8#206 is Thirst
-$game_variables[FODVARI]+=2#205 is Hunger
+$Trainer.playersaturation+=15#207 is Saturation
+$Trainer.playerwater+=8#206 is Thirst
+$Trainer.playerfood+=2#205 is Hunger
 return 1
 elsif item == :CARROTCAKE
-$game_variables[SATVARI]+=15#207 is Saturation
-$game_variables[H20VARI]+=15#206 is Thirst
-$game_variables[FODVARI]+=10#205 is Hunger
+$Trainer.playersaturation+=15#207 is Saturation
+$Trainer.playerwater+=15#206 is Thirst
+$Trainer.playerfood+=10#205 is Hunger
 return 1
 elsif item == :COOKEDMEAT
-$game_variables[SATVARI]+=40#207 is Saturation
-$game_variables[H20VARI]+=0#206 is Thirst
-$game_variables[FODVARI]+=20#205 is Hunger
+$Trainer.playersaturation+=40#207 is Saturation
+$Trainer.playerwater+=0#206 is Thirst
+$Trainer.playerfood+=20#205 is Hunger
 return 1
 elsif item == :SITRUSJUICE
-$game_variables[SATVARI]+=20#207 is Saturation
-$game_variables[H20VARI]+=25#206 is Thirst
-$game_variables[FODVARI]+=0#205 is Hunger
+$Trainer.playersaturation+=20#207 is Saturation
+$Trainer.playerwater+=25#206 is Thirst
+$Trainer.playerfood+=0#205 is Hunger
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 return 1
 elsif item == :BERRYMASH
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[H20VARI]+=5#206 is Thirst
-$game_variables[FODVARI]+=5#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerwater+=5#206 is Thirst
+$Trainer.playerfood+=5#205 is Hunger
 return 1
 else
 $PokemonBag.pbStoreItem(item,1)
@@ -441,16 +542,16 @@ end
 $PokemonBag.pbDeleteItem(item)
 #205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
 if item == :POTION
-$game_variables[HPVARI] += 20
+$Trainer.playerhealth += 20
 return 1
 elsif item == :SUPERPOTION
-$game_variables[HPVARI] += 40
+$Trainer.playerhealth += 40
 return 1
 elsif item == :HYPERPOTION
-$game_variables[HPVARI] += 60
+$Trainer.playerhealth += 60
 return 1
 elsif item == :FULLRESTORE
-$game_variables[HPVARI] += 100
+$Trainer.playerhealth += 100
 return 1
 else
 $PokemonBag.pbStoreItem(item,1)
@@ -515,120 +616,194 @@ end
 
 class Pokemon
 
-  def changeFood(wari)
+  def changeFood
+    gain = 0
+    food_range = @food / 100
+    gain = [-1, -2, -2][food_range]
+#    if gain > 0
+#      gain += 1 if @obtain_map == $game_map.map_id
+#      gain += 1 if @poke_ball == :LUXURYBALL
+#      gain = (gain * 1.5).floor if hasItem?(:SOOTHEBELL)
+#    end
+    @food = (@food + gain).clamp(0, 255)
   end
   
-  def changeWater(wari)
+  def changeWater
+    gain = 0
+    water_range = @water / 100
+    gain = [-1, -2, -2][water_range]
+#    if gain > 0
+#      gain += 1 if @obtain_map == $game_map.map_id
+#      gain += 1 if @poke_ball == :LUXURYBALL
+#      gain = (gain * 1.5).floor if hasItem?(:SOOTHEBELL)
+#    end
+    @water = (@water + gain).clamp(0, 255)
   end
   
-  def changeAge(wari)
+  def changeAge
+    gain = 0
+    age_range = @age / 100
+    gain = [-1, -2, -2][age_range]
+#    if gain > 0
+#      gain += 1 if @obtain_map == $game_map.map_id
+#      gain += 1 if @poke_ball == :LUXURYBALL
+#      gain = (gain * 1.5).floor if hasItem?(:SOOTHEBELL)
+#    end
+    @age = (@age + gain).clamp(0, 255)
   end
 end
 
 
   def pbchangeFood
-    if $game_variables[FODVARI] < 0
-	   $game_variables[FODVARI]=0
+    if $Trainer.playerfood < 0
+	   $Trainer.playerfood=0
 	end
     if $game_variables[256]==(:SSHIRT)
-      if $game_variables[FODVARI]>150
-        $game_variables[FODVARI]=150  #food
+      if $Trainer.playerfood>150
+        $Trainer.playerfood=150  #food
 	  end
-    elsif $game_variables[FODVARI]>100
-        $game_variables[FODVARI]=100
+    elsif $Trainer.playerfood>100
+        $Trainer.playerfood=100
   end
-    $game_variables[FODVARI] -= 1 if rand(50) && $game_variables[SATVARI]==0 && $game_variables[256]== 0
-    $game_variables[FODVARI] += 1 if rand(50) && $game_variables[256]==(:LCLOAK) && !$game_variables[SATVARI]==0
-    $game_variables[FODVARI] += 0 if rand(50) && $game_variables[256]==(:LCLOAK) && $game_variables[SATVARI]==0
-    $game_variables[H20VARI] += 2 if rand(50) == 1 && $game_variables[256]==(:LJACKET)
+    $Trainer.playerfood -= 1 if rand(100) == 1 && $Trainer.playersaturation==0 && $game_variables[256]== 0
+    $Trainer.playerfood += 1 if rand(100) == 1 && $game_variables[256]==(:LCLOAK) && !$Trainer.playersaturation==0
+    $Trainer.playerfood += 0 if rand(100) == 1 && $game_variables[256]==(:LCLOAK) && $Trainer.playersaturation==0
+    $Trainer.playerwater += 2 if rand(100) == 1 && $game_variables[256]==(:LJACKET)
   end
 
   def pbchangeWater
-    if $game_variables[H20VARI] < 0
-	   $game_variables[H20VARI]=0
+    if $Trainer.playerwater < 0
+	   $Trainer.playerwater=0
 	end
     if $game_variables[256]==(:SSHIRT) 
-       if $game_variables[H20VARI]>150
-        $game_variables[H20VARI]=150  #thirst
+       if $Trainer.playerwater>150
+        $Trainer.playerwater=150  #thirst
 	   end
-    elsif $game_variables[H20VARI]>100
-        $game_variables[H20VARI]=100  #sleep
+    elsif $Trainer.playerwater>100
+        $Trainer.playerwater=100  #sleep
 	end
-    $game_variables[H20VARI] -= 1 if rand(50) && $game_variables[SATVARI]==0 && $game_variables[256]== 0
-    $game_variables[H20VARI] += 1 if rand(50) && $game_variables[256]==(:LCLOAK) && !$game_variables[SATVARI]==0
-    $game_variables[H20VARI] += 0 if rand(50) && $game_variables[256]==(:LCLOAK) && $game_variables[SATVARI]==0
-    $game_variables[H20VARI] += 2 if rand(50) == 1 && $game_variables[256]==(:SEASHOES) && $PokemonGlobal.surfing
+    $Trainer.playerwater -= 1 if rand(100) ==1 && $Trainer.playersaturation==0 && $game_variables[256]== 0
+    $Trainer.playerwater += 1 if rand(100) == 1 && $game_variables[256]==(:LCLOAK) && !$Trainer.playersaturation==0
+    $Trainer.playerwater += 0 if rand(100) == 1 && $game_variables[256]==(:LCLOAK) && $Trainer.playersaturation==0
+    $Trainer.playerwater += 2 if rand(100) == 1 && $game_variables[256]==(:SEASHOES) && $PokemonGlobal.surfing
 	
 	
     end
+      
+
+
+
 
   def pbchangeSleep
-    if $game_variables[SLPVARI] < 0
-	   $game_variables[SLPVARI]=0
+    if $Trainer.playersleep < 0
+	   $Trainer.playersleep=0
 	end
     if $game_variables[256]==(:SSHIRT)
-        if $game_variables[SLPVARI]>150
-           $game_variables[SLPVARI]=150 
+        if $Trainer.playersleep>150
+           $Trainer.playersleep=150 
 		end
-    elsif $game_variables[SLPVARI]>200
-        $game_variables[SLPVARI]=200  #sleep
+    elsif $Trainer.playersleep>200
+        $Trainer.playersleep=200  #sleep
 	end
+      gain = 0
+	  base = 0
+	  bonus = 0
+      base = -1 if PBDayNight.isDay?(pbGetTimeNow)
+      base = 0 if PBDayNight.isMorning?(pbGetTimeNow)
+      base = -1 if PBDayNight.isAfternoon?(pbGetTimeNow)
+      base = -2 if PBDayNight.isEvening?(pbGetTimeNow)
+      base = -3 if PBDayNight.isNight?(pbGetTimeNow)
+      bonus = -4 if $Trainer.playerstamina < 0
+    
+    $Trainer.playersleep += (gain + base + bonus) if rand(100) == 1
   end
 
   def pbchangeSaturation
-    if $game_variables[SATVARI] < 1
-	   $game_variables[SATVARI]=0
+    if $Trainer.playersaturation < 1
+	   $Trainer.playersaturation=0
 	end
     if $game_variables[256]==(:SSHIRT)
-         if $game_variables[SATVARI]>50
-            $game_variables[SATVARI]=50 
+         if $Trainer.playersaturation>50
+            $Trainer.playersaturation=50 
 		 end
 	end
-    $game_variables[SATVARI] -= 1 if rand(50) && $game_variables[256]== 0
-    $game_variables[SATVARI] -= 4 if rand(50) == 1 && $game_variables[256]==(:LCLOAK)#take from saturation
+    $Trainer.playersaturation -= 1 if rand(100) == 1 && $game_variables[256]== 0
+    $Trainer.playersaturation -= 4 if rand(100) == 1 && $game_variables[256]==(:LCLOAK)#take from saturation
 	end
 
+	
   def pbchangeStamina
-    if $game_variables[STAVARI] < 0
-	   $game_variables[STAVARI]=0
+	if PBDayNight.isDay?(pbGetTimeNow)
+	   $Trainer.playermaxstamina=75+$Trainer.playerstaminamod
 	end
+	if PBDayNight.isMorning?(pbGetTimeNow)
+	   $Trainer.playermaxstamina=60+$Trainer.playerstaminamod
 	end
+	if PBDayNight.isAfternoon?(pbGetTimeNow)
+	   $Trainer.playermaxstamina=45+$Trainer.playerstaminamod
+	end
+	if PBDayNight.isEvening?(pbGetTimeNow)
+	   $Trainer.playermaxstamina=40+$Trainer.playerstaminamod
+	end
+	if PBDayNight.isNight?(pbGetTimeNow)
+	   $Trainer.playermaxstamina=25+$Trainer.playerstaminamod
+	end
+    if $Trainer.playerstamina < 0
+	   $Trainer.playerstamina=0
+	end
+	if $Trainer.playerstamina > $Trainer.playermaxstamina
+	   $Trainer.playerstamina = $Trainer.playermaxstamina
+	end
+	if $game_player.pbCanRun?
+	   $Trainer.playerstamina-=1 if rand(25) == 1
+	else
+	   $Trainer.playerstamina+=3 if rand(50) == 1
+	end
+end
+
+
+
+
+
+
+
 
   def pbchangeHealth
-    if $game_variables[HPVARI] < 0
-	   $game_variables[HPVARI]=0
+    if $Trainer.playerhealth < 0
+	   $Trainer.playerhealth=0
 	end
 	if $game_variables[256]==(:IRONARMOR)
-	    if $game_variables[HPVARI]>150
-         $game_variables[HPVARI]=150
+	    if $Trainer.playerhealth>150
+         $Trainer.playerhealth=150
 		end
 		
     else 
-	  if $game_variables[HPVARI]>100
-        $game_variables[HPVARI]=100 
+	  if $Trainer.playerhealth>100
+        $Trainer.playerhealth=100 
 	   end
 	end
   end
 
 
 def pbLifeCheck
-if $PokemonSystem.survivalmode = 0 && $game_variables[204]==2 && EliteBattle.get(:nuzlocke) && (data.include?(:NOREVIVE) || data.include?(:PEMADEATH)) && val <= 0
-   Kernel.pbMessage(_INTL("Ah. ",GameData::Item.get(berry).name))
-   Kernel.pbMessage(_INTL("I see. ",GameData::Item.get(berry).name))
-   Kernel.pbMessage(_INTL("You are in it for the challenge. ",GameData::Item.get(berry).name))
-   Kernel.pbMessage(_INTL("By doing this, you not only put yourself at risk. ",GameData::Item.get(berry).name))
-   Kernel.pbMessage(_INTL("but you risk your own POKeMON too. ",GameData::Item.get(berry).name))
-   Kernel.pbMessage(_INTL("I bring you another choice. ",GameData::Item.get(berry).name))
-   Kernel.pbMessage(_INTL("You may also enable POKeMON needing to eat and drink (Sleep is unneeded). ",GameData::Item.get(berry).name))
-   Kernel.pbMessage(_INTL("Pokemon will age, and they may die from that. ",GameData::Item.get(berry).name))
-   Kernel.pbMessage(_INTL("Their Life expectancy is entirely based on their hardships. ",GameData::Item.get(berry).name))
-   message=_INTL("Do you wish to activate Pokemon Survival Mode?",GameData::Item.get(berry).name)
+   data = EliteBattle.get_data(:NUZLOCKE, :Metrics, :RULES); data = [] if data.nil?
+ if $PokemonSystem.survivalmode = 0 && $game_variables[204]==2 && (EliteBattle.get(:nuzlocke) && (data.include?(:NOREVIVE) || data.include?(:PERMADEATH)))
+   Kernel.pbMessage(_INTL("Ah. "))
+   Kernel.pbMessage(_INTL("I see. "))
+   Kernel.pbMessage(_INTL("You are in it for the challenge. "))
+   Kernel.pbMessage(_INTL("By doing this, you not only put yourself at risk. "))
+   Kernel.pbMessage(_INTL("but you risk your own POKeMON too. "))
+   Kernel.pbMessage(_INTL("I bring you another choice. "))
+   Kernel.pbMessage(_INTL("You may also enable POKeMON needing to eat and drink. "))
+   Kernel.pbMessage(_INTL("Pokemon will age, and they may die from that. "))
+   Kernel.pbMessage(_INTL("Their Life expectancy is entirely based on their hardships. "))
+   message=_INTL("Do you wish to activate Pokemon Survival Mode?")
     if pbConfirmMessage(message)
-	      Kernel.pbMessage(_INTL("You cannot come to terms with this from the Menu. ",GameData::Item.get(berry).name))
-		  Kernel.pbMessage(_INTL("Your choice is made. ",GameData::Item.get(berry).name))
+	      Kernel.pbMessage(_INTL("You cannot come to terms with this from the Menu. "))
+		  Kernel.pbMessage(_INTL("Your choice is made. "))
 		  $game_switches[75]=true
 	else
-		  Kernel.pbMessage(_INTL("Understandable. ",GameData::Item.get(berry).name))
+		  Kernel.pbMessage(_INTL("Understandable. "))
 	end
 end
 end
@@ -636,13 +811,21 @@ end
 	
 	
 	
+def pbLifeCheckChecking
+  if $game_switches[75]==true
+     return true
+  else
+     return false
+end
+end
 	
 	
 	
-	
-	
-	
-	
+#  if pbLifeCheckChecking == true
+#    pkmn.food = (rand(100)+1)
+#    pkmn.water = (rand(100)+1)
+#    pkmn.age = (rand(40)+1)
+#  end
 	
 	
 	
@@ -662,219 +845,219 @@ $PokemonBag.pbDeleteItem(berry,1)
 Kernel.pbMessage(_INTL("You use the {1}. ",GameData::Item.get(berry).name))
 #205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
 if berry == :ORANBERRY
-$game_variables[FODVARI]+=4
-$game_variables[SATVARI]+=3
-$game_variables[H20VARI]+=1
-$game_variables[HPVARI] += 1
+$Trainer.playerfood+=4
+$Trainer.playersaturation+=3
+$Trainer.playerwater+=1
+$Trainer.playerhealth += 1
 elsif berry == :LEPPABERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :CHERIBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :CHESTOBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :PECHABERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :RAWSTBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :ASPEARBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :PERSIMBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :LUMBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :FIGYBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :WIKIBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :MAGOBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :AGUAVBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :IAPAPABERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :IAPAPABERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :SITRUSBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=7
-$game_variables[H20VARI]+=1
-$game_variables[HPVARI] += (0.25*$game_variables[HPVARI])
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=7
+$Trainer.playerwater+=1
+$Trainer.playerhealth += (0.25*$Trainer.playerhealth)
 elsif berry == :BERRYJUICE
-$game_variables[FODVARI]+=6
-$game_variables[SATVARI]+=4
-$game_variables[H20VARI]+=4
-$game_variables[HPVARI] += 2
+$Trainer.playerfood+=6
+$Trainer.playersaturation+=4
+$Trainer.playerwater+=4
+$Trainer.playerhealth += 2
 elsif berry == :FRESHWATER
-$game_variables[H20VARI]+=10
-$game_variables[SATVARI]+=10#207 is Saturation
+$Trainer.playerwater+=10
+$Trainer.playersaturation+=10#207 is Saturation
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 #You can add more if you want
 elsif berry == :ATKCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 elsif berry == :SATKCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 elsif berry == :SPEEDCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 elsif berry == :SPDEFCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 elsif berry == :ACCCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=12
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=12
+$Trainer.playerwater-=7
 elsif berry == :DEFCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 elsif berry == :CRITCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 elsif berry == :GSCURRY
-$game_variables[FODVARI]+=8#205 is Hunger
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[H20VARI]-=7#206 is Thirst
+$Trainer.playerfood+=8#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerwater-=7#206 is Thirst
 elsif berry == :RAGECANDYBAR #chocolate
-$game_variables[FODVARI]+=10
-$game_variables[SATVARI]+=3
-$game_variables[SLPVARI]+=7
+$Trainer.playerfood+=10
+$Trainer.playersaturation+=3
+$Trainer.playersleep+=7
 elsif berry == :SWEETHEART #chocolate
-$game_variables[FODVARI]+=10#205 is Hunger
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[SLPVARI]+=6#208 is Sleep
+$Trainer.playerfood+=10#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playersleep+=6#208 is Sleep
 elsif berry == :SODAPOP
-$game_variables[H20VARI]-=11#206 is Thirst
-$game_variables[SATVARI]+=11#207 is Saturation
-$game_variables[SLPVARI]+=10#208 is Sleep
+$Trainer.playerwater-=11#206 is Thirst
+$Trainer.playersaturation+=11#207 is Saturation
+$Trainer.playersleep+=10#208 is Sleep
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :LEMONADE
-$game_variables[SATVARI]+=11#207 is Saturation
-$game_variables[H20VARI]+=10#206 is Thirst
-$game_variables[SLPVARI]+=7#208 is Sleep
+$Trainer.playersaturation+=11#207 is Saturation
+$Trainer.playerwater+=10#206 is Thirst
+$Trainer.playersleep+=7#208 is Sleep
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :HONEY
-$game_variables[SATVARI]+=20#207 is Saturation
-$game_variables[H20VARI]+=2#206 is Thirst
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=20#207 is Saturation
+$Trainer.playerwater+=2#206 is Thirst
+$Trainer.playerfood+=6#205 is Hunger
 elsif berry == :MOOMOOMILK
-$game_variables[SATVARI]+=10
-$game_variables[H20VARI]+=15
+$Trainer.playersaturation+=10
+$Trainer.playerwater+=15
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :CSLOWPOKETAIL
-$game_variables[SATVARI]+=10#207 is Saturation
-$game_variables[FODVARI]+=10#205 is Hunger
+$Trainer.playersaturation+=10#207 is Saturation
+$Trainer.playerfood+=10#205 is Hunger
 elsif berry == :BAKEDPOTATO
-$game_variables[SATVARI]+=10#207 is Saturation
-$game_variables[H20VARI]+=4#206 is Thirst
-$game_variables[FODVARI]+=7#205 is Hunger
+$Trainer.playersaturation+=10#207 is Saturation
+$Trainer.playerwater+=4#206 is Thirst
+$Trainer.playerfood+=7#205 is Hunger
 elsif berry == :APPLE
-$game_variables[SATVARI]+=10#207 is Saturation
-$game_variables[H20VARI]+=3#206 is Thirst
-$game_variables[FODVARI]+=3#205 is Hunger
+$Trainer.playersaturation+=10#207 is Saturation
+$Trainer.playerwater+=3#206 is Thirst
+$Trainer.playerfood+=3#205 is Hunger
 elsif berry == :CHOCOLATE
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[FODVARI]+=7#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerfood+=7#205 is Hunger
 elsif berry == :LEMON
-$game_variables[SATVARI]+=3#207 is Saturation
-$game_variables[H20VARI]+=3#206 is Thirst
-$game_variables[FODVARI]+=4#205 is Hunger
+$Trainer.playersaturation+=3#207 is Saturation
+$Trainer.playerwater+=3#206 is Thirst
+$Trainer.playerfood+=4#205 is Hunger
 elsif berry == :OLDGATEAU
-$game_variables[SATVARI]+=6#207 is Saturation
-$game_variables[H20VARI]+=2#206 is Thirst
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=6#207 is Saturation
+$Trainer.playerwater+=2#206 is Thirst
+$Trainer.playerfood+=6#205 is Hunger
 elsif berry == :LAVACOOKIE
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[H20VARI]-=3#206 is Thirst
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerwater-=3#206 is Thirst
+$Trainer.playerfood+=6#205 is Hunger
 elsif berry == :CASTELIACONE
-$game_variables[H20VARI]+=7#206 is Thirst
-$game_variables[FODVARI]+=7#205 is Hunger
+$Trainer.playerwater+=7#206 is Thirst
+$Trainer.playerfood+=7#205 is Hunger
 elsif berry == :LUMIOSEGALETTE
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerfood+=6#205 is Hunger
 elsif berry == :SHALOURSABLE
-$game_variables[SATVARI]+=8#207 is Saturation
-$game_variables[FODVARI]+=8#205 is Hunger
+$Trainer.playersaturation+=8#207 is Saturation
+$Trainer.playerfood+=8#205 is Hunger
 elsif berry == :BIGMALASADA
-$game_variables[SATVARI]+=8#207 is Saturation
-$game_variables[FODVARI]+=8#205 is Hunger
+$Trainer.playersaturation+=8#207 is Saturation
+$Trainer.playerfood+=8#205 is Hunger
 elsif berry == :ONION
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[H20VARI]+=3#206 is Thirst
-$game_variables[FODVARI]+=3#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerwater+=3#206 is Thirst
+$Trainer.playerfood+=3#205 is Hunger
 elsif berry == :COOKEDORAN
-$game_variables[SATVARI]+=6#207 is Saturation
-$game_variables[H20VARI]+=6#206 is Thirst
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=6#207 is Saturation
+$Trainer.playerwater+=6#206 is Thirst
+$Trainer.playerfood+=6#205 is Hunger
 elsif berry == :CARROT
-$game_variables[SATVARI]+=6#207 is Saturation
-$game_variables[H20VARI]+=3#206 is Thirst
-$game_variables[FODVARI]+=3#205 is Hunger
+$Trainer.playersaturation+=6#207 is Saturation
+$Trainer.playerwater+=3#206 is Thirst
+$Trainer.playerfood+=3#205 is Hunger
 elsif berry == :BREAD
-$game_variables[SATVARI]+=10#207 is Saturation
-$game_variables[H20VARI]+=7#206 is Thirst
-$game_variables[FODVARI]+=11#205 is Hunger
+$Trainer.playersaturation+=10#207 is Saturation
+$Trainer.playerwater+=7#206 is Thirst
+$Trainer.playerfood+=11#205 is Hunger
 elsif berry == :TEA
-$game_variables[SATVARI]+=8#207 is Saturation
-$game_variables[H20VARI]+=8#206 is Thirst
-$game_variables[FODVARI]+=2#205 is Hunger
+$Trainer.playersaturation+=8#207 is Saturation
+$Trainer.playerwater+=8#206 is Thirst
+$Trainer.playerfood+=2#205 is Hunger
 elsif berry == :CARROTCAKE
-$game_variables[SATVARI]+=15#207 is Saturation
-$game_variables[H20VARI]+=15#206 is Thirst
-$game_variables[FODVARI]+=10#205 is Hunger
+$Trainer.playersaturation+=15#207 is Saturation
+$Trainer.playerwater+=15#206 is Thirst
+$Trainer.playerfood+=10#205 is Hunger
 elsif berry == :COOKEDMEAT
-$game_variables[SATVARI]+=40#207 is Saturation
-$game_variables[H20VARI]+=0#206 is Thirst
-$game_variables[FODVARI]+=20#205 is Hunger
+$Trainer.playersaturation+=40#207 is Saturation
+$Trainer.playerwater+=0#206 is Thirst
+$Trainer.playerfood+=20#205 is Hunger
 elsif berry == :SITRUSJUICE
-$game_variables[SATVARI]+=20#207 is Saturation
-$game_variables[H20VARI]+=25#206 is Thirst
-$game_variables[FODVARI]+=0#205 is Hunger
+$Trainer.playersaturation+=20#207 is Saturation
+$Trainer.playerwater+=25#206 is Thirst
+$Trainer.playerfood+=0#205 is Hunger
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :BERRYMASH
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[H20VARI]+=5#206 is Thirst
-$game_variables[FODVARI]+=5#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerwater+=5#206 is Thirst
+$Trainer.playerfood+=5#205 is Hunger
 
 
 #inedible
@@ -909,227 +1092,227 @@ end
 
 message=_INTL("Do you want to use {1} again?",GameData::Item.get(berry).name)
 loop do
- Kernel.pbMessage(_INTL("Sleep: {1}, Food: {2}, Water: {3}. ",$game_variables[SLPVARI],$game_variables[FODVARI],$game_variables[H20VARI]))
+ Kernel.pbMessage(_INTL("Sleep: {1}, Food: {2}, Water: {3}. ",$Trainer.playersleep,$Trainer.playerfood,$Trainer.playerwater))
  if pbConfirmMessage(message)
    $PokemonBag.pbDeleteItem(berry,1)
    if berry == :ORANBERRY
-$game_variables[FODVARI]+=4
-$game_variables[SATVARI]+=3
-$game_variables[H20VARI]+=1
-$game_variables[HPVARI] += 1
+$Trainer.playerfood+=4
+$Trainer.playersaturation+=3
+$Trainer.playerwater+=1
+$Trainer.playerhealth += 1
 elsif berry == :LEPPABERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :CHERIBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :CHESTOBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :PECHABERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :RAWSTBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :ASPEARBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :PERSIMBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :LUMBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :FIGYBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :WIKIBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :MAGOBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :AGUAVBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :IAPAPABERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :IAPAPABERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=2
-$game_variables[H20VARI]+=2
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=2
+$Trainer.playerwater+=2
 elsif berry == :SITRUSBERRY
-$game_variables[FODVARI]+=5
-$game_variables[SATVARI]+=7
-$game_variables[H20VARI]+=1
-$game_variables[HPVARI] += (0.25*$game_variables[HPVARI])
+$Trainer.playerfood+=5
+$Trainer.playersaturation+=7
+$Trainer.playerwater+=1
+$Trainer.playerhealth += (0.25*$Trainer.playerhealth)
 elsif berry == :BERRYJUICE
-$game_variables[FODVARI]+=6
-$game_variables[SATVARI]+=4
-$game_variables[H20VARI]+=4
-$game_variables[HPVARI] += 2
+$Trainer.playerfood+=6
+$Trainer.playersaturation+=4
+$Trainer.playerwater+=4
+$Trainer.playerhealth += 2
 elsif berry == :FRESHWATER
-$game_variables[H20VARI]+=25
-$game_variables[SATVARI]+=10#207 is Saturation
+$Trainer.playerwater+=25
+$Trainer.playersaturation+=10#207 is Saturation
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :WATER
-$game_variables[H20VARI]+=10
+$Trainer.playerwater+=10
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 #You can add more if you want
 elsif berry == :ATKCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 elsif berry == :SATKCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 elsif berry == :SPEEDCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 elsif berry == :SPDEFCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 elsif berry == :ACCCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=12
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=12
+$Trainer.playerwater-=7
 elsif berry == :DEFCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 elsif berry == :CRITCURRY
-$game_variables[FODVARI]+=8
-$game_variables[SATVARI]+=15
-$game_variables[H20VARI]-=7
+$Trainer.playerfood+=8
+$Trainer.playersaturation+=15
+$Trainer.playerwater-=7
 elsif berry == :GSCURRY
-$game_variables[FODVARI]+=8#205 is Hunger
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[H20VARI]-=7#206 is Thirst
+$Trainer.playerfood+=8#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerwater-=7#206 is Thirst
 elsif berry == :RAGECANDYBAR #chocolate
-$game_variables[FODVARI]+=10
-$game_variables[SATVARI]+=3
-$game_variables[SLPVARI]+=7
+$Trainer.playerfood+=10
+$Trainer.playersaturation+=3
+$Trainer.playersleep+=7
 elsif berry == :SWEETHEART #chocolate
-$game_variables[FODVARI]+=10#205 is Hunger
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[SLPVARI]+=6#208 is Sleep
+$Trainer.playerfood+=10#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playersleep+=6#208 is Sleep
 elsif berry == :SODAPOP
-$game_variables[H20VARI]-=11#206 is Thirst
-$game_variables[SATVARI]+=11#207 is Saturation
-$game_variables[SLPVARI]+=10#208 is Sleep
+$Trainer.playerwater-=11#206 is Thirst
+$Trainer.playersaturation+=11#207 is Saturation
+$Trainer.playersleep+=10#208 is Sleep
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :LEMONADE
-$game_variables[SATVARI]+=11#207 is Saturation
-$game_variables[H20VARI]+=15#206 is Thirst
-$game_variables[SLPVARI]+=7#208 is Sleep
+$Trainer.playersaturation+=11#207 is Saturation
+$Trainer.playerwater+=15#206 is Thirst
+$Trainer.playersleep+=7#208 is Sleep
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :HONEY
-$game_variables[SATVARI]+=20#207 is Saturation
-$game_variables[H20VARI]+=2#206 is Thirst
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=20#207 is Saturation
+$Trainer.playerwater+=2#206 is Thirst
+$Trainer.playerfood+=6#205 is Hunger
 elsif berry == :MOOMOOMILK
-$game_variables[SATVARI]+=20
-$game_variables[H20VARI]+=7
+$Trainer.playersaturation+=20
+$Trainer.playerwater+=7
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :CSLOWPOKETAIL
-$game_variables[SATVARI]+=10#207 is Saturation
-$game_variables[FODVARI]+=10#205 is Hunger
+$Trainer.playersaturation+=10#207 is Saturation
+$Trainer.playerfood+=10#205 is Hunger
 elsif berry == :BAKEDPOTATO
-$game_variables[SATVARI]+=10#207 is Saturation
-$game_variables[H20VARI]+=4#206 is Thirst
-$game_variables[FODVARI]+=7#205 is Hunger
+$Trainer.playersaturation+=10#207 is Saturation
+$Trainer.playerwater+=4#206 is Thirst
+$Trainer.playerfood+=7#205 is Hunger
 elsif berry == :APPLE
-$game_variables[SATVARI]+=10#207 is Saturation
-$game_variables[H20VARI]+=3#206 is Thirst
-$game_variables[FODVARI]+=3#205 is Hunger
+$Trainer.playersaturation+=10#207 is Saturation
+$Trainer.playerwater+=3#206 is Thirst
+$Trainer.playerfood+=3#205 is Hunger
 elsif berry == :CHOCOLATE
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[FODVARI]+=7#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerfood+=7#205 is Hunger
 elsif berry == :LEMON
-$game_variables[SATVARI]+=3#207 is Saturation
-$game_variables[H20VARI]+=3#206 is Thirst
-$game_variables[FODVARI]+=4#205 is Hunger
+$Trainer.playersaturation+=3#207 is Saturation
+$Trainer.playerwater+=3#206 is Thirst
+$Trainer.playerfood+=4#205 is Hunger
 elsif berry == :OLDGATEAU
-$game_variables[SATVARI]+=6#207 is Saturation
-$game_variables[H20VARI]+=2#206 is Thirst
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=6#207 is Saturation
+$Trainer.playerwater+=2#206 is Thirst
+$Trainer.playerfood+=6#205 is Hunger
 elsif berry == :LAVACOOKIE
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[H20VARI]-=3#206 is Thirst
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerwater-=3#206 is Thirst
+$Trainer.playerfood+=6#205 is Hunger
 elsif berry == :CASTELIACONE
-$game_variables[H20VARI]+=7#206 is Thirst
-$game_variables[FODVARI]+=7#205 is Hunger
+$Trainer.playerwater+=7#206 is Thirst
+$Trainer.playerfood+=7#205 is Hunger
 elsif berry == :LUMIOSEGALETTE
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerfood+=6#205 is Hunger
 elsif berry == :SHALOURSABLE
-$game_variables[SATVARI]+=8#207 is Saturation
-$game_variables[FODVARI]+=8#205 is Hunger
+$Trainer.playersaturation+=8#207 is Saturation
+$Trainer.playerfood+=8#205 is Hunger
 elsif berry == :BIGMALASADA
-$game_variables[SATVARI]+=8#207 is Saturation
-$game_variables[FODVARI]+=8#205 is Hunger
+$Trainer.playersaturation+=8#207 is Saturation
+$Trainer.playerfood+=8#205 is Hunger
 elsif berry == :ONION
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[H20VARI]+=3#206 is Thirst
-$game_variables[FODVARI]+=3#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerwater+=3#206 is Thirst
+$Trainer.playerfood+=3#205 is Hunger
 elsif berry == :COOKEDORAN
-$game_variables[SATVARI]+=6#207 is Saturation
-$game_variables[H20VARI]+=6#206 is Thirst
-$game_variables[FODVARI]+=6#205 is Hunger
+$Trainer.playersaturation+=6#207 is Saturation
+$Trainer.playerwater+=6#206 is Thirst
+$Trainer.playerfood+=6#205 is Hunger
 elsif berry == :CARROT
-$game_variables[SATVARI]+=6#207 is Saturation
-$game_variables[H20VARI]+=3#206 is Thirst
-$game_variables[FODVARI]+=3#205 is Hunger
+$Trainer.playersaturation+=6#207 is Saturation
+$Trainer.playerwater+=3#206 is Thirst
+$Trainer.playerfood+=3#205 is Hunger
 elsif berry == :BREAD
-$game_variables[SATVARI]+=10#207 is Saturation
-$game_variables[H20VARI]+=7#206 is Thirst
-$game_variables[FODVARI]+=11#205 is Hunger
+$Trainer.playersaturation+=10#207 is Saturation
+$Trainer.playerwater+=7#206 is Thirst
+$Trainer.playerfood+=11#205 is Hunger
 elsif berry == :TEA
-$game_variables[SATVARI]+=8#207 is Saturation
-$game_variables[H20VARI]+=8#206 is Thirst
-$game_variables[FODVARI]+=2#205 is Hunger
+$Trainer.playersaturation+=8#207 is Saturation
+$Trainer.playerwater+=8#206 is Thirst
+$Trainer.playerfood+=2#205 is Hunger
 elsif berry == :CARROTCAKE
-$game_variables[SATVARI]+=15#207 is Saturation
-$game_variables[H20VARI]+=15#206 is Thirst
-$game_variables[FODVARI]+=10#205 is Hunger
+$Trainer.playersaturation+=15#207 is Saturation
+$Trainer.playerwater+=15#206 is Thirst
+$Trainer.playerfood+=10#205 is Hunger
 elsif berry == :COOKEDMEAT
-$game_variables[SATVARI]+=40#207 is Saturation
-$game_variables[H20VARI]+=0#206 is Thirst
-$game_variables[FODVARI]+=20#205 is Hunger
+$Trainer.playersaturation+=40#207 is Saturation
+$Trainer.playerwater+=0#206 is Thirst
+$Trainer.playerfood+=20#205 is Hunger
 elsif berry == :SITRUSJUICE
-$game_variables[SATVARI]+=20#207 is Saturation
-$game_variables[H20VARI]+=25#206 is Thirst
-$game_variables[FODVARI]+=0#205 is Hunger
+$Trainer.playersaturation+=20#207 is Saturation
+$Trainer.playerwater+=25#206 is Thirst
+$Trainer.playerfood+=0#205 is Hunger
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :BERRYMASH
-$game_variables[SATVARI]+=5#207 is Saturation
-$game_variables[H20VARI]+=5#206 is Thirst
-$game_variables[FODVARI]+=5#205 is Hunger
+$Trainer.playersaturation+=5#207 is Saturation
+$Trainer.playerwater+=5#206 is Thirst
+$Trainer.playerfood+=5#205 is Hunger
 
 
 #inedible

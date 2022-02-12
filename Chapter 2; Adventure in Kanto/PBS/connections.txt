@@ -68,24 +68,34 @@
 16,East,0,15,West,50
 # Edge north (162) - Route 12 (15)
 162,East,0,15,West,92
+# Route 11 (17) - Vermilion City (78)
+17,West,0,78,East,0
+# Vermilion North (77) - Route 11 (17)
+77,South,42,17,North,0
+# Vermilion North (293) - Route 11 (17)
+293,South,78,17,North,0
+# Grullo Gorge (330) - Route 11 (17)
+330,South,6,17,North,0
+# Grullo Gorge (308) - Route 11 (17)
+308,South,0,17,North,44
+# Grullo Gorge (307) - Route 11 (17)
+307,South,0,17,North,94
 # Route 15 (18) - Route 14 (85)
 18,East,0,85,West,16
 # Edge west (163) - Route 15 (18)
 163,South,0,18,North,56
 # Route 15 (19) - Fuchsia City (87)
 19,West,0,87,East,0
-# Route 18 (20) - Route 17 (41)
-20,North,0,41,South,0
 # Route 18 (22) - Fuchsia City (87)
 22,East,0,87,West,0
 # Route 9 (79) - Cerulean City (23)
 79,West,0,23,East,10
+# Route 24 (94) - Cerulean City (23)
+94,South,0,23,North,22
 # Route 4 (43) - Cerulean City (23)
 43,East,0,23,West,9
 # Route 5 (48) - Cerulean City (23)
 48,North,1,23,South,0
-# House 1 (25) - Route 17 (41)
-25,South,0,41,North,0
 # Route 3 (31) - Route 4 (43)
 31,North,60,43,South,0
 # Edge west (152) - Route 3 (31)
@@ -120,6 +130,22 @@
 82,West,0,69,East,4
 # Edge west (160) - Route 8 (69)
 160,North,0,69,South,52
+# Vermilion North (77) - Vermilion City (78)
+77,South,0,78,North,11
+# Vermilion North (293) - Vermilion North (77)
+293,East,0,77,West,0
+# Grullo Gorge (330) - Vermilion North (77)
+330,West,9,77,East,0
+# Vermilion North (293) - Vermilion City (78)
+293,South,25,78,North,0
+# Grullo Gorge (330) - Vermilion City (78)
+330,South,0,78,North,47
+# Grullo Gorge (308) - Vermilion City (78)
+308,South,0,78,North,97
+# Grullo Gorge (307) - Vermilion City (78)
+307,South,0,78,North,147
+# Vermilion City (78) - Grullo Gorge (310)
+78,133,0,310,0,1
 # Route 25 (95) - Route 9 (79)
 95,South,0,79,North,17
 # Lavender Town (82) - Edge west (159)
@@ -158,57 +184,33 @@
 148,North,0,92,South,33
 # Cremini Town (298) - Route 22 (92)
 298,East,0,92,West,5
-# Route 24 (379) - Route 24 (94)
-379,West,0,94,East,0
+# Route 24 (94) - Route 24 (379)
+94,East,0,379,West,0
 # Route 24 (379) - Route 25 (95)
 379,East,0,95,West,1
 # Edge north (153) - Edge west (152)
 153,East,0,152,West,7
-# Route 27 (337) - Cremini Town (298)
-337,East,0,298,West,89
-# Route 11 (17) - Vermilion City (78)
-17,West,0,78,East,0
-# Vermilion North (77) - Vermilion City (78)
-77,South,0,78,North,11
-# Vermilion North (293) - Vermilion City (78)
-293,South,25,78,North,0
-# Grullo Gorge (330) - Vermilion City (78)
-330,South,0,78,North,47
-# Grullo Gorge (308) - Vermilion City (78)
-308,South,0,78,North,97
-# Grullo Gorge (307) - Vermilion City (78)
-307,South,0,78,North,147
-# Vermilion North (77) - Route 11 (17)
-77,South,42,17,North,0
-# Vermilion North (293) - Route 11 (17)
-293,South,78,17,North,0
-# Grullo Gorge (330) - Route 11 (17)
-330,South,6,17,North,0
-# Grullo Gorge (308) - Route 11 (17)
-308,South,0,17,North,44
-# Grullo Gorge (307) - Route 11 (17)
-307,South,0,17,North,94
-# Vermilion North (293) - Vermilion North (77)
-293,East,0,77,West,0
-# Grullo Gorge (330) - Vermilion North (77)
-330,West,9,77,East,0
-# VV Bridge (291) - Vermilion North (293)
-291,East,5,293,West,0
-# VV Bridge (290) - VV Bridge (291)
-290,East,0,291,West,0
-# VV Bridge (289) - VV Bridge (290)
-289,East,0,290,West,0
 # Virdian Shore (288) - VV Bridge (289)
 288,East,0,289,West,23
-# Grullo Gorge (308) - Grullo Gorge (330)
-308,West,0,330,East,0
-# Grullo Gorge (329) - Grullo Gorge (330)
-329,South,0,330,North,68
+# VV Bridge (289) - VV Bridge (290)
+289,East,0,290,West,0
+# VV Bridge (290) - VV Bridge (291)
+290,East,0,291,West,0
+# VV Bridge (291) - Vermilion North (293)
+291,East,5,293,West,0
+# Route 27 (337) - Cremini Town (298)
+337,East,0,298,West,89
 # Grullo Gorge (307) - Grullo Gorge (308)
 307,West,0,308,East,0
-# Grullo Gorge (329) - Grullo Gorge (308)
-329,South,0,308,North,18
 # Grullo Gorge (329) - Grullo Gorge (307)
 329,South,32,307,North,0
-# Vermilion City (78) - Grullo Gorge (310)
-78,133,0,310,0,1
+# Grullo Gorge (308) - Grullo Gorge (330)
+308,West,0,330,East,0
+# Grullo Gorge (329) - Grullo Gorge (308)
+329,South,0,308,North,18
+# Grullo Gorge (329) - Grullo Gorge (330)
+329,South,0,330,North,68
+# Route 17 (41) - Route 18 (20)
+41,South,6,20,North,0
+# House 1 (25) - Route 17 (41)
+25,South,0,41,North,0

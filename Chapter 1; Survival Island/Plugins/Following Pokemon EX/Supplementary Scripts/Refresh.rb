@@ -202,6 +202,9 @@ class Scene_Map
     $PokemonGlobal.dependentEvents.each_with_index do |_,i|
       event = $PokemonTemp.dependentEvents.realEvents[i]
       FollowingPkmn.refresh(false)
+	  if !GameData::MapMetadata.get($game_temp.player_new_map_id).outdoor_map
+      $game_screen.weather(:None, 0, 0)
+	  end
       if event.is_a?(Game_FollowerEvent)
         event.map = $game_map
 		$PokemonTemp.dependentEvents.pbMoveDependentEvents

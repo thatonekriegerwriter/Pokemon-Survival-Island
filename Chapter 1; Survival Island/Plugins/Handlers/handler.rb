@@ -8,24 +8,6 @@ if $PokemonBag.pbHasItem?(:COALGENERATOR)
   $game_switches[409]=true 
 end
 
-if $PokemonBag.pbHasItem?(:SMOOCHUMDOLL)
-  $game_switches[294]=true 
-end
-if $PokemonBag.pbHasItem?(:TORCHICDOLL)
-  $game_switches[295]=true 
-end
-if $PokemonBag.pbHasItem?(:MEOWTHDOLL)
-  $game_switches[296]=true 
-end
-if $PokemonBag.pbHasItem?(:TREECKODOLL)
-  $game_switches[297]=true 
-end
-if $PokemonBag.pbHasItem?(:CHIKORITADOLL)
-  $game_switches[298]=true 
-end
-if $PokemonBag.pbHasItem?(:SHINYSTONE)
-  $game_switches[299]=true 
-end
 
 if $PokemonBag.pbHasItem?(:UPGRADEDCRAFTINGBENCH)
   $game_switches[402]=true 
@@ -78,17 +60,24 @@ if !$game_switches[54]==true
  end
 end
 
+if $game_switches[57]==false
 if $PokemonSystem.nuzlockemode == 0
- if $game_switches[57]==false
+ if EliteBattle.nuzlockeOn?
+  EliteBattle.toggle_nuzlocke
+  pbMessage(_INTL("You toggled Nuzlocke Mode."))
+  pbLifeCheck
+  $game_switches[57]=true
+  else
   EliteBattle.startNuzlocke
   pbMessage(_INTL("You toggled Nuzlocke Mode."))
   Achievements.incrementProgress("NUZLOCKED",1)
- else
-  EliteBattle.toggle_nuzlocke
-  pbMessage(_INTL("You toggled Nuzlocke Mode."))
+  pbLifeCheck
+  $game_switches[57]=true
  end
 end
-
+elsif $PokemonSystem.nuzlockemode == 1
+  $game_switches[57]=false
+end
   
 }
 
@@ -253,9 +242,26 @@ end
 
 
 
-
-
-
+def pbOakFix
+  pbChoosePokemon(1,3)
+  pkmn = pbGetPokemon(1)
+  pkmn.permaFaint=false
+  pkmn.heal_HP
+  $game_variables[472] = pkmn.clone
+  if $Trainer.firstPokemon.isSpecies?(:pkmn)
+     $Trainer.remove_pokemon_at_index(0)
+  elsif $Trainer.secondPokemon.isSpecies?(:pkmn)
+     $Trainer.remove_pokemon_at_index(1)
+  elsif $Trainer.thirdPokemon.isSpecies?(:pkmn)
+     $Trainer.remove_pokemon_at_index(2)
+  elsif $Trainer.fourthPokemon.isSpecies?(:pkmn)
+     $Trainer.remove_pokemon_at_index(3)
+  elsif $Trainer.fifthPokemon.isSpecies?(:pkmn)
+     $Trainer.remove_pokemon_at_index(4)
+  elsif $Trainer.sixthPokemon.isSpecies?(:pkmn)
+     $Trainer.remove_pokemon_at_index(5)
+  end
+end
 
 
 
@@ -831,3 +837,276 @@ Events.onStepTaken += proc { |_sender,_e|
     end
   end
 }
+
+
+
+
+ItemHandlers::UseInField.add(:PORTABLEPC,proc { |item|
+  maps = [10,20,40,97]   # Map IDs for Origin Forme
+  if $game_switches[414] == true
+    Kernel.pbMessage(_INTL("You already have an Item Crate placed, these take the same spot.",item))
+    next 0
+  else
+   if maps.include?($game_map.map_id)
+    Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+    $game_switches[406] = true
+     next 3
+  else
+    Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+  end
+})
+
+ItemHandlers::UseInField.add(:BEDROLL,proc { |item|
+  maps = [10,20,40,97]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[407] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:GRINDER,proc { |item|
+  maps = [10,20,40,97]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[404] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:UPGRADEDCRAFTINGBENCH,proc { |item|
+  maps = [10,20,40,97,41]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[402] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+ItemHandlers::UseInField.add(:MEDICINEPOT,proc { |item|
+  maps = [10,20,40,97]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[405] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:FURNACE,proc { |item|
+  maps = [10,20,40,97]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[403] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:CAULDRON,proc { |item|
+  maps = [10,20,40,97]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[147] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:CRAFTINGBENCH,proc { |item|
+  maps = [10,20,40,97]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[150] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:APRICORNCRAFTING,proc { |item|
+  maps = [10,20,40,97]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[144] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+ItemHandlers::UseInField.add(:CUTTER,proc { |item|
+  maps = [41]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_variables[290] += 1
+  $game_switches[411] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:ITEMCRATE,proc { |item|
+  maps = [10,20,40,97]   # Map IDs for Origin Forme
+  if $game_switches[406] == true
+    Kernel.pbMessage(_INTL("You already have an Pokemon Crate placed, these take the same spot.",item))
+    next 0
+  else
+   if maps.include?($game_map.map_id)
+    Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+    $game_switches[414] = true
+     next 3
+  else
+    Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+  end
+})
+
+ItemHandlers::UseInField.add(:SEWINGMACHINE,proc { |item|
+  maps = [41]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_variables[290] += 1
+  $game_switches[411] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:ELECTRICPRESS,proc { |item|
+  maps = [41]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_variables[290] += 1
+  $game_switches[412] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+ItemHandlers::UseInField.add(:APRICORNMACHINE,proc { |item|
+  maps = [41]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_variables[290] += 1
+  $game_switches[415] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:ELECTRICFURNACE,proc { |item|
+  maps = [41]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_variables[290] += 1
+  $game_switches[416] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:ELECTRICGRINDER,proc { |item|
+  maps = [41]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_variables[290] += 1
+  $game_switches[417] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:COALGENERATOR,proc { |item|
+  maps = [41]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[409] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:SOLARGENERATOR,proc { |item|
+  maps = [54]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[418] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:HYDROGENERATOR,proc { |item|
+  maps = [54]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[419] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:WINDGENERATOR,proc { |item|
+  maps = [54]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[420] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+ItemHandlers::UseInField.add(:POKEGENERATOR,proc { |item|
+  maps = [41]   # Map IDs for Origin Forme
+  if maps.include?($game_map.map_id)
+  Kernel.pbMessage(_INTL("Do you want to place your {1}?",item))
+  $game_switches[421] = true
+  next 3
+  else
+  Kernel.pbMessage(_INTL("This cannot be placed here."))
+  next 0
+  end
+})
+
+
+class ExplorationState
+
+end

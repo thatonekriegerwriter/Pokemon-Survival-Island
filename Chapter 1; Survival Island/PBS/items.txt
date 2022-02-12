@@ -836,7 +836,7 @@
 1868,MEDICINE,Medicine Bag,Medicine Bags,8,1000,"The Bag you store medicine in.",2,0,6,
 1869,SNATCHER,Snatcher,Snatcher,1,0,"A Machine designed to steal an item from a Pokemon.",0,0,0
 1943,NO, , ,1,00,"You shouldn't see this.",0,0,0,
-2014,SUSPO,Suspicious Drink,Suspicious Drink,2,0,"A Weird Drink. It's purpose is unknown.",0,0,0,
+2014,SUSPO,Suspicious Drink,Suspicious Drink,2,0,"A Weird Drink. It's purpose is unknown.",1,1,14,
 #-------------------------------
 # Pokeballs
 #-------------------------------
@@ -1037,16 +1037,16 @@
 #-------------------------------
 
 1925,MEAT,Meat,Meat,2,200,"Uncooked Meat. Not that good to eat.",1,1,13,
-2017,BIRDMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2018,POISONOUSMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2019,ROCKYMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2020,BUGMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2021,STEELYMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2022,SUSHI, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2023,LEAFYMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2024,ICEYROCKS, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2025,DRAGONMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2026,EDIABLESCRYSTAL, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
+2017,BIRDMEAT, Bird Meat, Bird Meat,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2018,POISONOUSMEAT, Poisonous Meat, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2019,ROCKYMEAT, Rocky Meat, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2020,BUGMEAT, Bug Meat, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2021,STEELYMEAT, Steely Meat, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2022,SUSHI, Sushi, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2023,LEAFYMEAT, Leafy Meat, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2024,ICEYROCKS, Icey Rocks, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2025,DRAGONMEAT, Dragon Meat, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2026,EDIABLESCRYSTAL, Ediable Crystal, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
 
 #-------------------------------
 # Food

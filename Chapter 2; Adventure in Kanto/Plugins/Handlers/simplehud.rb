@@ -128,19 +128,19 @@ class Spriteset_Map
 
     def drawText
 	
-    if $game_variables[225] >= 80
+    if $Trainer.playerhealth >= 80
          trainerhealth = _INTL("Healthy")
          healthColor=Color.new(255,255,255)
      else
-       if $game_variables[225] >= 50
+       if $Trainer.playerhealth >= 50
          trainerhealth = _INTL("Injured")
          healthColor=Color.new(255,255,255)
      else
-        if $game_variables[225] >= 25
+        if $Trainer.playerhealth >= 25
          trainerhealth = _INTL("Wounded")
          healthColor=Color.new(255,255,255)
      else
-        if $game_variables[225] <= 24
+        if $Trainer.playerhealth <= 24
          trainerhealth = _INTL("Critical")
          healthColor=Color.new(255,255,255)
         end
@@ -148,23 +148,23 @@ class Spriteset_Map
      end
     end
 
-    if $game_variables[205] >= 80
+    if $Trainer.playerfood >= 80
          trainerhunger = _INTL("Full")
          hungerColor=Color.new(55,255,55)
        else
-         if $game_variables[205] >= 75
+         if $Trainer.playerfood >= 75
            trainerhunger = _INTL("Well Off")
            hungerColor=Color.new(255,255,55)
          else
-           if $game_variables[205] >= 50
+           if $Trainer.playerfood >= 50
              trainerhunger = _INTL("Hungry")
              hungerColor=Color.new(255,125,55)
            else
-               if $game_variables[205] >= 25
+               if $Trainer.playerfood >= 25
                 trainerhunger = _INTL("Starving")
                 hungerColor=Color.new(255,125,55)
                 else
-                 if $game_variables[205] <= 24
+                 if $Trainer.playerfood <= 24
                    trainerhunger= _INTL("Dying")
                    hungerColor=Color.new(255,55,55)
 			    end
@@ -174,23 +174,23 @@ class Spriteset_Map
        end   
 
 
-    if $game_variables[206] >= 80
+    if $Trainer.playerwater >= 80
          trainerthirst = _INTL("Quenched")
          thirstColor=Color.new(55,255,55)
        else
-         if $game_variables[206] >= 75
+         if $Trainer.playerwater >= 75
            trainerthirst = _INTL("Well Off")
            thirstColor=Color.new(255,255,55)
          else
-           if $game_variables[206] >= 50
+           if $Trainer.playerwater >= 50
              trainerthirst = _INTL("Thirsty")
              thirstColor=Color.new(255,125,55)
            else
-               if $game_variables[206] >= 25
+               if $Trainer.playerwater >= 25
                 trainerthirst = _INTL("Dehydrated")
                 thirstColor=Color.new(255,125,55)
                 else
-                 if $game_variables[206] <= 24
+                 if $Trainer.playerwater <= 24
                    trainerthirst= _INTL("Dying")
                    thirstColor=Color.new(255,55,55)
 			    end
@@ -199,23 +199,23 @@ class Spriteset_Map
          end
        end   
 
-    if $game_variables[208] >= 80
+    if $Trainer.playersleep >= 80
           trainersleep = _INTL("Rested")
           sleepColor=Color.new(55,255,55)
        else
-         if $game_variables[208] >= 75
+         if $Trainer.playersleep >= 75
             trainersleep = _INTL("Well Off")
             sleepColor=Color.new(255,255,55)
          else
-           if $game_variables[208] >= 50
+           if $Trainer.playersleep >= 50
               trainersleep = _INTL("Tired")
               sleepColor=Color.new(255,125,55)
            else
-               if $game_variables[208] >= 25
+               if $Trainer.playersleep >= 25
                  trainersleep = _INTL("Deprived")
                  sleepColor=Color.new(255,125,55)
                 else
-                 if $game_variables[208] <= 24
+                 if $Trainer.playersleep <= 24
                    trainersleep= _INTL("Dying")
                    sleepColor=Color.new(255,55,55)
 			    end
@@ -242,7 +242,8 @@ class Spriteset_Map
         [@currentTexts[3],20,350,2,sleepColor,shadowColor],
         [@currentTexts[4],450,60,2,healthColor,shadowColor],
         [@currentTexts[5],450,30,2,healthColor,shadowColor],
-        [@currentTexts[6],500,350,2,powerColor,shadowColor]
+        [@currentTexts[6],500,350,2,powerColor,shadowColor],
+        [@currentTexts[7],400,350,2,healthColor,shadowColor]
       ]
 
       pbSetSystemFont(@sprites["overlay"].bitmap)
@@ -254,20 +255,20 @@ class Spriteset_Map
     # only will be redrawed if any character change.
     def textsDefined
       ret=[]
-      ret[0] = _INTL("HP: [||||||||||]",$game_variables[225]) if $game_variables[225] >= 91 && $game_variables[225] <= 100
-      ret[0] = _INTL("HP: [|||||||||-]",$game_variables[225]) if $game_variables[225] >= 81 && $game_variables[225] <= 90
-      ret[0] = _INTL("HP: [||||||||--]",$game_variables[225]) if $game_variables[225] >= 71 && $game_variables[225] <= 80
-      ret[0] = _INTL("HP: [|||||||---]",$game_variables[225]) if $game_variables[225] >= 61 && $game_variables[225] <= 70
-      ret[0] = _INTL("HP: [||||||----]",$game_variables[225]) if $game_variables[225] >= 51 && $game_variables[225] <= 60
-      ret[0] = _INTL("HP: [|||||-----]",$game_variables[225]) if $game_variables[225] >= 41 && $game_variables[225] <= 50
-      ret[0] = _INTL("HP: [||||------]",$game_variables[225]) if $game_variables[225] >= 31 && $game_variables[225] <= 40
-      ret[0] = _INTL("HP: [|||-------]",$game_variables[225]) if $game_variables[225] >= 21 && $game_variables[225] <= 30
-      ret[0] = _INTL("HP: [||--------]",$game_variables[225]) if $game_variables[225] >= 11 && $game_variables[225] <= 20
-      ret[0] = _INTL("HP: [|---------]",$game_variables[225]) if $game_variables[225] >= 01 && $game_variables[225] <= 10
-      ret[0] = _INTL("HP: [----------]",$game_variables[225]) if $game_variables[225] == 0
-      ret[1] = _INTL("FOD",$game_variables[205])
-      ret[2] = _INTL("H20",$game_variables[206])
-      ret[3] = _INTL("SLP",$game_variables[208])
+      ret[0] = _INTL("HP: [||||||||||]",$Trainer.playerhealth) if $Trainer.playerhealth >= 91 && $Trainer.playerhealth <= 100
+      ret[0] = _INTL("HP: [|||||||||-]",$Trainer.playerhealth) if $Trainer.playerhealth >= 81 && $Trainer.playerhealth <= 90
+      ret[0] = _INTL("HP: [||||||||--]",$Trainer.playerhealth) if $Trainer.playerhealth >= 71 && $Trainer.playerhealth <= 80
+      ret[0] = _INTL("HP: [|||||||---]",$Trainer.playerhealth) if $Trainer.playerhealth >= 61 && $Trainer.playerhealth <= 70
+      ret[0] = _INTL("HP: [||||||----]",$Trainer.playerhealth) if $Trainer.playerhealth >= 51 && $Trainer.playerhealth <= 60
+      ret[0] = _INTL("HP: [|||||-----]",$Trainer.playerhealth) if $Trainer.playerhealth >= 41 && $Trainer.playerhealth <= 50
+      ret[0] = _INTL("HP: [||||------]",$Trainer.playerhealth) if $Trainer.playerhealth >= 31 && $Trainer.playerhealth <= 40
+      ret[0] = _INTL("HP: [|||-------]",$Trainer.playerhealth) if $Trainer.playerhealth >= 21 && $Trainer.playerhealth <= 30
+      ret[0] = _INTL("HP: [||--------]",$Trainer.playerhealth) if $Trainer.playerhealth >= 11 && $Trainer.playerhealth <= 20
+      ret[0] = _INTL("HP: [|---------]",$Trainer.playerhealth) if $Trainer.playerhealth >= 01 && $Trainer.playerhealth <= 10
+      ret[0] = _INTL("HP: [----------]",$Trainer.playerhealth) if $Trainer.playerhealth == 0
+      ret[1] = _INTL("FOD",$Trainer.playerfood)
+      ret[2] = _INTL("H20",$Trainer.playerwater)
+      ret[3] = _INTL("SLP",$Trainer.playersleep)
       ret[4] = _INTL("{1}",pbGetTimeNow.strftime("%I:%M %p")) 	if $PokemonBag.pbHasItem?(:CLOCK)
       ret[4] = _INTL("",pbGetTimeNow.strftime("%I:%M %p")) 	if !$PokemonBag.pbHasItem?(:CLOCK)
       ret[5] = _INTL("{1}/{2}/{3}",pbGetTimeNow.mon,pbGetTimeNow.day,pbGetTimeNow.year) 	if $PokemonBag.pbHasItem?(:CALENDAR)
@@ -275,6 +276,17 @@ class Spriteset_Map
       ret[6] = _INTL("",pbGetTimeNow.strftime("%I:%M %p")) 	if !$PokemonBag.pbHasItem?(:APOWERMONITOR)
       ret[6] = _INTL("",pbGetTimeNow.strftime("%I:%M %p")) 	if $PokemonBag.pbHasItem?(:APOWERMONITOR)
       ret[6] = _INTL("!!!") if $PokemonBag.pbHasItem?(:APOWERMONITOR) && $game_variables[291]<=25
+      ret[7] = _INTL("STA: [||||||||||]",$Trainer.playerstamina) if $Trainer.playerstamina >= 91 && $Trainer.playerstamina <= 100 && $Trainer.playermaxstamina
+      ret[7] = _INTL("STA: [|||||||||-]",$Trainer.playerstamina) if $Trainer.playerstamina >= 81 && $Trainer.playerstamina <= 90
+      ret[7] = _INTL("STA: [||||||||--]}",$Trainer.playerstamina) if $Trainer.playerstamina >= 71 && $Trainer.playerstamina <= 80
+      ret[7] = _INTL("STA: [|||||||---]",$Trainer.playerstamina) if $Trainer.playerstamina >= 61 && $Trainer.playerstamina <= 70
+      ret[7] = _INTL("STA: [||||||----]",$Trainer.playerstamina) if $Trainer.playerstamina >= 51 && $Trainer.playerstamina <= 60
+      ret[7] = _INTL("STA: [|||||-----]",$Trainer.playerstamina) if $Trainer.playerstamina >= 41 && $Trainer.playerstamina <= 50
+      ret[7] = _INTL("STA: [||||------]",$Trainer.playerstamina) if $Trainer.playerstamina >= 31 && $Trainer.playerstamina <= 40
+      ret[7] = _INTL("STA: [|||-------]",$Trainer.playerstamina) if $Trainer.playerstamina >= 21 && $Trainer.playerstamina <= 30
+      ret[7] = _INTL("STA: [||--------]",$Trainer.playerstamina) if $Trainer.playerstamina >= 11 && $Trainer.playerstamina <= 20
+      ret[7] = _INTL("STA: [|---------]",$Trainer.playerstamina) if $Trainer.playerstamina >= 01 && $Trainer.playerstamina <= 10
+      ret[7] = _INTL("STA: [----------]",$Trainer.playerstamina) if $Trainer.playerstamina == 0
       return ret
     end
 
