@@ -89,4 +89,20 @@ def pbMiningMain
 end
 #==============================================================================#
 #==============================================================================#
-
+                                                                             
+def pbMeteorMain
+  vbItems=[:COMETSHARD,:COMETSHARD,:COMETSHARD,:COMETSHARD,:COMETSHARD,:SPEEDCOMET,:DEFENDCOMET,:BALANCEDCOMET,:BALANCEDCOMET,:BALANCEDCOMET,:ATKCOMET,:STARPIECE,:STARPIECE,:STARPIECE,:MOONSTONE,:MOONSTONE,:NEVERMELTICE,:NEVERMELTICE,:NEVERMELTICE,:LIFEORB,:LIFEORB,:TM13,:SUNSTONE,:COMETSHARD]
+  chanceCollect=rand(6)  #Encounters 2/10 of the time
+  if  chanceCollect==0 ||  chanceCollect==2 ||  chanceCollect==3 || chanceCollect==5
+    pbMessage("You found something!!!")
+    vbItem = vbItems[rand(24)]
+	if rand(21)==5
+	pbItemBall(:IRON2,(rand(200)))
+	end
+    pbItemBall(vbItem,(rand(2)))
+  elsif  chanceCollect==1 ||  chanceCollect==4
+    pbMessage("You found something!!!")
+    pbMessage("A Pokemon!!!! and it attacks!")
+    pbEncounter(EncounterTypes::Comet)
+  end
+end

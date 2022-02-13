@@ -836,7 +836,7 @@
 1868,MEDICINE,Medicine Bag,Medicine Bags,8,1000,"The Bag you store medicine in.",2,0,6,
 1869,SNATCHER,Snatcher,Snatcher,1,0,"A Machine designed to steal an item from a Pokemon.",0,0,0
 1943,NO, , ,1,00,"You shouldn't see this.",0,0,0,
-2014,SUSPO,Suspicious Drink,Suspicious Drink,2,0,"A Weird Drink. It's purpose is unknown.",1,1,14,
+2014,SUSPO,Suspicious Drink,Suspicious Drink,2,0,"A Weird Drink. It's purpose is unknown.",1,1,0,
 #-------------------------------
 # Pokeballs
 #-------------------------------
@@ -885,6 +885,10 @@
 1805,ICEDART,Ice Dart,Ice Darts Darts,7,1000,"A handcrafted dart gun that freezes a Pokémon in battle.",0,4,0,
 1806,FIREDART,Fire Dart,Fire Darts,7,1000,"A handcrafted dart gun that burns a Pokémon in battle.",0,4,0,
 1808,BAIT,Bait,Baits,7,1000,"A spongy, aromatic fungus that distracts Pokémon. Use it to flee from any battle with a wild Pokémon.",2,5,5,
+2036,SPEEDCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
+2037,DEFENDCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
+2038,BALANCEDCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
+2039,ATKCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
 #-------------------------------
 # Dolls
 #-------------------------------
@@ -1055,7 +1059,7 @@
 1946,COOKEDMEAT,Meat (Cooked),Meat (Cooked),9,2100,"Cooked Meat from a Pokemon. Good for you.",1,1,13,
 1947,SITRUSJUICE,Sitrus Juice,Sitrus Juice,9,2100,"Juice made of a mix of Sitrus Berries, Oran Berries, and pinch of Sugar. Very Refreshing",1,1,13,
 1948,BERRYMASH,Berry Mash,Berry Mash,9,2100,"A Mash made of a mixture of berries.",1,1,13,
-1711,WATERBOTTLE,Bottle,Bottles,1,0,"A Bottle, you can fill it with water at Fresh Water Sources.",1,0,0,
+1711,WATERBOTTLE,Bottle,Bottles,1,0,"A Bottle, you can fill it with water at Fresh Water Sources.",2,0,0,
 1999,HOTDOG,Hot Dog,Hot Dogs,9,100,"One of the Indigo Plateau's Hot Dogs.",1,1,13,
 2000,CORNDOG,Corn Dog, Corn Dogs,9,100,"One of the Indigo Plateau's Corn Dogs.",1,1,13,
 2001,FUNNELCAKE, Funnel Cake, Funnel Cakes,9,150,"One of the Indigo Plateau's Funnel Cakes.",1,1,13,
@@ -1097,3 +1101,4 @@
 1831,DEFCURRY,Belue Curry,Belue Curryy,1,500,"A Curry that increases your Toughness and Defense as long as you are on the field.",1,3,13,
 1832,CRITCURRY,Lansat Curry,Lansat Curryy,1,500,"A Curry that increases your Coolness and Critical Hit Ratio as long as you are on the field.",1,3,13,
 1833,GSCURRY,Starf Curry,Starf Curry,1,500,"A Curry that increases your Toughness and prevents Stat Reduction for 5 turns.",1,3,13,
+2040,LARGEMEAL,Hearty Meal,Hearty Meal,1,500,"A Meal that does wonders for your health.",1,3,13,

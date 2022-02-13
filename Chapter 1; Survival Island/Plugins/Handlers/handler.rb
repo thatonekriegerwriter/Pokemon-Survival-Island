@@ -79,6 +79,42 @@ elsif $PokemonSystem.nuzlockemode == 1
   $game_switches[57]=false
 end
   
+  
+if $game_switches[421]==true
+  if $game_switches[943]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[944]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[945]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[946]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[947]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[948]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[949]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[950]==true
+     $game_variables[291]+=1
+  end
+end
+
+if $game_switches[420]==true
+end
+
+if $game_switches[419]==true
+end
+
+if $game_switches[418]==true
+end  
 }
 
 
@@ -1110,3 +1146,6 @@ ItemHandlers::UseInField.add(:POKEGENERATOR,proc { |item|
 class ExplorationState
 
 end
+
+
+

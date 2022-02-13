@@ -15,6 +15,21 @@
 
 Events.onStepTakenTransferPossible+=proc {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $game_switches[70]=true
 pbchangeFood
 pbchangeWater
@@ -27,71 +42,92 @@ pbchangeStamina
  if $Trainer.pokemonCount==6
   if rand(255)==1
   $Trainer.party[0].changeFood
+  pbPokeAging($Trainer.party[0])
   end
   if rand(255)==3
   $Trainer.party[1].changeFood
+  pbPokeAging($Trainer.party[1])
   end
   if rand(255)==5
   $Trainer.party[2].changeFood
+  pbPokeAging($Trainer.party[2])
   end
   if rand(255)==7
   $Trainer.party[3].changeFood
+  pbPokeAging($Trainer.party[3])
   end
   if rand(255)==8
   $Trainer.party[4].changeFood
+  pbPokeAging($Trainer.party[4])
   end
   if rand(255)==17
   $Trainer.party[5].changeFood
+  pbPokeAging($Trainer.party[5])
   end
  elsif $Trainer.pokemonCount==5
   if rand(255)==1
   $Trainer.party[0].changeFood
+  pbPokeAging($Trainer.party[0])
   end
   if rand(255)==3
   $Trainer.party[1].changeFood
+  pbPokeAging($Trainer.party[1])
   end
   if rand(255)==5
   $Trainer.party[2].changeFood
+  pbPokeAging($Trainer.party[2])
   end
   if rand(255)==7
   $Trainer.party[3].changeFood
+  pbPokeAging($Trainer.party[3])
   end
   if rand(255)==8
   $Trainer.party[4].changeFood
+  pbPokeAging($Trainer.party[4])
   end
  elsif $Trainer.pokemonCount==4
   if rand(255)==1
   $Trainer.party[0].changeFood
+  pbPokeAging($Trainer.party[0])
   end
   if rand(255)==3
   $Trainer.party[1].changeFood
+  pbPokeAging($Trainer.party[1])
   end
   if rand(255)==5
   $Trainer.party[2].changeFood
+  pbPokeAging($Trainer.party[2])
   end
   if rand(255)==7
   $Trainer.party[3].changeFood
+  pbPokeAging($Trainer.party[3])
   end
  elsif $Trainer.pokemonCount==3
   if rand(255)==1
   $Trainer.party[0].changeFood
+  pbPokeAging($Trainer.party[0])
   end
   if rand(255)==3
   $Trainer.party[1].changeFood
+  pbPokeAging($Trainer.party[1])
   end
   if rand(255)==5
   $Trainer.party[2].changeFood
+  pbPokeAging($Trainer.party[2])
   end
  elsif $Trainer.pokemonCount==2
   if rand(255)==1
   $Trainer.party[0].changeFood
+  pbPokeAging($Trainer.party[0])
   end
   if rand(255)==3
   $Trainer.party[1].changeFood
+  pbPokeAging($Trainer.party[1])
   end
  elsif $Trainer.pokemonCount==1
   if rand(255)==1
   $Trainer.party[0].changeFood
+  pbPokeAging($Trainer.party[0])
   end
  end
 
@@ -240,6 +276,7 @@ end
 
 
 def pbSleepRestore
+ $Trainer.playerstamina = $Trainer.playermaxstamina
  if $Trainer.playersleep<200
   $Trainer.playersleep=$Trainer.playersleep+($game_variables[247]*6)
  end
@@ -529,6 +566,61 @@ $Trainer.playersaturation+=5#207 is Saturation
 $Trainer.playerwater+=5#206 is Thirst
 $Trainer.playerfood+=5#205 is Hunger
 return 1
+elsif item == :LARGEMEAL
+$Trainer.playersaturation+=50#207 is Saturation
+$Trainer.playerwater+=50#206 is Thirst
+$Trainer.playerfood+=50#205 is Hunger
+$Trainer.playerstaminamod+=15#205 is Hunger
+ if $Trainer.pokemonCount==6
+  $Trainer.party[0].ev[:DEFENSE] += 1
+  $Trainer.party[1].ev[:DEFENSE] += 1
+  $Trainer.party[2].ev[:DEFENSE] += 1
+  $Trainer.party[3].ev[:DEFENSE] += 1
+  $Trainer.party[4].ev[:DEFENSE] += 1
+  $Trainer.party[5].ev[:DEFENSE] += 1
+  $Trainer.party[0].ev[:HP] += 1
+  $Trainer.party[1].ev[:HP] += 1
+  $Trainer.party[2].ev[:HP] += 1
+  $Trainer.party[3].ev[:HP] += 1
+  $Trainer.party[4].ev[:HP] += 1
+  $Trainer.party[5].ev[:HP] += 1
+ elsif $Trainer.pokemonCount==5
+  $Trainer.party[0].ev[:DEFENSE] += 1
+  $Trainer.party[1].ev[:DEFENSE] += 1
+  $Trainer.party[2].ev[:DEFENSE] += 1
+  $Trainer.party[3].ev[:DEFENSE] += 1
+  $Trainer.party[4].ev[:DEFENSE] += 1
+  $Trainer.party[0].ev[:HP] += 1
+  $Trainer.party[1].ev[:HP] += 1
+  $Trainer.party[2].ev[:HP] += 1
+  $Trainer.party[3].ev[:HP] += 1
+  $Trainer.party[4].ev[:HP] += 1
+ elsif $Trainer.pokemonCount==4
+  $Trainer.party[0].ev[:DEFENSE] += 1
+  $Trainer.party[1].ev[:DEFENSE] += 1
+  $Trainer.party[2].ev[:DEFENSE] += 1
+  $Trainer.party[3].ev[:DEFENSE] += 1
+  $Trainer.party[0].ev[:HP] += 1
+  $Trainer.party[1].ev[:HP] += 1
+  $Trainer.party[2].ev[:HP] += 1
+  $Trainer.party[3].ev[:HP] += 1
+ elsif $Trainer.pokemonCount==3
+  $Trainer.party[0].ev[:DEFENSE] += 1
+  $Trainer.party[1].ev[:DEFENSE] += 1
+  $Trainer.party[2].ev[:DEFENSE] += 1
+  $Trainer.party[0].ev[:HP] += 1
+  $Trainer.party[1].ev[:HP] += 1
+  $Trainer.party[2].ev[:HP] += 1
+ elsif $Trainer.pokemonCount==2
+  $Trainer.party[0].ev[:DEFENSE] += 1
+  $Trainer.party[1].ev[:DEFENSE] += 1
+  $Trainer.party[0].ev[:HP] += 1
+  $Trainer.party[1].ev[:HP] += 1
+ elsif $Trainer.pokemonCount==1
+  $Trainer.party[0].ev[:DEFENSE] += 1
+  $Trainer.party[0].ev[:HP] += 1
+ end
+return 1
 else
 $PokemonBag.pbStoreItem(item,1)
 return 0
@@ -585,6 +677,7 @@ def pbRandomEvent
    if rand(1000) == 1
      Kernel.pbMessage(_INTL("There was a sound outside."))   #Comet
      $game_switches[450]==true 
+     $game_switches[451]==true 
 =begin
    elsif rand(1000) == 2
      
@@ -605,7 +698,6 @@ if $game_player.pbFacingTerrainTag.can_surf
      message=(_INTL("Want to pick up water?"))
     if pbConfirmMessage(message)
        $PokemonBag.pbStoreItem(:WATER,1)
-       $PokemonBag.pbDeleteItem(:WATERBOTTLE,1)
 	end
 	next 4
    else
@@ -824,12 +916,23 @@ end
 #  if pbLifeCheckChecking == true
 #    pkmn.food = (rand(100)+1)
 #    pkmn.water = (rand(100)+1)
-#    pkmn.age = (rand(40)+1)
+#    pkmn.sleep = (rand(40)+1)
 #  end
 	
-	
-	
-	
+def pbPokeAging(pkmn)
+   oldtimenow=0
+   timenow=0
+   time=0
+  oldtimenow = timenow
+  timenow = pbGetTimeNow.to_i
+   time = timenow-oldtimenow
+   if time >= 11059200 && !timenow=0 && !pkmn.egg?
+     pkmn.sleep+=1
+   end
+   if pkmn.sleep >=180
+     pkmn.permadeath=true
+   end
+end
 	
 
 #Eating Food
