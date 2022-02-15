@@ -9,7 +9,6 @@
 WINDOWSKIN = "base.png"
 WINDOWSKIN2= "textbookbg.png"
 
-
 # This hash allows you to define the names of your encounter types if you want them to be more logical
 # E.g. "Surfing" instead of "Water"
 # If missing, the script will use the encounter type names in GameData::EncounterTypes
@@ -138,6 +137,12 @@ class EncounterList_Scene
     @sprites["leftarrow"].y = Graphics.height/2 - @sprites["rightarrow"].bitmap.height/16
     @sprites["leftarrow"].visible = false
     @sprites["leftarrow"].play
+    @sprites["map"]=IconSprite.new(@selectX,@selectY,@viewport)
+    filename=sprintf("map%s",$game_variables[4977].to_s)
+    @sprites["map"].setBitmap("Graphics/Pictures/EncounterUI/"+filename)
+    @sprites["map"].visible = true
+    @sprites["map"].x = 375
+    @sprites["map"].y = 225
     @sprites["selector"]=IconSprite.new(@selectX,@selectY,@viewport)
     @sprites["selector"].setBitmap("Graphics/Pictures/craftingMenu/craftSelect")
     @sprites["selector"].visible = false
@@ -225,6 +230,9 @@ class EncounterList_Scene
 	    @sprites["selector"].visible = false
         @sprites["selector"].x -= (64*@selection)
         @selection=0
+     	@sprites["background"].visible = false
+        @currentTexts = textsDefined2
+    	drawText
         break
       end
     end
@@ -234,6 +242,7 @@ class EncounterList_Scene
  
   def pbArceusTasksStart
           enc_array, currKey = getEncData
+		  
           if @selection==0
 		  @species = enc_array[0]
 		    if !@species.empty?
@@ -438,6 +447,26 @@ class EncounterList_Scene
 	  ret[13] = _INTL("{1}",$Trainer.pokedex.seen_forms_count(@species))
 	  ret[14] = _INTL("{1}",$Trainer.pokedex.number_evolved(@species))
       return ret
+    end    
+	def textsDefined2
+      ret=[]
+      ret[0] = _INTL("",@species)
+	  ret[1] = _INTL("",$Trainer.pokedex.number_caught(@species))
+      ret[2] = _INTL("",$Trainer.pokedex.number_battled(@species))
+	  ret[3] = _INTL("",$Trainer.pokedex.number_weakness(@species))
+	  ret[4] = _INTL("",$Trainer.pokedex.number_moves(@species,@moveA),@moveA)
+	  ret[5] = _INTL("",$Trainer.pokedex.number_moves(@species,@moveB),@moveB)
+	  ret[6] = _INTL("",$Trainer.pokedex.seen_forms_count(@species))
+	  ret[6] = _INTL("",$Trainer.pokedex.seen_forms_count(@species)) if (!@species == :VENUSAUR || !@species == :CHARIZARD || !@species == :BLASTOISE || !@species == :BEEDRILL || !@species == :PIDGEOT || !@species == :RATTATA || !@species == :RATICATE || !@species == :PIKACHU || !@species == :RAICHU || !@species == :SANDSHREW || !@species == :SANDSLASH || !@species == :VULPIII || !@species == :VULPIX || !@species == :KITSUVEN || !@species == :NINETALES || !@species == :DIGLETT || !@species == :DUGTRIO || !@species == :MEOWTH || !@species == :PERSIAN || !@species == :ALAKAZAM || !@species == :GEODUDE || !@species == :GRAVELER || !@species == :GOLEM || !@species == :PONYTA || !@species == :RAPIDASH || !@species == :SLOWPOKE || !@species == :SLOWBRO || !@species == :FARFETCHD || !@species == :GRIMER || !@species == :MUK || !@species == :GENGAR || !@species == :EXEGGUTOR || !@species == :CUBONE || !@species == :MAROWAK || !@species == :WEEZING || !@species == :KANGASKHAN || !@species == :MRMIME || !@species == :PINSIR || !@species == :GYARADOS || !@species == :AERODACTYL || !@species == :ARTICUNO || !@species == :ZAPDOS || !@species == :MOLTRES || !@species == :MEWTWO || !@species == :PICHU || !@species == :AMPHAROS || !@species == :SLOWKING || !@species == :UNOWN || !@species == :STEELIX || !@species == :SCIZOR || !@species == :HERACROSS || !@species == :CORSOLA || !@species == :HOUNDOOM || !@species == :TYRANITAR || !@species == :SCEPTILE || !@species == :BLAZIKEN || !@species == :SWAMPERT || !@species == :ZIGZAGOON || !@species == :LINOONE || !@species == :GARDEVOIR || !@species == :SABLEYE || !@species == :MAWILE || !@species == :AGGRON || !@species == :MEDICHAM || !@species == :MANECTRIC || !@species == :SHARPEDO || !@species == :CAMERUPT || !@species == :ALTARIA || !@species == :CASTFORM || !@species == :BANETTE || !@species == :ABSOL || !@species == :GLALIE || !@species == :SALAMENCE || !@species == :METAGROSS || !@species == :LATIAS || !@species == :LATIOS || !@species == :KYOGRE || !@species == :GROUDON || !@species == :RAYQUAZA || !@species == :DEOXYS || !@species == :BURMY || !@species == :WORMADAM || !@species == :CHERRIM || !@species == :SHELLOS || !@species == :GASTRODON || !@species == :LOPUNNY || !@species == :GARCHOMP || !@species == :LUCARIO || !@species == :ABOMASNOW || !@species == :GALLADE || !@species == :ROTOM || !@species == :GIRATINA || !@species == :SHAYMIN || !@species == :ARCEUS || !@species == :AUDINO || !@species == :BASCULIN || !@species == :DARUMAKA || !@species == :DARMANITAN || !@species == :YAMASK || !@species == :DEERLING || !@species == :SAWSBUCK || !@species == :STUNFISK || !@species == :TORNADUS || !@species == :THUNDURUS || !@species == :LANDORUS || !@species == :KYUREM || !@species == :KELDEO || !@species == :MELOETTA || !@species == :GENESECT || !@species == :GRENINJA || !@species == :VIVILLON || !@species == :FLABEBE || !@species == :FLOETTE || !@species == :FLORGES || !@species == :FURFROU || !@species == :MEOWSTIC || !@species == :AEGISLASH || !@species == :PUMPKABOO || !@species == :GOURGEIST || !@species == :XERNEAS || !@species == :ZYGARDE || !@species == :DIANCIE || !@species == :HOOPA || !@species == :ORICORIO || !@species == :LYCANROC || !@species == :WISHIWASHI || !@species == :SILVALLY || !@species == :MINIOR || !@species == :NECROZMA || !@species == :MAGEARNA || !@species == :CRAMORANT || !@species == :TOXTRICITY || !@species == :ALCREMIE || !@species == :SINISTEA || !@species == :POLTEAGEIST || !@species == :EISCUE || !@species == :INDEEDEE || !@species == :MORPEKO || !@species == :ZACIAN || !@species == :ZAMAZENTA || !@species == :URSHIFU || !@species == :CALYREX || !@species == :MAGMORTAR || !@species == :MAGIKARP || !@species == :MILOTIC || !@species == :MAMOSWINE || !@species == :SPIRITOMB || !@species == :ELECTIVIRE || !@species == :ZORUA || !@species == :ZOROARK || !@species == :ZUBAT || !@species == :GOLBAT || !@species == :CROBAT || !@species == :HOPPIP || !@species == :SKIPLOOM || !@species == :JUMPLUFF || !@species == :REMORAID || !@species == :OCTILLERY || !@species == :TYROGUE || !@species == :HITMONTOP || !@species == :KINGDRA || !@species == :LEDIAN || !@species == :GIRAFARIG || !@species == :POLITOED || !@species == :MEW) && $Trainer.pokedex.seen_forms_count(@species)== 1
+	  ret[7] = _INTL("",$Trainer.pokedex.number_evolved(@species))
+	  ret[8] = _INTL("",$Trainer.pokedex.number_caught(@species))
+	  ret[9] = _INTL("",$Trainer.pokedex.number_battled(@species))
+	  ret[10] = _INTL("",$Trainer.pokedex.number_weakness(@species))
+	  ret[11] = _INTL("",$Trainer.pokedex.number_moves(@species,@moveA))
+	  ret[12] = _INTL("",$Trainer.pokedex.number_moves(@species,@moveB))
+	  ret[13] = _INTL("",$Trainer.pokedex.seen_forms_count(@species))
+	  ret[14] = _INTL("",$Trainer.pokedex.number_evolved(@species))
+      return ret
     end
 
 	def pbDefineMoveA(pkmn)
@@ -461,7 +490,9 @@ class EncounterList_Scene
   @currentTexts = textsDefined
   drawText
    if Input.trigger?(Input::BACK)
-     pbEncounterInteract
+	@sprites["background"].visible = false
+    @currentTexts = textsDefined2
+	drawText
    end
  end
   # Draw text and icons if map has encounters defined

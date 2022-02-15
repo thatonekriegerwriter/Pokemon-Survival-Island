@@ -330,7 +330,7 @@ end
 def pbEggCheck(vari)
 
 Kernel.pbMessage(_INTL("It looks like this Egg will take a long time to hatch.")) if vari.steps_to_hatch >= 10200
-Kernel.pbMessage(_INTL("What will hatch from this? It doesn't seem close to hatching.")) if vari.steps_to_hatch < 10200
-Kernel.pbMessage(_INTL("It appears to move occasionally. It may be close to hatching.")) if vari.steps_to_hatch < 2550
+Kernel.pbMessage(_INTL("What will hatch from this? It doesn't seem close to hatching.")) if vari.steps_to_hatch < 10200 && vari.steps_to_hatch > 2550
+Kernel.pbMessage(_INTL("It appears to move occasionally. It may be close to hatching.")) if vari.steps_to_hatch < 2550 && vari.steps_to_hatch >1275
 Kernel.pbMessage(_INTL("Sounds can be heard coming from inside! It will hatch soon!")) if vari.steps_to_hatch < 1275
 end

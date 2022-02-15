@@ -36,7 +36,7 @@ pbchangeWater
 pbchangeHealth
 pbchangeSaturation
 pbchangeSleep
-pbchangeStamina
+#pbchangeStamina
 
 
  if $Trainer.pokemonCount==6
