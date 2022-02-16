@@ -426,40 +426,9 @@ end
 #===============================================================================
  
 def pbSave(safesave=false)
-$Trainer.metaID=$PokemonGlobal.playerID
 if $PokemonTemp.savedoutfit == false #ADDED CODE
 saveAllOutfits #ADDED CODE
 end
-begin
-File.open(RTP.getSaveFileName("Game.rxdata"),"wb"){|f|
-Marshal.dump($Trainer,f)
-Marshal.dump(Graphics.frame_count,f)
-if $data_system.respond_to?("magic_number")
-$game_system.magic_number = $data_system.magic_number
-else
-$game_system.magic_number = $data_system.version_id
-end
-$game_system.save_count+=1
-Marshal.dump($game_system,f)
-Marshal.dump($PokemonSystem,f)
-Marshal.dump($game_map.map_id,f)
-Marshal.dump($game_switches,f)
-Marshal.dump($game_variables,f)
-Marshal.dump($game_self_switches,f)
-Marshal.dump($game_screen,f)
-Marshal.dump($MapFactory,f)
-Marshal.dump($game_player,f)
-$PokemonGlobal.safesave=safesave
-Marshal.dump($PokemonGlobal,f)
-Marshal.dump($PokemonMap,f)
-Marshal.dump($PokemonBag,f)
-Marshal.dump($PokemonStorage,f)
-}
-Graphics.frame_reset
-rescue
-return false
-end
-return true
 end
  
 #===============================================================================

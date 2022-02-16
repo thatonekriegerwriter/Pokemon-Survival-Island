@@ -15,6 +15,8 @@ PlayerE = POKEMONTRAINER_Brendan,4M.png,0bike.png,xxx,4M.png,xxx,4MFishing.png,4
 PlayerF = POKEMONTRAINER_May,3F.png,0bike.png,xxx,3F.png,xxx,3FFishing.png,3F.png
 PlayerG = POKEMONTRAINER_Lucas,1M.png,0bike.png,xxx,1M.png,xxx,1MFishing.png,1M.png
 PlayerH = POKEMONTRAINER_Dawn,2F,png,0bike.png,xxx,2F,png,xxx
+PlayerK = POKEMONTRAINER_RocketM,0RMWalk.png,xxx,xxx,0RM.png,xxx,0RMFish.png,xxx
+PlayerL = POKEMONTRAINER_RocketF,0RFWalk_1.png,xxx,xxx,0RFWalk_1.png,xxx,xxx,xxx
 #-------------------------------
 [001]
 # INTRO
@@ -289,7 +291,7 @@ BattleBack = Forest
 Outdoor = true
 #-------------------------------
 [049]
-# Temperate Zone
+# Rocket
 Outdoor = true
 #-------------------------------
 [050]
@@ -314,7 +316,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [055]
-#  Home
+# 6
 Outdoor = true
 #-------------------------------
 [056]
@@ -693,7 +695,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [146]
-# Temperate Zone
+# S.S Glittering Wreck
 Outdoor = true
 SnapEdges = true
 #-------------------------------
@@ -775,7 +777,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [166]
-# Island 2
+# Red and Blue's Cabin
 Outdoor = true
 #-------------------------------
 [167]
@@ -787,111 +789,96 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [169]
-# Wooded Area
+# Abandoned Cabin
 Outdoor = true
 #-------------------------------
 [170]
-# Shore Area
+# William's Cabin
 Outdoor = true
 #-------------------------------
 [171]
-# Rocky Area
+# Abandoned Cabin
 Outdoor = true
 #-------------------------------
 [172]
-# Town
+# S.S Glittering Wreck
 Outdoor = true
 #-------------------------------
 [173]
-# Forest
+# S.S Glittering Wreck
 Outdoor = true
 #-------------------------------
 [174]
-# Forest
+# Kitchen
 Outdoor = true
 #-------------------------------
 [175]
-# Forest
+# Captain's Quarters
 Outdoor = true
 #-------------------------------
 [176]
-# Forest
+# S.S Glittering Wreck
 Outdoor = true
 #-------------------------------
 [177]
-# Forest
+# S.S. Glittering
 Outdoor = true
 #-------------------------------
 [178]
-# Forest
+# Cedar City
 Outdoor = true
 #-------------------------------
 [179]
-# Forest
+# MAP179
 Outdoor = true
 #-------------------------------
 [180]
-# Forest
+# Rocket Hideout B1F
 Outdoor = true
 #-------------------------------
 [181]
-# Mountain Base
 Outdoor = true
 #-------------------------------
 [182]
-# Shore Area
 Outdoor = true
 #-------------------------------
 [183]
-# Rocky Area
 Outdoor = true
 #-------------------------------
 [184]
-# Forest
 Outdoor = true
 #-------------------------------
 [185]
-# Shore Area
 Outdoor = true
 #-------------------------------
 [186]
-# Shore Area
 Outdoor = true
 #-------------------------------
 [187]
-# Shore Area
 Outdoor = true
 #-------------------------------
 [188]
-# Shore Area
 Outdoor = true
 #-------------------------------
 [189]
-# Shore Area
 Outdoor = true
 #-------------------------------
 [190]
-# Shore Area
 Outdoor = true
 #-------------------------------
 [191]
-# Rocky Area
 Outdoor = true
 #-------------------------------
 [192]
-# Rocky Area
 Outdoor = true
 #-------------------------------
 [193]
-# Town
 Outdoor = true
 #-------------------------------
 [194]
-# Town
 Outdoor = true
 #-------------------------------
 [195]
-# Town
 Outdoor = true
 #-------------------------------
 [196]
@@ -974,11 +961,9 @@ BattleBack = Cave
 Outdoor = true
 #-------------------------------
 [215]
-# MAP215
 Outdoor = true
 #-------------------------------
 [216]
-# MAP216
 Outdoor = true
 #-------------------------------
 [217]
@@ -991,23 +976,18 @@ BattleBack = Cave
 Outdoor = true
 #-------------------------------
 [219]
-# Towns
 Outdoor = true
 #-------------------------------
 [220]
-# Town A
 Outdoor = true
 #-------------------------------
 [221]
-# Town B
 Outdoor = true
 #-------------------------------
 [222]
-# Shady Town
 Outdoor = true
 #-------------------------------
 [223]
-# MAP223
 Outdoor = true
 #-------------------------------
 [224]

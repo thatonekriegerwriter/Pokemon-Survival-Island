@@ -964,3 +964,92 @@ Pokemon = MAGNETON,20
 LoseText = "..."
 Pokemon = FALINKS,40
 Pokemon = RIOLU,30
+#-------------------------------
+[LASS,Yelly]
+LoseText = "..."
+Pokemon = IVYSAUR,10
+Pokemon = ALCREMIE,10
+Pokemon = GROWLITHE,10
+#-------------------------------
+[ENGINEER,Alan]
+LoseText = "..."
+Pokemon = COPPERAJAH,10
+Pokemon = ELECTRODE,10
+Pokemon = PACHIRISU,10
+#-------------------------------
+[PSYCHIC_M,Still]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+#-------------------------------
+[PSYCHIC_F,Stilla]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+#-------------------------------
+[HIKER,Realt]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+#-------------------------------
+[BIKER,Jared]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+#-------------------------------
+[BIKER,Dundee]
+LoseText = "..."
+Pokemon = IVYSAUR,10
+#-------------------------------
+[BIKER,Stever]
+LoseText = "..."
+Pokemon = IVYSAUR,10
+#-------------------------------
+[BIKER,Lucas]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+Pokemon = BULBASAUR,10
+#-------------------------------
+[BIKER,Hoss]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+#-------------------------------
+[BIKER,Scren]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+#-------------------------------
+[LASS,Nella]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+#-------------------------------
+[LADY,Sally]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+#-------------------------------
+[GENTLEMAN,Steve]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+#-------------------------------
+[BUGCATCHER,CALE]
+LoseText = "..."
+Pokemon = HERACROSS,10
+Pokemon = SHEDINJA,10
+Pokemon = CHARJABUG,10
+#-------------------------------
+[LASS,ALI]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+#-------------------------------
+[YOUNGSTER,TIMMY]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+#-------------------------------
+[CAMPER,ETHAN]
+LoseText = "..."
+Pokemon = IVYSAUR,10
+Pokemon = BULBASAUR,10
+#-------------------------------
+[TEAMROCKET_F,Rocket]
+LoseText = "..."
+Pokemon = BULBASAUR,10
+#-------------------------------
+[LASS,NINA]
+LoseText = "..."
+Pokemon = SMUJJ,2
+Pokemon = PICHU,10
