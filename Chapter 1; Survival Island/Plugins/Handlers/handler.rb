@@ -53,13 +53,6 @@ if $game_variables[256]==(:GHOSTMAIL) && rand(100) == 5
   $game_variables[208]+=1
 end
 
-if !$game_switches[54]==true 
- if $PokemonSystem.survivalmode == 0
-   Achievements.incrementProgress("SURVIVOR",1)
-   $game_switches[54]=true 
- end
-end
-
 if $game_switches[57]==false
 if $PokemonSystem.nuzlockemode == 0
  if EliteBattle.nuzlockeOn?
@@ -70,7 +63,6 @@ if $PokemonSystem.nuzlockemode == 0
   else
   EliteBattle.startNuzlocke
   pbMessage(_INTL("You toggled Nuzlocke Mode."))
-  Achievements.incrementProgress("NUZLOCKED",1)
   pbLifeCheck
   $game_switches[57]=true
  end

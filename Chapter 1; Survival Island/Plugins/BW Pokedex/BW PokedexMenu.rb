@@ -121,7 +121,7 @@ class PokemonPokedexMenuScreen
       break if cmd<0 || cmd>=commands2.length+1   # Cancel/Exit
 	  if cmd>=commands2.length && cmd<=commands2.length+1 &&$game_switches[278]==true
       pbFadeOutIn {
-	    pbCommonEvent(71)
+	    pbArceusTasksIntro
       }
 	  break
 	  end

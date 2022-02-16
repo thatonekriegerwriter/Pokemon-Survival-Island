@@ -21,14 +21,12 @@ Events.onStepTakenTransferPossible+=proc {
 
 
 
-
-
-
-
-
-
-
-
+if $game_switches[54]==false 
+ if $PokemonSystem.survivalmode == 0
+   Achievements.incrementProgress("SURVIVOR",1)
+   $game_switches[54]=true 
+ end
+end
 
 $game_switches[70]=true
 pbchangeFood

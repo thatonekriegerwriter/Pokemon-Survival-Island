@@ -1,0 +1,4 @@
+Name         = Legends Arceus Type Icons
+Version      = 1.0
+Link         = -
+Credits      = XD5000

@@ -50,6 +50,68 @@ USER_DEFINED_NAMES = {
 # Remove the '#' from this line to use default encounter type names
 #USER_DEFINED_NAMES = nil
 
+
+def pbArceusTasksIntro
+  pbMessage(_INTL("You look over your notes, and look over it proudly."))
+	      cmd = pbMessage(_INTL("Which Area do you want to check?"),[
+                            _INTL("Temperate Beach"),
+                            _INTL("Temperate Base Zone"),
+                            _INTL("Temperate Berry Fields"),
+                            _INTL("Temperate Tent Zone"),
+                            _INTL("Stone Temple Temperate"),
+                            _INTL("Temperate Island"),
+                            _INTL("Temperate Snowy")])
+		  if cmd==0
+		   $game_variables[4977]=5  
+		   pbFadeOutIn {
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+  }
+		  elsif cmd==1
+		   $game_variables[4977]=4
+		   pbFadeOutIn {
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+  }
+		  elsif cmd==2
+		   $game_variables[4977]=7
+		   pbFadeOutIn {
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+  }
+		  elsif cmd==3
+		   $game_variables[4977]=8
+		   pbFadeOutIn {
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+  }
+		  elsif cmd==4
+		   $game_variables[4977]=9
+		   pbFadeOutIn {
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+  }
+		  elsif cmd==5
+		   $game_variables[4977]=13
+		   pbFadeOutIn {
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+  }
+		  elsif cmd==6
+		   $game_variables[4977]=44
+		   pbFadeOutIn {
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+  }
+		  end 
+end
 # Method that returns whether a specific form has been seen (any gender)
 def seen_form_any_gender?(species, form)
   ret = false
@@ -148,6 +210,9 @@ class EncounterList_Scene
     @sprites["selector"].visible = false
     @sprites["selector"].x += @w + 28 + 8
     @sprites["selector"].y = @h + 100 + 13
+    @sprites["background"]=IconSprite.new(0,0,@viewport)
+    @sprites["background"].setBitmap("Graphics/Pictures/EncounterUI/"+WINDOWSKIN2)
+    @sprites["background"].visible = false
     @encounter_data ? drawPresent : drawAbsent
     pbFadeInAndShow(@sprites) { pbUpdate }
   end
@@ -171,6 +236,51 @@ class EncounterList_Scene
 	  elsif Input.trigger?(Input::USE)
           @sprites["selector"].visible = true
 	      pbEncounterInteract
+	  elsif Input.trigger?(Input::ACTION)
+	      cmd = pbMessage(_INTL("Which Area do you want to check?"),[
+                            _INTL("Temperate Beach"),
+                            _INTL("Temperate Base Zone"),
+                            _INTL("Temperate Berry Fields"),
+                            _INTL("Temperate Tent Zone"),
+                            _INTL("Stone Temple Temperate"),
+                            _INTL("Temperate Island"),
+                            _INTL("Temperate Snowy")])
+		  if cmd==0
+		   $game_variables[4977]=5
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+		  elsif cmd==1
+		   $game_variables[4977]=4
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+		  elsif cmd==2
+		   $game_variables[4977]=7
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+		  elsif cmd==3
+		   $game_variables[4977]=8
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+		  elsif cmd==4
+		   $game_variables[4977]=9
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+		  elsif cmd==5
+		   $game_variables[4977]=13
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+		  elsif cmd==6
+		   $game_variables[4977]=44
+    scene = EncounterList_Scene.new
+    screen = EncounterList_Screen.new(scene)
+    screen.pbStartScreen
+		  end 
       elsif Input.trigger?(Input::BACK)
         pbPlayCloseMenuSE
         break

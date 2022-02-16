@@ -11,167 +11,206 @@
 #==============================================================================#
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
 #==============================================================================#
+
+
+	
+
+
+
+
+PLAYERSTARTHEALTH = 100
+PLAYERSTARTFOOD = 100
+PLAYERSTARTWATER = 100
+PLAYERSTARTSATURATION = 200
+PLAYERSTARTINGSTAMINA = 50
+PLAYERSTARTSLEEP = 100
+
+
+class SurvivalMode
+  attr_accessor :survivalmode
+  attr_accessor :playerwater  #206
+  attr_accessor :playerfood   #205
+  attr_accessor :playersleep   #208
+  attr_accessor :playersaturation #207
+  attr_accessor :playerhealth #225
+  attr_accessor :playerstamina
+
+def initialize
+    @survivalmode = 1     # Default Survival Mode (0=on, 1=off)
+    @playerwater   = PLAYERSTARTWATER     # Text speed (0=slow, 1=normal, 2=fast)
+    @playerfood = PLAYERSTARTFOOD     # Battle effects (animations) (0=on, 1=off)
+    @playersaturation = PLAYERSTARTSATURATION     # Battle style (0=switch, 1=set)
+    @playersleep = PLAYERSTARTSLEEP     # Battle style (0=switch, 1=set)
+    @playerhealth  = PLAYERSTARTHEALTH     # Default window frame (see also Settings::MENU_WINDOWSKINS)
+    @playerstamina  = PLAYERSTARTINGSTAMINA     # Speech frame
+end
+
+
+end	
+	
+	
+
 maps = [322,333,334,335,336]
 Events.onStepTakenTransferPossible+=proc {
 
 if $game_variables[256]==(:SSHIRT) 
- if $Trainer.playerfood>150
-  $Trainer.playerfood=150  #food
+ if $SurvivalMode.playerfood>150
+  $SurvivalMode.playerfood=150  #food
   $game_switches[250]=true
  end
 else
- if $Trainer.playerfood>100
-  $Trainer.playerfood=100 
+ if $SurvivalMode.playerfood>100
+  $SurvivalMode.playerfood=100 
   $game_switches[250]=true
  end
 end
 
 if $game_variables[256]==(:SSHIRT) 
- if $Trainer.playerwater>150
-  $Trainer.playerwater=150  #thirst
+ if $SurvivalMode.playerwater>150
+  $SurvivalMode.playerwater=150  #thirst
   $game_switches[273]=true
  end
 else
- if $Trainer.playerwater>100
-   $Trainer.playerwater=100 
+ if $SurvivalMode.playerwater>100
+   $SurvivalMode.playerwater=100 
    $game_switches[273]=true
  end
 end
 
 if $game_variables[256]==(:SSHIRT) 
- if $Trainer.playersaturation>75
-  $Trainer.playersaturation=75
+ if $SurvivalMode.playersaturation>75
+  $SurvivalMode.playersaturation=75
  end
 else
- if $Trainer.playersaturation>100 #Saturation
-  $Trainer.playersaturation=100 
+ if $SurvivalMode.playersaturation>100 #Saturation
+  $SurvivalMode.playersaturation=100 
  end
 end
  
 if $game_variables[256]==(:SSHIRT) 
- if $Trainer.playersleep>150
-  $Trainer.playersleep=150 
+ if $SurvivalMode.playersleep>150
+  $SurvivalMode.playersleep=150 
   $game_switches[249]=true
  end
 else
- if $Trainer.playersleep>200
-  $Trainer.playersleep=200  #sleep
+ if $SurvivalMode.playersleep>200
+  $SurvivalMode.playersleep=200  #sleep
   $game_switches[249]=true
  end
 end
 
-if $Trainer.playerfood<0
-  $Trainer.playerfood=0 
+if $SurvivalMode.playerfood<0
+  $SurvivalMode.playerfood=0 
 end
 
-if $Trainer.playerwater<0
-  $Trainer.playerwater=0 
+if $SurvivalMode.playerwater<0
+  $SurvivalMode.playerwater=0 
 end
 
-if $Trainer.playersaturation<0
- $Trainer.playersaturation=0 
+if $SurvivalMode.playersaturation<0
+ $SurvivalMode.playersaturation=0 
  $game_switches[273]=true
 end
  
-if $Trainer.playersleep<0
- $Trainer.playersleep=0 
+if $SurvivalMode.playersleep<0
+ $SurvivalMode.playersleep=0 
  $game_switches[249]=true
 end
-if $Trainer.playerhealth>100
- $Trainer.playerhealth=100 
+if $SurvivalMode.playerhealth>100
+ $SurvivalMode.playerhealth=100 
 end
 
 if $PokemonSystem.survivalmode == 0 && !maps.include?($game_map.map_id) #Survival Mode Switch
- case $Trainer.playersleep
+ case $SurvivalMode.playersleep
   when 0
    if $game_switches[249]==true
     pbMessage(_INTL("You are passing out from lack of sleep!"))
 	Achievements.incrementProgress("INSOMNIA",1)
-    $Trainer.playerhealth -= 5
+    $SurvivalMode.playerhealth -= 5
     $game_switches[249]=false
    else
-    $Trainer.playerhealth -= 5
+    $SurvivalMode.playerhealth -= 5
    end
   else
-   $Trainer.playersleep -= 1 if rand(50) == 1 #take from sleep
+   $SurvivalMode.playersleep -= 1 if rand(50) == 1 #take from sleep
 end
 end
 
 
 if $PokemonSystem.survivalmode == 0 && !maps.include?($game_map.map_id) && $game_switches[147]==true #Survival Mode Switch
- case $Trainer.playersaturation
+ case $SurvivalMode.playersaturation
   when 0
-    $Trainer.playerfood -= 1 if rand(50) == 1 #take from hunger
-    $Trainer.playerwater -= 1 if rand(50) == 1 #take from drinking
+    $SurvivalMode.playerfood -= 1 if rand(50) == 1 #take from hunger
+    $SurvivalMode.playerwater -= 1 if rand(50) == 1 #take from drinking
   else
-   $Trainer.playersaturation -= 1 if rand(50) == 1 #take from saturation
+   $SurvivalMode.playersaturation -= 1 if rand(50) == 1 #take from saturation
 end
 end
 
 if $PokemonSystem.survivalmode == 0 && $game_variables[256]==(:LCLOAK) && !maps.include?($game_map.map_id) #Survival Mode Switch
- case $Trainer.playersaturation
+ case $SurvivalMode.playersaturation
   when 0
-    $Trainer.playerfood += 1 if rand(50) == 1 #take from hunger
-    $Trainer.playerwater += 1 if rand(50) == 1 #take from drinking
+    $SurvivalMode.playerfood += 1 if rand(50) == 1 #take from hunger
+    $SurvivalMode.playerwater += 1 if rand(50) == 1 #take from drinking
   else
-   $Trainer.playersaturation -= 1 if rand(50) == 1 #take from saturation
+   $SurvivalMode.playersaturation -= 1 if rand(50) == 1 #take from saturation
   end
 end
 
 if $PokemonSystem.survivalmode == 0 && $game_variables[256]==(:SEASHOES) && !maps.include?($game_map.map_id) #Survival Mode Switch
- case $Trainer.playersaturation
+ case $SurvivalMode.playersaturation
   when 0
-    $Trainer.playerfood -= 1 if rand(50) == 1 #take from hunger
-    $Trainer.playerwater += 1 if rand(50) == 1 #take from drinking
+    $SurvivalMode.playerfood -= 1 if rand(50) == 1 #take from hunger
+    $SurvivalMode.playerwater += 1 if rand(50) == 1 #take from drinking
   else
-   $Trainer.playersaturation -= 1 if rand(50) == 1 #take from saturation
+   $SurvivalMode.playersaturation -= 1 if rand(50) == 1 #take from saturation
   end
 end
 
 if $PokemonSystem.survivalmode == 0 && $game_variables[256]==(:LJACKET) && !maps.include?($game_map.map_id) #Survival Mode Switch
- case $Trainer.playersaturation
+ case $SurvivalMode.playersaturation
   when 0
-    $Trainer.playerfood += 1 if rand(50) == 1 #take from hunger
-    $Trainer.playerwater -= 1 if rand(50) == 1 #take from drinking
+    $SurvivalMode.playerfood += 1 if rand(50) == 1 #take from hunger
+    $SurvivalMode.playerwater -= 1 if rand(50) == 1 #take from drinking
   else
-   $Trainer.playersaturation -= 1 if rand(50) == 1 #take from saturation
+   $SurvivalMode.playersaturation -= 1 if rand(50) == 1 #take from saturation
   end
 end
 
 if $PokemonSystem.survivalmode == 0 && $game_variables[256]==(:IRONARMOR) && !maps.include?($game_map.map_id) #Survival Mode Switch
- case $Trainer.playersaturation
+ case $SurvivalMode.playersaturation
   when 0
-    $Trainer.playerfood -= 1 if rand(50) == 1 #take from hunger
-    $Trainer.playerwater -= 1 if rand(50) == 1 #take from drinking
+    $SurvivalMode.playerfood -= 1 if rand(50) == 1 #take from hunger
+    $SurvivalMode.playerwater -= 1 if rand(50) == 1 #take from drinking
   else
-   $Trainer.playersaturation -= 1 if rand(50) == 1 #take from saturation
+   $SurvivalMode.playersaturation -= 1 if rand(50) == 1 #take from saturation
   end
 end
 
 if $PokemonSystem.survivalmode == 0 && !maps.include?($game_map.map_id)#Survival Mode Switch
-  case $Trainer.playerfood
+  case $SurvivalMode.playerfood
    when 0
     if $game_switches[250]==true
       pbMessage(_INTL("You are passing out from lack of food!"))
 	  Achievements.incrementProgress("STARVING",1)
-      $Trainer.playerhealth -= 5
+      $SurvivalMode.playerhealth -= 5
       $game_switches[250]=false
     else
-      $Trainer.playerhealth -= 5
+      $SurvivalMode.playerhealth -= 5
    end
 end
 end
 
 if $PokemonSystem.survivalmode == 0 #Survival Mode Switch
-  case $Trainer.playerwater
+  case $SurvivalMode.playerwater
    when 0
     if $game_switches[273]==true
       pbMessage(_INTL("You are passing out from lack of water!"))
 	  Achievements.incrementProgress("THIRSTY",1)
-      $Trainer.playerhealth -= 5
+      $SurvivalMode.playerhealth -= 5
       $game_switches[273]=false
     else
-      $Trainer.playerhealth -= 5
+      $SurvivalMode.playerhealth -= 5
    end
 end
 end    
@@ -179,7 +218,7 @@ end
   if !GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:None, 0, 0)
   end
-if $Trainer.playerhealth < 1 && $PokemonSystem.survivalmode == 0
+if $SurvivalMode.playerhealth < 1 && $PokemonSystem.survivalmode == 0
   pbStartOver
  end 
 }
@@ -273,15 +312,15 @@ end
 
 
 def pbSleepRestore
- if $Trainer.playersleep<200
-  $Trainer.playersleep=$Trainer.playersleep+($game_variables[247]*6)
+ if $SurvivalMode.playersleep<200
+  $SurvivalMode.playersleep=$SurvivalMode.playersleep+($game_variables[247]*6)
  end
- if $Trainer.playersaturation<1
-   $Trainer.playerfood=$Trainer.playerfood-($game_variables[247]*3)
-   $Trainer.playerwater=$Trainer.playerwater-($game_variables[247]*3)
+ if $SurvivalMode.playersaturation<1
+   $SurvivalMode.playerfood=$SurvivalMode.playerfood-($game_variables[247]*3)
+   $SurvivalMode.playerwater=$SurvivalMode.playerwater-($game_variables[247]*3)
    
   else
-   $Trainer.playersaturation=$Trainer.playersaturation-($game_variables[247]*3)
+   $SurvivalMode.playersaturation=$SurvivalMode.playersaturation-($game_variables[247]*3)
  end
   deposited = pbDayCareDeposited
   if deposited==2 && $PokemonGlobal.daycareEgg==0
@@ -295,272 +334,272 @@ def pbSleepRestore
  
 $PokemonBag.pbDeleteItem(item)
 if item == :ORANBERRY
-$Trainer.playerfood+=4
-$Trainer.playersaturation+=3
-$Trainer.playerwater+=1
-$Trainer.playerhealth += 1
+$SurvivalMode.playerfood+=4
+$SurvivalMode.playersaturation+=3
+$SurvivalMode.playerwater+=1
+$SurvivalMode.playerhealth += 1
 return 1
 elsif item == :LEPPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :CHERIBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :CHESTOBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :PECHABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :RAWSTBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :ASPEARBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :PERSIMBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :LUMBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :FIGYBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :WIKIBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :MAGOBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :AGUAVBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :IAPAPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :IAPAPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 return 1
 elsif item == :SITRUSBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=7
-$Trainer.playerwater+=1
-$Trainer.playerhealth += (0.25*$Trainer.playerhealth)
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=7
+$SurvivalMode.playerwater+=1
+$SurvivalMode.playerhealth += (0.25*$SurvivalMode.playerhealth)
 return 1
 elsif item == :BERRYJUICE
-$Trainer.playerfood+=6
-$Trainer.playersaturation+=4
-$Trainer.playerwater+=4
-$Trainer.playerhealth += 2
+$SurvivalMode.playerfood+=6
+$SurvivalMode.playersaturation+=4
+$SurvivalMode.playerwater+=4
+$SurvivalMode.playerhealth += 2
 return 1
 elsif item == :FRESHWATER
-$Trainer.playerwater+=20
-$Trainer.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerwater+=20
+$SurvivalMode.playersaturation+=10#207 is Saturation
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 return 1
 #You can add more if you want
 elsif item == :ATKCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 return 1
 elsif item == :SATKCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 return 1
 elsif item == :SPEEDCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 return 1
 elsif item == :SPDEFCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 return 1
 elsif item == :ACCCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=12
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=12
+$SurvivalMode.playerwater-=7
 return 1
 elsif item == :DEFCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 return 1
 elsif item == :CRITCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 return 1
 elsif item == :GSCURRY
-$Trainer.playerfood+=8#205 is Hunger
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater-=7#206 is Thirst
+$SurvivalMode.playerfood+=8#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerwater-=7#206 is Thirst
 return 1
 elsif item == :RAGECANDYBAR #chocolate
-$Trainer.playerfood+=10
-$Trainer.playersaturation+=3
-$Trainer.playersleep+=7
+$SurvivalMode.playerfood+=10
+$SurvivalMode.playersaturation+=3
+$SurvivalMode.playersleep+=7
 return 1
 elsif item == :SWEETHEART #chocolate
-$Trainer.playerfood+=10#205 is Hunger
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playersleep+=6#208 is Sleep
+$SurvivalMode.playerfood+=10#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playersleep+=6#208 is Sleep
 return 1
 elsif item == :SODAPOP
-$Trainer.playerwater-=11#206 is Thirst
-$Trainer.playersaturation+=11#207 is Saturation
-$Trainer.playersleep+=10#208 is Sleep
+$SurvivalMode.playerwater-=11#206 is Thirst
+$SurvivalMode.playersaturation+=11#207 is Saturation
+$SurvivalMode.playersleep+=10#208 is Sleep
 return 1
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 return 1
 elsif item == :LEMONADE
-$Trainer.playersaturation+=11#207 is Saturation
-$Trainer.playerwater+=10#206 is Thirst
-$Trainer.playersleep+=7#208 is Sleep
+$SurvivalMode.playersaturation+=11#207 is Saturation
+$SurvivalMode.playerwater+=10#206 is Thirst
+$SurvivalMode.playersleep+=7#208 is Sleep
 return 1
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 return 1
 elsif item == :HONEY
-$Trainer.playersaturation+=20#207 is Saturation
-$Trainer.playerwater+=2#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=20#207 is Saturation
+$SurvivalMode.playerwater+=2#206 is Thirst
+$SurvivalMode.playerfood+=6#205 is Hunger
 return 1
 elsif item == :MOOMOOMILK
-$Trainer.playersaturation+=10
-$Trainer.playerwater+=15
+$SurvivalMode.playersaturation+=10
+$SurvivalMode.playerwater+=15
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 return 1
 elsif item == :CSLOWPOKETAIL
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerfood+=10#205 is Hunger
+$SurvivalMode.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerfood+=10#205 is Hunger
 return 1
 elsif item == :BAKEDPOTATO
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=4#206 is Thirst
-$Trainer.playerfood+=7#205 is Hunger
+$SurvivalMode.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerwater+=4#206 is Thirst
+$SurvivalMode.playerfood+=7#205 is Hunger
 return 1
 elsif item == :APPLE
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
+$SurvivalMode.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerwater+=3#206 is Thirst
+$SurvivalMode.playerfood+=3#205 is Hunger
 return 1
 elsif item == :CHOCOLATE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerfood+=7#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerfood+=7#205 is Hunger
 return 1
 elsif item == :LEMON
-$Trainer.playersaturation+=3#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=4#205 is Hunger
+$SurvivalMode.playersaturation+=3#207 is Saturation
+$SurvivalMode.playerwater+=3#206 is Thirst
+$SurvivalMode.playerfood+=4#205 is Hunger
 return 1
 elsif item == :OLDGATEAU
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=2#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=6#207 is Saturation
+$SurvivalMode.playerwater+=2#206 is Thirst
+$SurvivalMode.playerfood+=6#205 is Hunger
 return 1
 elsif item == :LAVACOOKIE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater-=3#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerwater-=3#206 is Thirst
+$SurvivalMode.playerfood+=6#205 is Hunger
 return 1
 elsif item == :CASTELIACONE
-$Trainer.playerwater+=7#206 is Thirst
-$Trainer.playerfood+=7#205 is Hunger
+$SurvivalMode.playerwater+=7#206 is Thirst
+$SurvivalMode.playerfood+=7#205 is Hunger
 return 1
 elsif item == :LUMIOSEGALETTE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerfood+=6#205 is Hunger
 return 1
 elsif item == :SHALOURSABLE
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerfood+=8#205 is Hunger
+$SurvivalMode.playersaturation+=8#207 is Saturation
+$SurvivalMode.playerfood+=8#205 is Hunger
 return 1
 elsif item == :BIGMALASADA
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerfood+=8#205 is Hunger
+$SurvivalMode.playersaturation+=8#207 is Saturation
+$SurvivalMode.playerfood+=8#205 is Hunger
 return 1
 elsif item == :ONION
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerwater+=3#206 is Thirst
+$SurvivalMode.playerfood+=3#205 is Hunger
 return 1
 elsif item == :COOKEDORAN
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=6#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=6#207 is Saturation
+$SurvivalMode.playerwater+=6#206 is Thirst
+$SurvivalMode.playerfood+=6#205 is Hunger
 return 1
 elsif item == :CARROT
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
+$SurvivalMode.playersaturation+=6#207 is Saturation
+$SurvivalMode.playerwater+=3#206 is Thirst
+$SurvivalMode.playerfood+=3#205 is Hunger
 return 1
 elsif item == :BREAD
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=7#206 is Thirst
-$Trainer.playerfood+=11#205 is Hunger
+$SurvivalMode.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerwater+=7#206 is Thirst
+$SurvivalMode.playerfood+=11#205 is Hunger
 return 1
 elsif item == :TEA
-$Trainer.playersaturation+=15#207 is Saturation
-$Trainer.playerwater+=8#206 is Thirst
-$Trainer.playerfood+=2#205 is Hunger
+$SurvivalMode.playersaturation+=15#207 is Saturation
+$SurvivalMode.playerwater+=8#206 is Thirst
+$SurvivalMode.playerfood+=2#205 is Hunger
 return 1
 elsif item == :CARROTCAKE
-$Trainer.playersaturation+=15#207 is Saturation
-$Trainer.playerwater+=15#206 is Thirst
-$Trainer.playerfood+=10#205 is Hunger
+$SurvivalMode.playersaturation+=15#207 is Saturation
+$SurvivalMode.playerwater+=15#206 is Thirst
+$SurvivalMode.playerfood+=10#205 is Hunger
 return 1
 elsif item == :COOKEDMEAT
-$Trainer.playersaturation+=40#207 is Saturation
-$Trainer.playerwater+=0#206 is Thirst
-$Trainer.playerfood+=20#205 is Hunger
+$SurvivalMode.playersaturation+=40#207 is Saturation
+$SurvivalMode.playerwater+=0#206 is Thirst
+$SurvivalMode.playerfood+=20#205 is Hunger
 return 1
 elsif item == :SITRUSJUICE
-$Trainer.playersaturation+=20#207 is Saturation
-$Trainer.playerwater+=25#206 is Thirst
-$Trainer.playerfood+=0#205 is Hunger
+$SurvivalMode.playersaturation+=20#207 is Saturation
+$SurvivalMode.playerwater+=25#206 is Thirst
+$SurvivalMode.playerfood+=0#205 is Hunger
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 return 1
 elsif item == :BERRYMASH
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater+=5#206 is Thirst
-$Trainer.playerfood+=5#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerwater+=5#206 is Thirst
+$SurvivalMode.playerfood+=5#205 is Hunger
 return 1
 else
 $PokemonBag.pbStoreItem(item,1)
@@ -575,16 +614,16 @@ end
 $PokemonBag.pbDeleteItem(item)
 #205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
 if item == :POTION
-$Trainer.playerhealth += 20
+$SurvivalMode.playerhealth += 20
 return 1
 elsif item == :SUPERPOTION
-$Trainer.playerhealth += 40
+$SurvivalMode.playerhealth += 40
 return 1
 elsif item == :HYPERPOTION
-$Trainer.playerhealth += 60
+$SurvivalMode.playerhealth += 60
 return 1
 elsif item == :FULLRESTORE
-$Trainer.playerhealth += 100
+$SurvivalMode.playerhealth += 100
 return 1
 else
 $PokemonBag.pbStoreItem(item,1)
@@ -675,219 +714,219 @@ $PokemonBag.pbDeleteItem(berry,1)
 Kernel.pbMessage(_INTL("You use the {1}. ",GameData::Item.get(berry).name))
 #205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
 if berry == :ORANBERRY
-$Trainer.playerfood+=4
-$Trainer.playersaturation+=3
-$Trainer.playerwater+=1
-$Trainer.playerhealth += 1
+$SurvivalMode.playerfood+=4
+$SurvivalMode.playersaturation+=3
+$SurvivalMode.playerwater+=1
+$SurvivalMode.playerhealth += 1
 elsif berry == :LEPPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :CHERIBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :CHESTOBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :PECHABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :RAWSTBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :ASPEARBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :PERSIMBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :LUMBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :FIGYBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :WIKIBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :MAGOBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :AGUAVBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :IAPAPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :IAPAPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :SITRUSBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=7
-$Trainer.playerwater+=1
-$Trainer.playerhealth += (0.25*$Trainer.playerhealth)
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=7
+$SurvivalMode.playerwater+=1
+$SurvivalMode.playerhealth += (0.25*$SurvivalMode.playerhealth)
 elsif berry == :BERRYJUICE
-$Trainer.playerfood+=6
-$Trainer.playersaturation+=4
-$Trainer.playerwater+=4
-$Trainer.playerhealth += 2
+$SurvivalMode.playerfood+=6
+$SurvivalMode.playersaturation+=4
+$SurvivalMode.playerwater+=4
+$SurvivalMode.playerhealth += 2
 elsif berry == :FRESHWATER
-$Trainer.playerwater+=10
-$Trainer.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerwater+=10
+$SurvivalMode.playersaturation+=10#207 is Saturation
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 #You can add more if you want
 elsif berry == :ATKCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 elsif berry == :SATKCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 elsif berry == :SPEEDCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 elsif berry == :SPDEFCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 elsif berry == :ACCCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=12
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=12
+$SurvivalMode.playerwater-=7
 elsif berry == :DEFCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 elsif berry == :CRITCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 elsif berry == :GSCURRY
-$Trainer.playerfood+=8#205 is Hunger
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater-=7#206 is Thirst
+$SurvivalMode.playerfood+=8#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerwater-=7#206 is Thirst
 elsif berry == :RAGECANDYBAR #chocolate
-$Trainer.playerfood+=10
-$Trainer.playersaturation+=3
-$Trainer.playersleep+=7
+$SurvivalMode.playerfood+=10
+$SurvivalMode.playersaturation+=3
+$SurvivalMode.playersleep+=7
 elsif berry == :SWEETHEART #chocolate
-$Trainer.playerfood+=10#205 is Hunger
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playersleep+=6#208 is Sleep
+$SurvivalMode.playerfood+=10#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playersleep+=6#208 is Sleep
 elsif berry == :SODAPOP
-$Trainer.playerwater-=11#206 is Thirst
-$Trainer.playersaturation+=11#207 is Saturation
-$Trainer.playersleep+=10#208 is Sleep
+$SurvivalMode.playerwater-=11#206 is Thirst
+$SurvivalMode.playersaturation+=11#207 is Saturation
+$SurvivalMode.playersleep+=10#208 is Sleep
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :LEMONADE
-$Trainer.playersaturation+=11#207 is Saturation
-$Trainer.playerwater+=10#206 is Thirst
-$Trainer.playersleep+=7#208 is Sleep
+$SurvivalMode.playersaturation+=11#207 is Saturation
+$SurvivalMode.playerwater+=10#206 is Thirst
+$SurvivalMode.playersleep+=7#208 is Sleep
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :HONEY
-$Trainer.playersaturation+=20#207 is Saturation
-$Trainer.playerwater+=2#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=20#207 is Saturation
+$SurvivalMode.playerwater+=2#206 is Thirst
+$SurvivalMode.playerfood+=6#205 is Hunger
 elsif berry == :MOOMOOMILK
-$Trainer.playersaturation+=10
-$Trainer.playerwater+=15
+$SurvivalMode.playersaturation+=10
+$SurvivalMode.playerwater+=15
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :CSLOWPOKETAIL
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerfood+=10#205 is Hunger
+$SurvivalMode.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerfood+=10#205 is Hunger
 elsif berry == :BAKEDPOTATO
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=4#206 is Thirst
-$Trainer.playerfood+=7#205 is Hunger
+$SurvivalMode.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerwater+=4#206 is Thirst
+$SurvivalMode.playerfood+=7#205 is Hunger
 elsif berry == :APPLE
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
+$SurvivalMode.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerwater+=3#206 is Thirst
+$SurvivalMode.playerfood+=3#205 is Hunger
 elsif berry == :CHOCOLATE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerfood+=7#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerfood+=7#205 is Hunger
 elsif berry == :LEMON
-$Trainer.playersaturation+=3#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=4#205 is Hunger
+$SurvivalMode.playersaturation+=3#207 is Saturation
+$SurvivalMode.playerwater+=3#206 is Thirst
+$SurvivalMode.playerfood+=4#205 is Hunger
 elsif berry == :OLDGATEAU
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=2#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=6#207 is Saturation
+$SurvivalMode.playerwater+=2#206 is Thirst
+$SurvivalMode.playerfood+=6#205 is Hunger
 elsif berry == :LAVACOOKIE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater-=3#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerwater-=3#206 is Thirst
+$SurvivalMode.playerfood+=6#205 is Hunger
 elsif berry == :CASTELIACONE
-$Trainer.playerwater+=7#206 is Thirst
-$Trainer.playerfood+=7#205 is Hunger
+$SurvivalMode.playerwater+=7#206 is Thirst
+$SurvivalMode.playerfood+=7#205 is Hunger
 elsif berry == :LUMIOSEGALETTE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerfood+=6#205 is Hunger
 elsif berry == :SHALOURSABLE
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerfood+=8#205 is Hunger
+$SurvivalMode.playersaturation+=8#207 is Saturation
+$SurvivalMode.playerfood+=8#205 is Hunger
 elsif berry == :BIGMALASADA
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerfood+=8#205 is Hunger
+$SurvivalMode.playersaturation+=8#207 is Saturation
+$SurvivalMode.playerfood+=8#205 is Hunger
 elsif berry == :ONION
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerwater+=3#206 is Thirst
+$SurvivalMode.playerfood+=3#205 is Hunger
 elsif berry == :COOKEDORAN
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=6#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=6#207 is Saturation
+$SurvivalMode.playerwater+=6#206 is Thirst
+$SurvivalMode.playerfood+=6#205 is Hunger
 elsif berry == :CARROT
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
+$SurvivalMode.playersaturation+=6#207 is Saturation
+$SurvivalMode.playerwater+=3#206 is Thirst
+$SurvivalMode.playerfood+=3#205 is Hunger
 elsif berry == :BREAD
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=7#206 is Thirst
-$Trainer.playerfood+=11#205 is Hunger
+$SurvivalMode.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerwater+=7#206 is Thirst
+$SurvivalMode.playerfood+=11#205 is Hunger
 elsif berry == :TEA
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerwater+=8#206 is Thirst
-$Trainer.playerfood+=2#205 is Hunger
+$SurvivalMode.playersaturation+=8#207 is Saturation
+$SurvivalMode.playerwater+=8#206 is Thirst
+$SurvivalMode.playerfood+=2#205 is Hunger
 elsif berry == :CARROTCAKE
-$Trainer.playersaturation+=15#207 is Saturation
-$Trainer.playerwater+=15#206 is Thirst
-$Trainer.playerfood+=10#205 is Hunger
+$SurvivalMode.playersaturation+=15#207 is Saturation
+$SurvivalMode.playerwater+=15#206 is Thirst
+$SurvivalMode.playerfood+=10#205 is Hunger
 elsif berry == :COOKEDMEAT
-$Trainer.playersaturation+=40#207 is Saturation
-$Trainer.playerwater+=0#206 is Thirst
-$Trainer.playerfood+=20#205 is Hunger
+$SurvivalMode.playersaturation+=40#207 is Saturation
+$SurvivalMode.playerwater+=0#206 is Thirst
+$SurvivalMode.playerfood+=20#205 is Hunger
 elsif berry == :SITRUSJUICE
-$Trainer.playersaturation+=20#207 is Saturation
-$Trainer.playerwater+=25#206 is Thirst
-$Trainer.playerfood+=0#205 is Hunger
+$SurvivalMode.playersaturation+=20#207 is Saturation
+$SurvivalMode.playerwater+=25#206 is Thirst
+$SurvivalMode.playerfood+=0#205 is Hunger
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :BERRYMASH
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater+=5#206 is Thirst
-$Trainer.playerfood+=5#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerwater+=5#206 is Thirst
+$SurvivalMode.playerfood+=5#205 is Hunger
 
 
 #inedible
@@ -922,227 +961,227 @@ end
 
 message=_INTL("Do you want to use {1} again?",GameData::Item.get(berry).name)
 loop do
- Kernel.pbMessage(_INTL("Sleep: {1}, Food: {2}, Water: {3}. ",$Trainer.playersleep,$Trainer.playerfood,$Trainer.playerwater))
+ Kernel.pbMessage(_INTL("Sleep: {1}, Food: {2}, Water: {3}. ",$SurvivalMode.playersleep,$SurvivalMode.playerfood,$SurvivalMode.playerwater))
  if pbConfirmMessage(message)
    $PokemonBag.pbDeleteItem(berry,1)
    if berry == :ORANBERRY
-$Trainer.playerfood+=4
-$Trainer.playersaturation+=3
-$Trainer.playerwater+=1
-$Trainer.playerhealth += 1
+$SurvivalMode.playerfood+=4
+$SurvivalMode.playersaturation+=3
+$SurvivalMode.playerwater+=1
+$SurvivalMode.playerhealth += 1
 elsif berry == :LEPPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :CHERIBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :CHESTOBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :PECHABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :RAWSTBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :ASPEARBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :PERSIMBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :LUMBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :FIGYBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :WIKIBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :MAGOBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :AGUAVBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :IAPAPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :IAPAPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=2
+$SurvivalMode.playerwater+=2
 elsif berry == :SITRUSBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=7
-$Trainer.playerwater+=1
-$Trainer.playerhealth += (0.25*$Trainer.playerhealth)
+$SurvivalMode.playerfood+=5
+$SurvivalMode.playersaturation+=7
+$SurvivalMode.playerwater+=1
+$SurvivalMode.playerhealth += (0.25*$SurvivalMode.playerhealth)
 elsif berry == :BERRYJUICE
-$Trainer.playerfood+=6
-$Trainer.playersaturation+=4
-$Trainer.playerwater+=4
-$Trainer.playerhealth += 2
+$SurvivalMode.playerfood+=6
+$SurvivalMode.playersaturation+=4
+$SurvivalMode.playerwater+=4
+$SurvivalMode.playerhealth += 2
 elsif berry == :FRESHWATER
-$Trainer.playerwater+=25
-$Trainer.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerwater+=25
+$SurvivalMode.playersaturation+=10#207 is Saturation
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :WATER
-$Trainer.playerwater+=10
+$SurvivalMode.playerwater+=10
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 #You can add more if you want
 elsif berry == :ATKCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 elsif berry == :SATKCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 elsif berry == :SPEEDCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 elsif berry == :SPDEFCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 elsif berry == :ACCCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=12
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=12
+$SurvivalMode.playerwater-=7
 elsif berry == :DEFCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 elsif berry == :CRITCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
+$SurvivalMode.playerfood+=8
+$SurvivalMode.playersaturation+=15
+$SurvivalMode.playerwater-=7
 elsif berry == :GSCURRY
-$Trainer.playerfood+=8#205 is Hunger
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater-=7#206 is Thirst
+$SurvivalMode.playerfood+=8#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerwater-=7#206 is Thirst
 elsif berry == :RAGECANDYBAR #chocolate
-$Trainer.playerfood+=10
-$Trainer.playersaturation+=3
-$Trainer.playersleep+=7
+$SurvivalMode.playerfood+=10
+$SurvivalMode.playersaturation+=3
+$SurvivalMode.playersleep+=7
 elsif berry == :SWEETHEART #chocolate
-$Trainer.playerfood+=10#205 is Hunger
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playersleep+=6#208 is Sleep
+$SurvivalMode.playerfood+=10#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playersleep+=6#208 is Sleep
 elsif berry == :SODAPOP
-$Trainer.playerwater-=11#206 is Thirst
-$Trainer.playersaturation+=11#207 is Saturation
-$Trainer.playersleep+=10#208 is Sleep
+$SurvivalMode.playerwater-=11#206 is Thirst
+$SurvivalMode.playersaturation+=11#207 is Saturation
+$SurvivalMode.playersleep+=10#208 is Sleep
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :LEMONADE
-$Trainer.playersaturation+=11#207 is Saturation
-$Trainer.playerwater+=15#206 is Thirst
-$Trainer.playersleep+=7#208 is Sleep
+$SurvivalMode.playersaturation+=11#207 is Saturation
+$SurvivalMode.playerwater+=15#206 is Thirst
+$SurvivalMode.playersleep+=7#208 is Sleep
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :HONEY
-$Trainer.playersaturation+=20#207 is Saturation
-$Trainer.playerwater+=2#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=20#207 is Saturation
+$SurvivalMode.playerwater+=2#206 is Thirst
+$SurvivalMode.playerfood+=6#205 is Hunger
 elsif berry == :MOOMOOMILK
-$Trainer.playersaturation+=20
-$Trainer.playerwater+=7
+$SurvivalMode.playersaturation+=20
+$SurvivalMode.playerwater+=7
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :CSLOWPOKETAIL
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerfood+=10#205 is Hunger
+$SurvivalMode.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerfood+=10#205 is Hunger
 elsif berry == :BAKEDPOTATO
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=4#206 is Thirst
-$Trainer.playerfood+=7#205 is Hunger
+$SurvivalMode.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerwater+=4#206 is Thirst
+$SurvivalMode.playerfood+=7#205 is Hunger
 elsif berry == :APPLE
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
+$SurvivalMode.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerwater+=3#206 is Thirst
+$SurvivalMode.playerfood+=3#205 is Hunger
 elsif berry == :CHOCOLATE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerfood+=7#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerfood+=7#205 is Hunger
 elsif berry == :LEMON
-$Trainer.playersaturation+=3#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=4#205 is Hunger
+$SurvivalMode.playersaturation+=3#207 is Saturation
+$SurvivalMode.playerwater+=3#206 is Thirst
+$SurvivalMode.playerfood+=4#205 is Hunger
 elsif berry == :OLDGATEAU
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=2#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=6#207 is Saturation
+$SurvivalMode.playerwater+=2#206 is Thirst
+$SurvivalMode.playerfood+=6#205 is Hunger
 elsif berry == :LAVACOOKIE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater-=3#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerwater-=3#206 is Thirst
+$SurvivalMode.playerfood+=6#205 is Hunger
 elsif berry == :CASTELIACONE
-$Trainer.playerwater+=7#206 is Thirst
-$Trainer.playerfood+=7#205 is Hunger
+$SurvivalMode.playerwater+=7#206 is Thirst
+$SurvivalMode.playerfood+=7#205 is Hunger
 elsif berry == :LUMIOSEGALETTE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerfood+=6#205 is Hunger
 elsif berry == :SHALOURSABLE
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerfood+=8#205 is Hunger
+$SurvivalMode.playersaturation+=8#207 is Saturation
+$SurvivalMode.playerfood+=8#205 is Hunger
 elsif berry == :BIGMALASADA
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerfood+=8#205 is Hunger
+$SurvivalMode.playersaturation+=8#207 is Saturation
+$SurvivalMode.playerfood+=8#205 is Hunger
 elsif berry == :ONION
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerwater+=3#206 is Thirst
+$SurvivalMode.playerfood+=3#205 is Hunger
 elsif berry == :COOKEDORAN
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=6#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
+$SurvivalMode.playersaturation+=6#207 is Saturation
+$SurvivalMode.playerwater+=6#206 is Thirst
+$SurvivalMode.playerfood+=6#205 is Hunger
 elsif berry == :CARROT
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
+$SurvivalMode.playersaturation+=6#207 is Saturation
+$SurvivalMode.playerwater+=3#206 is Thirst
+$SurvivalMode.playerfood+=3#205 is Hunger
 elsif berry == :BREAD
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=7#206 is Thirst
-$Trainer.playerfood+=11#205 is Hunger
+$SurvivalMode.playersaturation+=10#207 is Saturation
+$SurvivalMode.playerwater+=7#206 is Thirst
+$SurvivalMode.playerfood+=11#205 is Hunger
 elsif berry == :TEA
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerwater+=8#206 is Thirst
-$Trainer.playerfood+=2#205 is Hunger
+$SurvivalMode.playersaturation+=8#207 is Saturation
+$SurvivalMode.playerwater+=8#206 is Thirst
+$SurvivalMode.playerfood+=2#205 is Hunger
 elsif berry == :CARROTCAKE
-$Trainer.playersaturation+=15#207 is Saturation
-$Trainer.playerwater+=15#206 is Thirst
-$Trainer.playerfood+=10#205 is Hunger
+$SurvivalMode.playersaturation+=15#207 is Saturation
+$SurvivalMode.playerwater+=15#206 is Thirst
+$SurvivalMode.playerfood+=10#205 is Hunger
 elsif berry == :COOKEDMEAT
-$Trainer.playersaturation+=40#207 is Saturation
-$Trainer.playerwater+=0#206 is Thirst
-$Trainer.playerfood+=20#205 is Hunger
+$SurvivalMode.playersaturation+=40#207 is Saturation
+$SurvivalMode.playerwater+=0#206 is Thirst
+$SurvivalMode.playerfood+=20#205 is Hunger
 elsif berry == :SITRUSJUICE
-$Trainer.playersaturation+=20#207 is Saturation
-$Trainer.playerwater+=25#206 is Thirst
-$Trainer.playerfood+=0#205 is Hunger
+$SurvivalMode.playersaturation+=20#207 is Saturation
+$SurvivalMode.playerwater+=25#206 is Thirst
+$SurvivalMode.playerfood+=0#205 is Hunger
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
 elsif berry == :BERRYMASH
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater+=5#206 is Thirst
-$Trainer.playerfood+=5#205 is Hunger
+$SurvivalMode.playersaturation+=5#207 is Saturation
+$SurvivalMode.playerwater+=5#206 is Thirst
+$SurvivalMode.playerfood+=5#205 is Hunger
 
 
 #inedible
