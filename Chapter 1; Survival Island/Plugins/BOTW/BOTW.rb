@@ -135,7 +135,7 @@ def itemAnim(item,qty)
   pbSetSystemFont(bitmap)
   base = Color.new(248,248,248)
   shadow = Color.new(72,80,88)
- 
+  item= GameData::Item.get(item).id
   if qty > 1
     textpos = [[_INTL("{1} x{2}",item.name_plural,qty),5,15,false,base,shadow]]
   else
