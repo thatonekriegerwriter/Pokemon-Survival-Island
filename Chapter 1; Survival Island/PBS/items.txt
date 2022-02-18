@@ -860,7 +860,7 @@
 #-------------------------------
 2015,CALENDAR,Calendar,Calendar,2,0,"What day is it?",0,0,0,
 2016,APOWERMONITOR,Power Monitor,Power Monitor,2,0,"Hows my power?",0,0,0,
-2013,SHOVEL,Shovel,Shovels,8,2100,"A Shovel to dig up berries.",2,0,6,
+2013,IRONAXE,Iron Axe,Iron Axes,8,2100,"An axe used to chop down trees.",2,0,6,,101
 2041,CROPSTICKS,Cropstick,Cropsticks,1,50,"Cropsticks move your Crops to the next level.",0,0,0,
 2011,CREMINIKEY,House Key (Cremini),House Key (Cremini),8,2100,"A Key to your house in Cremini Town.",2,0,6,
 2012,PEWTERKEY,House Key (Pewter),House Key (Pewter),8,2100,"A Key to your house in Pewter City.",2,0,6,
@@ -876,10 +876,10 @@
 1847,PHONEBOOK,Phone Book,Phone Book,8,0,"A Phone Book from work that has a list of phone numbers.",0,0,6,
 1848,MEGASTONE,Mega Stone,Mega Stones,8,0,"A Weird Looking rock full of energy.",0,0,6,
 1849,EGGHATCHER,Egg Hatcher,Egg Hatchers,8,0,"An Egg Hatcher in which to keep up to 6 eggs until they hatch.",2,0,6,
-1841,MACHETE,Machete,Machete,1,0,"A Machete that can be used in combat.",0,9,6,
+1841,MACHETE,Machete,Machete,1,0,"A Machete that can be used in combat.",0,9,6,,101
 1809,SUPPLIES,Supplies,Supplies,8,0,"A bag of supplies that can be used to climb tall mountains.",0,0,6
-1700,RUSTEDPICKAXE,Rusted Pickaxe,Rusted Pickaxes,1,0,"A rusted pickaxe you got off the boat. It could mine lightly, but nothing big.",0,4,6,
-1701,PICKAXE,Pickaxe,Pickaxes,1,0,"A Pickaxe you made with your own two hands. Feel proud.",0,9,6,
+1700,RUSTEDPICKAXE,Stone Pickaxe,Stone Pickaxes,1,0,"A rusted pickaxe you got off the boat. It could mine lightly, but nothing big.",0,4,6,,51
+1701,PICKAXE,Pickaxe,Pickaxes,1,0,"A Pickaxe you made with your own two hands. Feel proud.",0,9,6,,101
 1802,POISONDART,Poison Dart,Poison Darts,7,1000,"A handcrafted dart gun that poisons a Pokémon in battle.",0,4,0,
 1803,SLEEPDART,Sleep Dart,Sleep Darts,7,1000,"A handcrafted dart gun that sedates a Pokémon in battle.",0,4,0,
 1804,PARALYZDART,Paralysis Dart,Paralysis Darts,7,1000,"A handcrafted dart gun that stuns a Pokémon in battle.",0,4,0,
@@ -890,6 +890,7 @@
 2037,DEFENDCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
 2038,BALANCEDCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
 2039,ATKCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
+2042,STONEAXE,Stone Axe,Stone Axe,1,50,"A basic axe used to knock down trees.",0,0,0,,51
 #-------------------------------
 # Dolls
 #-------------------------------
