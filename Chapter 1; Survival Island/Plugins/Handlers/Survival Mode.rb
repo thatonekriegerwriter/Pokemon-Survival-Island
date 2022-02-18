@@ -703,6 +703,18 @@ if $game_player.pbFacingTerrainTag.can_surf
 	next 0
 end
 })
+ItemHandlers::UseFromBag.add(:IRONAXE,proc { |item|
+if $game_player.pbFacingTerrainTag.can_knockdown
+     message=(_INTL("Want to knock down some branches?"))
+    if pbConfirmMessage(message)
+       $PokemonBag.pbStoreItem(:ACORN,(rand(6)))
+	end
+	next 4
+   else
+    Kernel.pbMessage(_INTL("That is not a tree."))
+	next 0
+end
+})
 
 class Pokemon
 
