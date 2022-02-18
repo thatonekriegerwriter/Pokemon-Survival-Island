@@ -1,5 +1,5 @@
 ###---craftS
-class Crafts_Scene
+class Cauldron_Scene
 #################################
 ## Configuration
   craftNAMEBASECOLOR=Color.new(88,88,80)
@@ -132,7 +132,7 @@ class Crafts_Scene
   end
 
 # Script that manages button inputs  
-  def pbSelectcraft
+  def pbSelectCooking
     overlay=@sprites["overlay"].bitmap
     overlay.clear
     pbSetSystemFont(overlay)
@@ -170,10 +170,10 @@ class Crafts_Scene
         @craftC=:NO
         @craftResult=:NO
       else
-        @craftA=GameData::Item.get(CraftsList.getcrafts[@currentArray][1]).name
-        @craftB=GameData::Item.get(CraftsList.getcrafts[@currentArray][2]).name
-        @craftC=GameData::Item.get(CraftsList.getcrafts[@currentArray][3]).name
-        @craftResult=GameData::Item.get(CraftsList.getcrafts[@currentArray][0]).name
+        @craftA=GameData::Item.get(CookingList.getcook[@currentArray][1]).name
+        @craftB=GameData::Item.get(CookingList.getcook[@currentArray][2]).name
+        @craftC=GameData::Item.get(CookingList.getcook[@currentArray][3]).name
+        @craftResult=GameData::Item.get(CookingList.getcook[@currentArray][0]).name
       end
       @sprites["quant"].text=_INTL("{1}",@quant)
       @sprites["quantA"].text=_INTL("{1}",@quantA)
@@ -183,9 +183,9 @@ class Crafts_Scene
         @sprites["craftResult"].text=_INTL("No items selected.")
       elsif @craftA!=:NO && @craftResult==:NO
         @sprites["craftResult"].text=_INTL("Incorrect crafting recipe.")
-      elsif CraftsList.getcrafts[@currentArray][2]==:NO
+      elsif CookingList.getcook[@currentArray][2]==:NO
         @sprites["craftResult"].text=_INTL("{1} = {2}",@craftA,@craftResult)
-      elsif CraftsList.getcrafts[@currentArray][3]==:NO
+      elsif CookingList.getcook[@currentArray][3]==:NO
         @sprites["craftResult"].text=_INTL("{1} + {2} = {3}",@craftA,@craftB,@craftResult)
       else
         @sprites["craftResult"].text=_INTL("{1} + {2} + {3} = {4}",@craftA,@craftB,@craftC,@craftResult)
@@ -229,9 +229,9 @@ class Crafts_Scene
       end
       if Input.trigger?(Input::C)
         if @selection==3 && @returnItem!=:NO
-          if CraftsList.getcrafts[@currentArray][2]==:NO #If slot 2 is empty, don't read it
-            if $PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant
-              #if CraftsList.getcrafts[@currentArray][1]==@itemA
+          if CookingList.getcook[@currentArray][2]==:NO #If slot 2 is empty, don't read it
+            if $PokemonBag.pbQuantity(CookingList.getcook[@currentArray][1])>=@quant
+              #if CookingList.getcook[@currentArray][1]==@itemA
                 @recipe=[@returnItem,@itemA,:NO,:NO]
                 if pbCheckRecipe(@recipe)
                   Kernel.pbReceiveItem(@returnItem,@quant)
@@ -247,9 +247,9 @@ class Crafts_Scene
             else
               Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
             end
-          elsif CraftsList.getcrafts[@currentArray][3]==:NO&&CraftsList.getcrafts[@currentArray][2]!=:NO
-            if $PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant &&
-              $PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant
+          elsif CookingList.getcook[@currentArray][3]==:NO&&CookingList.getcook[@currentArray][2]!=:NO
+            if $PokemonBag.pbQuantity(CookingList.getcook[@currentArray][1])>=@quant &&
+              $PokemonBag.pbQuantity(CookingList.getcook[@currentArray][2])>=@quant
                 Kernel.pbReceiveItem(@returnItem,@quant)
                 $PokemonBag.pbDeleteItem(@itemA,@quant)
                 $PokemonBag.pbDeleteItem(@itemB,@quant)
@@ -264,21 +264,21 @@ class Crafts_Scene
               Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 2"))
             end
           else
-            if $PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant &&
-            $PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant &&
-            $PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant
+            if ($PokemonBag.pbQuantity(CookingList.getcook[@currentArray][1])>=@quant || !CookingList.getcook[@currentArray][1]==:NO) &&
+            ($PokemonBag.pbQuantity(CookingList.getcook[@currentArray][2])>=@quant || CookingList.getcook[@currentArray][2]==:NO)&&
+            ($PokemonBag.pbQuantity(CookingList.getcook[@currentArray][3])>=@quant || CookingList.getcook[@currentArray][3]==:NO)
               Kernel.pbReceiveItem(@returnItem,@quant)
               $PokemonBag.pbDeleteItem(@itemA,@quant)
               $PokemonBag.pbDeleteItem(@itemB,@quant)
               $PokemonBag.pbDeleteItem(@itemC,@quant)
-		      crafts = CraftsList.getcrafts
+		      crafts = CookingList.getcook
               @itemA=:NO
               @itemB=:NO
               @itemC=:NO
-              @CRACO=GameData::Item.get(CraftsList.getcrafts[@currentArray][0]).name
-              @CRAA=GameData::Item.get(CraftsList.getcrafts[@currentArray][1]).name
-              @CRAB=GameData::Item.get(CraftsList.getcrafts[@currentArray][2]).name
-              @CRAC=GameData::Item.get(CraftsList.getcrafts[@currentArray][3]).name
+              @CRACO=GameData::Item.get(CookingList.getcook[@currentArray][0]).name
+              @CRAA=GameData::Item.get(CookingList.getcook[@currentArray][1]).name
+              @CRAB=GameData::Item.get(CookingList.getcook[@currentArray][2]).name
+              @CRAC=GameData::Item.get(CookingList.getcook[@currentArray][3]).name
               @returnItem=:NO
               @quant=1
               @quantA=0
@@ -291,7 +291,7 @@ class Crafts_Scene
         elsif @selection==0
           @returnItem=:NO
           @itemA=Kernel.pbChooseItem
-		  crafts = CraftsList.getcrafts	 
+		  crafts = CookingList.getcook	 
         if !@itemA.empty?		  
           for i in 0..274
             if crafts[i][2]!=@itemB && @itemB==:NO
@@ -314,7 +314,7 @@ class Crafts_Scene
         elsif @selection==1
           @returnItem=:NO
           @itemB=Kernel.pbChooseItem
-		  crafts = CraftsList.getcrafts
+		  crafts = CookingList.getcook
 		  if !@itemB.empty?
           for i in 0..274
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
@@ -337,7 +337,7 @@ class Crafts_Scene
         elsif @selection==2
           @returnItem=:NO
           @itemC=Kernel.pbChooseItem
-		  crafts = CraftsList.getcrafts
+		  crafts = CookingList.getcook
 		  if !@itemC.empty?
           for i in 0..274
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
@@ -381,9 +381,9 @@ class Crafts_Scene
   
   def pbCheckRecipe(recipe)
     for i in 0..274
-      if recipe[1]==CraftsList.getcrafts[i][1] &&
-         recipe[2]==CraftsList.getcrafts[i][2] &&
-         recipe[3]==CraftsList.getcrafts[i][3]
+      if recipe[1]==CookingList.getcook[i][1] &&
+         recipe[2]==CookingList.getcook[i][2] &&
+         recipe[3]==CookingList.getcook[i][3]
        return true
       end
     end
@@ -395,18 +395,18 @@ end
 
 
 
-class PokemoncraftSelect
+class PokemoncookSelect
   attr_accessor :lastcraft
   attr_reader :crafts
   def numChars()
-    return Crafts_Scene.CraftsList().length-1
+    return Cauldron_Scene.CookingList().length-1
   end
   def initialize
     @lastcraft=1
     @crafts=[]
     @choices=[]
     # Initialize each playerCharacter of the array
-    for i in 0..Crafts_Scene.CraftsList
+    for i in 0..Cauldron_Scene.CookingList
       @crafts[i]=[]
       @choices[i]=0
     end
@@ -417,7 +417,7 @@ class PokemoncraftSelect
   end
 
   def rearrange()
-    if @crafts.length==6 && Crafts_Scene.CraftsList==28
+    if @crafts.length==6 && Cauldron_Scene.CookingList==28
       newcrafts=[]
       for i in 0..28
         newcrafts[i]=[]
@@ -428,9 +428,9 @@ class PokemoncraftSelect
   end
 end
 
-module CraftsList
-  def self.getcrafts
-    @CraftsList = [
+module CookingList
+  def self.getcook
+    @CookingList = [
 	#[RESULT = Item 1 + Item 2 + Item 3]
     [:NO,:NO,:NO,:NO], #Empty
     #RECIPE 1: ,
@@ -757,15 +757,15 @@ module CraftsList
     [:LARGEMEAL,:TEA,:BAKEDPOTATO,:GSCURRY],
     [:LARGEMEAL,:TEA,:GSCURRY,:BAKEDPOTATO,]
     ]
-    return @CraftsList
+    return @CookingList
   end
 end
 
 #Call Crafts.craftWindow
 module Crafts  
   def self.craftWindow()
-  craftScene=Crafts_Scene.new
-  craftScene.pbStartScene($PokemoncraftSelect)
+  craftScene=Cauldron_Scene.new
+  craftScene.pbStartScene($PokemoncookSelect)
   craft=craftScene.pbSelectcraft
   craftScene.pbEndScene
  end
