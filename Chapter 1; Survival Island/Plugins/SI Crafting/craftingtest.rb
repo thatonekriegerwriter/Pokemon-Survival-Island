@@ -2305,6 +2305,805 @@ class Crafts_Scene
               #end
             else
               Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+			  #missing three
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][5])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][5])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemC=:NO
+                  @itemE=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][5])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][5])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemF=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][5])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][5])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+		          crafts = CraftsList.getcrafts
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) 
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][5])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemD=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) 
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemD=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemD=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemF=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+		    ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+		    ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+		    ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemF=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+		    ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+		    ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+		    ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemF=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+		    ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+		    ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO #6
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemF=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+		    ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemG=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+		    ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+                  $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemH=:NO
+                  @itemI=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) && #4
+		    ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)
+                  $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
+                  $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
+                  $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO #4
+                  $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO #5
+                  $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
+                  $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
+		          crafts = CraftsList.getcrafts
+                  @itemB=:NO
+                  @itemC=:NO
+                  @itemD=:NO
+                  @itemE=:NO
+                  @itemG=:NO
+                  @itemH=:NO
+                  @returnItem=:NO
+                  @quant=1
+                  @quantA=0
+                  @quantB=0
+                  @quantC=0
+                  @quantD=0
+                  @quantE=0
+                  @quantF=0
+                  @quantG=0
+                  @quantH=0
+                  @quantI=0
+              #end
+            else
+              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
+            end  
             end  
         elsif @selection==0
           @returnItem=:NO
