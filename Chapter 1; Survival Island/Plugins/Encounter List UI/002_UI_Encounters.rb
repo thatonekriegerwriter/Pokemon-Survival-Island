@@ -337,12 +337,12 @@ class EncounterList_Scene
 	  elsif Input.trigger?(Input::USE)
 	  pbArceusTasksStart
       elsif Input.trigger?(Input::BACK)
+        @currentTexts = textsDefined2
+    	drawText
 	    @sprites["selector"].visible = false
         @sprites["selector"].x -= (64*@selection)
         @selection=0
      	@sprites["background"].visible = false
-        @currentTexts = textsDefined2
-    	drawText
         break
       end
     end
@@ -600,9 +600,9 @@ class EncounterList_Scene
   @currentTexts = textsDefined
   drawText
    if Input.trigger?(Input::BACK)
-	@sprites["background"].visible = false
     @currentTexts = textsDefined2
 	drawText
+	@sprites["background"].visible = false
    end
  end
   # Draw text and icons if map has encounters defined

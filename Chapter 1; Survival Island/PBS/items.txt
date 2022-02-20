@@ -892,6 +892,20 @@
 2039,ATKCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
 2042,STONEAXE,Stone Axe,Stone Axe,1,50,"A basic axe used to knock down trees.",0,0,0,,51
 2043,SHOVEL,Stone Axe,Stone Axe,1,50,"A basic axe used to knock down trees.",0,0,0,,51
+2049,STONEHAMMER,Stone Hammer,Stone Hammers,1,50,"A Stone Hammer used for Mining.",0,0,0,
+2050,IRONHAMMER,Iron Hammer,Iron Hammers,1,50,"A Iron Hammer used for Mining.",0,0,0,
+#-------------------------------
+# Crafting Parts
+#-------------------------------
+2044,IRONPICKAXEHEAD,Iron Pickaxe Head,Iron Pickaxe Head,1,50,"An Iron Pickaxe head used for crafting a Pick.",0,0,0,
+2045,STONEPICKAXEHEAD,Stone Pickaxe Head,Stone Pickaxe Head,1,50,"A Stone Pickaxe head used for crafting a Pick.",0,0,0,
+2046,IRONAXEHEAD,Iron Axe Head,Iron Axe Head,1,50,"An Iron Axe head used for crafting an Axe.",0,0,0,
+2047,STONEAXEHEAD,Stone Axe Head,Stone Axe Head,1,50,"An Stone Axe head used for crafting an Axe.",0,0,0,
+2048,MACHINEBOX,Machine Box,Machine Box,1,50,"An Electronic Box used for Crafting Machines.",0,0,0,
+2051,IRONHAMMERHEAD,Iron Hammerhead,Iron Hammerhead,1,50,"A Hammerhead used for making a Hammer.",0,0,0,
+2052,STONEHAMMERHEAD,Stone Hammerhead,Stone Hammerhead,1,50,"A Hammerhead used for making a Hammer.",0,0,0,
+2053,MACHETEHEAD,Machetehead,Machetehead,1,50,"A Head for making a Machete.",0,0,0,
+
 #-------------------------------
 # Dolls
 #-------------------------------

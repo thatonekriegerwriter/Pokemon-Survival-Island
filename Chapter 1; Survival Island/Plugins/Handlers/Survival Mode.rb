@@ -16,6 +16,11 @@
 Events.onStepTakenTransferPossible+=proc {
 
 
+pbchangeFood
+pbchangeWater
+pbchangeHealth
+pbchangeSaturation
+pbchangeSleep
 
 
 
@@ -29,11 +34,6 @@ if $game_switches[54]==false
 end
 
 $game_switches[70]=true
-pbchangeFood
-pbchangeWater
-pbchangeHealth
-pbchangeSaturation
-pbchangeSleep
 #pbchangeStamina
 
 
@@ -160,8 +160,8 @@ if rand(255)==1
  end
 end
 
-if $game_switches[75]==true
-   $game_variables[30]=3
+if $game_switches[75]==true && $PokemonSystem.survivalmode = 1 && $PokemonSystem.nuzlockemode = 1 && ($game_variables[30]=0 || $game_variables[30]=1)
+   $game_variables[30]=2
    $PokemonSystem.survivalmode = 0
    $PokemonSystem.nuzlockemode = 0
    
