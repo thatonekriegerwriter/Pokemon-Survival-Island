@@ -6,7 +6,7 @@ module PokeBattle_BattleCommon
         pkmn.name=nickname
       end
     end
-    if $Trainer.party.length==0
+    if pbInSafari? && !maps.include?($game_map.map_id)
    if pbDisplayConfirm(_INTL("Would you like send the POKeMON to the PC?",pkmn.name))
      currentBox = @peer.pbCurrentBox
      storedBox  = @peer.pbStorePokemon(pbPlayer,pkmn)
@@ -78,13 +78,14 @@ end
 end
 
 def pbStorePokemon(pkmn)
+maps=[1]
   if pbBoxesFull?
     pbMessage(_INTL("There's no more room for Pokémon!\1"))
     pbMessage(_INTL("The Pokémon Boxes are full and can't accept any more!"))
     return
   end
   pkmn.record_first_moves
-    if $Trainer.party.length==0
+    if pbInSafari? && !maps.include?($game_map.map_id)
    if pbDisplayConfirm(_INTL("Would you like send the POKeMON to the PC?",pkmn.name))
      currentBox = @peer.pbCurrentBox
      storedBox  = @peer.pbStorePokemon(pbPlayer,pkmn)

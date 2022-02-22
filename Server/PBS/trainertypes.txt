@@ -102,7 +102,7 @@
 101,LEADER_RED,Gym Leader,100,BattleGary,,,Male,50,
 102,LEADER_BLUE,Gym Leader,100,BattleGary,,,Male,50,
 103,CYNTHIA,Legend,100,BattleGary,,,Male,50,
-104,DARKPLAYER,Creator,100,BattleGary,,,Female,50
+104,DARKPLAYER,Creator,100,BattleGary,,,Female,50,
 105,POKEMONBREEDER_M,Pokémon Breeder,48,,,,Male,,
 106,LEADER_Jarl,Gym Leader,100,Battle Gym Leader,Battle victory leader,,Male,,
 107,LEADERROCKET,Gym Leader,100,Battle Gym Leader,Battle victory leader,,Male,,
@@ -111,3 +111,5 @@
 110,ROCKET_VETERAN_F,Rocket Veteran,48,,,,Female,,
 111,POKEMONTRAINER_Green,Pokémon Trainer,60,,,,Female,,
 112,PI,Private Eye,48,,,,Male,,
+113,POKEMONTRAINER_RocketM,Rocket Grunt,100,BattleGary,,,Male,50,
+114,POKEMONTRAINER_RocketF,Rocket Grunt,100,BattleGary,,,Female,50,

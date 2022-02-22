@@ -251,6 +251,13 @@ BattlerPlayerX          = 0
 BattlerPlayerY          = 13
 BattlerEnemyX           = 0
 #-------------------------------
+[VULPIII]
+BattlerEnemyY           = 24
+BattlerAltitude         = 0
+BattlerPlayerX          = 0
+BattlerPlayerY          = 18
+BattlerEnemyX           = 0
+#-------------------------------
 [VULPIX]
 BattlerEnemyY           = 24
 BattlerAltitude         = 0
