@@ -22,13 +22,13 @@ module EliteBattle
   ROOM_SCALE = 2.25
 
   # set this to true to use the low HP bgm when player's Pokemon HP reaches 25%
-  USE_LOW_HP_BGM = false
+  USE_LOW_HP_BGM = true
 
   # set this to true if you want to use your own common animations from the editor
-  CUSTOM_COMMON_ANIM = false
+  CUSTOM_COMMON_ANIM = true
 
   # set this to true to use animations from the Animation editor for missing move animations
-  CUSTOM_MOVE_ANIM = false
+  CUSTOM_MOVE_ANIM = true
 
   # disables "camera" zooming and movement throughout the entire scene
   DISABLE_SCENE_MOTION = false

@@ -139,7 +139,7 @@ pbChooseNonEggPokemon(1,3)
   case $game_variables[3]
      when "Gloom"
     Kernel.pbMessage(_INTL("Gloom evolves into Vileplume."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:VILEPLUME)
@@ -148,7 +148,7 @@ pbChooseNonEggPokemon(1,3)
 }
      when "Weepingbell"
     Kernel.pbMessage(_INTL("Weepingbell evolves into Victreebell."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:VECTREEBEL)
@@ -157,7 +157,7 @@ pbChooseNonEggPokemon(1,3)
 }
      when "Exeggcute" 
     Kernel.pbMessage(_INTL("Exeggcute evolves into Exeggcutor."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:EXEGGCUTOR)
@@ -166,7 +166,7 @@ pbChooseNonEggPokemon(1,3)
 }
      when "Eevee"
     Kernel.pbMessage(_INTL("Eevee evolves into Leafeon."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:LEAFEON)
@@ -175,7 +175,7 @@ pbChooseNonEggPokemon(1,3)
 }
      when "Nuzleaf"
     Kernel.pbMessage(_INTL("Nuzleaf evolves into Shiftry."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:SHIFTRY)
@@ -184,7 +184,7 @@ pbChooseNonEggPokemon(1,3)
 }
      when "Pansage"
     Kernel.pbMessage(_INTL("Pansage evolves into Semisage."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:SEMISAGE)
@@ -193,10 +193,20 @@ pbChooseNonEggPokemon(1,3)
 }
      when "Cherubi"
     Kernel.pbMessage(_INTL("Cherubi evolves into Cherrim."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:STEENEE)
+    evo.pbEvolution(false)
+    evo.pbEndScreen
+}
+    Kernel.pbMessage(_INTL("OH! How abnormal!"))
+     when "Bounsweet"
+    Kernel.pbMessage(_INTL("Bounsweet evolves into Steenee."))
+	pkmn=$Trainer.party[$game_variables[1]]
+	pbFadeOutInWithMusic {
+    evo = PokemonEvolutionScene.new
+    evo.pbStartScreen(pbGetPokemon(1),:CHERRIM)
     evo.pbEvolution(false)
     evo.pbEndScreen
 }
@@ -215,7 +225,7 @@ pbChooseNonEggPokemon(1,3)
 	
      when "Jolteon","Vaporeon","Sylveon","Leafeon","Flareon","Glaceon","Umbreon","Espeon"
     Kernel.pbMessage(_INTL("Stand back!"))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:EEVEE)
