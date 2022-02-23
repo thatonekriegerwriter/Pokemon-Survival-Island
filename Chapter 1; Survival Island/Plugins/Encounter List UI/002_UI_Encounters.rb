@@ -531,6 +531,11 @@ class EncounterList_Scene
 
       pbSetSystemFont(@sprites["background"].bitmap)
       pbDrawTextPositions(@sprites["background"].bitmap,textPositions)
+   if Input.trigger?(Input::BACK)
+  @sprites["background"].visible=false
+  @currentTexts = textsDefined2
+  drawPresent
+   end
     end
 	
 	
@@ -581,15 +586,219 @@ class EncounterList_Scene
 
 	def pbDefineMoveA(pkmn)
 	  return @moveA = :RAPIDSPIN if pkmn== :WARTORTLE 
+	  return @moveA = :WRAP if pkmn== :INKAY 
+	  return @moveA = :BUBBLEBEAM if pkmn== :SEISMITOAD
+	  return @moveA = :BUBBLEBEAM if pkmn== :VAPOREON
+	  return @moveA = :BUBBLEBEAM if pkmn== :POPPLIO
+	  return @moveA = :BUBBLEBEAM if pkmn== :MAGIKARP
+	  return @moveA = :BUBBLEBEAM if pkmn== :FEEBAS
+	  return @moveA = :BUBBLEBEAM if pkmn== :POLIWAG
+	  return @moveA = :BUBBLEBEAM if pkmn== :PSYDUCK
+	  return @moveA = :BUBBLEBEAM if pkmn== :HOPPIP
+	  return @moveA = :BUBBLEBEAM if pkmn== :SUNKERN
+	  return @moveA = :BUBBLEBEAM if pkmn== :GROWLITHE
+	  return @moveA = :BUBBLEBEAM if pkmn== :ROSELIA
+	  return @moveA = :BUBBLEBEAM if pkmn== :SENTRET
+	  return @moveA = :BUBBLEBEAM if pkmn== :ODDISH
+	  return @moveA = :BUBBLEBEAM if pkmn== :TAILLOW
+	  return @moveA = :BUBBLEBEAM if pkmn== :PHANPY
+	  return @moveA = :BUBBLEBEAM if pkmn== :CYNDAQUIL
+	  return @moveA = :BUBBLEBEAM if pkmn== :FARFETCHD
+	  return @moveA = :BUBBLEBEAM if pkmn== :NIDORANfE
+	  return @moveA = :BUBBLEBEAM if pkmn== :NIDORANmA
+	  return @moveA = :BUBBLEBEAM if pkmn== :FURRET
+	  return @moveA = :BUBBLEBEAM if pkmn== :PIDGEY
+	  return @moveA = :BUBBLEBEAM if pkmn== :SANDSHREW
+	  return @moveA = :BUBBLEBEAM if pkmn== :VULPIX
+	  return @moveA = :BUBBLEBEAM if pkmn== :BEEDRILL
+	  return @moveA = :BUBBLEBEAM if pkmn== :PHANPY
+	  return @moveA = :BUBBLEBEAM if pkmn== :TORCHIC
+	  return @moveA = :BUBBLEBEAM if pkmn== :MINUN
+	  return @moveA = :BUBBLEBEAM if pkmn== :PLUSLE
+	  return @moveA = :BUBBLEBEAM if pkmn== :EKANS
+	  return @moveA = :BUBBLEBEAM if pkmn== :MAREEP
+	  return @moveA = :BUBBLEBEAM if pkmn== :POOCHYENA
+	  return @moveA = :BUBBLEBEAM if pkmn== :DROWZEE
+	  return @moveA = :BUBBLEBEAM if pkmn== :HYPNO
+	  return @moveA = :BUBBLEBEAM if pkmn== :BLITZLE
+	  return @moveA = :BUBBLEBEAM if pkmn== :EEVEE
+	  return @moveA = :BUBBLEBEAM if pkmn== :ELECTRIKE
+	  return @moveA = :BUBBLEBEAM if pkmn== :PIKACHU
+	  return @moveA = :BUBBLEBEAM if pkmn== :RALTS
+	  return @moveA = :BUBBLEBEAM if pkmn== :FALINKS
+	  return @moveA = :BUBBLEBEAM if pkmn== :YAMPER
+	  return @moveA = :BUBBLEBEAM if pkmn== :OBSTAGOON
+	  return @moveA = :BUBBLEBEAM if pkmn== :RAICHU
+	  return @moveA = :BUBBLEBEAM if pkmn== :RATTATA
+	  return @moveA = :BUBBLEBEAM if pkmn== :FLETCHLING
+	  return @moveA = :BUBBLEBEAM if pkmn== :TOGEDEMARU
+	  return @moveA = :BUBBLEBEAM if pkmn== :TANGELA
+	  return @moveA = :BUBBLEBEAM if pkmn== :LOTAD
+	  return @moveA = :BUBBLEBEAM if pkmn== :MARILL
+	  return @moveA = :BUBBLEBEAM if pkmn== :SQUIRTLE
+	  return @moveA = :BUBBLEBEAM if pkmn== :DEDENNE
+	  return @moveA = :BUBBLEBEAM if pkmn== :EMOLGA
+	  return @moveA = :BUBBLEBEAM if pkmn== :WOOLOO
+	  return @moveA = :BUBBLEBEAM if pkmn== :HOUNDOUR
+	  return @moveA = :BUBBLEBEAM if pkmn== :ZIGZAGOON
+	  return @moveA = :BUBBLEBEAM if pkmn== :NATU
+	  return @moveA = :BUBBLEBEAM if pkmn== :ROOKIDEE
+	  return @moveA = :BUBBLEBEAM if pkmn== :GROWLITHE
+	  return @moveA = :BUBBLEBEAM if pkmn== :MAWILE
+	  return @moveA = :BUBBLEBEAM if pkmn== :MUNNA
+	  return @moveA = :BUBBLEBEAM if pkmn== :WOOBAT
+	  return @moveA = :BUBBLEBEAM if pkmn== :LICKITUNG
+	  return @moveA = :BUBBLEBEAM if pkmn== :KABUTO
+	  return @moveA = :BUBBLEBEAM if pkmn== :VENONAT
+	  return @moveA = :BUBBLEBEAM if pkmn== :CYNDAQUIL
+	  return @moveA = :BUBBLEBEAM if pkmn== :BASCULIN
+	  return @moveA = :BUBBLEBEAM if pkmn== :FRILLISH
+	  return @moveA = :BUBBLEBEAM if pkmn== :WISHIWASHI
+	  return @moveA = :BUBBLEBEAM if pkmn== :MAREANIE
+	  return @moveA = :BUBBLEBEAM if pkmn== :OSHAWOTT
+	  return @moveA = :BUBBLEBEAM if pkmn== :BEAUTIFLY
+	  return @moveA = :BUBBLEBEAM if pkmn== :DUSTOX
+	  return @moveA = :BUBBLEBEAM if pkmn== :MASQUERAIN
+	  return @moveA = :BUBBLEBEAM if pkmn== :BOUNSWEET
+	  return @moveA = :BUBBLEBEAM if pkmn== :SEEDOT
+	  return @moveA = :BUBBLEBEAM if pkmn== :PATRAT
+	  return @moveA = :BUBBLEBEAM if pkmn== :TOTODILE
+	  return @moveA = :BUBBLEBEAM if pkmn== :DEERLING
+	  return @moveA = :BUBBLEBEAM if pkmn== :SIMIPOUR
+	  return @moveA = :BUBBLEBEAM if pkmn== :KOMALA
+	  return @moveA = :BUBBLEBEAM if pkmn== :MIMIKYU
+	  return @moveA = :BUBBLEBEAM if pkmn== :BEWEAR
+	  return @moveA = :BUBBLEBEAM if pkmn== :ORICORIO
+	  return @moveA = :BUBBLEBEAM if pkmn== :AXEW
+	  return @moveA = :BUBBLEBEAM if pkmn== :GOLETT
+	  return @moveA = :BUBBLEBEAM if pkmn== :PRINPLUP
+	  return @moveA = :BUBBLEBEAM if pkmn== :VANILLITE
+	  return @moveA = :BUBBLEBEAM if pkmn== :GOGOAT
+	  return @moveA = :BUBBLEBEAM if pkmn== :ZANGOOSE
+	  return @moveA = :BUBBLEBEAM if pkmn== :WHISMUR
+	  return @moveA = :BUBBLEBEAM if pkmn== :LUDICOLO
+	  return @moveA = :BUBBLEBEAM if pkmn== :RHYHORN
+	  return @moveA = :BUBBLEBEAM if pkmn== :ESPURR
+	  return @moveA = :BUBBLEBEAM if pkmn== :SWAMPERT
+	  return @moveA = :BUBBLEBEAM if pkmn== :CHERUBI
+	  return @moveA = :BUBBLEBEAM if pkmn== :WHIMSICOTT
+	  return @moveA = :BUBBLEBEAM if pkmn== :DARUMAKA
+	  return @moveA = :BUBBLEBEAM if pkmn== :FLOATZEL
+	  return @moveA = :BUBBLEBEAM if pkmn== :MILTANK
+	  return @moveA = :BUBBLEBEAM if pkmn== :MUK
+	  return @moveA = :BUBBLEBEAM if pkmn== :RIOLU
+	  return @moveA = :BUBBLEBEAM if pkmn== :ROSERADE
+	  return @moveA = :BUBBLEBEAM if pkmn== :LINOONE
 	  return @moveA = :TACKLE
 	end
 	
 	def pbDefineMoveB(pkmn)
 	  return @moveB = :AQUATAIL if pkmn== :WARTORTLE 
+	  return @moveB = :NIGHTSLASH if pkmn== :INKAY 
+	  return @moveB = :BUBBLEBEAM if pkmn== :SEISMITOAD
+	  return @moveB = :BUBBLEBEAM if pkmn== :VAPOREON
+	  return @moveB = :BUBBLEBEAM if pkmn== :POPPLIO
+	  return @moveB = :BUBBLEBEAM if pkmn== :MAGIKARP
+	  return @moveB = :BUBBLEBEAM if pkmn== :FEEBAS
+	  return @moveB = :BUBBLEBEAM if pkmn== :POLIWAG
+	  return @moveB = :BUBBLEBEAM if pkmn== :PSYDUCK
+	  return @moveB = :BUBBLEBEAM if pkmn== :HOPPIP
+	  return @moveB = :BUBBLEBEAM if pkmn== :SUNKERN
+	  return @moveB = :BUBBLEBEAM if pkmn== :GROWLITHE
+	  return @moveB = :BUBBLEBEAM if pkmn== :ROSELIA
+	  return @moveB = :BUBBLEBEAM if pkmn== :SENTRET
+	  return @moveB = :BUBBLEBEAM if pkmn== :ODDISH
+	  return @moveB = :BUBBLEBEAM if pkmn== :TAILLOW
+	  return @moveB = :BUBBLEBEAM if pkmn== :PHANPY
+	  return @moveB = :BUBBLEBEAM if pkmn== :CYNDAQUIL
+	  return @moveB = :BUBBLEBEAM if pkmn== :FARFETCHD
+	  return @moveB = :BUBBLEBEAM if pkmn== :NIDORANfE
+	  return @moveB = :BUBBLEBEAM if pkmn== :NIDORANmA
+	  return @moveB = :BUBBLEBEAM if pkmn== :FURRET
+	  return @moveB = :BUBBLEBEAM if pkmn== :PIDGEY
+	  return @moveB = :BUBBLEBEAM if pkmn== :SANDSHREW
+	  return @moveB = :BUBBLEBEAM if pkmn== :VULPIX
+	  return @moveB = :BUBBLEBEAM if pkmn== :BEEDRILL
+	  return @moveB = :BUBBLEBEAM if pkmn== :PHANPY
+	  return @moveB = :BUBBLEBEAM if pkmn== :TORCHIC
+	  return @moveB = :BUBBLEBEAM if pkmn== :MINUN
+	  return @moveB = :BUBBLEBEAM if pkmn== :PLUSLE
+	  return @moveB = :BUBBLEBEAM if pkmn== :EKANS
+	  return @moveB = :BUBBLEBEAM if pkmn== :MAREEP
+	  return @moveB = :BUBBLEBEAM if pkmn== :POOCHYENA
+	  return @moveB = :BUBBLEBEAM if pkmn== :DROWZEE
+	  return @moveB = :BUBBLEBEAM if pkmn== :HYPNO
+	  return @moveB = :BUBBLEBEAM if pkmn== :BLITZLE
+	  return @moveB = :BUBBLEBEAM if pkmn== :EEVEE
+	  return @moveB = :BUBBLEBEAM if pkmn== :ELECTRIKE
+	  return @moveB = :BUBBLEBEAM if pkmn== :PIKACHU
+	  return @moveB = :BUBBLEBEAM if pkmn== :RALTS
+	  return @moveB = :BUBBLEBEAM if pkmn== :FALINKS
+	  return @moveB = :BUBBLEBEAM if pkmn== :YAMPER
+	  return @moveB = :BUBBLEBEAM if pkmn== :OBSTAGOON
+	  return @moveB = :BUBBLEBEAM if pkmn== :RAICHU
+	  return @moveB = :BUBBLEBEAM if pkmn== :RATTATA
+	  return @moveB = :BUBBLEBEAM if pkmn== :FLETCHLING
+	  return @moveB = :BUBBLEBEAM if pkmn== :TOGEDEMARU
+	  return @moveB = :BUBBLEBEAM if pkmn== :TANGELA
+	  return @moveB = :BUBBLEBEAM if pkmn== :LOTAD
+	  return @moveB = :BUBBLEBEAM if pkmn== :MARILL
+	  return @moveB = :BUBBLEBEAM if pkmn== :SQUIRTLE
+	  return @moveB = :BUBBLEBEAM if pkmn== :DEDENNE
+	  return @moveB = :BUBBLEBEAM if pkmn== :EMOLGA
+	  return @moveB = :BUBBLEBEAM if pkmn== :WOOLOO
+	  return @moveB = :BUBBLEBEAM if pkmn== :HOUNDOUR
+	  return @moveB = :BUBBLEBEAM if pkmn== :ZIGZAGOON
+	  return @moveB = :BUBBLEBEAM if pkmn== :NATU
+	  return @moveB = :BUBBLEBEAM if pkmn== :ROOKIDEE
+	  return @moveB = :BUBBLEBEAM if pkmn== :GROWLITHE
+	  return @moveB = :BUBBLEBEAM if pkmn== :MAWILE
+	  return @moveB = :BUBBLEBEAM if pkmn== :MUNNA
+	  return @moveB = :BUBBLEBEAM if pkmn== :WOOBAT
+	  return @moveB = :BUBBLEBEAM if pkmn== :LICKITUNG
+	  return @moveB = :BUBBLEBEAM if pkmn== :KABUTO
+	  return @moveB = :BUBBLEBEAM if pkmn== :VENONAT
+	  return @moveB = :BUBBLEBEAM if pkmn== :CYNDAQUIL
+	  return @moveB = :BUBBLEBEAM if pkmn== :BASCULIN
+	  return @moveB = :BUBBLEBEAM if pkmn== :FRILLISH
+	  return @moveB = :BUBBLEBEAM if pkmn== :WISHIWASHI
+	  return @moveB = :BUBBLEBEAM if pkmn== :MAREANIE
+	  return @moveB = :BUBBLEBEAM if pkmn== :OSHAWOTT
+	  return @moveB = :BUBBLEBEAM if pkmn== :BEAUTIFLY
+	  return @moveB = :BUBBLEBEAM if pkmn== :DUSTOX
+	  return @moveB = :BUBBLEBEAM if pkmn== :MASQUERAIN
+	  return @moveB = :BUBBLEBEAM if pkmn== :BOUNSWEET
+	  return @moveB = :BUBBLEBEAM if pkmn== :SEEDOT
+	  return @moveB = :BUBBLEBEAM if pkmn== :PATRAT
+	  return @moveB = :BUBBLEBEAM if pkmn== :TOTODILE
+	  return @moveB = :BUBBLEBEAM if pkmn== :DEERLING
+	  return @moveB = :BUBBLEBEAM if pkmn== :SIMIPOUR
+	  return @moveB = :BUBBLEBEAM if pkmn== :KOMALA
+	  return @moveB = :BUBBLEBEAM if pkmn== :MIMIKYU
+	  return @moveB = :BUBBLEBEAM if pkmn== :BEWEAR
+	  return @moveB = :BUBBLEBEAM if pkmn== :ORICORIO
+	  return @moveB = :BUBBLEBEAM if pkmn== :AXEW
+	  return @moveB = :BUBBLEBEAM if pkmn== :GOLETT
+	  return @moveB = :BUBBLEBEAM if pkmn== :PRINPLUP
+	  return @moveB = :BUBBLEBEAM if pkmn== :VANILLITE
+	  return @moveB = :BUBBLEBEAM if pkmn== :GOGOAT
+	  return @moveB = :BUBBLEBEAM if pkmn== :ZANGOOSE
+	  return @moveB = :BUBBLEBEAM if pkmn== :WHISMUR
+	  return @moveB = :BUBBLEBEAM if pkmn== :LUDICOLO
+	  return @moveB = :BUBBLEBEAM if pkmn== :RHYHORN
+	  return @moveB = :BUBBLEBEAM if pkmn== :ESPURR
+	  return @moveB = :BUBBLEBEAM if pkmn== :SWAMPERT
+	  return @moveB = :BUBBLEBEAM if pkmn== :CHERUBI
+	  return @moveB = :BUBBLEBEAM if pkmn== :WHIMSICOTT
+	  return @moveB = :BUBBLEBEAM if pkmn== :DARUMAKA
+	  return @moveB = :BUBBLEBEAM if pkmn== :FLOATZEL
+	  return @moveB = :BUBBLEBEAM if pkmn== :MILTANK
+	  return @moveB = :BUBBLEBEAM if pkmn== :MUK
+	  return @moveB = :BUBBLEBEAM if pkmn== :RIOLU
+	  return @moveB = :BUBBLEBEAM if pkmn== :ROSERADE
+	  return @moveB = :BUBBLEBEAM if pkmn== :LINOONE
 	  return @moveB = :STRUGGLE
 	end
-
-
  
  def pbArceusTasksMain
     loctext = _INTL("")
@@ -600,20 +809,11 @@ class EncounterList_Scene
   @sprites["background"].setBitmap("Graphics/Pictures/EncounterUI/"+WINDOWSKIN2)
   @currentTexts = textsDefined
   drawText
-   if Input.trigger?(Input::BACK)
-    pbArceusTasksClear
-   end
  end
  
  
  
  def pbArceusTasksClear
-    loctext = _INTL("<ac><c2=43F022E8>{1}</c2></ac>", $game_map.name)
-    loctext += sprintf("<al><c2=7FF05EE8>This area has no encounters!</c2></al>")
-    loctext += sprintf("<c2=63184210>-----------------------------------------</c2>")
-    @sprites["locwindow"].setText(loctext)
-  @sprites["background"].visible=false
-  @currentTexts = textsDefined2
   drawText
  end
   # Draw text and icons if map has encounters defined
