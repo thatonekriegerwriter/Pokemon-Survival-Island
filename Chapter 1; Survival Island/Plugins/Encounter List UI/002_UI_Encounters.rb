@@ -513,11 +513,11 @@ class EncounterList_Scene
       textPositions=[
         [@currentTexts[0],250,0,2,powerColor,shadowColor],
         [@currentTexts[1],84,40,2,powerColor,shadowColor],
-        [@currentTexts[2],86,60,2,powerColor,shadowColor],
-        [@currentTexts[3],169,80,2,powerColor,shadowColor],
-        [@currentTexts[4],162,120,2,powerColor,shadowColor],
-        [@currentTexts[5],160,140,2,powerColor,shadowColor],
-        [@currentTexts[6],130,180,2,powerColor,shadowColor],
+        [@currentTexts[2],88,60,2,powerColor,shadowColor],
+        [@currentTexts[3],120,80,2,powerColor,shadowColor],
+        [@currentTexts[4],120,120,2,powerColor,shadowColor],
+        [@currentTexts[5],120,140,2,powerColor,shadowColor],
+        [@currentTexts[6],120,180,2,powerColor,shadowColor],
         [@currentTexts[7],90,200,2,powerColor,shadowColor],
 		
         [@currentTexts[8],310,40,2,powerColor,shadowColor],
@@ -543,19 +543,19 @@ class EncounterList_Scene
       ret[0] = _INTL("{1}",@species)
 	  ret[1] = _INTL("Number Caught",$Trainer.pokedex.number_caught(@species))
       ret[2] = _INTL("Number Defeated",$Trainer.pokedex.number_battled(@species))
-	  ret[3] = _INTL("Number defeated with type Weaknesses",$Trainer.pokedex.number_weakness(@species))
-	  ret[4] = _INTL("Times you have seen it use {2}",$Trainer.pokedex.number_moves(@species,@moveA),@moveA)
-	  ret[5] = _INTL("Times you have seen it use {2}",$Trainer.pokedex.number_moves(@species,@moveB),@moveB)
-	  ret[6] = _INTL("Number of Forms Registered",$Trainer.pokedex.seen_forms_count(@species))
-	  ret[6] = _INTL("Number of Forms Registered - Complete",$Trainer.pokedex.seen_forms_count(@species)) if (!@species == :VENUSAUR || !@species == :CHARIZARD || !@species == :BLASTOISE || !@species == :BEEDRILL || !@species == :PIDGEOT || !@species == :RATTATA || !@species == :RATICATE || !@species == :PIKACHU || !@species == :RAICHU || !@species == :SANDSHREW || !@species == :SANDSLASH || !@species == :VULPIII || !@species == :VULPIX || !@species == :KITSUVEN || !@species == :NINETALES || !@species == :DIGLETT || !@species == :DUGTRIO || !@species == :MEOWTH || !@species == :PERSIAN || !@species == :ALAKAZAM || !@species == :GEODUDE || !@species == :GRAVELER || !@species == :GOLEM || !@species == :PONYTA || !@species == :RAPIDASH || !@species == :SLOWPOKE || !@species == :SLOWBRO || !@species == :FARFETCHD || !@species == :GRIMER || !@species == :MUK || !@species == :GENGAR || !@species == :EXEGGUTOR || !@species == :CUBONE || !@species == :MAROWAK || !@species == :WEEZING || !@species == :KANGASKHAN || !@species == :MRMIME || !@species == :PINSIR || !@species == :GYARADOS || !@species == :AERODACTYL || !@species == :ARTICUNO || !@species == :ZAPDOS || !@species == :MOLTRES || !@species == :MEWTWO || !@species == :PICHU || !@species == :AMPHAROS || !@species == :SLOWKING || !@species == :UNOWN || !@species == :STEELIX || !@species == :SCIZOR || !@species == :HERACROSS || !@species == :CORSOLA || !@species == :HOUNDOOM || !@species == :TYRANITAR || !@species == :SCEPTILE || !@species == :BLAZIKEN || !@species == :SWAMPERT || !@species == :ZIGZAGOON || !@species == :LINOONE || !@species == :GARDEVOIR || !@species == :SABLEYE || !@species == :MAWILE || !@species == :AGGRON || !@species == :MEDICHAM || !@species == :MANECTRIC || !@species == :SHARPEDO || !@species == :CAMERUPT || !@species == :ALTARIA || !@species == :CASTFORM || !@species == :BANETTE || !@species == :ABSOL || !@species == :GLALIE || !@species == :SALAMENCE || !@species == :METAGROSS || !@species == :LATIAS || !@species == :LATIOS || !@species == :KYOGRE || !@species == :GROUDON || !@species == :RAYQUAZA || !@species == :DEOXYS || !@species == :BURMY || !@species == :WORMADAM || !@species == :CHERRIM || !@species == :SHELLOS || !@species == :GASTRODON || !@species == :LOPUNNY || !@species == :GARCHOMP || !@species == :LUCARIO || !@species == :ABOMASNOW || !@species == :GALLADE || !@species == :ROTOM || !@species == :GIRATINA || !@species == :SHAYMIN || !@species == :ARCEUS || !@species == :AUDINO || !@species == :BASCULIN || !@species == :DARUMAKA || !@species == :DARMANITAN || !@species == :YAMASK || !@species == :DEERLING || !@species == :SAWSBUCK || !@species == :STUNFISK || !@species == :TORNADUS || !@species == :THUNDURUS || !@species == :LANDORUS || !@species == :KYUREM || !@species == :KELDEO || !@species == :MELOETTA || !@species == :GENESECT || !@species == :GRENINJA || !@species == :VIVILLON || !@species == :FLABEBE || !@species == :FLOETTE || !@species == :FLORGES || !@species == :FURFROU || !@species == :MEOWSTIC || !@species == :AEGISLASH || !@species == :PUMPKABOO || !@species == :GOURGEIST || !@species == :XERNEAS || !@species == :ZYGARDE || !@species == :DIANCIE || !@species == :HOOPA || !@species == :ORICORIO || !@species == :LYCANROC || !@species == :WISHIWASHI || !@species == :SILVALLY || !@species == :MINIOR || !@species == :NECROZMA || !@species == :MAGEARNA || !@species == :CRAMORANT || !@species == :TOXTRICITY || !@species == :ALCREMIE || !@species == :SINISTEA || !@species == :POLTEAGEIST || !@species == :EISCUE || !@species == :INDEEDEE || !@species == :MORPEKO || !@species == :ZACIAN || !@species == :ZAMAZENTA || !@species == :URSHIFU || !@species == :CALYREX || !@species == :MAGMORTAR || !@species == :MAGIKARP || !@species == :MILOTIC || !@species == :MAMOSWINE || !@species == :SPIRITOMB || !@species == :ELECTIVIRE || !@species == :ZORUA || !@species == :ZOROARK || !@species == :ZUBAT || !@species == :GOLBAT || !@species == :CROBAT || !@species == :HOPPIP || !@species == :SKIPLOOM || !@species == :JUMPLUFF || !@species == :REMORAID || !@species == :OCTILLERY || !@species == :TYROGUE || !@species == :HITMONTOP || !@species == :KINGDRA || !@species == :LEDIAN || !@species == :GIRAFARIG || !@species == :POLITOED || !@species == :MEW) && $Trainer.pokedex.seen_forms_count(@species)== 1
+	  ret[3] = _INTL("Number defeated (Weakness)",$Trainer.pokedex.number_weakness(@species))
+	  ret[4] = _INTL("Times seen it use {2}",$Trainer.pokedex.number_moves(@species,@moveA),@moveA)
+	  ret[5] = _INTL("Times seen it use {2}",$Trainer.pokedex.number_moves(@species,@moveB),@moveB)
+	  ret[6] = _INTL("Number Forms Registered",$Trainer.pokedex.seen_forms_count(@species))
 	  ret[7] = _INTL("Number evolved ",$Trainer.pokedex.number_evolved(@species))
-	  ret[8] = _INTL("{1}",$Trainer.pokedex.number_caught(@species))
-	  ret[9] = _INTL("{1}",$Trainer.pokedex.number_battled(@species))
-	  ret[10] = _INTL("{1}",$Trainer.pokedex.number_weakness(@species))
-	  ret[11] = _INTL("{1}",$Trainer.pokedex.number_moves(@species,@moveA))
-	  ret[12] = _INTL("{1}",$Trainer.pokedex.number_moves(@species,@moveB))
-	  ret[13] = _INTL("{1}",$Trainer.pokedex.seen_forms_count(@species))
-	  ret[14] = _INTL("{1}",$Trainer.pokedex.number_evolved(@species))
+	  ret[8] = _INTL("| {1}",$Trainer.pokedex.number_caught(@species))
+	  ret[9] = _INTL("| {1}",$Trainer.pokedex.number_battled(@species))
+	  ret[10] = _INTL("| {1}",$Trainer.pokedex.number_weakness(@species))
+	  ret[11] = _INTL("| {1}",$Trainer.pokedex.number_moves(@species,@moveA))
+	  ret[12] = _INTL("| {1}",$Trainer.pokedex.number_moves(@species,@moveB)) 
+	  ret[13] = _INTL("| {1}",$Trainer.pokedex.seen_forms_count(@species))
+	  ret[13] = _INTL("- Complete!    | {1}",$Trainer.pokedex.seen_forms_count(@species)) if $Trainer.pokedex.seen_forms_count(@species)==pbFormCheck(@species)
+	  ret[14] = _INTL("| {1}",$Trainer.pokedex.number_evolved(@species))
       return ret
     end    
 	def textsDefined2
@@ -588,7 +588,8 @@ class EncounterList_Scene
 	  return @moveB = :AQUATAIL if pkmn== :WARTORTLE 
 	  return @moveB = :STRUGGLE
 	end
- 
+
+
  
  def pbArceusTasksMain
     loctext = _INTL("")
@@ -600,10 +601,20 @@ class EncounterList_Scene
   @currentTexts = textsDefined
   drawText
    if Input.trigger?(Input::BACK)
-    @currentTexts = textsDefined2
-	drawText
-	@sprites["background"].visible = false
+    pbArceusTasksClear
    end
+ end
+ 
+ 
+ 
+ def pbArceusTasksClear
+    loctext = _INTL("<ac><c2=43F022E8>{1}</c2></ac>", $game_map.name)
+    loctext += sprintf("<al><c2=7FF05EE8>This area has no encounters!</c2></al>")
+    loctext += sprintf("<c2=63184210>-----------------------------------------</c2>")
+    @sprites["locwindow"].setText(loctext)
+  @sprites["background"].visible=false
+  @currentTexts = textsDefined2
+  drawText
  end
   # Draw text and icons if map has encounters defined
   def drawPresent
@@ -690,3 +701,14 @@ class EncounterList_Screen
 end
 
 
+
+
+
+    def pbFormCheck(pkmn)
+        formcmds = [[], []]
+        GameData::Species.each do |sp|
+          next if sp.species != pkmn
+          formcmds[0].push(sp.form)
+        end
+        return formcmds[0].length
+        end
