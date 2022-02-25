@@ -53,13 +53,6 @@ if $game_variables[256]==(:GHOSTMAIL) && rand(100) == 5
   $game_variables[208]+=1
 end
 
-if !$game_switches[54]==true 
- if $PokemonSystem.survivalmode == 0
-   Achievements.incrementProgress("SURVIVOR",1)
-   $game_switches[54]=true 
- end
-end
-
 if $game_switches[57]==false
 if $PokemonSystem.nuzlockemode == 0
  if EliteBattle.nuzlockeOn?
@@ -70,7 +63,6 @@ if $PokemonSystem.nuzlockemode == 0
   else
   EliteBattle.startNuzlocke
   pbMessage(_INTL("You toggled Nuzlocke Mode."))
-  Achievements.incrementProgress("NUZLOCKED",1)
   pbLifeCheck
   $game_switches[57]=true
  end
@@ -79,6 +71,42 @@ elsif $PokemonSystem.nuzlockemode == 1
   $game_switches[57]=false
 end
   
+  
+if $game_switches[421]==true
+  if $game_switches[943]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[944]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[945]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[946]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[947]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[948]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[949]==true
+     $game_variables[291]+=1
+  end
+  if $game_switches[950]==true
+     $game_variables[291]+=1
+  end
+end
+
+if $game_switches[420]==true
+end
+
+if $game_switches[419]==true
+end
+
+if $game_switches[418]==true
+end  
 }
 
 
@@ -111,7 +139,7 @@ pbChooseNonEggPokemon(1,3)
   case $game_variables[3]
      when "Gloom"
     Kernel.pbMessage(_INTL("Gloom evolves into Vileplume."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:VILEPLUME)
@@ -120,7 +148,7 @@ pbChooseNonEggPokemon(1,3)
 }
      when "Weepingbell"
     Kernel.pbMessage(_INTL("Weepingbell evolves into Victreebell."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:VECTREEBEL)
@@ -129,7 +157,7 @@ pbChooseNonEggPokemon(1,3)
 }
      when "Exeggcute" 
     Kernel.pbMessage(_INTL("Exeggcute evolves into Exeggcutor."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:EXEGGCUTOR)
@@ -138,7 +166,7 @@ pbChooseNonEggPokemon(1,3)
 }
      when "Eevee"
     Kernel.pbMessage(_INTL("Eevee evolves into Leafeon."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:LEAFEON)
@@ -147,7 +175,7 @@ pbChooseNonEggPokemon(1,3)
 }
      when "Nuzleaf"
     Kernel.pbMessage(_INTL("Nuzleaf evolves into Shiftry."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:SHIFTRY)
@@ -156,7 +184,7 @@ pbChooseNonEggPokemon(1,3)
 }
      when "Pansage"
     Kernel.pbMessage(_INTL("Pansage evolves into Semisage."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:SEMISAGE)
@@ -165,10 +193,20 @@ pbChooseNonEggPokemon(1,3)
 }
      when "Cherubi"
     Kernel.pbMessage(_INTL("Cherubi evolves into Cherrim."))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:STEENEE)
+    evo.pbEvolution(false)
+    evo.pbEndScreen
+}
+    Kernel.pbMessage(_INTL("OH! How abnormal!"))
+     when "Bounsweet"
+    Kernel.pbMessage(_INTL("Bounsweet evolves into Steenee."))
+	pkmn=$Trainer.party[$game_variables[1]]
+	pbFadeOutInWithMusic {
+    evo = PokemonEvolutionScene.new
+    evo.pbStartScreen(pbGetPokemon(1),:CHERRIM)
     evo.pbEvolution(false)
     evo.pbEndScreen
 }
@@ -187,7 +225,7 @@ pbChooseNonEggPokemon(1,3)
 	
      when "Jolteon","Vaporeon","Sylveon","Leafeon","Flareon","Glaceon","Umbreon","Espeon"
     Kernel.pbMessage(_INTL("Stand back!"))
-	pkmn=$trainer.party[$game_variables[1]]
+	pkmn=$Trainer.party[$game_variables[1]]
 	pbFadeOutInWithMusic {
     evo = PokemonEvolutionScene.new
     evo.pbStartScreen(pbGetPokemon(1),:EEVEE)
@@ -1105,3 +1143,11 @@ ItemHandlers::UseInField.add(:POKEGENERATOR,proc { |item|
   next 0
   end
 })
+
+
+class ExplorationState
+
+end
+
+
+

@@ -4,6 +4,7 @@ class DependentEvents
   # frame and also update Following Pokemon Map
   #-----------------------------------------------------------------------------
   def pbMoveDependentEvents
+    $game_map.refresh
     return false if !$game_temp.move_followers
     events = $PokemonGlobal.dependentEvents
     leader = $game_player

@@ -15,83 +15,117 @@
 
 Events.onStepTakenTransferPossible+=proc {
 
-$game_switches[70]=true
+
 pbchangeFood
 pbchangeWater
 pbchangeHealth
 pbchangeSaturation
 pbchangeSleep
-pbchangeStamina
+
+
+
+
+
+if $game_switches[54]==false 
+ if $PokemonSystem.survivalmode == 0
+   Achievements.incrementProgress("SURVIVOR",1)
+   $game_switches[54]=true 
+ end
+end
+
+$game_switches[70]=true
+#pbchangeStamina
 
 
  if $Trainer.pokemonCount==6
   if rand(255)==1
   $Trainer.party[0].changeFood
+  pbPokeAging($Trainer.party[0])
   end
   if rand(255)==3
   $Trainer.party[1].changeFood
+  pbPokeAging($Trainer.party[1])
   end
   if rand(255)==5
   $Trainer.party[2].changeFood
+  pbPokeAging($Trainer.party[2])
   end
   if rand(255)==7
   $Trainer.party[3].changeFood
+  pbPokeAging($Trainer.party[3])
   end
   if rand(255)==8
   $Trainer.party[4].changeFood
+  pbPokeAging($Trainer.party[4])
   end
   if rand(255)==17
   $Trainer.party[5].changeFood
+  pbPokeAging($Trainer.party[5])
   end
  elsif $Trainer.pokemonCount==5
   if rand(255)==1
   $Trainer.party[0].changeFood
+  pbPokeAging($Trainer.party[0])
   end
   if rand(255)==3
   $Trainer.party[1].changeFood
+  pbPokeAging($Trainer.party[1])
   end
   if rand(255)==5
   $Trainer.party[2].changeFood
+  pbPokeAging($Trainer.party[2])
   end
   if rand(255)==7
   $Trainer.party[3].changeFood
+  pbPokeAging($Trainer.party[3])
   end
   if rand(255)==8
   $Trainer.party[4].changeFood
+  pbPokeAging($Trainer.party[4])
   end
  elsif $Trainer.pokemonCount==4
   if rand(255)==1
   $Trainer.party[0].changeFood
+  pbPokeAging($Trainer.party[0])
   end
   if rand(255)==3
   $Trainer.party[1].changeFood
+  pbPokeAging($Trainer.party[1])
   end
   if rand(255)==5
   $Trainer.party[2].changeFood
+  pbPokeAging($Trainer.party[2])
   end
   if rand(255)==7
   $Trainer.party[3].changeFood
+  pbPokeAging($Trainer.party[3])
   end
  elsif $Trainer.pokemonCount==3
   if rand(255)==1
   $Trainer.party[0].changeFood
+  pbPokeAging($Trainer.party[0])
   end
   if rand(255)==3
   $Trainer.party[1].changeFood
+  pbPokeAging($Trainer.party[1])
   end
   if rand(255)==5
   $Trainer.party[2].changeFood
+  pbPokeAging($Trainer.party[2])
   end
  elsif $Trainer.pokemonCount==2
   if rand(255)==1
   $Trainer.party[0].changeFood
+  pbPokeAging($Trainer.party[0])
   end
   if rand(255)==3
   $Trainer.party[1].changeFood
+  pbPokeAging($Trainer.party[1])
   end
  elsif $Trainer.pokemonCount==1
   if rand(255)==1
   $Trainer.party[0].changeFood
+  pbPokeAging($Trainer.party[0])
   end
  end
 
@@ -126,8 +160,8 @@ if rand(255)==1
  end
 end
 
-if $game_switches[75]==true
-   $game_variables[30]=3
+if $game_switches[75]==true && $PokemonSystem.survivalmode = 1 && $PokemonSystem.nuzlockemode = 1 && ($game_variables[30]=0 || $game_variables[30]=1)
+   $game_variables[30]=2
    $PokemonSystem.survivalmode = 0
    $PokemonSystem.nuzlockemode = 0
    
@@ -240,6 +274,7 @@ end
 
 
 def pbSleepRestore
+ $Trainer.playerstamina = $Trainer.playermaxstamina
  if $Trainer.playersleep<200
   $Trainer.playersleep=$Trainer.playersleep+($game_variables[247]*6)
  end
@@ -529,6 +564,61 @@ $Trainer.playersaturation+=5#207 is Saturation
 $Trainer.playerwater+=5#206 is Thirst
 $Trainer.playerfood+=5#205 is Hunger
 return 1
+elsif item == :LARGEMEAL
+$Trainer.playersaturation+=50#207 is Saturation
+$Trainer.playerwater+=50#206 is Thirst
+$Trainer.playerfood+=50#205 is Hunger
+$Trainer.playerstaminamod+=15#205 is Hunger
+ if $Trainer.pokemonCount==6
+  $Trainer.party[0].ev[:DEFENSE] += 1
+  $Trainer.party[1].ev[:DEFENSE] += 1
+  $Trainer.party[2].ev[:DEFENSE] += 1
+  $Trainer.party[3].ev[:DEFENSE] += 1
+  $Trainer.party[4].ev[:DEFENSE] += 1
+  $Trainer.party[5].ev[:DEFENSE] += 1
+  $Trainer.party[0].ev[:HP] += 1
+  $Trainer.party[1].ev[:HP] += 1
+  $Trainer.party[2].ev[:HP] += 1
+  $Trainer.party[3].ev[:HP] += 1
+  $Trainer.party[4].ev[:HP] += 1
+  $Trainer.party[5].ev[:HP] += 1
+ elsif $Trainer.pokemonCount==5
+  $Trainer.party[0].ev[:DEFENSE] += 1
+  $Trainer.party[1].ev[:DEFENSE] += 1
+  $Trainer.party[2].ev[:DEFENSE] += 1
+  $Trainer.party[3].ev[:DEFENSE] += 1
+  $Trainer.party[4].ev[:DEFENSE] += 1
+  $Trainer.party[0].ev[:HP] += 1
+  $Trainer.party[1].ev[:HP] += 1
+  $Trainer.party[2].ev[:HP] += 1
+  $Trainer.party[3].ev[:HP] += 1
+  $Trainer.party[4].ev[:HP] += 1
+ elsif $Trainer.pokemonCount==4
+  $Trainer.party[0].ev[:DEFENSE] += 1
+  $Trainer.party[1].ev[:DEFENSE] += 1
+  $Trainer.party[2].ev[:DEFENSE] += 1
+  $Trainer.party[3].ev[:DEFENSE] += 1
+  $Trainer.party[0].ev[:HP] += 1
+  $Trainer.party[1].ev[:HP] += 1
+  $Trainer.party[2].ev[:HP] += 1
+  $Trainer.party[3].ev[:HP] += 1
+ elsif $Trainer.pokemonCount==3
+  $Trainer.party[0].ev[:DEFENSE] += 1
+  $Trainer.party[1].ev[:DEFENSE] += 1
+  $Trainer.party[2].ev[:DEFENSE] += 1
+  $Trainer.party[0].ev[:HP] += 1
+  $Trainer.party[1].ev[:HP] += 1
+  $Trainer.party[2].ev[:HP] += 1
+ elsif $Trainer.pokemonCount==2
+  $Trainer.party[0].ev[:DEFENSE] += 1
+  $Trainer.party[1].ev[:DEFENSE] += 1
+  $Trainer.party[0].ev[:HP] += 1
+  $Trainer.party[1].ev[:HP] += 1
+ elsif $Trainer.pokemonCount==1
+  $Trainer.party[0].ev[:DEFENSE] += 1
+  $Trainer.party[0].ev[:HP] += 1
+ end
+return 1
 else
 $PokemonBag.pbStoreItem(item,1)
 return 0
@@ -582,9 +672,10 @@ end
 
 
 def pbRandomEvent
-   if rand(1000) == 1
+   if rand(255) == 1
      Kernel.pbMessage(_INTL("There was a sound outside."))   #Comet
      $game_switches[450]==true 
+     $game_switches[451]==true 
 =begin
    elsif rand(1000) == 2
      
@@ -605,11 +696,22 @@ if $game_player.pbFacingTerrainTag.can_surf
      message=(_INTL("Want to pick up water?"))
     if pbConfirmMessage(message)
        $PokemonBag.pbStoreItem(:WATER,1)
-       $PokemonBag.pbDeleteItem(:WATERBOTTLE,1)
 	end
 	next 4
    else
     Kernel.pbMessage(_INTL("That is not water."))
+	next 0
+end
+})
+ItemHandlers::UseFromBag.add(:IRONAXE,proc { |item|
+if $game_player.pbFacingTerrainTag.can_knockdown
+     message=(_INTL("Want to knock down some branches?"))
+    if pbConfirmMessage(message)
+       $PokemonBag.pbStoreItem(:ACORN,(rand(6)))
+	end
+	next 4
+   else
+    Kernel.pbMessage(_INTL("That is not a tree."))
 	next 0
 end
 })
@@ -824,530 +926,20 @@ end
 #  if pbLifeCheckChecking == true
 #    pkmn.food = (rand(100)+1)
 #    pkmn.water = (rand(100)+1)
-#    pkmn.age = (rand(40)+1)
+#    pkmn.sleep = (rand(40)+1)
 #  end
 	
-	
-	
-	
-	
-
-#Eating Food
-def pbFillUp
-berry=0
-pbFadeOutIn(99999){
-scene = PokemonBag_Scene.new
-screen = PokemonBagScreen.new(scene,$PokemonBag)
-berry = screen.pbChooseItemScreen(Proc.new { |item| GameData::Item.get(item).is_foodwater? || GameData::Item.get(item).is_berry?})
-}
-if berry
-$PokemonBag.pbDeleteItem(berry,1)
-Kernel.pbMessage(_INTL("You use the {1}. ",GameData::Item.get(berry).name))
-#205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
-if berry == :ORANBERRY
-$Trainer.playerfood+=4
-$Trainer.playersaturation+=3
-$Trainer.playerwater+=1
-$Trainer.playerhealth += 1
-elsif berry == :LEPPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :CHERIBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :CHESTOBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :PECHABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :RAWSTBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :ASPEARBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :PERSIMBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :LUMBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :FIGYBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :WIKIBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :MAGOBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :AGUAVBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :IAPAPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :IAPAPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :SITRUSBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=7
-$Trainer.playerwater+=1
-$Trainer.playerhealth += (0.25*$Trainer.playerhealth)
-elsif berry == :BERRYJUICE
-$Trainer.playerfood+=6
-$Trainer.playersaturation+=4
-$Trainer.playerwater+=4
-$Trainer.playerhealth += 2
-elsif berry == :FRESHWATER
-$Trainer.playerwater+=10
-$Trainer.playersaturation+=10#207 is Saturation
-$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
-Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
-#You can add more if you want
-elsif berry == :ATKCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
-elsif berry == :SATKCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
-elsif berry == :SPEEDCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
-elsif berry == :SPDEFCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
-elsif berry == :ACCCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=12
-$Trainer.playerwater-=7
-elsif berry == :DEFCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
-elsif berry == :CRITCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
-elsif berry == :GSCURRY
-$Trainer.playerfood+=8#205 is Hunger
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater-=7#206 is Thirst
-elsif berry == :RAGECANDYBAR #chocolate
-$Trainer.playerfood+=10
-$Trainer.playersaturation+=3
-$Trainer.playersleep+=7
-elsif berry == :SWEETHEART #chocolate
-$Trainer.playerfood+=10#205 is Hunger
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playersleep+=6#208 is Sleep
-elsif berry == :SODAPOP
-$Trainer.playerwater-=11#206 is Thirst
-$Trainer.playersaturation+=11#207 is Saturation
-$Trainer.playersleep+=10#208 is Sleep
-$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
-Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
-elsif berry == :LEMONADE
-$Trainer.playersaturation+=11#207 is Saturation
-$Trainer.playerwater+=10#206 is Thirst
-$Trainer.playersleep+=7#208 is Sleep
-$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
-Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
-elsif berry == :HONEY
-$Trainer.playersaturation+=20#207 is Saturation
-$Trainer.playerwater+=2#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
-elsif berry == :MOOMOOMILK
-$Trainer.playersaturation+=10
-$Trainer.playerwater+=15
-$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
-Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
-elsif berry == :CSLOWPOKETAIL
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerfood+=10#205 is Hunger
-elsif berry == :BAKEDPOTATO
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=4#206 is Thirst
-$Trainer.playerfood+=7#205 is Hunger
-elsif berry == :APPLE
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
-elsif berry == :CHOCOLATE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerfood+=7#205 is Hunger
-elsif berry == :LEMON
-$Trainer.playersaturation+=3#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=4#205 is Hunger
-elsif berry == :OLDGATEAU
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=2#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
-elsif berry == :LAVACOOKIE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater-=3#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
-elsif berry == :CASTELIACONE
-$Trainer.playerwater+=7#206 is Thirst
-$Trainer.playerfood+=7#205 is Hunger
-elsif berry == :LUMIOSEGALETTE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerfood+=6#205 is Hunger
-elsif berry == :SHALOURSABLE
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerfood+=8#205 is Hunger
-elsif berry == :BIGMALASADA
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerfood+=8#205 is Hunger
-elsif berry == :ONION
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
-elsif berry == :COOKEDORAN
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=6#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
-elsif berry == :CARROT
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
-elsif berry == :BREAD
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=7#206 is Thirst
-$Trainer.playerfood+=11#205 is Hunger
-elsif berry == :TEA
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerwater+=8#206 is Thirst
-$Trainer.playerfood+=2#205 is Hunger
-elsif berry == :CARROTCAKE
-$Trainer.playersaturation+=15#207 is Saturation
-$Trainer.playerwater+=15#206 is Thirst
-$Trainer.playerfood+=10#205 is Hunger
-elsif berry == :COOKEDMEAT
-$Trainer.playersaturation+=40#207 is Saturation
-$Trainer.playerwater+=0#206 is Thirst
-$Trainer.playerfood+=20#205 is Hunger
-elsif berry == :SITRUSJUICE
-$Trainer.playersaturation+=20#207 is Saturation
-$Trainer.playerwater+=25#206 is Thirst
-$Trainer.playerfood+=0#205 is Hunger
-$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
-Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
-elsif berry == :BERRYMASH
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater+=5#206 is Thirst
-$Trainer.playerfood+=5#205 is Hunger
-
-
-#inedible
-elsif berry == :TEALEAF
-$PokemonBag.pbStoreItem(:TEALEAF,1)
-elsif berry == :COCOABEAN
-$PokemonBag.pbStoreItem(:COCOABEAN,1)
-elsif berry == :SUGARCANE
-$PokemonBag.pbStoreItem(:SUGARCANE,1)
-elsif berry == :BAIT
-$PokemonBag.pbStoreItem(:BAIT,1)
-elsif berry == :TREE
-$PokemonBag.pbStoreItem(:TREE,1)
-elsif berry == :REDAPRICORN
-$PokemonBag.pbStoreItem(:REDAPRICORN,1)
-elsif berry == :PINKAPRICORN
-$PokemonBag.pbStoreItem(:PINKAPRICORN,1)
-elsif berry == :BLUEAPRICORN
-$PokemonBag.pbStoreItem(:BLACKAPRICORN,1)
-elsif berry == :WHITEAPRICORN
-$PokemonBag.pbStoreItem(:WHITEAPRICORN,1)
-elsif berry == :YELLOWAPRICORN
-$PokemonBag.pbStoreItem(:YELLOWAPRICORN,1)
-elsif berry == :BLACKAPRICORN
-$PokemonBag.pbStoreItem(:BLACKAPRICORN,1)
-elsif berry == :PURPLEAPRICORN
-$PokemonBag.pbStoreItem(:PURPLEAPRICORN,1)
-elsif berry == :POWERHERB
-$PokemonBag.pbStoreItem(:POWERHERB,1)
-#full belly
+def pbPokeAging(pkmn)
+   oldtimenow=0
+   timenow=0
+   time=0
+  oldtimenow = timenow
+  timenow = pbGetTimeNow.to_i
+   time = timenow-oldtimenow
+   if time >= 11059200 && !timenow=0 && !pkmn.egg?
+     pkmn.sleep+=1
+   end
+   if pkmn.sleep >=180
+     pkmn.permadeath=true
+   end
 end
-
-message=_INTL("Do you want to use {1} again?",GameData::Item.get(berry).name)
-loop do
- Kernel.pbMessage(_INTL("Sleep: {1}, Food: {2}, Water: {3}. ",$Trainer.playersleep,$Trainer.playerfood,$Trainer.playerwater))
- if pbConfirmMessage(message)
-   $PokemonBag.pbDeleteItem(berry,1)
-   if berry == :ORANBERRY
-$Trainer.playerfood+=4
-$Trainer.playersaturation+=3
-$Trainer.playerwater+=1
-$Trainer.playerhealth += 1
-elsif berry == :LEPPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :CHERIBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :CHESTOBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :PECHABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :RAWSTBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :ASPEARBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :PERSIMBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :LUMBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :FIGYBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :WIKIBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :MAGOBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :AGUAVBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :IAPAPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :IAPAPABERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=2
-$Trainer.playerwater+=2
-elsif berry == :SITRUSBERRY
-$Trainer.playerfood+=5
-$Trainer.playersaturation+=7
-$Trainer.playerwater+=1
-$Trainer.playerhealth += (0.25*$Trainer.playerhealth)
-elsif berry == :BERRYJUICE
-$Trainer.playerfood+=6
-$Trainer.playersaturation+=4
-$Trainer.playerwater+=4
-$Trainer.playerhealth += 2
-elsif berry == :FRESHWATER
-$Trainer.playerwater+=25
-$Trainer.playersaturation+=10#207 is Saturation
-$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
-Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
-elsif berry == :WATER
-$Trainer.playerwater+=10
-$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
-Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
-#You can add more if you want
-elsif berry == :ATKCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
-elsif berry == :SATKCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
-elsif berry == :SPEEDCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
-elsif berry == :SPDEFCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
-elsif berry == :ACCCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=12
-$Trainer.playerwater-=7
-elsif berry == :DEFCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
-elsif berry == :CRITCURRY
-$Trainer.playerfood+=8
-$Trainer.playersaturation+=15
-$Trainer.playerwater-=7
-elsif berry == :GSCURRY
-$Trainer.playerfood+=8#205 is Hunger
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater-=7#206 is Thirst
-elsif berry == :RAGECANDYBAR #chocolate
-$Trainer.playerfood+=10
-$Trainer.playersaturation+=3
-$Trainer.playersleep+=7
-elsif berry == :SWEETHEART #chocolate
-$Trainer.playerfood+=10#205 is Hunger
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playersleep+=6#208 is Sleep
-elsif berry == :SODAPOP
-$Trainer.playerwater-=11#206 is Thirst
-$Trainer.playersaturation+=11#207 is Saturation
-$Trainer.playersleep+=10#208 is Sleep
-$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
-Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
-elsif berry == :LEMONADE
-$Trainer.playersaturation+=11#207 is Saturation
-$Trainer.playerwater+=15#206 is Thirst
-$Trainer.playersleep+=7#208 is Sleep
-$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
-Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
-elsif berry == :HONEY
-$Trainer.playersaturation+=20#207 is Saturation
-$Trainer.playerwater+=2#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
-elsif berry == :MOOMOOMILK
-$Trainer.playersaturation+=20
-$Trainer.playerwater+=7
-$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
-Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
-elsif berry == :CSLOWPOKETAIL
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerfood+=10#205 is Hunger
-elsif berry == :BAKEDPOTATO
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=4#206 is Thirst
-$Trainer.playerfood+=7#205 is Hunger
-elsif berry == :APPLE
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
-elsif berry == :CHOCOLATE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerfood+=7#205 is Hunger
-elsif berry == :LEMON
-$Trainer.playersaturation+=3#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=4#205 is Hunger
-elsif berry == :OLDGATEAU
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=2#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
-elsif berry == :LAVACOOKIE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater-=3#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
-elsif berry == :CASTELIACONE
-$Trainer.playerwater+=7#206 is Thirst
-$Trainer.playerfood+=7#205 is Hunger
-elsif berry == :LUMIOSEGALETTE
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerfood+=6#205 is Hunger
-elsif berry == :SHALOURSABLE
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerfood+=8#205 is Hunger
-elsif berry == :BIGMALASADA
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerfood+=8#205 is Hunger
-elsif berry == :ONION
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
-elsif berry == :COOKEDORAN
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=6#206 is Thirst
-$Trainer.playerfood+=6#205 is Hunger
-elsif berry == :CARROT
-$Trainer.playersaturation+=6#207 is Saturation
-$Trainer.playerwater+=3#206 is Thirst
-$Trainer.playerfood+=3#205 is Hunger
-elsif berry == :BREAD
-$Trainer.playersaturation+=10#207 is Saturation
-$Trainer.playerwater+=7#206 is Thirst
-$Trainer.playerfood+=11#205 is Hunger
-elsif berry == :TEA
-$Trainer.playersaturation+=8#207 is Saturation
-$Trainer.playerwater+=8#206 is Thirst
-$Trainer.playerfood+=2#205 is Hunger
-elsif berry == :CARROTCAKE
-$Trainer.playersaturation+=15#207 is Saturation
-$Trainer.playerwater+=15#206 is Thirst
-$Trainer.playerfood+=10#205 is Hunger
-elsif berry == :COOKEDMEAT
-$Trainer.playersaturation+=40#207 is Saturation
-$Trainer.playerwater+=0#206 is Thirst
-$Trainer.playerfood+=20#205 is Hunger
-elsif berry == :SITRUSJUICE
-$Trainer.playersaturation+=20#207 is Saturation
-$Trainer.playerwater+=25#206 is Thirst
-$Trainer.playerfood+=0#205 is Hunger
-$PokemonBag.pbStoreItem(:WATERBOTTLE,1)
-Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
-elsif berry == :BERRYMASH
-$Trainer.playersaturation+=5#207 is Saturation
-$Trainer.playerwater+=5#206 is Thirst
-$Trainer.playerfood+=5#205 is Hunger
-
-
-#inedible
-elsif berry == :TEALEAF
-$PokemonBag.pbStoreItem(:TEALEAF,1)
-elsif berry == :COCOABEAN
-$PokemonBag.pbStoreItem(:COCOABEAN,1)
-elsif berry == :SUGARCANE
-$PokemonBag.pbStoreItem(:SUGARCANE,1)
-elsif berry == :BAIT
-$PokemonBag.pbStoreItem(:BAIT,1)
-elsif berry == :TREE
-$PokemonBag.pbStoreItem(:TREE,1)
-elsif berry == :REDAPRICORN
-$PokemonBag.pbStoreItem(:REDAPRICORN,1)
-elsif berry == :PINKAPRICORN
-$PokemonBag.pbStoreItem(:PINKAPRICORN,1)
-elsif berry == :BLUEAPRICORN
-$PokemonBag.pbStoreItem(:BLACKAPRICORN,1)
-elsif berry == :WHITEAPRICORN
-$PokemonBag.pbStoreItem(:WHITEAPRICORN,1)
-elsif berry == :YELLOWAPRICORN
-$PokemonBag.pbStoreItem(:YELLOWAPRICORN,1)
-elsif berry == :BLACKAPRICORN
-$PokemonBag.pbStoreItem(:BLACKAPRICORN,1)
-elsif berry == :PURPLEAPRICORN
-$PokemonBag.pbStoreItem(:PURPLEAPRICORN,1)
-elsif berry == :POWERHERB
-$PokemonBag.pbStoreItem(:POWERHERB,1)
-#full belly
-end
- else 
-   break
-end
-end
-end
-end
-

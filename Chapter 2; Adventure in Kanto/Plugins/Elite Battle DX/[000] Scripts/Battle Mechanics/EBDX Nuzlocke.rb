@@ -66,6 +66,7 @@ module EliteBattle
     ret = $PokemonGlobal && $PokemonGlobal.isNuzlocke
     ret = self.nuzlockeSelection unless skip
     $PokemonGlobal.qNuzlocke = ret
+    Achievements.incrementProgress("NUZLOCKED",1)
     # sets the nuzlocke to true if already has a bag and Pokeballs
     for i in GameData::Item.values
       break if !$PokemonBag

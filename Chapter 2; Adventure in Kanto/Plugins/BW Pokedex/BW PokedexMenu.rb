@@ -113,11 +113,18 @@ class PokemonPokedexMenuScreen
                       $Trainer.pokedex.owned_count(dex),
                       pbGetRegionalDexLength(dex)])
     end
+	commands.push(_INTL("Research Tasks")) if $game_switches[278]==true
     commands.push(_INTL("Exit"))
     @scene.pbStartScene(commands,commands2)
     loop do
       cmd = @scene.pbScene
-      break if cmd<0 || cmd>=commands2.length   # Cancel/Exit
+      break if cmd<0 || cmd>=commands2.length+1   # Cancel/Exit
+	  if cmd>=commands2.length && cmd<=commands2.length+1 &&$game_switches[278]==true
+      pbFadeOutIn {
+	    pbArceusTasksIntro
+      }
+	  break
+	  end
       $PokemonGlobal.pokedexDex = $Trainer.pokedex.accessible_dexes[cmd]
       pbFadeOutIn {
         scene = PokemonPokedex_Scene.new

@@ -6,7 +6,7 @@ module PokeBattle_BattleCommon
         pkmn.name=nickname
       end
     end
-    if $Trainer.party.length==0
+    if pbInSafari? && !maps.include?($game_map.map_id)
    if pbDisplayConfirm(_INTL("Would you like send the POKeMON to the PC?",pkmn.name))
      currentBox = @peer.pbCurrentBox
      storedBox  = @peer.pbStorePokemon(pbPlayer,pkmn)
@@ -78,13 +78,14 @@ end
 end
 
 def pbStorePokemon(pkmn)
+maps=[1]
   if pbBoxesFull?
     pbMessage(_INTL("There's no more room for Pokémon!\1"))
     pbMessage(_INTL("The Pokémon Boxes are full and can't accept any more!"))
     return
   end
   pkmn.record_first_moves
-    if $Trainer.party.length==0
+    if pbInSafari? && !maps.include?($game_map.map_id)
    if pbDisplayConfirm(_INTL("Would you like send the POKeMON to the PC?",pkmn.name))
      currentBox = @peer.pbCurrentBox
      storedBox  = @peer.pbStorePokemon(pbPlayer,pkmn)
@@ -94,18 +95,18 @@ def pbStorePokemon(pkmn)
      boxName    = @peer.pbBoxName(storedBox)
      if storedBox!=currentBox
        if creator
-         pbDisplayPaused(_INTL("Box \"{1}\" in the Crate was full.",curBoxName,creator))
+         pbMessage(_INTL("Box \"{1}\" in the Crate was full.",curBoxName,creator))
        else
-         pbDisplayPaused(_INTL("Box \"{1}\" in the Crate was full.",curBoxName))
+         pbMessage(_INTL("Box \"{1}\" in the Crate was full.",curBoxName))
        end
-       pbDisplayPaused(_INTL("{1} was transferred to box \"{2}\".",pkmn.name,boxName))
+       pbMessage(_INTL("{1} was transferred to box \"{2}\".",pkmn.name,boxName))
      else
        if creator
-         pbDisplayPaused(_INTL("{1} was transferred to the Crate.",pkmn.name,creator))
+         pbMessage(_INTL("{1} was transferred to the Crate.",pkmn.name,creator))
        else
-         pbDisplayPaused(_INTL("{1} was transferred to the Crate.",pkmn.name))
+         pbMessage(_INTL("{1} was transferred to the Crate.",pkmn.name))
        end
-       pbDisplayPaused(_INTL("It was stored in box \"{1}\".",boxName))
+       pbMessage(_INTL("It was stored in box \"{1}\".",boxName))
      end
 end
 end
@@ -132,21 +133,21 @@ end
     creator = pbGetStorageCreator if $Trainer.seen_storage_creator
       if storedbox!=oldcurbox
         if creator
-          pbDisplayPaused(_INTL("Box \"{1}\" in the Crate was full.",curboxname,creator))
+          pbMessage(_INTL("Box \"{1}\" in the Crate was full.",curboxname,creator))
         else
-          pbDisplayPaused(_INTL("Box \"{1}\" in the Crate was full.",curboxname))
+          pbMessage(_INTL("Box \"{1}\" in the Crate was full.",curboxname))
         end
-        pbDisplayPaused(_INTL("{1} was transferred to box \"{2}\".",pkmn.name,boxname))
+        pbMessage(_INTL("{1} was transferred to box \"{2}\".",pkmn.name,boxname))
       else
         if creator
-          pbDisplayPaused(_INTL("{1} was transferred to the Crate.",pkmn.name,creator))
+          pbMessage(_INTL("{1} was transferred to the Crate.",pkmn.name,creator))
         else
-          pbDisplayPaused(_INTL("{1} was transferred to the Crate.",pkmn.name))
+          pbMessage(_INTL("{1} was transferred to the Crate.",pkmn.name))
         end
-        pbDisplayPaused(_INTL("It was stored in box \"{1}\".",boxname))
+        pbMessage(_INTL("It was stored in box \"{1}\".",boxname))
       end
       if new_poke != -1
-        pbDisplayPaused(_INTL("{2} has been added to {1}'s party!",$Trainer.name,new_poke.name))
+        pbMessage(_INTL("{2} has been added to {1}'s party!",$Trainer.name,new_poke.name))
       end
   end
 end

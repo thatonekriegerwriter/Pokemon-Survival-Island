@@ -111,3 +111,4 @@
 110,ROCKET_VETERAN_F,Rocket Veteran,48,,,,Female,,
 111,POKEMONTRAINER_Green,Pokémon Trainer,60,,,,Female,,
 112,PI,Private Eye,48,,,,Male,,
+113,CREATOR,Creator,100,,,,Female,,

@@ -237,6 +237,7 @@ if UnrealTime::ENABLED
        if deposited==2 && $PokemonGlobal.daycareEgg==0
         $PokemonGlobal.daycareEggSteps = 0 if !$PokemonGlobal.daycareEggSteps
         $PokemonGlobal.daycareEggSteps += 1
+        pbchangeStamina
 	   end
       self.newFrameCount+=1
     end

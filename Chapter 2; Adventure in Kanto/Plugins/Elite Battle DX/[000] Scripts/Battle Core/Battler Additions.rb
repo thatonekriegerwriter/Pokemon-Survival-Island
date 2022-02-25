@@ -36,8 +36,6 @@ class Pokemon
   #-----------------------------------------------------------------------------
   alias shiny_ebdx shiny? unless self.method_defined?(:shiny_ebdx)
   def shiny?
-    self.adjust_shiny
-    return self.superShiny? ? true : shiny_ebdx
   end
   #-----------------------------------------------------------------------------
   #  function to check whether additional shiny variant is applied

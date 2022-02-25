@@ -1048,3 +1048,83 @@ Pokemon = BULBASAUR,10
 [TEAMROCKET_F,Rocket]
 LoseText = "..."
 Pokemon = BULBASAUR,10
+#-------------------------------
+[CREATOR,Adalynn]
+Items = FULLRESTORE,REVIVE
+LoseText = "Good job!"
+Pokemon = VULPIX,80
+    Form = 0
+    Name = XANDER
+    Item = LUCKYEGG
+    Gender = male
+    Ability = 0
+    Shiny = no
+    Shadow = no
+    Moves = FLAMETHROWER,HEADBUTT,FIREBLAST,AURORABEAM
+    IVs = 11,15,6,5,9,9
+    EVs = 334,276,223,310,310,223
+    Happiness = 255
+    Ball = POKEBALL
+
+Pokemon = POLITOED,81
+    Item = LUCKYEGG
+    Gender = male
+    Ability = 0
+    Shiny = no
+    Shadow = no
+    Moves = SURF,LOVELYKISS,CROSSCHOP,WHIRLPOOL
+    IVs = 7,10,13,13,1,1
+    EVs = 215,247,258,204,200,200
+    Happiness = 255
+    Ball = POKEBALL
+
+Pokemon = DRAGONITE,80
+    Item = LUCKYEGG
+    Gender = male
+    Ability = 0
+    Shiny = no
+    Shadow = no
+    Moves = HYPERBEAM,THUNDERBOLT,EARTHQUAKE,OUTRAGE
+    IVs = 10,11,10,11,12,12
+    EVs = 285,372,292,276,287,287
+    Happiness = 255
+    Ball = POKEBALL
+
+Pokemon = ESPEON,
+    Item = LUCKYEGG
+    Gender = female
+    Ability = 0
+    Shiny = no
+    Shadow = no
+    Moves = PSYBEAM,SANDATTACK,PSYCHIC,PSYCHUP
+    IVs = 20,2,8,31,4,4
+    EVs = 196,285,232,203,267,267
+    Happiness = 255
+    Ball = POKEBALL
+
+Pokemon = TOOFBAT,80
+    Name = Toofbat
+    Item = LUCKYEGG
+    Gender = female
+    Ability = 0
+    Shiny = no
+    Shadow = no
+    Moves = WINGATTACK,FLY,GIGADRAIN,SHADOWBALL
+    IVs = 24,14,14,12,20,20
+    EVs = 23,23,25,35,23,23
+    Happiness = 255
+    Ball = POKEBALL
+
+Pokemon = DONPHAN,80
+    Name = STONKSBABY
+    Item = LUCKYEGG
+    Gender = male
+    Ability = 0
+    Shiny = no
+    Shadow = no
+    Moves = EARTHQUAKE,ANCIENTPOWER,RAPIDSPIN,STRENGTH
+    IVs = 10,31,20,31,4,4
+    EVs = 200,357,206,204,207,207
+    Happiness = 255
+    Ball = POKEBALL
+

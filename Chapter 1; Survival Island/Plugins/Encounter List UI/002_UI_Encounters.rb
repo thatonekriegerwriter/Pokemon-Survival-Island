@@ -809,6 +809,9 @@ class EncounterList_Scene
   @sprites["background"].setBitmap("Graphics/Pictures/EncounterUI/"+WINDOWSKIN2)
   @currentTexts = textsDefined
   drawText
+      if Input.trigger?(Input::BACK)
+        return
+      end
  end
  
  

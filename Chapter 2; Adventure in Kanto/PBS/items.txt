@@ -836,7 +836,7 @@
 1868,MEDICINE,Medicine Bag,Medicine Bags,8,1000,"The Bag you store medicine in.",2,0,6,
 1869,SNATCHER,Snatcher,Snatcher,1,0,"A Machine designed to steal an item from a Pokemon.",0,0,0
 1943,NO, , ,1,00,"You shouldn't see this.",0,0,0,
-2014,SUSPO,Suspicious Drink,Suspicious Drink,2,0,"A Weird Drink. It's purpose is unknown.",0,0,0,
+2014,SUSPO,Suspicious Drink,Suspicious Drink,2,0,"A Weird Drink. It's purpose is unknown.",1,1,0,
 #-------------------------------
 # Pokeballs
 #-------------------------------
@@ -860,7 +860,8 @@
 #-------------------------------
 2015,CALENDAR,Calendar,Calendar,2,0,"What day is it?",0,0,0,
 2016,APOWERMONITOR,Power Monitor,Power Monitor,2,0,"Hows my power?",0,0,0,
-2013,SHOVEL,Shovel,Shovels,8,2100,"A Shovel to dig up berries.",2,0,6,
+2013,IRONAXE,Iron Axe,Iron Axes,8,2100,"An axe used to chop down trees.",2,0,6,,101
+2041,CROPSTICKS,Cropstick,Cropsticks,1,50,"Cropsticks move your Crops to the next level.",0,0,0,
 2011,CREMINIKEY,House Key (Cremini),House Key (Cremini),8,2100,"A Key to your house in Cremini Town.",2,0,6,
 2012,PEWTERKEY,House Key (Pewter),House Key (Pewter),8,2100,"A Key to your house in Pewter City.",2,0,6,
 1951,TRAINERCARD,Trainer Card,Trainer Card,8,2100,"A Card identifying you as a Registered Battler.",2,0,6,
@@ -875,16 +876,36 @@
 1847,PHONEBOOK,Phone Book,Phone Book,8,0,"A Phone Book from work that has a list of phone numbers.",0,0,6,
 1848,MEGASTONE,Mega Stone,Mega Stones,8,0,"A Weird Looking rock full of energy.",0,0,6,
 1849,EGGHATCHER,Egg Hatcher,Egg Hatchers,8,0,"An Egg Hatcher in which to keep up to 6 eggs until they hatch.",2,0,6,
-1841,MACHETE,Machete,Machete,1,0,"A Machete that can be used in combat.",0,9,6,
+1841,MACHETE,Machete,Machete,1,0,"A Machete that can be used in combat.",0,9,6,,101
 1809,SUPPLIES,Supplies,Supplies,8,0,"A bag of supplies that can be used to climb tall mountains.",0,0,6
-1700,RUSTEDPICKAXE,Rusted Pickaxe,Rusted Pickaxes,1,0,"A rusted pickaxe you got off the boat. It could mine lightly, but nothing big.",0,4,6,
-1701,PICKAXE,Pickaxe,Pickaxes,1,0,"A Pickaxe you made with your own two hands. Feel proud.",0,9,6,
+1700,RUSTEDPICKAXE,Stone Pickaxe,Stone Pickaxes,1,0,"A rusted pickaxe you got off the boat. It could mine lightly, but nothing big.",0,4,6,,51
+1701,PICKAXE,Pickaxe,Pickaxes,1,0,"A Pickaxe you made with your own two hands. Feel proud.",0,9,6,,101
 1802,POISONDART,Poison Dart,Poison Darts,7,1000,"A handcrafted dart gun that poisons a Pokémon in battle.",0,4,0,
 1803,SLEEPDART,Sleep Dart,Sleep Darts,7,1000,"A handcrafted dart gun that sedates a Pokémon in battle.",0,4,0,
 1804,PARALYZDART,Paralysis Dart,Paralysis Darts,7,1000,"A handcrafted dart gun that stuns a Pokémon in battle.",0,4,0,
 1805,ICEDART,Ice Dart,Ice Darts Darts,7,1000,"A handcrafted dart gun that freezes a Pokémon in battle.",0,4,0,
 1806,FIREDART,Fire Dart,Fire Darts,7,1000,"A handcrafted dart gun that burns a Pokémon in battle.",0,4,0,
 1808,BAIT,Bait,Baits,7,1000,"A spongy, aromatic fungus that distracts Pokémon. Use it to flee from any battle with a wild Pokémon.",2,5,5,
+2036,SPEEDCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
+2037,DEFENDCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
+2038,BALANCEDCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
+2039,ATKCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
+2042,STONEAXE,Stone Axe,Stone Axe,1,50,"A basic axe used to knock down trees.",0,0,0,,51
+2043,SHOVEL,Stone Axe,Stone Axe,1,50,"A basic axe used to knock down trees.",0,0,0,,51
+2049,STONEHAMMER,Stone Hammer,Stone Hammers,1,50,"A Stone Hammer used for Mining.",0,0,0,
+2050,IRONHAMMER,Iron Hammer,Iron Hammers,1,50,"A Iron Hammer used for Mining.",0,0,0,
+#-------------------------------
+# Crafting Parts
+#-------------------------------
+2044,IRONPICKAXEHEAD,Iron Pickaxe Head,Iron Pickaxe Head,1,50,"An Iron Pickaxe head used for crafting a Pick.",0,0,0,
+2045,STONEPICKAXEHEAD,Stone Pickaxe Head,Stone Pickaxe Head,1,50,"A Stone Pickaxe head used for crafting a Pick.",0,0,0,
+2046,IRONAXEHEAD,Iron Axe Head,Iron Axe Head,1,50,"An Iron Axe head used for crafting an Axe.",0,0,0,
+2047,STONEAXEHEAD,Stone Axe Head,Stone Axe Head,1,50,"An Stone Axe head used for crafting an Axe.",0,0,0,
+2048,MACHINEBOX,Machine Box,Machine Box,1,50,"An Electronic Box used for Crafting Machines.",0,0,0,
+2051,IRONHAMMERHEAD,Iron Hammerhead,Iron Hammerhead,1,50,"A Hammerhead used for making a Hammer.",0,0,0,
+2052,STONEHAMMERHEAD,Stone Hammerhead,Stone Hammerhead,1,50,"A Hammerhead used for making a Hammer.",0,0,0,
+2053,MACHETEHEAD,Machetehead,Machetehead,1,50,"A Head for making a Machete.",0,0,0,
+
 #-------------------------------
 # Dolls
 #-------------------------------
@@ -1037,16 +1058,16 @@
 #-------------------------------
 
 1925,MEAT,Meat,Meat,2,200,"Uncooked Meat. Not that good to eat.",1,1,13,
-2017,BIRDMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2018,POISONOUSMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2019,ROCKYMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2020,BUGMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2021,STEELYMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2022,SUSHI, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2023,LEAFYMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2024,ICEYROCKS, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2025,DRAGONMEAT, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
-2026,EDIABLESCRYSTAL, Snow Cone, Snow Cones,9,100,"One of the Indigo Plateau's Snow Cones.",1,1,13,
+2017,BIRDMEAT, Bird Meat, Bird Meat,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2018,POISONOUSMEAT, Poisonous Meat, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2019,ROCKYMEAT, Rocky Meat, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2020,BUGMEAT, Bug Meat, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2021,STEELYMEAT, Steely Meat, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2022,SUSHI, Sushi, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2023,LEAFYMEAT, Leafy Meat, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2024,ICEYROCKS, Icey Rocks, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2025,DRAGONMEAT, Dragon Meat, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
+2026,EDIABLESCRYSTAL, Ediable Crystal, Snow Cones,9,100,"Uncooked Meat. Not that good to eat.",1,1,13,
 
 #-------------------------------
 # Food
@@ -1055,7 +1076,7 @@
 1946,COOKEDMEAT,Meat (Cooked),Meat (Cooked),9,2100,"Cooked Meat from a Pokemon. Good for you.",1,1,13,
 1947,SITRUSJUICE,Sitrus Juice,Sitrus Juice,9,2100,"Juice made of a mix of Sitrus Berries, Oran Berries, and pinch of Sugar. Very Refreshing",1,1,13,
 1948,BERRYMASH,Berry Mash,Berry Mash,9,2100,"A Mash made of a mixture of berries.",1,1,13,
-1711,WATERBOTTLE,Bottle,Bottles,1,0,"A Bottle, you can fill it with water at Fresh Water Sources.",1,0,0,
+1711,WATERBOTTLE,Bottle,Bottles,1,0,"A Bottle, you can fill it with water at Fresh Water Sources.",2,0,0,
 1999,HOTDOG,Hot Dog,Hot Dogs,9,100,"One of the Indigo Plateau's Hot Dogs.",1,1,13,
 2000,CORNDOG,Corn Dog, Corn Dogs,9,100,"One of the Indigo Plateau's Corn Dogs.",1,1,13,
 2001,FUNNELCAKE, Funnel Cake, Funnel Cakes,9,150,"One of the Indigo Plateau's Funnel Cakes.",1,1,13,
@@ -1097,3 +1118,4 @@
 1831,DEFCURRY,Belue Curry,Belue Curryy,1,500,"A Curry that increases your Toughness and Defense as long as you are on the field.",1,3,13,
 1832,CRITCURRY,Lansat Curry,Lansat Curryy,1,500,"A Curry that increases your Coolness and Critical Hit Ratio as long as you are on the field.",1,3,13,
 1833,GSCURRY,Starf Curry,Starf Curry,1,500,"A Curry that increases your Toughness and prevents Stat Reduction for 5 turns.",1,3,13,
+2040,LARGEMEAL,Hearty Meal,Hearty Meal,1,500,"A Meal that does wonders for your health.",1,3,13,

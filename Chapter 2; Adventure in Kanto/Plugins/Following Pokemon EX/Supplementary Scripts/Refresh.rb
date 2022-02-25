@@ -142,6 +142,10 @@ module Game
   def self.load_map(*args)
     __followingpkmn__load_map(*args)
     FollowingPkmn.refresh(false)
+    $game_map.refresh
+    $PokemonTemp.dependentEvents.updateDependentEvents
+    $PokemonTemp.dependentEvents.pbMoveDependentEvents
+	$game_map.refresh
   end
 end
 
@@ -169,6 +173,7 @@ class Scene_Map
       FollowingPkmn.toggle
       return
     end
+	$game_map.refresh
     return if !FollowingPkmn.active?
     FollowingPkmn.increase_time
     if defined?(FollowingPkmn::CYCLE_PARTY_KEY) && FollowingPkmn::CYCLE_PARTY_KEY &&
@@ -202,9 +207,6 @@ class Scene_Map
     $PokemonGlobal.dependentEvents.each_with_index do |_,i|
       event = $PokemonTemp.dependentEvents.realEvents[i]
       FollowingPkmn.refresh(false)
-	  if !GameData::MapMetadata.get($game_temp.player_new_map_id).outdoor_map
-      $game_screen.weather(:None, 0, 0)
-	  end
       if event.is_a?(Game_FollowerEvent)
         event.map = $game_map
 		$PokemonTemp.dependentEvents.pbMoveDependentEvents
@@ -269,7 +271,7 @@ Events.onMapChange += proc { |_sender,e|
 #-------------------------------------------------------------------------------
 # Refresh Following Pokemon after taking a step, when a refresh is queued
 #-------------------------------------------------------------------------------
-Events.onStepTaken += proc { |_sender, _e|
+Events.onStepTaken += proc { |_sender, _e|    
   if $PokemonGlobal.call_refresh[0]
     FollowingPkmn.refresh($PokemonGlobal.call_refresh[1])
     $PokemonGlobal.call_refresh = false

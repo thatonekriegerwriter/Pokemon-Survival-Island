@@ -13,17 +13,17 @@ module PkmnAR
 
 	# Old: feedAmie
 	def self.feed(pkmn, item)
-		return if pkmn.amie_fullness >= MAX_AMIE || pkmn.amie_stats(1) == 5
+		return if pkmn.food >= 100 || pkmn.amie_stats(1) == 5
 		return unless item.is_a?(Symbol)
 		return unless EAT.include?(item)
 		if GameData::Item.get(item).is_berry?
 			ber   = GameData::BerryPlant.get(item) ? GameData::BerryPlant.get(item).hours_per_stage : 3
 			aff   = ber + rand(4)
-			full  = 90
+			full  = ber
 			enjoy = 0
 		else
 			aff   = rand(4) + 3
-			full  = 90
+			full  = 100
 			enjoy = 0
 		end
 		$PokemonBag.pbDeleteItem(item)
@@ -78,10 +78,8 @@ module PkmnAR
 	end
 
 	def self.add_new_num_amie(pkmn, aff, full, enjoy)
-		pkmn.amie_affection += aff
-		pkmn.amie_affection  = MAX_AMIE if pkmn.amie_affection > 255
-		pkmn.amie_fullness  += full
-		pkmn.amie_fullness   = MAX_AMIE if pkmn.amie_fullness > 255
+		pkmn.happiness += aff
+		pkmn.happiness  = MAX_AMIE if pkmn.happiness > 255
 		pkmn.amie_enjoyment += enjoy
 		pkmn.amie_enjoyment  = MAX_AMIE if pkmn.amie_enjoyment > 255
 	end
@@ -90,13 +88,3 @@ end
 #-------------#
 # Count steps #
 #-------------#
-Events.onStepTaken += proc {
-	$Trainer.party.each { |pkmn|
-		if pkmn.hunger < PkmnAR::HUNGRY_STEP
-			pkmn.hunger += 1
-		else
-			PkmnAR.change_amie_stats(pkmn, :walk)
-			pkmn.hunger = 0
-		end
-	}
-}
