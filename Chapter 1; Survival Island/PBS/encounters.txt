@@ -2479,20 +2479,22 @@ Bait
 #-------------------------------
 [054] # Temperate Zone
 Comet
-    15,STARYU,5
     40,CLEFAIRY,5
-    20,MINIOR,5
-    20,SOLROCK,5
-    20,LUNATONE,5
-    20,ELGYEM,5
-    5,DEOXYS,5
-    2,KYUREM,5
-    20,STARMIE,5
+    20,BEHEEYEM,5
     20,CLEFABLE,5
     20,CLEFFA,5
-    20,BEHEEYEM,5
+    20,ELGYEM,5
+    20,LUNATONE,5
+    20,MINIOR,5
+    20,SOLROCK,5
+    20,STARMIE,5
+    15,STARYU,5
+    5,DEOXYS,5
+    2,KYUREM,5
     1,RESHIRAM,5
     1,ZEKROM,5
+Land,21
+    20,LEDYBA,5
 #-------------------------------
 [057] # Temperate Ocean
 OverworldLand,21
@@ -3077,8 +3079,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3116,8 +3118,8 @@ LandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3189,8 +3191,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3228,8 +3230,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3301,8 +3303,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3340,8 +3342,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3413,8 +3415,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3452,8 +3454,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3525,8 +3527,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3564,8 +3566,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3637,8 +3639,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3676,8 +3678,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3749,8 +3751,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3788,8 +3790,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3861,8 +3863,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3900,8 +3902,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -3973,8 +3975,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -4012,8 +4014,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -4085,8 +4087,8 @@ GoodRod
     20,DEWGONG,3,8
     20,PIPLUP,7,13
 OverworldLandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -4124,8 +4126,8 @@ OverworldLandNight,21
     1,GLACEON,5,24
     1,MAMOSWINE,7,12
 LandMorning,21
-    20,SNOM,5,15
     20,SNOM,5,10
+    20,SNOM,5,15
     10,AMAURA,5,11
     10,BERGMITE,5,11
     10,CUBCHOO,5,11
@@ -6025,8 +6027,8 @@ OldRod
     30,FEEBAS,7
 GoodRod
     60,DRATINI,5,15
-    20,DRATINI,7,13
     20,DRATINI,3,8
+    20,DRATINI,7,13
 Bait
     20,CATERPIE,5
     20,DEINO,5
