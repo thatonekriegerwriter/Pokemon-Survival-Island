@@ -132,17 +132,17 @@ hpev += 2
 elsif berry == :RAGECANDYBAR #chocolate
 saev += 2
 atev += 2
-pkmn.steps_to_hatch -= 10
+pkmn.steps_to_hatch -= 100
 pkmn.nature = :GREEDY if rand(255)==0 
 return true
 elsif berry == :SWEETHEART #chocolate
 hpev += 15
-pkmn.steps_to_hatch -= 10
+pkmn.steps_to_hatch -= 100
 pkmn.nature = :GREEDY if rand(255)==0 
  return true
 elsif berry == :SODAPOP
 sdev += 5
-pkmn.steps_to_hatch -= 7
+pkmn.steps_to_hatch -= 70
 pkmn.nature = :GREEDY if rand(255)==0 
 $PokemonBag.pbStoreItem(:WATERBOTTLE,1)
 Kernel.pbMessage(_INTL("You put the bottle in your Bag."))
@@ -255,39 +255,39 @@ end
 end
   elsif cmd==1
    Kernel.pbMessage(_INTL("It bounces happily! It likes pats."))
-   if pkmn.steps_to_hatch >= 75
-    pkmn.steps_to_hatch -= 3
+   if pkmn.steps_to_hatch >= 3000
+    pkmn.steps_to_hatch -= 100
     pkmn.happiness += 6
     pkmn.loyalty += 6
-   elsif pkmn.steps_to_hatch >= 50
-    pkmn.steps_to_hatch -= 1
+   elsif pkmn.steps_to_hatch >= 2000
+    pkmn.steps_to_hatch -= 75
     pkmn.happiness += 6
     pkmn.loyalty += 6
-   elsif pkmn.steps_to_hatch < 25
-    pkmn.steps_to_hatch -= 0
+   elsif pkmn.steps_to_hatch < 1000
+    pkmn.steps_to_hatch -= 50
     pkmn.happiness += 6
     pkmn.loyalty += 6
    end
    
    elsif cmd==2
    Kernel.pbMessage(_INTL("You shake it a little bit. It seems happy enough."))
-   if pkmn.steps_to_hatch >= 75
-    pkmn.steps_to_hatch -= 5
+   if pkmn.steps_to_hatch >= 3750
+    pkmn.steps_to_hatch -= 200
     pkmn.happiness += 2
     pkmn.loyalty -= 1
-   elsif pkmn.steps_to_hatch >= 50
-    pkmn.steps_to_hatch -= 1
+   elsif pkmn.steps_to_hatch >= 3000
+    pkmn.steps_to_hatch -= 150
     pkmn.happiness += 2
     pkmn.loyalty -= 1
-   elsif pkmn.steps_to_hatch >= 25
-    pkmn.steps_to_hatch -= 0
+   elsif pkmn.steps_to_hatch >= 2500
+    pkmn.steps_to_hatch -= 100
     pkmn.happiness += 2
     pkmn.loyalty -= 1
    end
 
    elsif cmd==3
     Kernel.pbMessage(_INTL("You throw the egg at the wall!"))
-    pkmn.steps_to_hatch -= 25
+    pkmn.steps_to_hatch -= 750
     pkmn.happiness -= 25
     pkmn.loyalty -= 50
     pkmn.nature = :HATEFUL if rand(255)<=25 
@@ -327,21 +327,22 @@ $PokemonBag.pbDeleteItem(berry,1)
 Kernel.pbMessage(_INTL("You give it {1}. ",GameData::Item.get(berry).name))
 #205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
 if berry == :STARPIECE
- pkmn.shiny = true if rand(255)>=20
+ pkmn.shiny = true if rand(255)<=20
  return true
 elsif berry == :BIGPEARL
  pkmn.ability_index = 2
  return true
 elsif berry == :COMETSHARD
- pkmn.iv[:HP] = 31 if rand(255)>=20
- pkmn.iv[:ATTACK] = 31 if rand(255)>=20
- pkmn.iv[:DEFENSE] = 31 if rand(255)>=20
- pkmn.iv[:SPECIAL_ATTACK] = 31 if rand(255)>=20
- pkmn.iv[:SPECIAL_DEFENSE] = 31 if rand(255)>=20
- pkmn.iv[:SPEED] = 31  if rand(255)>=20
+ pkmn.iv[:HP] = 31 if rand(255)<=50
+ pkmn.iv[:ATTACK] = 31 if rand(255)<=50
+ pkmn.iv[:DEFENSE] = 31 if rand(255)<=50
+ pkmn.iv[:SPECIAL_ATTACK] = 31 if rand(255)<=50
+ pkmn.iv[:SPECIAL_DEFENSE] = 31 if rand(255)<=50
+ pkmn.iv[:SPEED] = 31  if rand(255)<=50
  return true
 elsif berry == :PEARLSTRING
  pkmn.ability = :SPEEDBOOST if rand(255)>=20
+ pkmn.ability = :INTIMIDATE if rand(255)>=20
  pkmn.ability = :BATTLEARMOR if rand(255)>=20
  pkmn.ability = :ILLUMINATE if rand(255)>=20
  pkmn.ability = :EARLYBIRD if rand(255)>=20
