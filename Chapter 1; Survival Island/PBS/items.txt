@@ -837,6 +837,9 @@
 1869,SNATCHER,Snatcher,Snatcher,1,0,"A Machine designed to steal an item from a Pokemon.",0,0,0
 1943,NO, , ,1,00,"You shouldn't see this.",0,0,0,
 2014,SUSPO,Suspicious Drink,Suspicious Drink,2,0,"A Weird Drink. It's purpose is unknown.",1,1,0,
+2054,GOLDLEAF,Gold Leaf,Gold Leaves,1,5,"A strange, gold-colored leaf.",0,0,0,
+2055,SILVERLEAF,Silver Leaf,Silver Leaves,1,5,"A strange, silver-colored leaf.",0,0,0,
+2056,SHINYLEAF,Shiny Leaf,Shiny Leaves,1,5,"A strange, shiny leaf.",0,0,0,
 #-------------------------------
 # Pokeballs
 #-------------------------------
