@@ -105,6 +105,7 @@ end
 #-------------------------------------------------------------------------------
 alias pbLoadTrainer_ebdx pbLoadTrainer unless defined?(pbLoadTrainer_ebdx)
 def pbLoadTrainer(tr_type, tr_name, tr_version = 0)
+  pbTrainerSteal(tr_type)
   ret = pbLoadTrainer_ebdx(tr_type, tr_name, tr_version)
   ret.partyID = tr_version if ret
   # try to load the next battle speech

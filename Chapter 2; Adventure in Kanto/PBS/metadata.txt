@@ -2,11 +2,12 @@
 #-------------------------------
 [000]
 Home = 10,12,11,2
-WildBattleBGM = Normal Battle.ogg
-TrainerBattleBGM = 005-Boss01.mid
-WildVictoryME = 001-Victory01.mid
-TrainerVictoryME = 004-Victory04.mid
-BicycleBGM = Airship.mid
+WildBattleBGM = KM_VSWILD.ogg
+TrainerBattleBGM = KM_VSTRAINER.ogg
+WildVictoryME = Battle victory wild.ogg
+TrainerVictoryME = Battle victory trainer.ogg
+WildCaptureME = Battle capture success.ogg
+BicycleBGM = KM_Bicycle.ogg
 PlayerA = POKEMONTRAINER_Red,3M.png,0bike.png,xxx,3M.png,xxx,3MFish.png,3M.png
 PlayerB = POKEMONTRAINER_Leaf,4F.png,0bike.png,xxx,4F.png,xxx,4FFishing.png,4F.png
 PlayerC = POKEMONTRAINER_Hiro,2M.png,0bike.png,xxx,2M.png,xxx,2MFishing.png,2M.png

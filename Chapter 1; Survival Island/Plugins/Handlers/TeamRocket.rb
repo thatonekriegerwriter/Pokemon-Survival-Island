@@ -1,6 +1,11 @@
 def pbTrainerSteal(vari)
-  $Trainer.rocketstealing = GameData::TrainerType.get(vari).name
-end
+ vari = GameData::TrainerType.get(vari).name
+ if vari == "Lass" || vari == "Youngster" || vari == "Twins"
+  $Trainer.rocketstealing = 1 
+else 
+  $Trainer.rocketstealing = 0 
+  end
+  end
 
     
 module PokeBattle_BattleCommon
@@ -34,6 +39,14 @@ module PokeBattle_BattleCommon
     else
       pbDisplayBrief(_INTL("{1} threw a {2}!",pbPlayer.name,itemName))
     end
+	if $Trainer.rocketbadges == 1 && $Trainer.rocketstealing == 1 && $Trainer.rocketstealcount == 0
+         pbDisplay(_INTL("You are intimidating enough to Catch it!"))
+		 $Trainer.rocketstealcount = 1
+	else
+	if $Trainer.rocketstealcount == 1
+         pbDisplay(_INTL("You already caught a POKeMON this fight!"))
+      return
+	  end
     # Animation of opposing trainer blocking Poké Balls (unless it's a Snag Ball
     # at a Shadow Pokémon)
     if trainerBattle? && !(GameData::Item.get(ball).is_snag_ball? && battler.shadowPokemon?)
@@ -53,17 +66,7 @@ module PokeBattle_BattleCommon
       return
      end
     end
-	if $Trainer.rocketbadges == 1
-	  if $Trainer.rocketstealing == :LASS || $Trainer.rocketstealing == :YOUNGSTER || $Trainer.rocketstealing == :TWINS
-         pbDisplay(_INTL("You are intimidating enough to Catch it!"))
-		 $Trainer.rocketstealcount = 1
-	  end
-	end
-	if $Trainer.rocketstealcount == 1
-         pbDisplay(_INTL("You already caught a POKeMON this fight!"))
-      return
-	  end
-
+end
     #EDIT END 487
     #---------------------------------------------------------------------------
     # ZUD - Prevents capturing Raid Pokemon until defeated.
@@ -136,3 +139,15 @@ module PokeBattle_BattleCommon
     end
   end
 end
+
+
+def pbShadowMachine
+  pbChooseNonEggPokemon(1,3)
+ species = GameData::Species.get($game_variables[1]).id
+  evos = GameData::Species.get(species).get_evolutions
+  if evos.length > 0
+     
+  end
+end
+  
+  

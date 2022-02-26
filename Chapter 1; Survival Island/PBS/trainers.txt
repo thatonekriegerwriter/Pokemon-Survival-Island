@@ -1049,7 +1049,47 @@ Pokemon = BULBASAUR,10
 LoseText = "..."
 Pokemon = BULBASAUR,10
 #-------------------------------
-[LASS,NINA]
+[LASS,Nina]
 LoseText = "..."
 Pokemon = SMUJJ,2
 Pokemon = PICHU,10
+#-------------------------------
+[YOUNGSTER,Pen]
+LoseText = "..."
+Pokemon = RATTATA,2
+Pokemon = SMUJJ,2
+Pokemon = NIDORANfE,2
+#-------------------------------
+[YOUNGSTER,Nate]
+LoseText = "..."
+Pokemon = ABRA,3
+Pokemon = PIDGEY,2
+#-------------------------------
+[PICNICKER,Derek]
+LoseText = "..."
+Pokemon = CATERPIE,3
+Pokemon = EKANS,4
+#-------------------------------
+[HIKER,Nob]
+LoseText = "..."
+Pokemon = ZUBAT,3
+Pokemon = GEODUDE,3
+#-------------------------------
+[GAMBLER,Fuston]
+LoseText = "..."
+Pokemon = SLOWPOKE,3
+#-------------------------------
+[ROCKER,Derek]
+LoseText = "..."
+Pokemon = SNOM,3
+#-------------------------------
+[GAMBLER,Derek]
+LoseText = "..."
+Pokemon = LUNATONE,3
+Pokemon = SPHEAL,3
+#-------------------------------
+[GENTLEMAN,William]
+LoseText = "... darn..."
+Pokemon = HATTREM,20
+Pokemon = MEOWSTIC,20
+Pokemon = ESPEON,20

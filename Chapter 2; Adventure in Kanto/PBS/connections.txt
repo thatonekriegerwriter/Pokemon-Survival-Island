@@ -46,22 +46,6 @@
 12,West,0,79,East,0
 # Route 25 (95) - Route 10 (12)
 95,South,55,12,North,0
-# Route 10 (13) - Route 8 (69)
-13,West,26,69,East,0
-# Edge west (159) - Route 10 (13)
-159,East,0,13,West,1
-# Lavender Town (82) - Route 10 (13)
-82,North,0,13,South,0
-# Edge west (160) - Route 10 (13)
-160,East,0,13,West,55
-# Route 12 (14) - Route 8 (69)
-14,West,0,69,East,24
-# Route 12 (14) - Edge west (159)
-14,West,0,159,East,49
-# Lavender Town (82) - Route 12 (14)
-82,South,0,14,North,0
-# Edge west (160) - Route 12 (14)
-160,East,0,14,West,5
 # Route 12 (15) - Route 13 (84)
 15,South,0,84,North,48
 # Route 11 (16) - Route 12 (15)
@@ -86,6 +70,8 @@
 163,South,0,18,North,56
 # Route 15 (19) - Fuchsia City (87)
 19,West,0,87,East,0
+# Route 17 (41) - Route 18 (20)
+41,South,6,20,North,0
 # Route 18 (22) - Fuchsia City (87)
 22,East,0,87,West,0
 # Route 9 (79) - Cerulean City (23)
@@ -96,6 +82,8 @@
 43,East,0,23,West,9
 # Route 5 (48) - Cerulean City (23)
 48,North,1,23,South,0
+# House 1 (25) - Route 17 (41)
+25,South,0,41,North,0
 # Route 3 (31) - Route 4 (43)
 31,North,60,43,South,0
 # Edge west (152) - Route 3 (31)
@@ -124,12 +112,6 @@
 35,South,0,93,North,5
 # Edge west (152) - Route 4 (43)
 152,East,0,43,West,4
-# Edge west (159) - Route 8 (69)
-159,South,0,69,North,52
-# Lavender Town (82) - Route 8 (69)
-82,West,0,69,East,4
-# Edge west (160) - Route 8 (69)
-160,North,0,69,South,52
 # Vermilion North (77) - Vermilion City (78)
 77,South,0,78,North,11
 # Vermilion North (293) - Vermilion North (77)
@@ -148,10 +130,6 @@
 78,133,0,310,0,1
 # Route 25 (95) - Route 9 (79)
 95,South,0,79,North,17
-# Lavender Town (82) - Edge west (159)
-82,West,0,159,East,29
-# Edge west (160) - Lavender Town (82)
-160,East,0,82,West,25
 # Route 13 (84) - Route 14 (85)
 84,West,0,85,East,1
 # Edge north (162) - Route 13 (84)
@@ -210,7 +188,35 @@
 329,South,0,308,North,18
 # Grullo Gorge (329) - Grullo Gorge (330)
 329,South,0,330,North,68
-# Route 17 (41) - Route 18 (20)
-41,South,6,20,North,0
-# House 1 (25) - Route 17 (41)
-25,South,0,41,North,0
+# Route 10 (13) - Lavender Town (82)
+13,South,0,82,North,0
+# Route 8 (69) - Lavender Town (82)
+69,East,4,82,West,0
+# Route 12 (14) - Lavender Town (82)
+14,North,0,82,South,0
+# Edge west (159) - Lavender Town (82)
+159,East,29,82,West,0
+# Edge west (160) - Lavender Town (82)
+160,East,0,82,West,25
+# Lavender Town (312) - Lavender Town (82)
+312,West,0,82,East,0
+# Route 8 (69) - Route 10 (13)
+69,East,0,13,West,26
+# Edge west (159) - Route 10 (13)
+159,East,0,13,West,1
+# Edge west (160) - Route 10 (13)
+160,East,0,13,West,55
+# Lavender Town (312) - Route 10 (13)
+312,West,0,13,East,30
+# Route 12 (14) - Route 8 (69)
+14,West,0,69,East,24
+# Edge west (159) - Route 8 (69)
+159,South,0,69,North,52
+# Edge west (160) - Route 8 (69)
+160,North,0,69,South,52
+# Edge west (159) - Route 12 (14)
+159,East,49,14,West,0
+# Edge west (160) - Route 12 (14)
+160,East,0,14,West,5
+# Lavender Town (312) - Route 12 (14)
+312,West,20,14,East,0

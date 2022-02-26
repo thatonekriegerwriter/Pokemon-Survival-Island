@@ -316,7 +316,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [055]
-# 6
+# Player Cabin
 Outdoor = true
 #-------------------------------
 [056]
@@ -695,7 +695,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [146]
-# S.S Glittering Wreck
+# S.S Glittering
 Outdoor = true
 SnapEdges = true
 #-------------------------------
@@ -801,11 +801,11 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [172]
-# S.S Glittering Wreck
+# S.S Glittering
 Outdoor = true
 #-------------------------------
 [173]
-# S.S Glittering Wreck
+# S.S Glittering
 Outdoor = true
 #-------------------------------
 [174]
@@ -817,7 +817,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [176]
-# S.S Glittering Wreck
+# S.S Glittering
 Outdoor = true
 #-------------------------------
 [177]
@@ -827,9 +827,10 @@ Outdoor = true
 [178]
 # Cedar City
 Outdoor = true
+SnapEdges = true
 #-------------------------------
 [179]
-# MAP179
+# Lab
 Outdoor = true
 #-------------------------------
 [180]
@@ -837,48 +838,64 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [181]
+# PokéCenter
 Outdoor = true
 #-------------------------------
 [182]
+# Studio City
 Outdoor = true
+SnapEdges = true
 #-------------------------------
 [183]
+# Pokemon Trainers School
 Outdoor = true
 #-------------------------------
 [184]
+# House 1
 Outdoor = true
 #-------------------------------
 [185]
+# House 2
 Outdoor = true
 #-------------------------------
 [186]
+# House 3
 Outdoor = true
 #-------------------------------
 [187]
+# House 4
 Outdoor = true
 #-------------------------------
 [188]
+# Bike Shop
 Outdoor = true
 #-------------------------------
 [189]
+# Safari Zone Warden's House
 Outdoor = true
 #-------------------------------
 [190]
+# Museum
 Outdoor = true
 #-------------------------------
 [191]
+# PokéCenter
 Outdoor = true
 #-------------------------------
 [192]
+# Department Store 1F
 Outdoor = true
 #-------------------------------
 [193]
+# Department Store 2F
 Outdoor = true
 #-------------------------------
 [194]
+# Department Store 3F
 Outdoor = true
 #-------------------------------
 [195]
+# Department Store Rooftop
 Outdoor = true
 #-------------------------------
 [196]
@@ -961,9 +978,11 @@ BattleBack = Cave
 Outdoor = true
 #-------------------------------
 [215]
+# Department Store Elevator
 Outdoor = true
 #-------------------------------
 [216]
+# Apartment Complex
 Outdoor = true
 #-------------------------------
 [217]
@@ -976,12 +995,15 @@ BattleBack = Cave
 Outdoor = true
 #-------------------------------
 [219]
+# Player Room
 Outdoor = true
 #-------------------------------
 [220]
+# Apartment Complex
 Outdoor = true
 #-------------------------------
 [221]
+# Apartment Complex
 Outdoor = true
 #-------------------------------
 [222]

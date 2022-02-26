@@ -1,3 +1,0 @@
-Name         = HCS2
-Version      = God Knows
-Credits      = ferriswheel42
