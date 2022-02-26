@@ -1,4 +1,4 @@
-def pbeggtech(var,war)
+def pbeggtech(var,war,bar)
   berry=0
   pkmn = var
   hpiv = pkmn.iv[:HP] & 15
@@ -38,7 +38,7 @@ Kernel.pbMessage(_INTL("You give it {1}. ",GameData::Item.get(berry).name))
 #205 is Hunger, 207 is Saturation, 206 is Thirst, 208 is Sleep
 if berry == :ORANBERRY
 pkmn.happiness += 2
-var = pkmn
+ pkmn = var
  return true
 elsif berry == :LEPPABERRY
 pkmn.happiness += 4
@@ -294,8 +294,9 @@ end
 
    elsif cmd==6
      $Trainer.party[$Trainer.party.length] = pkmn
-     pkmn = 0
-	 war=false
+    Kernel.pbMessage(_INTL("{1}",war))
+	 $game_variables[bar] = 0
+	 $game_switches[war] = false
 
    elsif cmd==7
     return

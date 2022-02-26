@@ -840,6 +840,11 @@
 2054,GOLDLEAF,Gold Leaf,Gold Leaves,1,5,"A strange, gold-colored leaf.",0,0,0,
 2055,SILVERLEAF,Silver Leaf,Silver Leaves,1,5,"A strange, silver-colored leaf.",0,0,0,
 2056,SHINYLEAF,Shiny Leaf,Shiny Leaves,1,5,"A strange, shiny leaf.",0,0,0,
+2057,GRITDUST,Grit Dust,Grit Dusts,2,0,"A Mysterious dust that can raise the effort value for one of a Pokémon’s stats.",1,0,0,
+2058,GRITGRAVEL,Grit Gravel,Grit Gravels,2,0,"A Mysterious gravel that can raise the effort value for two of a Pokémon’s stats.",1,0,0,
+2059,GRITPEBBLE,Grit Pebble,Grit Pebbles,2,0,"A Mysterious pebble that can raise the effort value for four of a Pokémon’s stats.",1,0,0,
+2060,GRITROCK,Grit Rock,Grit Rocks,2,0,"A Mysterious rock that can raise the effort value for six of a Pokémon’s stats.",1,0,0,
+
 #-------------------------------
 # Pokeballs
 #-------------------------------

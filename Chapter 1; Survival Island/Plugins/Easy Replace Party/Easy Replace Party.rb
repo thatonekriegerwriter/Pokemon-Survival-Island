@@ -86,7 +86,7 @@ maps=[1]
   end
   pkmn.record_first_moves
     if pbInSafari? && !maps.include?($game_map.map_id)
-   if pbDisplayConfirm(_INTL("Would you like send the POKeMON to the PC?",pkmn.name))
+   if pbConfirmMessage(_INTL("Would you like send the POKeMON to the PC?"))
      currentBox = @peer.pbCurrentBox
      storedBox  = @peer.pbStorePokemon(pbPlayer,pkmn)
     # Messages saying the Pokémon was stored in a PC box
