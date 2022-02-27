@@ -590,7 +590,7 @@ Outdoor = true
 #-------------------------------
 [117]
 # Game Corner
-Outdoor = true
+Outdoor = false
 #-------------------------------
 [118]
 # Hotel
@@ -1422,6 +1422,30 @@ Outdoor = false
 Dungeon = true
 BattleBack = Cave
 #-------------------------------
+[323]
+# Police Station
+Outdoor = false
+#-------------------------------
+[324]
+# House 1
+Outdoor = false
+#-------------------------------
+[325]
+# House 1
+Outdoor = false
+#-------------------------------
+[326]
+# R Building F1
+Outdoor = false
+#-------------------------------
+[327]
+# Mayors Office
+Outdoor = false
+#-------------------------------
+[328]
+# Bike Shop
+Outdoor = false
+#-------------------------------
 [333]
 # R Building F2
 Outdoor = false
@@ -1452,6 +1476,10 @@ Outdoor = true
 [339]
 # Olivine City
 Outdoor = true
+#-------------------------------
+[340]
+# R Building F4
+Outdoor = false
 #-------------------------------
 [341]
 # New Bark Town
@@ -1528,3 +1556,11 @@ Outdoor = true
 [357]
 # Route 35
 Outdoor = true
+#-------------------------------
+[358]
+# R Building F5
+Outdoor = false
+#-------------------------------
+[362]
+# R Elevator
+Outdoor = false
