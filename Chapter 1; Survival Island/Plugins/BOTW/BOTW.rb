@@ -130,12 +130,12 @@ class Scene_Map
 end
 
 
-def itemAnim(item,qty)
+def itemAnim(item,qty=1)
   bitmap = Bitmap.new("Graphics/Pictures/Object")
   pbSetSystemFont(bitmap)
   base = Color.new(248,248,248)
   shadow = Color.new(72,80,88)
-  item= GameData::Item.get(item).id
+ 
   if qty > 1
     textpos = [[_INTL("{1} x{2}",item.name_plural,qty),5,15,false,base,shadow]]
   else
@@ -143,6 +143,24 @@ def itemAnim(item,qty)
   end
   pbDrawTextPositions(bitmap,textpos)
   bitmap.blt(274,5,Bitmap.new(GameData::Item.icon_filename(item.id)),Rect.new(0,0,48,48))
+  pbSEPlay(ITEMGETSE)
+  $scene.addSprite(-bitmap.width,200,bitmap)
+end
+
+def pkmnAnim(pkmn,party=false)
+  bitmap = Bitmap.new("Graphics/Pictures/Object")
+  pbSetSystemFont(bitmap)
+  base = Color.new(248,248,248)
+  shadow = Color.new(72,80,88)
+  imgpos = [
+    [GameData::Species.icon_filename_from_pokemon(pkmn),256,-4,0,0,64,64]
+  ]
+  if pkmn.shiny?
+    imgpos.push(["Graphics/Pictures/shiny",256+48,32])
+  end
+  pbDrawImagePositions(bitmap,imgpos)
+  textpos = [[pkmn.speciesName,5,15,false,base,shadow]]
+  pbDrawTextPositions(bitmap,textpos)
   pbSEPlay(ITEMGETSE)
   $scene.addSprite(-bitmap.width,200,bitmap)
 end
@@ -201,5 +219,3 @@ def pbPickBerry(berry,qty=1)
     pbSetSelfSwitch(thisEvent.id,"A",true)
   end
 end
-
- 

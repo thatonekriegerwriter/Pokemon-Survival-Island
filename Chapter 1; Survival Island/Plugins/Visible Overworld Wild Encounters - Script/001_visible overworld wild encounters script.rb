@@ -347,7 +347,7 @@ end
 # new method pbSpawnOnStepTaken working almost like pbBattleOnStepTaken
 #===============================================================================
 def pbSpawnOnStepTaken(repel_active)
-  return if $Trainer.able_pokemon_count == 0 #check if trainer has pokemon
+#  return if $Trainer.able_pokemon_count == 0 #check if trainer has pokemon
   #First we decide if there are too many PokeEvents encounters in current map
   pos = pbChooseTileOnStepTaken
   return if !pos
@@ -610,6 +610,7 @@ class Game_Map
     event.y = y
     #--- Graphic of the event -----------------------------------------
     encounter = [pokemon.species,pokemon.level]
+    event.name = "vanishingEncounter"
     form = pokemon.form
     gender = pokemon.gender
     shiny = pokemon.shiny?
@@ -659,6 +660,11 @@ class Game_Map
     Compiler::push_script(event.pages[0].list,sprintf(parameter))
     parameter = ($PokemonTemp.encounterType!=nil) ? " $PokemonTemp.encounterType = :"+$PokemonTemp.encounterType.to_s : " $PokemonTemp.encounterType = nil "
     Compiler::push_script(event.pages[0].list,sprintf(parameter))
+	if $Trainer.party.length==0
+    parameter = "pbPokemonAttacks"
+    Compiler::push_script(event.pages[0].list,sprintf(parameter))
+	else
+	if rand(2)==0
     #  - add a branch to check if player can battle water pokemon from ground
     Compiler::push_branch(event.pages[0].list,sprintf(" pbCheckBattleAllowed()"))
     #  - set $PokemonGlobal.battlingSpawnedPokemon = true
@@ -686,6 +692,38 @@ class Game_Map
       parameter = "$MapFactory.getMap("+mapId.to_s+").removeThisEventfromMap(#{key_id})"
     end
     Compiler::push_script(event.pages[0].list,sprintf(parameter),1)
+	else
+    parameter = "pbPokemonAttacks"
+    Compiler::push_script(event.pages[0].list,sprintf(parameter))
+    #  - add a branch to check if player can battle water pokemon from ground
+    Compiler::push_branch(event.pages[0].list,sprintf(" pbCheckBattleAllowed()"))
+    #  - set $PokemonGlobal.battlingSpawnedPokemon = true
+    Compiler::push_script(event.pages[0].list,sprintf(" $PokemonGlobal.battlingSpawnedPokemon = true",1))    
+    #  - add method pbSingleOrDoubleWildBattle for the battle
+    if !$MapFactory
+      parameter = " pbSingleOrDoubleWildBattle( $game_map.events[#{key_id}].map.map_id, $game_map.events[#{key_id}].x, $game_map.events[#{key_id}].y, $game_map.events[#{key_id}].pokemon )"
+    else
+      mapId = $game_map.map_id
+      parameter = " pbSingleOrDoubleWildBattle( $MapFactory.getMap("+mapId.to_s+").events[#{key_id}].map.map_id, $MapFactory.getMap("+mapId.to_s+").events[#{key_id}].x, $MapFactory.getMap("+mapId.to_s+").events[#{key_id}].y, $MapFactory.getMap("+mapId.to_s+").events[#{key_id}].pokemon )"
+    end
+    Compiler::push_script(event.pages[0].list,sprintf(parameter),1)
+    #   - set $PokemonGlobal.battlingSpawnedPokemon = false
+    Compiler::push_script(event.pages[0].list,sprintf(" $PokemonGlobal.battlingSpawnedPokemon = false"),1) 
+    #  - add the end of branch
+    Compiler::push_branch_end(event.pages[0].list,1)
+    #  - add a method to reset temporary data to previous state, must include
+    #    $PokemonGlobal.roamEncounter, $PokemonTemp.roamerIndex, $PokemonGlobal.nextBattleBGM, $PokemonTemp.forceSingleBattle, $PokemonTemp.encounterType
+    Compiler::push_script(event.pages[0].list,sprintf(" pbResetTempAfterBattle()"))
+    #  - add method to remove this PokeEvent from map
+    if !$MapFactory
+      parameter = "$game_map.removeThisEventfromMap(#{key_id})"
+    else
+      mapId = $game_map.map_id
+      parameter = "$MapFactory.getMap("+mapId.to_s+").removeThisEventfromMap(#{key_id})"
+    end
+    Compiler::push_script(event.pages[0].list,sprintf(parameter),1)
+	end
+    end
     #  - finally push end command
     Compiler::push_end(event.pages[0].list)
     #--- creating and adding the Game_PokeEvent ------------------------------------
@@ -870,7 +908,7 @@ class Game_PokeEvent < Game_Event
   
   alias original_increase_steps increase_steps
   def increase_steps
-    if @remaining_steps <= 0 # && self.name=="vanishingEncounter"
+    if @remaining_steps <= 0  && self.name=="vanishingEncounter"
       removeThisEventfromMap
     else
       @remaining_steps-=1

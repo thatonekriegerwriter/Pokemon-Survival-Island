@@ -136,6 +136,13 @@ class Array
     return self.size == 0
   end
   
+  def uemptyc?
+    return true if self.size != 0
+  end
+  def emptyc?
+    return true if self.size == 0
+  end
+  
   # Shuffles the order of the array
   def shuffle
     indexes = []

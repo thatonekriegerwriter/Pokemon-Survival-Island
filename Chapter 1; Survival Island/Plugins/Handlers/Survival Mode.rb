@@ -272,6 +272,10 @@ end
 
 }
 
+def pbPokemonAttacks
+    Kernel.pbMessage(_INTL("The Pokemon attacks you!."))
+	$Trainer.playerhealth-=rand(20)
+end
 
 def pbSleepRestore
  $Trainer.playerstamina = $Trainer.playermaxstamina

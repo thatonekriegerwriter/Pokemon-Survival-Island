@@ -7,12 +7,8 @@
     "ShowChangelogOnUpdate": true,
     "PluginLoadMethod": 1,
     "RecentlyLoaded": [
-      "C:\\Users\\Owner\\Documents\\GitHub\\Pokemon-Survival-Island-v19\\Other\\Crystal Clear Mons\\Crystal_Clear(2).sav",
-      "",
-      "C:\\Users\\Owner\\Documents\\GitHub\\Pokemon-Survival-Island-v19\\Other\\Crystal Clear Mons\\Crystal_Clear(1).sav",
-      "C:\\Users\\dalyn\\Desktop\\SI\\Pokemon-Survival-Island-v19\\Other\\Crystal Clear Mons\\Crystal_Clear(2).sav",
       "C:\\Users\\dalyn\\Desktop\\SI\\Pokemon-Survival-Island-v19\\Other\\Crystal Clear Mons\\Crystal_Clear(1).sav",
-      "C:\\Users\\dalyn\\Desktop\\SI\\Pokemon-Survival-Island-v19\\Other\\Crystal Clear Mons\\Crystal_Clear_-_Copy.sav"
+      ""
     ],
     "Language": "en",
     "DefaultSaveVersion": 47
@@ -79,7 +75,7 @@
     "GlowFinal": "LightSkyBlue",
     "InvalidSelection": "DarkSalmon",
     "MarkDefault": "Black",
-    "MarkBlue": "DeepSkyBlue",
+    "MarkBlue": "0, 191, 255",
     "MarkPink": "255, 117, 179",
     "Male": "Blue",
     "Female": "Red",

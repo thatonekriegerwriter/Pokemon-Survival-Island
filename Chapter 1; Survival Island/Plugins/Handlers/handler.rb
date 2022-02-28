@@ -1151,3 +1151,26 @@ end
 
 
 
+
+class Game_Map
+  def spawnCraftingEvent(x,y)
+    #--- generating a new event ---------------------------------------
+    event = RPG::Event.new(x,y)
+    #--- nessassary properties ----------------------------------------
+    key_id = (@events.keys.max || -1) + 1
+    event.id = key_id
+    event.x = x
+    event.y = y
+    fname = ("Graphics/Characters/Object ball.png")
+    event.pages[0].graphic.character_name = fname
+    parameter = "pbCommonEvent(20)"
+    Compiler::push_script(event.pages[0].list,sprintf(parameter))
+    #  - finally push end command
+    Compiler::push_end(event.pages[0].list)
+    #--- creating and adding the Game_PokeEvent ------------------------------------
+    gameEvent = Game_Event.new(@map_id, event, self)
+    gameEvent.id = key_id
+  
+    @events[key_id] = gameEvent
+  end
+end
