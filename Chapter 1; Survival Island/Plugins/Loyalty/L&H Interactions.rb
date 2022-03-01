@@ -5237,6 +5237,12 @@ else
         raise _INTL("Unknown happiness-changing method: {1}", method.to_s)
     end
 end
+    if gain > 0
+      gain += 1 if @obtain_map == $game_map.map_id
+      gain += 1 if @poke_ball == :LUXURYBALL
+      gain = (gain * 1.5).floor if hasItem?(:SOOTHEBELL)
+      gain = (gain*2).floor  if $game_variables[50]==4
+    end
     @loyalty = (@loyalty + gain + base).clamp(0, 255)
   end
   
