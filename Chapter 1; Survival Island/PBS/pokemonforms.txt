@@ -2678,7 +2678,7 @@ Type2 = FAIRY
 BaseStats = 95,100,67,83,150,95
 Abilities = FLAMEBODY,COMPETITIVE
 Moves = 1,DISARMINGVOICE,1,SMOG,1,LEER,1,EMBER,1,SMOKESCREEN,5,EMBER,8,MOONLIGHT,11,SMOKESCREEN,12,DAZZLINGGLEAM,15,FIRESPIN,19,CLEARSMOG,22,FLAMEBURST,26,CONFUSERAY,29,FIREPUNCH,36,PLAYROUGH,40,LAVAPLUME,42,SUNNYDAY,49,FLAMETHROWER,55,FIREBLAST,62,HYPERBEAM
-Pokedex = This Magmortar has become full of fairy energy, and has become a fairy type.
+Pokedex = This Magmortar seemed to be a fairy type alongside fire, I wonder why it was surrounded by Carkoals.
 #-------------------------------
 [MAGIKARP,1]
 FormName = DarkFish
