@@ -109,7 +109,16 @@ if $game_switches[418]==true
 end  
 }
 
-
+Events.onStepTaken += proc { |_sender,_e|
+  if $game_switches[96]==true
+    $game_variables[4993]-=1
+	if $game_map.terrain_tag($game_player.x, $game_player.y).w_current && $game_variables[4993]!=-1
+	 #:3
+	else
+	 $game_variables[4993]=2
+	end
+  end
+}
 
 
 Events.onTrainerPartyLoad += proc { |_sender, trainer|

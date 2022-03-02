@@ -77,6 +77,7 @@ end
 def pbWaterCurrent
 	return if pbMapInterpreterRunning?
 	return unless $PokemonGlobal.surfing && !$game_player.moving?
+	return if $game_variables[4993]!=0
 	terrain = $game_map.terrain_tag($game_player.x,$game_player.y)
 	m = 0 if !m
 	if terrain.current_left

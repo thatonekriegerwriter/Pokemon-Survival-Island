@@ -844,6 +844,7 @@
 2058,GRITGRAVEL,Grit Gravel,Grit Gravels,2,0,"A Mysterious gravel that can raise the effort value for two of a Pokémon’s stats.",1,0,0,
 2059,GRITPEBBLE,Grit Pebble,Grit Pebbles,2,0,"A Mysterious pebble that can raise the effort value for four of a Pokémon’s stats.",1,0,0,
 2060,GRITROCK,Grit Rock,Grit Rocks,2,0,"A Mysterious rock that can raise the effort value for six of a Pokémon’s stats.",1,0,0,
+2061,TUMBLESTONE,Tumblestone,Tumblestones,1,100,"A type of special stone that can be used to craft things.",0,0,0
 
 #-------------------------------
 # Pokeballs
