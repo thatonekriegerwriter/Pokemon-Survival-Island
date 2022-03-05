@@ -36,7 +36,7 @@ class PokeBattle_Battler
     disobedient |= !pbHyperModeObedience(choice[2])
     return true if !disobedient
     # Pokémon is disobedient; make it do something else
-    return pbDisobey(choice,badgeLevel)
+#    return pbDisobey(choice,badgeLevel)
   end
 
 
@@ -50,7 +50,7 @@ class PokeBattle_Battler
       return false
     end
     c = @level-badgeLevel
-    r = @battle.pbRandom(256)
+    r = @battle.pbRandom(90)
     # Fall asleep
     if r <= 10  && pbCanSleep?(self,false)
       pbSleepSelf(_INTL("{1} began to nap!",pbThis))
@@ -62,18 +62,26 @@ class PokeBattle_Battler
       return false
     end
     #EDIT
-    if r <= 10 && @status != :SLEEP
+    if r <= 20 && r >= 10 && @status != :SLEEP && @pokemon.happiness <= 149
       @battle.pbDisplay(_INTL("{1} turned around and attacked you!",pbThis))
       $game_variables[225] -= 5
       return false 
     end
-    if r <= 10 && @status != :SLEEP
+    if r <= 20 && r >= 10 && @status != :SLEEP && @pokemon.happiness >= 199
+      @battle.pbDisplay(_INTL("{1} wants to play!",pbThis))
+      return false 
+    end
+    if r <= 30 && r >= 20 && @status != :SLEEP && @pokemon.happiness <= 50
       @battle.pbDisplay(_INTL("{1} turned around rushed you down, hurting you!",pbThis))
       $game_variables[225] -= 15
       return false 
     end
+    if r <= 30 && r >= 20 && @status != :SLEEP && @pokemon.happiness >= 200
+      @battle.pbDisplay(_INTL("{1} wants you to praise it before it does anything!",pbThis))
+      return false 
+    end
     # Use another move
-    if r <= 10 && @status != :SLEEP
+    if (r <= 40 && r >= 30 && @status != :SLEEP) || (r <= 40 && r >= 30 && @status != :SLEEP  && @pokemon.happiness >= 199)
       @battle.pbDisplay(_INTL("{1} ignored orders!",pbThis))
       return false if !@battle.pbCanShowFightMenu?(@index)
       otherMoves = []
@@ -130,7 +138,7 @@ end
         BattleHandlers.triggerPriorityBracketUseAbility(b.ability,b,self)
       elsif b.effects[PBEffects::PriorityItem] && b.itemActive?
         BattleHandlers.triggerPriorityBracketUseItem(b.item,b,self)
-      elsif battler.happiness >=0
+      elsif battler.happiness >=200
         BattleHandlers.triggerPriorityBracketHappy(b,self)
       end
     end
@@ -155,7 +163,7 @@ end
         BattleHandlers.triggerPriorityBracketUseAbility(b.ability,b,self)
       elsif b.effects[PBEffects::PriorityItem] && b.itemActive?
         BattleHandlers.triggerPriorityBracketUseItem(b.item,b,self)
-      elsif battler.happiness >=0
+      elsif battler.happiness >=200
         BattleHandlers.triggerPriorityBracketHappy(b,self)
       end
     end
@@ -194,7 +202,7 @@ end
     elsif target.damageState.focusBand
       @battle.pbCommonAnimation("UseItem",target)
       @battle.pbDisplay(_INTL("{1} hung on using its Focus Band!",target.pbThis))
-    elsif target.damageState.happiness && target.happiness>=149 
+    elsif target.happiness>=149 
       @battle.pbCommonAnimation("UseItem",target)
       @battle.pbDisplay(_INTL("{1} endured the hit for its trainer!",target.pbThis))
     end
@@ -269,7 +277,7 @@ end
       end
         # Lose money from losing a battle
         #EDIT
-        $game_variables[225] += rand(30)
+        $Trainer.playerhealth += rand(30)
         pbLoseMoney
         pbDisplayPaused(_INTL("You blacked out!")) if !@canLose
       elsif @decision==2
