@@ -237,8 +237,11 @@ if UnrealTime::ENABLED
        if deposited==2 && $PokemonGlobal.daycareEgg==0
         $PokemonGlobal.daycareEggSteps = 0 if !$PokemonGlobal.daycareEggSteps
         $PokemonGlobal.daycareEggSteps += 1
-        pbchangeStamina
 	   end
+	   if $Trainer.playerhealth < 1 && $PokemonSystem.survivalmode == 0
+           pbStartOver
+       end 
+        pbchangeStamina
       self.newFrameCount+=1
     end
     

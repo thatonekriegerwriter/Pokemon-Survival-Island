@@ -176,9 +176,7 @@ end
    $game_screen.weather(:None, 0, 0)
   end
 
-if $Trainer.playerhealth < 1 && $PokemonSystem.survivalmode == 0
-  pbStartOver
- end 
+
 }
 
 Events.onMapChanging  += proc {
