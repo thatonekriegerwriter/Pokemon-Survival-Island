@@ -130,35 +130,12 @@ $game_switches[70]=true
  end
 
 if rand(255)==1
- if $Trainer.pokemonCount==6
-  $Trainer.party[0].changeWater
-  $Trainer.party[1].changeWater
-  $Trainer.party[2].changeWater
-  $Trainer.party[3].changeWater
-  $Trainer.party[4].changeWater
-  $Trainer.party[5].changeWater
- elsif $Trainer.pokemonCount==5
-  $Trainer.party[0].changeWater
-  $Trainer.party[1].changeWater
-  $Trainer.party[2].changeWater
-  $Trainer.party[3].changeWater
-  $Trainer.party[4].changeWater
- elsif $Trainer.pokemonCount==4
-  $Trainer.party[0].changeWater
-  $Trainer.party[1].changeWater
-  $Trainer.party[2].changeWater
-  $Trainer.party[3].changeWater
- elsif $Trainer.pokemonCount==3
-  $Trainer.party[0].changeWater
-  $Trainer.party[1].changeWater
-  $Trainer.party[2].changeWater
- elsif $Trainer.pokemonCount==2
-  $Trainer.party[0].changeWater
-  $Trainer.party[1].changeWater
- elsif $Trainer.pokemonCount==1
-  $Trainer.party[0].changeWater
- end
+ $Trainer.pokemon_party.each do |pkmn|
+  pkmn.changeWater
 end
+ end
+ 
+
 
 if $game_switches[75]==true && $PokemonSystem.survivalmode = 1 && $PokemonSystem.nuzlockemode = 1 && ($game_variables[30]=0 || $game_variables[30]=1)
    $game_variables[30]=2
@@ -269,6 +246,11 @@ end
 end
 
 }
+
+
+
+
+
 
 def pbPokemonAttacks
     Kernel.pbMessage(_INTL("The Pokemon attacks you!."))

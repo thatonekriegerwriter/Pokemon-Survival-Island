@@ -299,6 +299,7 @@ class PokemonBoxSprite < SpriteWrapper
     @refreshBox = true
     @refreshSprites = true
     @pokemonsprites = []
+	
     for i in 0...PokemonBox::BOX_SIZE
       @pokemonsprites[i] = nil
       pokemon = @storage[boxnumber,i]
@@ -1835,6 +1836,16 @@ class PokemonStorageScreen
       @scene.pbRefresh
       pbDisplay(_INTL("{1} was released.",pkmnname))
       pbDisplay(_INTL("Bye-bye, {1}!",pkmnname))
+      if rand(4)==0
+        item = $PokemonBag.pbStoreItem(:GRITDUST,1)
+      elsif rand(4)==1
+        item = $PokemonBag.pbStoreItem(:GRITGRAVEL,1)
+      elsif rand(4)==2
+        item = $PokemonBag.pbStoreItem(:GRITPEBBLE,1)
+      elsif rand(4)==3
+        item = $PokemonBag.pbStoreItem(:GRITPEBBLE,1)
+      end
+        pbDisplay(_INTL("OH! {1} seems to have left you a {2}",pkmnname,item))
       @scene.pbRefresh
     end
     return
