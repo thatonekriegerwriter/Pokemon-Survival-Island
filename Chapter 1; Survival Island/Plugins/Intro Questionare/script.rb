@@ -270,7 +270,7 @@ def pbIntroQuestionare
 	     $game_variables[50]=2
 	  elsif $Trainer.playerphysical > $Trainer.playerintelligence && $Trainer.playeremotional < 10  #Assassin
 	     $game_variables[50]=3
-	  elsif $Trainer.playerphysical =< $Trainer.playerintelligence && $Trainer.playeremotional < 10 #Monk
+	  elsif $Trainer.playerphysical <= $Trainer.playerintelligence && $Trainer.playeremotional < 10 #Monk
 	     $game_variables[50]=4
 	  elsif $Trainer.playerintelligence > $Trainer.playeremotional &&  $Trainer.playerphysical < 10#Alchemist
 	     $game_variables[50]=5

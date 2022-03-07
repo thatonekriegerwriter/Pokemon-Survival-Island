@@ -363,7 +363,6 @@ Weather = Rain,20
 BattleBack = Forest
 #-------------------------------
 [065]
-# Temperate Zone Bottom
 Outdoor = true
 Weather = Rain,20
 BattleBack = Forest
@@ -1007,9 +1006,11 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [222]
+# 1
 Outdoor = true
 #-------------------------------
 [223]
+# Office 2012
 Outdoor = true
 #-------------------------------
 [224]
@@ -1306,7 +1307,6 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [299]
-# Temperate Zone Top
 Outdoor = true
 #-------------------------------
 [300]
@@ -1318,19 +1318,16 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [303]
-# Xatu Home
 Outdoor = true
 #-------------------------------
 [304]
-# Xatu Home
 Outdoor = true
 #-------------------------------
 [305]
-# Xatu Home
 Outdoor = true
 #-------------------------------
 [306]
-# Xatu Home
+# MAP306
 Outdoor = true
 #-------------------------------
 [307]
