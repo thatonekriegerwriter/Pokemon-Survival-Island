@@ -133,7 +133,13 @@ if rand(255)==1
  $Trainer.pokemon_party.each do |pkmn|
   pkmn.changeWater
 end
- end
+end
+
+$Trainer.pokemon_party.each do |pkmn|
+  if pkmn.sleep == 120
+    pbRemovePokemonAt(pkmn)
+  end
+end
  
 
 
@@ -161,7 +167,10 @@ Events.onMapChanging  += proc {
 #------------------------------------------------------------------------------#
 #--------------------------Temperature                 ------------------------#
 #------------------------------------------------------------------------------#
-
+  pbEachPokemon { |poke,_box|
+	  poke.changeHappiness("neglected",poke)
+	  poke.changeLoyalty("neglected",poke)
+  }
 
   if !GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:None, 0, 0)

@@ -117,7 +117,12 @@ Events.onStepTaken += proc {
     end
     $PokemonGlobal.loyaltySteps = 0
   end
-}
+
+  
+ 
+
+
+  }
 
 
 class HappinessHandlerHash < HandlerHash2
