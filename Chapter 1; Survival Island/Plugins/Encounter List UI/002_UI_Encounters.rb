@@ -588,57 +588,56 @@ class EncounterList_Scene
 	  return @moveA = :RAPIDSPIN if pkmn== :WARTORTLE 
 	  return @moveA = :WRAP if pkmn== :INKAY 
 	  return @moveA = :BUBBLEBEAM if pkmn== :SEISMITOAD
-	  return @moveA = :BUBBLEBEAM if pkmn== :VAPOREON
-	  return @moveA = :BUBBLEBEAM if pkmn== :POPPLIO
-	  return @moveA = :BUBBLEBEAM if pkmn== :MAGIKARP
-	  return @moveA = :BUBBLEBEAM if pkmn== :FEEBAS
-	  return @moveA = :BUBBLEBEAM if pkmn== :POLIWAG
-	  return @moveA = :BUBBLEBEAM if pkmn== :PSYDUCK
-	  return @moveA = :BUBBLEBEAM if pkmn== :HOPPIP
-	  return @moveA = :BUBBLEBEAM if pkmn== :SUNKERN
-	  return @moveA = :BUBBLEBEAM if pkmn== :GROWLITHE
-	  return @moveA = :BUBBLEBEAM if pkmn== :ROSELIA
-	  return @moveA = :BUBBLEBEAM if pkmn== :SENTRET
-	  return @moveA = :BUBBLEBEAM if pkmn== :ODDISH
-	  return @moveA = :BUBBLEBEAM if pkmn== :TAILLOW
-	  return @moveA = :BUBBLEBEAM if pkmn== :PHANPY
-	  return @moveA = :BUBBLEBEAM if pkmn== :CYNDAQUIL
-	  return @moveA = :BUBBLEBEAM if pkmn== :FARFETCHD
-	  return @moveA = :BUBBLEBEAM if pkmn== :NIDORANfE
-	  return @moveA = :BUBBLEBEAM if pkmn== :NIDORANmA
-	  return @moveA = :BUBBLEBEAM if pkmn== :FURRET
-	  return @moveA = :BUBBLEBEAM if pkmn== :PIDGEY
-	  return @moveA = :BUBBLEBEAM if pkmn== :SANDSHREW
-	  return @moveA = :BUBBLEBEAM if pkmn== :VULPIX
-	  return @moveA = :BUBBLEBEAM if pkmn== :BEEDRILL
-	  return @moveA = :BUBBLEBEAM if pkmn== :PHANPY
-	  return @moveA = :BUBBLEBEAM if pkmn== :TORCHIC
-	  return @moveA = :BUBBLEBEAM if pkmn== :MINUN
-	  return @moveA = :BUBBLEBEAM if pkmn== :PLUSLE
-	  return @moveA = :BUBBLEBEAM if pkmn== :EKANS
-	  return @moveA = :BUBBLEBEAM if pkmn== :MAREEP
-	  return @moveA = :BUBBLEBEAM if pkmn== :POOCHYENA
-	  return @moveA = :BUBBLEBEAM if pkmn== :DROWZEE
-	  return @moveA = :BUBBLEBEAM if pkmn== :HYPNO
-	  return @moveA = :BUBBLEBEAM if pkmn== :BLITZLE
-	  return @moveA = :BUBBLEBEAM if pkmn== :EEVEE
-	  return @moveA = :BUBBLEBEAM if pkmn== :ELECTRIKE
-	  return @moveA = :BUBBLEBEAM if pkmn== :PIKACHU
-	  return @moveA = :BUBBLEBEAM if pkmn== :RALTS
-	  return @moveA = :BUBBLEBEAM if pkmn== :FALINKS
-	  return @moveA = :BUBBLEBEAM if pkmn== :YAMPER
-	  return @moveA = :BUBBLEBEAM if pkmn== :OBSTAGOON
-	  return @moveA = :BUBBLEBEAM if pkmn== :RAICHU
-	  return @moveA = :BUBBLEBEAM if pkmn== :RATTATA
-	  return @moveA = :BUBBLEBEAM if pkmn== :FLETCHLING
-	  return @moveA = :BUBBLEBEAM if pkmn== :TOGEDEMARU
-	  return @moveA = :BUBBLEBEAM if pkmn== :TANGELA
-	  return @moveA = :BUBBLEBEAM if pkmn== :LOTAD
-	  return @moveA = :BUBBLEBEAM if pkmn== :MARILL
+	  return @moveA = :SURF if pkmn== :VAPOREON
+	  return @moveA = :AQUAJET if pkmn== :POPPLIO
+	  return @moveA = :SPLASH if pkmn== :MAGIKARP
+	  return @moveA = :SPLASH if pkmn== :FEEBAS
+	  return @moveA = :HYPNOSIS if pkmn== :POLIWAG
+	  return @moveA = :AQUATAIL if pkmn== :PSYDUCK
+	  return @moveA = :MEGADRAIN if pkmn== :HOPPIP
+	  return @moveA = :RAZORLEAF if pkmn== :SUNKERN
+	  return @moveA = :FLAMEWHEEL if pkmn== :GROWLITHE
+	  return @moveA = :GIGADRAIN if pkmn== :ROSELIA
+	  return @moveA = :SUCKERPUNCH if pkmn== :SENTRET
+	  return @moveA = :STUNSPORE if pkmn== :ODDISH
+	  return @moveA = :AERIALACE if pkmn== :TAILLOW
+	  return @moveA = :ROLLOUT if pkmn== :PHANPY
+	  return @moveA = :CYNDAQUIL if pkmn== :CYNDAQUIL
+	  return @moveA = :CUT if pkmn== :FARFETCHD
+	  return @moveA = :DOUBLEKICK if pkmn== :NIDORANfE
+	  return @moveA = :DOUBLEKICK if pkmn== :NIDORANmA
+	  return @moveA = :FOLLOWME if pkmn== :FURRET
+	  return @moveA = :FEATHERDANCE if pkmn== :PIDGEY
+	  return @moveA = :ROLLOUT if pkmn== :SANDSHREW
+	  return @moveA = :FLAMETHROWER if pkmn== :VULPIX
+	  return @moveA = :FURYATTACK if pkmn== :BEEDRILL
+	  return @moveA = :SANDATTACK if pkmn== :TORCHIC
+	  return @moveA = :HELPINGHAND if pkmn== :MINUN
+	  return @moveA = :HELPINGHAND if pkmn== :PLUSLE
+	  return @moveA = :BITE if pkmn== :EKANS
+	  return @moveA = :THUNDERSHOCK if pkmn== :MAREEP
+	  return @moveA = :ROAR if pkmn== :POOCHYENA
+	  return @moveA = :CONFUSION if pkmn== :DROWZEE
+	  return @moveA = :HYPNOSIS if pkmn== :HYPNO
+	  return @moveA = :PURSUIT if pkmn== :BLITZLE
+	  return @moveA = :SWIFT if pkmn== :EEVEE
+	  return @moveA = :SHOCKWAVE if pkmn== :ELECTRIKE
+	  return @moveA = :THUNDERBOLT if pkmn== :PIKACHU
+	  return @moveA = :PSYCHIC if pkmn== :RALTS
+	  return @moveA = :ROCKSMASH if pkmn== :FALINKS
+	  return @moveA = :NUZZLE if pkmn== :YAMPER
+	  return @moveA = :HEADBUTT if pkmn== :OBSTAGOON
+	  return @moveA = :ELECTROBALL if pkmn== :RAICHU
+	  return @moveA = :HYPERFANG if pkmn== :RATTATA
+	  return @moveA = :EMBER if pkmn== :FLETCHLING
+	  return @moveA = :THUNDERSHOCK if pkmn== :TOGEDEMARU
+	  return @moveA = :TANGELA if pkmn== :TANGELA
+	  return @moveA = :WATERGUN if pkmn== :LOTAD
+	  return @moveA = :AQUATAIL if pkmn== :MARILL
 	  return @moveA = :BUBBLEBEAM if pkmn== :SQUIRTLE
-	  return @moveA = :BUBBLEBEAM if pkmn== :DEDENNE
-	  return @moveA = :BUBBLEBEAM if pkmn== :EMOLGA
-	  return @moveA = :BUBBLEBEAM if pkmn== :WOOLOO
+	  return @moveA = :THUNDERSHOCK if pkmn== :DEDENNE
+	  return @moveA = :THUNDERSHOCK if pkmn== :EMOLGA
+	  return @moveA = :DOUBLEKICK if pkmn== :WOOLOO
 	  return @moveA = :BUBBLEBEAM if pkmn== :HOUNDOUR
 	  return @moveA = :BUBBLEBEAM if pkmn== :ZIGZAGOON
 	  return @moveA = :BUBBLEBEAM if pkmn== :NATU
@@ -695,15 +694,15 @@ class EncounterList_Scene
 	def pbDefineMoveB(pkmn)
 	  return @moveB = :AQUATAIL if pkmn== :WARTORTLE 
 	  return @moveB = :NIGHTSLASH if pkmn== :INKAY 
-	  return @moveB = :BUBBLEBEAM if pkmn== :SEISMITOAD
-	  return @moveB = :BUBBLEBEAM if pkmn== :VAPOREON
+	  return @moveB = :AQUARING if pkmn== :SEISMITOAD
+	  return @moveB = :WATERGUN if pkmn== :VAPOREON
 	  return @moveB = :BUBBLEBEAM if pkmn== :POPPLIO
-	  return @moveB = :BUBBLEBEAM if pkmn== :MAGIKARP
-	  return @moveB = :BUBBLEBEAM if pkmn== :FEEBAS
+	  return @moveB = :TACKLE if pkmn== :MAGIKARP
+	  return @moveB = :TACKLE if pkmn== :FEEBAS
 	  return @moveB = :BUBBLEBEAM if pkmn== :POLIWAG
-	  return @moveB = :BUBBLEBEAM if pkmn== :PSYDUCK
-	  return @moveB = :BUBBLEBEAM if pkmn== :HOPPIP
-	  return @moveB = :BUBBLEBEAM if pkmn== :SUNKERN
+	  return @moveB = :HYPNOSIS if pkmn== :PSYDUCK
+	  return @moveB = :ACROBATICS if pkmn== :HOPPIP
+	  return @moveB = :RAZORLEAF if pkmn== :SUNKERN
 	  return @moveB = :BUBBLEBEAM if pkmn== :GROWLITHE
 	  return @moveB = :BUBBLEBEAM if pkmn== :ROSELIA
 	  return @moveB = :BUBBLEBEAM if pkmn== :SENTRET

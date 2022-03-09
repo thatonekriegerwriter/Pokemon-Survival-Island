@@ -137,7 +137,8 @@ end
 
 $Trainer.pokemon_party.each do |pkmn|
   if pkmn.sleep == 120
-    pbRemovePokemonAt(pkmn)
+    pkmn.permadeath=true
+    pbMessage(_INTL("{1} seems to have passed due to old age!"))
   end
 end
  
