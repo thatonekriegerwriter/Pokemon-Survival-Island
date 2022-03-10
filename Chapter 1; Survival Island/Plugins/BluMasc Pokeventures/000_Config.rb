@@ -8,27 +8,29 @@ module PokeventureConfig
   CollectRandomItem = true #Collect Items from the Table below
   CollectItemsFromBattles = true # Collect Items from defeated Pokemon
   Items = {
-    :common => [:ACORN, :STONE, :ORANBERRY],
-    :uncommon => [:IRONORE, :POTATO, :COPPERORE, :GOLDORE, :SLOWPOKETAIL, :TEALEAF, :SITRUSBERRY],
-	:rare => [:SILVERORE, :BAIT, :COCOABEANS, :CSLOWPOKETAIL, :WATER, :MEAT, :MOOMOOMILK, :CHARCOAL, :CHARCOAL, :CHARCOAL],  
-    :ultrarare => [:WATERBOTTLE, :POISONDART, :SLEEPDART, :PARALYZDART, :ICEDART, :FIREDART, :EXPCANDYS, :REVIVALHERB, :FIRESTONE, :LEAFSTONE],
+    :common => [:POKETOY, :POKEBALL, :FRESHWATER, :REPEL, :HEARTSCALE],
+    :uncommon => [:THUNDERSTONE, :WATERSTONE, :LEAFSTONE, :MOONSTONE, :FIRESTONE,
+                  :SUNSTONE, :SHINYSTONE, :DUSKSTONE, :DAWNSTONE,
+				  :EVERSTONE, :OVALSTONE],
+	:rare => [:LEMONADE, :ENERGYROOT, :PEARL, :BIGPEARL, :SUPERREPEL],  
+    :ultrarare => [:MASTERBALL, :PEARLSTRING],
   }
   ChanceToGetEnemyItem = 5 # as a 1 in x chance
   # Friends
   FindFriends = true # If there is Space should there be a chance for wild pokèmon to join you.
   ChanceToFindFriend = 1 # as a 1 in x chance
-  AreFoundFriendsBrilliant = false #have higher ivs and a higher shiny chance
+  AreFoundFriendsBrilliant = true #have higher ivs and a higher shiny chance
   # Exp
   GainExp = true # should the pokemon gain exp through adventuring
   # Wild Pokemon
   GlobalPkmn = false # should this script use the global encounter list everywhere instead of the specific map encounters.
   PkmnList = [:PIKACHU,:CHARMANDER,:SQUIRTLE,:BULBASAUR,:EEVEE]
-  GlobalLeveling = false # makes the level of the encounters balanced around the number of badges instead of the location (always on if globalPkmn is on)
+  GlobalLeveling = true # makes the level of the encounters balanced around the number of badges instead of the location (always on if globalPkmn is on)
   #level per badge [min,max] can add more if you have more badges in your game
   PkmnLevel = [
-	[2,10],		#0 Badges
-	[11,20],	#1 Badge
-	[21,30],	#2 Badges...
+	[2,15],		#0 Badges
+	[11,25],	#1 Badge
+	[21,35],	#2 Badges...
 	[31,40],
 	[41,50],
 	[51,60],

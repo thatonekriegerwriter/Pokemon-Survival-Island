@@ -1,0 +1,3 @@
+Name      = Randomized Trainer Teams
+Version   = 1.0
+Credits   = Kotaro
