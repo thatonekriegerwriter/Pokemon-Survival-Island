@@ -558,8 +558,11 @@ class EncounterList_Scene
 	  ret[10] = _INTL("| {1}",$Trainer.pokedex.number_weakness(@species))
 	  ret[11] = _INTL("| {1}",$Trainer.pokedex.number_moves(@species,@moveA))
 	  ret[12] = _INTL("| {1}",$Trainer.pokedex.number_moves(@species,@moveB)) 
+	  if $Trainer.pokedex.seen_forms_count(@species)==pbFormCheck(@species)
+	  ret[13] = _INTL("- Complete!    | {1}",$Trainer.pokedex.seen_forms_count(@species))
+	  else
 	  ret[13] = _INTL("| {1}",$Trainer.pokedex.seen_forms_count(@species))
-	  ret[13] = _INTL("- Complete!    | {1}",$Trainer.pokedex.seen_forms_count(@species)) if $Trainer.pokedex.seen_forms_count(@species)==pbFormCheck(@species)
+	  end
 	  ret[14] = _INTL("| {1}",$Trainer.pokedex.number_evolved(@species))
       return ret
     end    
@@ -638,56 +641,55 @@ class EncounterList_Scene
 	  return @moveA = :THUNDERSHOCK if pkmn== :DEDENNE
 	  return @moveA = :THUNDERSHOCK if pkmn== :EMOLGA
 	  return @moveA = :DOUBLEKICK if pkmn== :WOOLOO
-	  return @moveA = :BUBBLEBEAM if pkmn== :HOUNDOUR
-	  return @moveA = :BUBBLEBEAM if pkmn== :ZIGZAGOON
-	  return @moveA = :BUBBLEBEAM if pkmn== :NATU
-	  return @moveA = :BUBBLEBEAM if pkmn== :ROOKIDEE
-	  return @moveA = :BUBBLEBEAM if pkmn== :GROWLITHE
-	  return @moveA = :BUBBLEBEAM if pkmn== :MAWILE
-	  return @moveA = :BUBBLEBEAM if pkmn== :MUNNA
-	  return @moveA = :BUBBLEBEAM if pkmn== :WOOBAT
-	  return @moveA = :BUBBLEBEAM if pkmn== :LICKITUNG
-	  return @moveA = :BUBBLEBEAM if pkmn== :KABUTO
-	  return @moveA = :BUBBLEBEAM if pkmn== :VENONAT
-	  return @moveA = :BUBBLEBEAM if pkmn== :CYNDAQUIL
-	  return @moveA = :BUBBLEBEAM if pkmn== :BASCULIN
-	  return @moveA = :BUBBLEBEAM if pkmn== :FRILLISH
-	  return @moveA = :BUBBLEBEAM if pkmn== :WISHIWASHI
-	  return @moveA = :BUBBLEBEAM if pkmn== :MAREANIE
-	  return @moveA = :BUBBLEBEAM if pkmn== :OSHAWOTT
-	  return @moveA = :BUBBLEBEAM if pkmn== :BEAUTIFLY
-	  return @moveA = :BUBBLEBEAM if pkmn== :DUSTOX
-	  return @moveA = :BUBBLEBEAM if pkmn== :MASQUERAIN
-	  return @moveA = :BUBBLEBEAM if pkmn== :BOUNSWEET
-	  return @moveA = :BUBBLEBEAM if pkmn== :SEEDOT
-	  return @moveA = :BUBBLEBEAM if pkmn== :PATRAT
-	  return @moveA = :BUBBLEBEAM if pkmn== :TOTODILE
-	  return @moveA = :BUBBLEBEAM if pkmn== :DEERLING
-	  return @moveA = :BUBBLEBEAM if pkmn== :SIMIPOUR
-	  return @moveA = :BUBBLEBEAM if pkmn== :KOMALA
-	  return @moveA = :BUBBLEBEAM if pkmn== :MIMIKYU
-	  return @moveA = :BUBBLEBEAM if pkmn== :BEWEAR
-	  return @moveA = :BUBBLEBEAM if pkmn== :ORICORIO
-	  return @moveA = :BUBBLEBEAM if pkmn== :AXEW
-	  return @moveA = :BUBBLEBEAM if pkmn== :GOLETT
+	  return @moveA = :BITE if pkmn== :HOUNDOUR
+	  return @moveA = :BITE if pkmn== :ZIGZAGOON
+	  return @moveA = :PSYCHIC if pkmn== :NATU
+	  return @moveA = :PSYCHIC if pkmn== :ROOKIDEE
+	  return @moveA = :CRUNCH if pkmn== :GROWLITHE
+	  return @moveA = :CRUNCH if pkmn== :MAWILE
+	  return @moveA = :ZENHEADBUTT if pkmn== :MUNNA
+	  return @moveA = :AIRCUTTER if pkmn== :WOOBAT
+	  return @moveA = :LICKITUNG if pkmn== :LICKITUNG
+	  return @moveA = :AQUAJET if pkmn== :KABUTO
+	  return @moveA = :PSYCHIC if pkmn== :VENONAT
+	  return @moveA = :BITE if pkmn== :BASCULIN
+	  return @moveA = :WATERPULSE if pkmn== :FRILLISH
+	  return @moveA = :SURF if pkmn== :WISHIWASHI
+	  return @moveA = :VENOSHOCK if pkmn== :MAREANIE
+	  return @moveA = :WATERGUN if pkmn== :OSHAWOTT
+	  return @moveA = :AIRCUTTER if pkmn== :BEAUTIFLY
+	  return @moveA = :VENOSHOCK if pkmn== :DUSTOX
+	  return @moveA = :MASQUERAIN if pkmn== :MASQUERAIN
+	  return @moveA = :MAGICALLEAF if pkmn== :BOUNSWEET
+	  return @moveA = :SYNTHESIS if pkmn== :SEEDOT
+	  return @moveA = :SUPERFANG if pkmn== :PATRAT
+	  return @moveA = :BITE if pkmn== :TOTODILE
+	  return @moveA = :DOUBLEKICK if pkmn== :DEERLING
+	  return @moveA = :WATERGUN if pkmn== :SIMIPOUR
+	  return @moveA = :RAPIDSPIN if pkmn== :KOMALA
+	  return @moveA = :DOUBLETEAM if pkmn== :MIMIKYU
+	  return @moveA = :BRUTALSWING if pkmn== :BEWEAR
+	  return @moveA = :DOUBLESLAP if pkmn== :ORICORIO
+	  return @moveA = :DRAGONCLAW if pkmn== :AXEW
+	  return @moveA = :NIGHTSHADE if pkmn== :GOLETT
 	  return @moveA = :BUBBLEBEAM if pkmn== :PRINPLUP
-	  return @moveA = :BUBBLEBEAM if pkmn== :VANILLITE
-	  return @moveA = :BUBBLEBEAM if pkmn== :GOGOAT
-	  return @moveA = :BUBBLEBEAM if pkmn== :ZANGOOSE
-	  return @moveA = :BUBBLEBEAM if pkmn== :WHISMUR
-	  return @moveA = :BUBBLEBEAM if pkmn== :LUDICOLO
-	  return @moveA = :BUBBLEBEAM if pkmn== :RHYHORN
-	  return @moveA = :BUBBLEBEAM if pkmn== :ESPURR
-	  return @moveA = :BUBBLEBEAM if pkmn== :SWAMPERT
-	  return @moveA = :BUBBLEBEAM if pkmn== :CHERUBI
-	  return @moveA = :BUBBLEBEAM if pkmn== :WHIMSICOTT
-	  return @moveA = :BUBBLEBEAM if pkmn== :DARUMAKA
-	  return @moveA = :BUBBLEBEAM if pkmn== :FLOATZEL
-	  return @moveA = :BUBBLEBEAM if pkmn== :MILTANK
-	  return @moveA = :BUBBLEBEAM if pkmn== :MUK
-	  return @moveA = :BUBBLEBEAM if pkmn== :RIOLU
-	  return @moveA = :BUBBLEBEAM if pkmn== :ROSERADE
-	  return @moveA = :BUBBLEBEAM if pkmn== :LINOONE
+	  return @moveA = :ICICLESPEAR if pkmn== :VANILLITE
+	  return @moveA = :VINEWHIP if pkmn== :GOGOAT
+	  return @moveA = :HONECLAWS if pkmn== :ZANGOOSE
+	  return @moveA = :ECHOEDVOICE if pkmn== :WHISMUR
+	  return @moveA = :MEGADRAIN if pkmn== :LUDICOLO
+	  return @moveA = :STOMP if pkmn== :RHYHORN
+	  return @moveA = :PSYBEAM if pkmn== :ESPURR
+	  return @moveA = :TAKEDOWN if pkmn== :SWAMPERT
+	  return @moveA = :MAGICALLEAF if pkmn== :CHERUBI
+	  return @moveA = :POISONPOWDER if pkmn== :WHIMSICOTT
+	  return @moveA = :FIREFANG if pkmn== :DARUMAKA
+	  return @moveA = :AQUAJET if pkmn== :FLOATZEL
+	  return @moveA = :ROLLOUT if pkmn== :MILTANK
+	  return @moveA = :MUDBOMB if pkmn== :MUK
+	  return @moveA = :COUNTER if pkmn== :RIOLU
+	  return @moveA = :MAGICALLEAF if pkmn== :ROSERADE
+	  return @moveA = :HEADBUTT if pkmn== :LINOONE
 	  return @moveA = :TACKLE
 	end
 	
@@ -760,7 +762,7 @@ class EncounterList_Scene
 	  return @moveB = :BUBBLEBEAM if pkmn== :CYNDAQUIL
 	  return @moveB = :BUBBLEBEAM if pkmn== :BASCULIN
 	  return @moveB = :BUBBLEBEAM if pkmn== :FRILLISH
-	  return @moveB = :BUBBLEBEAM if pkmn== :WISHIWASHI
+	  return @moveB = :DIVE if pkmn== :WISHIWASHI
 	  return @moveB = :BUBBLEBEAM if pkmn== :MAREANIE
 	  return @moveB = :BUBBLEBEAM if pkmn== :OSHAWOTT
 	  return @moveB = :BUBBLEBEAM if pkmn== :BEAUTIFLY
@@ -902,9 +904,62 @@ class EncounterList_Screen
   end
 end
 
+  def getEncData
+    currKey = @encounter_tables.keys[@index]
+    arr = []
+    enc_array = []
+    @encounter_tables[currKey].each { |s| arr.push( s[1] ) }
+    GameData::Species.each { |s| enc_array.push(s.id) if arr.include?(s.id) } # From Maruno
+    enc_array.uniq!
+    return enc_array, currKey
+  end
+  
+    def getMaxEncounters(data)
+    keys = data.keys
+    a = []
+    for key in keys
+      b = []
+      arr = data[key]
+      for i in 0...arr.length
+        b.push( arr[i][1] )
+      end
+      a.push(b.uniq.length)
+    end
+    return a.max, keys.length
+  end
 
-
-
+def pbCompletionCheck(vari)
+    amt = 0
+    if vari == 1
+	maps=[5,4,7,8,9,13,44,16,24,31,19,30,29,28,17]
+	end
+	maps.each do |map|
+	mapid = map
+    @encounter_data = GameData::Encounter.get(mapid, $PokemonGlobal.encounter_version)
+    if @encounter_data   #if it finds encounter data for the map
+      @encounter_tables = Marshal.load(Marshal.dump(@encounter_data.types))
+      @max_enc = getMaxEncounters(@encounter_tables)
+    else
+      @max_enc, @eLength = [1, 1]
+    end
+    enc_array, currKey = getEncData
+    enc_array.each do |s|
+      species_data = GameData::Species.get(s)
+      if !$Trainer.pokedex.owned?(s) && !seen_form_any_gender?(s,species_data.form)
+      pbMessage(_INTL("Checking your report, you seem to be missing a POKeMON from the Area."))
+	  return false
+      elsif !$Trainer.pokedex.owned?(s)
+      pbMessage(_INTL("You have seen {1}, but you haven't caught it.",s))
+	  return false
+      else
+	  amt = amt + 1
+    end
+	if amt==@max_enc
+	 return true
+	end
+end
+end
+end
 
     def pbFormCheck(pkmn)
         formcmds = [[], []]

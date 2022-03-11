@@ -117,17 +117,21 @@ Pokemon = BLASTOISE,63
 #-------------------------------
 [GARYOAK,Blue]
 LoseText = "Damn, you beat me."
-Pokemon = LILLIPUP,4
-    Name = Puppo
-    Gender = male
-    Moves = TACKLE,SNARL,ENDURE,LEER
-    IV = 0,31,0,31,31,31
+NumPkmn = 2
+Guaranteed = 1
 Pokemon = EEVEE,5
     Name = Investment
     Gender = female
     Moves = TACKLE,GROWL,QUICKATTACK,CHARM
     Item = NORMALGEM
     IV = 0,31,0,0,31,0
+Pokemon = LILLIPUP,4
+    Name = Puppo
+    Gender = male
+    Moves = TACKLE,SNARL,ENDURE,LEER
+    IV = 0,31,0,31,31,31
+Pokemon = PIDGEY,3
+    IV = 0,31,0,31,31,31
 #-------------------------------
 [RED,Red]
 LoseText = "..."
