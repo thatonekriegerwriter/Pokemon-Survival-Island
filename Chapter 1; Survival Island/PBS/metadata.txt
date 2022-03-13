@@ -234,6 +234,10 @@ Weather = Rain,100
 DarkMap = false
 BattleBack = Swamp
 #-------------------------------
+[037]
+# Water Temple
+Outdoor = false
+#-------------------------------
 [038]
 # Temperate Ocean
 Outdoor = true
@@ -275,7 +279,6 @@ ShowArea = true
 BattleBack = Forest
 #-------------------------------
 [046]
-# Ancient Passage
 Outdoor = false
 ShowArea = true
 BattleBack = Forest
@@ -295,7 +298,6 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [050]
-# North
 Outdoor = false
 SnapEdges = true
 #-------------------------------
@@ -356,7 +358,7 @@ Outdoor = true
 BattleBack = Cave
 #-------------------------------
 [064]
-# MAP064
+# Temperate Zone
 Outdoor = true
 ShowArea = false
 Weather = Rain,20
@@ -432,7 +434,6 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [081]
-# Winter Zone
 Outdoor = true
 #-------------------------------
 [082]
@@ -1420,11 +1421,11 @@ Outdoor = false
 BattleBack = Cave
 #-------------------------------
 [349]
-# MAP349
+# Temperate Zone
 Outdoor = true
 #-------------------------------
 [350]
-# MAP350
+# Temperate Zone
 Outdoor = true
 #-------------------------------
 [351]

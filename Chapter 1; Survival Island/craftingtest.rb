@@ -1,5 +1,5 @@
 ###---craftS
-class Crafts_Scene
+class Crafts_Scene2
 #################################
 ## Configuration
   craftNAMEBASECOLOR=Color.new(88,88,80)
@@ -234,7 +234,7 @@ class Crafts_Scene
   end
 
 # Script that manages button inputs  
-  def pbSelectcraft
+  def pbSelectcraft2
     overlay=@sprites["overlay"].bitmap
     overlay.clear
     pbSetSystemFont(overlay)
@@ -308,16 +308,16 @@ class Crafts_Scene
         @craftI=:NO
         @craftResult=:NO
       else
-        @craftA=GameData::Item.get(CraftsList.getcrafts[@currentArray][1]).name
-        @craftB=GameData::Item.get(CraftsList.getcrafts[@currentArray][2]).name
-        @craftC=GameData::Item.get(CraftsList.getcrafts[@currentArray][3]).name
-        @craftD=GameData::Item.get(CraftsList.getcrafts[@currentArray][4]).name
-        @craftE=GameData::Item.get(CraftsList.getcrafts[@currentArray][5]).name
-        @craftF=GameData::Item.get(CraftsList.getcrafts[@currentArray][6]).name
-        @craftG=GameData::Item.get(CraftsList.getcrafts[@currentArray][7]).name
-        @craftH=GameData::Item.get(CraftsList.getcrafts[@currentArray][8]).name
-        @craftI=GameData::Item.get(CraftsList.getcrafts[@currentArray][9]).name
-        @craftResult=GameData::Item.get(CraftsList.getcrafts[@currentArray][0]).name
+        @craftA=GameData::Item.get(CraftsList2.getcrafts2[@currentArray][1]).name
+        @craftB=GameData::Item.get(CraftsList2.getcrafts2[@currentArray][2]).name
+        @craftC=GameData::Item.get(CraftsList2.getcrafts2[@currentArray][3]).name
+        @craftD=GameData::Item.get(CraftsList2.getcrafts2[@currentArray][4]).name
+        @craftE=GameData::Item.get(CraftsList2.getcrafts2[@currentArray][5]).name
+        @craftF=GameData::Item.get(CraftsList2.getcrafts2[@currentArray][6]).name
+        @craftG=GameData::Item.get(CraftsList2.getcrafts2[@currentArray][7]).name
+        @craftH=GameData::Item.get(CraftsList2.getcrafts2[@currentArray][8]).name
+        @craftI=GameData::Item.get(CraftsList2.getcrafts2[@currentArray][9]).name
+        @craftResult=GameData::Item.get(CraftsList2.getcrafts2[@currentArray][0]).name
       end
       @sprites["quant"].text=_INTL("{1}",@quant)
       @sprites["quantA"].text=_INTL("{1}",@quantA)
@@ -415,11 +415,11 @@ class Crafts_Scene
       end
       if Input.trigger?(Input::C)   
         if @selection==9 && @returnItem!=:NO   #Crafting an item with 1 item
-          if CraftsList.getcrafts[@currentArray][2]==:NO #If slot 2 is empty, don't read it
-            if $PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant
-              #if CraftsList.getcrafts[@currentArray][1]==@itemA 
+          if CraftsList2.getcrafts2[@currentArray][2]==:NO #If slot 2 is empty, don't read it
+            if $PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][1])>=@quant
+              #if CraftsList2.getcrafts2[@currentArray][1]==@itemA 
                 @recipe=[@returnItem,@itemA,:NO,:NO]
-                if pbCheckRecipe(@recipe)
+                if pbCheckRecipe2(@recipe)
                   Kernel.pbReceiveItem(@returnItem,@quant)
                   $PokemonBag.pbDeleteItem(@itemA,@quant)
                   @itemA=:NO
@@ -439,9 +439,9 @@ class Crafts_Scene
             else
               Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
             end
-          elsif CraftsList.getcrafts[@currentArray][3]==:NO&&CraftsList.getcrafts[@currentArray][2]!=:NO
-            if $PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant &&
-              $PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant #Crafting an item with 2 items
+          elsif CraftsList2.getcrafts2[@currentArray][3]==:NO&&CraftsList2.getcrafts2[@currentArray][2]!=:NO
+            if $PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][1])>=@quant &&
+              $PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][2])>=@quant #Crafting an item with 2 items
                 Kernel.pbReceiveItem(@returnItem,@quant)
                 $PokemonBag.pbDeleteItem(@itemA,@quant)
                 $PokemonBag.pbDeleteItem(@itemB,@quant)
@@ -461,14 +461,14 @@ class Crafts_Scene
             else
               Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 2"))
             end   #Crafting with 3 items
-          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant  || CraftsList.getcrafts[@currentArray][1]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO)
+          elsif ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][1])>=@quant  || CraftsList2.getcrafts2[@currentArray][1]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][2])>=@quant ||  || CraftsList2.getcrafts2[@currentArray][2]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][3])>=@quant || CraftsList2.getcrafts2[@currentArray][3]==:NO)
               Kernel.pbReceiveItem(@returnItem,@quant)
               $PokemonBag.pbDeleteItem(@itemA,@quant) if @itemA != :NO
               $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO
               $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO
-		      crafts = CraftsList.getcrafts
+		      crafts = CraftsList2.getcrafts2
               @itemA=:NO
               @itemB=:NO
               @returnItem=:NO
@@ -482,18 +482,15 @@ class Crafts_Scene
               @quantG=0
               @quantH=0
               @quantI=0
-            else
-              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 3"))
-            end
-          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant  || CraftsList.getcrafts[@currentArray][1]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO)
+          elsif ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][1])>=@quant  || CraftsList2.getcrafts2[@currentArray][1]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][2])>=@quant ||  || CraftsList2.getcrafts2[@currentArray][2]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][3])>=@quant || CraftsList2.getcrafts2[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][4])>=@quant || CraftsList2.getcrafts2[@currentArray][4]==:NO)
                   $PokemonBag.pbDeleteItem(@itemA,@quant) if @itemA != :NO
                   $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO
                   $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO
                   $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO
-		          crafts = CraftsList.getcrafts
+		          crafts = CraftsList2.getcrafts2
                   @itemA=:NO
                   @itemB=:NO
                   @itemC=:NO
@@ -509,19 +506,17 @@ class Crafts_Scene
                   @quantH=0
                   @quantI=0
               #end
-            else
-              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1")) #Crafting an item with 5 items
-          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant  || CraftsList.getcrafts[@currentArray][1]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][5])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO)
+          elsif ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][1])>=@quant  || CraftsList2.getcrafts2[@currentArray][1]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][2])>=@quant ||  || CraftsList2.getcrafts2[@currentArray][2]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][3])>=@quant || CraftsList2.getcrafts2[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][4])>=@quant || CraftsList2.getcrafts2[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][5])>=@quant || CraftsList2.getcrafts2[@currentArray][5]==:NO)
                   $PokemonBag.pbDeleteItem(@itemA,@quant) if @itemA != :NO
                   $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO
                   $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO
                   $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO
                   $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO
-		          crafts = CraftsList.getcrafts
+		          crafts = CraftsList2.getcrafts2
                   @itemA=:NO
                   @itemB=:NO
                   @itemC=:NO
@@ -538,21 +533,19 @@ class Crafts_Scene
                   @quantH=0
                   @quantI=0
               #end
-            else
-              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1")) #Crafting with 6 items
-          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant  || CraftsList.getcrafts[@currentArray][1]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][5])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)
+          elsif ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][1])>=@quant  || CraftsList2.getcrafts2[@currentArray][1]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][2])>=@quant ||  || CraftsList2.getcrafts2[@currentArray][2]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][3])>=@quant || CraftsList2.getcrafts2[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][4])>=@quant || CraftsList2.getcrafts2[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][5])>=@quant || CraftsList2.getcrafts2[@currentArray][5]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][6])>=@quant || CraftsList2.getcrafts2[@currentArray][6]==:NO)
                   $PokemonBag.pbDeleteItem(@itemA,@quant) if @itemA != :NO
                   $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO
                   $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO
                   $PokemonBag.pbDeleteItem(@itemD,@quant) if @itemD != :NO
                   $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO
                   $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO
-		          crafts = CraftsList.getcrafts
+		          crafts = CraftsList2.getcrafts2
                   @itemA=:NO
                   @itemB=:NO
                   @itemC=:NO
@@ -570,15 +563,13 @@ class Crafts_Scene
                   @quantH=0
                   @quantI=0
               #end
-            else
-              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))
-          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant  || CraftsList.getcrafts[@currentArray][1]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][5])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)
+          elsif ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][1])>=@quant  || CraftsList2.getcrafts2[@currentArray][1]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][2])>=@quant ||  || CraftsList2.getcrafts2[@currentArray][2]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][3])>=@quant || CraftsList2.getcrafts2[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][4])>=@quant || CraftsList2.getcrafts2[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][5])>=@quant || CraftsList2.getcrafts2[@currentArray][5]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][6])>=@quant || CraftsList2.getcrafts2[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][7])>=@quant || CraftsList2.getcrafts2[@currentArray][7]==:NO)
                   $PokemonBag.pbDeleteItem(@itemA,@quant) if @itemA != :NO
                   $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO
                   $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO
@@ -586,7 +577,7 @@ class Crafts_Scene
                   $PokemonBag.pbDeleteItem(@itemE,@quant) if @itemE != :NO
                   $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO
                   $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO
-		          crafts = CraftsList.getcrafts
+		          crafts = CraftsList2.getcrafts2
                   @itemA=:NO
                   @itemB=:NO
                   @itemC=:NO
@@ -605,16 +596,14 @@ class Crafts_Scene
                   @quantH=0
                   @quantI=0
               #end
-            else
-              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1")) #Crafting with 8 items
-          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant  || CraftsList.getcrafts[@currentArray][1]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][5])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)
+          elsif ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][1])>=@quant  || CraftsList2.getcrafts2[@currentArray][1]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][2])>=@quant ||  || CraftsList2.getcrafts2[@currentArray][2]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][3])>=@quant || CraftsList2.getcrafts2[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][4])>=@quant || CraftsList2.getcrafts2[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][5])>=@quant || CraftsList2.getcrafts2[@currentArray][5]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][6])>=@quant || CraftsList2.getcrafts2[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][7])>=@quant || CraftsList2.getcrafts2[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][8])>=@quant || CraftsList2.getcrafts2[@currentArray][8]==:NO)
                   $PokemonBag.pbDeleteItem(@itemA,@quant) if @itemA != :NO
                   $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO
                   $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO
@@ -623,7 +612,7 @@ class Crafts_Scene
                   $PokemonBag.pbDeleteItem(@itemF,@quant) if @itemF != :NO
                   $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO
                   $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO
-		          crafts = CraftsList.getcrafts
+		          crafts = CraftsList2.getcrafts2
                   @itemA=:NO
                   @itemB=:NO
                   @itemC=:NO
@@ -643,17 +632,15 @@ class Crafts_Scene
                   @quantH=0
                   @quantI=0
               #end
-            else
-              Kernel.pbMessage(_INTL("You don't have the ingredients to craft this many items! 1"))  #Crafting with 9 items SEARCH ME
-          elsif ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][1])>=@quant  || CraftsList.getcrafts[@currentArray][1]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][2])>=@quant ||  || CraftsList.getcrafts[@currentArray][2]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][3])>=@quant || CraftsList.getcrafts[@currentArray][3]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][4])>=@quant || CraftsList.getcrafts[@currentArray][4]==:NO) &&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][5])>=@quant || CraftsList.getcrafts[@currentArray][5]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][6])>=@quant || CraftsList.getcrafts[@currentArray][6]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][7])>=@quant || CraftsList.getcrafts[@currentArray][7]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][8])>=@quant || CraftsList.getcrafts[@currentArray][8]==:NO)&&
-            ($PokemonBag.pbQuantity(CraftsList.getcrafts[@currentArray][9])>=@quant || CraftsList.getcrafts[@currentArray][9]==:NO)
+          elsif ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][1])>=@quant  || CraftsList2.getcrafts2[@currentArray][1]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][2])>=@quant ||  || CraftsList2.getcrafts2[@currentArray][2]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][3])>=@quant || CraftsList2.getcrafts2[@currentArray][3]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][4])>=@quant || CraftsList2.getcrafts2[@currentArray][4]==:NO) &&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][5])>=@quant || CraftsList2.getcrafts2[@currentArray][5]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][6])>=@quant || CraftsList2.getcrafts2[@currentArray][6]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][7])>=@quant || CraftsList2.getcrafts2[@currentArray][7]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][8])>=@quant || CraftsList2.getcrafts2[@currentArray][8]==:NO)&&
+            ($PokemonBag.pbQuantity(CraftsList2.getcrafts2[@currentArray][9])>=@quant || CraftsList2.getcrafts2[@currentArray][9]==:NO)
                   $PokemonBag.pbDeleteItem(@itemA,@quant) if @itemA != :NO #1
                   $PokemonBag.pbDeleteItem(@itemB,@quant) if @itemB != :NO #2
                   $PokemonBag.pbDeleteItem(@itemC,@quant) if @itemC != :NO #3
@@ -663,7 +650,7 @@ class Crafts_Scene
                   $PokemonBag.pbDeleteItem(@itemG,@quant) if @itemG != :NO #7
                   $PokemonBag.pbDeleteItem(@itemH,@quant) if @itemH != :NO #8
                   $PokemonBag.pbDeleteItem(@itemI,@quant) if @itemI != :NO #9
-		          crafts = CraftsList.getcrafts
+		          crafts = CraftsList2.getcrafts2
                   @itemA=:NO
                   @itemB=:NO
                   @itemC=:NO
@@ -690,7 +677,7 @@ class Crafts_Scene
         elsif @selection==0
           @returnItem=:NO
           @itemA=Kernel.pbChooseItem
-		  crafts = CraftsList.getcrafts	 
+		  crafts = CraftsList2.getcrafts2	 
         if !@itemA.empty?		  
           for i in 0..274
             if crafts[i][2]!=@itemB && @itemB==:NO
@@ -713,7 +700,7 @@ class Crafts_Scene
         elsif @selection==1
           @returnItem=:NO
           @itemB=Kernel.pbChooseItem
-		  crafts = CraftsList.getcrafts
+		  crafts = CraftsList2.getcrafts2
 		  if !@itemB.empty?
           for i in 0..274
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
@@ -736,7 +723,7 @@ class Crafts_Scene
         elsif @selection==2
           @returnItem=:NO
           @itemC=Kernel.pbChooseItem
-		  crafts = CraftsList.getcrafts
+		  crafts = CraftsList2.getcrafts2
 		  if !@itemC.empty?
           for i in 0..274
             if crafts[i][1]==@itemA&&crafts[i][2]==@itemB&&crafts[i][3]==@itemC
@@ -778,11 +765,11 @@ class Crafts_Scene
     end
   end
   
-  def pbCheckRecipe(recipe)
+  def pbCheckRecipe2(recipe)
     for i in 0..274
-      if recipe[1]==CraftsList.getcrafts[i][1] &&
-         recipe[2]==CraftsList.getcrafts[i][2] &&
-         recipe[3]==CraftsList.getcrafts[i][3]
+      if recipe[1]==CraftsList2.getcrafts2[i][1] &&
+         recipe[2]==CraftsList2.getcrafts2[i][2] &&
+         recipe[3]==CraftsList2.getcrafts2[i][3]
        return true
       end
     end
@@ -794,18 +781,18 @@ end
 
 
 
-class PokemoncraftSelect
+class PokemoncraftSelect2
   attr_accessor :lastcraft
   attr_reader :crafts
   def numChars()
-    return Crafts_Scene.CraftsList().length-1
+    return Crafts_Scene2.CraftsList2().length-1
   end
   def initialize
     @lastcraft=1
     @crafts=[]
     @choices=[]
     # Initialize each playerCharacter of the array
-    for i in 0..Crafts_Scene.CraftsList
+    for i in 0..Crafts_Scene2.CraftsList2
       @crafts[i]=[]
       @choices[i]=0
     end
@@ -816,7 +803,7 @@ class PokemoncraftSelect
   end
 
   def rearrange()
-    if @crafts.length==6 && Crafts_Scene.CraftsList==28
+    if @crafts.length==6 && Crafts_Scene2.CraftsList2==28
       newcrafts=[]
       for i in 0..28
         newcrafts[i]=[]
@@ -827,9 +814,9 @@ class PokemoncraftSelect
   end
 end
 
-module CraftsList
-  def self.getcrafts
-    @CraftsList = [
+module CraftsList2
+  def self.getcrafts2
+    @CraftsList2 = [
 	#[RESULT = Item 1 + Item 2 + Item 3]
     [:NO,:NO,:NO,:NO], #Empty
     #RECIPE 1: ,
@@ -1161,16 +1148,16 @@ module CraftsList
     [:LARGEMEAL,:TEA,:BAKEDPOTATO,:GSCURRY],
     [:LARGEMEAL,:TEA,:GSCURRY,:BAKEDPOTATO,]
     ]
-    return @CraftsList
+    return @CraftsList2
   end
 end
 
 #Call Crafts.craftWindow
 module Crafts  
-  def self.craftWindow()
-  craftScene=Crafts_Scene.new
-  craftScene.pbStartScene($PokemoncraftSelect)
-  craft=craftScene.pbSelectcraft
+  def self.craftWindow2()
+  craftScene=Crafts_Scene2.new
+  craftScene.pbStartScene($PokemoncraftSelect2)
+  craft=craftScene.pbSelectcraft2
   craftScene.pbEndScene
  end
 end

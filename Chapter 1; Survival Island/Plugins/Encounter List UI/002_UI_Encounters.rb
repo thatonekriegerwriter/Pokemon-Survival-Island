@@ -693,6 +693,7 @@ class EncounterList_Scene
 	  return @moveA = :TACKLE
 	end
 	
+
 	def pbDefineMoveB(pkmn)
 	  return @moveB = :AQUATAIL if pkmn== :WARTORTLE 
 	  return @moveB = :NIGHTSLASH if pkmn== :INKAY 
@@ -705,99 +706,97 @@ class EncounterList_Scene
 	  return @moveB = :HYPNOSIS if pkmn== :PSYDUCK
 	  return @moveB = :ACROBATICS if pkmn== :HOPPIP
 	  return @moveB = :RAZORLEAF if pkmn== :SUNKERN
-	  return @moveB = :BUBBLEBEAM if pkmn== :GROWLITHE
-	  return @moveB = :BUBBLEBEAM if pkmn== :ROSELIA
-	  return @moveB = :BUBBLEBEAM if pkmn== :SENTRET
-	  return @moveB = :BUBBLEBEAM if pkmn== :ODDISH
-	  return @moveB = :BUBBLEBEAM if pkmn== :TAILLOW
-	  return @moveB = :BUBBLEBEAM if pkmn== :PHANPY
-	  return @moveB = :BUBBLEBEAM if pkmn== :CYNDAQUIL
-	  return @moveB = :BUBBLEBEAM if pkmn== :FARFETCHD
-	  return @moveB = :BUBBLEBEAM if pkmn== :NIDORANfE
-	  return @moveB = :BUBBLEBEAM if pkmn== :NIDORANmA
-	  return @moveB = :BUBBLEBEAM if pkmn== :FURRET
-	  return @moveB = :BUBBLEBEAM if pkmn== :PIDGEY
-	  return @moveB = :BUBBLEBEAM if pkmn== :SANDSHREW
-	  return @moveB = :BUBBLEBEAM if pkmn== :VULPIX
-	  return @moveB = :BUBBLEBEAM if pkmn== :BEEDRILL
-	  return @moveB = :BUBBLEBEAM if pkmn== :PHANPY
-	  return @moveB = :BUBBLEBEAM if pkmn== :TORCHIC
-	  return @moveB = :BUBBLEBEAM if pkmn== :MINUN
-	  return @moveB = :BUBBLEBEAM if pkmn== :PLUSLE
-	  return @moveB = :BUBBLEBEAM if pkmn== :EKANS
-	  return @moveB = :BUBBLEBEAM if pkmn== :MAREEP
-	  return @moveB = :BUBBLEBEAM if pkmn== :POOCHYENA
-	  return @moveB = :BUBBLEBEAM if pkmn== :DROWZEE
-	  return @moveB = :BUBBLEBEAM if pkmn== :HYPNO
-	  return @moveB = :BUBBLEBEAM if pkmn== :BLITZLE
-	  return @moveB = :BUBBLEBEAM if pkmn== :EEVEE
-	  return @moveB = :BUBBLEBEAM if pkmn== :ELECTRIKE
-	  return @moveB = :BUBBLEBEAM if pkmn== :PIKACHU
-	  return @moveB = :BUBBLEBEAM if pkmn== :RALTS
-	  return @moveB = :BUBBLEBEAM if pkmn== :FALINKS
-	  return @moveB = :BUBBLEBEAM if pkmn== :YAMPER
-	  return @moveB = :BUBBLEBEAM if pkmn== :OBSTAGOON
-	  return @moveB = :BUBBLEBEAM if pkmn== :RAICHU
-	  return @moveB = :BUBBLEBEAM if pkmn== :RATTATA
-	  return @moveB = :BUBBLEBEAM if pkmn== :FLETCHLING
-	  return @moveB = :BUBBLEBEAM if pkmn== :TOGEDEMARU
-	  return @moveB = :BUBBLEBEAM if pkmn== :TANGELA
-	  return @moveB = :BUBBLEBEAM if pkmn== :LOTAD
+	  return @moveB = :FIREFANG if pkmn== :GROWLITHE
+	  return @moveB = :MAGICALLEAF if pkmn== :ROSELIA
+	  return @moveB = :QUICKATTACK if pkmn== :SENTRET
+	  return @moveB = :MEGADRAIN if pkmn== :ODDISH
+	  return @moveB = :WINGATTACK if pkmn== :TAILLOW
+	  return @moveB = :BULLDOZE if pkmn== :PHANPY
+	  return @moveB = :EMBER if pkmn== :CYNDAQUIL
+	  return @moveB = :FURYCUTTER if pkmn== :FARFETCHD
+	  return @moveB = :TAILWHIP if pkmn== :NIDORANfE
+	  return @moveB = :FOCUSENERGY if pkmn== :NIDORANmA
+	  return @moveB = :HELPINGHAND if pkmn== :FURRET
+	  return @moveB = :SANDATTACK if pkmn== :PIDGEY
+	  return @moveB = :ROLLOUT if pkmn== :SANDSHREW
+	  return @moveB = :INCINERATE if pkmn== :VULPIX
+	  return @moveB = :TWINNEEDLE if pkmn== :BEEDRILL
+	  return @moveB = :BULLDOZE if pkmn== :PHANPY
+	  return @moveB = :FLAMECHARGE if pkmn== :TORCHIC
+	  return @moveB = :ENCORE if pkmn== :MINUN
+	  return @moveB = :COPYCAT if pkmn== :PLUSLE
+	  return @moveB = :GLARE if pkmn== :EKANS
+	  return @moveB = :THUNDERSHOCK if pkmn== :MAREEP
+	  return @moveB = :BITE if pkmn== :POOCHYENA
+	  return @moveB = :HEADBUTT if pkmn== :DROWZEE
+	  return @moveB = :HYPNOSIS if pkmn== :HYPNO
+	  return @moveB = :FLAMECHARGE if pkmn== :BLITZLE
+	  return @moveB = :TACKLE if pkmn== :EEVEE
+	  return @moveB = :SHOCKWAVE if pkmn== :ELECTRIKE
+	  return @moveB = :ELECTROBALL if pkmn== :PIKACHU
+	  return @moveB = :DRAININGKISS if pkmn== :RALTS
+	  return @moveB = :HEADBUTT if pkmn== :FALINKS
+	  return @moveB = :NUZZLE if pkmn== :YAMPER
+	  return @moveB = :TAUNT if pkmn== :OBSTAGOON
+	  return @moveB = :THUNDERBOLT if pkmn== :RAICHU
+	  return @moveB = :BITE if pkmn== :RATTATA
+	  return @moveB = :PECK if pkmn== :FLETCHLING
+	  return @moveB = :CHARGE if pkmn== :TOGEDEMARU
+	  return @moveB = :STUNSPORE if pkmn== :TANGELA
+	  return @moveB = :MEGADRAIN if pkmn== :LOTAD
 	  return @moveB = :BUBBLEBEAM if pkmn== :MARILL
 	  return @moveB = :BUBBLEBEAM if pkmn== :SQUIRTLE
-	  return @moveB = :BUBBLEBEAM if pkmn== :DEDENNE
-	  return @moveB = :BUBBLEBEAM if pkmn== :EMOLGA
-	  return @moveB = :BUBBLEBEAM if pkmn== :WOOLOO
-	  return @moveB = :BUBBLEBEAM if pkmn== :HOUNDOUR
-	  return @moveB = :BUBBLEBEAM if pkmn== :ZIGZAGOON
-	  return @moveB = :BUBBLEBEAM if pkmn== :NATU
-	  return @moveB = :BUBBLEBEAM if pkmn== :ROOKIDEE
-	  return @moveB = :BUBBLEBEAM if pkmn== :GROWLITHE
-	  return @moveB = :BUBBLEBEAM if pkmn== :MAWILE
-	  return @moveB = :BUBBLEBEAM if pkmn== :MUNNA
-	  return @moveB = :BUBBLEBEAM if pkmn== :WOOBAT
-	  return @moveB = :BUBBLEBEAM if pkmn== :LICKITUNG
-	  return @moveB = :BUBBLEBEAM if pkmn== :KABUTO
-	  return @moveB = :BUBBLEBEAM if pkmn== :VENONAT
-	  return @moveB = :BUBBLEBEAM if pkmn== :CYNDAQUIL
-	  return @moveB = :BUBBLEBEAM if pkmn== :BASCULIN
-	  return @moveB = :BUBBLEBEAM if pkmn== :FRILLISH
-	  return @moveB = :DIVE if pkmn== :WISHIWASHI
-	  return @moveB = :BUBBLEBEAM if pkmn== :MAREANIE
-	  return @moveB = :BUBBLEBEAM if pkmn== :OSHAWOTT
-	  return @moveB = :BUBBLEBEAM if pkmn== :BEAUTIFLY
-	  return @moveB = :BUBBLEBEAM if pkmn== :DUSTOX
-	  return @moveB = :BUBBLEBEAM if pkmn== :MASQUERAIN
-	  return @moveB = :BUBBLEBEAM if pkmn== :BOUNSWEET
-	  return @moveB = :BUBBLEBEAM if pkmn== :SEEDOT
-	  return @moveB = :BUBBLEBEAM if pkmn== :PATRAT
-	  return @moveB = :BUBBLEBEAM if pkmn== :TOTODILE
-	  return @moveB = :BUBBLEBEAM if pkmn== :DEERLING
-	  return @moveB = :BUBBLEBEAM if pkmn== :SIMIPOUR
-	  return @moveB = :BUBBLEBEAM if pkmn== :KOMALA
-	  return @moveB = :BUBBLEBEAM if pkmn== :MIMIKYU
-	  return @moveB = :BUBBLEBEAM if pkmn== :BEWEAR
-	  return @moveB = :BUBBLEBEAM if pkmn== :ORICORIO
-	  return @moveB = :BUBBLEBEAM if pkmn== :AXEW
-	  return @moveB = :BUBBLEBEAM if pkmn== :GOLETT
-	  return @moveB = :BUBBLEBEAM if pkmn== :PRINPLUP
-	  return @moveB = :BUBBLEBEAM if pkmn== :VANILLITE
-	  return @moveB = :BUBBLEBEAM if pkmn== :GOGOAT
-	  return @moveB = :BUBBLEBEAM if pkmn== :ZANGOOSE
-	  return @moveB = :BUBBLEBEAM if pkmn== :WHISMUR
-	  return @moveB = :BUBBLEBEAM if pkmn== :LUDICOLO
-	  return @moveB = :BUBBLEBEAM if pkmn== :RHYHORN
-	  return @moveB = :BUBBLEBEAM if pkmn== :ESPURR
-	  return @moveB = :BUBBLEBEAM if pkmn== :SWAMPERT
-	  return @moveB = :BUBBLEBEAM if pkmn== :CHERUBI
-	  return @moveB = :BUBBLEBEAM if pkmn== :WHIMSICOTT
-	  return @moveB = :BUBBLEBEAM if pkmn== :DARUMAKA
-	  return @moveB = :BUBBLEBEAM if pkmn== :FLOATZEL
-	  return @moveB = :BUBBLEBEAM if pkmn== :MILTANK
-	  return @moveB = :BUBBLEBEAM if pkmn== :MUK
-	  return @moveB = :BUBBLEBEAM if pkmn== :RIOLU
-	  return @moveB = :BUBBLEBEAM if pkmn== :ROSERADE
-	  return @moveB = :BUBBLEBEAM if pkmn== :LINOONE
+	  return @moveB = :PARABOLICCHARGE if pkmn== :DEDENNE
+	  return @moveB = :ACROBATICS if pkmn== :EMOLGA
+	  return @moveB = :COPYCAT if pkmn== :WOOLOO
+	  return @moveB = :HOWL if pkmn== :HOUNDOUR
+	  return @moveB = :COVET if pkmn== :ZIGZAGOON
+	  return @moveB = :TELEPORT if pkmn== :NATU
+	  return @moveB = :POWERTRIP if pkmn== :ROOKIDEE
+	  return @moveB = :SUCKERPUNCH if pkmn== :MAWILE
+	  return @moveB = :MOONLIGHT if pkmn== :MUNNA
+	  return @moveB = :ENDEAVOR if pkmn== :WOOBAT
+	  return @moveB = :LICK if pkmn== :LICKITUNG
+	  return @moveB = :AQUAJET if pkmn== :KABUTO
+	  return @moveB = :SUPERSONIC if pkmn== :VENONAT
+	  return @moveB = :BITE if pkmn== :BASCULIN
+	  return @moveB = :BRINE if pkmn== :FRILLISH
+	  return @moveB = :TEARFULLOOK if pkmn== :WISHIWASHI
+	  return @moveB = :LIQUIDATION if pkmn== :MAREANIE
+	  return @moveB = :FOCUSENERGY if pkmn== :OSHAWOTT
+	  return @moveB = :MORNINGSUN if pkmn== :BEAUTIFLY
+	  return @moveB = :MOONLIGHT if pkmn== :DUSTOX
+	  return @moveB = :SWEETSCENT if pkmn== :MASQUERAIN
+	  return @moveB = :SPLASH if pkmn== :BOUNSWEET
+	  return @moveB = :GROWTH if pkmn== :SEEDOT
+	  return @moveB = :HYPNOSIS if pkmn== :PATRAT
+	  return @moveB = :SCARYFACE if pkmn== :TOTODILE
+	  return @moveB = :JUMPKICK if pkmn== :DEERLING
+	  return @moveB = :ACROBATICS if pkmn== :SIMIPOUR
+	  return @moveB = :YAWN if pkmn== :KOMALA
+	  return @moveB = :COPYCAT if pkmn== :MIMIKYU
+	  return @moveB = :STRENGTH if pkmn== :BEWEAR
+	  return @moveB = :REVELATIONDANCE if pkmn== :ORICORIO
+	  return @moveB = :DUALCHOP if pkmn== :AXEW
+	  return @moveB = :HEAVYSLAM if pkmn== :GOLETT
+	  return @moveB = :SWAGGER if pkmn== :PRINPLUP
+	  return @moveB = :HAIL if pkmn== :VANILLITE
+	  return @moveB = :SEEDBOMB if pkmn== :GOGOAT
+	  return @moveB = :SLASH if pkmn== :ZANGOOSE
+	  return @moveB = :ECHOEDVOICE if pkmn== :WHISMUR
+	  return @moveB = :ZENHEADBUTT if pkmn== :LUDICOLO
+	  return @moveB = :HORNATTACK if pkmn== :RHYHORN
+	  return @moveB = :LEER if pkmn== :ESPURR
+	  return @moveB = :MUDDYWATER if pkmn== :SWAMPERT
+	  return @moveB = :LEAFAGE if pkmn== :CHERUBI
+	  return @moveB = :COTTONGUARD if pkmn== :WHIMSICOTT
+	  return @moveB = :UPROAR if pkmn== :DARUMAKA
+	  return @moveB = :WATERFALL if pkmn== :FLOATZEL
+	  return @moveB = :DEFENSECURL if pkmn== :MILTANK
+	  return @moveB = :BELCH if pkmn== :MUK
+	  return @moveB = :NASTYPLOT if pkmn== :RIOLU
+	  return @moveB = :INGRAIN if pkmn== :ROSERADE
+	  return @moveB = :BELLYDRUM if pkmn== :LINOONE
 	  return @moveB = :STRUGGLE
 	end
  
@@ -935,6 +934,11 @@ def pbCompletionCheck(vari)
 	end
 	maps.each do |map|
 	mapid = map
+	if mapid == 5 || mapid == 4 || mapid == 7 || mapid == 8 || mapid == 9 || mapid == 13  || mapid == 44
+	$game_variables[2] = "Temperate Zone"
+	else
+	$game_variables[2] = "Mountain Zone"
+	end
     @encounter_data = GameData::Encounter.get(mapid, $PokemonGlobal.encounter_version)
     if @encounter_data   #if it finds encounter data for the map
       @encounter_tables = Marshal.load(Marshal.dump(@encounter_data.types))
@@ -946,10 +950,7 @@ def pbCompletionCheck(vari)
     enc_array.each do |s|
       species_data = GameData::Species.get(s)
       if !$Trainer.pokedex.owned?(s) && !seen_form_any_gender?(s,species_data.form)
-      pbMessage(_INTL("Checking your report, you seem to be missing a POKeMON from the Area."))
-	  return false
-      elsif !$Trainer.pokedex.owned?(s)
-      pbMessage(_INTL("You have seen {1}, but you haven't caught it.",s))
+      pbMessage(_INTL("Checking your report, you seem to be missing a POKeMON from {1}.",$game_variables[2]))
 	  return false
       else
 	  amt = amt + 1

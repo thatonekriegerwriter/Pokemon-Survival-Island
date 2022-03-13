@@ -138,6 +138,7 @@ class ItemCraft_Scene
               removeIngredients(index,volume)
               pbMessage(_INTL("You put the {1} away\\nin the <icon=bagPocket{2}>\\c[1]{3} Pocket\\c[0].",
                 itemname,pocket,PokemonBag.pocketNames()[pocket]))
+		      $game_variables[291]-=(rand(15)+1) if $game_switches[554]==true
               refreshNumbers(index,volume)
             else
               pbPlayBuzzerSE

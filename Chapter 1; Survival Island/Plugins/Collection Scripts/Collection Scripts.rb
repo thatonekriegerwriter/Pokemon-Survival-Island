@@ -78,13 +78,24 @@ end
 #==============================================================================#
                                                                                 
 def pbMiningMain
-  vbItems=[:SOFTSAND,:SOFTSAND,:STONE,:STONE,:STONE,:HARDSTONE,:HARDSTONE,:HARDSTONE,:STONE,:STONE,:STONE,:STONE,:CHARCOAL,:CHARCOAL,:CHARCOAL,:CHARCOAL,:CHARCOAL,:LIGHTCLAY,:DAMPROCK,:IRONORE,:IRONORE,:IRONORE,:COPPERORE,:COPPERORE,:SILVERORE,:GOLDORE]
+  vbItems=[:SOFTSAND,:SOFTSAND,:STONE,:STONE,:STONE,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:HARDSTONE,:HARDSTONE,:HARDSTONE,:STONE,:STONE,:STONE,:STONE,:CHARCOAL,:CHARCOAL,:CHARCOAL,:CHARCOAL,:CHARCOAL,:LIGHTCLAY,:DAMPROCK,:IRONORE,:IRONORE,:IRONORE,:COPPERORE,:COPPERORE,:SILVERORE,:GOLDORE]
   chanceCollect=rand(6)  #Encounters 2/10 of the time
   if  chanceCollect==0 ||  chanceCollect==2 ||  chanceCollect==3 || chanceCollect==5
-    vbItem = vbItems[rand(21)]
+    vbItem = vbItems[rand(33)]
     pbItemBall(vbItem)
   elsif  chanceCollect==1 ||  chanceCollect==4
     pbMessage("You didn't find anything.")
+  end
+end
+
+def pbMiningMain2
+  vbItems=[:SOFTSAND,:SOFTSAND,:STONE,:STONE,:STONE,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:HARDSTONE,:HARDSTONE,:HARDSTONE,:STONE,:STONE,:STONE,:STONE,:CHARCOAL,:CHARCOAL,:CHARCOAL,:CHARCOAL,:CHARCOAL,:LIGHTCLAY,:DAMPROCK,:IRONORE,:IRONORE,:IRONORE,:COPPERORE,:COPPERORE,:SILVERORE,:GOLDORE]
+  chanceCollect=rand(6)  #Encounters 2/10 of the time
+  if  chanceCollect==0 ||  chanceCollect==2 ||  chanceCollect==3 || chanceCollect==5  ||  chanceCollect==4
+    vbItem = vbItems[rand(33)]
+    pbItemBall(vbItem)
+  elsif  chanceCollect==1
+    pbMessage("It shattered, leaving nothing behind.")
   end
 end
 #==============================================================================#

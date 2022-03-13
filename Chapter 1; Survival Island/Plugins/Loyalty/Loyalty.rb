@@ -207,7 +207,7 @@ end
     elsif target.damageState.focusBand
       @battle.pbCommonAnimation("UseItem",target)
       @battle.pbDisplay(_INTL("{1} hung on using its Focus Band!",target.pbThis))
-    elsif target.happiness>=149 
+    elsif target.happiness>149 && target.damageState.endured
       @battle.pbCommonAnimation("UseItem",target)
       @battle.pbDisplay(_INTL("{1} endured the hit for its trainer!",target.pbThis))
     end

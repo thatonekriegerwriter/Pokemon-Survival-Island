@@ -845,6 +845,7 @@
 2059,GRITPEBBLE,Grit Pebble,Grit Pebbles,2,0,"A Mysterious pebble that can raise the effort value for four of a Pokémon’s stats.",1,0,0,
 2060,GRITROCK,Grit Rock,Grit Rocks,2,0,"A Mysterious rock that can raise the effort value for six of a Pokémon’s stats.",1,0,0,
 2061,TUMBLESTONE,Tumblestone,Tumblestones,1,100,"A type of special stone that can be used to craft things.",0,0,0
+2062,COAL,Coal,Coals,1,100,"An item to be held by a Pokémon. It is a combustible fuel that boosts the power of Fire-type moves.",0,0,0
 
 #-------------------------------
 # Pokeballs
@@ -903,6 +904,7 @@
 2043,SHOVEL,Stone Axe,Stone Axe,1,50,"A basic axe used to knock down trees.",0,0,0,,51
 2049,STONEHAMMER,Stone Hammer,Stone Hammers,1,50,"A Stone Hammer used for Mining.",0,0,0,
 2050,IRONHAMMER,Iron Hammer,Iron Hammers,1,50,"A Iron Hammer used for Mining.",0,0,0,
+2064,ADVANCEDSUPPLIES,Climbing Gear,Climbing Gear,8,0,"A Pack that can be used for climbing and propelling greater distances.",1,1,5,
 #-------------------------------
 # Crafting Parts
 #-------------------------------
@@ -993,7 +995,8 @@
 1834,BOWL,Bowl,Bowl,1,2100,"A Bowl for food.",0,0,0,
 1811,WOODENPLANKS,Wooden Plank,Wooden Planks,1,2100,"Wooden Planks made out of trees.",0,0,0,
 1817,ACORN,Tree,Trees,1,2100,"A tree that can be used for wood.",1,1,5,
-1702,IRON2,Fine Iron,Bars of Fine Iron,1,0,"Refined Iron from the Furnace.",0,0,0,
+1702,IRON2,Fine Iron,Bars of Fine Iron,1,100,"Refined Iron from the Furnace.",0,0,0,
+2063,WOODENLOG,Wooden Log,Wooden Logs,1,100,"A tree that can be used for wood.",1,1,5,
 #-------------------------------
 # Player Equips
 #-------------------------------
