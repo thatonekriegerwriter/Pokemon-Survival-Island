@@ -176,6 +176,8 @@
 53,West,1,13,East,0
 # Temperate Ocean (61) - Temperate Zone (13)
 61,West,0,13,East,99
+# Temperate Zone (349) - Temperate Zone (15)
+349,1,39,15,0,0
 # Mountain Zone (16) - Swamp Zone (34)
 16,South,150,34,North,0
 # Mountain Zone (16) - Temperate-Snowy Zone (44)
@@ -418,12 +420,6 @@
 48,East,0,44,West,200
 # S.S Glittering Wreck (101) - Temperate-Snowy Zone (44)
 101,West,0,44,East,300
-# Temperate Zone (45) - Temperate Zone (54)
-45,North,11,54,South,0
-# Temperate Zone (47) - Temperate Zone (45)
-47,West,0,45,East,0
-# Temperate Zone (47) - Temperate Zone (54)
-47,North,0,54,South,39
 # Temperate Ocean (48) - Temperate Zone (243)
 48,West,0,243,East,50
 # Temperate Ocean (48) - Temperate Ocean (57)
@@ -540,8 +536,6 @@
 83,West,0,74,East,0
 # Winter Zone (84) - Winter Zone (75)
 84,West,50,75,East,0
-# Winter Zone (81) - Winter Zone (75)
-81,North,0,75,South,0
 # Winter Zone (78) - Winter Zone (77)
 78,West,0,77,East,0
 # Winter Zone (86) - Winter Zone (77)
@@ -562,8 +556,6 @@
 86,South,0,80,North,150
 # Winter Zone (83) - Winter Zone (80)
 83,West,50,80,East,0
-# Winter Zone (81) - Winter Zone (84)
-81,East,0,84,West,100
 # Winter Zone (85) - Winter Zone (82)
 85,North,0,82,South,0
 # Winter Zone (83) - Winter Zone (82)
@@ -1462,6 +1454,8 @@
 356,West,0,338,East,50
 # Jungle (357) - Jungle (338)
 357,North,0,338,South,100
+# Temperate Zone (350) - Temperate Zone (349)
+350,West,0,349,East,0
 # Jungle (355) - Jungle (354)
 355,West,0,354,East,0
 # Jungle (356) - Jungle (354)
@@ -1474,7 +1468,11 @@
 357,North,0,355,South,0
 # Jungle (357) - Jungle (356)
 357,West,0,356,East,0
-# Temperate Zone (349) - Temperate Zone (15)
-349,1,39,15,0,0
-# Temperate Zone (350) - Temperate Zone (349)
-350,West,0,349,East,0
+# Temperate Zone (45) - Temperate Zone (54)
+45,North,11,54,South,0
+# Temperate Zone (47) - Temperate Zone (54)
+47,North,0,54,South,39
+# MAP046 (46) - Temperate Zone (54)
+46,South,0,54,North,0
+# Temperate Zone (47) - Temperate Zone (45)
+47,West,0,45,East,0

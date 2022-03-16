@@ -2494,7 +2494,9 @@ Comet
     1,RESHIRAM,5
     1,ZEKROM,5
 Land,21
-    20,LEDYBA,5
+    1,LYCANROC_1,5
+    5,RATTATA_1,5
+    1,SHUPPET,5
 #-------------------------------
 [057] # Temperate Ocean
 OverworldLand,21
@@ -2766,7 +2768,7 @@ GoodRod
     20,MAGIKARP,3,8
     20,PSYDUCK,7,13
 #-------------------------------
-[064] # MAP064
+[064] # Temperate Zone
 OverworldLandMorning,21
     20,HOPPIP,2,8
     20,SUNKERN,5,10
@@ -2846,7 +2848,7 @@ LandNight,21
     1,FARFETCHD,5,15
     1,HYPNO,7,20
 #-------------------------------
-[065] # Temperate Zone Bottom
+[065]
 OverworldLandMorning,21
     20,HOPPIP,2,8
     20,SUNKERN,5,10
@@ -7003,7 +7005,7 @@ CaveDeep,5
 #-------------------------------
 [338] # Jungle
 #-------------------------------
-[349] # MAP349
+[349] # Temperate Zone
 OverworldLandDay,21
     20,BELLOSSOM,5
     20,BELLSPROUT,5
@@ -7122,7 +7124,7 @@ Bait
     1,CARNIVINE,5
     1,SNIVY,5
 #-------------------------------
-[350] # MAP350
+[350] # Temperate Zone
 OverworldLandDay,21
     20,BELLOSSOM,5
     20,BELLSPROUT,5

@@ -844,7 +844,7 @@
 2058,GRITGRAVEL,Grit Gravel,Grit Gravels,2,0,"A Mysterious gravel that can raise the effort value for two of a Pokémon’s stats.",1,0,0,
 2059,GRITPEBBLE,Grit Pebble,Grit Pebbles,2,0,"A Mysterious pebble that can raise the effort value for four of a Pokémon’s stats.",1,0,0,
 2060,GRITROCK,Grit Rock,Grit Rocks,2,0,"A Mysterious rock that can raise the effort value for six of a Pokémon’s stats.",1,0,0,
-2061,TUMBLESTONE,Tumblestone,Tumblestones,1,100,"A type of special stone that can be used to craft things.",0,0,0
+2061,TUMBLEROCK,Tumblestone,Tumblestones,1,100,"A type of special stone that can be used to craft things.",0,0,0
 2062,COAL,Coal,Coals,1,100,"An item to be held by a Pokémon. It is a combustible fuel that boosts the power of Fire-type moves.",0,0,0
 
 #-------------------------------
@@ -868,8 +868,8 @@
 #-------------------------------
 # Tools
 #-------------------------------
-2015,CALENDAR,Calendar,Calendar,2,0,"What day is it?",0,0,0,
-2016,APOWERMONITOR,Power Monitor,Power Monitor,2,0,"Hows my power?",0,0,0,
+2015,CALENDAR,Calendar,Calendar,8,0,"What day is it?",0,0,0,
+2016,APOWERMONITOR,Power Monitor,Power Monitor,8,0,"Hows my power?",0,0,0,
 2013,IRONAXE,Iron Axe,Iron Axes,8,2100,"An axe used to chop down trees.",2,0,6,,101
 2041,CROPSTICKS,Cropstick,Cropsticks,1,50,"Cropsticks move your Crops to the next level.",0,0,0,
 2011,CREMINIKEY,House Key (Cremini),House Key (Cremini),8,2100,"A Key to your house in Cremini Town.",2,0,6,
@@ -878,7 +878,7 @@
 1952,WORKID,Silph Card,Silph Card,8,2100,"A Card identifying you as an Employee of Silph Co.",2,0,6,
 1949,BADGECASE,Badge Case,Badge Cases,8,2100,"A collection of your badges tucked into a neat little case.",2,0,6,
 1950,RIBBONCASE,Ribbon Case,Ribbon Cases,8,2100,"A Case for all your well earned Contest Ribbons.",2,0,6,
-1894,CLOCK,Clock,Clock,1,0,"A Clock, it's used to tell the time.",2,0,6,
+1894,CLOCK,Clock,Clock,8,0,"A Clock, it's used to tell the time.",2,0,6,
 1911,MAP,Map,Map,8,20,"A Map of the Area.",2,0,6,
 1912,PHONE,Phone,Phone,8,20,"Your Phone.",2,0,6,
 1913,PLAYER,MP3 Player,MP3 Player,8,20,"Your Phone.",2,0,6,
@@ -920,11 +920,11 @@
 #-------------------------------
 # Dolls
 #-------------------------------
-2027,SMOOCHUMDOLL, Smoochum Doll, Smoochum Doll,9,100,"A Doll",1,1,13,
-2028,TORCHICDOLL, Torchic Doll, Torchic Doll,9,100,"A Doll",1,1,13,
-2029,MEOWTHDOLL, Meowth Doll, Meowth Doll,9,100,"A Doll",1,1,13,
-2030,TREECKODOLL, Treecko Doll, Treecko Doll,9,100,"A Doll",1,1,13,
-2031,CHIKORITADOLL, Chikorita Doll, Chikorita Doll,9,100,"A Doll",1,1,13,
+2027,SMOOCHUMDOLL, Smoochum Doll, Smoochum Doll,8,100,"A Doll",1,1,13,
+2028,TORCHICDOLL, Torchic Doll, Torchic Doll,8,100,"A Doll",1,1,13,
+2029,MEOWTHDOLL, Meowth Doll, Meowth Doll,8,100,"A Doll",1,1,13,
+2030,TREECKODOLL, Treecko Doll, Treecko Doll,8,100,"A Doll",1,1,13,
+2031,CHIKORITADOLL, Chikorita Doll, Chikorita Doll,8,100,"A Doll",1,1,13,
 #-------------------------------
 # Mulch
 #-------------------------------
