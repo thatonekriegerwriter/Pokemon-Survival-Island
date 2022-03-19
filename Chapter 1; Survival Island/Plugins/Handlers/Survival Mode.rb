@@ -666,7 +666,7 @@ end
 
 
 def pbRandomEvent
-   if rand(255) == 1
+   if rand(100) == 1
      Kernel.pbMessage(_INTL("There was a sound outside."))   #Comet
      $game_switches[450]==true 
      $game_switches[451]==true 
