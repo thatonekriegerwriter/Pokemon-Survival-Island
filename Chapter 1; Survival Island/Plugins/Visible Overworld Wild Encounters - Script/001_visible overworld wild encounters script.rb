@@ -264,7 +264,6 @@ module VisibleEncounterSettings
   # This is the number of steps a wild encounter goes by default before vanishing on the map.
 
   ADD_STEPS_BEFORE_VANISH = [ # default
-    [:shiny?, true, 8],       # [:shiny, true, 8]       - means that spawned shiny pokemon will more 8 steps longer on the map than default.
     [:aggressive, true, 6],   # [:aggressive, true, 6]  - means that spawned shiny pokemon will stay longer (6 steps more) on the map
     [:species, :PIDGEY, -2]   # [:species, :PIDGEY, -2] - means that pidgeys will be gone faster (2 steps earlier).
   ]
@@ -664,7 +663,7 @@ class Game_Map
     parameter = "pbPokemonAttacks"
     Compiler::push_script(event.pages[0].list,sprintf(parameter))
 	else
-	if rand(2)==0
+	if rand(100)>=25
     #  - add a branch to check if player can battle water pokemon from ground
     Compiler::push_branch(event.pages[0].list,sprintf(" pbCheckBattleAllowed()"))
     #  - set $PokemonGlobal.battlingSpawnedPokemon = true

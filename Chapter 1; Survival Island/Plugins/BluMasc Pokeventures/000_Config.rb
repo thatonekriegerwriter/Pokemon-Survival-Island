@@ -19,7 +19,7 @@ module PokeventureConfig
   # Friends
   FindFriends = true # If there is Space should there be a chance for wild pokèmon to join you.
   ChanceToFindFriend = 1 # as a 1 in x chance
-  AreFoundFriendsBrilliant = true #have higher ivs and a higher shiny chance
+  AreFoundFriendsBrilliant = false #have higher ivs and a higher shiny chance
   # Exp
   GainExp = true # should the pokemon gain exp through adventuring
   # Wild Pokemon
