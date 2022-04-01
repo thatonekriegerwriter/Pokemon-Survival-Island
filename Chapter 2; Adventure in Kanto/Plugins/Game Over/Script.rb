@@ -13,7 +13,7 @@ GAMEOVERSWITCH = 80
 
 alias :_old_FL_pbStartOver :pbStartOver
 def pbStartOver(gameover=false)
-  if $game_variables[225] < 1 || $PokemonSystem.survivalmode == 0
+  if $Trainer.playerhealth < 1 || $PokemonSystem.survivalmode == 0
     pbLoadRpgxpScene(Scene_Gameover.new)
     return
   end

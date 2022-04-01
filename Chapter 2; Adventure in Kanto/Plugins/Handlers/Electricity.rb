@@ -84,12 +84,14 @@ if coal == :CHARCOAL
 #full belly
 elsif coal == :WOODENPLANKS
  $game_variables[291]+=3
+elsif coal == :WOODENLOG
+ $game_variables[291]+=5
 elsif coal == :ACORN
  $game_variables[291]+=1
 elsif coal == :HEATROCK
  $game_variables[291]+=25
 elsif coal == :FIRESTONE
- $game_variables[291]+=15
+ $game_variables[291]+=25
 else
 pbMessage(_INTL("\\GIt got burnt up."))
 end

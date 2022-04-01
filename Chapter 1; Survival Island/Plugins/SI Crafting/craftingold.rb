@@ -764,6 +764,8 @@ end
 #Call Crafts.craftWindow
 module Crafts  
   def self.craftWindow()
+  $DiscordRPC.details = "Cooking a Tasty Meal!"
+  $DiscordRPC.update
   craftScene=Crafts_Scene.new
   craftScene.pbStartScene($PokemoncraftSelect)
   craft=craftScene.pbSelectcraft

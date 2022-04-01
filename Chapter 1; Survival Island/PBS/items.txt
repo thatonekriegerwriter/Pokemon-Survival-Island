@@ -901,7 +901,7 @@
 2038,BALANCEDCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
 2039,ATKCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
 2042,STONEAXE,Stone Axe,Stone Axe,1,50,"A basic axe used to knock down trees.",0,0,0,,51
-2043,SHOVEL,Stone Axe,Stone Axe,1,50,"A basic axe used to knock down trees.",0,0,0,,51
+2043,SHOVEL,Iron Axe,Iron Axe,1,50,"A basic axe used to knock down trees.",0,0,0,,51
 2049,STONEHAMMER,Stone Hammer,Stone Hammers,1,50,"A Stone Hammer used for Mining.",0,0,0,
 2050,IRONHAMMER,Iron Hammer,Iron Hammers,1,50,"A Iron Hammer used for Mining.",0,0,0,
 2064,ADVANCEDSUPPLIES,Climbing Gear,Climbing Gear,8,0,"A Pack that can be used for climbing and propelling greater distances.",1,1,5,

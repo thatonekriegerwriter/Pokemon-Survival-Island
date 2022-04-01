@@ -880,7 +880,7 @@
 1089,COLDFRONT,Cold Front,00C,30,WIND,Special,0,10,45,AllNearFoes,1,ceg,"A Freezing Cold Front is launched towards the enemy. It may freeze the enemy."
 1090,WARMFRONT,Warm Front,00A,30,WIND,Special,0,10,45,AllNearFoes,1,ceg,"A Burning Hot Front is launched towards the enemy. It may burn the enemy."
 1091,UPLIFTINGWIND,Uplifting Wind,05B,0,WIND,Status,0,15,0,UserSide,0,d,"A Calming Wind that raises stats on the user's side."
-1092,GUSTGUN,Gust Gun,0C0,45,WIND,Physical,75,7,0,Foe,0,abfn,"A Torrent of Wind that can repeatedly hit the enemy."
+1092,GUSTGUN,Gust Gun,0C0,45,WIND,Special,75,7,0,Foe,0,abfn,"A Torrent of Wind that can repeatedly hit the enemy."
 1093,JETSTREAM,Jet Stream,000,70,WIND,Physical,75,5,0,Foe,6,af,"The User uses a gust of wind to move faster than the naked eye."
 1094,ANCIENTWIND,Ancient Wind,068,0,WIND,Status,90,15,0,AllNearFoes,0,,"The user summons an ancient wind that negates abilities."
 1095,GROUNDINGWIND,Grounding Wind,11C,0,WIND,Status,90,15,0,AllNearFoes,0,,"The user grounds any airborne enemies."

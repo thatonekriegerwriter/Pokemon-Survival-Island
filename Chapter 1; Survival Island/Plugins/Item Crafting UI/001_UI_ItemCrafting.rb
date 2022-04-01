@@ -264,6 +264,8 @@ class ItemCraft_Screen
 end
 
 def pbItemCrafter(stock,speech1=nil,speech2=nil)
+  $DiscordRPC.details = "Crafting at a Crafting Station!"
+ $DiscordRPC.update
   for i in 0...stock.length
     raise _INTL("You are missing an ingredient or quantity value.") if stock[i][1].length%2 !=0
     itemdata = GameData::Item.try_get(stock[i][0])

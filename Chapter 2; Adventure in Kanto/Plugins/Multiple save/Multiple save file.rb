@@ -307,6 +307,12 @@ class PokemonLoadScreen
     commands[cmd_quit = commands.length]      = _INTL('Quit Game')
 		@scene.pbStartScene(commands, false, nil, 0, 0)
 		@scene.pbStartScene2
+	# These ones activate when the game starts
+   $DiscordRPC.large_image="game_icon"
+   $DiscordRPC.state="Load Screen"
+   # this shows the time the player has been playing for
+   $DiscordRPC.timestamp_start=pbGetTimeNow.to_i
+   $DiscordRPC.update
     loop do
       command = @scene.pbChoose(commands)
       pbPlayDecisionSE if command != cmd_quit
@@ -316,11 +322,15 @@ class PokemonLoadScreen
 					file = ScreenChooseFileSave.new(FileSave.count)
 					file.movePanel(1)
 					@scene.pbEndScene if !file.staymenu
+					$DiscordRPC.details = "Walking Around."
+					$DiscordRPC.update
 					file.endScene
 					return if !file.staymenu
 				}
       when cmd_new_game
         @scene.pbEndScene
+		$DiscordRPC.details = "Walking Around."
+		$DiscordRPC.update
         Game.start_new
         return
       when cmd_debug

@@ -448,12 +448,12 @@ module CraftsList
     [:SWEETHEART,:SUGAR,:NO,:CHOCOLATE],  
     [:SWEETHEART,:SUGAR,:CHOCOLATE,:NO],  
     #RECIPE 3: 
-    [:CARROTCAKE,:BOWL,:SUGAR,:COCOABEANS],  
-    [:CARROTCAKE,:BOWL,:COCOABEANS,:SUGAR],  
-    [:CARROTCAKE,:SUGAR,:COCOABEANS,:BOWL],  
-    [:CARROTCAKE,:SUGAR,:BOWL,:COCOABEANS],  
-    [:CARROTCAKE,:COCOABEANS,:SUGAR,:BOWL],  
-    [:CARROTCAKE,:COCOABEANS,:BOWL,:SUGAR], 
+    [:CARROTCAKE,:BOWL,:SUGAR,:CARROT],  
+    [:CARROTCAKE,:BOWL,:CARROT,:SUGAR],  
+    [:CARROTCAKE,:SUGAR,:CARROT,:BOWL],  
+    [:CARROTCAKE,:SUGAR,:BOWL,:CARROT],  
+    [:CARROTCAKE,:CARROT,:SUGAR,:BOWL],  
+    [:CARROTCAKE,:CARROT,:BOWL,:SUGAR], 
     #RECIPE 4:  
     [:LEMONADE,:LEMON,:SUGAR,:WATERBOTTLE],  
     [:LEMONADE,:LEMON,:SUGAR,:WATERBOTTLE],  
@@ -764,6 +764,8 @@ end
 #Call Crafts.craftWindow
 module Crafts  
   def self.craftWindow()
+  $DiscordRPC.details = "Cooking a Tasty Meal!"
+  $DiscordRPC.update
   craftScene=Crafts_Scene.new
   craftScene.pbStartScene($PokemoncraftSelect)
   craft=craftScene.pbSelectcraft

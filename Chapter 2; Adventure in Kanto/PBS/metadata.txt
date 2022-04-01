@@ -140,7 +140,7 @@ SafariMap = true
 BattleBack = Mountain
 #-------------------------------
 [020]
-# Route 18
+# Ocean
 Outdoor = true
 ShowArea = false
 BicycleAlways = false
@@ -152,7 +152,6 @@ Outdoor = true
 ShowArea = false
 #-------------------------------
 [022]
-# Route 18
 Outdoor = true
 ShowArea = true
 Bicycle = true
@@ -254,7 +253,6 @@ Outdoor = true
 Outdoor = false
 #-------------------------------
 [041]
-# Route 17
 Outdoor = true
 #-------------------------------
 [042]
@@ -1393,7 +1391,7 @@ Outdoor = true
 Outdoor = true
 #-------------------------------
 [316]
-# House 4
+# House 6
 Outdoor = true
 #-------------------------------
 [317]

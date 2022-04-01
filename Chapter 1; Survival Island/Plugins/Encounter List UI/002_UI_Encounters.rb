@@ -52,6 +52,8 @@ USER_DEFINED_NAMES = {
 
 
 def pbArceusTasksIntro
+  $DiscordRPC.details = "Looking at their research notes."
+  $DiscordRPC.update
   pbMessage(_INTL("You look over your notes, and look over it proudly."))
 	      cmd = pbMessage(_INTL("Which Area do you want to check?"),[
                             _INTL("Temperate Beach"),
