@@ -7,28 +7,38 @@ module PokeventureConfig
   #Item Collection
   CollectRandomItem = true #Collect Items from the Table below
   CollectItemsFromBattles = true # Collect Items from defeated Pokemon
-  Items = {
-    :common => [:ACORN, :STONE, :ORANBERRY],
-    :uncommon => [:IRONORE, :POTATO, :COPPERORE, :GOLDORE, :SLOWPOKETAIL, :TEALEAF, :SITRUSBERRY],
-	:rare => [:SILVERORE, :BAIT, :COCOABEANS, :CSLOWPOKETAIL, :WATER, :MEAT, :MOOMOOMILK, :CHARCOAL, :CHARCOAL, :CHARCOAL],  
-    :ultrarare => [:WATERBOTTLE, :POISONDART, :SLEEPDART, :PARALYZDART, :ICEDART, :FIREDART, :EXPCANDYS, :REVIVALHERB, :FIRESTONE, :LEAFSTONE],
-  }
-  ChanceToGetEnemyItem = 5 # as a 1 in x chance
+  # Form of this list is [ItemID,chance]
+  Items = [
+    [:ORANBERRY,30], [:SITRUSBERRY,30], [:ACORN,30], [:STONE,30], [:HEARTSCALE,16],
+    [:IRONORE,20], [:POTATO,20], [:COPPERORE,20], [:GOLDORE,20], [:TEALEAF,20],
+    [:SLOWPOKETAIL,10], [:SILVERORE,10], [:BAIT,10], [:MEAT,10], [:COAL,10], [:WATER,10],
+	[:FIRESTONE,7],[:LEAFSTONE,7],
+	[:COCOABEANS,5], [:EXPCANDYS,5],[:REVIVALHERB,5], [:ENERGYROOT,5], [:MOOMOOMILK,5], [:LEMON,5], [:SUPERREPEL,5],
+	[:POISONDART,3],[:SLEEPDART,3],[:PARALYZDART,3],[:ICEDART,3],[:FIREDART,3],
+    [:WATERBOTTLE,1], [:PEARL,1], [:EXPCANDYM,1]
+  ]
+  ChanceToGetEnemyItem = 10 # as a 1 in x chance
   # Friends
   FindFriends = true # If there is Space should there be a chance for wild pokèmon to join you.
-  ChanceToFindFriend = 1 # as a 1 in x chance
-  AreFoundFriendsBrilliant = false #have higher ivs and a higher shiny chance
+  ChanceToFindFriend = 50 # as a 1 in x chance
+  AreFoundFriendsBrilliant = true #have higher ivs and a higher shiny chance
+  ChanceToFindEggs = true
   # Exp
   GainExp = true # should the pokemon gain exp through adventuring
   # Wild Pokemon
   GlobalPkmn = false # should this script use the global encounter list everywhere instead of the specific map encounters.
-  PkmnList = [:PIKACHU,:CHARMANDER,:SQUIRTLE,:BULBASAUR,:EEVEE]
+  # Form of this list is [ItemID,chance]
+  PkmnList = [[:PIKACHU,1], [:CHARMANDER,3], [:SQUIRTLE,3], [:BULBASAUR,3], [:EEVEE,1]]
+  # Form of this list is [ItemID,chance]
+  EggList = [[:PICHU,5],[:CLEFFA,5],[:IGGLYBUFF,5],[:TOGEPI,5],[:TYROGUE,5],[:SMOOCHUM,5],[:ELEKID,5],[:MAGBY,5],[:BUDEW,5],
+            [:CHINGLING,5],[:BONSLY,5],[:MIMEJR,5],[:HAPPINY,5],[:MUCHLAX,5],[:RIOLU,5],[:MANTYKE,5],[:PUPPERON,5],
+            [:VULPIII,5],[:SMUJJ,5]]
   GlobalLeveling = false # makes the level of the encounters balanced around the number of badges instead of the location (always on if globalPkmn is on)
   #level per badge [min,max] can add more if you have more badges in your game
   PkmnLevel = [
-	[2,10],		#0 Badges
-	[11,20],	#1 Badge
-	[21,30],	#2 Badges...
+	[2,15],		#0 Badges
+	[11,25],	#1 Badge
+	[21,35],	#2 Badges...
 	[31,40],
 	[41,50],
 	[51,60],
@@ -49,6 +59,13 @@ end
 #-------------------------------------------------------------------------------
 GameData::EncounterType.register({
   :id => :Adventure,
+  :type => :none,
+  :trigger_chance => 1,
+  :old_slots => [50, 20, 10, 5, 5, 5, 5],
+})
+
+GameData::EncounterType.register({
+  :id => :AdventureEggs,
   :type => :none,
   :trigger_chance => 1,
   :old_slots => [50, 20, 10, 5, 5, 5, 5],

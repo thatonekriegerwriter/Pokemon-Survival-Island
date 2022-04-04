@@ -1097,3 +1097,7 @@ Pokemon = ESPEON,20
 [YOUNGSTER,Joey]
 LoseText = "..."
 Pokemon = RATTATA,30
+#-------------------------------
+[BUGCATCHER,Joey]
+LoseText = "..."
+Pokemon = CATERPIE,10

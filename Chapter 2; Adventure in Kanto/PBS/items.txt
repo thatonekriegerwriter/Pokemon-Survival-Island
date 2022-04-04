@@ -837,6 +837,16 @@
 1869,SNATCHER,Snatcher,Snatcher,1,0,"A Machine designed to steal an item from a Pokemon.",0,0,0
 1943,NO, , ,1,00,"You shouldn't see this.",0,0,0,
 2014,SUSPO,Suspicious Drink,Suspicious Drink,2,0,"A Weird Drink. It's purpose is unknown.",1,1,0,
+2054,GOLDLEAF,Gold Leaf,Gold Leaves,1,5,"A strange, gold-colored leaf.",0,0,0,
+2055,SILVERLEAF,Silver Leaf,Silver Leaves,1,5,"A strange, silver-colored leaf.",0,0,0,
+2056,SHINYLEAF,Shiny Leaf,Shiny Leaves,1,5,"A strange, shiny leaf.",0,0,0,
+2057,GRITDUST,Grit Dust,Grit Dusts,2,0,"A Mysterious dust that can raise the effort value for one of a Pokémon’s stats.",1,0,0,
+2058,GRITGRAVEL,Grit Gravel,Grit Gravels,2,0,"A Mysterious gravel that can raise the effort value for two of a Pokémon’s stats.",1,0,0,
+2059,GRITPEBBLE,Grit Pebble,Grit Pebbles,2,0,"A Mysterious pebble that can raise the effort value for four of a Pokémon’s stats.",1,0,0,
+2060,GRITROCK,Grit Rock,Grit Rocks,2,0,"A Mysterious rock that can raise the effort value for six of a Pokémon’s stats.",1,0,0,
+2061,TUMBLEROCK,Tumblestone,Tumblestones,1,100,"A type of special stone that can be used to craft things.",0,0,0
+2062,COAL,Coal,Coals,1,100,"An item to be held by a Pokémon. It is a combustible fuel that boosts the power of Fire-type moves.",0,0,0
+
 #-------------------------------
 # Pokeballs
 #-------------------------------
@@ -858,8 +868,8 @@
 #-------------------------------
 # Tools
 #-------------------------------
-2015,CALENDAR,Calendar,Calendar,2,0,"What day is it?",0,0,0,
-2016,APOWERMONITOR,Power Monitor,Power Monitor,2,0,"Hows my power?",0,0,0,
+2015,CALENDAR,Calendar,Calendar,8,0,"What day is it?",0,0,0,
+2016,APOWERMONITOR,Power Monitor,Power Monitor,8,0,"Hows my power?",0,0,0,
 2013,IRONAXE,Iron Axe,Iron Axes,8,2100,"An axe used to chop down trees.",2,0,6,,101
 2041,CROPSTICKS,Cropstick,Cropsticks,1,50,"Cropsticks move your Crops to the next level.",0,0,0,
 2011,CREMINIKEY,House Key (Cremini),House Key (Cremini),8,2100,"A Key to your house in Cremini Town.",2,0,6,
@@ -868,7 +878,7 @@
 1952,WORKID,Silph Card,Silph Card,8,2100,"A Card identifying you as an Employee of Silph Co.",2,0,6,
 1949,BADGECASE,Badge Case,Badge Cases,8,2100,"A collection of your badges tucked into a neat little case.",2,0,6,
 1950,RIBBONCASE,Ribbon Case,Ribbon Cases,8,2100,"A Case for all your well earned Contest Ribbons.",2,0,6,
-1894,CLOCK,Clock,Clock,1,0,"A Clock, it's used to tell the time.",2,0,6,
+1894,CLOCK,Clock,Clock,8,0,"A Clock, it's used to tell the time.",2,0,6,
 1911,MAP,Map,Map,8,20,"A Map of the Area.",2,0,6,
 1912,PHONE,Phone,Phone,8,20,"Your Phone.",2,0,6,
 1913,PLAYER,MP3 Player,MP3 Player,8,20,"Your Phone.",2,0,6,
@@ -891,9 +901,10 @@
 2038,BALANCEDCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
 2039,ATKCOMET,Shining Comet Shard, Shining Comet Shard,1,60000,"A shard which fell to the ground when a comet approached. A maniac will buy it for a high price.",0,0,0,
 2042,STONEAXE,Stone Axe,Stone Axe,1,50,"A basic axe used to knock down trees.",0,0,0,,51
-2043,SHOVEL,Stone Axe,Stone Axe,1,50,"A basic axe used to knock down trees.",0,0,0,,51
+2043,SHOVEL,Iron Axe,Iron Axe,1,50,"A basic axe used to knock down trees.",0,0,0,,51
 2049,STONEHAMMER,Stone Hammer,Stone Hammers,1,50,"A Stone Hammer used for Mining.",0,0,0,
 2050,IRONHAMMER,Iron Hammer,Iron Hammers,1,50,"A Iron Hammer used for Mining.",0,0,0,
+2064,ADVANCEDSUPPLIES,Climbing Gear,Climbing Gear,8,0,"A Pack that can be used for climbing and propelling greater distances.",1,1,5,
 #-------------------------------
 # Crafting Parts
 #-------------------------------
@@ -909,11 +920,11 @@
 #-------------------------------
 # Dolls
 #-------------------------------
-2027,SMOOCHUMDOLL, Smoochum Doll, Smoochum Doll,9,100,"A Doll",1,1,13,
-2028,TORCHICDOLL, Torchic Doll, Torchic Doll,9,100,"A Doll",1,1,13,
-2029,MEOWTHDOLL, Meowth Doll, Meowth Doll,9,100,"A Doll",1,1,13,
-2030,TREECKODOLL, Treecko Doll, Treecko Doll,9,100,"A Doll",1,1,13,
-2031,CHIKORITADOLL, Chikorita Doll, Chikorita Doll,9,100,"A Doll",1,1,13,
+2027,SMOOCHUMDOLL, Smoochum Doll, Smoochum Doll,8,100,"A Doll",1,1,13,
+2028,TORCHICDOLL, Torchic Doll, Torchic Doll,8,100,"A Doll",1,1,13,
+2029,MEOWTHDOLL, Meowth Doll, Meowth Doll,8,100,"A Doll",1,1,13,
+2030,TREECKODOLL, Treecko Doll, Treecko Doll,8,100,"A Doll",1,1,13,
+2031,CHIKORITADOLL, Chikorita Doll, Chikorita Doll,8,100,"A Doll",1,1,13,
 #-------------------------------
 # Mulch
 #-------------------------------
@@ -984,7 +995,8 @@
 1834,BOWL,Bowl,Bowl,1,2100,"A Bowl for food.",0,0,0,
 1811,WOODENPLANKS,Wooden Plank,Wooden Planks,1,2100,"Wooden Planks made out of trees.",0,0,0,
 1817,ACORN,Tree,Trees,1,2100,"A tree that can be used for wood.",1,1,5,
-1702,IRON2,Fine Iron,Bars of Fine Iron,1,0,"Refined Iron from the Furnace.",0,0,0,
+1702,IRON2,Fine Iron,Bars of Fine Iron,1,100,"Refined Iron from the Furnace.",0,0,0,
+2063,WOODENLOG,Wooden Log,Wooden Logs,1,100,"A tree that can be used for wood.",1,1,5,
 #-------------------------------
 # Player Equips
 #-------------------------------
@@ -1119,3 +1131,15 @@
 1832,CRITCURRY,Lansat Curry,Lansat Curryy,1,500,"A Curry that increases your Coolness and Critical Hit Ratio as long as you are on the field.",1,3,13,
 1833,GSCURRY,Starf Curry,Starf Curry,1,500,"A Curry that increases your Toughness and prevents Stat Reduction for 5 turns.",1,3,13,
 2040,LARGEMEAL,Hearty Meal,Hearty Meal,1,500,"A Meal that does wonders for your health.",1,3,13,
+#-------------------------------
+# Legends: Arceus Items (add to your current items.txt)
+#-------------------------------
+2065,BLACKAUGURITE,Black Augurite,Black Augurites,1,2100,"A glassy black stone that produces a sharp cutting edge when split. It’s loved by a certain Pokémon.",1,0,7,
+2066,PEATBLOCK,Peat Block,Peat Blocks,1,2100,"A block of muddy material that can be used as fuel for burning when it is dried. It’s loved by a certain Pokémon.",1,0,7,
+2067,LINKINGCORD,Linking Cord,Linking Cords,1,2100,"A string exuding a mysterious energy that makes you feel a strange sense of connection. It’s loved by certain Pokémon.",1,0,7,
+2068,ADAMANTCRYSTAL,Adamant Crystal,Adamant Crystals,8,0,"When used on Dialga, this large, glowing gem wells with power and allows the Pokémon to change form.",5,0,6,
+2069,LUSTROUSGLOBE,Lustrous Globe,Lustrous Globes,8,0,"When used on Palkia, this large, glowing orb wells with power and allows the Pokémon to change form.",5,0,6,
+2070,LEGENDPLATE,Legend Plate,Legend Plates,8,0,"A stone tablet imbued with the essence of all creation. When used on a certain Pokémon, it allows that Pokémon to gain the power of every type there is.",5,0,6,
+2071,BLANKPLATE,Blank Plate,Blank Plates,1,1000,"A stone tablet imbued with the essence of normalcy. When used on a certain Pokémon, it allows that Pokémon to gain the power of the Normal type.",0,0,0,
+2072,HOPOBERRY,Hopo Berry,Hopo Berries,5,20,"A Berry that can be fed to a Pokémon to restore its PP.",0,0,5,
+#-------------------------------

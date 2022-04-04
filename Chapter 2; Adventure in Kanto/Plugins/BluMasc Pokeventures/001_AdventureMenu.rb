@@ -62,6 +62,7 @@ class Adventure_Scene
 		end
 	end
 	def pbMoveToAdventure(pos)
+		if $Trainer.has_other_able_pokemon?(pos) 
 			if !@adventure.party_full?
 				@party[pos].play_cry
 				@adventure.add_pokemon(@party[pos].dup)
@@ -69,6 +70,9 @@ class Adventure_Scene
 			else
 				pbMessage(_INTL("The adventuring Party is already full!"))
 			end
+		else
+			pbMessage(_INTL("That is your last Pokémon that can battle. You cant send it Adventuring!"))
+		end
 	end
 	def pbMoveToParty(pos) 
 		if !$Trainer.party_full?
@@ -271,11 +275,15 @@ class Adventure_Scene
 		@adventureparty = @adventure.party
 		@cursorpos = 0
 		@off = false
-		@fastcollect = true
-		@sprites["background"] = IconSprite.new(0,0,@viewport)
-		@sprites["background"] = ScrollingSprite.new(@viewport)
-		@sprites["background"].speed = 1
-		@sprites["background"].setBitmap(_INTL("Graphics/Pictures/Pokeventures/bg"))
+		@fastcollect = false
+		if defined?(ScrollingSprite)
+			@sprites["background"] = IconSprite.new(0,0,@viewport)
+			@sprites["background"] = ScrollingSprite.new(@viewport)
+			@sprites["background"].speed = 1
+			@sprites["background"].setBitmap(_INTL("Graphics/Pictures/Pokeventures/bg"))
+		else
+			addBackgroundPlane(@sprites,"bg","Pokeventures/bg",@viewport)
+		end
 		@sprites["base"] = IconSprite.new(0,0,@viewport)
 		@sprites["base"].setBitmap("Graphics/Pictures/Pokeventures/fg.png")
 		@sprites["base"].ox = @sprites["base"].bitmap.width/2

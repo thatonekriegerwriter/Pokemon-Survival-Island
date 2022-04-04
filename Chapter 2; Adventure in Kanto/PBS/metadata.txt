@@ -152,6 +152,7 @@ Outdoor = true
 ShowArea = false
 #-------------------------------
 [022]
+# House 1
 Outdoor = true
 ShowArea = true
 Bicycle = true
@@ -818,7 +819,7 @@ Outdoor = true
 #-------------------------------
 [174]
 # Sea Cottage
-Outdoor = true
+Outdoor = false
 #-------------------------------
 [175]
 # Kanto
@@ -1444,6 +1445,22 @@ Outdoor = false
 # Bike Shop
 Outdoor = false
 #-------------------------------
+[329]
+# Grullo Gorge
+Outdoor = true
+#-------------------------------
+[330]
+# Grullo Gorge
+Outdoor = true
+#-------------------------------
+[331]
+# \PN's House
+Outdoor = false
+#-------------------------------
+[332]
+# Janine's House
+Outdoor = false
+#-------------------------------
 [333]
 # R Building F2
 Outdoor = false
@@ -1562,3 +1579,39 @@ Outdoor = false
 [362]
 # R Elevator
 Outdoor = false
+#-------------------------------
+[379]
+# Route 24
+Outdoor = false
+#-------------------------------
+[380]
+# MAP380
+Outdoor = false
+#-------------------------------
+[381]
+# Ferry
+Outdoor = false
+#-------------------------------
+[382]
+# Ferry
+Outdoor = false
+#-------------------------------
+[383]
+# Ferry
+Outdoor = false
+#-------------------------------
+[384]
+# Ferry
+Outdoor = false
+#-------------------------------
+[385]
+# Sea Cottage
+Outdoor = false
+#-------------------------------
+[386]
+# Fuchsia City
+Outdoor = true
+#-------------------------------
+[387]
+# Mt Spirit
+Outdoor = true
