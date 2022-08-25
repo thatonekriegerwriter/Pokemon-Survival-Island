@@ -17,7 +17,7 @@ SHOW_EV_IV = true
 
 # If TRUE, it shows EVs and IVs in Summary visible in Page 3 of the Summary Screen.
 
-SUMMARY_B2W2_STYLE = true
+SUMMARY_B2W2_STYLE = false
 
 # If TRUE, it changes the Summary Screen BW to B2W2 style.
 

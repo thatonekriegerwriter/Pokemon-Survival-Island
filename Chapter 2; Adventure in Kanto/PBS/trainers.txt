@@ -1101,3 +1101,8 @@ Pokemon = RATTATA,30
 [BUGCATCHER,Joey]
 LoseText = "..."
 Pokemon = CATERPIE,10
+#-------------------------------
+[BIRDKEEPER,Sam]
+LoseText = "..."
+Pokemon = PIDGEOTTO,20
+Pokemon = SIRFETCHD,10

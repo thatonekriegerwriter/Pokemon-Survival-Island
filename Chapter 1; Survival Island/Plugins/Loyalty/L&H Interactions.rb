@@ -62,7 +62,7 @@ if pkmn.nature ==   :HARDY
       when "damaged"
         gain = [-2, -3, -2][happiness_range]
       when "neglected"
-        gain = [-10, -10, -15][happiness_range]
+        gain = [-1, -1, -1][happiness_range]
       when "hungry"
         gain = [-10, -10, -15][happiness_range]
       when "thirsty"
@@ -1375,19 +1375,19 @@ if pkmn.nature ==   :HARDY
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1422,19 +1422,19 @@ elsif pkmn.nature ==   :LONELY
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1469,19 +1469,19 @@ elsif pkmn.nature ==   :BRAVE
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1516,19 +1516,19 @@ elsif pkmn.nature ==   :ADAMANT
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1563,19 +1563,19 @@ elsif pkmn.nature ==   :NAUGHTY
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1610,19 +1610,19 @@ elsif pkmn.nature ==   :BOLD
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1657,19 +1657,19 @@ elsif pkmn.nature ==   :DOCILE
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1704,19 +1704,19 @@ elsif pkmn.nature ==   :RELAXED
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1751,19 +1751,19 @@ elsif pkmn.nature ==   :IMPISH
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1798,19 +1798,19 @@ elsif pkmn.nature ==   :LAX
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1845,19 +1845,19 @@ elsif pkmn.nature ==   :TIMID
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1892,19 +1892,19 @@ elsif pkmn.nature ==   :HASTY
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1939,19 +1939,19 @@ elsif pkmn.nature ==   :SERIOUS
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -1986,19 +1986,19 @@ elsif pkmn.nature ==   :JOLLY
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2033,19 +2033,19 @@ elsif pkmn.nature ==   :NAIVE
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2080,19 +2080,19 @@ elsif pkmn.nature ==   :MODEST
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2127,19 +2127,19 @@ elsif pkmn.nature ==   :MILD
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2174,19 +2174,19 @@ elsif pkmn.nature ==   :QUIET
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2221,19 +2221,19 @@ elsif pkmn.nature ==   :BASHFUL
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2268,19 +2268,19 @@ elsif pkmn.nature ==   :RASH
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2315,19 +2315,19 @@ elsif pkmn.nature ==   :CALM
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2362,19 +2362,19 @@ elsif pkmn.nature ==   :GENTLE
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2409,19 +2409,19 @@ elsif pkmn.nature ==   :SASSY
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2456,19 +2456,19 @@ elsif pkmn.nature ==   :CAREFUL
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2503,19 +2503,19 @@ elsif pkmn.nature ==   :QUIRKY
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [5, 3, 2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2550,19 +2550,19 @@ elsif pkmn.nature ==   :HATEFUL
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"
@@ -2597,19 +2597,19 @@ elsif pkmn.nature ==   :LOVING
       when "powder"
         gain = [-15, -15, -10][loyalty_range]
       when "energyroot"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "revivalherb"
         gain = [-15, -15, -20][loyalty_range]
       when "damaged"
         gain = [-5, -3, -2][loyalty_range]
       when "neglected"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "hungry"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "thirsty"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "tired"
-        gain = [-10, -10, -15][loyalty_range]
+        gain = [-1, -1, -1][loyalty_range]
       when "youareeatingme"
         gain = [-255, -255, -255][loyalty_range]
       when "didDamage"

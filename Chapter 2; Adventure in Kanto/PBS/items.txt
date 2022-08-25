@@ -997,6 +997,7 @@
 1817,ACORN,Tree,Trees,1,2100,"A tree that can be used for wood.",1,1,5,
 1702,IRON2,Fine Iron,Bars of Fine Iron,1,100,"Refined Iron from the Furnace.",0,0,0,
 2063,WOODENLOG,Wooden Log,Wooden Logs,1,100,"A tree that can be used for wood.",1,1,5,
+2073,GLASS,Glass,Glass,1,2100,"Blown Glass Created in a Furnace.",0,0,0,
 #-------------------------------
 # Player Equips
 #-------------------------------

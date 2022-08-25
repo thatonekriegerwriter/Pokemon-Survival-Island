@@ -2,7 +2,7 @@
 # Adventure: code for sending pokemon adventuring
 #-------------------------------------------------------------------------------
 module PokeventureConfig
-  Updatesteps = 25 # How many steps should be taken before the Adventure progresses
+  Updatesteps = 50 # How many steps should be taken before the Adventure progresses
   CustomMusic = "Mystery Dungeon Guild" # Custom music to play in the menue. Must be in the BGM folder
   #Item Collection
   CollectRandomItem = true #Collect Items from the Table below
@@ -20,8 +20,8 @@ module PokeventureConfig
   ChanceToGetEnemyItem = 10 # as a 1 in x chance
   # Friends
   FindFriends = true # If there is Space should there be a chance for wild pokèmon to join you.
-  ChanceToFindFriend = 50 # as a 1 in x chance
-  AreFoundFriendsBrilliant = true #have higher ivs and a higher shiny chance
+  ChanceToFindFriend = 100 # as a 1 in x chance
+  AreFoundFriendsBrilliant = false #have higher ivs and a higher shiny chance
   ChanceToFindEggs = true
   # Exp
   GainExp = true # should the pokemon gain exp through adventuring

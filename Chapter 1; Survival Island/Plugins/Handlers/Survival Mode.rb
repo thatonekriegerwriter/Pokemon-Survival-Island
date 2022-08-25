@@ -168,10 +168,10 @@ Events.onMapChanging  += proc {
 #------------------------------------------------------------------------------#
 #--------------------------Temperature                 ------------------------#
 #------------------------------------------------------------------------------#
-  pbEachPokemon { |poke,_box|
-	  poke.changeHappiness("neglected",poke)
-	  poke.changeLoyalty("neglected",poke)
-  }
+#  pbEachPokemon { |poke,_box|
+#	  poke.changeHappiness("neglected",poke)
+#	  poke.changeLoyalty("neglected",poke)
+#  }
 
   if !GameData::MapMetadata.get($game_map.map_id).outdoor_map
    $game_screen.weather(:None, 0, 0)
@@ -937,3 +937,6 @@ def pbPokeAging(pkmn)
      pkmn.permadeath=true
    end
 end
+
+
+

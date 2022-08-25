@@ -89,10 +89,10 @@ def pbMiningMain
 end
 
 def pbMiningMain2
-  vbItems=[:SOFTSAND,:SOFTSAND,:STONE,:STONE,:STONE,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:HARDSTONE,:HARDSTONE,:HARDSTONE,:STONE,:STONE,:STONE,:STONE,:CHARCOAL,:CHARCOAL,:CHARCOAL,:CHARCOAL,:CHARCOAL,:LIGHTCLAY,:DAMPROCK,:IRONORE,:IRONORE,:IRONORE,:COPPERORE,:COPPERORE,:SILVERORE,:GOLDORE]
+  vbItems=[:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK,:TUMBLEROCK]
   chanceCollect=rand(6)  #Encounters 2/10 of the time
   if  chanceCollect==0 ||  chanceCollect==2 ||  chanceCollect==3 || chanceCollect==5  ||  chanceCollect==4
-    vbItem = vbItems[rand(33)]
+    vbItem = vbItems[rand(6)]
     pbItemBall(vbItem)
   elsif  chanceCollect==1
     pbMessage("It shattered, leaving nothing behind.")

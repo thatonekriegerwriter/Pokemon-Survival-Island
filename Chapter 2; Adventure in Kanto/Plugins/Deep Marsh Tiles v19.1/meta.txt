@@ -1,0 +1,5 @@
+﻿Name      = DeepMarshTiles
+Version   = 1.1
+Requires  = v19.1 Hotfixes,1.0.7
+Link      = https://reliccastle.com/resources/927/
+Credits   = Kotaro,Vendily,Mashirosakura

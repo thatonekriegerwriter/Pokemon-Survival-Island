@@ -254,6 +254,7 @@ Outdoor = true
 Outdoor = false
 #-------------------------------
 [041]
+# Violet City
 Outdoor = true
 #-------------------------------
 [042]
@@ -467,7 +468,7 @@ Outdoor = true
 #-------------------------------
 [087]
 # Fuchsia City
-Outdoor = false
+Outdoor = true
 #-------------------------------
 [088]
 # Route 19
