@@ -1,4 +1,0 @@
-Name         = Friendcare
-Version      = 1.4.1
-Website      = https://luka-sj.com/res/esms
-Credits      = Luka S.J.

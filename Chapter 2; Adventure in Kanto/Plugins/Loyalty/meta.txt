@@ -1,4 +1,0 @@
-Name         = Loyalty and Happiness
-Version      = 1.0.0
-Requires     = v19.1 Hotfixes, 1.0.7
-Credits      = thatonekriegerwriter

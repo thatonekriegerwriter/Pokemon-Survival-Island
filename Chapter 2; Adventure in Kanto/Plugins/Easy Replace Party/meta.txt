@@ -1,4 +1,0 @@
-Name = Easy Replace Party
-Version = 1.0
-Credits = Jonas930, Rua, Golisipod User
-
