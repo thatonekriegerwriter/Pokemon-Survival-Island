@@ -1117,27 +1117,27 @@ Pokemon = ESPEON,20
 #-------------------------------
 [POKEMONTRAINER_Red,Brent]
 LoseText = "... darn..."
-Pokemon = PORYGON,20
-Pokemon = HAPPINY,20
-Pokemon = XATU,20
+Pokemon = HATTREM,20
+Pokemon = MEOWSTIC,20
+Pokemon = ESPEON,20
 #-------------------------------
 [POKEMONTRAINER_Leaf,Donna]
 LoseText = "... darn..."
-Pokemon = TORCHIC,20
-Pokemon = SYLVEON,20
+Pokemon = HATTREM,20
+Pokemon = MEOWSTIC,20
 Pokemon = ESPEON,20
 #-------------------------------
 [POKEMONTRAINER_Hiro,Jace]
 LoseText = "... darn..."
-Pokemon = HERACROSS,20
-Pokemon = GASTLY,20
-Pokemon = RIOLU,20
+Pokemon = HATTREM,20
+Pokemon = MEOWSTIC,20
+Pokemon = ESPEON,20
 #-------------------------------
 [POKEMONTRAINER_Kris,Sevii]
 LoseText = "... darn..."
-Pokemon = PALSSIO,20
-Pokemon = VULPIII,20
-Pokemon = SQUIRTLE,20
+Pokemon = HATTREM,20
+Pokemon = MEOWSTIC,20
+Pokemon = ESPEON,20
 #-------------------------------
 [POKEMONTRAINER_Brendan,John]
 LoseText = "... darn..."
@@ -1147,18 +1147,18 @@ Pokemon = ESPEON,20
 #-------------------------------
 [POKEMONTRAINER_Dawn,Alice]
 LoseText = "... darn..."
-Pokemon = EMOLGA,20
-Pokemon = JIGGLYPUFF,20
-Pokemon = MUNNA,20
+Pokemon = HATTREM,20
+Pokemon = MEOWSTIC,20
+Pokemon = ESPEON,20
 #-------------------------------
 [POKEMONTRAINER_Lucas,David]
 LoseText = "... darn..."
-Pokemon = ELEKID,20
-Pokemon = BLITZLE,20
-Pokemon = YAMPER,20
+Pokemon = HATTREM,20
+Pokemon = MEOWSTIC,20
+Pokemon = ESPEON,20
 #-------------------------------
 [POKEMONTRAINER_May,Samantha]
 LoseText = "... darn..."
-Pokemon = CATERPIE,20
-Pokemon = DURANT,20
-Pokemon = WURMPLE,20
+Pokemon = HATTREM,20
+Pokemon = MEOWSTIC,20
+Pokemon = ESPEON,20

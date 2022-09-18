@@ -100,9 +100,7 @@ module Compiler
 
           :maxage             => contents["MaxAge"],
           :lifespan           => contents["Lifespan"],
-          :maxage             => contents["Age"],
-          :lifespan           => contents["Food"],
-          :maxage             => contents["MaxAge"],
-          :lifespan           => contents["Water"],
-          :maxage             => contents["MaxAge"],
-          :lifespan           => contents["Sleep"],
+          :age             => contents["Age"],
+          :food           => contents["Food"],
+          :water           => contents["Water"],
+          :sleep           => contents["Sleep"],
