@@ -61,6 +61,26 @@
 
   EventHandlers.add(:on_frame_update, :levelcap,
   proc {
+  case $game_variables[234]
+   when 1
+    $game_system.level_cap = $game_variables[234]
+   when 2
+    $game_system.level_cap = $game_variables[234]
+   when 3
+    $game_system.level_cap = $game_variables[234]
+   when 4
+    $game_system.level_cap = $game_variables[234]
+   when 5
+    $game_system.level_cap = $game_variables[234]
+   when 6
+    $game_system.level_cap = $game_variables[234]
+   when 7
+    $game_system.level_cap = $game_variables[234]
+   when 8
+    $game_system.level_cap = $game_variables[234]
+   when 9
+    $game_system.level_cap = $game_variables[234]
+   when 10
     $game_system.level_cap = $game_variables[234]
 end
   }
@@ -124,7 +144,6 @@ end
 	if $player.playerstaminamod.nil?
 	$player.playerstaminamod = 0.0
 	end
-	$player.playermaxstamina += $player.playerstaminamod
 	if $player.playerstamina < 0 && Input.press?(Input::BACK) && $game_player.moving? && Input.press?(Input::BACK) && !$game_temp.in_menu
 	  $player.playerhealth-=1 if rand(30) == 1
 	end
