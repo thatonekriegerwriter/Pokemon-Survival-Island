@@ -48,23 +48,29 @@ end
 #==============================================================================#
 #==============================================================================#
 
-
-#==============================================================================#
-#                                                                               
-#                         GALAR BERRY TREE Script                               
-#                            By BhagyaJyoti                                     
-#                       Originally By #Not Important                            
-#                           Help from Zeak6464                                  
-#                          For Essentials v18                                   
-#                         Complete plug-n-play                                  
-#                                                                               
-#==============================================================================#
-                                                                                
+def pbDungeonMain
+  vbItems=[:SOFTSAND,:SOFTSAND,:SOFTSAND,:SOFTSAND,:STONE,
+  :STONE,:STONE,:STONE,:HARDSTONE,:HARDSTONE,
+  :CHARCOAL,:BIGROOT,:LIGHTCLAY,:BLACKSLUDGE,:DAMPROCK,
+  :SHOALSHELL,:SHOALSALT,:ORANMASH,:BIGPEARL,:KINGSROCK,
+  :DEEPSEATOOTH,:DEEPSEASCALE,:IRONORE,:STARDUST,:STARDUST,
+  :STARPIECE,:REDAPRICORN,:SITRUSBERRY,:ORANBERRY,:WOOL,
+  :CHARCOAL,:CHARCOAL,:APPLE,:ACORN,:BAIT,:WONDERORB]
+  chanceCollect=rand(100)  #Encounters 2/10 of the time
+  if  chanceCollect > 5
+    vbItem = vbItems[rand(36)]
+    pbItemBall(vbItem)
+  else 
+    pbMessage("It was a Voltorb!.")
+    WildBattle.start(:VOLTORB, rand(2)+pbBalancedLevel($player.party))
+  end
+end
+	   
 def pbCollectionMain
-  vbItems=[:SOFTSAND,:SOFTSAND,:SOFTSAND,:SOFTSAND,:STONE,:STONE,:STONE,:STONE,:CHARCOAL,:BIGROOT,:LIGHTCLAY,:BLACKSLUDGE,:DAMPROCK,:SHOALSHELL,:SHOALSALT,:PEARL,:BIGPEARL,:KINGSROCK,:DEEPSEATOOTH,:DEEPSEASCALE,:IRONORE]
+  vbItems=[:SOFTSAND,:SOFTSAND,:SOFTSAND,:SOFTSAND,:STONE,:STONE,:STONE,:STONE,:CHARCOAL,:BIGROOT,:LIGHTCLAY,:BLACKSLUDGE,:DAMPROCK,:SHOALSHELL,:SHOALSALT,:PEARL,:BIGPEARL,:KINGSROCK,:DEEPSEATOOTH,:DEEPSEASCALE,:IRONORE,:CLEVERFEATHER,:SWIFTFEATHER,:SWIFTFEATHER,:SWIFTFEATHER]
   chanceCollect=rand(6)  #Encounters 2/10 of the time
   if  chanceCollect==0 ||  chanceCollect==2 ||  chanceCollect==3 || chanceCollect==5
-    vbItem = vbItems[rand(21)]
+    vbItem = vbItems[rand(25)]
     pbItemBall(vbItem)
   elsif  chanceCollect==1 ||  chanceCollect==4
     pbMessage("You didn't find anything.")

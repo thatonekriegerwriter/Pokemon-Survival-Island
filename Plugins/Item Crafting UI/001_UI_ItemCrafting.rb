@@ -86,24 +86,30 @@ class ItemCraft_Scene
       Input.update
       pbUpdate
       if Input.trigger?(Input::RIGHT)
-        if index < @stock.length-1
+        if index < @stock.length-1 
 			else
           pbPlayCursorSE
 		    end
-          hideIcons(index)
-          volume = 1
-	      item = GameData::Item.get(@stock[index+1][0])
-		  if item == :MASTERBALLC && !$bag.has?(:MASTERBALLPL)
+          volume = 1	  
+		  puts item
+		  if !@stock[index+1].nil?
+		  if GameData::Item.get(@stock[index+1][0]) == :MASTERBALLC && !$bag.has?(:MASTERBALLPL)
 		    if index+1 == @stock.length-1
 			 
-			else
+			elsif index+2 != @stock.length
+			else 
+          hideIcons(index)
           index += 2
-		    end
-		  else
-          index += 1
-		  end
           @switching = true
           pbRedrawItem(index,volume)
+		    end
+		  elsif index+1 != @stock.length
+          hideIcons(index)
+          index += 1
+          @switching = true
+          pbRedrawItem(index,volume)
+		  end
+          end
         end
       if Input.trigger?(Input::LEFT)
         if index > 0
@@ -119,12 +125,14 @@ class ItemCraft_Scene
 			
 			else
           index -= 2
+          @switching = true
+          pbRedrawItem(index,volume)
 		  end
 		  else
           index -= 1
-		  end
           @switching = true
           pbRedrawItem(index,volume)
+		  end
         end
       end
       if Input.trigger?(Input::UP)
@@ -156,12 +164,12 @@ class ItemCraft_Scene
         if pbConfirmMessage(_INTL("Would you like to craft {1} {2}?",volume,itemname))
           if canCraft?(index,volume)
             if $bag.can_add?(item,volume) 
-              $bag.add(item,volume)
+              $bag.add(item,volume.to_i)
               pbSEPlay("Pkmn move learnt")
-              removeIngredients(index,volume)
+              removeIngredients(index,volume.to_i)
               pbMessage(_INTL("You put the {1} away\\nin the <icon=bagPocket{2}>\\c[1]{3} Pocket\\c[0].",
                 itemname,pocket,PokemonBag.pocket_names()[pocket - 1]))
-              refreshNumbers(index,volume)
+              refreshNumbers(index,volume.to_i)
             else
               pbPlayBuzzerSE
               pbMessage(_INTL("Too bad...\nThe Bag is full..."))
@@ -184,6 +192,10 @@ class ItemCraft_Scene
       item = @stock[index][1][2*i]
       cost = @stock[index][1][2*i+1]
       $bag.remove(item,volume*cost)
+	  if $bag.quantity(item)<cost && $bag.quantity(item)<0
+        $bag.remove(item,$bag.quantity(item))
+        pbMessage(_INTL("As what is left over of your ingredients is useless, you throw them away."))
+	  end
     end
   end
   

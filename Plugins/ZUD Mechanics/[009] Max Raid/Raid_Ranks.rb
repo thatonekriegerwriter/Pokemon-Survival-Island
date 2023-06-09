@@ -110,7 +110,8 @@ def raid_GenerateBanlist
   # to appear in raids. However, many of these species have forms that may only
   # appear under certain conditions, which is handled elsewhere.
   #-----------------------------------------------------------------------------
-  allowed_forms = [:UNOWN, 
+  allowed_forms = [:TAUROS,
+                   :UNOWN, 
                    :DEOXYS, 
                    :BURMY, 
                    :WORMADAM, 
@@ -143,8 +144,13 @@ def raid_GenerateBanlist
                    :INDEEDEE, 
                    :URSHIFU,
                    :BASCULEGION,
-                   :DARMANITAN,
-                   :ENAMORUS]
+                   :ENAMORUS,
+                   :OINKOLOGNE,
+                   :PALAFIN,
+                   :DUDUNSPARCE,
+                   :MAUSHOLD,
+                   :TATSUGIRI,
+                   :SQUAWKABILLY]
   #-----------------------------------------------------------------------------
   # All other forms not listed above are added to the raid banlist. Exceptions
   # are made for regional forms, as well as other specific cases, such as with 
@@ -212,8 +218,8 @@ def raid_GenerateSpeciesList(params, rank, env = nil, database_filter = false)
     environ  = [:BURMY, :WORMADAM]
     seasonal = [:DEERLING, :SAWSBUCK]
     timeday  = [:SHAYMIN, :ROCKRUFF, :LYCANROC]
-    dataform = [:PIKACHU, :UNOWN, :FLABEBE, :FLOETTE, :FLORGES, :FURFROU, :PUMPKABOO,
-                :GOURGEIST, :ROCKRUFF, :MINIOR, :SINISTEA, :POLTEAGEIST]
+    dataform = [:PIKACHU, :UNOWN, :SHELLOS, :GASTRODON, :FLABEBE, :FLOETTE, :FLORGES, :FURFROU, :PUMPKABOO, :GOURGEIST,
+            	:ROCKRUFF, :MINIOR, :SINISTEA, :POLTEAGEIST, :PALAFIN, :DUDUNSPARCE, :MAUSHOLD, :TATSUGIRI, :SQUAWKABILLY]
     enviform = (env == :Cave || env == :Rock || env == :Sand) ? 1 : (env == :None) ? 2 : 0
     timeform = (PBDayNight.isNight?) ? 1 : (PBDayNight.isEvening?) ? 2 : 0
     banlist  = pbGetRaidRank[:banned]

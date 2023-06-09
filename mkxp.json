@@ -32,7 +32,7 @@
     // FPS display toggled via F2
     // (default: disabled)
     //
- "printFPS": true,
+ "printFPS": false,
 
 
     // Game window is resizable
@@ -52,7 +52,7 @@
     // as opposed to stretch-to-fill
     // (default: enabled)
     //
- "fixedAspectRatio": false,
+ "fixedAspectRatio": true,
 
 
     // Apply linear interpolation when game screen

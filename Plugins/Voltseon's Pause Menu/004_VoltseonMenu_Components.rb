@@ -32,10 +32,11 @@ class DemoHud < Component
     @shadowColor = MENU_TEXTOUTLINE[$PokemonSystem.current_menu_theme] || Color.new(48,48,48)
   end
 
-  def shouldDraw?; return true if $player.playermode == 0; end
+  def shouldDraw?; return true if $PokemonSystem.playermode == 0; end
 
   def refresh
-    text = _INTL("Time: {1}",$player.demotimer)
+    remainingtime = ($player.demotimer/60/60)
+    text = _INTL("Hours left in Demo: {1}",remainingtime)
     @sprites["overlay"].bitmap.clear
     pbSetSystemFont(@sprites["overlay"].bitmap)
     pbDrawTextPositions(@sprites["overlay"].bitmap,[[text,Graphics.width/2 - 8, 12,1,@baseColor,@shadowColor]])
@@ -153,13 +154,21 @@ class SurvivalHud < Component
   def shouldDraw?; return true if $PokemonSystem.survivalmode == 0; end
 
   def refresh
+   sta = $player.playerstamina
+   maxsta = $player.playermaxstamina
     text = _INTL("FOD")
     text2 =_INTL("H20")
     text3 =_INTL("SLP")
-    text4 =_INTL("HP")
+	if $DEBUG
+    text4 =_INTL("#{sta}/#{maxsta}")
+	end
     @sprites["overlay"].bitmap.clear
     pbSetSystemFont(@sprites["overlay"].bitmap)
-    pbDrawTextPositions(@sprites["overlay"].bitmap,[[text,Graphics.width/2 - 8, 34,1,@hungerColor,@shadowColor],[text2,Graphics.width/2 - 8,56,1,@thirstColor,@shadowColor],[text3,Graphics.width/2 - 8,78,1,@sleepColor,@shadowColor],[text4,Graphics.width/2 - 8,12,1,@healthColor,@shadowColor]])
+	if $DEBUG
+    pbDrawTextPositions(@sprites["overlay"].bitmap,[[text,Graphics.width/2 - 8, 12,1,@hungerColor,@shadowColor],[text2,Graphics.width/2 - 8,34,1,@thirstColor,@shadowColor],[text3,Graphics.width/2 - 8,56,1,@sleepColor,@shadowColor],[text4,Graphics.width/2 - 8,78,1,@sleepColor,@shadowColor]])
+	else
+    pbDrawTextPositions(@sprites["overlay"].bitmap,[[text,Graphics.width/2 - 8, 12,1,@hungerColor,@shadowColor],[text2,Graphics.width/2 - 8,34,1,@thirstColor,@shadowColor],[text3,Graphics.width/2 - 8,56,1,@sleepColor,@shadowColor]])
+	end
   end
 end
 

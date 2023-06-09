@@ -1405,12 +1405,13 @@ class MoveRelearnerScreen
       end
     end
     species_data = pkmn.species_data
-      species_data.tutor_moves.each { |m| moves.push(m) }
+    species_data.tutor_moves.each { |m| moves.push(m) }
     moves = tmoves + moves
     return moves | []   # remove duplicates
   end
 
   def pbStartScreen(pkmn)
+    puts pkmn
     moves = MoveRelearnerScreen.pbGetRelearnableMoves(pkmn)    #by Kota
     @scene.pbStartScene(pkmn, moves)
     loop do
@@ -1418,6 +1419,7 @@ class MoveRelearnerScreen
       if move
         if @scene.pbConfirm(_INTL("Teach {1}?", GameData::Move.get(move).name))
           if pbLearnMove(pkmn, move)
+            $stats.moves_taught_by_reminder += 1
             @scene.pbEndScene
             return true
           end
@@ -1627,14 +1629,10 @@ MenuHandlers.add(:party_menu_tend, :pet, {
   "name"      => _INTL("Pet"),
   "order"     => 10,
   "effect"    => proc { |screen, party, party_idx|
-	  if pbPetCheck == true
       pkmn = party[party_idx]
       pkmn.changeHappiness("groom",pkmn)
       pbMessage(_INTL("You pet {1}!",pkmn.name))
       pkmn.cute += 5
-	  else
-      pbMessage(_INTL("It's best not to pamper {1} too much!",pkmn.name))
-	  end
   }
 })
 
@@ -1643,13 +1641,9 @@ MenuHandlers.add(:party_menu_tend, :groom, {
   "order"     => 15,
   "effect"    => proc { |screen, party, party_idx|
       pkmn = party[party_idx]
-	  if pbGroomCheck == true
       pkmn.changeLoyalty("groom",pkmn)
       pbMessage(_INTL("You brush {1}!",pkmn.name))
       pkmn.beauty += 5
-	  else
-      pbMessage(_INTL("It's best not to pamper {1} too much!",pkmn.name))
-	  end
   }
 })
 
@@ -1680,7 +1674,7 @@ MenuHandlers.add(:party_menu_tend, :feed, {
   "name"      => _INTL("Feed"),
   "order"     => 20,
   "effect"    => proc { |screen, party, party_idx|
-    pkmn = party[party_idx] 
+    pkmn = party[party_idx]
     pbEatingPkmn(pkmn)
   }
 })

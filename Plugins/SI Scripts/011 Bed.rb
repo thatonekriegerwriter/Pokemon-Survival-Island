@@ -57,17 +57,17 @@ pbSetPokemonCenter
                  pkmn = party[i]
 				 heal_BED(hours,pkmn)
 				 end
-				pbWait(40)
+				pbWait(80)
 				pbRandomEvent
 				if $game_switches[157]==true && $game_variables[423] >= 1
 				$player.money +=(500*pbGet(350))
-			    pbMessage(_INTL("You got paid for a Days worth of battling."))
+			    pbMessage(_INTL("You got paid for a days worth of battling."))
 				$game_variables[423] = 0
 				end
 				if pbPokerus?
 			    pbMessage(_INTL("Your Pokemon seems a little off tonight."))
 				end 
-				$game_variables[29] = (3600*hours)
+				$game_variables[29] += (3600*hours)
 				pbSleepRestore(hours)
 				pbToneChangeAll(Tone.new(0,0,0,0),20)
 				if $player.playersleep >= 100
@@ -80,20 +80,21 @@ pbSetPokemonCenter
 			        pbMessage(_INTL("You want to go back to bed."))
 				else
 			        pbMessage(_INTL("You really need to sleep."))
-				end
+				end  
+        	    break
 		  end
       elsif cmdNap >= 0 && command == cmdNap   # Summary
+          if pbConfirmMessage(_INTL("Do you want to take a nap?"))
 			    pbMessage(_INTL("You lay down to take a nap."))
 				pbToneChangeAll(Tone.new(-255,-255,-255,0),20)
-			    hours = 0.5
-				$game_variables[29] = (3600*hours)
+			    hours = 1
+				$game_variables[29] += ((3600*hours)/2).round
 	            pbMEPlay("Pokemon Healing")
 				pbWait(40)
 				pbRandomEvent
 				chance = rand(3)
 				if chance == 0
-                 for i in 0...party.length
-                 pkmn = party[i]
+				$player.pokemon_party.each do |pkmn|
                  pkmn.heal_HP
                  pkmn.heal_status
                  pkmn.heal_PP
@@ -114,18 +115,25 @@ pbSetPokemonCenter
 				 pbToneChangeAll(Tone.new(0,0,0,0),20)
 			     pbMessage(_INTL("You wake up feeling worse than before."))
 				 end
+        	    break
+				end
       elsif cmdSave >= 0 && command == cmdSave   # Summary
        scene = PokemonSave_Scene.new
        screen = PokemonSaveScreen.new(scene)
        screen.pbSaveScreen
+	   break
       elsif cmdDreamConnect >= 0 && command == cmdDreamConnect   # Summary
 	    pbCableClub
+		break
       elsif cmdPickUp >= 0 && command == cmdPickUp   # Summary
-          if pbConfirmMessage(_INTL("Do you want to head to bed?"))
+          if pbConfirmMessage(_INTL("Do you want to pick up the Bed?"))
 		    pbReceiveItem(:BEDROLL)
 		    this_event = pbMapInterpreter.get_self
 		    pbSetSelfSwitch(this_event.id, "A", false)  
 		  end
+		  break
+	  elsif Input.trigger?(Input::BACK)
+	    break
 	  else
 	    break
       end

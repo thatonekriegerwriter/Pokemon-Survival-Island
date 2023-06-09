@@ -40,13 +40,13 @@ module Compiler
       [], # Banned (index 7)
     ]
     banlist = raid_GenerateBanlist
-    banlist.each { |sp| rank_lists[7].push(sp) }
+	rank_lists[7] = banlist.clone
     pbCompilerEachCommentedLine(path) { |line, line_no|
       if line[/^\s*(\w+)\s*=\s*(.*)$/]
         species = $1.to_sym
         value = $2
         include = false
-        if banlist.include?(species)
+        if banlist.include?(species) && species != :DARMANITAN_2
           raise _INTL("{1} is a banned raid species. Remove any raid rank entries for this species.\r\n", species, FileLineData.linereport)
         end
         line = pbGetCsvRecord(value, line_no, [0, "*u"])

@@ -51,6 +51,7 @@ class MenuEntryPokedex < MenuEntry
   end
 
   def selectable?
+    return false if $game_switches[485]==true
     return ($player.has_pokedex && $player.pokedex.accessible_dexes.length > 0)
   end
 end
@@ -96,7 +97,7 @@ class MenuEntryCraft < MenuEntry
 	  }
 	end
 
-	def selectable?; return true; end
+	def selectable?; return true if $game_switches[485]==false; end
 end
 #-------------------------------------------------------------------------------
 # Entry for Mystery Gift Screen
@@ -132,7 +133,7 @@ class MenuEntryVentures < MenuEntry
 	  }
 	end
 
-	def selectable?; return true; end
+	def selectable?; return true if $game_switches[485]==false; end
 end
 #-------------------------------------------------------------------------------
 # Entry for CAchievements Screen
@@ -208,6 +209,25 @@ class MenuEntryTrainer < MenuEntry
   def selectable?; return true; end
 end
 #-------------------------------------------------------------------------------
+# Entry for Badge Case
+#-------------------------------------------------------------------------------
+class MenuEntryBadge < MenuEntry
+  def initialize
+    @icon = "menuBadge"
+    @name = "Badge Case"
+  end
+
+  def selected(menu)
+    pbFadeOutIn {
+      scene = BadgeCase_Scene.new
+      screen = BadgeCaseScreen.new(scene)
+      screen.pbStartScreen
+    }
+  end
+
+  def selectable?; return $bag.has?(:BADGECASE); end
+end
+#-------------------------------------------------------------------------------
 # Entry for Save Screen
 #-------------------------------------------------------------------------------
 class MenuEntrySave < MenuEntry
@@ -226,7 +246,7 @@ class MenuEntrySave < MenuEntry
 
   def selectable?
      maps=[54,56,351,352,41,148,149,155,150,151,152,147,153,154]
-    return (!pbInBugContest? && $game_system && !$game_system.save_disabled && !pbInSafari? && maps.include?($game_map.map_id))
+    return (!pbInBugContest? && $game_system && !$game_system.save_disabled && !pbInSafari? && (maps.include?($game_map.map_id) || $PokemonSystem.playermode == 0)) 
   end
 end
 #-------------------------------------------------------------------------------
@@ -357,7 +377,7 @@ class MenuEntryExitDemo < MenuEntry
     menu.pbShowMenu
   end
 
-  def selectable?; return true if $player.playermode == 0; end
+  def selectable?; return true if $PokemonSystem.playermode == 0; end
 end
 #-------------------------------------------------------------------------------
 # Entry for quitting the game
@@ -371,9 +391,6 @@ class MenuEntryQuit < MenuEntry
   def selected(menu)
     menu.pbHideMenu
     if pbConfirmMessage(_INTL("Are you sure you want to quit the game?"))
-      scene = PokemonSave_Scene.new
-      screen = PokemonSaveScreen.new(scene)
-      screen.pbSaveScreen
       menu.pbEndScene
       $scene = nil
       exit!

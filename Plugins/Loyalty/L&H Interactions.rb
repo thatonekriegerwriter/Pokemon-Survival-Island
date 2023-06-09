@@ -1,8 +1,9 @@
     # Changing
 class Pokemon
 
-  def changeHappiness(method,wari)
+  def changeHappiness(method,wari=self)
     pkmn = wari
+    return if pkmn.starter == true
     gain = 0
 	base = 0
      base = 100 if pkmn.nature ==   :LOVING
@@ -1324,6 +1325,10 @@ else
     gain = 0
     bonus = 0
     pkmn = wari
+    return if pkmn.starter == true
+	if @loyalty.nil?
+	@loyalty = 0
+	end
 	base = 0
      base = 0 if pkmn.nature ==   :LOVING
      base = 0 if pkmn.nature ==   :HATEFUL

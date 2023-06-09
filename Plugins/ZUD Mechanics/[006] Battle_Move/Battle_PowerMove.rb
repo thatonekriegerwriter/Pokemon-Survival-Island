@@ -39,12 +39,21 @@ class Battle::PowerMove < Battle::Move
   #-----------------------------------------------------------------------------
   def pbModifyDamage(damageMult, user, target)
     return damageMult if @function == "ZUDBypassProtect" # G-Max One Blow/Rapid Flow
+    protected = false
     if target.effects[PBEffects::Protect]       || 
        target.effects[PBEffects::KingsShield]   ||
        target.effects[PBEffects::SpikyShield]   ||
        target.effects[PBEffects::BanefulBunker] ||
        target.effects[PBEffects::Obstruct]      ||
        target.pbOwnSide.effects[PBEffects::MatBlock]
+      protected = true
+    elsif defined?(PBEffects::SilkTrap) && target.effects[PBEffects::SilkTrap]
+      protected = true
+    elsif GameData::Target.get(@target).num_targets > 1 &&
+          target.pbOwnSide.effects[PBEffects::WideGuard]
+      protected = true
+    end
+    if protected
       @battle.pbDisplay(_INTL("{1} couldn't fully protect itself!", target.pbThis))
       return damageMult / 4
     end
@@ -94,7 +103,7 @@ class Battle::PowerMove < Battle::Move
     damage   = @old_move.baseDamage
     function = @old_move.function 
     return 0 if @old_move.statusMove?
-    weaken = [:FIGHTING, :POISON].include?(@old_move.type)
+    weaken = Settings::MOVE_TYPES_TO_WEAKEN.include?(@old_move.type)
     case function
     when "PowerHigherWithUserHP"                        # Eruption, Water Spout, etc.
       return (weaken) ? 100 : 150

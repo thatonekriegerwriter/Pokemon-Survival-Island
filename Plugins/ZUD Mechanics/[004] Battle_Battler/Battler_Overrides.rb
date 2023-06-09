@@ -7,8 +7,7 @@ class Battle::Battler
   #-----------------------------------------------------------------------------
   alias zud_pbInitEffects pbInitEffects  
   def pbInitEffects(batonPass)
-    @power_index                       = -1             
-    @power_trigger                     = false          
+    @power_index                       = -1                       
     @ignore_dynamax                    = false 
     @selectedMoveIsZMove               = false
     @lastMoveUsedIsZMove               = false
@@ -74,24 +73,6 @@ class Battle::Battler
   def pbRecoverHPFromDrain(*args)
     @ignore_dynamax = true
     zud_pbRecoverHPFromDrain(*args)
-  end
-  
-  #-----------------------------------------------------------------------------
-  # Edited to reduce base move PP when Power Move PP is used.
-  #-----------------------------------------------------------------------------
-  def pbReducePP(move)
-    return true if usingMultiTurnAttack?
-    return true if move.pp < 0
-    return true if move.total_pp <= 0
-    return false if move.pp == 0
-    if move.pp > 0
-      pbSetPP(move, move.pp - 1)
-      if move.powerMove?
-        c = @power_index
-        pbSetPP(@base_moves[c], @base_moves[c].pp - 1)
-      end
-    end
-    return true
   end
   
   #-----------------------------------------------------------------------------
@@ -166,20 +147,14 @@ class Battle::Battler
   # Aliased for fainting.
   #-----------------------------------------------------------------------------
   # KO'd Pokemon properly un-Dynamax and un-Ultra Burst.
-  # Also allows for proper Max Raid capture/KO sequences.
   #-----------------------------------------------------------------------------
   alias zud_pbFaint pbFaint
-  def pbFaint(showMessage = true)
-    if @battle.decision == 0 && !pbOwnedByPlayer? && @effects[PBEffects::MaxRaidBoss]
-      self.hp += 1
-      raid_CatchPokemon(self)
-    else
-	  return if @fainted
-      self.unmax if dynamax?
-      zud_pbFaint(showMessage)
-      @pokemon.makeUnUltra if ultra?
-      raid_KOCounter(self.pbDirectOpposing) if @battle.raid_battle
-    end
+  def pbFaint(*args)
+    return if @fainted || !fainted?
+    self.unmax if dynamax?
+    zud_pbFaint(*args)
+    @pokemon.makeUnUltra if ultra?
+    raid_KOCounter(self.pbDirectOpposing) if @battle.raid_battle
   end
   
   #-----------------------------------------------------------------------------
@@ -190,7 +165,7 @@ class Battle::Battler
   alias zud_pbTransform pbTransform
   def pbTransform(target)
     zud_pbTransform(target)
-    if target.dynamax?
+    if target.dynamax? && !target.base_moves.empty?
       @moves.clear
       target.moves.each_with_index do |m, i|
         basemove  = target.base_moves[i].id
@@ -199,8 +174,7 @@ class Battle::Battler
         @moves[i].total_pp = 5
       end
     end
-    display_base_moves("Max Move") if dynamax?
-    @effects[PBEffects::TransformPokemon] = target.pokemon
+    display_base_moves if dynamax?
     @battle.scene.pbRefreshOne(@index)
   end
   

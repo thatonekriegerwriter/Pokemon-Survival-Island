@@ -1,5 +1,14 @@
 EventHandlers.add(:on_player_step_taken_can_transfer, :effefefefefehhttrfeeffeeffefej,
   proc {
+  
+				party = $player.party
+                 for i in 0...party.length
+                 pkmn = party[i]
+				 loyalty2 = pkmn.loyalty
+				 if loyalty2.nil?
+				  pkmn.loyalty = 70
+				 end
+				 end
   #Demo Mode moving over to main.
   if $PokemonSystem.playermode == 0 
      if $player.demotimer <= 0 && $game_temp.in_menu == false
@@ -19,8 +28,6 @@ EventHandlers.add(:on_player_step_taken_can_transfer, :effefefefefehhttrfeeffeef
       $scene.main
     end
     Graphics.transition(20)
-	 else
-     $player.demotimer = $player.demotimer.to_i-1
 	 end
 end
 
@@ -62,5 +69,4 @@ if $game_switches[421]==true
 end
 
 })
-
 

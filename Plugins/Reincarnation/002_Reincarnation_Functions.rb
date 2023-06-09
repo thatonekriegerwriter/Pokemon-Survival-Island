@@ -1,169 +1,145 @@
-module GameData
-  class Item
-  
-    def is_rein_stone?; return has_flag?("ReincarnationStone"); end
-    def is_reinboon?;            return has_flag?("ReincarnationBoon"); end
-    def is_reinbane?;            return has_flag?("ReincarnationBane"); end
-  
-  
-end
-end
-
-class Reincarnation
-
-
-	def self.reincarnation_nature(pkmn, boon, bane)
-	  chance2 = 0
-	  reincarnatornature = 0
-	  chance2 = rand(5)
-	  if boon ==  ReincarnationConfig::BOON_NEUTRAL || bane == ReincarnationConfig::BOON_NEUTRAL || (boon == bane)
-	    if chance2 == 0
-	      reincarnatornature = :HARDY
-	    elsif chance2 == 1
-	      reincarnatornature = :DOCILE
-	    elsif chance2 == 2
-	      reincarnatornature = :SERIOUS
-	    elsif chance2 == 3
-	      reincarnatornature = :BASHFUL
-	    elsif chance2 == 4
-	      reincarnatornature = :QUIRKY
-	    end
-	  elsif boon == ReincarnationConfig::BOON_ATK 
-	    if bane == ReincarnationConfig::BANE_DEF
-	      reincarnatornature = :LONELY
-		elsif bane == ReincarnationConfig::BANE_SPEED
-	      reincarnatornature = :BRAVE
-		elsif bane == ReincarnationConfig::BANE_SATK
-	      reincarnatornature = :ADAMANT
-		elsif bane == ReincarnationConfig::BANE_SDEF
-	      reincarnatornature = :NAUGHTY
-		end
-	  elsif boon == ReincarnationConfig::BOON_DEF 
-	    if bane == ReincarnationConfig::BANE_ATK
-	      reincarnatornature = :BOLD
-		elsif bane == ReincarnationConfig::BANE_SPEED
-	      reincarnatornature = :RELAXED
-		elsif bane == ReincarnationConfig::BANE_SATK
-	      reincarnatornature = :IMPISH
-		elsif bane == ReincarnationConfig::BANE_SDEF
-	      reincarnatornature = :LAX
-		end
-	  elsif boon == ReincarnationConfig::BOON_SPEED
-	    if bane == ReincarnationConfig::BANE_ATK
-	      reincarnatornature = :TIMID
-		elsif bane == ReincarnationConfig::BANE_DEF
-	      reincarnatornature = :HASTY
-		elsif bane == ReincarnationConfig::BANE_SATK
-	      reincarnatornature = :JOLLY
-		elsif bane == ReincarnationConfig::BANE_SDEF
-	      reincarnatornature = :NAIVE
-		end
-	  elsif boon == ReincarnationConfig::BOON_SATK
-	    if bane == ReincarnationConfig::BANE_ATK
-	      reincarnatornature = :MODEST
-		elsif bane == ReincarnationConfig::BANE_SPEED
-	      reincarnatornature = :QUIET
-		elsif bane == ReincarnationConfig::BANE_DEF
-	      reincarnatornature = :MILD
-		elsif bane == ReincarnationConfig::BANE_SDEF
-	      reincarnatornature = :RASH
-		end
-	  elsif boon == ReincarnationConfig::BOON_SDEF
-	    if bane == ReincarnationConfig::BANE_ATK
-	      reincarnatornature = :CALM
-		elsif bane == ReincarnationConfig::BANE_SPEED
-	      reincarnatornature = :SASSY
-		elsif bane == ReincarnationConfig::BANE_SATK
-	      reincarnatornature = :CAREFUL
-		elsif bane == ReincarnationConfig::BANE_DEF
-	      reincarnatornature = :GENTLE
-		end
-	  end
-      pkmn.nature = reincarnatornature
+class GameData::Item
+  def is_reincarnation_stone?
+    flags.each do |flag|
+      next if !flag.include?("ReincarnationStone")
+      return true
     end
+    return false
+  end
 
-    def self.begin_reincarnation(pkmn, donator1, donator2, ivitem, boon, bane)
-	   if ReincarnationConfig::NUZLOCKE_REINCARNATION == true && defined?(Nuzlocke.definedrules?)
-       pbMessage(_INTL("{1} is not dead, reincarnation cannot occur.", pkmn)) 
-	   return false
-	   end
-	   if ReincarnationConfig::REINCARNATION_HAS_COST == true && $bag.quantity(ReincarnationConfig::COST_ITEM) < ReincarnationConfig::COST_AMOUNT
-       pbMessage(_INTL("You do not have enough {1}, you need at least {2}.", ReincarnationConfig::COST_ITEM,ReincarnationConfig::COST_AMOUNT)) 
-	   return false
-	   end
-	   
-  ivs = {}
-  GameData::Stat.each_main { |s| ivs[s.id] = rand(32) }
-  ivinherit = []
-	  magstoninher = 0
-	  chance = rand(6)
-	  if chance = 0
-	     magstoninher = :HP
-	  elsif chance = 1
-	     magstoninher = :ATTACK
-	  elsif chance = 2
-	     magstoninher = :DEFENSE
-	  elsif chance = 3
-	     magstoninher = :SPECIAL_ATTACK
-	  elsif chance = 4
-	     magstoninher = :SPECIAL_DEFENSE
-	  elsif chance = 5
-	     magstoninher = :SPEED
-	  end
-  for i in 0...2
-    parent = [donator1,donator2][i]
-    ivinherit[i] = :HP if ivitem == (ReincarnationConfig::MAGIC_STONE_HP)
-    ivinherit[i] = :ATTACK if ivitem == (ReincarnationConfig::MAGIC_STONE_ATK)
-    ivinherit[i] = :DEFENSE if ivitem == (ReincarnationConfig::MAGIC_STONE_DEF)
-    ivinherit[i] = :SPECIAL_ATTACK if ivitem == (ReincarnationConfig::MAGIC_STONE_SATK)
-    ivinherit[i] = :SPECIAL_DEFENSE if ivitem == (ReincarnationConfig::MAGIC_STONE_SDEF)
-    ivinherit[i] = :SPEED if ivitem == (ReincarnationConfig::MAGIC_STONE_INHERIT)
-    ivinherit[i] = magstoninher if ivitem == (ReincarnationConfig::MAGIC_STONE_INHERIT)
-  end
-  num = 0
-  r = rand(2)
-  2.times do
-    if ivinherit[r]!=nil
-      ivs[ivinherit[r]] = pkmn.iv[ivinherit[r]]
-      num += 1
-      break
+  def is_reincarnation_boon?
+    flags.each do |flag|
+      next if !flag.include?("ReincarnationBoon")
+      return true
     end
-    r = (r+1)%2
+    return false
   end
-  limit = ivitem == (ReincarnationConfig::MAGIC_STONE_INHERIT) ? 5 : 3
-  loop do
-    freestats = []
-    GameData::Stat.each_main { |s| freestats.push(s.id) if !ivinherit.include?(s.id) }
-    break if freestats.length==0
-    r = freestats[rand(freestats.length)]
-    parent = [donator1,donator2][rand(2)]
-    ivs[r] = parent.iv[r]
-    ivinherit.push(r)
-    num += 1
-    break if num>=limit
+
+  def is_reincarnation_bane?
+    flags.each do |flag|
+      next if !flag.include?("ReincarnationBane")
+      return true
+    end
+    return false
   end
-	   reincarnation_nature(pkmn, boon, bane)
-	   if ReincarnationConfig::NUZLOCKE_REINCARNATION == true && defined?(Nuzlocke.definedrules?) && pkmn.permaFaint == true
-	   pkmn.permaFaint = false
-	   end
-	   if ReincarnationConfig::TAKE_FROM_BAG == "STONES"
-	     $bag.remove(ivitem)
-	   elsif ReincarnationConfig::TAKE_FROM_BAG == "BOON/BANE"
-	     $bag.remove(boon)
-	     $bag.remove(bane)
-	   elsif ReincarnationConfig::TAKE_FROM_BAG == "BOTH"
-	     $bag.remove(boon)
-	     $bag.remove(bane)
-	     $bag.remove(ivitem)
-	   end
-	   if ReincarnationConfig::REINCARNATION_HAS_COST == true
-	     $bag.remove(ReincarnationConfig::COST_ITEM,ReincarnationConfig::COST_AMOUNT)
-	   end
-       if ReincarnationConfig::SET_TO_LEVEL !=nil
-	   pkmn.level = ReincarnationConfig::SET_TO_LEVEL
-	   pkmn.iv = ivs
-	   end
-	   pkmn.calc_stats
-	   return pkmn
+
+  def stat_for_reincarnation(check_flag)
+    flags.each do |flag|
+      next if !flag.include?(check_flag)
+      split = flag.split("_")
+      stat = split[1...flag.length].join("_").to_sym
+      next if !GameData::Stat.exists?(stat)
+      return stat 
+    end
+    return nil
+  end
+end
+
+module Reincarnation
+
+  module_function
+
+  def can_reincarnate?(pkmn = nil, show_message = true)
+    if !meets_cost_requirement?
+      qty = COST_AMOUNT
+      item_data = GameData::Item.get(COST_ITEM)
+      item_name = qty == 1 ? item_data.portion_name : item_data.portion_name_plural
+      pbMessage(_INTL("You need at least {2} {1} for reincarnation...", item_name, qty)) if show_message
+      return false
+    elsif pkmn && pkmn.able? && NUZLOCKE_REINCARNATION && defined?(Nuzlocke.definedrules?)
+      pbMessage(_INTL("{1} is not fainted, reincarnation cannot occur...", pkmn.name)) if show_message
+      return false
+    elsif !pkmn && $player.party.length < 1
+      pbMessage(_INTL("You don't have enough Pokemon to reincarnate...")) if show_message
+      return false
+    end
+	  return true
+  end
+
+  def has_cost?
+    return false if !GameData::Item.exists?(COST_ITEM)
+    return false if !COST_AMOUNT || COST_AMOUNT < 1
+    return true
+  end
+
+  def meets_cost_requirement?
+    return true if !has_cost?
+    # return true if $DEBUG
+    return true if $bag.quantity(COST_ITEM) >= COST_AMOUNT
+    return false
+  end
+
+  def begin_reincarnation(pkmn, donator_1 = nil, donator_2 = nil, boon_item, bane_item, iv_item)
+	  # Randomize Stats
+    new_ivs = {}
+    GameData::Stat.each_main { |s| new_ivs[s.id] = rand(Pokemon::IV_STAT_LIMIT + 1) }
+    parents = []
+    parents.push(donator_1) if donator_1
+    parents.push(donator_2) if donator_2
+    availible_ivs = new_ivs.keys.clone
+    iv_item_stat  = GameData::Item.try_get(iv_item)&.stat_for_reincarnation("ReincarnationStone")
+    if iv_item_stat
+      new_ivs[iv_item_stat] = pkmn.iv[iv_item_stat] 
+      availible_ivs.delete(iv_item_stat)
+    end
+    if parents.length < 2
+      rand_stat = availible_ivs.sample
+      new_ivs[rand_stat] = (parents.first ? parents.first.iv[rand_stat] : new_ivs[rand_stat])
+    else
+      limit = ((!iv_item || GameData::Item.get(iv_item).stat_for_reincarnation("ReincarnationStone")) ? 3 : 5)
+      pass_stats = availible_ivs.sample(limit)
+      pass_stats.each do |stat|
+        parent = parents.sample
+        new_ivs[stat] = parent.iv[stat]
+      end
+    end
+    nature_maps = { :NEUTRAL => [] }
+    GameData::Stat.each_main { |stat| nature_maps[stat.id] = {} }
+    GameData::Nature.each do |nature|
+      if !nature.stat_changes || nature.stat_changes.empty?
+        nature_maps[:NEUTRAL].push(nature.id)
+        next
+      end
+      stat_inc = nil
+      stat_dec = nil
+      nature.stat_changes.each do |stat, amt| 
+        stat_inc = stat if amt > 0
+        stat_dec = stat if amt < 0
+      end
+      next if !stat_inc
+      if boon_item
+        nature_maps[stat_inc][stat_dec] = nature.id
+      elsif bane_item
+        nature_maps[stat_dec][stat_inc] = nature.id
+      end
+    end
+    reincarnate_nature = nil
+    boon_stat = GameData::Item.try_get(boon_item)&.stat_for_reincarnation("ReincarnationBoon")
+    bane_stat = GameData::Item.try_get(bane_item)&.stat_for_reincarnation("ReincarnationBane")
+    if (!boon_stat && !bane_stat) || (boon_stat == bane_stat)
+      reincarnate_nature = nature_maps[:NEUTRAL].sample
+    elsif boon_item && boon_stat
+      nature_hash = nature_maps[boon_stat]
+      reincarnate_nature = nature_hash[bane_stat]
+      reincarnate_nature = nature_hash.values.sample if !reincarnate_nature
+    elsif bane_item && bane_stat
+      nature_hash = nature_maps[bane_stat]
+      reincarnate_nature = nature_hash[boon_stat]
+      reincarnate_nature = nature_hash.values.sample if !reincarnate_nature
+    end
+	if NUZLOCKE_REINCARNATION && defined?(Nuzlocke.definedrules?)
+    pkmn.permaFaint = false
+	pkmn.heal
+	end
+    $bag.remove(iv_item) if iv_item && !GameData::Item.try_get(iv_item).is_important?
+    $bag.remove(boon_item) if boon_item && !GameData::Item.try_get(boon_item).is_important?
+    $bag.remove(bane_item) if boon_item && !GameData::Item.try_get(boon_item).is_important?
+    $bag.remove(COST_ITEM, COST_AMOUNT) if has_cost?
+    pkmn.level = Reincarnation::SET_TO_LEVEL if SET_TO_LEVEL.is_a?(Numeric)
+    pkmn.species = pkmn.species_data.get_baby_species if REVERT_EVOLUTION
+    pkmn.reset_moves if REVERT_MOVES
+    pkmn.iv = new_ivs
+    pkmn.nature = reincarnate_nature if reincarnate_nature
+    pkmn.calc_stats
 	end
 end

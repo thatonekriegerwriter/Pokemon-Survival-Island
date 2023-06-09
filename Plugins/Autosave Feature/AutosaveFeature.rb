@@ -66,9 +66,9 @@ end
 def pbAutosave(scene = nil)
   scene = $scene if !scene
   return if $PokemonSystem.autosave!=0
-  if !pbInSafari? && !pbInBugContest? && !pbBattleChallenge.pbInChallenge?
+  if !pbInSafari? && !pbInBugContest? && !pbBattleChallenge.pbInChallenge? 
     scene.spriteset.addUserSprite(Autosave.new)
-    Game.save
+	Game.auto_save
   end
 end
 

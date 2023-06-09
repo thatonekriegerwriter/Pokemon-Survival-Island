@@ -53,6 +53,9 @@ class Battle::Move::UseLastMoveUsed < Battle::Move
   end
 end
 
+#===============================================================================
+# Fixed battle rule "forceCatchIntoParty" being circumventable.
+#===============================================================================
 module Battle::CatchAndStoreMixin
   def pbStorePokemon(pkmn)
     # Nickname the Pokémon (unless it's a Shadow Pokémon)
@@ -63,12 +66,62 @@ module Battle::CatchAndStoreMixin
         pkmn.name = nickname
       end
     end
+	pkmn.ace = false
+	pkmn.lifespan = 50
+	pkmn.food = (rand(100)+1)
+    pkmn.water = (rand(100)+1)
+    pkmn.age = (rand(40)+1)
+  if pkmn.age <= 10
+    pkmn.ev[:DEFENSE] = rand(40)
+    pkmn.ev[:SPECIAL_DEFENSE] = rand(40)
+    pkmn.ev[:ATTACK] = rand(40)
+    pkmn.ev[:SPECIAL_ATTACK] = rand(40)
+    pkmn.ev[:SPEED] = rand(40)
+    pkmn.ev[:HP] = rand(40)
+  elsif pkmn.age <= 20 && pkmn.age > 10
+    pkmn.ev[:DEFENSE] = rand(80)
+    pkmn.ev[:SPECIAL_DEFENSE] = rand(80)
+    pkmn.ev[:ATTACK] = rand(80)
+    pkmn.ev[:SPECIAL_ATTACK] = rand(80)
+    pkmn.ev[:SPEED] = rand(80)
+    pkmn.ev[:HP] = rand(80)
+  elsif pkmn.age <= 30 && pkmn.age > 20
+    pkmn.ev[:DEFENSE] = rand(120)
+    pkmn.ev[:SPECIAL_DEFENSE] = rand(120)
+    pkmn.ev[:ATTACK] = rand(120)
+    pkmn.ev[:SPECIAL_ATTACK] = rand(120)
+    pkmn.ev[:SPEED] = rand(120)
+    pkmn.ev[:HP] = rand(120)
+  elsif pkmn.age <= 40 && pkmn.age > 30
+    pkmn.ev[:DEFENSE] = rand(150)
+    pkmn.ev[:SPECIAL_DEFENSE] = rand(150)
+    pkmn.ev[:ATTACK] = rand(150)
+    pkmn.ev[:SPECIAL_ATTACK] = rand(150)
+    pkmn.ev[:SPEED] = rand(150)
+    pkmn.ev[:HP] = rand(150)
+  elsif pkmn.age <= 51 && pkmn.age > 40
+    pkmn.ev[:DEFENSE] = rand(200)
+    pkmn.ev[:SPECIAL_DEFENSE] = rand(200)
+    pkmn.ev[:ATTACK] = rand(200)
+    pkmn.ev[:SPECIAL_ATTACK] = rand(200)
+    pkmn.ev[:SPEED] = rand(200)
+    pkmn.ev[:HP] = rand(200)
+  end
     # Store the Pokémon
-    if pbPlayer.party_full? && (@sendToBoxes == 0 || @sendToBoxes == 2)   # Ask/must add to party
+    if (@sendToBoxes == 0 || @sendToBoxes == 2)   # Ask/must add to party
+#    if pbPlayer.party_full? && (@sendToBoxes == 0 || @sendToBoxes == 2)   # Ask/must add to party
+     if $bag.has?(:MACHETE) && !pkmn.shadowPokemon? && !pkmn.egg? && !pkmn.foreign?($player)
+      cmds = [_INTL("Add to your party"),
+              _INTL("Send to a Box"),
+              _INTL("See {1}'s summary", pkmn.name),
+              _INTL("Gut {1} for Meat", pkmn.name),
+              _INTL("Check party")]
+     else
       cmds = [_INTL("Add to your party"),
               _INTL("Send to a Box"),
               _INTL("See {1}'s summary", pkmn.name),
               _INTL("Check party")]
+     end
       cmds.delete_at(1) if @sendToBoxes == 2
       loop do
         cmd = pbShowCommands(_INTL("Where do you want to send {1} to?", pkmn.name), cmds, 99)
@@ -123,6 +176,13 @@ module Battle::CatchAndStoreMixin
             summary_screen.pbStartScreen([pkmn], 0)
           }
         when 3   # Check party
+         if $bag.has?(:MACHETE) && !pkmn.shadowPokemon? && !pkmn.egg? && !pkmn.foreign?($player)
+          pbCookMeat(home=false,pkmn)
+          break
+          else
+          @scene.pbPartyScreen(0, true, 2)
+          end
+        when 4   # Check party
           @scene.pbPartyScreen(0, true, 2)
         end
       end
@@ -155,6 +215,10 @@ end
 # Fixed Eerie Spell's effect working like a status move.
 #===============================================================================
 class Battle::Move::LowerPPOfTargetLastMoveBy3 < Battle::Move
+  def pbFailsAgainstTarget?(user, target, show_message)
+    return super
+  end
+
   def pbEffectAgainstTarget(user, target)
     return if target.fainted?
     last_move = target.pbGetMoveWithID(target.lastRegularMoveUsed)
@@ -235,5 +299,253 @@ class Battle::AI
       mod2 = mod2.to_f / Effectiveness::NORMAL_EFFECTIVE
     end
     return mod1 * mod2
+  end
+end
+
+#===============================================================================
+# Fixed Flame Orb/Toxic Orb being able to replace an existing status problem.
+#===============================================================================
+class Battle::Battler
+  def pbCanInflictStatus?(newStatus, user, showMessages, move = nil, ignoreStatus = false)
+    return false if fainted?
+    self_inflicted = (user && user.index == @index)   # Rest and Flame Orb/Toxic Orb only
+    # Already have that status problem
+    if self.status == newStatus && !ignoreStatus
+      if showMessages
+        msg = ""
+        case self.status
+        when :SLEEP     then msg = _INTL("{1} is already asleep!", pbThis)
+        when :POISON    then msg = _INTL("{1} is already poisoned!", pbThis)
+        when :BURN      then msg = _INTL("{1} already has a burn!", pbThis)
+        when :PARALYSIS then msg = _INTL("{1} is already paralyzed!", pbThis)
+        when :FROZEN    then msg = _INTL("{1} is already frozen solid!", pbThis)
+        end
+        @battle.pbDisplay(msg)
+      end
+      return false
+    end
+    # Trying to replace a status problem with another one
+    if self.status != :NONE && !ignoreStatus && !(self_inflicted && move)   # Rest can replace a status problem
+      @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true))) if showMessages
+      return false
+    end
+    # Trying to inflict a status problem on a Pokémon behind a substitute
+    if @effects[PBEffects::Substitute] > 0 && !(move && move.ignoresSubstitute?(user)) &&
+       !self_inflicted
+      @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true))) if showMessages
+      return false
+    end
+    # Weather immunity
+    if newStatus == :FROZEN && [:Sun, :HarshSun].include?(effectiveWeather)
+      @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true))) if showMessages
+      return false
+    end
+    # Terrains immunity
+    if affectedByTerrain?
+      case @battle.field.terrain
+      when :Electric
+        if newStatus == :SLEEP
+          if showMessages
+            @battle.pbDisplay(_INTL("{1} surrounds itself with electrified terrain!", pbThis(true)))
+          end
+          return false
+        end
+      when :Misty
+        @battle.pbDisplay(_INTL("{1} surrounds itself with misty terrain!", pbThis(true))) if showMessages
+        return false
+      end
+    end
+    # Uproar immunity
+    if newStatus == :SLEEP && !(hasActiveAbility?(:SOUNDPROOF) && !@battle.moldBreaker)
+      @battle.allBattlers.each do |b|
+        next if b.effects[PBEffects::Uproar] == 0
+        @battle.pbDisplay(_INTL("But the uproar kept {1} awake!", pbThis(true))) if showMessages
+        return false
+      end
+    end
+    # Type immunities
+    hasImmuneType = false
+    case newStatus
+    when :SLEEP
+      # No type is immune to sleep
+    when :POISON
+      if !(user && user.hasActiveAbility?(:CORROSION))
+        hasImmuneType |= pbHasType?(:POISON)
+        hasImmuneType |= pbHasType?(:STEEL)
+      end
+    when :BURN
+      hasImmuneType |= pbHasType?(:FIRE)
+    when :PARALYSIS
+      hasImmuneType |= pbHasType?(:ELECTRIC) && Settings::MORE_TYPE_EFFECTS
+    when :FROZEN
+      hasImmuneType |= pbHasType?(:ICE)
+    end
+    if hasImmuneType
+      @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true))) if showMessages
+      return false
+    end
+    # Ability immunity
+    immuneByAbility = false
+    immAlly = nil
+    if Battle::AbilityEffects.triggerStatusImmunityNonIgnorable(self.ability, self, newStatus)
+      immuneByAbility = true
+    elsif self_inflicted || !@battle.moldBreaker
+      if abilityActive? && Battle::AbilityEffects.triggerStatusImmunity(self.ability, self, newStatus)
+        immuneByAbility = true
+      else
+        allAllies.each do |b|
+          next if !b.abilityActive?
+          next if !Battle::AbilityEffects.triggerStatusImmunityFromAlly(b.ability, self, newStatus)
+          immuneByAbility = true
+          immAlly = b
+          break
+        end
+      end
+    end
+    if immuneByAbility
+      if showMessages
+        @battle.pbShowAbilitySplash(immAlly || self)
+        msg = ""
+        if Battle::Scene::USE_ABILITY_SPLASH
+          case newStatus
+          when :SLEEP     then msg = _INTL("{1} stays awake!", pbThis)
+          when :POISON    then msg = _INTL("{1} cannot be poisoned!", pbThis)
+          when :BURN      then msg = _INTL("{1} cannot be burned!", pbThis)
+          when :PARALYSIS then msg = _INTL("{1} cannot be paralyzed!", pbThis)
+          when :FROZEN    then msg = _INTL("{1} cannot be frozen solid!", pbThis)
+          end
+        elsif immAlly
+          case newStatus
+          when :SLEEP
+            msg = _INTL("{1} stays awake because of {2}'s {3}!",
+                        pbThis, immAlly.pbThis(true), immAlly.abilityName)
+          when :POISON
+            msg = _INTL("{1} cannot be poisoned because of {2}'s {3}!",
+                        pbThis, immAlly.pbThis(true), immAlly.abilityName)
+          when :BURN
+            msg = _INTL("{1} cannot be burned because of {2}'s {3}!",
+                        pbThis, immAlly.pbThis(true), immAlly.abilityName)
+          when :PARALYSIS
+            msg = _INTL("{1} cannot be paralyzed because of {2}'s {3}!",
+                        pbThis, immAlly.pbThis(true), immAlly.abilityName)
+          when :FROZEN
+            msg = _INTL("{1} cannot be frozen solid because of {2}'s {3}!",
+                        pbThis, immAlly.pbThis(true), immAlly.abilityName)
+          end
+        else
+          case newStatus
+          when :SLEEP     then msg = _INTL("{1} stays awake because of its {2}!", pbThis, abilityName)
+          when :POISON    then msg = _INTL("{1}'s {2} prevents poisoning!", pbThis, abilityName)
+          when :BURN      then msg = _INTL("{1}'s {2} prevents burns!", pbThis, abilityName)
+          when :PARALYSIS then msg = _INTL("{1}'s {2} prevents paralysis!", pbThis, abilityName)
+          when :FROZEN    then msg = _INTL("{1}'s {2} prevents freezing!", pbThis, abilityName)
+          end
+        end
+        @battle.pbDisplay(msg)
+        @battle.pbHideAbilitySplash(immAlly || self)
+      end
+      return false
+    end
+    # Safeguard immunity
+    if pbOwnSide.effects[PBEffects::Safeguard] > 0 && !self_inflicted && move &&
+       !(user && user.hasActiveAbility?(:INFILTRATOR))
+      @battle.pbDisplay(_INTL("{1}'s team is protected by Safeguard!", pbThis)) if showMessages
+      return false
+    end
+    return true
+  end
+end
+
+#===============================================================================
+# Fixed Pastel Veil not providing poison immunity to allies, and not healing the
+# bearer if it becomes poisoned anyway.
+#===============================================================================
+Battle::AbilityEffects::StatusImmunityFromAlly.add(:PASTELVEIL,
+  proc { |ability, battler, status|
+    next true if status == :POISON
+  }
+)
+
+Battle::AbilityEffects::StatusCure.copy(:IMMUNITY, :PASTELVEIL)
+
+#===============================================================================
+# Fixed moves that deal fixed damage showing an effectiveness message.
+#===============================================================================
+class Battle::Move
+  alias __hotfixes__pbEffectivenessMessage pbEffectivenessMessage
+  def pbEffectivenessMessage(user, target, numTargets = 1)
+    return if self.is_a?(Battle::Move::FixedDamageMove)
+    __hotfixes__pbEffectivenessMessage(user, target, numTargets)
+  end
+end
+
+#===============================================================================
+# Fixed Chip Away/Darkest Lariat/Sacred Sword not ignoring the target's evasion.
+#===============================================================================
+class Battle::Move::IgnoreTargetDefSpDefEvaStatStages < Battle::Move
+  def pbCalcAccuracyModifiers(user, target, modifiers)
+    super
+    modifiers[:evasion_stage] = 0
+  end
+end
+
+#===============================================================================
+# Fixed error in battle fight menu when not using graphics for it.
+#===============================================================================
+class Battle::Scene::FightMenu < Battle::Scene::MenuBase
+  alias __hotfixes__refreshMoveData refreshMoveData
+  def refreshMoveData(move)
+    return if !USE_GRAPHICS && !move
+    __hotfixes__refreshMoveData(move)
+  end
+end
+
+#===============================================================================
+# Fixed Liquid Ooze not oozing drained HP if the bearer fainted from that
+# draining.
+#===============================================================================
+class Battle::Battler
+  def pbRecoverHPFromDrain(amt, target, msg = nil)
+    if target.hasActiveAbility?(:LIQUIDOOZE, true)
+      @battle.pbShowAbilitySplash(target)
+      pbReduceHP(amt)
+      @battle.pbDisplay(_INTL("{1} sucked up the liquid ooze!", pbThis))
+      @battle.pbHideAbilitySplash(target)
+      pbItemHPHealCheck
+    else
+      msg = _INTL("{1} had its energy drained!", target.pbThis) if nil_or_empty?(msg)
+      @battle.pbDisplay(msg)
+      if canHeal?
+        amt = (amt * 1.3).floor if hasActiveItem?(:BIGROOT)
+        pbRecoverHP(amt)
+      end
+    end
+  end
+end
+
+class Battle::Move::HealUserByTargetAttackLowerTargetAttack1 < Battle::Move
+  def pbEffectAgainstTarget(user, target)
+    # Calculate target's effective attack value
+    stageMul = [2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8]
+    stageDiv = [8, 7, 6, 5, 4, 3, 2, 2, 2, 2, 2, 2, 2]
+    atk      = target.attack
+    atkStage = target.stages[:ATTACK] + 6
+    healAmt = (atk.to_f * stageMul[atkStage] / stageDiv[atkStage]).floor
+    # Reduce target's Attack stat
+    if target.pbCanLowerStatStage?(:ATTACK, user, self)
+      target.pbLowerStatStage(:ATTACK, 1, user)
+    end
+    # Heal user
+    if target.hasActiveAbility?(:LIQUIDOOZE, true)
+      @battle.pbShowAbilitySplash(target)
+      user.pbReduceHP(healAmt)
+      @battle.pbDisplay(_INTL("{1} sucked up the liquid ooze!", user.pbThis))
+      @battle.pbHideAbilitySplash(target)
+      user.pbItemHPHealCheck
+    elsif user.canHeal?
+      healAmt = (healAmt * 1.3).floor if user.hasActiveItem?(:BIGROOT)
+      user.pbRecoverHP(healAmt)
+      @battle.pbDisplay(_INTL("{1}'s HP was restored.", user.pbThis))
+    end
   end
 end

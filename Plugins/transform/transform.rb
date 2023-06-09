@@ -23,18 +23,24 @@ end
 
 #Returns the normal walksprite for the player character
 def pbGetNormalChar
-  meta = GameData::Metadata.get_player($player.character_ID)
-  graphic = pbGetPlayerCharset(meta,1,nil,true)
+  meta = GameData::PlayerMetadata.get($player.character_ID)
+  graphic = pbGetPlayerCharset(meta.walk_charset,$player,true)
+  if graphic.nil?
+  raise "error"
+  else
   return graphic
+  end
 end
+
 
 #Sets an event to the given charset
 def pbSetCharSet(event,charset)
   if event == "player" || event == "Player"
-    $game_player.character_name = charset
+    puts charset
+    $game_player.character_name = charset if charset
   else
     event = @event_id if event == "self" || event == "Self"
-    $game_map.events[event].character_name = charset
+    $game_map.events[event].character_name = charset if charset
   end
 end
 
@@ -81,8 +87,7 @@ end
 #Running shoes will undo the transformation, so turns them off, unless
 #the player is turning back to their original graphic
 def pbSwapGraphic(event,poof=true)
-  pbSetRunningShoes(false)
-  event = @event_id if event == "self" || event == "Self"
+  event = @event_id if (event == "self" || event == "Self") && (event != "player" || event != "Player")
   eventchar =  pbGetCharSet(event)
   playerchar = pbGetCharSet("player")
   if poof==true
@@ -92,9 +97,6 @@ def pbSwapGraphic(event,poof=true)
   end
   pbSetCharSet(event,playerchar)
   pbSetCharSet("player",eventchar)
-  if eventchar == pbGetNormalChar
-    pbSetRunningShoes(true)
-  end
 end
 
 
@@ -128,13 +130,13 @@ end
 #Running shoes will undo the transformation, so turns them off.
 def pbTransform(event,graphic,stopanime = false,poof=true)
   if event == "player" || event == "Player"
-    pbSetRunningShoes(false)
+  elsif event == "self" || event == "Self"
+  event = @event_id
   end
   if poof==true
     pbPoof(event)
     pbWait(10)
   end
-  event = @event_id if event == "self" || event == "Self"
   pbSetCharSet(event,graphic)
 end
 
@@ -142,7 +144,6 @@ end
 def pbDetransform(poof=true)
   graphic = pbGetNormalChar
   pbTransform("player",graphic,poof)
-  pbSetRunningShoes(true)
 end
 
 #Changes the player into a Pokemon's overworld sprite.
@@ -155,7 +156,7 @@ def pbTransformPoke(pokemon,form = 0, shiny = false, gender = nil)
     gender = pokemon.gender
     pokemon = pokemon.species
   end
-  no = GameData::Species.get(pokemon).id_number
+  no = GameData::Species.get(pokemon).id
     graphic = _INTL("Followers")
     if shiny == true
       graphic+= _INTL(" shiny")
@@ -185,6 +186,8 @@ PokemonSelection.choose(
            .setMinPokemon(1)
            .setMaxPokemon(1)
            .setCanCancel(true))
+	pbToneChangeAll(Tone.new(-255,-255,-255,0),5)
+	pbWait(6)
     pokemon=$player.party[0]
     pbTransformPoke(pokemon)
 end
@@ -195,6 +198,8 @@ PokemonSelection.choose(
            .setMinPokemon(2)
            .setMaxPokemon(2)
            .setCanCancel(true))
+	pbToneChangeAll(Tone.new(-255,-255,-255,0),5)
+	pbWait(6)
     pokemon=$player.party[0]
     pbTransformPoke(pokemon)
   end
