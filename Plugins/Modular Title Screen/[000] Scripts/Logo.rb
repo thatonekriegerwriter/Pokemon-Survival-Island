@@ -53,8 +53,9 @@ class MTS_Element_Logo
     @sprites["glow2"].opacity = 0
       # draw bitmap ------------------------------------------------------------
       bmp = pbBitmap("Graphics/MODTS/logo2")
-      bmp = Bitmap.online_bitmap("http://luka-sj.com/ast/unsec/doof.png") if defined?(firstApr?) && firstApr?
-      @sprites["logo2"].bitmap = Bitmap.new(bmp.width+@outline*2,bmp.height+@outline*2)
+      @sprites["logo2"].bitmap = Bitmap.new((bmp.width+@outline*2),bmp.height+@outline*2)
+      @sprites["logo2"].x = 255
+      @sprites["logo2"].y = 190
       @sprites["logo2"].bitmap.blt(@outline,@outline,bmp,bmp.rect)
       @sprites["logo2"].create_outline(Color.new(255,255,255,128),@outline) if @outline > 0
       # draw outside glow ------------------------------------------------------
@@ -63,7 +64,7 @@ class MTS_Element_Logo
       @sprites["glow2"].glow(Color.new(252,242,209),35,false)
       bmp.dispose
       # logo metrics -----------------------------------------------------------
-      @sprites["logo2"].z = 999
+      @sprites["logo2"].z = 1000
       @sprites["logo2"].ox = @sprites["logo2"].bitmap.width/2
       @sprites["logo2"].color = Color.new(255,255,255,0)
       # glow metrics -----------------------------------------------------------
@@ -126,8 +127,6 @@ class MTS_Element_Logo
     @y = y if !y.nil?
     @sprites["logo1"].x = x.nil? ? self.x : x
     @sprites["logo1"].y = y.nil? ? self.y : y
-    @sprites["logo2"].x = x.nil? ? self.x : x
-    @sprites["logo2"].y = y.nil? ? self.y : y
     @sprites["shine"].x = x.nil? ? self.x : x
     @sprites["shine"].y = y.nil? ? self.y : y
     @sprites["glow1"].x = x.nil? ? self.x : x

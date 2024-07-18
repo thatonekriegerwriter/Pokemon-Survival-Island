@@ -47,7 +47,7 @@ def go_to_title
   $game_screen.start_tone_change(Tone.new(-255, -255, -255), 0)
   $game_temp.to_title = true
         # Switch to title screen
-$scene = pbCallTitle
+$scene = pbCallTitle(false)
 
   $game_screen.start_tone_change(Tone.new(0, 0, 0), 0)
 end
@@ -85,12 +85,42 @@ class Scene_Gameover
   def main
     # Make game over graphic
     @sprite = Sprite.new
-    @sprite.bitmap = RPG::Cache.gameover($data_system.gameover_name)
+	chance = rand(1000)
+	if chance!=0
+	@box2 = Window_AdvancedTextPokemon.new("<ac>You have perished.")
+	@box = Window_AdvancedTextPokemon.new("<ac>The darkness of the afterlife is all that awaits you now. May you find more peace in that world than you found in this one.")
+    @box.x = (Graphics.width/2)-255
+	@box.y = Graphics.height/2-50
+	@box.z = 999
+	@box.windowskin = nil
+	@box2.x = (Graphics.width/2)-95
+	@box2.y = Graphics.height/2-75
+	@box2.z = 999
+	@box2.windowskin = nil
+	end
+	@sprite.z = 950
     # Stop BGM and BGS
-    $game_system.bgm_play(nil)
-    $game_system.bgs_play(nil)
+    $game_system.bgm_stop
+    $game_system.bgs_stop
+	potato = false
     # Play game over ME
-    $game_system.me_play($data_system.gameover_me)
+	if $PokemonGlobal.hardcore == true
+	 slot = SaveData::MANUAL_SLOTS[0]
+	 save_data = SaveData.get_full_path(slot)
+     SaveData.delete_this_save(save_data)
+	end
+	if chance==0
+     @sprite.bitmap = RPG::Cache.gameover($data_system.gameover_name)
+     $game_system.me_play($data_system.gameover_me)
+	 else 
+	  potato = true
+     @sprite.bitmap = RPG::Cache.gameover("GameOver.png")
+	 if rand(100)==0
+     pbMEPlay("Game Over Meme")
+	 else
+     pbMEPlay("Game Over")
+	 end
+	end
     # Execute transition
     Graphics.transition(120)
     # Main loop
@@ -112,6 +142,10 @@ class Scene_Gameover
     # Dispose of game over graphic
     @sprite.bitmap.dispose
     @sprite.dispose
+	if chance!=0
+    @box.dispose
+    @box2.dispose
+	end
     # Execute transition
     Graphics.transition(20) # changed line (from 40 to 1)
     # Prepare for transition

@@ -29,7 +29,6 @@ class Scene_Intro
     # loads the modular title screen
     @screen = ModularTitleScreen.new
     # Plays defined title screen BGM
-    @screen.playBGM
     # Plays the title screen intro (is skippable)
     @screen.intro
     # Creates/updates the main title screen loop
@@ -45,18 +44,13 @@ class Scene_Intro
       @screen.update
       Graphics.update
       Input.update
-      if Input.press?(Input::DOWN) && Input.press?(Input::B) && Input.press?(Input::CTRL)
-        ret = 1
-        break
-      end
-      if Input.trigger?(Input::C) || (defined?($mouse) && $mouse.leftClick?)
+      if Input.trigger?(Input::USE)
         ret = 2
         break
       end
     end
     case ret
     when 1
-      closeTitleDelete
     when 2
       closeTitle
     end
@@ -66,9 +60,8 @@ class Scene_Intro
   #-----------------------------------------------------------------------------
   def closeTitle
     # Play Pokemon cry
-    pbSEPlay("178Cry", 100, 100)
+    pbSEPlay("XATU", 100, 100)
     # Fade out
-    pbBGMStop(1.0)
     # disposes current title screen
     disposeTitle
     # initializes load screen
@@ -140,7 +133,3 @@ end
 #===============================================================================
 #  title call override
 #===============================================================================
-def pbCallTitle
-  return Scene_DebugIntro.new if $DEBUG && !ModularTitle::SHOW_IN_DEBUG
-  return Scene_Intro.new
-end

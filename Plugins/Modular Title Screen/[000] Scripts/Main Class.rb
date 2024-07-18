@@ -176,7 +176,6 @@ class ModularTitleScreen
     @currentFrame += 1
     self.updateElements
     if !@totalFrames.nil? && @totalFrames >= 0 && @currentFrame >= @totalFrames
-      self.restart
     end
   end
   # disposes of all visual elements
@@ -203,19 +202,10 @@ class ModularTitleScreen
     # loads data
     bgm = $data_system.title_bgm.name if bgm.nil?
     @totalFrames = (getPlayTime("Audio/BGM/"+bgm).floor - 1) * Graphics.frame_rate
-    pbBGMPlay(bgm)
   end
   # function to restart the game when BGM times out
   def restart
-    pbBGMStop(0)
-    51.times do
-      @viewport.tone.red-=5
-      @viewport.tone.green-=5
-      @viewport.tone.blue-=5
-      self.updateElements
-      Graphics.update
-    end
-    raise Reset.new
+
   end
 end
 #===============================================================================

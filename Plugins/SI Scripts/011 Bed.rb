@@ -1,24 +1,32 @@
 def heal_BED(wari,pkmn)
   case $PokemonSystem.difficulty
     when 0
-	 chance = rand(5)
+	 chance = rand(5)+1
     when 1
-	 chance = rand(7)
+	 chance = rand(9)+1
     when 2
-	 chance = rand(9)
+	 chance = rand(17)+1
     when 3
-	 chance = rand(11)
+	 chance = rand(19)+1
+  end
+  if Nuzlocke.on?
+	 chance += rand(2)+1
+  end
+  if $PokemonSystem.survivalmode == 0
+	 chance += rand(2)+1
+  end
+  pkmn.lifespan=100 if pkmn.lifespan.nil?
+  if pkmn.permaFaint==true && wari>7
+    pkmn.lifespan=-25
+  return if pkmn.lifespan<=0
+    pkmn.permaFaint=false
   end
   return if pkmn.egg?
-  if wari >= 8
-    pkmn.heal_HP
-    pkmn.heal_status if chance <= 1
-    pkmn.heal_PP if chance <= 1
-  else 
     newHP = pkmn.hp + ((pkmn.totalhp * wari)/8) 
     newHP = pkmn.totalhp if newHP > pkmn.totalhp
     pkmn.hp = newHP
-  end
+    pkmn.heal_status if chance <= wari
+    pkmn.heal_PP if chance <= wari
   @ready_to_evolve = false
 end
 
@@ -51,11 +59,18 @@ pbSetPokemonCenter
              pbDisposeMessageWindow(msgwindow)
 			  if hours == 1
 			    pbMessage(_INTL("You lay down to rest with your Pokemon for an hour."))
+				 if $player.playerhealth>$player.playermaxhealth
+				   $player.playerhealth=$player.playermaxhealth
+				 end
 			  elsif hours == 0
 			    pbMessage(_INTL("You decide not to sleep.",hours))
 				 break
 			  else
 			    pbMessage(_INTL("You lay down to rest with your Pokemon for {1} hours.",hours))
+				$player.playerhealth += (1.5*hours)
+				 if $player.playerhealth>$player.playermaxhealth
+				   $player.playerhealth=$player.playermaxhealth
+				 end
 			  end
 				pbToneChangeAll(Tone.new(-255,-255,-255,0),20)
 	            pbMEPlay("Pokemon Healing")
@@ -66,24 +81,20 @@ pbSetPokemonCenter
 				 end
 				pbWait(80)
 				pbRandomEvent
-				if $game_switches[157]==true && $game_variables[423] >= 1
-				$player.money +=(500*pbGet(350))
-			    pbMessage(_INTL("You got paid for a days worth of battling."))
-				$game_variables[423] = 0
-				end
+
 				if pbPokerus?
 			    pbMessage(_INTL("Your Pokemon seems a little off tonight."))
 				end 
 				$game_variables[29] += (3600*hours)
 				pbSleepRestore(hours)
 				pbToneChangeAll(Tone.new(0,0,0,0),20)
-				if $player.playersleep >= 100
+				if $player.playersleep >= 100.0
 			        pbMessage(_INTL("You feel well rested!"))
-				elsif $player.playersleep >= 75
+				elsif $player.playersleep >= 75.0
 			        pbMessage(_INTL("You feel a little groggy, but are raring to go!"))
-				elsif $player.playersleep >= 50
+				elsif $player.playersleep >= 50.0
 			        pbMessage(_INTL("Your brain feels fuzzy."))
-				elsif $player.playersleep >= 25
+				elsif $player.playersleep >= 25.0
 			        pbMessage(_INTL("You want to go back to bed."))
 				else
 			        pbMessage(_INTL("You really need to sleep."))
@@ -113,11 +124,6 @@ pbSetPokemonCenter
 			 	pbToneChangeAll(Tone.new(0,0,0,0),20)
 			     pbMessage(_INTL("You wake up not feeling any different."))
 				 else
-			     $player.pokemon_party.each do |pkmn|
-			        pkmn.changeSleep
-			        pkmn.changeSleep
-			        pkmn.changeSleep
-			     end
 				   $player.playersleep -= 24
 				 pbToneChangeAll(Tone.new(0,0,0,0),20)
 			     pbMessage(_INTL("You wake up feeling worse than before."))
@@ -136,7 +142,14 @@ pbSetPokemonCenter
           if pbConfirmMessage(_INTL("Do you want to pick up the Bed?"))
 		    pbReceiveItem(:BEDROLL)
 		    this_event = pbMapInterpreter.get_self
-		    pbSetSelfSwitch(this_event.id, "A", false)  
+	  if !$map_factory
+           $game_map.removeThisEventfromMap(this_event.id)
+         else
+           mapId = $game_map.map_id
+           $map_factory.getMap(mapId).removeThisEventfromMap(this_event.id)
+         end
+          deletefromSIData(this_event.id)
+
 		  end
 		  break
 	  elsif Input.trigger?(Input::BACK)
@@ -148,6 +161,35 @@ end
 end
 
 
+def bed_plant_reset
+	 $map_factory.maps.each do |map|
+      map.events.each_value do |event|
+        if event.name[/berryplant/i]
+          time = 24*3600
+          plant = getVariableSup(map,event)
+		   if plant
+		   if plant.timewithoutberry>(time+rand(time/2))
+		    if plant.last_berry
+            plant.berry_id           = plant.last_berry
+            plant.growth_stage       = 1
+            plant.time_last_updated   = pbGetTimeNow.to_i
+            plant.timewithoutberry   = 0
+		     end
+		   end
+		   end
+        end
+      end
+      $game_map.need_refresh = true if map==$game_map
+    end
+
+
+
+end
+
+   def getVariableSup(map,event)
+      return nil if !$PokemonGlobal.eventvars
+      return $PokemonGlobal.eventvars[[@map_id, @event_id]]
+   end
 
 
 def pbBedMessageLoss

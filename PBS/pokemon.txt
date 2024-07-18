@@ -384,6 +384,7 @@ Habitat = Forest
 Category = Poison Bee
 Pokedex = May appear in a swarm. Flies at violent speeds, all the while stabbing with the toxic stinger on its rear.
 Generation = 1
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 #-------------------------------
 [PIDGEY]
@@ -831,6 +832,7 @@ Habitat = Grassland
 Category = Poison Pin
 Pokedex = The horn on a male Nidoran's forehead contains a powerful poison. This is a very cautious Pokémon, always straining its large ears.
 Generation = 1
+WildItemCommon = POISONBARB
 Evolutions = NIDORINO,Level,16
 #-------------------------------
 [NIDORINO]
@@ -857,6 +859,7 @@ Habitat = Grassland
 Category = Poison Pin
 Pokedex = It's nervous and quick to act aggressively. The potency of its poison increases along with the level of adrenaline present in its body.
 Generation = 1
+WildItemCommon = POISONBARB
 Evolutions = NIDOKING,Item,MOONSTONE
 #-------------------------------
 [NIDOKING]
@@ -882,6 +885,7 @@ Shape = BipedalTail
 Habitat = Grassland
 Category = Drill
 Pokedex = One swing of its mighty tail can snap a telephone pole as if it were a matchstick.
+WildItemCommon = POISONBARB
 Generation = 1
 #-------------------------------
 [CLEFAIRY]
@@ -1016,7 +1020,9 @@ Habitat = Grassland
 Category = Balloon
 Pokedex = Jigglypuff has top-notch lung capacity, even by comparison to other Pokémon. It won't stop singing its lullabies until its foes fall asleep.
 Generation = 1
+WildItemCommon = LIGHTCLAY
 WildItemUncommon = MOONSTONE
+WildItemRare = MOONSTONE
 Evolutions = WIGGLYTUFF,Item,MOONSTONE
 #-------------------------------
 [WIGGLYTUFF]
@@ -1043,7 +1049,9 @@ Habitat = Grassland
 Category = Balloon
 Pokedex = It's proud of its fur, which is fine and delicate. In particular, the curl on its forehead has a texture that's perfectly heavenly.
 Generation = 1
+WildItemCommon = LIGHTCLAY
 WildItemUncommon = MOONSTONE
+WildItemRare = MOONSTONE
 #-------------------------------
 [ZUBAT]
 Name = Zubat
@@ -1887,6 +1895,7 @@ Habitat = Sea
 Category = Jellyfish
 Pokedex = This Pokémon is mostly made of water. A Tentacool out in the ocean is very hard to spot, because its body blends in with the sea.
 Generation = 1
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 Evolutions = TENTACRUEL,Level,30
 #-------------------------------
@@ -1914,6 +1923,7 @@ Habitat = Sea
 Category = Jellyfish
 Pokedex = Its 80 tentacles can stretch and shrink freely. Tentacruel ensnares prey in a net of spread-out tentacles, delivering venomous stings to its catch.
 Generation = 1
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 #-------------------------------
 [GEODUDE]
@@ -2023,6 +2033,7 @@ Habitat = Grassland
 Category = Fire Horse
 Pokedex = It can't run properly when it's newly born. As it races around with others of its kind, its legs grow stronger.
 FormName = Kantonian Form
+WildItemCommon = LEATHER
 Generation = 1
 Evolutions = RAPIDASH,Level,40
 #-------------------------------
@@ -2050,6 +2061,7 @@ Habitat = Grassland
 Category = Fire Horse
 Pokedex = This Pokémon can be seen galloping through fields at speeds of up to 150 mph, its fiery mane fluttering in the wind.
 FormName = Kantonian Form
+WildItemCommon = LEATHER
 Generation = 1
 #-------------------------------
 [SLOWPOKE]
@@ -3023,6 +3035,7 @@ Shape = BipedalTail
 Habitat = Grassland
 Category = Parent
 Pokedex = Although it's carrying its baby in a pouch on its belly, Kangaskhan is swift on its feet. It intimidates its opponents with quick jabs.
+WildItemCommon = LEATHER
 Generation = 1
 #-------------------------------
 [HORSEA]
@@ -4149,6 +4162,7 @@ Habitat = WatersEdge
 Category = Big Jaw
 Pokedex = Its powerful, well-developed jaws are capable of crushing anything. Even its Trainer must be careful.
 Generation = 2
+WildItemCommon = LEATHER
 Evolutions = CROCONAW,Level,18
 #-------------------------------
 [CROCONAW]
@@ -4175,6 +4189,7 @@ Habitat = WatersEdge
 Category = Big Jaw
 Pokedex = Once it bites down, it won't let go until it loses its fangs. New fangs quickly grow into place.
 Generation = 2
+WildItemCommon = LEATHER
 Evolutions = FERALIGATR,Level,30
 #-------------------------------
 [FERALIGATR]
@@ -4199,6 +4214,7 @@ Color = Blue
 Shape = BipedalTail
 Habitat = WatersEdge
 Category = Big Jaw
+WildItemCommon = LEATHER
 Pokedex = When it bites with its massive and powerful jaws, it shakes its head and savagely tears its victim up.
 Generation = 2
 #-------------------------------
@@ -4379,6 +4395,7 @@ Habitat = Forest
 Category = String Spit
 Pokedex = It lies still in the same pose for days in its web, waiting for its unsuspecting prey to wander close.
 Generation = 2
+WildItemCommon = SILK
 Evolutions = ARIADOS,Level,22
 #-------------------------------
 [ARIADOS]
@@ -4404,6 +4421,7 @@ Shape = Insectoid
 Habitat = Forest
 Category = Long Leg
 Pokedex = It attaches silk to its prey and sets it free. Later, it tracks the silk to the prey and its friends.
+WildItemCommon = SILK
 Generation = 2
 #-------------------------------
 [CROBAT]
@@ -4690,6 +4708,7 @@ Habitat = Grassland
 Category = Wool
 Pokedex = It stores lots of air in its soft fur, allowing it to stay cool in summer and warm in winter.
 Generation = 2
+WildItemCommon = WOOL
 Evolutions = FLAAFFY,Level,15
 #-------------------------------
 [FLAAFFY]
@@ -4714,6 +4733,7 @@ Color = Pink
 Shape = BipedalTail
 Habitat = Grassland
 Category = Wool
+WildItemCommon = WOOL
 Pokedex = If its coat becomes fully charged with electricity, its tail lights up. It fires hair that zaps on impact.
 Generation = 2
 Evolutions = AMPHAROS,Level,30
@@ -4740,6 +4760,8 @@ Color = Yellow
 Shape = BipedalTail
 Habitat = Grassland
 Category = Light
+WildItemCommon = LEATHER
+WildItemUncommon = WOOL
 Pokedex = The tail's tip shines brightly and can be seen from far away. It acts as a beacon for lost people.
 Generation = 2
 #-------------------------------
@@ -5303,6 +5325,7 @@ Color = Yellow
 Shape = Quadruped
 Habitat = Grassland
 Category = Long Neck
+WildItemCommon = LEATHER
 Pokedex = Its tail has a small brain of its own. Beware! If you get close, it may react to your scent by biting.
 Generation = 2
 #-------------------------------
@@ -5509,6 +5532,7 @@ Habitat = Sea
 Category = Balloon
 Pokedex = When faced with a larger opponent, it swallows as much water as it can to match the opponent's size.
 Generation = 2
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 Evolutions = OVERQWIL,None,
 #-------------------------------
@@ -6028,6 +6052,7 @@ Habitat = RoughTerrain
 Category = Long Nose
 Pokedex = It is strong despite its compact size. It can easily pick up and carry an adult human on its back.
 Generation = 2
+WildItemCommon = LEATHER
 Evolutions = DONPHAN,Level,25
 #-------------------------------
 [DONPHAN]
@@ -6052,6 +6077,7 @@ Color = Gray
 Shape = Quadruped
 Habitat = RoughTerrain
 Category = Armor
+WildItemCommon = LEATHER
 Pokedex = The longer and bigger its tusks, the higher its rank in its herd. The tusks take long to grow.
 Generation = 2
 #-------------------------------
@@ -6105,6 +6131,7 @@ Habitat = Forest
 Category = Big Horn
 Pokedex = The curved antlers subtly change the flow of air to create a strange space where reality is distorted.
 Generation = 2
+WildItemCommon = LEATHER
 Evolutions = WYRDEER,HasMove,PSYSHIELDBASH
 #-------------------------------
 [SMEARGLE]
@@ -6861,8 +6888,8 @@ Category = TinyRaccoon
 Pokedex = It marks its territory by rubbing its bristly fur on trees. This variety of Zigzagoon is friendlier and calmer than the kind native to Galar.
 FormName = Hoennian Form
 Generation = 3
-WildItemCommon = POTION
-WildItemUncommon = REVIVE
+WildItemCommon = ORANBERRY
+WildItemUncommon = SITRUSBERRY
 Evolutions = LINOONE,Level,20
 #-------------------------------
 [LINOONE]
@@ -6890,8 +6917,8 @@ Category = Rushing
 Pokedex = It uses its explosive speed and razor-sharp claws to bring down prey. Running along winding paths is not its strong suit.
 FormName = Hoennian Form
 Generation = 3
-WildItemCommon = POTION
-WildItemUncommon = MAXREVIVE
+WildItemCommon = ORANBERRY
+WildItemUncommon = ARGOSTBERRY
 Evolutions = OBSTAGOON,None,
 #-------------------------------
 [WURMPLE]
@@ -8220,6 +8247,7 @@ Habitat = Grassland
 Category = Thorn
 Pokedex = It uses the different poisons in each hand separately when it attacks. The stronger its aroma, the healthier it is.
 Generation = 3
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 Evolutions = ROSERADE,Item,SHINYSTONE
 #-------------------------------
@@ -8483,6 +8511,7 @@ Habitat = Mountain
 Category = Bounce
 Pokedex = It bounces around on its tail to keep its heart pumping. It carries a pearl from Clamperl on its head.
 Generation = 3
+WildItemCommon = LEATHER
 Evolutions = GRUMPIG,Level,32
 #-------------------------------
 [GRUMPIG]
@@ -8507,6 +8536,7 @@ Color = Purple
 Shape = BipedalTail
 Habitat = Mountain
 Category = Manipulate
+WildItemCommon = LEATHER
 Pokedex = It uses black pearls to amplify its psychic power. It does an odd dance to gain control over foes.
 Generation = 3
 #-------------------------------
@@ -8687,6 +8717,7 @@ Shape = Winged
 Habitat = Forest
 Category = Cotton Bird
 Pokedex = Its cottony wings are full of air, making them light and fluffy to the touch. Swablu takes diligent care of its wings.
+WildItemCommon = WOOL
 Generation = 3
 Evolutions = ALTARIA,Level,35
 #-------------------------------
@@ -8713,6 +8744,7 @@ Shape = Winged
 Habitat = Forest
 Category = Humming
 Pokedex = This Pokémon has a kind disposition, but if it's provoked, it will threaten opponents with shrill cries before attacking them without mercy.
+WildItemCommon = WOOL
 Generation = 3
 #-------------------------------
 [ZANGOOSE]
@@ -10583,6 +10615,7 @@ Habitat = Grassland
 Category = Bud
 Pokedex = This Pokémon is highly sensitive to temperature changes. When its bud starts to open, that means spring is right around the corner.
 Generation = 4
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 Evolutions = ROSELIA,HappinessDay,
 #-------------------------------
@@ -10610,6 +10643,7 @@ Habitat = Grassland
 Category = Bouquet
 Pokedex = The poison in its right hand is quick acting. The poison in its left hand is slow acting. Both are life threatening.
 Generation = 4
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 #-------------------------------
 [CRANIDOS]
@@ -10846,6 +10880,7 @@ Habitat = Forest
 Category = Beehive
 Pokedex = It skillfully commands its grubs in battles with its enemies. The grubs are willing to risk their lives to defend Vespiquen.
 Generation = 4
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 #-------------------------------
 [PACHIRISU]
@@ -11754,6 +11789,7 @@ Habitat = RoughTerrain
 Category = Scorpion
 Pokedex = After burrowing into the sand, it waits patiently for prey to come near. This Pokémon and Sizzlipede share common descent.
 Generation = 4
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 Evolutions = DRAPION,Level,40
 #-------------------------------
@@ -11781,6 +11817,7 @@ Habitat = RoughTerrain
 Category = Ogre Scorp
 Pokedex = Its poison is potent, but it rarely sees use. This Pokémon prefers to use physical force instead, going on rampages with its car-crushing strength.
 Generation = 4
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 #-------------------------------
 [CROAGUNK]
@@ -13570,6 +13607,7 @@ Habitat = Grassland
 Category = Electrified
 Pokedex = Its mane shines when it discharges electricity. They use the frequency and rhythm of these flashes to communicate.
 Generation = 5
+WildItemCommon = LEATHER
 Evolutions = ZEBSTRIKA,Level,27
 #-------------------------------
 [ZEBSTRIKA]
@@ -13594,6 +13632,7 @@ Color = Black
 Shape = Quadruped
 Habitat = Grassland
 Category = Thunderbolt
+WildItemCommon = LEATHER
 Pokedex = They have lightning-like movements. When Zebstrika run at full speed, the sound of thunder reverberates.
 Generation = 5
 #-------------------------------
@@ -14119,6 +14158,7 @@ Habitat = Forest
 Category = Centipede
 Pokedex = Its fangs are highly venomous. If this Pokémon finds prey it thinks it can eat, it leaps for them without any thought of how things might turn out.
 Generation = 5
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 Evolutions = WHIRLIPEDE,Level,22
 #-------------------------------
@@ -14146,6 +14186,7 @@ Habitat = Forest
 Category = Curlipede
 Pokedex = Whirlipede protects itself with a sturdy shell and poisonous spikes while it stores up the energy it'll need for evolution.
 Generation = 5
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 Evolutions = SCOLIPEDE,Level,30
 #-------------------------------
@@ -14173,6 +14214,7 @@ Habitat = Forest
 Category = Megapede
 Pokedex = Scolipede latches on to its prey with the claws on its neck before slamming them into the ground and jabbing them with its claws' toxic spikes.
 Generation = 5
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 #-------------------------------
 [COTTONEE]
@@ -14199,6 +14241,7 @@ Habitat = Grassland
 Category = Cotton Puff
 Pokedex = It shoots cotton from its body to protect itself. If it gets caught up in hurricane-strength winds, it can get sent to the other side of the Earth.
 Generation = 5
+WildItemCommon = WOOL
 WildItemUncommon = ABSORBBULB
 Evolutions = WHIMSICOTT,Item,SUNSTONE
 #-------------------------------
@@ -14225,6 +14268,7 @@ Shape = Bipedal
 Habitat = Grassland
 Category = Windveiled
 Pokedex = As long as this Pokémon bathes in sunlight, its cotton keeps growing. If too much cotton fluff builds up, Whimsicott tears it off and scatters it.
+WildItemCommon = WOOL
 Generation = 5
 WildItemUncommon = ABSORBBULB
 #-------------------------------
@@ -14333,6 +14377,7 @@ Habitat = RoughTerrain
 Category = Desert Croc
 Pokedex = Sandile is small, but its legs and lower body are powerful. Pushing sand aside as it goes, Sandile moves through the desert as if it's swimming.
 Generation = 5
+WildItemCommon = LEATHER
 WildItemUncommon = BLACKGLASSES
 Evolutions = KROKOROK,Level,29
 #-------------------------------
@@ -14360,6 +14405,7 @@ Habitat = RoughTerrain
 Category = Desert Croc
 Pokedex = Although this Pokémon has specialized eyes that allow it to see in the dark, Krokorok won't move much at night, the desert gets cold after sunset.
 Generation = 5
+WildItemCommon = LEATHER
 WildItemUncommon = BLACKGLASSES
 Evolutions = KROOKODILE,Level,40
 #-------------------------------
@@ -14387,6 +14433,7 @@ Habitat = RoughTerrain
 Category = Intimidation
 Pokedex = This Pokémon is known as the Bully of the Sands. Krookodile's mighty jaws can bite through heavy plates of iron with almost no effort at all.
 Generation = 5
+WildItemCommon = LEATHER
 WildItemCommon = BLACKGLASSES
 #-------------------------------
 [DARUMAKA]
@@ -15213,6 +15260,7 @@ Category = Season
 Pokedex = The turning of the seasons changes the color and scent of this Pokémon's fur. People use it to mark the seasons.
 FormName = Spring Form
 Generation = 5
+WildItemCommon = LEATHER
 Evolutions = SAWSBUCK,Level,34
 #-------------------------------
 [SAWSBUCK]
@@ -15238,6 +15286,7 @@ Shape = Quadruped
 Habitat = Forest
 Category = Season
 Pokedex = They migrate according to the seasons, so some people call Sawsbuck the harbingers of spring.
+WildItemCommon = LEATHER
 FormName = Spring Form
 Generation = 5
 #-------------------------------
@@ -15265,6 +15314,9 @@ Habitat = Forest
 Category = Sky Squirrel
 Pokedex = This Pokémon absolutely loves sweet berries. Sometimes it stuffs its cheeks full of so much food that it can't fly properly.
 Generation = 5
+WildItemCommon = LIGHTCLAY
+WildItemUncommon = LIGHTCLAY
+WildItemRare = LIGHTCLAY
 #-------------------------------
 [KARRABLAST]
 Name = Karrablast
@@ -15472,6 +15524,7 @@ Habitat = Cave
 Category = Attaching
 Pokedex = Joltik can be found clinging to other Pokémon. It's soaking up static electricity because it can't produce a charge on its own.
 Generation = 5
+WildItemCommon = SILK
 Evolutions = GALVANTULA,Level,36
 #-------------------------------
 [GALVANTULA]
@@ -15497,6 +15550,7 @@ Shape = Insectoid
 Habitat = Cave
 Category = EleSpider
 Pokedex = It launches electrified fur from its abdomen as its means of attack. Opponents hit by the fur could be in for three full days and nights of paralysis.
+WildItemCommon = SILK
 Generation = 5
 #-------------------------------
 [FERROSEED]
@@ -16265,6 +16319,7 @@ Habitat = Grassland
 Category = Bash Buffalo
 Pokedex = These Pokémon live in herds of about 20 individuals. Bouffalant that betray the herd will lose the hair on their heads for some reason.
 Generation = 5
+WildItemCommon = LEATHER
 #-------------------------------
 [RUFFLET]
 Name = Rufflet
@@ -17806,6 +17861,9 @@ Category = Revolving
 Pokedex = It spins while making its luminescent spots flash. These spots allow it to communicate with others by using different patterns of light.
 Generation = 6
 Evolutions = MALAMAR,Level,30
+WildItemCommon = LIGHTCLAY
+WildItemUncommon = LIGHTCLAY
+WildItemRare = LIGHTCLAY
 #-------------------------------
 [MALAMAR]
 Name = Malamar
@@ -17831,6 +17889,9 @@ Habitat = Sea
 Category = Overturning
 Pokedex = Gazing at its luminescent spots will quickly induce a hypnotic state, putting the observer under Malamar's control.
 Generation = 6
+WildItemCommon = LIGHTCLAY
+WildItemUncommon = LIGHTCLAY
+WildItemRare = LIGHTCLAY
 #-------------------------------
 [BINACLE]
 Name = Binacle
@@ -19372,6 +19433,7 @@ Habitat = Sea
 Category = Brutal Star
 Pokedex = The first symptom of its sting is numbness. The next is an itching sensation so intense that it's impossible to resist the urge to claw at your skin.
 Generation = 7
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 Evolutions = TOXAPEX,Level,38
 #-------------------------------
@@ -19399,6 +19461,7 @@ Habitat = Sea
 Category = Brutal Star
 Pokedex = Within the poison sac in its body is a poison so toxic that Pokémon as large as Wailord will still be suffering three days after it first takes effect.
 Generation = 7
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 #-------------------------------
 [MUDBRAY]
@@ -19425,6 +19488,7 @@ Habitat = RoughTerrain
 Category = Donkey
 Pokedex = It eats dirt to create mud and smears this mud all over its feet, giving them the grip needed to walk on rough terrain without slipping.
 Generation = 7
+WildItemCommon = LEATHER
 WildItemUncommon = LIGHTCLAY
 Evolutions = MUDSDALE,Level,30
 #-------------------------------
@@ -19452,6 +19516,7 @@ Habitat = RoughTerrain
 Category = Draft Horse
 Pokedex = Mud that hardens around a Mudsdale's legs sets harder than stone. It's so hard that it allows this Pokémon to scrap a truck with a single kick.
 Generation = 7
+WildItemCommon = LEATHER
 WildItemUncommon = LIGHTCLAY
 #-------------------------------
 [DEWPIDER]
@@ -19478,6 +19543,7 @@ Habitat = WatersEdge
 Category = Water Bubble
 Pokedex = It forms a water bubble at the rear of its body and then covers its head with it. Meeting another Dewpider means comparing water-bubble sizes.
 Generation = 7
+WildItemCommon = SILK
 WildItemUncommon = MYSTICWATER
 Evolutions = ARAQUANID,Level,22
 #-------------------------------
@@ -19505,6 +19571,7 @@ Habitat = WatersEdge
 Category = Water Bubble
 Pokedex = It launches water bubbles with its legs, drowning prey within the bubbles. This Pokémon can then take its time to savor its meal.
 Generation = 7
+WildItemCommon = SILK
 WildItemUncommon = MYSTICWATER
 #-------------------------------
 [FOMANTIS]
@@ -21521,6 +21588,8 @@ Shape = Quadruped
 Habitat = Grassland
 Category = Sheep
 Pokedex = If its fleece grows too long, Wooloo won't be able to move. Cloth made with the wool of this Pokémon is surprisingly strong.
+WildItemCommon = WOOL
+WildItemUncommon = WOOL
 Generation = 8
 Evolutions = DUBWOOL,Level,24
 #-------------------------------
@@ -21546,6 +21615,8 @@ Color = White
 Shape = Quadruped
 Habitat = Grassland
 Category = Sheep
+WildItemCommon = WOOL
+WildItemUncommon = WOOL
 Pokedex = Its majestic horns are meant only to impress the opposite gender. They never see use in battle.
 Generation = 8
 #-------------------------------
@@ -23400,6 +23471,7 @@ Shape = Finned
 Habitat = Sea
 Category = Balloon
 Pokedex = When the thunder mark on his forehead lits up, it is storing electricity. The discovery of this pokémon started a research to understand if Whishcash, Stunfisk and Kazappelin come from a shared ancestor.
+WildItemCommon = POISONBARB
 WildItemUncommon = POISONBARB
 #-------------------------------
 [SIQULAR]
@@ -23670,6 +23742,7 @@ Color = Gray
 Shape = Head
 Habitat = Cave
 Category = Twins
+WildItemCommon = LEATHER
 Pokedex = The two entities are attached from the birth. One head looks for danger, while the other finds food for both. Even if apparently related to Girafarig or Wobbuffet, it has nothing to do with them.
 Evolutions = GIRAFARIG,Level,29
 #-------------------------------
@@ -24303,6 +24376,7 @@ Color = Gray
 Shape = Quadruped
 Habitat = Forest
 Category = Big Horn
+WildItemCommon = LEATHER
 Pokedex = The black orbs shine with an uncanny light when the Pokémon is erecting invisible barriers. The fur shed from its beard retains heat well and is a highly useful material for winter clothing
 Generation = 8
 #-------------------------------

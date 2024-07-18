@@ -3,6 +3,8 @@
 #===============================================================================
 # Static
 class MTS_Element_BG0
+
+
   def id; return "background"; end
   def id?(val); return self.id == val; end
   # main method to create the background
@@ -12,8 +14,18 @@ class MTS_Element_BG0
     @sprites = {}
     file = "background" if file.nil?
     # creates the background layer
-    @sprites["bg"] = Sprite.new(@viewport)
+	if @sprites["bg"].nil?
+    @sprites["bg"] = IconSprite.new(@viewport)
     @sprites["bg"].bitmap = pbBitmap("Graphics/MODTS/Backgrounds/#{file}")
+	end
+    @introBackgroundList = ["splash1 copy","splash2 copy","splash3 copy","splash4 copy","splash5 copy",
+ "splash6 copy","splash7 copy","splash8 copy","splash9 copy","splash10 copy",
+"splash11 copy","splash12 copy","splash13 copy","splash14 copy","splash15 copy",
+"splash16 copy","splash17 copy","splash18 copy","splash19 copy","splash20 copy",
+"splash21 copy","splash22 copy","splash23 copy"]
+    @introBackgroundGameFrameCount = 0
+    @introBackgroundG_BFrameCount = 4 * 30
+	@currentRand=0
   end
   # disposes of everything
   def dispose
@@ -24,10 +36,47 @@ class MTS_Element_BG0
   def visible; end
   def visible=(val); end
   # update method
-  def update; end
+  def update(skip=false)
+    return if self.disposed?
+	
+	
+	
+	
+    @introBackgroundGameFrameCount += 1
+    if @sprites["bg"].y < 60
+      @sprites["bg"].y += 1
+    elsif @sprites["bg"].y >= 60 && @introBackgroundGameFrameCount>@introBackgroundG_BFrameCount
+      @introBackgroundGameFrameCount = 0
+      #@sprite.y = 0
+      @tempRand = @currentRand
+      @currentRand = rand(@introBackgroundList.length)
+      if @currentRand != @tempRand
+        if @currentRand + 1 > @introBackgroundList.length
+          @currentRand-=1
+        elsif @currentRand - 1 < 0
+          @currentRand+=1
+        elsif @currentRand > 0 && @currentRand < @introBackgroundList.length+1
+          @currentRand+=1
+        end
+      end
+      @bg_index = @currentRand
+      @bg_index = 0 if @bg_index >= @introBackgroundList.length
+	  
+      @sprites["bg"].setBitmap("Graphics/MODTS/Backgrounds/#{@introBackgroundList[@bg_index]}")
+      @sprites["bg"].y = 10
+
+
+   end
+
+
+  end
   # checks if disposed
   def disposed?; return @disposed; end
   # end
+  
+  
+  
+
 end
 #-------------------------------------------------------------------------------
 # Digital
