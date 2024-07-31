@@ -64,7 +64,9 @@ class Adventure_Scene
 	def getbg(map_id)
        time = pbGetTimeNow
 	   if $map_factory.getMap(map_id).metadata.battle_background != "" || $map_factory.getMap(map_id).metadata.battle_background.nil?
-	   base = $map_factory.getMap(map_id).metadata.battle_background.downcase
+	   base = $map_factory.getMap(map_id).metadata.battle_background
+	   return "indoor1_bg" if base.nil?
+	   base = base.downcase
 	   if $map_factory.getMap(map_id).metadata.battle_background!="LavaCave"
 	   if PBDayNight.isMorning?(time)
 	   stabbies = "_morn"

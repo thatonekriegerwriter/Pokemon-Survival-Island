@@ -912,7 +912,9 @@ Habitat = Mountain
 Category = Fairy
 Pokedex = It is said that happiness will come to those who see a gathering of Clefairy dancing under a full moon.
 Generation = 1
+WildItemCommon = STARPIECE
 WildItemUncommon = MOONSTONE
+WildItemRare = STARPIECE
 Evolutions = CLEFABLE,Item,MOONSTONE
 #-------------------------------
 [CLEFABLE]
@@ -939,7 +941,9 @@ Habitat = Mountain
 Category = Fairy
 Pokedex = Their ears are sensitive enough to hear a pin drop from over a mile away, so they're usually found in quiet places.
 Generation = 1
+WildItemCommon = STARPIECE
 WildItemUncommon = MOONSTONE
+WildItemRare = STARPIECE
 #-------------------------------
 [VULPIX]
 Name = Vulpix
@@ -4657,6 +4661,9 @@ Habitat = Forest
 Category = Tiny Bird
 Pokedex = Because its wings aren't yet fully grown, it has to hop to get around. It is always staring at something.
 Generation = 2
+WildItemCommon = STARPIECE
+WildItemUncommon = STARPIECE
+WildItemRare = STARPIECE
 Evolutions = XATU,Level,25
 #-------------------------------
 [XATU]
@@ -4683,6 +4690,9 @@ Habitat = Forest
 Category = Mystic
 Pokedex = They say that it stays still and quiet because it is seeing both the past and future at the same time.
 Generation = 2
+WildItemCommon = STARPIECE
+WildItemUncommon = STARPIECE
+WildItemRare = STARPIECE
 #-------------------------------
 [MAREEP]
 Name = Mareep
@@ -20142,7 +20152,9 @@ Category = Meteor
 Pokedex = It lives in the ozone layer, where it becomes food for stronger Pokémon. When it tries to run away, it falls to the ground.
 FormName = Meteor Form
 Generation = 7
+WildItemCommon = STARPIECE
 WildItemUncommon = STARPIECE
+WildItemRare = STARPIECE
 #-------------------------------
 [KOMALA]
 Name = Komala

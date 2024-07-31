@@ -185,6 +185,7 @@ class HUD
 	@sprites4={}
 	@sprites5={}
     @yposition = DRAW_AT_BOTTOM ? Graphics.height-64 : 0
+	@yposition += BorderSettings::SCREENPOSY
     @old_index=nil
     @old_map=nil
     @@instanceArray.compact! 
@@ -193,7 +194,7 @@ class HUD
 
   def showHUD?
     return (
-      $player && !$game_temp.in_menu && $PokemonSystem.playermode == 1
+      $player && !$game_temp.in_menu && ($game_map.map_id != 1 || $game_map.map_id != 25)
     )
   end
 
@@ -206,10 +207,10 @@ class HUD
   end
 
   def createSprites
-    createSTABar(1, 120, @yposition+45, 70, 11)
-    createHPBar(2, 40, @yposition+45, 70, 11)
-    createBox(3, 440, @yposition+45, 70, 11)
-	createSelection(4, 440, @yposition+45, 70, 11)
+    createSTABar(1, 120+BorderSettings::SCREENPOSX , @yposition+45, 70, 11)
+    createHPBar(2, 40+BorderSettings::SCREENPOSX , @yposition+45, 70, 11)
+    createBox(3, 440+BorderSettings::SCREENPOSX , @yposition+45, 70, 11)
+	createSelection(4, 440+BorderSettings::SCREENPOSX , @yposition+45, 70, 11)
   end
 
   def refreshSelection
@@ -411,14 +412,13 @@ end
   end
   
   def refresh
-    refreshSTABar(1, 120, @yposition+45, 70, 11)
-    refreshHPBar(2, 40, @yposition+45, 70, 11)
-	#puts $game_temp.lockontarget!=false && !@sprites3.empty?
+    refreshSTABar(1, 120+BorderSettings::SCREENPOSX , @yposition+45, 70, 11)
+    refreshHPBar(2, 40+BorderSettings::SCREENPOSX , @yposition+45, 70, 11) 
 	
-	createHPLevel(80, 10) if $game_temp.lockontarget!=false && @sprites3.empty?
-	refreshHPLevel(80, 10) if $game_temp.lockontarget!=false && !@sprites3.empty?
+	createHPLevel(80+BorderSettings::SCREENPOSX , 10) if $game_temp.lockontarget!=false && @sprites3.empty?
+	refreshHPLevel(80+BorderSettings::SCREENPOSX , 10) if $game_temp.lockontarget!=false && !@sprites3.empty?
 	
-	createSelection(4, 440, @yposition+45, 70, 11) if @sprites4.empty? && $game_temp.current_pkmn_controlled!=false
+	createSelection(4, 440+BorderSettings::SCREENPOSX , @yposition+45, 70, 11) if @sprites4.empty? && $game_temp.current_pkmn_controlled!=false
 	refreshSelection if !@sprites4.empty? && $game_temp.current_pkmn_controlled!=false
 	destroyHPHUD if $game_temp.lockontarget==false && !@sprites3.empty?
 	destroySelectionHUD if $game_temp.current_pkmn_controlled==false && !@sprites4.empty?

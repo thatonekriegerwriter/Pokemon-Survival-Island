@@ -1,0 +1,5 @@
+CURRENT_GAME_VERSION=0.2
+VERSION_PASTEBIN=https://pastebin.com/raw/5HJqVWGw
+UPDATER_FILENAME=./poke_updater/poke_updater.exe
+FORCE_VERSION_CHECK=true
+FORCE_UPDATE=false

@@ -1,5 +1,5 @@
 def pbIntroQuestionare
-      if $DEBUG && Input.press?(Input::CTRL)
+      if $DEBUG && Input.press?(Input::CTRL) || Input.press?(Input::CTRL) && Input.press?(Input::SHIFT)
 	  else
       pbMessage(_INTL("Answer the following questions however you feel strongest."))
       pbMessage(_INTL("There will be a word, Choose the first thing that comes to mind."))

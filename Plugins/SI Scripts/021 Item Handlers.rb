@@ -1,3 +1,31 @@
+Battle::ItemEffects::HPHeal.add(:ARGOSTBERRY,
+  proc { |item, battler, battle, forced|
+    next false if battler.able
+    battle.pbCommonAnimation("EatBerry", battler) if !forced
+    battler.hp = 1
+    itemName = GameData::Item.get(item).name
+    if forced
+      PBDebug.log("[Item triggered] Forced consuming of #{itemName}")
+      battle.pbDisplay(_INTL("{1}'s was revived.", battler.pbThis))
+    else
+      battle.pbDisplay(_INTL("{1} was revived!", battler.pbThis, itemName))
+    end
+    next true
+  }
+)
+
+
+ItemHandlers::UseOnPokemon.add(:ARGOSTBERRY, proc { |item, qty, pkmn, scene|
+    next false if !pkmn.fainted?
+    next false if pkmn.permaFaint
+    pkmn.hp = 1
+    pkmn.heal_status
+  scene.pbRefresh
+  scene.pbDisplay(_INTL("{1}'s was revived.", pkmn.name))
+  next true
+})
+
+
 ItemHandlers::UseFromBag.add(:BAIT, proc { |item|
   next 2
 })

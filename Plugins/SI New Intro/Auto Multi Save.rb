@@ -616,6 +616,7 @@ class PokemonLoadScreen
   end
 
   def pbStartLoadScreen
+    pbValidateGameVersionAndUpdate() if (GameVersion::POKE_UPDATER_CONFIG['FORCE_UPDATE']==true || forcetheupdate) && getUpdate && GameVersion::ENABLED
     save_file_list = SaveData.getSlots
     first_time = true
 	pbSIDataStorage()
@@ -628,6 +629,7 @@ class PokemonLoadScreen
       commands = []
       cmd_continue     = -1
       cmd_new_game     = -1
+      cmd_update       = -1
       cmd_language     = -1
       cmd_mystery_gift = -1
       cmd_debug        = -1
@@ -642,6 +644,7 @@ class PokemonLoadScreen
 #        end
       end
       commands[cmd_new_game = commands.length]  = _INTL('New Game')
+      commands[cmd_update = commands.length]    = _INTL('Check for Updates') if getUpdate && GameVersion::ENABLED
       commands[cmd_language = commands.length]  = _INTL('Language') if Settings::LANGUAGES.length >= 2
       commands[cmd_debug = commands.length]     = _INTL('Debug') if $DEBUG
       commands[cmd_quit = commands.length]      = _INTL('Quit Game')
@@ -748,6 +751,8 @@ class PokemonLoadScreen
 	
         when cmd_mystery_gift
           pbFadeOutIn { pbDownloadMysteryGift(@save_data[:player]) }
+        when cmd_update
+		   pbValidateGameVersionAndUpdate(true)
         when cmd_language
           @scene.pbEndScene
           $PokemonSystem.language = pbChooseLanguage
@@ -808,8 +813,8 @@ class PokemonSave_Scene
     @sprites["nubg"].setBitmap(_INTL("Graphics/Pictures/loadslotsbg"))
     @sprites["locwindow"] = Window_AdvancedTextPokemon.new(loctext)
     @sprites["locwindow"].viewport = @viewport
-    @sprites["locwindow"].x = 0
-    @sprites["locwindow"].y = 0
+    @sprites["locwindow"].x = 0-BorderSettings::SCREENPOSX
+    @sprites["locwindow"].y = 0-BorderSettings::SCREENPOSY
     @sprites["locwindow"].width = 228 if @sprites["locwindow"].width < 228
     @sprites["locwindow"].visible = true
   end

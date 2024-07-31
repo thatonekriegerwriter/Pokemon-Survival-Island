@@ -307,7 +307,7 @@ class BerryPlantData
   def initialize(event = nil)
     @event = event if !event.nil?
 	 @centered = false
-	 @centered = true if @event.name.include("center")
+	 @centered = true if @event.name.include?("center")
     reset
   end
 
